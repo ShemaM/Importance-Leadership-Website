@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Importance Leadership - Who We Are</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.8;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #123456;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 4px;
+            background-color: #123456;
+            margin: 10px auto 0;
+        }
+
+        .card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Header -->
+    <header id="header-container"></header>
+    <script src="loadHeader.js"></script>
+
+    <!-- About Us Section -->
+<!-- About Us Section -->
+<section class="about-us-section py-5 bg-light text-black" id="about" style="background-image: url('image/coming-soon.jpg'); background-size:auto;">
+    <div class="container">
+        <div class="row align-items-center">
+            <!-- Image on the Left (Inside a Card) -->
+            <div class="col-md-4">
+                <div class="card text-center border-0 shadow-lg h-100">
+                    <!-- Founder's Image -->
+                    <img src="image/fiston.png" class="card-img-top rounded-circle mx-auto mt-4"
+                         alt="Fiston Ndayishimiye, Founder of Importance Leadership"
+                         style="width: 120px; height: 120px; object-fit: cover; border: 4px solid #123456;">
+            
+                    <!-- Card Body -->
+                    <div class="card-body">
+                        <h4 class="card-title fw-bold">Fiston Ndayishimiye</h4>
+                        <p class="card-text text-muted">Founder & Visionary Leader</p>
+                        <hr class=" divider mx-auto" style="width: 50px; height: 2px; background-color: #123456;">
+            
+                        <!-- Short Description -->
+                        <div class="description mt-3">
+                            <p class="text-dark fw-semibold" style="font-style: italic;">Fiston is the founder of <strong>Importance Leadership</strong>, dedicated to empowering young people to become ethical, inclusive, and purpose-driven leaders.</p>
+                        </div>
+            
+                    </div>
+                </div>
+            </div>
+            <!-- About Us Content on the Right -->
+            <div class="col-md-8">
+                <h2 class="section-title mb-4">About Us</h2>
+                <p class="text-justify text-white fw-semibold">
+                    Importance Leadership was founded by <strong>Fisto Ndayishimiye</strong>, a visionary leader and advocate for youth empowerment. Born in the Democratic Republic of Congo, Fisto's journey is a testament to resilience, determination, and the transformative power of leadership. His mission is to empower young people to become leaders and agents of change, inspired by the struggles and triumphs of his own life.
+                </p>
+                <p class="text-justify text-white fw-semibold">
+                    Fisto's story is deeply rooted in the history of his people, the Banyamulenge, who have faced systemic oppression and violence in the Congo. Growing up amidst the chaos of war and ethnic conflict, Fisto witnessed the devastating consequences of broken systems and the urgent need for change. His journey reflects the struggles of countless Africans fighting for self-determination and liberation from colonial legacies.
+                </p>
+                
+                        <!-- Read More Button -->
+                        <button type="button" class="btn btn-outline-primary btn-md mt-3 " id="readMoreBtn" >
+                            Read More
+                        </button>
+
+                <!-- Hidden Content (Expanded on Click) -->
+                <div id="hiddenContent" style="display: none;">
+                    <p class="text-justify text-white fw-semibold">
+                        Inspired by the words of Patrice Lumumba, the first democratically elected Prime Minister of the Congo, Fisto believes in the power of unity and independence. Lumumba's declaration, <em>"The Congo's independence is a decisive step towards the liberation of the entire African continent,"</em> continues to fuel Fisto's vision for a brighter future. Through Importance Leadership, he seeks to ignite a spark of hope and transformation in the hearts of young people.
+                    </p>
+                    <p class="text-justify text-white fw-semibold">
+                        Fisto's journey took him to the United States in 2016, where he faced the challenges of adapting to a new culture and confronting systemic racism. Despite these obstacles, he remained steadfast in his commitment to empowering others. Drawing from the wisdom of leaders like Martin Luther King Jr. and Malcolm X, Fisto believes that <em>"injustice anywhere is a threat to justice everywhere."</em> His lived experiences of genocide, oppression, and discrimination have shaped his mission to create a more just and equitable world.
+                    </p>
+                    <p class="text-justify text-white fw-semibold">
+                        Today, Fisto leads Importance Leadership with a clear vision: to transform young people into leaders and leaders into agents of change. He envisions a future where every individual has the opportunity to thrive, regardless of their background or circumstances. <em>"I don't believe in democracy, but I believe in the young generation,"</em> Fisto declares. <em>"The future will change; the future must change."</em>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+    <!-- Mission Section -->
+    <section class="mission-section py-5">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-8 text-center">
+                    <h2 class="section-title mb-4">Our Mission</h2>
+                    <p class="text-justify fw-bolder">
+                        At Importance Leadership, our mission is to Mobilize, Inspire, and Empower every youth to become change-makers through education and advocacy. We are committed to creating an inclusive world where every young person is empowered, transformed into a leader, and equipped with the opportunities and resources to unlock their full potential.
+                    </p>
+                    <p class="text-justify">
+                        We strive to develop the next generation of influential and visionary leaders through our programs. Our initiatives include leadership training, life skills development, environmental education, sports and recreational activities, student engagement, and advocacy. By promoting personal growth, building essential skills, and nurturing social consciousness, we aim to inspire excellence and cultivate a generation of empowered youth who will shape a brighter future for our global community.
+                    </p>
+                    <p class="text-justify">
+                        Guided by our motto, <em>"Empowering Leaders, Inspiring Excellence,"</em> we are dedicated to transforming lives and empowering the next generation of change-makers. Join us in our mission to create a more equitable and inclusive world.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Vision Section -->
+    <section class="vision-section py-5 bg-very-light-gray">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-8 text-center">
+                    <h2 class="section-title mb-4">Our Vision & Core Values</h2>
+                    <p class="text-justify">
+                        An inclusive world where every youth is empowered and transformed into a leader.
+                    </p>
+                
+                </div>
+            </div>
+            <div class="row row-cols-1 row-cols-md-3 g-4 mt-4">
+                <!-- Card 1: Leadership Development -->
+                <div class="col">
+                    <div class="card h-100 shadow-sm border-0">
+                        <div class="card-body text-center p-4">
+                            <i class="fas fa-users fa-3x text-primary mb-3"></i>
+                            <h5 class="card-title fw-bold">Leadership Development</h5>
+                            <p class="card-text">
+                                We empower young individuals with the skills and confidence to lead effectively in their communities and beyond.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 2: Equal Opportunities -->
+                <div class="col">
+                    <div class="card h-100 shadow-sm border-0">
+                        <div class="card-body text-center p-4">
+                            <i class="fas fa-handshake fa-3x text-primary mb-3"></i>
+                            <h5 class="card-title fw-bold">Equal Opportunities</h5>
+                            <p class="card-text">
+                                We strive to create a world where every young person has access to the resources and opportunities they need to succeed.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 3: Innovation & Growth -->
+                <div class="col">
+                    <div class="card h-100 shadow-sm border-0">
+                        <div class="card-body text-center p-4">
+                            <i class="fas fa-lightbulb fa-3x text-primary mb-3"></i>
+                            <h5 class="card-title fw-bold">Innovation & Growth</h5>
+                            <p class="card-text">
+                                We foster creativity and innovation, helping young leaders drive sustainable growth and positive change.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Join Section -->
+    <section class="join-section py-5 text-white" style="background-color: #123456;">
+        <div class="container text-center">
+            <h2 class="section-title mb-4">Join Us</h2>
+            <p class="lead">
+                Guided by our motto, <em>"Empowering Leaders, Inspiring Excellence,"</em> we are dedicated to transforming lives and empowering the next generation of change-makers.
+            </p>
+            <a href="joinus.html" class="btn btn-light btn-lg mt-3">Be a Part of Change</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="footer-container"></footer>
+    <script src="loadFooter.js"></script>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- JavaScript for Read More Functionality -->
+<script>
+    document.getElementById("readMoreBtn").addEventListener("click", function() {
+        const hiddenContent = document.getElementById("hiddenContent");
+        const readMoreBtn = document.getElementById("readMoreBtn");
+
+        if (hiddenContent.style.display === "none") {
+            hiddenContent.style.display = "block";
+            readMoreBtn.textContent = "Read Less";
+        } else {
+            hiddenContent.style.display = "none";
+            readMoreBtn.textContent = "Read More";
+        }
+    });
+</script>
+
+</body>
+
+</html>
