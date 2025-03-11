@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Back to School Initiative</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+    </style>
+</head>
+<body>
+    <!-- Hero Section -->
+    <section class="bg-primary text-white text-center py-5">
+        <div class="container">
+            <h1 class="fw-bold">Back to School Initiative</h1>
+            <p class="lead">Making a Difference Together! 🌟</p>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="container my-5">
+        <div class="row">
+            <div class="col-lg-8 mx-auto text-center">  
+                <p>On December 28, 2024, the vibrant community of <strong>Kasarani, Nairobi</strong> came together for a day filled with hope, empowerment, and new beginnings. Importance Leadership organized a transformative event dedicated to supporting refugee orphan school children, along with their parents and guardians. The gathering provided a platform for mentorship, educational support, and community bonding, ensuring that these young learners have the resources and encouragement they need to thrive. Through interactive sessions, motivational talks, and essential donations, the event reinforced the importance of education and resilience, fostering a brighter future for every child in attendance.</p>  
+            </div>
+        </div>
+    </section>
+
+    <!-- Highlights Section -->
+    <section class="container my-5">
+        <h2 class="text-center mb-4"><i class="fas fa-star text-warning"></i> Highlights of the Day</h2>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="card shadow-sm p-3">
+                    <p>We distributed <strong>exercise books, pens, shoe polish, rulers, and crayons</strong> to 63 learners.</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card shadow-sm p-3">
+                    <p>Smiles and gratitude filled the air, showcasing the power of generosity.</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card shadow-sm p-3">
+                    <p>Parents and guardians shared stories of resilience and hope.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Data Visualization Section -->
+    <section class="container my-5">
+        <h2 class="text-center mb-4"><i class="fas fa-chart-bar text-success"></i> Data Insights</h2>
+        <div class="row justify-content-center">
+            <div class="col-md-5">
+                <canvas id="suppliesChart"></canvas>
+            </div>
+            <div class="col-md-5">
+                <canvas id="beneficiariesChart"></canvas>
+            </div>
+        </div>
+    </section>
+
+    <!-- Shoutouts Section -->
+    <section class="container my-5">
+        <h2 class="text-center mb-4"><i class="fas fa-handshake text-info"></i> Special Shoutouts</h2>
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item">Rock Assembly Church for providing the venue.</li>
+            <li class="list-group-item">Ray of Hope for mobilizing widows and orphans.</li>
+            <li class="list-group-item">All members of Importance Leadership for their dedication.</li>
+        </ul>
+    </section>
+
+    <!-- Thank You Section -->
+    <section class="bg-dark text-white text-center py-4">
+        <div class="container">
+            <p>Thanks to our CEO <strong>Fisto Ndayishimiye</strong>, <strong>Jay Nath</strong>, <strong>Pacific Muhumure</strong>, our partners, and everyone who contributed!</p>
+        </div>
+    </section>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Chart.js Script -->
+    <script>
+        const suppliesChart = new Chart(document.getElementById('suppliesChart'), {
+            type: 'pie',
+            data: {
+                labels: ['Exercise Books', 'Pens', 'Shoe Polish', 'Rulers', 'Crayons'],
+                datasets: [{
+                    data: [40, 20, 15, 10, 15],
+                    backgroundColor: ['#3498db', '#2ecc71', '#f1c40f', '#e74c3c', '#9b59b6'],
+                }]
+            },
+            options: { responsive: true }
+        });
+
+        const beneficiariesChart = new Chart(document.getElementById('beneficiariesChart'), {
+            type: 'bar',
+            data: {
+                labels: ['2023', '2024', '2025 (Projected)'],
+                datasets: [{
+                    label: 'Beneficiaries',
+                    data: [50, 63, 80],
+                    backgroundColor: '#3498db',
+                }]
+            },
+            options: { responsive: true }
+        });
+    </script>
+</body>
+</html>
