@@ -1,0 +1,768 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Team - Importance Leadership</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Font Awesome for Icons -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        /* Custom Styles */
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f8f9fa;
+        }
+
+        .team-section {
+            padding: 80px 0;
+        }
+
+        .team-section .card {
+            border: none;
+            border-radius: 15px;
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            background: #fff;
+        }
+
+        .team-section .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
+        }
+
+        .team-section .card-img-top {
+            width: 120px;
+            height: 120px;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 4px solid #007bff;
+            margin: 20px auto 15px;
+        }
+
+        .team-section .card-title {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 5px;
+        }
+
+        .team-section .card-text {
+            font-size: 0.95rem;
+            color: #6c757d;
+            margin-bottom: 15px;
+        }
+
+        .team-section .social-icon a {
+            margin: 0 8px;
+            color: #333;
+            transition: color 0.3s ease;
+        }
+
+        .team-section .social-icon a:hover {
+            color: #007bff;
+        }
+
+        .team-section .read-more-btn {
+            color: #007bff;
+            cursor: pointer;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .team-section .read-more-btn:hover {
+            text-decoration: underline;
+        }
+
+        .team-section .full-text {
+            display: none;
+            margin-top: 10px;
+            font-size: 0.9rem;
+            color: #555;
+        }
+
+        .header-section {
+            background: linear-gradient(135deg, #007bff, #004085);
+            color: #fff;
+            padding: 100px 0;
+            text-align: center;
+        }
+
+        .header-section h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+
+        .header-section p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+
+        .footer-section {
+            background: #343a40;
+            color: #fff;
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        .divider {
+            border-top: 3px solid #123456;
+            width: 50%;
+            margin: 5px auto;
+}
+    </style>
+</head>
+<body>
+
+    <!-- loading the header of the main page -->
+
+    <div id="header-container"></div>
+    <script src="loadHeader.js"></script>
+
+<!-- Header Section -->
+<header class="header-section" style="background-image: url('image/ourTeam.jpg'); background-size: cover;">
+    <div class="container">
+        <!-- Main Heading -->
+        <h1 class="header-title fw-bolder fs-50 color-666">
+            Meet the Leaders and Departments Driving Change and Innovation
+        </h1>
+        
+        <!-- Subheading -->
+        <p class="header-subtitle fs-30 color-888 mt-3">
+            At Importance Leadership, we believe in the power of visionary leadership and collaborative teamwork.
+        </p>
+        
+        <!-- Description -->
+        <p class="header-description fs-18 color-777 mt-4">
+            Our leaders and departments are at the forefront of innovation, working together to create impactful solutions and drive meaningful change. Discover the people and teams shaping the future of our organization.
+        </p>
+    </div>
+</header>
+
+<!-- Team Members Section -->
+<section class="team-section" style="background-image: url('image/ourTeam.jpg'); background-size: cover;">
+    <div class="container">
+        <div class="row g-4">
+            <!-- CEO -->
+            <div class="col-md-4 mb-4">
+                <div class="card text-center border-0 shadow-lg h-100">
+                    <!-- Clickable Profile Image -->
+                    <a href="#" data-bs-toggle="modal" data-bs-target="#fistonModal">
+                        <img src="image/fiston.png" class="card-img-top rounded-circle mx-auto mt-4" alt="Fiston Ndayishimiye" style="width: 120px; height: 120px; object-fit: cover; border: 4px solid #007bff; cursor: pointer;">
+                    </a>
+            
+                    <!-- Card Body -->
+                    <div class="card-body">
+                        <!-- Name and Title -->
+                        <h4 class="card-title fw-bold mb-2">Fiston Ndayishimiye</h4>
+                        <p class="card-text text-muted mb-3">CEO & Founder</p>
+            
+                        <!-- Divider -->
+                        <hr class="divider mx-auto" style="width: 50px; height: 2px; background-color: #007bff; border: none;">
+            
+                        <!-- Description -->
+                        <div class="description mt-3">
+                            <p class="short-text">Fiston provides strategic leadership and drives the organization's mission.</p>
+                            <p class="full-text d-none">As the visionary founder, Fiston ensures financial sustainability, stakeholder engagement, and operational excellence across all departments. His leadership inspires innovation and growth.</p>
+                          
+                        </div>
+            
+                        <!-- Social Icons with Official Brand Colors -->
+                        <div class="social-icon mt-4">
+                            <a href="https://www.facebook.com/" target="_blank" class="mx-2">
+                                <i class="fab fa-facebook-f fa-lg" style="color: #1877F2;"></i>
+                            </a>
+                            <a href="https://www.instagram.com/" target="_blank" class="mx-2">
+                                <i class="fab fa-instagram fa-lg" style="color: #E1306C;"></i>
+                            </a>
+                            <a href="https://www.linkedin.com/" target="_blank" class="mx-2">
+                                <i class="fab fa-linkedin fa-lg" style="color: #0077B5;"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Modal for Fiston Ndayishimiye -->
+            <div class="modal fade" id="fistonModal" tabindex="-1" aria-labelledby="fistonModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered modal-lg">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title fw-bold" id="fistonModalLabel">Fiston Ndayishimiye</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <!-- Enlarged Image -->
+                                    <img src="image/fiston.png" class="img-fluid rounded" alt="Fiston Ndayishimiye">
+                                </div>
+                                <div class="col-md-6">
+                                    <!-- Detailed Description -->
+                                    <p class="lead">CEO & Founder</p>
+                                    <p>Fiston Ndayishimiye is the visionary founder of Importance Leadership. With a passion for empowering youth, he provides strategic leadership and drives the organization's mission to mobilize, inspire, and empower young individuals to become change-makers.</p>
+                                    <p>Under his leadership, Importance Leadership has achieved significant milestones, including financial sustainability, stakeholder engagement, and operational excellence across all departments. Fiston's dedication to innovation and growth continues to inspire the next generation of leaders.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- HR Department -->
+            <div class="col-md-4">
+                <div class="card text-center border-0 shadow-lg h-100">
+                    <!-- Clickable Profile Image -->
+                    <a href="#" data-bs-toggle="modal" data-bs-target="#bonkeyModal">
+                        <img src="image/Bonkey.png" class="card-img-top rounded-circle mx-auto mt-4"
+                             alt="Bonkey Muhumure"
+                             style="width: 120px; height: 120px; object-fit: cover; border: 4px solid #007bff; cursor: pointer;">
+                    </a>
+            
+                    <!-- Card Body -->
+                    <div class="card-body">
+                        <h4 class="card-title fw-bold">Bonkey Muhumure</h4>
+                        <p class="card-text text-muted">HR Manager</p>
+                        <hr class="divider mx-auto" style="width: 50px; height: 2px; background-color: #007bff;">
+            
+                        <!-- Short Description -->
+                        <div class="description mt-3">
+                            <p>Bonkey oversees recruitment, training, and employee relations, ensuring a positive workplace culture.</p>
+                        </div>
+            
+                        <!-- Social Icons with Official Brand Colors -->
+                        <div class="social-icon mt-4">
+                            <a href="https://www.facebook.com/" target="_blank" class="mx-2">
+                                <i class="fab fa-facebook-f fa-lg" style="color: #1877F2;"></i>
+                            </a>
+                            <a href="https://www.instagram.com/" target="_blank" class="mx-2">
+                                <i class="fab fa-instagram fa-lg" style="color: #E1306C;"></i>
+                            </a>
+                            <a href="https://www.linkedin.com/" target="_blank" class="mx-2">
+                                <i class="fab fa-linkedin fa-lg" style="color: #0077B5;"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Modal for Bonkey Muhumure -->
+            <div class="modal fade" id="bonkeyModal" tabindex="-1" aria-labelledby="bonkeyModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered modal-lg">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title fw-bold" id="bonkeyModalLabel">Bonkey Muhumure</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <!-- Enlarged Image -->
+                                    <img src="image/Bonkey.png" class="img-fluid rounded" alt="Bonkey Muhumure">
+                                </div>
+                                <div class="col-md-6">
+                                    <!-- Detailed Description -->
+                                    <p class="lead">HR Manager</p>
+                                    <p>Bonkey ensures compliance with labor laws, handles payroll, and fosters a supportive environment for all employees.</p>
+                                    <p>As a key figure in the organization, Bonkey oversees recruitment, training, and employee relations to maintain a positive workplace culture.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+
+        
+
+            <!-- Finance Department -->
+            <div class="col-md-4">
+                <div class="card text-center border-0 shadow-lg h-100">
+                    <!-- Clickable Profile Image -->
+                    <a href="#" data-bs-toggle="modal" data-bs-target="#fabiolaModal">
+                        <img src="image/fabiola.png" class="card-img-top rounded-circle mx-auto mt-4"
+                             alt="Fabiola Baraka"
+                             style="width: 120px; height: 120px; object-fit: cover; border: 4px solid #28a745; cursor: pointer;">
+                    </a>
+            
+                    <!-- Card Body -->
+                    <div class="card-body">
+                        <h4 class="card-title fw-bold">Fabiola Baraka</h4>
+                        <p class="card-text text-muted">Finance Manager</p>
+                        <hr class="divider mx-auto" style="width: 50px; height: 2px; background-color: #123456;">
+            
+                        <!-- Short Description -->
+                        <div class="description mt-3">
+                            <p>Fabiola manages budgets, financial planning, and ensures proper allocation of resources.</p>
+                        </div>
+            
+                        <!-- Social Icons with Official Brand Colors -->
+                        <div class="social-icon mt-4">
+                            <a href="https://www.facebook.com/" target="_blank" class="mx-2">
+                                <i class="fab fa-facebook-f fa-lg" style="color: #1877F2;"></i>
+                            </a>
+                            <a href="https://www.instagram.com/" target="_blank" class="mx-2">
+                                <i class="fab fa-instagram fa-lg" style="color: #E1306C;"></i>
+                            </a>
+                            <a href="https://www.linkedin.com/" target="_blank" class="mx-2">
+                                <i class="fab fa-linkedin fa-lg" style="color: #0077B5;"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Modal for Fabiola Baraka -->
+            <div class="modal fade" id="fabiolaModal" tabindex="-1" aria-labelledby="fabiolaModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered modal-lg">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title fw-bold" id="fabiolaModalLabel">Fabiola Baraka</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <!-- Enlarged Image -->
+                                    <img src="image/fabiola.png" class="img-fluid rounded" alt="Fabiola Baraka">
+                                </div>
+                                <div class="col-md-6">
+                                    <!-- Detailed Description -->
+                                    <p class="lead">Finance Manager</p>
+                                    <p>With a strong background in finance, Fabiola oversees financial statements, audits, and tax compliance, ensuring the organization's financial health.</p>
+                                    <p>She also manages budgets, financial planning, and ensures proper allocation of resources to support the organization’s strategic goals.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-danger" data-bs-dismiss="modal" >Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+
+            <!-- Secretariat -->
+            <div class="col-md-4">
+                <div class="card text-center border-0 shadow-lg h-100">
+                    <!-- Clickable Profile Image -->
+                    <a href="#" data-bs-toggle="modal" data-bs-target="#uwaseModal">
+                        <img src="image/uwase.png" class="card-img-top rounded-circle mx-auto mt-4"
+                             alt="Uwase Joyeuse"
+                             style="width: 120px; height: 120px; object-fit: cover; border: 4px solid #28a745; cursor: pointer;">
+                    </a>
+            
+                    <!-- Card Body -->
+                    <div class="card-body">
+                        <h4 class="card-title fw-bold">Uwase Joyeuse</h4>
+                        <p class="card-text text-muted">Secretariat</p>
+                        <hr class="divider mx-auto" style="width: 50px; height: 2px; background-color: #28a745;">
+            
+                        <!-- Short Description -->
+                        <div class="description mt-3">
+                            <p>Uwase is responsible for handling official documentation, correspondence, and meeting coordination.</p>
+                        </div>
+            
+                        <!-- Social Icons with Official Brand Colors -->
+                        <div class="social-icon mt-4">
+                            <a href="https://www.facebook.com/" target="_blank" class="mx-2">
+                                <i class="fab fa-facebook-f fa-lg" style="color: #1877F2;"></i>
+                            </a>
+                            <a href="https://www.instagram.com/" target="_blank" class="mx-2">
+                                <i class="fab fa-instagram fa-lg" style="color: #E1306C;"></i>
+                            </a>
+                            <a href="https://www.linkedin.com/" target="_blank" class="mx-2">
+                                <i class="fab fa-linkedin fa-lg" style="color: #0077B5;"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Modal for Uwase Joyeuse -->
+            <div class="modal fade" id="uwaseModal" tabindex="-1" aria-labelledby="uwaseModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered modal-lg">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title fw-bold" id="uwaseModalLabel">Uwase Joyeuse</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <!-- Enlarged Image -->
+                                    <img src="image/uwase.png" class="img-fluid rounded" alt="Uwase Joyeuse">
+                                </div>
+                                <div class="col-md-6">
+                                    <!-- Detailed Description -->
+                                    <p class="lead">Secretariat</p>
+                                    <p>Uwase is responsible for handling official documentation, correspondence, and ensuring seamless communication within the organization.</p>
+                                    <p>She plays a crucial role in scheduling meetings, preparing reports, and maintaining organized records for smooth administrative operations.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+                <!-- Marketing Department -->
+                <div class="col-md-4">
+                    <div class="card text-center border-0 shadow-lg h-100">
+                        <!-- Clickable Profile Image -->
+                        <a href="#" data-bs-toggle="modal" data-bs-target="#mickModal">
+                            <img src="image/fabiol.png" class="card-img-top rounded-circle mx-auto mt-4"
+                                 alt="Mick"
+                                 style="width: 120px; height: 120px; object-fit: cover; border: 4px solid #007bff; cursor: pointer;">
+                        </a>
+                
+                        <!-- Card Body -->
+                        <div class="card-body">
+                            <h4 class="card-title fw-bold">Mick</h4>
+                            <p class="card-text text-muted">Marketing</p>
+                            <hr class="divider mx-auto" style="width: 50px; height: 2px; background-color: #007bff;">
+                
+                            <!-- Short Description -->
+                            <div class="description mt-3">
+                                <p>Mick develops and implements strategic marketing campaigns to enhance brand visibility and outreach.</p>
+                            </div>
+                
+                             <!-- Social Icons with Official Brand Colors -->
+                             <div class="social-icon mt-4">
+                                <a href="https://www.facebook.com/" target="_blank" class="mx-2">
+                                    <i class="fab fa-facebook-f fa-lg" style="color: #1877F2;"></i>
+                                </a>
+                                <a href="https://www.instagram.com/" target="_blank" class="mx-2">
+                                    <i class="fab fa-instagram fa-lg" style="color: #E1306C;"></i>
+                                </a>
+                                <a href="https://www.linkedin.com/" target="_blank" class="mx-2">
+                                    <i class="fab fa-linkedin fa-lg" style="color: #0077B5;"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Modal for Mick -->
+                <div class="modal fade" id="mickModal" tabindex="-1" aria-labelledby="mickModalLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered modal-lg">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title fw-bold" id="mickModalLabel">Mick</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <!-- Enlarged Image -->
+                                        <img src="image/fabiola.png" class="img-fluid rounded" alt="Mick">
+                                    </div>
+                                    <div class="col-md-6">
+                                        <!-- Detailed Description -->
+                                        <p class="lead">Marketing</p>
+                                        <p>Mick is responsible for developing marketing strategies that enhance the organization's public image and outreach efforts.</p>
+                                        <p>With expertise in digital marketing and brand communication, Mick ensures that promotional campaigns align with the organization's mission and engage the right audience effectively.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+
+
+                <!-- Media Department -->
+                <div class="col-md-4">
+                    <div class="card text-center border-0 shadow-lg h-100">
+                        <!-- Clickable Profile Image -->
+                        <a href="#" data-bs-toggle="modal" data-bs-target="#abdallahModal">
+                            <img src="image/fabiola.png" class="card-img-top rounded-circle mx-auto mt-4"
+                                 alt="Abdallah"
+                                 style="width: 120px; height: 120px; object-fit: cover; border: 4px solid #007bff; cursor: pointer;">
+                        </a>
+                
+                        <!-- Card Body -->
+                        <div class="card-body">
+                            <h4 class="card-title fw-bold">Abdallah</h4>
+                            <p class="card-text text-muted">Media Department</p>
+                            <hr class="divider mx-auto" style="width: 50px; height: 2px; background-color: #007bff;">
+                
+                            <!-- Short Description -->
+                            <div class="description mt-3">
+                                <p>Abdallah leads media strategy, ensuring effective storytelling and brand communication.</p>
+                            </div>
+                 <!-- Social Icons with Official Brand Colors -->
+                 <div class="social-icon mt-4">
+                    <a href="https://www.facebook.com/" target="_blank" class="mx-2">
+                        <i class="fab fa-facebook-f fa-lg" style="color: #1877F2;"></i>
+                    </a>
+                    <a href="https://www.instagram.com/" target="_blank" class="mx-2">
+                        <i class="fab fa-instagram fa-lg" style="color: #E1306C;"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/" target="_blank" class="mx-2">
+                        <i class="fab fa-linkedin fa-lg" style="color: #0077B5;"></i>
+                    </a>
+                </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Modal for Abdallah -->
+                <div class="modal fade" id="abdallahModal" tabindex="-1" aria-labelledby="abdallahModalLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered modal-lg">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title fw-bold" id="abdallahModalLabel">Abdallah</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <!-- Enlarged Image -->
+                                        <img src="image/fabiola.png" class="img-fluid rounded" alt="Abdallah">
+                                    </div>
+                                    <div class="col-md-6">
+                                        <!-- Detailed Description -->
+                                        <p class="lead">Media Department</p>
+                                        <p>Abdallah is responsible for creating and managing digital content, ensuring the organization's stories reach the right audience.</p>
+                                        <p>With expertise in media production and social media management, he enhances visibility through high-quality visuals and strategic campaigns.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+
+                <!-- IT Department -->
+                <div class="col-md-4">
+                    <div class="card text-center border-0 shadow-lg h-100">
+                        <!-- Clickable Profile Image -->
+                        <a href="#" data-bs-toggle="modal" data-bs-target="#shemaModal">
+                            <img src="image/shema.png" class="card-img-top rounded-circle mx-auto mt-4"
+                                 alt="Shema Manasseh"
+                                 style="width: 120px; height: 120px; object-fit: cover; border: 4px solid #007bff; cursor: pointer;">
+                        </a>
+                
+                        <!-- Card Body -->
+                        <div class="card-body">
+                            <h4 class="card-title fw-bold">Shema Manasseh</h4>
+                            <p class="card-text text-muted">IT Department</p>
+                            <hr class="divider mx-auto" style="width: 50px; height: 2px; background-color: #007bff;">
+                
+                            <!-- Short Description -->
+                            <div class="description mt-3">
+                                <p>Shema ensures that all IT systems, software, and hardware are up-to-date and optimized for efficiency.</p>
+                            </div>
+                
+                            <!-- Social Icons with Official Brand Colors -->
+                            <div class="social-icon mt-4">
+                                <a href="https://www.facebook.com/" target="_blank" class="mx-2">
+                                    <i class="fab fa-facebook-f fa-lg" style="color: #1877F2;"></i>
+                                </a>
+                                <a href="https://www.instagram.com/" target="_blank" class="mx-2">
+                                    <i class="fab fa-instagram fa-lg" style="color: #E1306C;"></i>
+                                </a>
+                                <a href="https://www.linkedin.com/" target="_blank" class="mx-2">
+                                    <i class="fab fa-linkedin fa-lg" style="color: #0077B5;"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Modal for Shema -->
+                <div class="modal fade" id="shemaModal" tabindex="-1" aria-labelledby="shemaModalLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered modal-lg">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title fw-bold" id="shemaModalLabel">Shema Manasseh</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <!-- Enlarged Image -->
+                                        <img src="image/shema.png" class="img-fluid rounded" alt="Shema Manasseh">
+                                    </div>
+                                    <div class="col-md-6">
+                                        <!-- Detailed Description -->
+                                        <p class="lead">IT Department</p>
+                                        <p>Shema Manasseh leads the organization's IT infrastructure, ensuring seamless operations of all technical systems.</p>
+                                        <p>With a background in software engineering, he develops, manages, and optimizes applications while keeping the organization at the forefront of technological advancements.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!--Liz-->
+
+
+                <!-- IT Department -->
+                <div class="col-md-4">
+                    <div class="card text-center border-0 shadow-lg h-100">
+                        <!-- Clickable Profile Image -->
+                        <a href="#" data-bs-toggle="modal" data-bs-target="#shemaModal">
+                            <img src="image/shema.png" class="card-img-top rounded-circle mx-auto mt-4"
+                                 alt="Shema Manasseh"
+                                 style="width: 120px; height: 120px; object-fit: cover; border: 4px solid #007bff; cursor: pointer;">
+                        </a>
+                
+                        <!-- Card Body -->
+                        <div class="card-body">
+                            <h4 class="card-title fw-bold">Pacific Muhumure</h4>
+                            <p class="card-text text-muted">IT Department</p>
+                            <hr class="divider mx-auto" style="width: 50px; height: 2px; background-color: #007bff;">
+                
+                            <!-- Short Description -->
+                            <div class="description mt-3">
+                                <p>Pacific ensures that all IT systems, software, and hardware are up-to-date and optimized for efficiency.</p>
+                            </div>
+                
+                            <!-- Social Icons with Official Brand Colors -->
+                            <div class="social-icon mt-4">
+                                <a href="https://www.facebook.com/" target="_blank" class="mx-2">
+                                    <i class="fab fa-facebook-f fa-lg" style="color: #1877F2;"></i>
+                                </a>
+                                <a href="https://www.instagram.com/" target="_blank" class="mx-2">
+                                    <i class="fab fa-instagram fa-lg" style="color: #E1306C;"></i>
+                                </a>
+                                <a href="https://www.linkedin.com/" target="_blank" class="mx-2">
+                                    <i class="fab fa-linkedin fa-lg" style="color: #0077B5;"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Modal for Shema -->
+                <div class="modal fade" id="shemaModal" tabindex="-1" aria-labelledby="shemaModalLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered modal-lg">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title fw-bold" id="shemaModalLabel">Pacific Muhumure</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <!-- Enlarged Image -->
+                                        <img src="image/shema.png" class="img-fluid rounded" alt="Shema Manasseh">
+                                    </div>
+                                    <div class="col-md-6">
+                                        <!-- Detailed Description -->
+                                        <p class="lead">IT Department</p>
+                                        <p> Pacific leads the organization's IT infrastructure, ensuring seamless operations of all technical systems.</p>
+                                        <p>With a background in software engineering, he develops, manages, and optimizes applications while keeping the organization at the forefront of technological advancements.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- IT Department -->
+                <div class="col-md-4">
+                    <div class="card text-center border-0 shadow-lg h-100">
+                        <!-- Clickable Profile Image -->
+                        <a href="#" data-bs-toggle="modal" data-bs-target="#shemaModal">
+                            <img src="image/shema.png" class="card-img-top rounded-circle mx-auto mt-4"
+                                 alt="Shema Manasseh"
+                                 style="width: 120px; height: 120px; object-fit: cover; border: 4px solid #007bff; cursor: pointer;">
+                        </a>
+                
+                        <!-- Card Body -->
+                        <div class="card-body">
+                            <h4 class="card-title fw-bold">Liz</h4>
+                            <p class="card-text text-muted">Research Department</p>
+                            <hr class="divider mx-auto" style="width: 50px; height: 2px; background-color: #007bff;">
+                
+                            <!-- Short Description -->
+                            <div class="description mt-3">
+                                <p>Lizz ensures that all IT systems, software, and hardware are up-to-date and optimized for efficiency.</p>
+                            </div>
+                
+                            <!-- Social Icons with Official Brand Colors -->
+                            <div class="social-icon mt-4">
+                                <a href="https://www.facebook.com/" target="_blank" class="mx-2">
+                                    <i class="fab fa-facebook-f fa-lg" style="color: #1877F2;"></i>
+                                </a>
+                                <a href="https://www.instagram.com/" target="_blank" class="mx-2">
+                                    <i class="fab fa-instagram fa-lg" style="color: #E1306C;"></i>
+                                </a>
+                                <a href="https://www.linkedin.com/" target="_blank" class="mx-2">
+                                    <i class="fab fa-linkedin fa-lg" style="color: #0077B5;"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Modal for Shema -->
+                <div class="modal fade" id="shemaModal" tabindex="-1" aria-labelledby="shemaModalLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered modal-lg">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title fw-bold" id="shemaModalLabel">Liz</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <!-- Enlarged Image -->
+                                        <img src="image/shema.png" class="img-fluid rounded" alt="Shema Manasseh">
+                                    </div>
+                                    <div class="col-md-6">
+                                        <!-- Detailed Description -->
+                                        <p class="lead">Research Department</p>
+                                        <p>Liz leads the organization's IT infrastructure, ensuring seamless operations of all technical systems.</p>
+                                        <p>With a background in software engineering, he develops, manages, and optimizes applications while keeping the organization at the forefront of technological advancements.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+        
+</section>
+
+<script src="loadFooter.js"></script>
+
+
+<!-- Bootstrap JavaScript (Include Popper.js) -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+
+</body>
+</html>
