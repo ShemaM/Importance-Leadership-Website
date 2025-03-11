@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Importance Leadership</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Empowering communities through leadership, innovation, and impact. Importance Leadership fosters change by providing mentorship, resources, and opportunities for young individuals to thrive and create a better future.">
+    <meta name="keywords" content="Leadership, Impact, Community, Mentorship, Youth Empowerment">
+    <meta name="author" content="Importance Leadership">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="image/IL02 (1).png">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="index.css">
+    
+
+    <style>
+        /* Custom Styles */
+        body {
+            font-family: 'Poppins', sans-serif;
+            color: #333;
+        }
+
+        /* Navbar Styling */
+        .navbar {
+            background-color: #123456 !important;
+            padding: 1rem 0;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .navbar-brand img {
+            height: 80px; /* Adjust logo size */
+            width: auto;
+            border-radius: 50%;
+            background-color: beige;
+            padding: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .navbar-nav .nav-link {
+            font-size: 1.1rem;
+            font-weight: 500;
+            color: #fff !important;
+            margin: 0 0.5rem;
+            padding: 0.5rem 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .navbar-nav .nav-link:hover {
+            color: #ffcc00 !important; /* Hover color */
+            transform: translateY(-2px);
+        }
+
+        .dropdown-menu {
+            background-color: #123456;
+            border: none;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .dropdown-item {
+            color: #fff !important;
+            font-size: 1rem;
+            padding: 0.5rem 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .dropdown-item:hover {
+            background-color: #ffcc00;
+            color: #123456 !important;
+        }
+
+        /* Responsive Adjustments */
+        @media (max-width: 992px) {
+            .navbar-brand img {
+                height: 60px; /* Smaller logo for mobile */
+            }
+
+            .navbar-nav {
+                margin-top: 1rem;
+            }
+
+            .navbar-nav .nav-link {
+                font-size: 1rem;
+                padding: 0.5rem;
+            }
+
+            .dropdown-menu {
+                background-color: #123456;
+                margin-top: 0.5rem;
+            }
+        }
+
+     
+    </style>
+</head>
+
+<body data-mobile-nav-style="full-screen-menu" data-mobile-nav-bg-color="#2d2c2b" class="custom-cursor">
+   
+    <!-- Header -->
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow-sm">
+            <div class="container-fluid">
+                <!-- Logo -->
+                <a class="navbar-brand logo" href="index.html" aria-label="Home">
+                    <img src="image/IL02 (1).png" alt="Importance Leadership Logo" class="logo-image">
+                </a>
+
+                <!-- Hamburger Menu -->
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Navbar Links -->
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto" id="navbarLinks">
+                        <!-- Who We Are -->
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="whoWeAreDropdown" role="button"
+                                data-bs-toggle="dropdown" aria-expanded="false">
+                                Who We Are
+                            </a>
+                            <ul class="dropdown-menu shadow-sm">
+                                <li><a class="dropdown-item" href="who-we-are.html#about">About</a></li>
+                                <li><a class="dropdown-item" href="who-we-are.html#mission">Mission</a></li>
+                                <li><a class="dropdown-item" href="who-we-are.html#vision">Vision</a></li>
+                                <li><a class="dropdown-item" href="team.html">Team</a></li>
+                            </ul>
+                        </li>
+
+                        <!-- What We Do -->
+                        <li class="nav-item">
+                            <a class="nav-link" href="what-we-do.html">
+                                What We Do
+                            </a>
+                        </li>
+
+                        <!-- Impact -->
+                        <li class="nav-item">
+                            <a class="nav-link" href="impact.html">
+                                Impact
+                            </a>
+                        </li>
+
+                        <!-- Call-to-Action Button -->
+                        <li class="nav-item ms-lg-3">
+                            <a class="nav-link" href="donate.html">DONATE</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- JavaScript -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
+    <!-- Preloader Script -->
+    <script>
+        window.addEventListener('load', function () {
+            const preloader = document.getElementById('preloader');
+            preloader.style.display = 'block';
+            setTimeout(() => {
+                preloader.style.display = 'block';
+            }, 1000);
+        });
+    </script>
+</body>
+
+</html>
