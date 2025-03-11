@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>What We Do</title>
+    <style>
+        /* Global Styles */
+        :root {
+            --primary-color: #3498db;
+            --secondary-color: #2c3e50;
+            --background-light: #ffffff;
+            --text-light: #333333;
+            --background-dark: #1a1a1a;
+            --text-dark: #f4f4f4;
+            --transition-speed: 0.3s;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: var(--text-light);
+        ;
+        }
+
+        body.dark-mode {
+            background-color: var(--background-dark);
+            color: var(--text-dark);
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            color: var(--secondary-color);
+            transition: color var(--transition-speed);
+        }
+
+        body.dark-mode h1,
+        body.dark-mode h2,
+        body.dark-mode h3,
+        body.dark-mode h4,
+        body.dark-mode h5,
+        body.dark-mode h6 {
+            color: var(--text-dark);
+        }
+
+        a {
+            color: var(--primary-color);
+            text-decoration: none;
+            transition: color var(--transition-speed);
+        }
+
+        a:hover {
+            color: #2980b9;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        #header-container {
+            padding: 20px 0;
+            text-align: center;
+            background-color: var(--background-light);
+            transition: background-color var(--transition-speed);
+        }
+
+        body.dark-mode #header-container {
+            background-color: var(--background-dark);
+        }
+
+        /* Section Styling */
+        .impact-section {
+            padding: 4rem 0;
+        }
+
+        .impact-section h2 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+
+        .impact-section p.lead {
+            font-size: 1.25rem;
+            color: var(--text-light);
+            max-width: 800px;
+            margin: 0 auto 2rem;
+            text-align: center;
+            transition: color var(--transition-speed);
+        }
+
+        body.dark-mode .impact-section p.lead {
+            color: var(--text-dark);
+        }
+
+        /* Cards Grid */
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .card {
+            background: var(--background-light);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform var(--transition-speed), box-shadow var(--transition-speed), background var(--transition-speed);
+        }
+
+        body.dark-mode .card {
+            background: #2c3e50;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+        }
+
+        .card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .card-body {
+            padding: 1.5rem;
+        }
+
+        .card-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: var(--secondary-color);
+            transition: color var(--transition-speed);
+        }
+
+        body.dark-mode .card-title {
+            color: var(--text-dark);
+        }
+
+        .card-text {
+            font-size: 1rem;
+            color: var(--text-light);
+            margin-bottom: 1.5rem;
+            transition: color var(--transition-speed);
+        }
+
+        body.dark-mode .card-text {
+            color: var(--text-dark);
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 0.75rem 1.5rem;
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--primary-color);
+            background: transparent;
+            border: 2px solid var(--primary-color);
+            border-radius: 5px;
+            transition: all var(--transition-speed);
+        }
+
+        .btn:hover {
+            background: var(--primary-color);
+            color: var(--background-light);
+        }
+
+        /* Upcoming Projects Section */
+        .upcoming-projects {
+            background: linear-gradient(135deg, #3498db, #2c3e50);
+            color: #ffffff;
+            padding: 4rem 0;
+        }
+
+        .upcoming-projects h2 {
+            color: #ffffff;
+        }
+
+        .upcoming-projects .card {
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .upcoming-projects .card-title {
+            color: #ffffff;
+        }
+
+        .upcoming-projects .card-text {
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        .upcoming-projects .btn {
+            color: #ffffff;
+            border-color: #ffffff;
+        }
+
+        .upcoming-projects .btn:hover {
+            background: #ffffff;
+            color: var(--primary-color);
+        }
+
+        /* Dark Mode Toggle */
+        .dark-mode-toggle {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: var(--primary-color);
+            color: var(--background-light);
+            border: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .dark-mode-toggle:hover {
+            background: #2980b9;
+        }
+    </style>
+</head>
+<body>
+    <!-- Load Header -->
+    <div id="header-container"></div>
+    <script src="loadHeader.js"></script>
+
+    <!-- Page Content Section -->
+    <section class="impact-section background-color: #f8f9fa;" id="impact-section">
+        <div class="container">
+            <!-- Section Heading -->
+            <div class="text-center mb-5">
+                
+
+                <h3 class="text-justify text-dark" style="line-height: 1.6; padding: 20px; border-radius: 10px;">
+                    At Importance Leadership, we are dedicated to empowering youth, fostering leadership, and creating positive change in communities around the world.
+                    We are deeply committed to driving meaningful and sustainable change through innovative programs and transformative initiatives. 
+                    Our work is rooted in empowering communities, nurturing leadership, and promoting holistic well-being. 
+                    From grassroots advocacy to global partnerships, we strive to create opportunities that inspire growth, resilience, and unity. 
+                    Explore our initiatives to discover how we are making a difference—one community, one leader, and one life at a time.
+                </h3>
+            </div>
+        </div>
+    </section>
+
+    
+    <section class="impact-section" id="impact-section">
+        <div class="container">
+           <div class="container my-4">
+                <div class="card shadow-sm border-0">
+                    <div class="card-body p-4">
+                        <h4 class="text-primary fw-bold">Our Transformative Programs</h4>
+                        <p class="text-muted mt-3 color-666">
+                            Our transformative programs are designed to shape the next generation of influential and visionary leaders. 
+                            Guided by our vision of an inclusive world where every youth is empowered and equipped to unlock their full potential, 
+                            <strong>Importance Leadership</strong> is committed to mobilizing, inspiring, and empowering young individuals to become impactful change-makers.
+                        </p>
+                        <h5 class="mt-4 text-dark fw-semibold">Our Program Objectives:</h5>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item border-0">
+                                <i class="bi bi-check-circle-fill text-success"></i> 
+                                To develop essential leadership skills and competencies among the youth.
+                            </li>
+                            <li class="list-group-item border-0">
+                                <i class="bi bi-check-circle-fill text-success"></i> 
+                                To provide mentorship, networking, and hands-on experiences that promote personal and professional growth.
+                            </li>
+                            <li class="list-group-item border-0">
+                                <i class="bi bi-check-circle-fill text-success"></i> 
+                                To inspire and empower young individuals to become agents of positive change in their communities.
+                            </li>
+                            <li class="list-group-item border-0">
+                                <i class="bi bi-check-circle-fill text-success"></i> 
+                                To create a supportive ecosystem that enables youth to access resources and opportunities to discover their aspirations.
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+</section>
+           
+
+<section class="container my-5"> 
+    <h2 class="text-center fw-bolder fs-25" style="color:#ff7b00;">Learn More About Our Programs</h2>
+               
+              <!-- Programs Grid -->
+            <div class="row row-cols-1 row-cols-md-2 g-4">
+
+                    <!-- Program 1: Community Engagement-->
+                <div class="col-md-6">
+                    <div class="card h-100 shadow-sm">
+                        <img src="image/community engagement.jpg" class="card-img-top" alt="Community Engagement Program">
+                        <div class="card-body text-center">
+                            <h5 class="card-title fw-bold">Community Engagement</h5>
+                            <p class="card-text">Back-to-School : empowering refugee orphans</p>
+                            <p>This event provided essential school supplies to over 100 refugee orphans, ensuring a bright academic future.</p>
+                           
+                            <a href="success stories/backToSchool.html" class="btn btn-primary">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+                 <!-- Program 2: Mental Health and Wellness-->
+                <div class="col-md-6">
+                    <div class="card h-100 shadow-sm">
+                        <img src="image/mentalHealth-pro.jpg" class="card-img-top" alt="Leadership Development Program">
+                        <div class="card-body text-center">
+                            <h5 class="card-title fw-bold">Mental Health and Wellness</h5>
+                            <p>
+                                Emotional intelligence is a crucial leadership trait that enhances decision-making, empathy, and conflict resolution.
+                                This webinar provided valuable insights for young leaders to thrive in their personal and professional lives.
+                            </p>
+                            <a href="success stories/backToSchool.html" class="btn btn-primary">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+                
+                
+               
+                <!-- Program 3: Financial Literacy-->
+                <div class="col-md-6">
+                    <div class="card h-100 shadow-sm">
+                        <img src="image/financialLiteracy.jpg" class="card-img-top" alt="Financial Literacy Program">
+                        <div class="card-body text-center">
+                            <h5 class="card-title fw-bold">Financial Literacy</h5>
+                            <p>
+                            Designed to equip young people with the knowledge needed to manage their finances effectively. 
+                                We collaborate with industry experts to train over participants in budgeting, saving, investing, and financial planning.
+                            </p>
+                            <a href="success stories/backToSchool.html" class="btn btn-primary">Learn More</a>
+                        </div>
+                    </div>
+                </div>   
+                <!-- Program 4: Environmental Conservation-->
+                <div class="col-md-6">
+                    <div class="card h-100 shadow-sm">
+                        <img src="image/environmentalHealth.jpg" class="card-img-top" alt="Environmental Health Program">
+                        <div class="card-body text-center">
+                            <h5 class="card-title fw-bold">Environmental Health</h5>
+                            <p>
+                                Our <strong>Environmental Health Workshop</strong> brings  together experts and community members to discuss sustainable living, waste management, and conservation efforts.
+                                Participants gain insights on reducing environmental impact and promoting eco-friendly habits.
+                            </p>
+                            <a href="success stories/backToSchool.html" class="btn btn-primary">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+               
+      
+                
+            
+               <!-- Program 5: Advocacy-->
+                <div class="col-md-6">
+                    <div class="card h-100 shadow-sm">
+                        <img src="image/advocacy-program.jpg" class="card-img-top" alt="Advocacy">
+                        <div class="card-body text-center">
+                            <h5 class="card-title fw-bold">Advocacy</h5>
+                            <p>
+                                Our <strong>Advocacy Workshop</strong> aim at equipping vulnerable youth with the knowledge to navigate legal systems, understand their rights, and gain financial independence.
+                                We partnered with legal experts and financial advisors to provide hands-on training and mentorship, ensuring participants have the tools to advocate for themselves and their communities.
+                                        
+                            </p>
+                            <a href="success stories/backToSchool.html" class="btn btn-primary">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+                  <!-- Program 6: Sports-->
+                  <div class="col-md-6">
+                    <div class="card h-100 shadow-sm">
+                        <img src="image/sportsProgram.jpg" class="card-img-top" alt="Sports Program">
+                        <div class="card-body text-center">
+                            <h5 class="card-title fw-bold">Sports Program</h5>
+                            <p>
+                                Our Sports Programs provide an inclusive space for youth and refugees to develop skills in teamwork, leadership, and resilience. 
+                            
+                                We organize football, woodball, and athletics programs, ensuring participants not only stay physically active but also develop discipline and confidence.
+                            </p>       
+                    
+                            <a href="success stories/backToSchool.html" class="btn btn-primary">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+                
+
+                
+            </div>
+        </div>
+    </section>
+
+    
+    <!-- Upcoming Projects Section -->
+    <section class="upcoming-projects" style="background-image: url('image/coming-soon.jpg'); background-size:auto;">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="fw-bold">Upcoming Projects</h2>
+                <p class="lead">
+                    At Importance Leadership, we are constantly working on meaningful projects to create a positive impact. Explore our upcoming initiatives and discover how you can contribute to our mission of empowering communities and fostering leadership.
+                </p>
+            </div>
+
+            <!-- Project Cards -->
+            <div class="card-grid">
+                <!-- Project 1: Youth Leadership Retreat -->
+                <div class="card">
+                    <div class="card-body">
+                        <h4 class="card-title">Youth Leadership Retreat</h4>
+                        <p class="card-text">
+                            Join us in our youth leadership retreats designed to nurture leadership skills and global initiatives aimed at addressing pressing societal issues.
+                        </p>
+                        <a href="404.html" class="btn btn-primary align-items-center">Learn More</a>
+                    </div>
+                </div>
+
+                <!-- Project 2: Community Service Programs -->
+                <div class="card">
+                    <div class="card-body">
+                        <h4 class="card-title">Community Service Programs</h4>
+                        <p class="card-text">
+                            Engage in our community service programs and empowerment workshops that focus on creating a positive impact in local communities.
+                        </p>
+                        <a href="404.html" class="btn btn-primary align-items-center">Learn More</a>
+                    </div>
+                </div>
+
+                <!-- Project 3: Youth Advocacy Campaigns -->
+                <div class="card">
+                    <div class="card-body">
+                        <h4 class="card-title">Youth Advocacy Campaigns</h4>
+                        <p class="card-text">
+                            Participate in our youth advocacy campaigns and environmental conservation efforts, aimed at raising awareness and fostering stewardship towards the environment.
+                        </p>
+                        <a href="404.html" class="btn btn-primary align-items-center">Learn More</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Load Footer -->
+    <script src="loadFooter.js"></script>
+</body>
+</html>
