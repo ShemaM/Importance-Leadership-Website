@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Donate</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- Custom CSS -->
+    <style>
+        /* Gradient Background */
+    body{
+        background-image: url('image/donate-image.jpg');
+        background-size:contain;
+    }
+
+        /* Hover Effect for Cards */
+        .hover-effect {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .hover-effect:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        /* Custom Button Style */
+        .btn-donate {
+            background: linear-gradient(135deg, #e74c3c, #c0392b);
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 1.1rem;
+            transition: transform 0.3s ease;
+        }
+
+        .btn-donate:hover {
+            transform: scale(1.05);
+        }
+
+        /* Payment Options Modal */
+        .payment-option {
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            padding: 15px;
+            margin: 10px 0;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .payment-option:hover {
+            background-color: #f8f9fa;
+        }
+
+        .payment-option.selected {
+            border-color: #3498db;
+            background-color: #e9f5ff;
+        }
+    </style>
+</head>
+<body>
+    
+      <!-- loading the header of the main page -->
+
+      <div id="header-container" style="background-color:#dd7e0a; width: auto;" ></div>
+      <script src="loadHeader.js"></script>
+
+
+    <!-- Donate Section -->
+    <section class="gradient-bg py-5">
+        <div class="container">
+            <h2 class="text-center display-4 fw-bold mb-4" style="color:#dd0aa4">Support Our Cause</h2>
+            <p class="text-center lead mb-5 text-white">Your generosity has the power to create real change. Every contribution, no matter the size, fuels our mission and helps us make a lasting impact. Choose a donation option below and join us in making a difference today!</p>
+
+            <div class="row g-4">
+                <!-- Donation Option 1 -->
+                <div class="col-md-4">
+                    <div class="card h-100 border-0 shadow-sm hover-effect">
+                        <div class="card-body text-center p-4">
+                            <i class="fas fa-gift fa-3x text-primary mb-4"></i>
+                            <h5 class="card-title fw-bold mb-3">One-Time Donation</h5>
+                            <p class="card-text text-muted">Make a single donation to support our mission.</p>
+                            <button class="btn btn-donate" data-bs-toggle="modal" data-bs-target="#paymentModal">Donate Now</button>
+                        </div>
+                    </div>
+                </div>
+                <!-- Donation Option 2 -->
+                <div class="col-md-4">
+                    <div class="card h-100 border-0 shadow-sm hover-effect">
+                        <div class="card-body text-center p-4">
+                            <i class="fas fa-calendar-alt fa-3x text-primary mb-4"></i>
+                            <h5 class="card-title fw-bold mb-3">Monthly Donation</h5>
+                            <p class="card-text text-muted">Become a monthly supporter and help us sustain our work.</p>
+                            <button class="btn btn-donate" data-bs-toggle="modal" data-bs-target="#paymentModal">Donate Monthly</button>
+                        </div>
+                    </div>
+                </div>
+                <!-- Donation Option 3 -->
+                <div class="col-md-4">
+                    <div class="card h-100 border-0 shadow-sm hover-effect">
+                        <div class="card-body text-center p-4">
+                            <i class="fas fa-hand-holding-heart fa-3x text-primary mb-4"></i>
+                            <h5 class="card-title fw-bold mb-3">Fund a Project</h5>
+                            <p class="card-text text-muted">Contribute directly to a specific project or initiative.</p>
+                            <button class="btn btn-donate" data-bs-toggle="modal" data-bs-target="#paymentModal">Fund a Project</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Additional Donation Info -->
+            <div class="text-center mt-5">
+                <p class="text-warning">Need help? <a href="#" class="text-light">Contact Us</a></p>
+                <p class="text-warning">Your donations are tax-deductible. <a href="#" class="text-light">Learn More</a></p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Payment Options Modal -->
+    <div class="modal fade" id="paymentModal" tabindex="-1" aria-labelledby="paymentModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="paymentModalLabel">Choose a Payment Method</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <!-- Payment Options -->
+                    <div class="payment-option" onclick="selectPayment('credit-card')">
+                        <i class="fas fa-credit-card fa-2x me-3"></i>
+                        <span class="fw-bold">Credit/Debit Card</span>
+                    </div>
+                    <div class="payment-option" onclick="selectPayment('paypal')">
+                        <i class="fab fa-paypal fa-2x me-3"></i>
+                        <span class="fw-bold">PayPal</span>
+                    </div>
+                    <div class="payment-option" onclick="selectPayment('bank-transfer')">
+                        <i class="fas fa-university fa-2x me-3"></i>
+                        <span class="fw-bold">Bank Transfer</span>
+                    </div>
+                    <div class="payment-option" onclick="selectPayment('crypto')">
+                        <i class="fas fa-coins fa-2x me-3"></i>
+                        <span class="fw-bold">Cryptocurrency</span>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary" onclick="processPayment()">Proceed to Payment</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Custom JS -->
+    <script>
+        let selectedPaymentMethod = null;
+
+        // Function to select a payment method
+        function selectPayment(method) {
+            selectedPaymentMethod = method;
+            const paymentOptions = document.querySelectorAll('.payment-option');
+            paymentOptions.forEach(option => option.classList.remove('selected'));
+            event.currentTarget.classList.add('selected');
+        }
+
+        // Function to process payment
+        function processPayment() {
+            if (!selectedPaymentMethod) {
+                alert('Please select a payment method.');
+                return;
+            }
+            alert(`Processing payment via ${selectedPaymentMethod}...`);
+            // Add your payment processing logic here
+        }
+    </script>
+    <!-- Dark Mode Toggle -->
+    <button class="dark-mode-toggle" onclick="toggleDarkMode()">Toggle Dark Mode</button>
+
+    <script>
+        // Dark Mode Toggle Function
+        function toggleDarkMode() {
+            document.body.classList.toggle('dark-mode');
+        }
+    </script>
+    <script src="loadFooter.js"></script>
+</body>
+</html>
