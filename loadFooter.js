@@ -1,86 +1,82 @@
 document.addEventListener("DOMContentLoaded", function () {
+    console.log("loadFooter.js is running!");
+
     const footerHTML = `
-    <footer class="footer text-white py-5" style="background-image: url('image/coming-soon.jpg'); background-size: auto;">
+    <footer class="footer py-5">
         <div class="container">
             <div class="row align-items-center">
-                <!-- Logo & Quick Links -->
                 <div class="col-lg-4 col-md-6 text-center text-lg-start mb-4 mb-lg-0">
                     <a href="index.html">
-                        <img src="image/IL02 (1).png" alt="Importance Leadership" style="width: 200px; height: auto;">
+                        <img src="image/website-logo.png" alt="Importance Leadership" style="width: 200px; height: auto;">
                     </a>
                     <ul class="list-unstyled mt-3">
-                        <li><a href="who-we-are.html" class="text-white">Who We Are</a></li>
-                        <li><a href="what-we-do.html" class="text-white">What We Do</a></li>
-                        <li><a href="impact.html" class="text-white">Impact</a></li>
-                        <li><a href="donate.html" class="text-white fw-bold">Donate</a></li>
+                        <li><a href="who-we-are.html" class="text-dark fw-bold">Who We Are</a></li>
+                        <li><a href="what-we-do.html" class="text-dark fw-bold">What We Do</a></li>
+                        <li><a href="impact.html" class="text-dark fw-bold">Impact</a></li>
+                        <li><a href="donate.html" class="text-dark fw-bold">Donate</a></li>
                     </ul>
                 </div>
 
-                <!-- Contact Info -->
                 <div class="col-lg-4 col-md-6 text-center text-lg-start mb-4 mb-lg-0">
                     <h5 class="fw-bold">Get in Touch</h5>
-                    <p class="text-white text-center" style="font-style:italic;">We'd Love to hear from you! Whether you have questions or feedback or are interested in getting involved with Importance Leadership, our team is here to help
-                </p>
-                    <p><i class="fas fa-phone-alt me-2"></i> <a href="tel:+16037150801" class="text-white">+1 (603) 715-0801</a></p>
-                    <p><i class="fas fa-envelope me-2"></i> <a href="mailto:info@importanceleadership.com" class="text-white">info@importanceleadership.com</a></p>
-                    <div class="social-media mt-3">
-                    <!-- Instagram -->
-                    <a href="https://www.instagram.com/importance_leadership_" class="me-3">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M7.75 2C4.02208 2 1 5.02208 1 8.75V15.25C1 18.9779 4.02208 22 7.75 22H15.25C18.9779 22 22 18.9779 22 15.25V8.75C22 5.02208 18.9779 2 15.25 2H7.75ZM7.75 4H15.25C17.8995 4 20 6.10051 20 8.75V15.25C20 17.8995 17.8995 20 15.25 20H7.75C5.10051 20 3 17.8995 3 15.25V8.75C3 6.10051 5.10051 4 7.75 4ZM17.75 6.5C17.3358 6.5 17 6.83579 17 7.25C17 7.66421 17.3358 8 17.75 8C18.1642 8 18.5 7.66421 18.5 7.25C18.5 6.83579 18.1642 6.5 17.75 6.5ZM12.5 7.5C9.73858 7.5 7.5 9.73858 7.5 12.5C7.5 15.2614 9.73858 17.5 12.5 17.5C15.2614 17.5 17.5 15.2614 17.5 12.5C17.5 9.73858 15.2614 7.5 12.5 7.5ZM12.5 9.5C14.1569 9.5 15.5 10.8431 15.5 12.5C15.5 14.1569 14.1569 15.5 12.5 15.5C10.8431 15.5 9.5 14.1569 9.5 12.5C9.5 10.8431 10.8431 9.5 12.5 9.5Z"/>
-                                
-                            </svg>
-                            
-                    </a>
-                
-                    <!-- Facebook -->
-                    <a href="https://www.facebook.com/share/12J1CX4vLQ8/?mibextid=wwXIfr" class="me-3">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 16.9895 5.65685 21.1282 10.4375 21.8789V14.8906H7.89844V12H10.4375V9.79688C10.4375 7.29051 11.93 5.90625 14.2148 5.90625C15.3028 5.90625 16.4453 6.10156 16.4453 6.10156V8.5625H15.1641C13.9 8.5625 13.5625 9.33418 13.5625 10.1562V12H16.3281L15.8945 14.8906H13.5625V21.8789C18.3431 21.1282 22 16.9895 22 12Z"/>
-                                
-                            </svg>
-                         
-                    </a>
-                
-                    <!-- LinkedIn -->
-                    <a href="https://www.linkedin.com/company/importance-leadership/posts" class="me-3">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M21.5 2H2.5C1.67157 2 1 2.67157 1 3.5V20.5C1 21.3284 1.67157 22 2.5 22H21.5C22.3284 22 23 21.3284 23 20.5V3.5C23 2.67157 22.3284 2 21.5 2ZM7 19H4V9H7V19ZM5.5 7.5C4.67 7.5 4 6.83 4 6C4 5.17 4.67 4.5 5.5 4.5C6.33 4.5 7 5.17 7 6C7 6.83 6.33 7.5 5.5 7.5ZM20 19H17V14C17 12.9 16.1 12 15 12C13.9 12 13 12.9 13 14V19H10V9H13V10.5C13.64 9.5 14.72 9 15.85 9C18.09 9 20 10.91 20 13.15V19Z"/>
-                               
-                            </svg>
-                           
-                    </a>
-                
-                    <!-- YouTube -->
-                    <a href="https://www.youtube.com/@importanceleadership" class="me-3">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M19.5 3H4.5C3.67 3 3 3.67 3 4.5V19.5C3 20.33 3.67 21 4.5 21H19.5C20.33 21 21 20.33 21 19.5V4.5C21 3.67 20.33 3 19.5 3ZM15.5 12.5L10.5 15.5V9.5L15.5 12.5Z"/>
-                               
-                            </svg>
-                           
-                    </a>
-                </div>
-                
+                    <p class="text-dark text-justify">We'd love to hear from you. Reach out to us using the contact information below.</p>
+                    <p><i class="fas fa-phone-alt me-2"></i> <a href="tel:+16037150801" class="text-dark fw-bold">+1 (603) 715-0801</a></p>
+                    <p><i class="fas fa-envelope me-2"></i> <a href="mailto:info@importanceleadership.com" class="text-dark fw-bold">info@importanceleadership.com</a></p>
+
+                   <div class="social-media mt-3">
+    <a href="https://www.instagram.com/importance_leadership_" target="_blank" rel="noopener noreferrer" class="me-3" aria-label="Instagram">
+        <svg width="32" height="32" viewBox="0 0 24 24" fill="#E4405F" xmlns="http://www.w3.org/2000/svg">
+            <path d="M7.75 2h8.5A5.75 5.75 0 0 1 22 7.75v8.5A5.75 5.75 0 0 1 16.25 22h-8.5A5.75 5.75 0 0 1 2 16.25v-8.5A5.75 5.75 0 0 1 7.75 2Zm7.69 1.5h-7.88A4.25 4.25 0 0 0 3.5 7.75v7.88a4.25 4.25 0 0 0 4.25 4.25h7.88a4.25 4.25 0 0 0 4.25-4.25v-7.88a4.25 4.25 0 0 0-4.25-4.25Zm-4.44 4.5a4.44 4.44 0 1 1 0 8.88 4.44 4.44 0 0 1 0-8.88Zm0 1.5a2.94 2.94 0 1 0 0 5.88 2.94 2.94 0 0 0 0-5.88ZM17.25 5a1 1 0 1 1 0 2 1 1 0 0 1 0-2Z"/>
+        </svg>
+    </a>
+
+    <a href="https://www.facebook.com/share/12J1CX4vLQ8/?mibextid=wwXIfr" target="_blank" rel="noopener noreferrer" class="me-3" aria-label="Facebook">
+        <svg width="32" height="32" viewBox="0 0 24 24" fill="#1877F2" xmlns="http://www.w3.org/2000/svg">
+            <path d="M22 12a10 10 0 1 0-11.56 9.87v-6.99h-2.34v-2.88h2.34V9.42c0-2.32 1.38-3.6 3.49-3.6 1 0 2.07.18 2.07.18v2.28h-1.17c-1.15 0-1.5.71-1.5 1.44v1.73h2.55l-.41 2.88h-2.14v6.99A10 10 0 0 0 22 12Z"/>
+        </svg>
+    </a>
+
+    <a href="https://www.linkedin.com/company/importance-leadership/posts" target="_blank" rel="noopener noreferrer" class="me-3" aria-label="LinkedIn">
+        <svg width="32" height="32" viewBox="0 0 24 24" fill="#0A66C2" xmlns="http://www.w3.org/2000/svg">
+            <path d="M4.98 3.5a2.48 2.48 0 1 1 0 4.96 2.48 2.48 0 0 1 0-4.96ZM2 8.88h5.93V21H2V8.88Zm7.08 0h5.67v1.64c.82-1.22 2.29-2.07 3.92-2.07 2.8 0 4.33 1.83 4.33 5.63V21h-5.93v-6.23c0-1.49-.53-2.53-1.87-2.53-1.02 0-1.62.69-1.89 1.36-.1.25-.13.6-.13.94V21h-5.93V8.88Z"/>
+        </svg>
+    </a>
+
+    <a href="https://www.youtube.com/@importanceleadership" target="_blank" rel="noopener noreferrer" class="me-3" aria-label="YouTube">
+        <svg width="32" height="32" viewBox="0 0 24 24" fill="#FF0000" xmlns="http://www.w3.org/2000/svg">
+            <path d="M22 7.57c0-1.37-1.1-2.49-2.45-2.49C16.69 5 12 5 12 5s-4.69 0-7.55.08C3.1 5.08 2 6.2 2 7.57v8.86c0 1.37 1.1 2.49 2.45 2.49C7.31 19 12 19 12 19s4.69 0 7.55-.08c1.35 0 2.45-1.12 2.45-2.49V7.57Zm-12.18 7.29V8.92l5.87 2.97-5.87 2.97Z"/>
+        </svg>
+    </a>
+</div>
+
+
                 </div>
 
-                <!-- Newsletter -->
                 <div class="col-lg-4 col-md-12 text-center text-lg-end">
                     <h5 class="fw-bold">Subscribe to Our Newsletter</h5>
                     <p>Stay updated with our latest news and updates.</p>
                     <form action="email-templates/subscribe-newsletter.php" method="post" class="position-relative w-100 d-flex">
-                        <input type="email" name="email" class="form-control me-2" placeholder="Enter your email" required>
-                        <button class="btn btn-primary"><i class="fas fa-paper-plane"></i></button>
+                        <label for="newsletter-email" class="visually-hidden">Email address</label>
+                        <input type="email" id="newsletter-email" name="email" class="form-control me-2" placeholder="Enter your email" required>
+                        <button class="btn btn-primary" aria-label="Send">
+                            <svg width="12" height="10" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2 .01 7Z"/>
+                            </svg>
+                        </button>
                     </form>
                 </div>
             </div>
 
-            <!-- Footer Bottom -->
-            <div class="text-center mt-4 border-top pt-3">
-                <small>&copy; 2025 Importance Leadership. All Rights Reserved.</small>
+            <div class="text-center mt-4 border-top pt-3 bg-light-gray">
+                <small class="fs-22 text-dark">&copy; <span id="currentYear"></span> Importance Leadership. All Rights Reserved.</small>
             </div>
         </div>
-    </footer>`;
+    </footer>
+    `;
 
-    // Append footer to the page
-    document.body.insertAdjacentHTML("beforeend", footerHTML);
+    if (!document.querySelector("footer")) {
+        document.body.insertAdjacentHTML("beforeend", footerHTML);
+        document.getElementById("currentYear").textContent = new Date().getFullYear();
+        console.log("Footer added successfully, check for icons.");
+    }
 });

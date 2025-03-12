@@ -29,34 +29,58 @@
         body {
             font-family: 'Poppins', sans-serif;
             color: #333;
+
         }
 
-        /* Navbar Styling */
-        .navbar {
-            background-color: #123456 !important;
+         /* Navbar Styling */
+         .navbar {
+            background-color: #ffff !important;
             padding: 1rem 0;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            height: 20lvh;
+            width: 100%;
+            
         }
 
         .navbar-brand img {
-            height: 80px; /* Adjust logo size */
-            width: auto;
-            background-color: beige;
-            padding: 10px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-        }
+            height: auto; /* Maintain aspect ratio */
+            max-height: 180px; /* Set a maximum height for the logo */
+            width: auto; /* Maintain aspect ratio */
+            max-width: 240px; /* Set a maximum width for the logo */
+            border-radius: 10px; /* Slightly rounded corners */
+            padding: 20px; /* Add padding around the logo */
+            transition: all 0.5s ease; /* Smooth transition for animations */
+}
+
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .navbar-brand img {
+        max-height: 80px; /* Smaller logo for tablets */
+        max-width: 150px;
+        padding: 10px; /* Less padding for smaller screens */
+    }
+}
+
+@media (max-width: 576px) {
+    .navbar-brand img {
+        max-height: 60px; /* Smaller logo for mobile */
+        max-width: 120px;
+        padding: 5px; /* Minimal padding for mobile */
+    }
+}
 
         .navbar-nav .nav-link {
             font-size: 1.1rem;
             font-weight: 500;
-            color: #fff !important;
+            color: #123456 !important;
             margin: 0 0.5rem;
             padding: 0.5rem 1rem;
             transition: all 0.3s ease;
         }
 
         .navbar-nav .nav-link:hover {
-            color: #ffcc00 !important; /* Hover color */
+            color: #504a4a !important; /* Hover color */
             transform: translateY(-2px);
         }
 
@@ -99,24 +123,32 @@
             }
         }
 
-        /* Preloader */
-        #preloader {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: #fff;
-            z-index: 9999;
-            display: flex;
-            justify-content: center;
-            align-items: center;
+    
+
+
+
+        /* Responsive Adjustments */
+        @media (max-width: 992px) {
+            .navbar-brand img {
+                height: 60px; /* Smaller logo for mobile */
+            }
+
+            .navbar-nav {
+                margin-top: 1rem;
+            }
+
+            .navbar-nav .nav-link {
+                font-size: 1rem;
+                padding: 0.5rem;
+            }
+
+            .dropdown-menu {
+                background-color: #123456;
+                margin-top: 0.5rem;
+            }
         }
 
-        #preloader img {
-            width: 100px;
-            height: auto;
-        }
+       
     
 
         .hero-section {
@@ -124,10 +156,11 @@
             z-index: 1;
             text-align: justify;
             padding: 100px 0;
-            background-color: #2980b9;
             font-weight: bold;
             font-size: larger;
             align-content: center;
+           background-color: #677b89;
+            
         }
 
 
@@ -145,12 +178,16 @@
             font-size: 3.5rem;
             margin-bottom: 20px;
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            color:#123456;
+
         }
 
         .hero-section p {
             font-size: 1.5rem;
             margin-bottom: 30px;
             text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+            color: #333;
+            text-align: center;
         }
 
         .hero-section .btn {
@@ -216,7 +253,58 @@
         /* Icon Styling */
         .fa-hand-holding-heart {
             color: #e74c3c; /* Red color for the heart icon */
+        }
+
+            /*styles for join us section*/
+          
+        .modal-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            justify-content: center;
+            align-items: center;
+        }
+        .modal-content {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            width: 30%;
+            text-align: center;
+        }
+        .close-btn {
+            position: absolute;
+            right: 20px;
+            font-size: 24px;
+            cursor: pointer;
+        }
+        .box-shadow {
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .button {
+    background-color: #007bff; /* Professional blue */
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    padding: 15px 40px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s ease-in-out, transform 0.2s;
+    width: auto;
+    display: inline-block;
 }
+
+.button:hover {
+    background-color: #0056b3; /* Darker shade on hover */
+    transform: scale(1.05);
+}
+
+
+
     </style>
 
 </head>
@@ -227,7 +315,7 @@
         <nav class="navbar navbar-expand-lg navbar-dark shadow-sm fixed-top">
             <div class="container">
                 <a class="navbar-brand" href="index.html">
-                    <img src="image/IL03 (2).jpg" alt="Importance Leadership Logo" class="logo-image" loading="lazy">
+                    <img src="image/website-logo.png" alt="Importance Leadership Logo" class="logo-image" loading="lazy">
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -283,7 +371,7 @@
                 <!-- Program 1: Leadership Development -->
                 <div class="col">
                     <div class="card h-100 shadow-sm">
-                        <img src="image/pexels-divinetechygirl-1181274.jpg" class="card-img-top" alt="Leadership Development Program">
+                        <img src="image/website-logo.png" class="card-img-top" alt="Leadership Development Program">
                         <div class="card-body text-center">
                             <h5 class="card-title fw-bold">Leadership Development</h5>
                             <p class="card-text">Empowering young leaders with the skills and confidence to drive change in their communities.</p>
@@ -295,7 +383,7 @@
                 <!-- Program 2: Mentorship -->
                 <div class="col">
                     <div class="card h-100 shadow-sm">
-                        <img src="image/pexels-innoh-khumbuza-736696-2877180.jpg" class="card-img-top" alt="Mentorship Program">
+                        <img src="image/website-logo.png" class="card-img-top" alt="Mentorship Program">
                         <div class="card-body text-center">
                             <h5 class="card-title fw-bold">Mentorship Program</h5>
                             <p class="card-text">Connecting young individuals with experienced mentors to guide their personal and professional growth.</p>
@@ -307,7 +395,7 @@
                 <!-- Program 3: Community Impact -->
                 <div class="col">
                     <div class="card h-100 shadow-sm">
-                        <img src="image/pexels-rdne-7414284.jpg" class="card-img-top" alt="Community Impact Program">
+                        <img src="image/website-logo.png" class="card-img-top" alt="Community Impact Program">
                         <div class="card-body text-center">
                             <h5 class="card-title fw-bold">Community Impact</h5>
                             <p class="card-text">Driving meaningful change through community-driven projects and initiatives.</p>
@@ -330,7 +418,7 @@
 
     <!--impact-->
 
-    <section class="py-5 text-white text-center" style="background-color: #ffcc00; align-content: center;" >
+    <section class="py-5 text-white text-center" style="background-image: url('image/donate-image.jpg'); background-size: auto;" >
 
 
         <div class="container">
@@ -394,59 +482,70 @@
  
 
      <!-- start section -->
- <section class="donate-section py-5 text-white text-center" style="background-color: #71b5bb; align-content: center;">
-    <div class="container"> 
-     
-        <div class="row justify-content-center mb-3">
-            <div class="col-lg-7 text-center">
-                <h3 class="text-primary fw-bold" style="margin-bottom: 30px;">Why Join the Community?</h3>
-            </div>
-        </div>
-        <div class="row justify-content-center">
-            <div class="col-xl-10">
-                <div class="row row-cols-1 row-cols-md-2">
-                    <!-- start content box -->
-                    <div class="col mb-4">
-                        <div class="bg-white h-100 ps-50px pe-50px pt-40px pb-40px xs-p-30px box-shadow-quadruple-large border-radius-5px">
-                            <span class="text-primary mb-5px d-inline-block fs-20 fw-600" style="margin-bottom:20px; margin-top:8px;">Amplify Impact</span>
-                            <br>
-                            <p class="text-muted">Unite with people from all walks of life who are committed to making a difference for displaced communities across Africa.</p>
-                        </div>
-                    </div>
-                    <!-- end content box -->
-                    <!-- start content box -->
-                    <div class="col  mb-4">
-                        <div class="bg-white h-100 ps-50px pe-50px pt-40px pb-40px xs-p-30px box-shadow-quadruple-large border-radius-5px">
-                            <span class="text-primary mb-5px d-inline-block fs-20 fw-600" style="margin-bottom:20px; margin-top: 8px;">Champion Inclusion</span>
-                            <br>
-                            <p class="text-muted"> Be part of a collective effort to ensure that the most vulnerable voices are heard, valued, and empowered.</p>
-                        </div>
-                    </div>
-                    <!-- end content box -->
-                    <!-- start content box -->
-                    <div class="col mb-4">
-                        <div class="bg-white h-100 ps-50px pe-50px pt-40px pb-40px xs-p-30px box-shadow-quadruple-large border-radius-5px">
-                            <span class="text-primary mb-5px d-inline-block fs-20 fw-600" style="margin-bottom:20px; margin-top:8px;">Build Connections</span> <br>
-                            <p class="text-muted">Engage with like-minded individuals who share your passion for human rights and your belief in the power of community-led solutions.</p>
-                        </div>
-                    </div>
-                    <!-- end content box -->
-                    <!-- start content box -->
-                    <div class="col mb-4">
-                        <div class="bg-white h-100 ps-50px pe-50px pt-40px pb-40px xs-p-30px box-shadow-quadruple-large border-radius-5px">
-                            <span class="text-primary mb-5px d-inline-block fs-20 fw-600" style="margin-bottom:20px; margin-top:8px;">Take Action</span> <br>
-                            <p class="text-muted">Together, we can challenge the status quo, reimagine humanitarian systems, and create meaningful, lasting change.
-
-                            </p>
-                        </div>
-                    </div>
-                    <!-- end content box -->
+     <section class="donate-section py-5 text-white text-center" style="background-image: url('image/environmentalHealth.jpg'); background-size: cover; background-position: center;">
+        <div class="container"> 
+            <div class="row justify-content-center mb-3">
+                <div class="col-lg-7 text-center">
+                    <h3 class="text-dark fw-bold mb-4">Why Join Us?</h3>
                 </div>
             </div>
+            <div class="row justify-content-center">
+                <div class="col-xl-10">
+                    <div class="row row-cols-1 row-cols-md-2">
+                        <div class="col mb-4">
+                            <div class="bg-white h-100 p-4 box-shadow border-radius-5">
+                                <span class="text-primary fs-5 fw-bold">Amplify Impact</span>
+                                <p class="text-muted mt-2">Unite with people from all walks of life who are committed to making a difference for displaced communities across Africa.</p>
+                            </div>
+                        </div>
+                        <div class="col mb-4">
+                            <div class="bg-white h-100 p-4 box-shadow border-radius-5">
+                                <span class="text-primary fs-5 fw-bold">Champion Inclusion</span>
+                                <p class="text-muted mt-2">Be part of a collective effort to ensure that the most vulnerable voices are heard, valued, and empowered.</p>
+                            </div>
+                        </div>
+                        <div class="col mb-4">
+                            <div class="bg-white h-100 p-4 box-shadow border-radius-5">
+                                <span class="text-primary fs-5 fw-bold">Build Connections</span>
+                                <p class="text-muted mt-2">Engage with like-minded individuals who share your passion for human rights and your belief in the power of community-led solutions.</p>
+                            </div>
+                        </div>
+                        <div class="col mb-4">
+                            <div class="bg-white h-100 p-4 box-shadow border-radius-5">
+                                <span class="text-primary fs-5 fw-bold">Take Action</span>
+                                <p class="text-muted mt-2">Together, we can challenge the status quo, reimagine humanitarian systems, and create meaningful, lasting change.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <button class="button" id="openForm">SIGN UP TO JOIN</button>
+            </div>
         </div>
-       
+    </section>
+    
+    <!-- Sign Up Form (Hidden Initially) -->
+    <div id="signupForm" class="modal-overlay">
+        <div class="modal-content">
+            <span class="close-btn" id="closeForm">&times;</span>
+            <h3 class="text-primary fw-bold">Join Us</h3>
+            <form id="signupFormContent">
+                <div class="mb-3">
+                    <label for="name" class="form-label">Full Name</label>
+                    <input type="text" class="form-control" id="name" required>
+                </div>
+                <div class="mb-3">
+                    <label for="email" class="form-label">Email</label>
+                    <input type="email" class="form-control" id="email" required>
+                </div>
+                <button type="submit" class="btn btn-success">Submit</button>
+            </form>
+        </div>
     </div>
-</section>
+    
+    
+    
+    
+    
 
 
     <!--DONATE SECTION-->
@@ -457,7 +556,7 @@
                     <!-- Icon -->
                     <i class="fas fa-hand-holding-heart fa-3x text-white mb-4"></i>
                     <!-- Heading -->
-                    <h2 class="display-5 fw-bold mb-4">Make a Difference Today</h2>
+                    <h2 class="display-5 fw-bold mb-4">DONATE</h2>
                     <!-- Description -->
                     <p class="lead mb-4">
                         Your support helps us empower communities and create lasting change. Every contribution, big or small, makes a real impact.
@@ -471,10 +570,28 @@
         </div>
     </section>
 
+<!-- Footer -->
+<div id="footer-container"></div>
+<script src="loadFooter.js"></script>
 
-    <!-- JavaScript -->
+
+     
+    <!-- JavaScript for Sign Up Form -->
+    <script>
+        document.getElementById("openForm").addEventListener("click", function() {
+            document.getElementById("signupForm").style.display = "flex";
+        });
+        document.getElementById("closeForm").addEventListener("click", function() {
+            document.getElementById("signupForm").style.display = "none";
+        });
+        document.getElementById("signupFormContent").addEventListener("submit", function(event) {
+            event.preventDefault(); 
+            alert("Thank you for signing up!");
+            document.getElementById("signupForm").style.display = "none";
+        });
+    </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="loadFooter.js"></script>
+
 </body>
 
 </html>
