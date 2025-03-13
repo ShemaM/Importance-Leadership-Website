@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Signup - Importance Leadership</title>
+  <style>
+    /* General Styles */
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+    :root {
+      --primary-color: #6C63FF;
+      --primary-hover: #574fdb;
+      --text-color: #2E2B41;
+      --background-color: #F9F9F9;
+      --input-background: #FFFFFF;
+      --border-color: #E0E0E0;
+      --error-color: #FF4D4D;
+      --footer-background: #2E2B41;
+      --footer-text: #FFFFFF;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: var(--background-color);
+      
+      
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 2rem;
+    
+    }
+
+    /* Signup Section */
+    .signup-section {
+      background: var(--input-background);
+      padding: 2rem;
+      border-radius: 10px;
+      max-width: 500px;
+      margin: 2rem auto;
+      background-color: rgba(0, 0, 0, 0.5);
+      color: white;
+      width: auto;
+      height: fit-content;
+   
+     
+    }
+
+    .signup-section h1 {
+      font-size: 2rem;
+      font-weight: 600;
+      text-align: center;
+      margin-bottom: 1.5rem;
+    }
+
+    .signup-section form {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      background-color: rgba(19, 19, 163, 0.078);
+    }
+
+    .input-group {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+
+    .input-group label {
+      font-weight: 500;
+      font-size: 0.9rem;
+    }
+
+    .input-group input {
+      padding: 0.75rem;
+      border: 1px solid var(--border-color);
+      border-radius: 5px;
+      font-size: 1rem;
+      background: var(--input-background);
+      outline: none;
+    }
+
+    .input-group input:focus {
+      border-color: var(--primary-color);
+    }
+
+    .input-group input::placeholder {
+      color: #999;
+    }
+
+    .signup-section button {
+      background: var(--primary-color);
+      color: var(--footer-text);
+      border: none;
+      padding: 0.75rem;
+      border-radius: 5px;
+      font-size: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    .signup-section button:hover {
+      background: var(--primary-hover);
+    }
+
+    .error-message {
+      color: var(--error-color);
+      font-size: 0.9rem;
+      text-align: center;
+      margin-bottom: 1rem;
+    }
+
+    /* Footer Section */
+    
+    
+
+    
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      .signup-section {
+        padding: 1.5rem;
+      }
+
+      footer .contact-info {
+        flex-direction: column;
+        gap: 0.5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+   <!-- Load Header -->
+   <div id="header-container"></div>
+   <script src="loadHeader.js"></script>
+
+
+  <!-- Signup Section -->
+  <div class="container" style="background-image: url('image/website-logo.png'); background-position: center; background-size: cover; background-repeat: no-repeat;">
+    <div class="signup-section">
+      <h1>Signup</h1>
+      <p class="error-message" id="error-message"></p>
+      <form id="signup-form">
+        <div class="input-group">
+          <label for="firstname">Firstname</label>
+          <input type="text" id="firstname" placeholder="Enter your firstname">
+        </div>
+        <div class="input-group">
+          <label for="email">Email</label>
+          <input type="email" id="email" placeholder="Enter your email">
+        </div>
+        <div class="input-group">
+          <label for="password">Password</label>
+          <input type="password" id="password" placeholder="Enter your password">
+        </div>
+        <div class="input-group">
+          <label for="repeat-password">Repeat Password</label>
+          <input type="password" id="repeat-password" placeholder="Repeat your password">
+        </div>
+        <button type="submit">Signup</button>
+      </form>
+    </div>
+  </div>
+
+  <script src="loadFooter.js" style="background-color: #F9F9F9;"></script>
+  <script>
+    // Form Validation Script
+    const form = document.getElementById('signup-form');
+    const errorMessage = document.getElementById('error-message');
+
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const firstname = document.getElementById('firstname').value;
+      const email = document.getElementById('email').value;
+      const password = document.getElementById('password').value;
+      const repeatPassword = document.getElementById('repeat-password').value;
+
+      let errors = [];
+
+      if (!firstname) errors.push('Firstname is required');
+      if (!email) errors.push('Email is required');
+      if (!password) errors.push('Password is required');
+      if (password.length < 8) errors.push('Password must be at least 8 characters');
+      if (password !== repeatPassword) errors.push('Passwords do not match');
+
+      if (errors.length > 0) {
+        errorMessage.textContent = errors.join('. ');
+      } else {
+        errorMessage.textContent = '';
+        alert('Signup successful!');
+        form.reset();
+      }
+    });
+  </script>
+  </body>
+  </html>
