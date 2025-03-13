@@ -8,13 +8,14 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="image/website-logo.png">
     <!-- Custom CSS -->
     <style>
         /* Gradient Background */
-    body{
-        background-image: url('image/donate-image.jpg');
-        background-size:contain;
-    }
+        .gradient-bg {
+            background: linear-gradient(135deg, #f6d365, #fda085);
+        }
 
         /* Hover Effect for Cards */
         .hover-effect {
@@ -69,7 +70,7 @@
 
 
     <!-- Donate Section -->
-    <section class="gradient-bg py-5">
+    <section class="gradient-bg py-5" style="background-image: url('image/donate-image.jpg'); background-size:cover; background-position: center;">
         <div class="container">
             <h2 class="text-center display-4 fw-bold mb-4" style="color:#dd0aa4">Support Our Cause</h2>
             <p class="text-center lead mb-5 text-white">Your generosity has the power to create real change. Every contribution, no matter the size, fuels our mission and helps us make a lasting impact. Choose a donation option below and join us in making a difference today!</p>
@@ -112,8 +113,7 @@
 
             <!-- Additional Donation Info -->
             <div class="text-center mt-5">
-                <p class="text-warning">Need help? <a href="#" class="text-light">Contact Us</a></p>
-                <p class="text-warning">Your donations are tax-deductible. <a href="#" class="text-light">Learn More</a></p>
+                <p class="text-warning">Need help? <a href="footer.html" class="text-light">Contact Us</a></p>
             </div>
         </div>
     </section>
@@ -177,15 +177,7 @@
             // Add your payment processing logic here
         }
     </script>
-    <!-- Dark Mode Toggle -->
-    <button class="dark-mode-toggle" onclick="toggleDarkMode()">Toggle Dark Mode</button>
 
-    <script>
-        // Dark Mode Toggle Function
-        function toggleDarkMode() {
-            document.body.classList.toggle('dark-mode');
-        }
-    </script>
     <script src="loadFooter.js"></script>
 </body>
 </html>
