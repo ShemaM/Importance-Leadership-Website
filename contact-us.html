@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us - Importance Leadership</title>
+  <style>
+    /* General Styles */
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+    :root {
+      --primary-color: #6C63FF;
+      --primary-hover: #574fdb;
+      --text-color: #2E2B41;
+      --background-color: #F9F9F9;
+      --input-background: #FFFFFF;
+      --border-color: #E0E0E0;
+      --error-color: #FF4D4D;
+      --footer-background: #2E2B41;
+      --footer-text: #FFFFFF;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: var(--background-color);
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 2rem;
+    }
+
+    /* Contact Section */
+    .contact-section {
+      background: var(--input-background);
+      padding: 2rem;
+      border-radius: 10px;
+      max-width: 800px;
+      margin: 2rem auto;
+      background-color: rgba(0, 0, 0, 0.5);
+      color: white;
+      width: auto;
+      height: fit-content;
+      text-align: center;
+    }
+
+    .contact-section h1 {
+      font-size: 2.5rem;
+      font-weight: 600;
+      margin-bottom: 1.5rem;
+    }
+
+    .contact-section p {
+      font-size: 1.1rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .contact-section a {
+      color: var(--primary-color);
+      text-decoration: none;
+    }
+
+    .contact-section a:hover {
+      text-decoration: underline;
+    }
+
+    /* Contact Form */
+    .contact-form {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      margin-top: 2rem;
+    }
+
+    .input-group {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+
+    .input-group label {
+      font-weight: 500;
+      font-size: 0.9rem;
+    }
+
+    .input-group input,
+    .input-group textarea {
+      padding: 0.75rem;
+      border: 1px solid var(--border-color);
+      border-radius: 5px;
+      font-size: 1rem;
+      background: var(--input-background);
+      outline: none;
+      width: 100%;
+    }
+
+    .input-group textarea {
+      resize: vertical;
+      min-height: 150px;
+    }
+
+    .contact-form button {
+      background: var(--primary-color);
+      color: var(--footer-text);
+      border: none;
+      padding: 0.75rem;
+      border-radius: 5px;
+      font-size: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    .contact-form button:hover {
+      background: var(--primary-hover);
+    }
+
+    .error-message {
+      color: var(--error-color);
+      font-size: 0.9rem;
+      text-align: center;
+      margin-bottom: 1rem;
+    }
+
+    /* Newsletter Section */
+    .newsletter-section {
+      margin-top: 3rem;
+    }
+
+    .newsletter-section h2 {
+      font-size: 1.5rem;
+      font-weight: 600;
+      margin-bottom: 1rem;
+    }
+
+    .newsletter-section form {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+    }
+
+    .newsletter-section input {
+      padding: 0.75rem;
+      border: 1px solid var(--border-color);
+      border-radius: 5px;
+      font-size: 1rem;
+      background: var(--input-background);
+      outline: none;
+      width: 70%;
+    }
+
+    .newsletter-section button {
+      background: var(--primary-color);
+      color: var(--footer-text);
+      border: none;
+      padding: 0.75rem 1.5rem;
+      border-radius: 5px;
+      font-size: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    .newsletter-section button:hover {
+      background: var(--primary-hover);
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      .contact-section, .newsletter-section {
+        padding: 1.5rem;
+      }
+
+      .newsletter-section form {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .newsletter-section input {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Load Header -->
+  <div id="header-container"></div>
+  <script src="loadHeader.js"></script>
+
+  <!-- Contact Section -->
+  <div class="container">
+    <div class="contact-section">
+      <h1>Contact Us</h1>
+      <p>We’d love to hear from you. Reach out to us using the contact information below or send us a message directly.</p>
+      <p><strong>Phone:</strong> <a href="tel:+16037150801">+1 (603) 715-0801</a></p>
+      <p><strong>Email:</strong> <a href="mailto:info@importanceleadership.com">info@importanceleadership.com</a></p>
+
+      <!-- Contact Form (Netlify Forms) -->
+      <form id="contact-form" name="contact-form" netlify>
+        <input type="hidden" name="form-name" value="contact-form">
+        <div class="input-group">
+          <label for="name">Name</label>
+          <input type="text" id="name" name="name" placeholder="Enter your name" required>
+        </div>
+        <div class="input-group">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" placeholder="Enter your email" required>
+        </div>
+        <div class="input-group">
+          <label for="message">Message</label>
+          <textarea id="message" name="message" placeholder="Enter your message" required></textarea>
+        </div>
+        <button type="submit">Send Message</button>
+      </form>
+      <p class="error-message" id="contact-error"></p>
+    </div>
+
+    <!-- Newsletter Section (Mailchimp) -->
+    <div class="newsletter-section">
+      <h2>Subscribe to Our Newsletter</h2>
+      <p>Stay updated with our latest news and updates.</p>
+      <form id="newsletter-form" action="https://your-mailchimp-form-action-url" method="POST">
+        <input type="email" id="newsletter-email" name="EMAIL" placeholder="Enter your email" required>
+        <button type="submit">Subscribe</button>
+      </form>
+      <p class="error-message" id="newsletter-error"></p>
+    </div>
+  </div>
+
+  <!-- Load Footer -->
+  <script src="loadFooter.js" style="background-color: #F9F9F9;"></script>
+
+  <script>
+    // Handle contact form submission (Netlify Forms)
+    const contactForm = document.getElementById('contact-form');
+    const contactErrorMessage = document.getElementById('contact-error');
+
+    contactForm.addEventListener('submit', (e) => {
+      e.preventDefault(); // Prevent default form submission
+
+      // Validate input
+      const name = document.getElementById('name').value;
+      const email = document.getElementById('email').value;
+      const message = document.getElementById('message').value;
+
+      if (!name || !email || !message) {
+        contactErrorMessage.textContent = 'Please fill out all fields.';
+        return;
+      }
+
+      // Clear error message
+      contactErrorMessage.textContent = '';
+
+      // Submit the form to Netlify
+      fetch('/', {
+        method: 'POST',
+        body: new URLSearchParams(new FormData(contactForm)),
+        headers: {
+          'Content-Type': 'application/x-www-form-urlencoded',
+        },
+      })
+        .then(() => {
+          alert('Thank you for your message! We will get back to you soon.');
+          contactForm.reset();
+        })
+        .catch(() => {
+          contactErrorMessage.textContent = 'An error occurred. Please try again.';
+        });
+    });
+
+    // Handle newsletter form submission (Mailchimp)
+    const newsletterForm = document.getElementById('newsletter-form');
+    const newsletterErrorMessage = document.getElementById('newsletter-error');
+
+    newsletterForm.addEventListener('submit', (e) => {
+      e.preventDefault(); // Prevent default form submission
+
+      // Get email input
+      const email = document.getElementById('newsletter-email').value;
+
+      // Validate email
+      if (!email || !email.includes('@')) {
+        newsletterErrorMessage.textContent = 'Please enter a valid email address.';
+        return;
+      }
+
+      // Clear error message
+      newsletterErrorMessage.textContent = '';
+
+      // Submit the form to Mailchimp
+      newsletterForm.submit();
+
+      // Show success message
+      alert(`Thank you for subscribing! You will receive updates at ${email}.`);
+
+      // Clear the form
+      newsletterForm.reset();
+    });
+  </script>
+</body>
+</html>
