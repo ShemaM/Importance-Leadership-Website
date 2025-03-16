@@ -21,35 +21,35 @@
     }
 
     body {
-      font-family: 'Poppins', sans-serif;
-      margin: 0;
-      padding: 0;
-      background-color: var(--background-color);
+        font-family: 'Poppins', sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: var(--background-color);
     }
 
     .container {
-      max-width: 1200px;
+        max-width: 1200px;
       margin: 0 auto;
       padding: 2rem;
     }
 
     /* Contact Section */
     .contact-section {
-      background: var(--input-background);
+        background: var(--input-background);
       padding: 2rem;
       border-radius: 10px;
-      max-width: 800px;
+      max-width: 500px;
       margin: 2rem auto;
       background-color: rgba(0, 0, 0, 0.5);
       color: white;
       width: auto;
       height: fit-content;
-      text-align: center;
     }
 
     .contact-section h1 {
-      font-size: 2.5rem;
+        font-size: 2rem;
       font-weight: 600;
+      text-align: center;
       margin-bottom: 1.5rem;
     }
 
@@ -59,8 +59,9 @@
     }
 
     .contact-section a {
-      color: var(--primary-color);
+      color: var(--background-color);
       text-decoration: none;
+      
     }
 
     .contact-section a:hover {
@@ -76,9 +77,13 @@
     }
 
     .input-group {
-      display: flex;
-      flex-direction: column;
-      gap: 0.5rem;
+        padding: 0.75rem;
+      border: 1px solid var(--border-color);
+      border-radius: 5px;
+      font-size: 1rem;
+      background: var(--input-background);
+      outline: none;
+      width: 100%;
     }
 
     .input-group label {
@@ -111,7 +116,7 @@
       font-size: 1rem;
       font-weight: 600;
       cursor: pointer;
-      transition: background 0.3s ease;
+      
     }
 
     .contact-form button:hover {
