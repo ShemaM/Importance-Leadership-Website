@@ -3,7 +3,17 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Join Importance Leadership to make a lasting impact. Sign up to get started on your journey.">
+  <meta name="keywords" content="Leadership, Impact, Community, Mentorship, Youth Empowerment">
+  <meta name="author" content="Importance Leadership">
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="image/website-logo.png">
   <title>Signup - Importance Leadership</title>
+  <!-- Magnific Popup CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.min.css">
+  <!-- Font Awesome for Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <style>
     /* General Styles */
     @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
@@ -16,6 +26,7 @@
       --input-background: #FFFFFF;
       --border-color: #E0E0E0;
       --error-color: #FF4D4D;
+      --success-color: #4CAF50;
       --footer-background: #2E2B41;
       --footer-text: #FFFFFF;
     }
@@ -27,221 +38,387 @@
       background-color: var(--background-color);
     }
 
+    .cover-background {
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+
+    .opacity-extra-medium {
+      opacity: 0.8;
+    }
+
+    .bg-extra-dark-slate-blue {
+      background-color: #1a1a2e;
+    }
+
     .container {
       max-width: 1200px;
       margin: 0 auto;
       padding: 2rem;
     }
 
-    /* Signup Section */
-    .signup-section {
-      background: var(--input-background);
-      padding: 2rem;
-      border-radius: 10px;
-      max-width: 500px;
-      margin: 2rem auto;
-      background-color: rgba(0, 0, 0, 0.5);
-      color: white;
-      width: auto;
-      height: fit-content;
-    }
-
-    .signup-section h1 {
-      font-size: 2rem;
-      font-weight: 600;
+    .text-center {
       text-align: center;
+    }
+
+    .text-white {
+      color: black;
+    }
+
+    .fs-20 {
+      font-size: 20px;
+    }
+
+    .mb-15px {
+      margin-bottom: 15px;
+    }
+
+    .mb-50px {
+      margin-bottom: 50px;
+    }
+
+    .ls-minus-1px {
+      letter-spacing: -1px;
+    }
+
+    .fw-500 {
+      font-weight: 500;
+    }
+
+    .text-shadow-double-large {
+      text-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 12px 24px;
+      font-size: 16px;
+      font-weight: 600;
+      border-radius: 5px;
+      text-decoration: none;
+      transition: background 0.3s ease, transform 0.3s ease;
+    }
+
+    .btn-extra-large {
+      padding: 16px 32px;
+      font-size: 18px;
+    }
+
+    .btn-base-color {
+      background: var(--primary-color);
+      color: white;
+    }
+
+    .btn-box-shadow {
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    .btn-rounded {
+      border-radius: 50px;
+    }
+
+    .btn-hover-animation-switch:hover {
+      background: var(--primary-hover);
+      transform: translateY(-2px);
+    }
+
+    .btn-text {
+      margin-right: 10px;
+      
+    }
+
+    .btn-icon {
+      margin-left: 10px;
+      
+    }
+
+    .mfp-hide {
+      display: none;
+    }
+
+    /* Form Styling */
+    .contact-form-style-01 {
+      background: white;
+      border-radius: 15px;
+      overflow: hidden;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+      max-width: 600px;
+      margin: 0 auto;
+      padding: 2rem;
+    }
+
+    .contact-form-style-01 h3 {
+      font-size: 1.75rem;
+      font-weight: 600;
+      color: var(--text-color);
       margin-bottom: 1.5rem;
+      text-align: center;
     }
 
-    .signup-section form {
-      display: flex;
-      flex-direction: column;
-      gap: 1rem;
-      background-color: rgba(19, 19, 163, 0.078);
-    }
-
-    .input-group {
-      display: flex;
-      flex-direction: column;
-      gap: 0.5rem;
+    .contact-form-style-01 .form-group {
+      margin-bottom: 1.5rem;
       position: relative;
     }
 
-    .input-group label {
-      font-weight: 500;
-      font-size: 0.9rem;
+    .contact-form-style-01 .form-icon {
+      position: absolute;
+      left: 15px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: var(--primary-color);
+      font-size: 1.1rem;
     }
 
-    .input-group input {
-      padding: 0.75rem;
-      border: 1px solid var(--border-color);
-      border-radius: 5px;
-      font-size: 1rem;
-      background: var(--input-background);
-      outline: none;
+    .contact-form-style-01 .form-control {
       width: 100%;
+      padding: 12px 12px 12px 40px;
+      border: 1px solid var(--border-color);
+      border-radius: 8px;
+      font-size: 1rem;
+      outline: none;
+      transition: border-color 0.3s ease, box-shadow 0.3s ease;
     }
 
-    .input-group input:focus {
+    .contact-form-style-01 .form-control:focus {
       border-color: var(--primary-color);
+      box-shadow: 0 0 0 3px rgba(108, 99, 255, 0.1);
     }
 
-    .input-group input::placeholder {
+    .contact-form-style-01 .form-control::placeholder {
       color: #999;
     }
 
-    .password-toggle {
-      position: absolute;
-      right: 10px;
-      top: 50%;
-      transform: translateY(-50%);
-      cursor: pointer;
+    .contact-form-style-01 .form-control.error {
+      border-color: var(--error-color);
+    }
+
+    .contact-form-style-01 .form-control.success {
+      border-color: var(--success-color);
+    }
+
+    .contact-form-style-01 .password-strength {
+      margin-top: 5px;
+      font-size: 0.9rem;
       color: var(--text-color);
     }
 
-    .signup-section button {
+    .contact-form-style-01 .password-strength.weak {
+      color: var(--error-color);
+    }
+
+    .contact-form-style-01 .password-strength.medium {
+      color: orange;
+    }
+
+    .contact-form-style-01 .password-strength.strong {
+      color: var(--success-color);
+    }
+
+    .contact-form-style-01 .submit {
       background: var(--primary-color);
-      color: var(--footer-text);
+      color: white;
       border: none;
-      padding: 0.75rem;
-      border-radius: 5px;
+      padding: 12px 24px;
+      border-radius: 8px;
       font-size: 1rem;
       font-weight: 600;
       cursor: pointer;
-      transition: background 0.3s ease;
+      transition: background 0.3s ease, transform 0.3s ease;
+      width: 100%;
     }
 
-    .signup-section button:hover {
+    .contact-form-style-01 .submit:hover {
       background: var(--primary-hover);
+      transform: translateY(-2px);
     }
 
-    .error-message {
-      color: var(--error-color);
+    .contact-form-style-01 .loading-spinner {
+      display: none;
+      margin-left: 10px;
+      font-size: 1.2rem;
+      color: white;
+    }
+
+    .contact-form-style-01 .form-results {
+      margin-top: 1rem;
       font-size: 0.9rem;
       text-align: center;
-      margin-bottom: 1rem;
     }
 
-    /* Responsive Design */
-    @media (max-width: 768px) {
-      .signup-section {
-        padding: 1.5rem;
-      }
+    .contact-form-style-01 .form-results.success-message {
+      color: var(--success-color);
+    }
+
+    .contact-form-style-01 .form-results.error-message {
+      color: var(--error-color);
     }
   </style>
 </head>
 <body>
 
-  <!-- Load Header -->
+  <!--Load Header-->
   <div id="header-container"></div>
   <script src="loadHeader.js"></script>
 
-  <!-- Signup Section -->
-  <div class="container" style="background-image: url('image/website-logo.png'); background-position: center; background-size: cover; background-repeat: no-repeat;">
-    <div class="signup-section">
-      <h1>Signup</h1>
-      <p class="error-message" id="error-message"></p>
-      <!-- Form with Netlify Forms -->
-      <form id="signup-form" name="signup-form" netlify>
-        <input type="hidden" name="form-name" value="signup-form">
-        <div class="input-group">
-          <label for="firstname">Firstname</label>
-          <input type="text" id="firstname" name="firstname" placeholder="Enter your firstname" required>
+  <!-- Big Section with Background -->
+  <section class="big-section cover-background" style="height: 80lvh; align-content: center; background-image: url('image/landing.jpg'); background-size: cover; background-position: center;">
+    <div class="opacity-extra-medium bg-extra-dark-slate-blue"></div>
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-12 col-xl-8 text-center z-index-1">
+          <span class="text-primary fs-20 mb-15px d-inline-block">Join Us Today</span>
+          <h2 class="text-dark mx-auto mb-50px ls-minus-1px fw-500 text-shadow-sm">Start your journey with Importance Leadership. Sign up now!</h2>
+          <a href="#signup-form" class="btn btn-extra-large btn-base-color btn-box-shadow text-transform-none btn-rounded popup-with-form btn-hover-animation-switch">
+            <span>
+              <span class="btn-text " style="color:blue; font-weight: bold;">Sign Up</span>
+              <span class="btn-icon"><i class="fas fa-arrow-right"></i></span>
+            </span>
+          </a>
+          <!-- Start Signup Popup -->
+          <div id="signup-form" class="container p-0 contact-form-style-01 position-relative text-center mfp-hide">
+            <div class="row g-0">
+              <div class="col-lg-12">
+                <div class="p-15 lg-p-10 bg-white">
+                  <span class="fs-18 mb-10px">Create Your Account</span> <br>
+                  <h3 class="d-inline-block fw-100 text-primary mb-10 ls-minus-1px">Sign Up to Get Started</h3>
+                  <!-- Form with Netlify and PHP Backend -->
+                  <form id="signup-form-inner" name="signup-form" netlify>
+                    <input type="hidden" name="form-name" value="signup-form">
+                    <div class="position-relative form-group mb-10px">
+                      <span class="form-icon"><i class="fas fa-user"></i></span>
+                      <input type="text" id="firstname" name="firstname" class="form-control required" placeholder="Enter your firstname*" required aria-label="First Name">
+                      <div class="form-results" id="firstname-error"></div>
+                    </div>
+                    <div class="position-relative form-group mb-10px">
+                      <span class="form-icon"><i class="fas fa-envelope"></i></span>
+                      <input type="email" id="email" name="email" class="form-control required" placeholder="Enter your email*" required aria-label="Email">
+                      <div class="form-results" id="email-error"></div>
+                    </div>
+                    <div class="position-relative form-group mb-10px">
+                      <span class="form-icon"><i class="fas fa-lock"></i></span>
+                      <input type="password" id="password" name="password" class="form-control required" placeholder="Enter your password*" required aria-label="Password">
+                      <div class="password-strength" id="password-strength"></div>
+                      <div class="form-results" id="password-error"></div>
+                    </div>
+                    <div class="position-relative form-group mb-10px">
+                      <span class="form-icon"><i class="fas fa-lock"></i></span>
+                      <input type="password" id="repeat-password" name="repeat_password" class="form-control required" placeholder="Repeat your password*" required aria-label="Repeat Password">
+                      <div class="form-results" id="repeat-password-error"></div>
+                    </div>
+                    <button class="btn btn-medium btn-dark-gray btn-box-shadow btn-round-edge w-100 mt-20px submit" type="submit">
+                      <span class="btn-text">Sign Up</span>
+                      <span class="loading-spinner"><i class="fas fa-spinner fa-spin"></i></span>
+                    </button>
+                    <div class="form-results mt-10px" id="form-results"></div>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- End Signup Popup -->
         </div>
-        <div class="input-group">
-          <label for="email">Email</label>
-          <input type="email" id="email" name="email" placeholder="Enter your email" required>
-        </div>
-        <div class="input-group">
-          <label for="password">Password</label>
-          <input type="password" id="password" name="password" placeholder="Enter your password" required>
-          <span class="password-toggle" onclick="togglePassword('password')">👁️</span>
-        </div>
-        <div class="input-group">
-          <label for="repeat-password">Repeat Password</label>
-          <input type="password" id="repeat-password" name="repeat_password" placeholder="Repeat your password" required>
-          <span class="password-toggle" onclick="togglePassword('repeat-password')">👁️</span>
-        </div>
-        <button type="submit">Signup</button>
-      </form>
+      </div>
     </div>
-  </div>
+  </section>
 
-  <!-- Load Footer -->
-  <script src="loadFooter.js" style="background-color: #F9F9F9;"></script>
-
+  <!-- Load jQuery and Magnific Popup JS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js"></script>
   <script>
-    // Toggle password visibility
-    function togglePassword(inputId) {
-      const input = document.getElementById(inputId);
-      if (input.type === 'password') {
-        input.type = 'text';
-      } else {
-        input.type = 'password';
-      }
-    }
+    $(document).ready(function () {
+      // Initialize Magnific Popup
+      $('.popup-with-form').magnificPopup({
+        type: 'inline',
+        preloader: false,
+        focus: '#firstname',
+        callbacks: {
+          beforeOpen: function () {
+            // Reset form on open
+            $('#signup-form-inner')[0].reset();
+            $('.form-results').text('');
+            $('.form-control').removeClass('error success');
+          }
+        }
+      });
 
-    // Form Submission Script
-    const form = document.getElementById('signup-form');
-    const errorMessage = document.getElementById('error-message');
+      // Password Strength Indicator
+      $('#password').on('input', function () {
+        const password = $(this).val();
+        const strength = checkPasswordStrength(password);
+        $('#password-strength').text(strength.message).removeClass('weak medium strong').addClass(strength.class);
+      });
 
-    form.addEventListener('submit', (e) => {
-      e.preventDefault(); // Prevent default form submission
+      // Form Submission
+      $('#signup-form-inner').on('submit', function (e) {
+        e.preventDefault();
+        const form = $(this);
+        const submitButton = form.find('.submit');
+        const loadingSpinner = form.find('.loading-spinner');
+        const formResults = $('#form-results');
 
-      // Get form data
-      const formData = new FormData(form);
+        // Show loading spinner
+        submitButton.prop('disabled', true);
+        loadingSpinner.show();
 
-      // Validate input
-      const firstname = formData.get('firstname');
-      const email = formData.get('email');
-      const password = formData.get('password');
-      const repeatPassword = formData.get('repeat_password');
-
-      let errors = [];
-
-      if (!firstname) errors.push('Firstname is required');
-      if (!email) errors.push('Email is required');
-      if (!password) errors.push('Password is required');
-      if (password.length < 8) errors.push('Password must be at least 8 characters');
-      if (password !== repeatPassword) errors.push('Passwords do not match');
-
-      // Display errors if any
-      if (errors.length > 0) {
-        errorMessage.textContent = errors.join('. ');
-        return; // Stop further execution
-      }
-
-      // Clear error message
-      errorMessage.textContent = '';
-
-      // Submit the form to Netlify
-      fetch('/', {
-        method: 'POST',
-        body: new URLSearchParams(new FormData(form)),
-        headers: {
-          'Content-Type': 'application/x-www-form-urlencoded',
-        },
-      })
-        .then(() => {
-          // Hide the form
-          form.style.display = 'none';
-
-          // Show a success message
-          const successMessage = document.createElement('p');
-          successMessage.textContent = 'Signup successful! Redirecting...';
-          successMessage.style.color = 'green';
-          successMessage.style.textAlign = 'center';
-          form.parentElement.appendChild(successMessage);
-
-          // Redirect to success.html in a new tab
-          setTimeout(() => {
-            window.open('success.html', '_blank');
-          }, 2000);
+        // Submit to Netlify first
+        const formData = new FormData(form[0]);
+        fetch('/', {
+          method: 'POST',
+          body: new URLSearchParams(formData),
+          headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
         })
-        .catch(() => {
-          errorMessage.textContent = 'An error occurred. Please try again.';
-        });
+          .then(() => {
+            // After Netlify submission, submit to PHP backend
+            return fetch('join-us.php', {
+              method: 'POST',
+              body: formData,
+            });
+          })
+          .then((response) => response.json())
+          .then((data) => {
+            if (data.success) {
+              // Hide the form
+              form.hide();
+
+              // Show a success message
+              formResults.text(data.message).addClass('success-message');
+
+              // Redirect to success.html in a new tab
+              setTimeout(() => {
+                window.open('success.html', '_blank');
+              }, 2000);
+            } else {
+              // Show error messages
+              formResults.text(data.errors.join('. ')).addClass('error-message');
+            }
+          })
+          .catch((error) => {
+            console.error('Error:', error);
+            formResults.text('An error occurred. Please try again.').addClass('error-message');
+          })
+          .finally(() => {
+            // Re-enable the submit button and hide the loading spinner
+            submitButton.prop('disabled', false);
+            loadingSpinner.hide();
+          });
+      });
+
+      // Password Strength Checker
+      function checkPasswordStrength(password) {
+        const strength = {
+          0: { message: 'Weak', class: 'weak' },
+          1: { message: 'Medium', class: 'medium' },
+          2: { message: 'Strong', class: 'strong' }
+        };
+        let score = 0;
+        if (password.length >= 8) score++;
+        if (/[A-Z]/.test(password)) score++;
+        if (/[0-9]/.test(password)) score++;
+        return strength[Math.min(score, 2)];
+      }
     });
   </script>
+  <script src="loadFooter.js"></script>
 </body>
 </html>
