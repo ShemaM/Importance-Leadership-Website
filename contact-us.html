@@ -48,7 +48,7 @@
         }
 
         .contact-form-style-01 .form-control:focus {
-            border-color: #218838;
+            border-color: #215f88;
             box-shadow: 0px 0px 10px rgba(33, 136, 56, 0.3);
         }
 
@@ -77,7 +77,7 @@
 
         /* Submit Button */
         .contact-form-style-01 .submit {
-            background-color: #218838;
+            background-color: #216788;
             color: white;
             font-size: 16px;
             border: none;
@@ -117,7 +117,7 @@
         }
 
         .big-section .btn-primary {
-            background-color: #218838;
+            background-color: #215f88;
             border: none;
             padding: 12px 30px;
             font-size: 16px;
@@ -126,7 +126,7 @@
         }
 
         .big-section .btn-primary:hover {
-            background-color: #1a662e;
+            background-color: #1a4866;
         }
         .mfp-fade.mfp-bg {
     opacity: 0;
@@ -147,6 +147,19 @@
     opacity: 1;
     transform: scale(1);
 }
+.form-results {
+    margin-top: 10px;
+    padding: 10px;
+    border-radius: 5px;
+}
+.success-message {
+    color: green;
+    background-color: #e6ffe6;
+}
+.error-message {
+    color: red;
+    background-color: #ffe6e6;
+}
     </style>
 </head>
 <body>
@@ -156,14 +169,14 @@
 <script src="loadHeader.js"></script>
 
 <!-- Main Section -->
-<section class="big-section">
+<section class="big-section" style="background-image: url('image/landing.jpg'); background-size: cover; background-position: center;">
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-12 col-xl-8 text-center">
                 <span class="text-primary fs-20 mb-15px d-inline-block">Contact Us</span>
-                <h2 class="text-dark mx-auto mb-50px ls-minus-1px fw-500">We would love to hear about your project.</h2>
+                <h1 class="text-dark mx-auto mb-50px ls-minus-1px fw-bold">We would love to hear from you.</h1>
                 <a href="#contact-form" class="btn btn-primary btn-lg popup-with-form">
-                    <span class="btn-text">Get in Touch</span>
+                    <span class="btn-text">Talk to Us</span>
                 </a>
             </div>
         </div>
@@ -192,6 +205,7 @@
         </div>
         <button class="btn submit" type="submit">Send Message</button>
         <div class="loading-spinner" style="display: none;">Loading...</div> <!-- Loading spinner -->
+        <div class="form-results"></div>
     </form>
 </div>
 
@@ -210,14 +224,11 @@
             callbacks: {
                 beforeOpen: function () {
                     // Reset form and clear messages when the popup opens
-                    $('#signup-form-inner')[0].reset();
-                    $('.form-results').text('').removeClass('success-message error-message');
-                    $('.form-control').removeClass('error success');
+                    resetForm();
                 },
                 close: function () {
                     // Reset the form when the popup closes
-                    $('#signup-form-inner')[0].reset();
-                    $('.form-results').text('').removeClass('success-message error-message');
+                    resetForm();
                 }
             }
         });
@@ -230,37 +241,48 @@
             const loadingSpinner = form.find('.loading-spinner');
             const formResults = $('.form-results');
 
-            // Show loading spinner
-        submitButton.prop('disabled', true);
-        loadingSpinner.show();
-  
-
             // Validate form fields before submission
             if (!validateContactForm(form)) {
-                formResults.text('Please fill out all required fields.').addClass('error-message');
+                formResults.text('Please fill out all required fields correctly.').addClass('error-message');
                 return;
             }
 
-            // Show loading spinner and disable submit button
+            // Disable submit button and show loading spinner
             submitButton.prop('disabled', true);
             loadingSpinner.show();
 
-            // Submit to Netlify
+            // Submit form data to Netlify
+            submitForm(form, submitButton, loadingSpinner, formResults);
+        });
+
+        // Function to reset the form and clear messages
+        function resetForm() {
+            $('#signup-form-inner')[0].reset();
+            $('.form-results').text('').removeClass('success-message error-message');
+            $('.form-control').removeClass('error success');
+        }
+
+        // Function to submit the form data
+        function submitForm(form, submitButton, loadingSpinner, formResults) {
             const formData = new FormData(form[0]);
+
             fetch('/', {
                 method: 'POST',
                 body: new URLSearchParams(formData),
                 headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
             })
-                .then(() => {
-                    // Hide the form and reset it
+                .then((response) => {
+                    if (!response.ok) {
+                        throw new Error('Network response was not ok');
+                    }
+                    // Hide the form and show success message
                     form.hide();
-                    form[0].reset();
+                    formResults.text('Thank you! Your submission has been received.').addClass('success-message');
 
                     // Close the popup after a short delay
                     setTimeout(() => {
                         $.magnificPopup.close(); // Close the popup
-                    }, 1000);
+                    }, 2000); // 2-second delay before closing
                 })
                 .catch((error) => {
                     console.error('Error:', error);
@@ -271,7 +293,7 @@
                     submitButton.prop('disabled', false);
                     loadingSpinner.hide();
                 });
-        });
+        }
 
         // Contact Form Validation
         function validateContactForm(form) {
@@ -279,11 +301,12 @@
 
             // Check required fields
             form.find('.required').each(function () {
-                if ($(this).val().trim() === '') {
-                    $(this).addClass('error');
+                const field = $(this);
+                if (field.val().trim() === '') {
+                    field.addClass('error');
                     isValid = false;
                 } else {
-                    $(this).removeClass('error');
+                    field.removeClass('error');
                 }
             });
 
@@ -305,7 +328,6 @@
             return emailRegex.test(email);
         }
     });
-
 </script>
 
 <!-- Footer -->
