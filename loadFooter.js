@@ -55,7 +55,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 <div class="col-lg-4 col-md-12 text-center text-lg-end">
                     <h5 class="fw-bold">Subscribe to Our Newsletter</h5>
                     <p>Stay updated with our latest news and updates.</p>
-                    <form action="email-templates/subscribe-newsletter.php" method="post" class="position-relative w-100 d-flex">
+                    <form action="subscribe.php" method="post" class="position-relative w-100 d-flex">
                         <label for="newsletter-email" class="visually-hidden">Email address</label>
                         <input type="email" id="newsletter-email" name="email" class="form-control me-2" placeholder="Enter your email" required>
                         <button class="btn btn-primary" aria-label="Send">
