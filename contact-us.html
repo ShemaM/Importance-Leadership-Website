@@ -128,38 +128,42 @@
         .big-section .btn-primary:hover {
             background-color: #1a4866;
         }
+
         .mfp-fade.mfp-bg {
-    opacity: 0;
-    transition: opacity 0.3s ease;
-}
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
 
-.mfp-fade.mfp-bg.mfp-ready {
-    opacity: 0.8;
-}
+        .mfp-fade.mfp-bg.mfp-ready {
+            opacity: 0.8;
+        }
 
-.mfp-fade.mfp-wrap .mfp-content {
-    opacity: 0;
-    transform: scale(0.9);
-    transition: all 0.3s ease;
-}
+        .mfp-fade.mfp-wrap .mfp-content {
+            opacity: 0;
+            transform: scale(0.9);
+            transition: all 0.3s ease;
+        }
 
-.mfp-fade.mfp-wrap.mfp-ready .mfp-content {
-    opacity: 1;
-    transform: scale(1);
-}
-.form-results {
-    margin-top: 10px;
-    padding: 10px;
-    border-radius: 5px;
-}
-.success-message {
-    color: green;
-    background-color: #e6ffe6;
-}
-.error-message {
-    color: red;
-    background-color: #ffe6e6;
-}
+        .mfp-fade.mfp-wrap.mfp-ready .mfp-content {
+            opacity: 1;
+            transform: scale(1);
+        }
+
+        .form-results {
+            margin-top: 10px;
+            padding: 10px;
+            border-radius: 5px;
+        }
+
+        .success-message {
+            color: green;
+            background-color: #e6ffe6;
+        }
+
+        .error-message {
+            color: red;
+            background-color: #ffe6e6;
+        }
     </style>
 </head>
 <body>
@@ -186,7 +190,7 @@
 <!-- Contact Form Popup -->
 <div id="contact-form" class="mfp-hide contact-form-style-01">
     <h3>How can we help you?</h3>
-    <form id="signup-form-inner" name="signup-form" netlify>
+    <form id="signup-form-inner" name="signup-form" action="contact.php" method="POST">
         <div class="form-group">
             <span class="form-icon"><i class="fas fa-user"></i></span>
             <input type="text" name="name" class="form-control required" placeholder="Enter your name*" />
@@ -209,7 +213,7 @@
     </form>
 </div>
 
-<!--jQuery-->
+<!-- jQuery -->
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <!-- Magnific Popup JS -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js"></script>
@@ -251,7 +255,7 @@
             submitButton.prop('disabled', true);
             loadingSpinner.show();
 
-            // Submit form data to Netlify
+            // Submit form data to the database via join-us.php
             submitForm(form, submitButton, loadingSpinner, formResults);
         });
 
@@ -262,37 +266,44 @@
             $('.form-control').removeClass('error success');
         }
 
-        // Function to submit the form data
+        // Function to submit the form data to the database
         function submitForm(form, submitButton, loadingSpinner, formResults) {
             const formData = new FormData(form[0]);
 
-            fetch('/', {
-                method: 'POST',
-                body: new URLSearchParams(formData),
-                headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-            })
-                .then((response) => {
-                    if (!response.ok) {
-                        throw new Error('Network response was not ok');
-                    }
-                    // Hide the form and show success message
-                    form.hide();
-                    formResults.text('Thank you! Your submission has been received.').addClass('success-message');
+            // Send form data to join-us.php using AJAX
+            $.ajax({
+                url: 'contact.php', // URL to your PHP script
+                type: 'POST',
+                data: formData,
+                processData: false,
+                contentType: false,
+                success: function (response) {
+                    // Handle the response from the server
+                    if (response.success) {
+                        // Hide the form and show success message
+                        form.hide();
+                        formResults.text('Thank you! Your submission has been received.').addClass('success-message');
 
-                    // Close the popup after a short delay
-                    setTimeout(() => {
-                        $.magnificPopup.close(); // Close the popup
-                    }, 2000); // 2-second delay before closing
-                })
-                .catch((error) => {
+                        // Close the popup after a short delay
+                        setTimeout(() => {
+                            $.magnificPopup.close(); // Close the popup
+                        }, 2000); // 2-second delay before closing
+                    } else {
+                        // Show error message if something went wrong
+                        formResults.text(response.message || 'An error occurred. Please try again.').addClass('error-message');
+                    }
+                },
+                error: function (xhr, status, error) {
+                    // Handle AJAX errors
                     console.error('Error:', error);
                     formResults.text('An error occurred. Please try again.').addClass('error-message');
-                })
-                .finally(() => {
+                },
+                complete: function () {
                     // Re-enable the submit button and hide the loading spinner
                     submitButton.prop('disabled', false);
                     loadingSpinner.hide();
-                });
+                }
+            });
         }
 
         // Contact Form Validation
