@@ -20,18 +20,30 @@
     
     /* Hero Section */
     .hero-section {
-            padding: 100px 0;
-            text-align: center;
-            width: 100%;
-            max-height: fit-content;
-            align-content: center;
-            background-image: url('image/mentorship.jpg');
-            background-size: auto;
-            background-position: center;
-            background-attachment: fixed;
-            color: #ffffff;
+    position: relative;
+    padding: 100px 0;
+    text-align: center;
+    width: 100%;
+    max-height: fit-content;
+    align-content: center;
+    color: #ffffff;
+    overflow: hidden; /* Prevents blur overflow */
+}
 
-        }
+.hero-section::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('image/mentorship.jpg');
+    background-size: cover;
+    background-position: center;
+    filter: blur(4px); /* Blurs the image */
+    z-index: -1; /* Sends it behind the text */
+}
+
 
         
         .hero-section p {
