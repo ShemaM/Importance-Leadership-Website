@@ -1,11 +1,13 @@
 <?php
-// Start session and check authentication
 session_start();
-// Redirect to login if not authenticated
-if (!isset($_SESSION['admin_logged_in']) || $_SESSION['admin_logged_in'] !== true) {
-    header('Location: login.php');
-    exit;
+error_reporting(E_ALL); // Show errors
+ini_set('display_errors', 1);
+
+if (!isset($_SESSION['admin_logged_in'])) {
+    header("Location: login.php");
+    exit();
 }
+
 // Hardcoded admin credentials (change these to your own)
 define('ADMIN_USERNAME', 'admin');
 define('ADMIN_PASSWORD_HASH', '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi'); // hash of 'password'
@@ -73,7 +75,8 @@ if (isset($_GET['logout'])) {
 }
 
 .sidebar-brand img {
-    height: 40px;
+    height: 80px;
+    width:auto;
 }
 
 /* Main Content */
