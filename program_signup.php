@@ -1,321 +1,204 @@
 <?php
-// Start secure session
-session_start([
-    'cookie_secure' => true,
-    'cookie_httponly' => true,
-    'cookie_samesite' => 'Strict',
-    'use_strict_mode' => true
-]);
+// Database connection
+$host = "localhost";
+$username = "root";
+$password = "secret";
+$database = "importanceleadership";
 
-// Initialize variables
-$success = '';
-$errors = [];
-$formData = [];
-$databaseError = '';
-$pdo = null;
+$conn = new mysqli($host, $username, $password, $database);
 
-// Configure valid options
+// Check connection
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
+
+// Define valid programs
 $validPrograms = [
     'Leadership Development' => 'Build essential leadership skills',
     'Mentorship Program' => 'Get guidance from experienced mentors',
     'Community Impact' => 'Drive change in your community'
 ];
 
-$validGenders = [
-    'Male' => 'Male',
-    'Female' => 'Female',
-    'Other' => 'Other',
-    'Prefer not to say' => 'Prefer not to say'
-];
+// Handle form submission
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $name = trim($_POST['name']);
+    $email = trim($_POST['email']);
+    $phone = trim($_POST['phone']);
+    $gender = $_POST['gender'];
+    $dob = $_POST['dob'];
+    $country = trim($_POST['country']);
+    $city = trim($_POST['city']);
+    $education = trim($_POST['education']);
+    $organization = trim($_POST['organization']);
+    $job_title = trim($_POST['job_title']);
+    $program = $_POST['program'];
+    $goals = trim($_POST['goals']);
+    $motivation = trim($_POST['motivation']);
 
-// Database connection
-$dbFile = __DIR__ . '/db.php';
-if (file_exists($dbFile)) {
-    require_once $dbFile;
-    
-    if (!isset($pdo) || !($pdo instanceof PDO)) {
-        $databaseError = "System configuration error. Please contact support. Ensure the database connection is properly configured.";
-    } else {
-        try {
-            $pdo->query('SELECT 1');
-        } catch (PDOException $e) {
-            $databaseError = "Database connection error. Please try again later.";
-            $pdo = null;
-        }
+    // Validate selected program
+    if (!array_key_exists($program, $validPrograms)) {
+        die("Invalid program selected.");
     }
-} else {
-    $databaseError = "System configuration error. Please contact support.";
-}
 
-// Generate CSRF token
-if (empty($_SESSION['csrf_token'])) {
-    $_SESSION['csrf_token'] = bin2hex(random_bytes(32));
-}
-$csrfToken = $_SESSION['csrf_token'];
+    // Prepare SQL statement
+    $sql = "INSERT INTO participants (name, email, phone, gender, dob, country, city, education, organization, job_title, program, goals, motivation) 
+            VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+    $stmt = $conn->prepare($sql);
 
-// Process form submission
-if ($_SERVER['REQUEST_METHOD'] === 'POST' && empty($databaseError) && $pdo instanceof PDO) {
-    // Validate CSRF token
-    if (!isset($_POST['csrf_token']) || $_POST['csrf_token'] !== $csrfToken) {
-        $errors[] = 'Invalid form submission';
-    } else {
-        // Sanitize inputs
-        $formData = [
-            'name' => trim($_POST['name'] ?? ''),
-            'email' => trim($_POST['email'] ?? ''),
-            'phone' => preg_replace('/[^0-9]/', '', $_POST['phone'] ?? ''),
-            'program' => trim($_POST['program'] ?? ''),
-            'age' => $_POST['age'] ?? null,
-            'gender' => trim($_POST['gender'] ?? ''),
-            'address' => trim($_POST['address'] ?? ''),
-            'education' => trim($_POST['education'] ?? ''),
-            'experience' => trim($_POST['experience'] ?? ''),
-            'goals' => trim($_POST['goals'] ?? '')
-        ];
-
-        // Validate required fields
-        if (empty($formData['name'])) {
-            $errors[] = 'Full name is required';
-        } elseif (strlen($formData['name']) > 100) {
-            $errors[] = 'Name must be less than 100 characters';
-        }
-
-        if (empty($formData['email']) || !filter_var($formData['email'], FILTER_VALIDATE_EMAIL)) {
-            $errors[] = 'Valid email address is required';
-        }
-
-        if (!empty($formData['phone']) && strlen($formData['phone']) < 10) {
-            $errors[] = 'Phone number must be at least 10 digits';
-        }
-
-        if (empty($formData['program']) || !array_key_exists($formData['program'], $validPrograms)) {
-            $errors[] = 'Please select a valid program';
-        }
-
-        if (!empty($formData['age'])) {
-            $age = filter_var($formData['age'], FILTER_VALIDATE_INT, [
-                'options' => ['min_range' => 16, 'max_range' => 120]
-            ]);
-            if ($age === false) {
-                $errors[] = 'Age must be between 16 and 120';
-            }
-            $formData['age'] = $age;
-        }
-
-        if (!empty($formData['gender']) && !array_key_exists($formData['gender'], $validGenders)) {
-            $errors[] = 'Invalid gender selection';
-        }
-
-        // Process if no errors
-        if (empty($errors)) {
-            try {
-                // Check existing registration
-                $stmt = $pdo->prepare("SELECT id FROM participants WHERE email = ? AND program = ?");
-                $stmt->execute([$formData['email'], $formData['program']]);
-                
-                if ($stmt->fetch()) {
-                    $errors[] = 'This email is already registered for the selected program';
-                } else {
-                    // Insert new registration
-                    $stmt = $pdo->prepare("INSERT INTO participants 
-                        (name, email, phone, program, age, gender, address, education, experience, goals, registration_date) 
-                        VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, NOW())");
-                    
-                    $stmt->execute([
-                        $formData['name'],
-                        $formData['email'],
-                        $formData['phone'],
-                        $formData['program'],
-                        $formData['age'],
-                        $formData['gender'],
-                        $formData['address'],
-                        $formData['education'],
-                        $formData['experience'],
-                        $formData['goals']
-                    ]);
-                    
-                    $_SESSION['form_success'] = 'Thank you for registering! We will contact you soon.';
-                    header('Location: ' . $_SERVER['PHP_SELF']);
-                    exit;
-                }
-            } catch (PDOException $e) {
-                error_log("Database error: " . $e->getMessage());
-                $errors[] = "A system error occurred. Please try again later.";
-            }
-        }
+    if (!$stmt) {
+        die("SQL Error: " . $conn->error);
     }
-}
 
-// Retrieve success message
-if (!empty($_SESSION['form_success'])) {
-    $success = $_SESSION['form_success'];
-    unset($_SESSION['form_success']);
+    // Bind parameters
+    $stmt->bind_param("sssssssssssss", $name, $email, $phone, $gender, $dob, $country, $city, $education, $organization, $job_title, $program, $goals, $motivation);
+
+    // Execute and confirm
+    if ($stmt->execute()) {
+        echo "<script>alert('Registration successful!; success.html'); window.location.href='index.html';</script>";
+    } else {
+        echo "Error: " . $stmt->error;
+    }
+
+    // Close connection
+    $stmt->close();
+    $conn->close();
 }
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://cdn.jsdelivr.net; style-src 'self' https://cdn.jsdelivr.net; img-src 'self' data:">
-    <title>Program Registration - Leadership Development</title>
+    <title>Program Signup</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
-     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="program_signup.css">
-  
+    <style>
+        body {
+            font-weight: bold !important;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif !important;
+            background-image: url('image/homepage-bg.jpg');
+            background-attachment: fixed;
+            background-position: center;
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+        .container {
+            max-width: 800px;
+            background: white;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+            margin-top: 50px;
+            background-color: #ffff;
+            font-weight: bold;
+        }
+        .btn-custom {
+            background-color: #218838;
+            color: white;
+            font-size: 18px;
+            padding: 12px;
+            width: 100%;
+            border-radius: 6px;
+            transition: background 0.3s ease;
+        }
+        .btn-custom:hover {
+            background-color: #1e7e34;
+        }
+    </style>
 </head>
 <body>
-    <div class="registration-container">
-        <div class="registration-header">
-            <h1>Leadership Program Registration</h1>
-            <p class="mb-0">Join our transformative leadership development experience</p>
+  <!-- Load Header -->
+    
+  <div id="header-container"></div>
+    <script src="loadHeader.js"></script>
+
+<div class="container">
+    <h2 class="text-center text-primary mb-4">Join A Program Today</h2>
+    <form method="POST" action="">
+        <div class="row">
+            <div class="col-md-6">
+                <label class="form-label">Name:</label>
+                <input type="text" name="name" class="form-control" required>
+            </div>
+            <div class="col-md-6">
+                <label class="form-label">Email:</label>
+                <input type="email" name="email" class="form-control" required>
+            </div>
         </div>
 
-        <div class="registration-body">
-            <?php if ($databaseError): ?>
-                <div class="alert alert-danger"><?= htmlspecialchars($databaseError, ENT_QUOTES, 'UTF-8') ?></div>
-            <?php endif; ?>
+        <div class="row mt-3">
+            <div class="col-md-6">
+                <label class="form-label">Phone:</label>
+                <input type="text" name="phone" class="form-control" required>
+            </div>
+            <div class="col-md-6">
+                <label class="form-label">Gender:</label>
+                <select name="gender" class="form-select" required>
+                    <option value="">Select...</option>
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                    <option value="other">Other</option>
+                </select>
+            </div>
+        </div>
 
-            <?php if ($success): ?>
-                <div class="alert alert-success"><?= htmlspecialchars($success, ENT_QUOTES, 'UTF-8') ?></div>
-            <?php endif; ?>
+        <div class="row mt-3">
+            <div class="col-md-6">
+                <label class="form-label">Date of Birth:</label>
+                <input type="date" name="dob" class="form-control" required>
+            </div>
+            <div class="col-md-6">
+                <label class="form-label">Country:</label>
+                <input type="text" name="country" class="form-control" required>
+            </div>
+        </div>
 
-            <?php if (!empty($errors)): ?>
-                <div class="alert alert-danger">
-                    <h5>Please fix these errors:</h5>
-                    <ul class="mb-0">
-                        <?php foreach ($errors as $error): ?>
-                            <li><?= htmlspecialchars($error, ENT_QUOTES, 'UTF-8') ?></li>
-                        <?php endforeach; ?>
-                    </ul>
-                </div>
-            <?php endif; ?>
+        <div class="row mt-3">
+            <div class="col-md-6">
+                <label class="form-label">City:</label>
+                <input type="text" name="city" class="form-control" required>
+            </div>
+            <div class="col-md-6">
+                <label class="form-label">Education Level:</label>
+                <input type="text" name="education" class="form-control" required>
+            </div>
+        </div>
 
-            <form method="POST" novalidate>
-                <input type="hidden" name="csrf_token" value="<?= htmlspecialchars($csrfToken, ENT_QUOTES, 'UTF-8') ?>">
+        <div class="row mt-3">
+            <div class="col-md-6">
+                <label class="form-label">Organization:</label>
+                <input type="text" name="organization" class="form-control">
+            </div>
+            <div class="col-md-6">
+                <label class="form-label">Job Title:</label>
+                <input type="text" name="job_title" class="form-control">
+            </div>
+        </div>
 
-                <div class="row g-3 mb-4">
-                    <!-- Personal Information -->
-                    <div class="col-md-6">
-                        <label class="form-label required">Full Name</label>
-                        <input type="text" class="form-control" name="name" 
-                               value="<?= htmlspecialchars($formData['name'] ?? '', ENT_QUOTES, 'UTF-8') ?>" required>
-                    </div>
+        <div class="mt-3">
+            <label class="form-label">Program:</label>
+            <select name="program" class="form-select" required>
+                <option value="">Select a Program...</option>
+                <?php foreach ($validPrograms as $key => $value) { ?>
+                    <option value="<?php echo htmlspecialchars($key); ?>"><?php echo htmlspecialchars($key); ?></option>
+                <?php } ?>
+            </select>
+        </div>
 
-                    <div class="col-md-6">
-                        <label class="form-label required">Email</label>
-                        <input type="email" class="form-control" name="email" 
-                               value="<?= htmlspecialchars($formData['email'] ?? '', ENT_QUOTES, 'UTF-8') ?>" required>
-                    </div>
+        <div class="mt-3">
+            <label class="form-label">Goals:</label>
+            <textarea name="goals" class="form-control" rows="3" required></textarea>
+        </div>
 
-                    <div class="col-md-4">
-                        <label class="form-label">Phone Number</label>
-                        <input type="tel" class="form-control" name="phone" 
-                               value="<?= htmlspecialchars($formData['phone'] ?? '', ENT_QUOTES, 'UTF-8') ?>">
-                    </div>
+        <div class="mt-3">
+            <label class="form-label">Motivation:</label>
+            <textarea name="motivation" class="form-control" rows="3" required></textarea>
+        </div>
 
-                    <div class="col-md-4">
-                        <label class="form-label">Age</label>
-                        <input type="number" class="form-control" name="age" min="16" max="120"
-                               value="<?= htmlspecialchars($formData['age'] ?? '', ENT_QUOTES, 'UTF-8') ?>">
-                    </div>
-
-                    <div class="col-md-4">
-                        <label class="form-label">Gender</label>
-                        <select class="form-select" name="gender">
-                            <option value="">Select...</option>
-                            <?php foreach ($validGenders as $value => $label): ?>
-                                <option value="<?= htmlspecialchars($value, ENT_QUOTES, 'UTF-8') ?>" 
-                                    <?= ($formData['gender'] ?? '') === $value ? 'selected' : '' ?>>
-                                    <?= htmlspecialchars($label, ENT_QUOTES, 'UTF-8') ?>
-                                </option>
-                            <?php endforeach; ?>
-                        </select>
-                    </div>
-
-                    <div class="col-12">
-                        <label class="form-label">Address</label>
-                        <input type="text" class="form-control" name="address" 
-                               value="<?= htmlspecialchars($formData['address'] ?? '', ENT_QUOTES, 'UTF-8') ?>">
-                    </div>
-                </div>
-
-                
-                 <!-- ADD PROGRAM CARDS HERE -->
-                 <div class="col-12">
-                        <label class="form-label required">Program Selection</label>
-                        <select class="form-select" name="program" required>
-                            <option value="">Choose a program...</option>
-                            <?php foreach ($validPrograms as $program => $description): ?>
-                                <option value="<?= htmlspecialchars($program, ENT_QUOTES, 'UTF-8') ?>"
-                                    <?= ($formData['program'] ?? '') === $program ? 'selected' : '' ?>>
-                                    <?= htmlspecialchars($program, ENT_QUOTES, 'UTF-8') ?> - 
-                                    <?= htmlspecialchars($description, ENT_QUOTES, 'UTF-8') ?>
-                                </option>
-                            <?php endforeach; ?>
-                        </select>
-                    </div>
-    </div>
+        <button type="submit" class="btn btn-custom fw-bold fs-30">Submit</button>
+    </form>
 </div>
 
-                <!-- Additional Information -->
-                <div class="row g-3 mb-4">
-                    <div class="col-12">
-                        <label class="form-label">Educational Background</label>
-                        <textarea class="form-control" name="education" rows="2"><?= htmlspecialchars($formData['education'] ?? '', ENT_QUOTES, 'UTF-8') ?></textarea>
-                    </div>
-
-                    <div class="col-12">
-                        <label class="form-label">Professional Experience</label>
-                        <textarea class="form-control" name="experience" rows="2"><?= htmlspecialchars($formData['experience'] ?? '', ENT_QUOTES, 'UTF-8') ?></textarea>
-                    </div>
-
-                    <div class="col-12">
-                        <label class="form-label required">Leadership Goals</label>
-                        <textarea class="form-control" name="goals" rows="3" required><?= htmlspecialchars($formData['goals'] ?? '', ENT_QUOTES, 'UTF-8') ?></textarea>
-                        <small class="text-muted">Describe your leadership goals and expectations from this program</small>
-                    </div>
-                </div>
-
-                <button type="submit" class="btn btn-primary btn-lg w-100" <?= $databaseError ? 'disabled' : '' ?>>Submit Application</button>
-            </form>
-        </div>
-    </div>
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-
-
-<script>
-          
-    document.addEventListener('DOMContentLoaded', function() {
-        // Program card selection functionality
-        const programCards = document.querySelectorAll('.program-card');
-        
-        programCards.forEach(card => {
-            card.addEventListener('click', function(e) {
-                // Remove previous selection
-                programCards.forEach(c => {
-                    c.classList.remove('selected');
-                    c.querySelector('input[type="radio"]').checked = false;
-                });
-                
-                // Set new selection
-                this.classList.add('selected');
-                const radio = this.querySelector('input[type="radio"]');
-                radio.checked = true;
-                
-                // Trigger form validation
-                radio.dispatchEvent(new Event('change'));
-            });
-
-            // Initialize selection from PHP
-            if (card.querySelector('input[type="radio"]').checked) {
-                card.classList.add('selected');
-            }
-        });
-    });
-
-</script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
