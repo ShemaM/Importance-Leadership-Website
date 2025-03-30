@@ -1,7 +1,11 @@
 <?php
 // Start session and check authentication
 session_start();
-
+// Redirect to login if not authenticated
+if (!isset($_SESSION['admin_logged_in']) || $_SESSION['admin_logged_in'] !== true) {
+    header('Location: login.php');
+    exit;
+}
 // Hardcoded admin credentials (change these to your own)
 define('ADMIN_USERNAME', 'admin');
 define('ADMIN_PASSWORD_HASH', '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi'); // hash of 'password'
@@ -19,6 +23,7 @@ if (isset($_GET['logout'])) {
     header('Location: login.php');
     exit;
 }
+    
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -49,23 +54,36 @@ if (isset($_GET['logout'])) {
             color: var(--dark-text);
         }
         
-        /* Sidebar */
-        .sidebar {
-            background-color:#ffffff;
-            height: 100vh;
-            position: fixed;
-            box-shadow: 2px 0 10px rgba(0,0,0,0.1);
-            z-index: 1000;
-        }
-        
-        .sidebar-brand {
-            padding: 1.5rem 1rem;
-            border-bottom: 1px solid #eee;
-        }
-        
-        .sidebar-brand img {
-            height: 40px;
-        }
+        /* Sidebar *//* Sidebar */
+.sidebar {
+    background-color: #ffffff;
+    height: 100vh;
+    width: 250px; /* Set a fixed width */
+    position: fixed;
+    top: 0;
+    left: 0;
+    box-shadow: 2px 0 10px rgba(0,0,0,0.1);
+    z-index: 1000;
+}
+
+/* Sidebar Brand */
+.sidebar-brand {
+    padding: 1.5rem 1rem;
+    border-bottom: 1px solid #eee;
+}
+
+.sidebar-brand img {
+    height: 40px;
+}
+
+/* Main Content */
+.main-content {
+    margin-left: 250px; /* Matches sidebar width */
+    padding: 20px;
+    transition: margin-left 0.3s ease-in-out;
+    width: calc(100% - 250px);
+}
+
         
         .nav-link {
             color: var(--light-text);
