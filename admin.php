@@ -3,14 +3,48 @@ session_start();
 error_reporting(E_ALL); // Show errors
 ini_set('display_errors', 1);
 
+// Database connection
+$host = 'localhost';
+$dbname = 'importanceleadership';
+$username = 'root';
+$password = 'secret';
+
+
+try {
+    $pdo = new PDO("mysql:host=$host;dbname=$dbname", $username, $password);
+    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+} catch (PDOException $e) {
+    die("Database connection failed: " . $e->getMessage());
+}
+
+// Authentication check - using your admin_users table
 if (!isset($_SESSION['admin_logged_in'])) {
     header("Location: login.php");
     exit();
 }
 
+// Check if required tables exist
+$requiredTables = [
+    'admin_users',
+    'community_impact_participants',
+    'leadership_participants',
+    'mentorship_participants',
+    'donations',
+    'contactmessages'
+];
+
+foreach ($requiredTables as $table) {
+    try {
+        $result = $pdo->query("SELECT 1 FROM $table LIMIT 1");
+    } catch (PDOException $e) {
+        die("Error: Table '$table' doesn't exist or isn't accessible. Please check your database setup.");
+    }
+}
+
 // Hardcoded admin credentials (change these to your own)
 define('ADMIN_USERNAME', 'admin');
 define('ADMIN_PASSWORD_HASH', '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi'); // hash of 'password'
+
 
 // Redirect to login if not authenticated
 if (!isset($_SESSION['admin_logged_in']) || $_SESSION['admin_logged_in'] !== true) {
@@ -26,6 +60,7 @@ if (isset($_GET['logout'])) {
     exit;
 }
     
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -342,258 +377,267 @@ if (isset($_GET['logout'])) {
 
         <!-- Stats Overview -->
         <div class="row">
-            <div class="col-md-6 col-lg-3">
-                <div class="stat-card">
-                    <div class="label">Total Participants</div>
-                    <div class="value">2,543</div>
-                    <div class="trend up"><i class="fas fa-arrow-up"></i> 12% from last month</div>
-                </div>
+    <div class="col-md-6 col-lg-3">
+        <div class="stat-card">
+            <div class="label">Total Participants</div>
+            <div class="value">
+                <?php
+                $stmt = $pdo->query("
+                    SELECT (SELECT COUNT(*) FROM leadership_participants) +
+                           (SELECT COUNT(*) FROM mentorship_participants) +
+                           (SELECT COUNT(*) FROM community_impact_participants) AS total
+                ");
+                echo number_format($stmt->fetch()['total']);
+                ?>
             </div>
-            <div class="col-md-6 col-lg-3">
-                <div class="stat-card">
-                    <div class="label">Active Mentors</div>
-                    <div class="value">24</div>
-                    <div class="trend up"><i class="fas fa-arrow-up"></i> 2 new this month</div>
-                </div>
-            </div>
-            <div class="col-md-6 col-lg-3" id="programs">
-                <div class="stat-card">
-                    <div class="label">Programs Running</div>
-                    <div class="value">8</div>
-                    <div class="trend up"><i class="fas fa-arrow-up"></i> 3 active now</div>
-                </div>
-            </div>
-            <div class="col-md-6 col-lg-3" id="donations">
-                <div class="stat-card">
-                    <div class="label">Total Donations</div>
-                    <div class="value">$48,250</div>
-                    <div class="trend up"><i class="fas fa-arrow-up"></i> $5,200 this month</div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Programs Overview -->
-        <div class="row mt-4">
-            <div class="col-lg-8">
-                <div class="card">
-                    <div class="card-header">
-                        <h5 class="mb-0">Program Performance</h5>
-                        <div class="dropdown">
-                            <button class="btn btn-sm btn-outline-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown">
-                                Last 30 Days
-                            </button>
-                            <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="#">Last 7 Days</a></li>
-                                <li><a class="dropdown-item" href="#">Last 30 Days</a></li>
-                                <li><a class="dropdown-item" href="#">Last 90 Days</a></li>
-                                <li><a class="dropdown-item" href="#">This Year</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="card-body">
-                        <div class="table-responsive">
-                            <table class="table table-hover">
-                                <thead>
-                                    <tr>
-                                        <th>Program</th>
-                                        <th>Participants</th>
-                                        <th>Completion</th>
-                                        <th>Rating</th>
-                                        <th>Actions</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td>Leadership Development</td>
-                                        <td>1,240</td>
-                                        <td>
-                                            <div class="progress">
-                                                <div class="progress-bar" style="width: 78%"></div>
-                                            </div>
-                                            <small>78% complete</small>
-                                        </td>
-                                        <td>
-                                            <i class="fas fa-star text-warning"></i> 4.8
-                                        </td>
-                                        <td>
-                                            <button class="btn btn-sm btn-primary">View</button>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>Mentorship Program</td>
-                                        <td>850</td>
-                                        <td>
-                                            <div class="progress">
-                                                <div class="progress-bar" style="width: 65%"></div>
-                                            </div>
-                                            <small>65% complete</small>
-                                        </td>
-                                        <td>
-                                            <i class="fas fa-star text-warning"></i> 4.9
-                                        </td>
-                                        <td>
-                                            <button class="btn btn-sm btn-primary">View</button>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>Community Impact</td>
-                                        <td>453</td>
-                                        <td>
-                                            <div class="progress">
-                                                <div class="progress-bar" style="width: 82%"></div>
-                                            </div>
-                                            <small>82% complete</small>
-                                        </td>
-                                        <td>
-                                            <i class="fas fa-star text-warning"></i> 4.7
-                                        </td>
-                                        <td>
-                                            <button class="btn btn-sm btn-primary">View</button>
-                                        </td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="col-lg-4">
-                <div class="card">
-                    <div class="card-header">
-                        <h5 class="mb-0">Recent Donations</h5>
-                        <button class="btn btn-sm btn-outline-secondary">View All</button>
-                    </div>
-                    <div class="card-body">
-                        <div class="list-group list-group-flush">
-                            <div class="list-group-item d-flex justify-content-between align-items-center">
-                                <div>
-                                    <h6 class="mb-1">John Smith</h6>
-                                    <small class="text-muted">Today, 10:45 AM</small>
-                                </div>
-                                <span class="badge bg-success">$500</span>
-                            </div>
-                            <div class="list-group-item d-flex justify-content-between align-items-center">
-                                <div>
-                                    <h6 class="mb-1">Acme Corporation</h6>
-                                    <small class="text-muted">Yesterday, 3:22 PM</small>
-                                </div>
-                                <span class="badge bg-success">$2,500</span>
-                            </div>
-                            <div class="list-group-item d-flex justify-content-between align-items-center">
-                                <div>
-                                    <h6 class="mb-1">Sarah Johnson</h6>
-                                    <small class="text-muted">Yesterday, 11:15 AM</small>
-                                </div>
-                                <span class="badge bg-success">$100</span>
-                            </div>
-                            <div class="list-group-item d-flex justify-content-between align-items-center">
-                                <div>
-                                    <h6 class="mb-1">Community Fund</h6>
-                                    <small class="text-muted">2 days ago</small>
-                                </div>
-                                <span class="badge bg-success">$1,000</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="card mt-4">
-                    <div class="card-header">
-                        <h5 class="mb-0">Upcoming Events</h5>
-                        <button class="btn btn-sm btn-outline-secondary">Add Event</button>
-                    </div>
-                    <div class="card-body">
-                        <div class="list-group list-group-flush">
-                            <div class="list-group-item">
-                                <div class="d-flex justify-content-between">
-                                    <h6 class="mb-1">Leadership Workshop</h6>
-                                    <small class="text-muted">May 15</small>
-                                </div>
-                                <small class="text-muted">10:00 AM - 2:00 PM</small>
-                                <div class="mt-2">
-                                    <span class="badge bg-primary">32 Registered</span>
-                                </div>
-                            </div>
-                            <div class="list-group-item">
-                                <div class="d-flex justify-content-between">
-                                    <h6 class="mb-1">Mentor Training</h6>
-                                    <small class="text-muted">May 18</small>
-                                </div>
-                                <small class="text-muted">9:00 AM - 12:00 PM</small>
-                                <div class="mt-2">
-                                    <span class="badge bg-primary">12 Registered</span>
-                                </div>
-                            </div>
-                            <div class="list-group-item">
-                                <div class="d-flex justify-content-between">
-                                    <h6 class="mb-1">Community Impact Day</h6>
-                                    <small class="text-muted">May 22</small>
-                                </div>
-                                <small class="text-muted">All Day</small>
-                                <div class="mt-2">
-                                    <span class="badge bg-primary">45 Registered</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        
-        <!-- Recent Activity -->
-        <div class="card mt-4">
-            <div class="card-header">
-                <h5 class="mb-0">Recent Activity</h5>
-            </div>
-            <div class="card-body">
-                <div class="table-responsive">
-                    <table class="table table-hover">
-                        <thead>
-                            <tr>
-                                <th>Date</th>
-                                <th>User</th>
-                                <th>Activity</th>
-                                <th>Details</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>Today, 09:30</td>
-                                <td>Jane Doe</td>
-                                <td>New participant registration</td>
-                                <td>Leadership Development Program</td>
-                            </tr>
-                            <tr>
-                                <td>Today, 08:45</td>
-                                <td>System</td>
-                                <td>Donation received</td>
-                                <td>$500 from John Smith</td>
-                            </tr>
-                            <tr>
-                                <td>Yesterday, 16:20</td>
-                                <td>Mark Johnson</td>
-                                <td>Added new event</td>
-                                <td>Leadership Workshop on May 15</td>
-                            </tr>
-                            <tr>
-                                <td>Yesterday, 14:10</td>
-                                <td>Sarah Williams</td>
-                                <td>Updated program</td>
-                                <td>Mentorship Program curriculum</td>
-                            </tr>
-                            <tr>
-                                <td>Yesterday, 11:05</td>
-                                <td>System</td>
-                                <td>New mentor application</td>
-                                <td>David Brown - Business Leadership</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
+            <div class="trend up">
+                <i class="fas fa-arrow-up"></i> 
+                <?php
+                // Calculate growth (example - adjust with your actual growth logic)
+                $stmt = $pdo->query("
+                    SELECT 
+                        (SELECT COUNT(*) FROM leadership_participants WHERE created_at >= DATE_SUB(NOW(), INTERVAL 1 MONTH)) +
+                        (SELECT COUNT(*) FROM mentorship_participants WHERE created_at >= DATE_SUB(NOW(), INTERVAL 1 MONTH)) +
+                        (SELECT COUNT(*) FROM community_impact_participants WHERE created_at >= DATE_SUB(NOW(), INTERVAL 1 MONTH)) AS current_month,
+                        
+                        (SELECT COUNT(*) FROM leadership_participants WHERE created_at < DATE_SUB(NOW(), INTERVAL 1 MONTH)) +
+                        (SELECT COUNT(*) FROM mentorship_participants WHERE created_at < DATE_SUB(NOW(), INTERVAL 1 MONTH)) +
+                        (SELECT COUNT(*) FROM community_impact_participants WHERE created_at < DATE_SUB(NOW(), INTERVAL 1 MONTH)) AS previous_month
+                ");
+                $growth = $stmt->fetch();
+                $percentage = $growth['previous_month'] > 0 ? 
+                    round(($growth['current_month'] - $growth['previous_month']) / $growth['previous_month'] * 100) : 
+                    0;
+                echo abs($percentage) . '% ' . ($percentage >= 0 ? 'from' : 'from') . ' last month';
+                ?>
             </div>
         </div>
     </div>
+
+    <!--active members-->
+
+    <div class="col-md-6 col-lg-3">
+        <div class="stat-card">
+            <div class="label">Active Mentors</div>
+            <div class="value">
+                <?php
+                try {
+                    $stmt = $pdo->query("
+                        SELECT 
+                            (SELECT COUNT(*) FROM leadership_participants) +
+                            (SELECT COUNT(*) FROM mentorship_participants) +
+                            (SELECT COUNT(*) FROM community_impact_participants) AS total
+                    ");
+                    
+                    if (!$stmt) {
+                        throw new Exception("Failed to execute query");
+                    }
+                    
+                    $totalParticipants = $stmt->fetch()['total'];
+                    echo number_format($totalParticipants);
+                    
+                } catch (PDOException $e) {
+                    echo "Error loading participant count: " . $e->getMessage();
+                    // Fallback to 0 if query fails
+                    echo "0";
+                } catch (Exception $e) {
+                    echo "Error: " . $e->getMessage();
+                    echo "0";
+                }
+                ?>
+            </div>
+            <div class="trend up">
+                <i class="fas fa-arrow-up"></i> 
+                <?php
+                $stmt = $pdo->query("
+                    SELECT 
+                        (SELECT COUNT(*) FROM mentors WHERE created_at >= DATE_SUB(NOW(), INTERVAL 1 MONTH)) AS new_mentors
+                ");
+                $newMentors = $stmt->fetchColumn();
+                echo $newMentors . ' new this month';
+                ?>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-6 col-lg-3" id="programs">
+        <div class="stat-card">
+            <div class="label">Programs Running</div>
+            <div class="value">3</div> <!-- Fixed as you have 3 participant tables -->
+            <div class="trend up">
+                <i class="fas fa-arrow-up"></i> All active
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-6 col-lg-3" id="donations">
+        <div class="stat-card">
+            <div class="label">Total Donations</div>
+            <div class="value">
+                $<?php
+                $stmt = $pdo->query("SELECT SUM(amount) FROM donations");
+                echo number_format($stmt->fetchColumn(), 2);
+                ?>
+            </div>
+            <div class="trend up">
+                <i class="fas fa-arrow-up"></i> $
+                <?php
+                $stmt = $pdo->query("SELECT SUM(amount) FROM donations WHERE donation_date >= DATE_SUB(NOW(), INTERVAL 1 MONTH)");
+                echo number_format($stmt->fetchColumn(), 2) . ' this month';
+                ?>
+            </div>
+        </div>
+    </div>
+</div>
+
+        <!-- Programs Overview -->
+        
+        <div class="table-responsive">
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <th>Program</th>
+                <th>Participants</th>
+                <th>Completion</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Leadership Development</td>
+                <td>
+                    <?php
+                    $stmt = $pdo->query("SELECT COUNT(*) FROM leadership_participants");
+                    echo number_format($stmt->fetchColumn());
+                    ?>
+                </td>
+                <td>
+                    <div class="progress">
+                        <div class="progress-bar" style="width: 78%"></div>
+                    </div>
+                    <small>ongoing</small>
+                </td>
+                <td>
+                    <button class="btn btn-sm btn-primary">View</button>
+                </td>
+            </tr>
+            <tr>
+                <td>Mentorship Program</td>
+                <td>
+                    <?php
+                    $stmt = $pdo->query("SELECT COUNT(*) FROM mentorship_participants");
+                    echo number_format($stmt->fetchColumn());
+                    ?>
+                </td>
+                <td>
+                    <div class="progress">
+                        <div class="progress-bar" style="width: 65%"></div>
+                    </div>
+                    <small>ongoing</small>
+                </td>
+                <td>
+                    <button class="btn btn-sm btn-primary">View</button>
+                </td>
+            </tr>
+            <tr>
+                <td>Community Impact</td>
+                <td>
+                    <?php
+                    $stmt = $pdo->query("SELECT COUNT(*) FROM community_impact_participants");
+                    echo number_format($stmt->fetchColumn());
+                    ?>
+                </td>
+                <td>
+                    <div class="progress">
+                        <div class="progress-bar" style="width: 1%;"></div>
+                    </div>
+                    <small>ongoing</small>
+                </td>
+                <td>
+                    <button class="btn btn-sm btn-primary">View</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+     
+
+<!-- Recent Activity -->
+        <div class="list-group list-group-flush">
+    <?php
+    $stmt = $pdo->query(" 
+        SELECT d.amount, d.donation_date, u.firstname
+            FROM donations d
+            LEFT JOIN users u ON d.user_id = u.id
+            ORDER BY d.donation_date DESC
+            LIMIT 4;
+
+    ");
+    while ($donation = $stmt->fetch()):
+    ?>
+    <div class="list-group-item d-flex justify-content-between align-items-center">
+        <div>
+            <h6 class="mb-1"><?= htmlspecialchars($donation['name'] ?? 'Anonymous') ?></h6>
+            <small class="text-muted">
+                <?= date('F j, Y, g:i a', strtotime($donation['donation_date'])) ?>
+            </small>
+        </div>
+        <span class="badge bg-success">$<?= number_format($donation['amount'], 2) ?></span>
+    </div>
+    <?php endwhile; ?>
+</div>
+    </div>
+
+    <tbody>
+    <?php
+    // Combine different types of activities
+    $activities = [];
+    
+    // Get recent contact messages
+    $stmt = $pdo->query("
+        SELECT created_at as date, 'New contact message' as activity, 
+               CONCAT('From: ', name) as details, 'System' as user
+        FROM contactmessages
+        ORDER BY created_at DESC
+        LIMIT 2
+    ");
+    while ($row = $stmt->fetch()) {
+        $activities[] = $row;
+    }
+    
+    // Get recent donations
+    $stmt = $pdo->query("
+        SELECT donation_date as date, 'Donation received' as activity,
+               CONCAT('$', amount, ' from ', COALESCE(u.firstname, 'Anonymous')) as details,
+               'System' as user
+        FROM donations d
+        LEFT JOIN users u ON d.user_id = u.id
+        ORDER BY donation_date DESC
+        LIMIT 2
+    ");
+    while ($row = $stmt->fetch()) {
+        $activities[] = $row;
+    }
+    
+    // Sort all activities by date
+    usort($activities, function($a, $b) {
+        return strtotime($b['date']) - strtotime($a['date']);
+    });
+    
+    // Display the 5 most recent activities
+    $count = 0;
+    foreach ($activities as $activity):
+        if ($count++ >= 5) break;
+    ?>
+    <tr>
+        <td><?= date('M j, H:i', strtotime($activity['date'])) ?></td>
+        <td><?= htmlspecialchars($activity['user']) ?></td>
+        <td><?= htmlspecialchars($activity['activity']) ?></td>
+        <td><?= htmlspecialchars($activity['details']) ?></td>
+    </tr>
+    <?php endforeach; ?>
+</tbody>
 
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
