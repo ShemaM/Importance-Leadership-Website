@@ -12,54 +12,155 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 
-// Define valid programs
-$validPrograms = [
-    'Leadership Development' => 'Build essential leadership skills',
-    'Mentorship Program' => 'Get guidance from experienced mentors',
-    'Community Impact' => 'Drive change in your community'
+$programMap = [
+    'Leadership' => [
+        'table' => 'leadership_participants',
+        'display' => 'Leadership Development Program',
+        'redirect' => 'leadershipDevelopment.html'
+    ],
+    'Mentorship' => [
+        'table' => 'mentorship_participants',
+        'display' => 'Professional Mentorship Initiative',
+        'redirect' => 'mentorshipProgram.html'
+    ],
+    'Community Impact' => [
+        'table' => 'community_impact_participants',
+        'display' => 'Community Impact Fellowship',
+        'redirect' => 'communityImpact.html'
+    ]
 ];
+
+$educationLevels = [
+    'high-school' => ['display' => 'High School Graduate'],
+    'undergraduate' => ['display' => 'Undergraduate'],
+    'masters' => ['display' => 'Masters'],
+    'doctoral' => ['display' => 'Doctoral']
+];
+
 
 // Handle form submission
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $name = trim($_POST['name']);
-    $email = trim($_POST['email']);
-    $phone = trim($_POST['phone']);
-    $gender = $_POST['gender'];
-    $dob = $_POST['dob'];
-    $country = trim($_POST['country']);
-    $city = trim($_POST['city']);
-    $education = trim($_POST['education']);
-    $organization = trim($_POST['organization']);
-    $job_title = trim($_POST['job_title']);
-    $program = $_POST['program'];
-    $goals = trim($_POST['goals']);
-    $motivation = trim($_POST['motivation']);
+    // ... [previous program validation code]
 
-    // Validate selected program
-    if (!array_key_exists($program, $validPrograms)) {
+    // Normalize email
+    $email = strtolower(trim($_POST['email']));
+    
+    // Validate email format
+    if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+        echo "<script>
+            alert('Invalid email format. Please enter a valid email.');
+            window.history.back();
+        </script>";
+        exit();
+    }
+    $program = $_POST['program'] ?? '';
+    if (!array_key_exists($program, $programMap)) {
+        die("Invalid program selected.");
+    }
+    $targetTable = $programMap[$program]['table'];
+
+    $checkStmt = $conn->prepare("SELECT id FROM $targetTable WHERE email = ?");
+    $checkStmt->bind_param("s", $email);
+    $checkStmt->execute();
+    $checkResult = $checkStmt->get_result();
+
+    if ($checkResult->num_rows > 0) {
+        echo "<script>
+            alert('This email is already registered for this program.');
+            window.history.back();
+        </script>";
+        exit();
+    }
+
+    // Handle database errors
+    try {
+        // Ensure $stmt is initialized before execution
+        $stmt = $conn->prepare("INSERT INTO $targetTable (name, email, phone, gender, dob, country, city, education, organization, job_title, program, goals, motivation, created_at) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, NOW())");
+        $stmt->bind_param("sssssssssssss", 
+            $name, $email, $phone, $gender, $dob, $country, $city, 
+            $education, $organization, $job_title, $program, $goals, $motivation
+        );
+        $stmt->execute();
+    } catch (mysqli_sql_exception $e) {
+        if ($e->getCode() === 1062) {
+            echo "<script>
+                alert('This email is already registered.');
+                window.history.back();
+            </script>";
+        } else {
+            error_log("Database error: " . $e->getMessage());
+            echo "An error occurred. Please try again later.";
+        }
+        exit();
+    }
+}
+
+
+
+// Handle form submission
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    // Validate selected program first
+    $program = $_POST['program'] ?? '';
+    if (!array_key_exists($program, $programMap)) {
         die("Invalid program selected.");
     }
 
-    // Prepare SQL statement
-    $sql = "INSERT INTO participants (name, email, phone, gender, dob, country, city, education, organization, job_title, program, goals, motivation) 
-            VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
-    $stmt = $conn->prepare($sql);
+    // Get the target table from the program map
+    $targetTable = $programMap[$program]['table'];
 
+    // Sanitize inputs
+    $name = trim($conn->real_escape_string($_POST['name']));
+    $email = trim($conn->real_escape_string($_POST['email']));
+    $phone = trim($conn->real_escape_string($_POST['phone']));
+    $gender = $conn->real_escape_string($_POST['gender']);
+    $dob = $conn->real_escape_string($_POST['dob']);
+    $country = trim($conn->real_escape_string($_POST['country']));
+    $city = trim($conn->real_escape_string($_POST['city']));
+    $education = trim($conn->real_escape_string($_POST['education']));
+    $organization = trim($conn->real_escape_string($_POST['organization']));
+    $job_title = trim($conn->real_escape_string($_POST['job_title']));
+    $goals = trim($conn->real_escape_string($_POST['goals']));
+    $motivation = trim($conn->real_escape_string($_POST['motivation']));
+
+    // Prepare SQL statement for dynamic table
+    $sql = "INSERT INTO $targetTable 
+            (name, email, phone, gender, dob, country, city, education, organization, job_title, program, goals, motivation, created_at)
+            VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, NOW())";
+
+    $stmt = $conn->prepare($sql);
+    
     if (!$stmt) {
         die("SQL Error: " . $conn->error);
     }
 
-    // Bind parameters
-    $stmt->bind_param("sssssssssssss", $name, $email, $phone, $gender, $dob, $country, $city, $education, $organization, $job_title, $program, $goals, $motivation);
+    // Bind parameters (13 parameters + created_at is handled by NOW())
+    $stmt->bind_param("sssssssssssss", 
+        $name, $email, $phone, $gender, $dob, $country, $city, 
+        $education, $organization, $job_title, $program, $goals, $motivation
+    );
 
-    // Execute and confirm
-    if ($stmt->execute()) {
-        echo "<script>alert('Registration successful!; success.html'); window.location.href='index.html';</script>";
-    } else {
-        echo "Error: " . $stmt->error;
+   // Execute and handle result
+if ($stmt->execute()) {
+    // Get redirect URL from program map
+    $redirectUrl = 'index.html'; // Default fallback
+    
+    if (isset($programMap[$program]['redirect'])) {
+        $redirectUrl = $programMap[$program]['redirect'];
     }
 
-    // Close connection
+    echo "<script>
+        alert('Registration successful!');
+        window.location.href = '$redirectUrl';
+    </script>";
+}
+    else {
+        error_log("Database error: " . $stmt->error);
+        echo "<script>
+            alert('Registration failed. Please try again.');
+            window.history.back();
+        </script>";
+    }
+
     $stmt->close();
     $conn->close();
 }
@@ -158,10 +259,19 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 <label class="form-label">City:</label>
                 <input type="text" name="city" class="form-control" required>
             </div>
-            <div class="col-md-6">
-                <label class="form-label">Education Level:</label>
-                <input type="text" name="education" class="form-control" required>
-            </div>
+            
+            <!--education level dropdown-->
+            <div class="mt-3">
+    <label class="form-label">Education Level:</label>
+    <select name="education" class="form-select" required>
+        <option value="">Select education level...</option>
+        <?php foreach ($educationLevels as $levelId => $levelData) { ?>
+            <option value="<?= htmlspecialchars($levelId) ?>">
+                <?= htmlspecialchars($levelData['display']) ?>
+            </option>
+        <?php } ?>
+    </select>
+</div>
         </div>
 
         <div class="row mt-3">
@@ -176,14 +286,16 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         </div>
 
         <div class="mt-3">
-            <label class="form-label">Program:</label>
-            <select name="program" class="form-select" required>
-                <option value="">Select a Program...</option>
-                <?php foreach ($validPrograms as $key => $value) { ?>
-                    <option value="<?php echo htmlspecialchars($key); ?>"><?php echo htmlspecialchars($key); ?></option>
-                <?php } ?>
-            </select>
-        </div>
+    <label class="form-label">Program:</label>
+    <select name="program" class="form-select" required>
+        <option value="">Select a Program...</option>
+        <?php foreach ($programMap as $programId => $programData) { ?>
+            <option value="<?= htmlspecialchars($programId) ?>">
+                <?= htmlspecialchars($programData['display']) ?>
+            </option>
+        <?php } ?>
+    </select>
+</div>
 
         <div class="mt-3">
             <label class="form-label">Goals:</label>
