@@ -77,49 +77,67 @@
             color: #123456 !important;
         }
 
-        /* Responsive Adjustments */
-        @media (max-width: 992px) {
-            .navbar-brand img {
-                max-height: 100px; /* Smaller logo for tablets */
-                max-width: 150px;
-                padding: 5px; /* Less padding for smaller screens */
-            }
+                /* Navbar Styling */
+                .navbar {
+            background-color: #ffff !important;
+            width: 100%;
+            padding: 15px 20px;
+            min-height: 120px;
+            display: flex;
+            align-items: center;
+        }
 
-            .navbar-nav {
-                margin-top: 1rem;
-            }
-
-            .navbar-nav .nav-link {
-                font-size: 1rem;
-                padding: 0.5rem;
-            }
-
-            .dropdown-menu {
-                background-color: #123456;
-                margin-top: 0.5rem;
+        @media (max-width: 768px) {
+            .navbar {
+            padding: 10px 15px;
+            min-height: 120px;
             }
         }
 
-        @media (max-width: 576px) {
-            .navbar-brand img {
-                max-height: 80px; /* Smaller logo for mobile */
-                max-width: 120px;
-                padding: 5px; /* Minimal padding for mobile */
-            }
-
-            .navbar-toggler {
-                padding: 0.25rem 0.5rem;
-                font-size: 1rem;
-                color: #000;
-                background-color: #123456;
-                border-radius: 5px;
-            }
-
-            .navbar-nav .nav-link {
-                font-size: 0.9rem;
-                padding: 0.5rem;
-            }
+        .navbar-brand img {
+            height: auto;
+            max-height: 100px;
+            width: auto;
+            max-width: 240px;
+            border-radius: 10px;
+            padding: 10px;
+            transition: all 0.5s ease;
+            margin-right: auto;
+            position: absolute;
+            top: 10px;
+            left: 20px;
         }
+        .navbar-toggler {
+            padding: 0.5rem 1rem;
+            font-size: 1.2rem;
+            color: #ffffff;
+            background-color: #123456;
+            border: none;
+            border-radius: 8px;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+            margin-left: auto;
+        }
+
+        .navbar-toggler:hover {
+            background-color: #7cade9;
+            transform: scale(1.05);
+        }
+        .navbar-nav .nav-link {
+            font-size: 1.1rem;
+            font-weight: 500;
+            color: #123456 !important;
+            margin: 0 0.5rem;
+            padding: 0.5rem 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .navbar-nav .nav-link:hover {
+            color: #504a4a !important;
+            transform: translateY(-2px);
+        }
+
+        
+        
     </style>
 </head>
 
@@ -134,9 +152,7 @@
                     <img src="image/website-logo.png" alt="Importance Leadership Logo" class="logo-image">
                 </a>
 
-                <!-- Hamburger Menu -->
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
 

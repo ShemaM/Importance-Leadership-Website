@@ -22,6 +22,11 @@
     
     <style>
         /* Custom Styles */
+        *{
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
         
         body {
             font-family: 'Inter', sans-serif;
@@ -29,31 +34,81 @@
             color: var(--text-light);
             background-color: var(--background-light);
             transition: background-color var(--transition-speed), color var(--transition-speed);
+            width: 100%;
+            overflow-x: hidden;
         }
+        /* Text elements scaling */
+h1, h2, h3, p {
+    max-width: 90%;
+    margin: auto;
+}
+/* Use flex for adaptive layouts */
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
 
+/* Ensure proper responsiveness */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+    }
+
+    h1 {
+        font-size: 1.8rem;
+    }
+
+    p {
+        font-size: 1rem;
+    }
+}
         /* Navbar Styling */
         .navbar {
             background-color: #ffff !important;
-            padding: 1rem 0;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            padding: 15px 20px;
+            min-height: 120px;
+            display: flex;
+            align-items: center;
+        }
+
+        @media (max-width: 768px) {
+            .navbar {
+            padding: 10px 15px;
+            min-height: 120px;
+            }
         }
 
         .navbar-brand img {
             height: auto;
-            max-height: 180px;
+            max-height: 100px;
             width: auto;
             max-width: 240px;
             border-radius: 10px;
             padding: 10px;
             transition: all 0.5s ease;
+            margin-right: auto;
+            position: absolute;
+            top: 10px;
+            left: 20px;
         }
         .navbar-toggler {
-                padding: 0.25rem 0.5rem;
-                font-size: 1rem;
-                color: #000;
-                background-color: #123456;
-                border-radius: 5px;
-            }
+            padding: 0.5rem 1rem;
+            font-size: 1.2rem;
+            color: #ffffff;
+            background-color: #123456;
+            border: none;
+            border-radius: 8px;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+            margin-left: auto;
+        }
+
+        .navbar-toggler:hover {
+            background-color: #7cade9;
+            transform: scale(1.05);
+        }
         .navbar-nav .nav-link {
             font-size: 1.1rem;
             font-weight: 500;
@@ -117,8 +172,7 @@
             }
 
             .navbar-toggler {
-                padding: 0.25rem 0.5rem;
-                font-size: 1rem; 
+                margin-left: auto;
             }
 
             .navbar-nav .nav-link {
@@ -206,9 +260,14 @@
 
         /* Impact Section */
         .impact-section {
-            padding: 50px 0;
-            background-image: url('image/donate-image.jpg') ;
+            padding: 100px 0;
+            text-align: center;
+            width: 100%;
+            max-height: fit-content;
+            align-content: center;
+            background-image: url('image/bg-impact.jpg');
             background-size: cover;
+            background-position: center;
             background-attachment: fixed;
         }
 
@@ -236,10 +295,36 @@
             }
         }
 
+
+        .community-section{
+            padding: 100px 0;
+            text-align: center;
+            width: 100%;
+            max-height: fit-content;
+            align-content: center;
+            background-image: url('image/teamCollaboration.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+        .join-us{
+            padding: 100px 0;
+            text-align: center;
+            color:white;
+            font-weight: bold;
+            font-size: larger;
+        }
         /* Donate Section */
         .donate-section {
-            padding: 50px 0;
-            background-color: #6986a2;
+            padding: 100px 0;
+            text-align: center;
+            width: 100%;
+            max-height: fit-content;
+            align-content: center;
+            background-image: url('image/donate-image.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
         }
 
         .donate-section h2 {
@@ -263,15 +348,13 @@
         }
         /*h1 syles*/
         .styled-text {
-        font-family: 'Poppins', sans-serif;
-        font-size: 80px;
-        font-weight: bolder;
-        white-space: nowrap; /* Prevents line breaks */
-        position: relative;
-        margin-top: 200px;
-
-        
-        
+                font-family: 'Poppins', sans-serif;
+                font-size: 80px;
+                font-weight: bolder;
+                word-wrap: break-word; /* Allow text to wrap */
+                word-break: break-word; /* Break long words if necessary */
+                position: relative;
+                margin-top: 100px;
         }
         .styled-text span {
             display: inline-block;
@@ -316,9 +399,9 @@
         <nav class="navbar navbar-expand-lg navbar-dark shadow-sm fixed-top">
             <div class="container">
                 <a class="navbar-brand" href="index.html">
-                    <img src="image/website-logo.png" alt="Importance Leadership Logo" class="logo-image" loading="lazy">
+                    <img src="image/website-logo.png" alt="Importance Leadership Logo" class="logo-image me-0 ms-auto" loading="lazy" style="margin-left: 0;">
                 </a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-label="Toggle navigation">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarNav">
@@ -455,7 +538,7 @@
 
     <!-- Join Us Section -->
      <!-- Start Community Section -->
-<section class="community-section bg-very-light-gray py-5" style="background-color:#a2a169; align-content: center;">
+<section class="community-section bg-very-light-gray py-5">
     <div class="container">
         <!-- Section Title -->
         <div class="row justify-content-center mb-5">
@@ -474,8 +557,8 @@
                     <!-- Amplify Impact -->
                     <div class="col">
                         <div class="bg-white h-100 p-4 box-shadow border-radius-5">
-                            <span class="text-primary text-center fs-20 fw-bold d-block mb-3">Amplify Impact</span>
-                            <p class="main-p">
+                            <span class="text-primary text-center fs-20 d-block mb-3">Amplify Impact</span>
+                            <p class=" text-black join-us">
                                 Unite with individuals committed to making a difference. Together, we empower young leaders to drive positive change in their communities.
                             </p>
                         </div>
@@ -484,8 +567,8 @@
                     <!-- Champion Inclusion -->
                     <div class="col">
                         <div class="bg-white h-100 p-4 box-shadow border-radius-5">
-                            <span class="text-primary text-center fs-20 fw-bold d-block mb-3">Champion Inclusion</span>
-                            <p class="main-p">
+                            <span class="text-primary text-center fs-20 d-block mb-3">Champion Inclusion</span>
+                            <p class=" text-black join-us">
                                 Be part of a movement that ensures every voice is heard, valued, and empowered. We believe in creating opportunities for all.
                             </p>
                         </div>
@@ -494,8 +577,8 @@
                     <!-- Build Connections -->
                     <div class="col">
                         <div class="bg-white h-100 p-4 box-shadow border-radius-5">
-                            <span class="text-primary text-center fs-20 fw-bold d-block mb-3">Build Connections</span>
-                            <p class="main-p">
+                            <span class="text-primary text-center fs-20 d-block mb-3">Build Connections</span>
+                            <p class=" text-black join-us">
                                 Connect with like-minded individuals who share your passion for leadership, mentorship, and community-driven solutions.
                             </p>
                         </div>
@@ -504,8 +587,8 @@
                     <!-- Take Action -->
                     <div class="col">
                         <div class="bg-white h-100 p-4 box-shadow border-radius-5">
-                            <span class="text-primary text-center fs-20 fw-bold d-block mb-3">Take Action</span>
-                            <p class="main-p">
+                            <span class="text-primary text-center fs-20 d-block mb-3">Take Action</span>
+                            <p class="join-us">
                                 Together, we can challenge the status quo, inspire excellence, and create meaningful, lasting change.
                             </p>
                         </div>
@@ -515,7 +598,7 @@
         </div>
 
         <!-- Call to Action -->
-        <div class="row justify-content-center mt-5" >
+        <div class="row justify-content-center mt-5 join-us" >
             <div class="col-lg-8 text-center">
                 <h3 class="text-dark-gray fw-bold ls-minus-1px">Your Voice Matters</h3>
                 <p class="fs-20 lh-32 text-dark-gray opacity-7 mt-3">
@@ -529,7 +612,7 @@
 <!-- End Community Section -->
 
     <!-- Donate Section -->
-    <section class="donate-section py-5 text-white text-center">
+    <section class="donate-section py-5 text-white text-center h-100">
         <div class="container">
             <div class="row justify-content-center text-center">
                 <div class="col-lg-8">
@@ -546,23 +629,50 @@
         </div>
     </section>
 
+    <button id="openForm">Open Form</button>
+    <div id="signupForm" style="display: none;">
+        <form id="signupFormContent">
+            <input type="text" placeholder="Your Name" required>
+            <button type="submit">Submit</button>
+            <button id="closeForm">Close</button>
+        </form>
+    </div>
+    
     <!-- Footer -->
     <div id="footer-container"></div>
     <script src="loadFooter.js"></script>
 
     <!-- JavaScript for Sign Up Form -->
     <script>
-        document.getElementById("openForm").addEventListener("click", function() {
-            document.getElementById("signupForm").style.display = "flex";
+       document.addEventListener("DOMContentLoaded", function() {
+    const openBtn = document.getElementById("openForm");
+    const closeBtn = document.getElementById("closeForm");
+    const formContainer = document.getElementById("signupForm");
+    const formContent = document.getElementById("signupFormContent");
+
+    if (openBtn && formContainer) {
+        openBtn.addEventListener("click", function() {
+            formContainer.style.display = "flex";
         });
-        document.getElementById("closeForm").addEventListener("click", function() {
-            document.getElementById("signupForm").style.display = "none";
+    }
+
+    if (closeBtn && formContainer) {
+        closeBtn.addEventListener("click", function() {
+            formContainer.style.display = "none";
         });
-        document.getElementById("signupFormContent").addEventListener("submit", function(event) {
-            event.preventDefault(); 
+    }
+
+    if (formContent) {
+        formContent.addEventListener("submit", function(event) {
+            event.preventDefault();
             alert("Thank you for signing up!");
-            document.getElementById("signupForm").style.display = "none";
+            if (formContainer) {
+                formContainer.style.display = "none";
+            }
         });
+    }
+});
+
     </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
 </body>
