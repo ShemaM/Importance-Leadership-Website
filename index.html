@@ -12,6 +12,9 @@
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="image/logo.jpg">
     
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -235,7 +238,7 @@ h1, h2, h3, p {
         .programs-section h2 {
             font-size: 2.5rem;
             margin-bottom: 20px;
-            color: white !important;
+            color: #03519e !important;
             text-shadow: 4px 4px 10px rgba(205, 200, 200, 0.5);
         }
 
@@ -265,15 +268,15 @@ h1, h2, h3, p {
             width: 100%;
             max-height: fit-content;
             align-content: center;
-            background-image: url('image/bg-impact.jpg');
-            background-size: cover;
-            background-position: center;
-            background-attachment: fixed;
+           background-color: #7cade9;
+            color: black !important;
+            font-weight: bolder;
         }
 
         .impact-section h2 {
             font-size: 2.5rem;
             margin-bottom: 20px;
+            color: blue;
         }
 
         .impact-section p {
@@ -302,17 +305,17 @@ h1, h2, h3, p {
             width: 100%;
             max-height: fit-content;
             align-content: center;
-            background-image: url('image/teamCollaboration.jpg');
+            background-color: white;
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
         }
         .join-us{
-            padding: 100px 0;
+            padding: 0;
             text-align: center;
-            color:white;
-            font-weight: bold;
-            font-size: larger;
+            font-weight: normal;
+            background-color: #ffff;
+    
         }
         /* Donate Section */
         .donate-section {
@@ -376,7 +379,7 @@ h1, h2, h3, p {
     font-weight: bold;
     color: black;
     font-style: italic;
-    margin-top: -15px;
+    margin-top: -3px;
     margin-bottom: 40px;
     text-shadow: 4px 4px 10px rgba(20, 12, 12, 0.5);
  } 
@@ -399,7 +402,7 @@ h1, h2, h3, p {
         <nav class="navbar navbar-expand-lg navbar-dark shadow-sm fixed-top">
             <div class="container">
                 <a class="navbar-brand" href="index.html">
-                    <img src="image/website-logo.png" alt="Importance Leadership Logo" class="logo-image me-0 ms-auto" loading="lazy" style="margin-left: 0;">
+                    <img src="image/website-logo.png" alt="Importance Leadership Logo" class="logo-image me-0 ms-auto" style="margin-left: 0;">
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -421,30 +424,28 @@ h1, h2, h3, p {
 
     <!-- Hero Section -->
     <section class="hero-section">
-        <div class="container">
+        <div class="container text-center"></div>
             <h1 class="styled-text">
-                <span class="blue-text">Importance</span> <span class="black-text">Leadership</span>
+            <span class="blue-text">Importance</span> <span class="black-text">Leadership</span>
             </h1>
-            
-            
             <blockquote>Empowering Leaders, Inspiring Excellence</blockquote>
-            <p class="main-p">
-                At <strong>Importance Leadership</strong>, we are dedicated to unlocking the potential of young leaders. Through mentorship, hands-on training, and impactful programs, we inspire and equip the next generation to drive positive change in their communities and beyond. Join us in building a brighter future together.
+            <p class=" fs-27 main-p"></p>
+                <strong>Importance Leadership</strong> is a non-profit organization dedicated to empowering youth, especially the most vulnerable, such as refugees, minorities, and the underprivileged, through <strong>advocacy and education</strong>. We advocate for equality, equity, and justice while providing mentorship, mental health training, climate change awareness, leadership skills, and networking opportunities to help youth actively shape policies and solutions that impact their lives.
             </p>
-            <div>
-                <a href="who-we-are.html" class="btn btn-primary">Get Started</a>
-                <a href="what-we-do.html" class="btn btn-primary">Discover</a>
+            <div class="mt-4">
+                <a href="who-we-are.html" class="btn btn-primary btn-lg me-3">Get Started</a>
+                <a href="what-we-do.html" class="btn btn-primary btn-lg me-3">Discover</a>
             </div>
         </div>
     </section>
 
     <!-- Programs Section -->
-    <section class="programs-section py-5" style="background-color: #5e5a5a;">
+    <section class="programs-section py-5">
         <div class="container">
             <div class="row justify-content-center mb-5">
                 <div class="col-lg-8 text-center">
                     <span class="text-uppercase fw-bold text-blue fw-bolder fs-25">OUR PROGRAMS</span>
-                    <h2 class="fw-bold mt-3 text-dark">Empowering the Next Generation of Leaders</h2>
+                    <h2 class="fw-bold mt-3">Empowering the Next Generation of Leaders</h2>
                     <p class="fs-17 mt-3 text-black fw-bolder">Discover how our programs are transforming lives and creating lasting impact in communities worldwide.</p>
                 </div>
             </div>
@@ -487,53 +488,44 @@ h1, h2, h3, p {
     </section>
 
     <!-- Impact Section -->
-    <section class="impact-section py-5 text-white text-center">
+    <section class="impact-section py-5 text-white text-center"> 
         <div class="container">
-            <div class="row align-items-center">
-                <div class="col-lg-6 mb-5 mb-lg-0 bg-extra-medium-gray">
-                    <h2 class="fw-bold text-dark-gray mb-4">Our Impact in Numbers</h2>
-                    <p class="fs-5 text-dark-gray">We are proud of the measurable impact we’ve made in empowering communities and fostering leadership. Here’s a snapshot of our achievements:</p>
+            <div class="row justify-content-center mb-5">
+                <div class="col-lg-8">
+                    <h2 class="fw-bold text-dark mb-4">Our Impact in Numbers</h2>
+                    <p class="fs-5 text-dark">Discover the tangible results of our efforts in empowering communities and fostering leadership. Here’s a glimpse of our achievements:</p>
                 </div>
-                <div class="col-lg-6">
-                    <div class="mb-4">
-                        <div class="d-flex justify-content-between mb-2">
-                            <span class="fw-bold">Youth Empowered</span>
-                            <span class="fw-bold">2,500</span>
-                        </div>
-                        <div class="progress" style="height: 10px;">
-                            <div class="progress-bar bg-gradient-emerald-blue-emerald-green" role="progressbar" style="width: 95%;" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"></div>
-                        </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6 col-lg-3 mb-4">
+                    <div class="bg-light p-4 rounded shadow-sm">
+                        <h3 class="fw-bold text-primary mb-2" id="counter1">0</h3>
+                        <p class="text-dark mb-0">Youth Empowered</p>
                     </div>
-                    <div class="mb-4">
-                        <div class="d-flex justify-content-between mb-2">
-                            <span class="fw-bold">Mentors</span>
-                            <span class="fw-bold">20</span>
-                        </div>
-                        <div class="progress" style="height: 10px;">
-                            <div class="progress-bar bg-gradient-emerald-blue-emerald-green" role="progressbar" style="width: 45%;" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
-                        </div>
+                </div>
+                <div class="col-md-6 col-lg-3 mb-4">
+                    <div class="bg-light p-4 rounded shadow-sm">
+                        <h3 class="fw-bold text-primary mb-2" id="counter2">0</h3>
+                        <p class="text-dark mb-0">Dedicated Mentors</p>
                     </div>
-                    <div class="mb-4">
-                        <div class="d-flex justify-content-between mb-2">
-                            <span class="fw-bold">Leadership Workshops</span>
-                            <span class="fw-bold">13</span>
-                        </div>
-                        <div class="progress" style="height: 10px;">
-                            <div class="progress-bar bg-gradient-emerald-blue-emerald-green" role="progressbar" style="width: 40%;" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
-                        </div>
+                </div>
+                <div class="col-md-6 col-lg-3 mb-4">
+                    <div class="bg-light p-4 rounded shadow-sm">
+                        <h3 class="fw-bold text-primary mb-2" id="counter3">0</h3>
+                        <p class="text-dark mb-0">Leadership Workshops</p>
                     </div>
-                    <div class="mb-4">
-                        <div class="d-flex justify-content-between mb-2">
-                            <span class="fw-bold">Communities Impacted</span>
-                            <span class="fw-bold">50+</span>
-                        </div>
-                        <div class="progress" style="height: 10px;">
-                            <div class="progress-bar bg-gradient-emerald-blue-emerald-green" role="progressbar" style="width: 65%;" aria-valuenow="65" aria-valuemin="0" aria-valuemax="100"></div>
-                        </div>
+                </div>
+                <div class="col-md-6 col-lg-3 mb-4">
+                    <div class="bg-light p-4 rounded shadow-sm">
+                        <h3 class="fw-bold text-primary mb-2" id="counter4">0</h3>
+                        <p class="text-dark mb-0">Communities Impacted</p>
                     </div>
                 </div>
             </div>
         </div>
+    </section>
+
+    
     </section>
 
     <!-- Join Us Section -->
@@ -556,9 +548,12 @@ h1, h2, h3, p {
                 <div class="row row-cols-1 row-cols-md-2 g-4">
                     <!-- Amplify Impact -->
                     <div class="col">
-                        <div class="bg-white h-100 p-4 box-shadow border-radius-5">
-                            <span class="text-primary text-center fs-20 d-block mb-3">Amplify Impact</span>
-                            <p class=" text-black join-us">
+                        <div class="bg-light h-100 p-4 shadow-sm rounded">
+                            <div class="text-center mb-3">
+                                <i class="fas fa-bullhorn fa-2x text-primary"></i>
+                            </div>
+                            <h5 class="text-primary text-center fw-bold mb-3">Amplify Impact</h5>
+                            <p class="text-black text-center">
                                 Unite with individuals committed to making a difference. Together, we empower young leaders to drive positive change in their communities.
                             </p>
                         </div>
@@ -566,9 +561,12 @@ h1, h2, h3, p {
 
                     <!-- Champion Inclusion -->
                     <div class="col">
-                        <div class="bg-white h-100 p-4 box-shadow border-radius-5">
-                            <span class="text-primary text-center fs-20 d-block mb-3">Champion Inclusion</span>
-                            <p class=" text-black join-us">
+                        <div class="bg-light h-100 p-4 shadow-sm rounded">
+                            <div class="text-center mb-3">
+                                <i class="fas fa-users fa-2x text-primary"></i>
+                            </div>
+                            <h5 class="text-primary text-center fw-bold mb-3">Champion Inclusion</h5>
+                            <p class="text-black text-center">
                                 Be part of a movement that ensures every voice is heard, valued, and empowered. We believe in creating opportunities for all.
                             </p>
                         </div>
@@ -576,9 +574,12 @@ h1, h2, h3, p {
 
                     <!-- Build Connections -->
                     <div class="col">
-                        <div class="bg-white h-100 p-4 box-shadow border-radius-5">
-                            <span class="text-primary text-center fs-20 d-block mb-3">Build Connections</span>
-                            <p class=" text-black join-us">
+                        <div class="bg-light h-100 p-4 shadow-sm rounded">
+                            <div class="text-center mb-3">
+                                <i class="fas fa-handshake fa-2x text-primary"></i>
+                            </div>
+                            <h5 class="text-primary text-center fw-bold mb-3">Build Connections</h5>
+                            <p class="text-black text-center">
                                 Connect with like-minded individuals who share your passion for leadership, mentorship, and community-driven solutions.
                             </p>
                         </div>
@@ -586,9 +587,12 @@ h1, h2, h3, p {
 
                     <!-- Take Action -->
                     <div class="col">
-                        <div class="bg-white h-100 p-4 box-shadow border-radius-5">
-                            <span class="text-primary text-center fs-20 d-block mb-3">Take Action</span>
-                            <p class="join-us">
+                        <div class="bg-light h-100 p-4 shadow-sm rounded">
+                            <div class="text-center mb-3">
+                                <i class="fas fa-lightbulb fa-2x text-primary"></i>
+                            </div>
+                            <h5 class="text-primary text-center fw-bold mb-3">Take Action</h5>
+                            <p class="text-black text-center">
                                 Together, we can challenge the status quo, inspire excellence, and create meaningful, lasting change.
                             </p>
                         </div>
@@ -612,53 +616,51 @@ h1, h2, h3, p {
 <!-- End Community Section -->
 
     <!-- Donate Section -->
-    <section class="donate-section py-5 text-white text-center h-100">
+    <section class="donate-section py-5 text-white text-center h-100" style="background: linear-gradient(to bottom, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('image/donate-image.jpg'); background-size: cover; background-position: center;">
         <div class="container">
             <div class="row justify-content-center text-center">
                 <div class="col-lg-8">
-                    <i class="fas fa-hand-holding-heart fa-3x text-white mb-4"></i>
-                    <h2 class="display-5 fw-bold mb-4">DONATE</h2>
-                    <p class="lead mb-4">
-                        Your support helps us empower communities and create lasting change. Every contribution, big or small, makes a real impact.
+                    <i class="fas fa-hand-holding-heart fa-3x text-warning mb-4"></i>
+                    <h2 class="display-4 fw-bold mb-4 text-warning">Make a Difference Today</h2>
+                    <p class="lead mb-4 text-light">
+                        Your generosity fuels our mission to empower communities, inspire leaders, and create a brighter future. Together, we can transform lives and build a better tomorrow.
                     </p>
-                    <a href="donate.html" class="btn btn-light btn-lg">
+                    <a href="donate.html" class="btn btn-warning btn-lg px-5 py-3 fw-bold" style="border-radius: 50px; text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);">
                         Donate Now <i class="fas fa-arrow-right"></i>
                     </a>
+                    <p class="mt-4 text-light small">
+                        Every contribution counts. Join us in making a lasting impact.
+                    </p>
                 </div>
             </div>
         </div>
     </section>
-
-    <button id="openForm">Open Form</button>
-    <div id="signupForm" style="display: none;">
-        <form id="signupFormContent">
-            <input type="text" placeholder="Your Name" required>
-            <button type="submit">Submit</button>
-            <button id="closeForm">Close</button>
-        </form>
-    </div>
+  
     
     <!-- Footer -->
-    <div id="footer-container"></div>
+    
     <script src="loadFooter.js"></script>
 
-    <!-- JavaScript for Sign Up Form -->
     <script>
-       document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("DOMContentLoaded", function() {
     const openBtn = document.getElementById("openForm");
     const closeBtn = document.getElementById("closeForm");
     const formContainer = document.getElementById("signupForm");
     const formContent = document.getElementById("signupFormContent");
 
-    if (openBtn && formContainer) {
+    if (openBtn) {
         openBtn.addEventListener("click", function() {
-            formContainer.style.display = "flex";
+            if (formContainer) {
+                formContainer.style.display = "flex";
+            }
         });
     }
 
-    if (closeBtn && formContainer) {
+    if (closeBtn) {
         closeBtn.addEventListener("click", function() {
-            formContainer.style.display = "none";
+            if (formContainer) {
+                formContainer.style.display = "none";
+            }
         });
     }
 
@@ -672,6 +674,37 @@ h1, h2, h3, p {
         });
     }
 });
+
+// counters for the impact section
+        document.addEventListener("DOMContentLoaded", function () {
+            const counters = [
+                { id: "counter1", endValue: 2500, duration: 2000 },
+                { id: "counter2", endValue: 20, duration: 2000 },
+                { id: "counter3", endValue: 13, duration: 2000 },
+                { id: "counter4", endValue: 50, duration: 2000 },
+            ];
+
+            counters.forEach(counter => {
+                const element = document.getElementById(counter.id);
+                let startValue = 0;
+                const increment = counter.endValue / (counter.duration / 50);
+
+                const updateCounter = setInterval(() => {
+                    startValue += increment;
+                    if (startValue >= counter.endValue) {
+                        element.textContent = Math.floor(counter.endValue) + "+";
+                        clearInterval(updateCounter);
+                    } else {
+                        element.textContent = Math.floor(startValue);
+                    }
+                }, 50);
+            });
+        });
+    
+</script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" defer></script>
+</body>
 
     </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
