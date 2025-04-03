@@ -26,10 +26,35 @@ document.addEventListener("DOMContentLoaded", function () {
                     <p class="mb-2"><i class="fas fa-phone-alt me-2"></i> <a href="tel:+16037150801" class="fw-bold">+1 (603) 715-0801</a></p>
                     <p class="mb-3"><i class="fas fa-envelope me-2"></i> <a href="mailto:info@importanceleadership.com" class="fw-bold">info@importanceleadership.com</a></p>
 
-                    <!-- Social Media Icons -->
+                   <!-- Social Media Icons -->
                     <div class="social-media mt-4">
                         <a href="https://www.instagram.com/importance_leadership_" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
-                            <svg viewBox="0 0 24 24" fill="#E4405F" xmlns="http://www.w3.org/2000/svg">
+                            <svg viewBox="0 0 24 24" fill="#E4405F" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" style="width: 24px; height: 24px;">
+                                <path d="M7.75 2h8.5A5.75 5.75 0 0 1 22 7.75v8.5A5.75 5.75 0 0 1 16.25 22h-8.5A5.75 5.75 0 0 1 2 16.25v-8.5A5.75 5.75 0 0 1 7.75 2Zm7.69 1.5h-7.88A4.25 4.25 0 0 0 3.5 7.75v7.88a4.25 4.25 0 0 0 4.25 4.25h7.88a4.25 4.25 0 0 0 4.25-4.25v-7.88a4.25 4.25 0 0 0-4.25-4.25Zm-4.44 4.5a4.44 4.44 0 1 1 0 8.88 4.44 4.44 0 0 1 0-8.88Zm0 1.5a2.94 2.94 0 1 0 0 5.88 2.94 2.94 0 0 0 0-5.88ZM17.25 5a1 1 0 1 1 0 2 1 1 0 0 1 0-2Z"/>
+                            </svg>
+                        </a>
+                    
+                        <a href="https://www.facebook.com/share/12J1CX4vLQ8/?mibextid=wwXIfr" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+                            <svg viewBox="0 0 24 24" fill="#1877F2" xmlns="http://www.w3.org/2000/svg" style="width: 24px; height: 24px;">
+                                <path d="M22 12a10 10 0 1 0-11.56 9.87v-6.99h-2.34v-2.88h2.34V9.42c0-2.32 1.38-3.6 3.49-3.6 1 0 2.07.18 2.07.18v2.28h-1.17c-1.15 0-1.5.71-1.5 1.44v1.73h2.55l-.41 2.88h-2.14v6.99A10 10 0 0 0 22 12Z"/>
+                            </svg>
+                        </a>
+                    
+                        <a href="https://www.linkedin.com/company/importance-leadership/posts" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+                            <svg viewBox="0 0 24 24" fill="#0A66C2" xmlns="http://www.w3.org/2000/svg" style="width: 24px; height: 24px;">
+                                <path d="M4.98 3.5a2.48 2.48 0 1 1 0 4.96 2.48 2.48 0 0 1 0-4.96ZM2 8.88h5.93V21H2V8.88Zm7.08 0h5.67v1.64c.82-1.22 2.29-2.07 3.92-2.07 2.8 0 4.33 1.83 4.33 5.63V21h-5.93v-6.23c0-1.49-.53-2.53-1.87-2.53-1.02 0-1.62.69-1.89 1.36-.1.25-.13.6-.13.94V21h-5.93V8.88Z"/>
+                            </svg>
+                        </a>
+                    
+                        <a href="https://www.youtube.com/@importanceleadership" target="_blank" rel="noopener noreferrer" aria-label="YouTube">
+                            <svg viewBox="0 0 24 24" fill="#FF0000" xmlns="http://www.w3.org/2000/svg" style="width: 24px; height: 24px;">
+                                <path d="M22 7.57c0-1.37-1.1-2.49-2.45-2.49C16.69 5 12 5 12 5s-4.69 0-7.55.08C3.1 5.08 2 6.2 2 7.57v8.86c0 1.37 1.1 2.49 2.45 2.49C7.31 19 12 19 12 19s4.69 0 7.55-.08c1.35 0 2.45-1.12 2.45-2.49V7.57Zm-12.18 7.29V8.92l5.87 2.97-5.87 2.97Z"/>
+                            </svg>
+                        </a>
+                    </div></svg></a>
+                    <div class="social-media mt-4">
+                        <a href="https://www.instagram.com/importance_leadership_" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+                            <svg viewBox="0 0 24 24" fill="#E4405F" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
                                 <path d="M7.75 2h8.5A5.75 5.75 0 0 1 22 7.75v8.5A5.75 5.75 0 0 1 16.25 22h-8.5A5.75 5.75 0 0 1 2 16.25v-8.5A5.75 5.75 0 0 1 7.75 2Zm7.69 1.5h-7.88A4.25 4.25 0 0 0 3.5 7.75v7.88a4.25 4.25 0 0 0 4.25 4.25h7.88a4.25 4.25 0 0 0 4.25-4.25v-7.88a4.25 4.25 0 0 0-4.25-4.25Zm-4.44 4.5a4.44 4.44 0 1 1 0 8.88 4.44 4.44 0 0 1 0-8.88Zm0 1.5a2.94 2.94 0 1 0 0 5.88 2.94 2.94 0 0 0 0-5.88ZM17.25 5a1 1 0 1 1 0 2 1 1 0 0 1 0-2Z"/>
                             </svg>
                         </a>
