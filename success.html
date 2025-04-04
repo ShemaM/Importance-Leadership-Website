@@ -14,7 +14,8 @@
       --text-color: #333333; /* Dark gray for readability */
       --background-color: #F5F7FA; /* Light gray background */
       --success-color: #28A745; /* Green for success messages */
-      --border-radius: 8px; /* Rounded corners */
+      --border-radius: 12px; /* Rounded corners */
+      --shadow-color: rgba(0, 0, 0, 0.15); /* Subtle shadow */
     }
 
     body {
@@ -35,17 +36,34 @@
       max-width: 500px;
       width: 100%;
       padding: 2.5rem;
-      background: rgb(157, 221, 246);
+      background: linear-gradient(135deg, #d4f1f9, #b3e5fc);
       border-radius: var(--border-radius);
-      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-      margin: 2rem 0; /* Added margin for spacing */
+      box-shadow: 0 6px 20px var(--shadow-color);
+      margin: 2rem 0;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .success-container::before {
+      content: '';
+      position: absolute;
+      top: -50px;
+      right: -50px;
+      width: 150px;
+      height: 150px;
+      background: var(--primary-color);
+      opacity: 0.2;
+      border-radius: 50%;
+      z-index: 0;
     }
 
     .success-container h1 {
-      font-size: 2rem;
+      font-size: 2.2rem;
       color: var(--primary-color);
       margin-bottom: 1rem;
       font-weight: 600;
+      z-index: 1;
+      position: relative;
     }
 
     .success-container h2 {
@@ -53,6 +71,8 @@
       color: var(--text-color);
       margin-bottom: 1.5rem;
       font-weight: 500;
+      z-index: 1;
+      position: relative;
     }
 
     .success-container p {
@@ -60,12 +80,16 @@
       color: var(--text-color);
       margin-bottom: 1.5rem;
       line-height: 1.6;
+      z-index: 1;
+      position: relative;
     }
 
     .success-container ul {
       text-align: left;
       margin-bottom: 2rem;
       padding-left: 1.5rem;
+      z-index: 1;
+      position: relative;
     }
 
     .success-container ul li {
@@ -75,12 +99,11 @@
     }
 
     .success-container ul li::before {
-      content: "->";
+      content: "✔";
       color: var(--success-color);
       font-weight: bold;
       display: inline-block;
       width: 1.5em;
-    
     }
 
     .success-container a {
@@ -91,12 +114,35 @@
       border-radius: var(--border-radius);
       text-decoration: none;
       font-weight: 500;
-      transition: background 0.3s ease;
+      transition: background 0.3s ease, transform 0.2s ease;
       margin-top: 1rem;
+      z-index: 1;
+      position: relative;
     }
 
     .success-container a:hover {
       background: var(--primary-hover);
+      transform: translateY(-3px);
+    }
+
+    .success-container a:active {
+      transform: translateY(1px);
+    }
+
+    /* Add subtle animation */
+    .success-container {
+      animation: fadeIn 1s ease-out;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: scale(0.95);
+      }
+      to {
+        opacity: 1;
+        transform: scale(1);
+      }
     }
 
     /* Responsive Design */
@@ -140,7 +186,6 @@
     <p>
       If you have any questions, feel free to <a href="contact-us.html">contact us</a>. We’re here to help!
     </p>
-
 
     <div class="p-4">  <a href="index.html">Return to Homepage</a></div>
   
