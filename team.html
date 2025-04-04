@@ -6,141 +6,512 @@
     <meta name="description" content="Meet the Leaders and Departments Driving Change and Innovation.">
     <meta name="keywords" content="Leadership, Impact, Community, Mentorship, Youth Empowerment">
     <title>Team - Importance Leadership</title>
-    <link rel="icon" type="image/png" href="image/website-logo.png">
+    <link rel="icon" type="image/png" href="images/website-logo.png">
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Font Awesome for Icons -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Animate.css -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
     <style>
-        /* Custom Styles */
+        :root {
+            --primary-color: #4361ee;
+            --secondary-color: #3f37c9;
+            --accent-color: #4cc9f0;
+            --dark-color: #1a1a2e;
+            --light-color: #f8f9fa;
+            --text-color: #333;
+            --text-light: #6c757d;
+            --hover-color: rgba(67, 97, 238, 0.9);
+            --card-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+            --transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
         body {
-            font-family: 'Arial', sans-serif;
-            background-color: #f8f9fa;
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--light-color);
+            color: var(--text-color);
+            overflow-x: hidden;
         }
 
-        .team-section {
-            padding: 80px 0;
-        }
-
-        .team-section .card {
-            border: none;
-            border-radius: 15px;
-            overflow: hidden;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            background: #fff;
-        }
-
-        .team-section .card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
-        }
-
-        .team-section .card-img-top {
-            width: 120px;
-            height: 120px;
-            object-fit: cover;
-            border-radius: 50%;
-            border: 4px solid #007bff;
-            margin: 20px auto 15px;
-        }
-
-        .team-section .card-title {
-            font-size: 1.25rem;
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Montserrat', sans-serif;
             font-weight: 600;
-            color: #333;
-            margin-bottom: 5px;
         }
 
-        .team-section .card-text {
-            font-size: 0.95rem;
-            color: #6c757d;
-            margin-bottom: 15px;
-        }
-
-        .team-section .social-icon a {
-            margin: 0 8px;
-            color: #333;
-            transition: color 0.3s ease;
-        }
-
-        .team-section .social-icon a:hover {
-            color: #007bff;
-        }
-
-        .divider {
-            border-top: 3px solid #123456;
-            width: 50%;
-            margin: 5px auto;
-        }
-
-        .scroll-down-icon {
-            position: absolute;
-            bottom: 50px;
-            left: 50%;
-            transform: translateX(-50%);
-            font-size: 60px;
-            color: white;
-            padding: 20px;
-            border-radius: 50%;
+        /* Hero Section */
+        .team-hero {
+            position: relative;
+            height: 70vh;
+            min-height: 500px;
             display: flex;
             align-items: center;
             justify-content: center;
-            cursor: pointer;
-            transition: transform 0.3s ease-in-out, opacity 0.3s;
+            background: linear-gradient(135deg, rgba(67, 97, 238, 0.9), rgba(63, 55, 201, 0.9)), 
+                        url('image/ourTeam.jpg') no-repeat center center/cover;
+            color: white;
+            overflow: hidden;
+            clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%);
+            margin-bottom: -5rem;
         }
 
-        .scroll-down-icon i {
-            font-size: 50px;
-            animation: bounce 1.5s infinite;
+        .team-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiPjxkZWZzPjxwYXR0ZXJuIGlkPSJwYXR0ZXJuIiB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHBhdHRlcm5Vbml0cz0idXNlclNwYWNlT25Vc2UiIHBhdHRlcm5UcmFuc2Zvcm09InJvdGF0ZSg0NSkiPjxyZWN0IHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgZmlsbD0icmdiYSgyNTUsMjU1LDI1NSwwLjAzKSIvPjwvcGF0dGVybj48L2RlZnM+PHJlY3Qgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0idXJsKCNwYXR0ZXJuKSIvPjwvc3ZnPg==');
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            padding: 0 2rem;
+        }
+
+        .hero-title {
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            text-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            animation: fadeInDown 1s ease;
+        }
+
+        .hero-subtitle {
+            font-size: 1.5rem;
+            max-width: 700px;
+            margin: 0 auto 2rem;
+            opacity: 0.9;
+            animation: fadeInUp 1s ease 0.3s both;
+        }
+
+        .scroll-down {
+            position: absolute;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: white;
+            font-size: 2rem;
+            animation: bounce 2s infinite;
+            cursor: pointer;
+            z-index: 10;
         }
 
         @keyframes bounce {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-15px); }
+            0%, 20%, 50%, 80%, 100% { transform: translateY(0) translateX(-50%); }
+            40% { transform: translateY(-20px) translateX(-50%); }
+            60% { transform: translateY(-10px) translateX(-50%); }
         }
 
-        .scroll-down-icon::after {
-            content: "Click to scroll down";
+        /* Team Section */
+        .team-section {
+            padding: 8rem 0;
+            background-color: var(--light-color);
+            position: relative;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 5rem;
+            position: relative;
+        }
+
+        .section-title h2 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--dark-color);
+            margin-bottom: 1rem;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-title h2::after {
+            content: '';
             position: absolute;
-            bottom: -5px;
+            bottom: -10px;
             left: 50%;
             transform: translateX(-50%);
-            font-size: 18px;
-            color: #fff;
-            opacity: 0;
-            transition: opacity 0.3s ease-in-out;
-            white-space: nowrap;
+            width: 80px;
+            height: 4px;
+            background: var(--primary-color);
+            border-radius: 2px;
         }
 
-        .scroll-down-icon:hover::after {
+        .section-title p {
+            color: var(--text-light);
+            max-width: 700px;
+            margin: 0 auto;
+            font-size: 1.1rem;
+        }
+
+        /* Team Cards */
+        .team-container {
+            position: relative;
+            padding: 2rem 0;
+        }
+
+        .team-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: var(--card-shadow);
+            transition: var(--transition);
+            margin-bottom: 2rem;
+            height: 100%;
+            position: relative;
+            z-index: 1;
+            cursor: pointer;
+        }
+
+        .team-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        .team-card:hover .card-img-container::before {
             opacity: 1;
         }
 
-        .scroll-icons {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            display: flex;
-            gap: 10px;
-            z-index: 1000;
+        .team-card:hover .card-img-container img {
+            transform: scale(1.05);
         }
 
-        .scroll-link {
+        .card-img-container {
+            height: 250px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .card-img-container::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to bottom, transparent 60%, rgba(0, 0, 0, 0.7));
+            z-index: 1;
+            opacity: 0;
+            transition: var(--transition);
+        }
+
+        .card-img-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+
+        .team-info {
+            padding: 1.5rem;
+            text-align: center;
+            position: relative;
+        }
+
+        .team-info h3 {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+            color: var(--dark-color);
+        }
+
+        .team-info p.position {
+            color: var(--primary-color);
+            font-weight: 500;
+            margin-bottom: 1rem;
+            font-size: 1rem;
+        }
+
+        .team-info p.bio {
+            color: var(--text-light);
+            font-size: 0.95rem;
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .social-links a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            background: var(--light-color);
+            color: var(--primary-color);
+            transition: var(--transition);
+        }
+
+        .social-links a:hover {
+            background: var(--primary-color);
+            color: white;
+            transform: translateY(-3px);
+        }
+
+        /* Department Tabs */
+        .department-tabs {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 3rem;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .department-tabs .nav-link {
+            padding: 0.75rem 1.5rem;
+            border-radius: 50px;
+            font-weight: 500;
+            color: var(--text-light);
+            border: 1px solid transparent;
+            transition: var(--transition);
+        }
+
+        .department-tabs .nav-link:hover {
+            color: var(--primary-color);
+            border-color: var(--primary-color);
+        }
+
+        .department-tabs .nav-link.active {
+            background: var(--primary-color);
+            color: white;
+            border-color: var(--primary-color);
+        }
+
+        /* Modal Styles */
+        .team-modal .modal-content {
+            border-radius: 15px;
+            overflow: hidden;
+            border: none;
+        }
+
+        .team-modal .modal-header {
+            border-bottom: none;
+            padding-bottom: 0;
+            position: relative;
+        }
+
+        .team-modal .modal-header .btn-close {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: rgba(0, 0, 0, 0.1);
+            border-radius: 50%;
+            width: 30px;
+            height: 30px;
             display: flex;
             align-items: center;
             justify-content: center;
-            width: 40px;
-            height: 40px;
-            background-color: rgba(0, 123, 255, 0.8);
-            border-radius: 50%;
-            color: white;
-            text-decoration: none;
-            transition: all 0.3s ease;
+            opacity: 1;
+            transition: var(--transition);
         }
 
-        .scroll-link:hover {
-            background-color: rgba(0, 123, 255, 1);
-            transform: scale(1.1);
+        .team-modal .modal-header .btn-close:hover {
+            background: rgba(0, 0, 0, 0.2);
+        }
+
+        .team-modal .modal-body {
+            padding: 2rem;
+        }
+
+        .member-img {
+            width: 100%;
+            height: 350px;
+            object-fit: cover;
+            border-radius: 10px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .member-name {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--dark-color);
+            margin-bottom: 0.5rem;
+        }
+
+        .member-position {
+            font-size: 1.2rem;
+            color: var(--primary-color);
+            font-weight: 500;
+            margin-bottom: 1.5rem;
+        }
+
+        .member-bio {
+            color: var(--text-light);
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+        }
+
+        .member-skills {
+            margin-bottom: 2rem;
+        }
+
+        .skill-title {
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: var(--dark-color);
+        }
+
+        .skill-bar {
+            height: 8px;
+            background: #e9ecef;
+            border-radius: 4px;
+            margin-bottom: 1rem;
+            overflow: hidden;
+        }
+
+        .skill-progress {
+            height: 100%;
+            background: var(--primary-color);
+            border-radius: 4px;
+            transition: width 1s ease-in-out;
+        }
+
+        /* Floating Elements */
+        .floating-shape {
+            position: absolute;
+            opacity: 0.1;
+            z-index: 0;
+        }
+
+        .shape-1 {
+            top: 10%;
+            left: 5%;
+            width: 150px;
+            height: 150px;
+            background: var(--primary-color);
+            border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+            animation: float 8s ease-in-out infinite;
+        }
+
+        .shape-2 {
+            bottom: 10%;
+            right: 5%;
+            width: 200px;
+            height: 200px;
+            background: var(--accent-color);
+            border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+            animation: float 10s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0% { transform: translateY(0) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(5deg); }
+            100% { transform: translateY(0) rotate(0deg); }
+        }
+
+        /* Responsive Adjustments */
+        @media (max-width: 992px) {
+            .hero-title {
+                font-size: 2.8rem;
+            }
+            
+            .hero-subtitle {
+                font-size: 1.2rem;
+            }
+            
+            .section-title h2 {
+                font-size: 2.2rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .team-hero {
+                height: 60vh;
+                clip-path: polygon(0 0, 100% 0, 100% 95%, 0 100%);
+            }
+            
+            .hero-title {
+                font-size: 2.2rem;
+            }
+            
+            .hero-subtitle {
+                font-size: 1rem;
+            }
+            
+            .section-title h2 {
+                font-size: 2rem;
+            }
+            
+            .department-tabs {
+                flex-wrap: nowrap;
+                overflow-x: auto;
+                justify-content: flex-start;
+                padding-bottom: 1rem;
+                -webkit-overflow-scrolling: touch;
+            }
+            
+            .department-tabs::-webkit-scrollbar {
+                display: none;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .team-hero {
+                height: 70vh;
+            }
+            
+            .hero-title {
+                font-size: 1.8rem;
+            }
+            
+            .team-modal .modal-body {
+                padding: 1.5rem;
+            }
+            
+            .member-img {
+                height: 250px;
+                margin-bottom: 1.5rem;
+            }
+            
+            .member-name {
+                font-size: 1.5rem;
+            }
+            
+            .member-position {
+                font-size: 1rem;
+            }
+        }
+
+        /* Scroll to Top Button */
+        .scroll-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            background: var(--primary-color);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            cursor: pointer;
+            z-index: 99;
+            opacity: 0;
+            visibility: hidden;
+            transition: var(--transition);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .scroll-top.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .scroll-top:hover {
+            background: var(--secondary-color);
+            transform: translateY(-3px);
         }
     </style>
 </head>
@@ -149,496 +520,678 @@
     <div id="header-container"></div>
     <script src="loadHeader.js"></script>
 
+    <!-- Hero Section -->
+    <section class="team-hero">
+        <div class="hero-content">
+            <h1 class="hero-title">Our Leadership Team</h1>
+            <p class="hero-subtitle">Meet the passionate individuals who drive our mission forward with dedication and expertise</p>
+        </div>
+        <div class="scroll-down" onclick="scrollToTeam()">
+            <i class="fas fa-chevron-down"></i>
+        </div>
+    </section>
+
     <!-- Team Section -->
-    <section id="team" class="team-section py-5" style="background-image: url('image/ourTeam.jpg'); background-size: cover; background-position: center;">
+    <section id="team" class="team-section bg-gray">
+        <div class="floating-shape shape-1"></div>
+        <div class="floating-shape shape-2"></div>
+        
         <div class="container">
-            <h2 class="text-center text-white mb-5 fw-bold">Meet Our Team</h2>
-            
-            <!-- Carousel for Team Members -->
-            <div id="teamCarousel" class="carousel slide" data-bs-ride="carousel">
-                <!-- Carousel Indicators -->
-                <div class="carousel-indicators">
-                    <button type="button" data-bs-target="#teamCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-                    <button type="button" data-bs-target="#teamCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
-                    <button type="button" data-bs-target="#teamCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
-                    <button type="button" data-bs-target="#teamCarousel" data-bs-slide-to="3" aria-label="Slide 4"></button>
-                </div>
+            <div class="section-title">
+                <h2 class="animate__animated animate__fadeInUp">Meet Our Experts</h2>
+                <p class="animate__animated animate__fadeInUp animate__delay-1s">Our team consists of dedicated professionals who bring diverse skills and experiences to create meaningful impact</p>
+            </div>
 
-                <!-- Carousel Inner -->
-                <div class="carousel-inner">
-                    <!-- Slide 1: CEO & HR Manager -->
-                    <div class="carousel-item active">
-                        <div class="row justify-content-center">
-                            <!-- CEO -->
-                            <div class="col-md-6">
-                                <div class="card text-center border-0 shadow-lg h-100">
-                                    <a href="#" data-bs-toggle="modal" data-bs-target="#fistonModal">
-                                        <img src="image/fiston.png" class="card-img-top rounded-circle mx-auto mt-4" alt="Fiston Ndayishimiye" style="width: 120px; height: 120px; object-fit: cover; border: 4px solid #007bff; cursor: pointer;">
-                                    </a>
-                                    <div class="card-body">
-                                        <h4 class="card-title fw-bold mb-2">Fiston Ndayishimiye</h4>
-                                        <p class="card-text text-muted mb-3">CEO & Founder</p>
-                                        <hr class="divider mx-auto" style="width: 50px; height: 2px; background-color: #007bff;">
-                                        <p class="short-text">Fiston provides strategic leadership and drives the organization's mission.</p>
-                                        <div class="social-icon mt-4">
-                                            <a href="https://www.facebook.com/" target="_blank" class="mx-2"><i class="fab fa-facebook-f fa-lg" style="color: #1877F2;"></i></a>
-                                            <a href="https://www.instagram.com/" target="_blank" class="mx-2"><i class="fab fa-instagram fa-lg" style="color: #E1306C;"></i></a>
-                                            <a href="https://www.linkedin.com/" target="_blank" class="mx-2"><i class="fab fa-linkedin fa-lg" style="color: #0077B5;"></i></a>
-                                        </div>
-                                    </div>
+            <!-- Department Tabs -->
+            <ul class="nav nav-pills department-tabs" id="departmentTabs" role="tablist">
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link active" id="all-tab" data-bs-toggle="tab" data-bs-target="#all" type="button" role="tab" aria-controls="all" aria-selected="true">All Departments</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="leadership-tab" data-bs-toggle="tab" data-bs-target="#leadership" type="button" role="tab" aria-controls="leadership" aria-selected="false">Leadership</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="operations-tab" data-bs-toggle="tab" data-bs-target="#operations" type="button" role="tab" aria-controls="operations" aria-selected="false">Operations</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="marketing-tab" data-bs-toggle="tab" data-bs-target="#marketing" type="button" role="tab" aria-controls="marketing" aria-selected="false">Marketing</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="technology-tab" data-bs-toggle="tab" data-bs-target="#technology" type="button" role="tab" aria-controls="technology" aria-selected="false">Technology</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="finance-tab" data-bs-toggle="tab" data-bs-target="#finance" type="button" role="tab" aria-controls="finance" aria-selected="false">Finance</button>
+                </li>
+            </ul>
+
+            <!-- Team Members Grid -->
+            <div class="tab-content" id="departmentTabsContent">
+                <div class="tab-pane fade show active" id="all" role="tabpanel" aria-labelledby="all-tab">
+                    <div class="row g-4">
+                        <!-- CEO -->
+                        <div class="col-lg-4 col-md-6" data-department="leadership">
+                            <div class="team-card" data-bs-toggle="modal" data-bs-target="#fistonModal">
+                                <div class="card-img-container">
+                                    <img src="image/fiston.png" alt="Fiston Ndayishimiye" style="width:90%; height: auto;">
                                 </div>
-                            </div>
-
-                            <!-- HR Manager -->
-                            <div class="col-md-6">
-                                <div class="card text-center border-0 shadow-lg h-100">
-                                    <a href="#" data-bs-toggle="modal" data-bs-target="#bonkeyModal">
-                                        <img src="image/Bonkey.png" class="card-img-top rounded-circle mx-auto mt-4" alt="Bonkey Muhumure" style="width: 120px; height: 120px; object-fit: cover; border: 4px solid #007bff; cursor: pointer;">
-                                    </a>
-                                    <div class="card-body">
-                                        <h4 class="card-title fw-bold mb-2">Bonkey Muhumure</h4>
-                                        <p class="card-text text-muted mb-3">HR Manager</p>
-                                        <hr class="divider mx-auto" style="width: 50px; height: 2px; background-color: #007bff;">
-                                        <p class="short-text">Bonkey oversees recruitment, training, and employee relations, ensuring a positive workplace culture.</p>
-                                        <div class="social-icon mt-4">
-                                            <a href="https://www.facebook.com/" target="_blank" class="mx-2"><i class="fab fa-facebook-f fa-lg" style="color: #1877F2;"></i></a>
-                                            <a href="https://www.instagram.com/" target="_blank" class="mx-2"><i class="fab fa-instagram fa-lg" style="color: #E1306C;"></i></a>
-                                            <a href="https://www.linkedin.com/" target="_blank" class="mx-2"><i class="fab fa-linkedin fa-lg" style="color: #0077B5;"></i></a>
-                                        </div>
-                                    </div>
+                                <div class="team-info">
+                                    <h3>Fiston Ndayishimiye</h3>
+                                    <p class="position">CEO & Founder</p>
+                                    <p class="bio">Visionary leader driving strategic direction and organizational growth with a passion for youth empowerment.</p>
                                 </div>
                             </div>
                         </div>
-                    </div>
 
-                    <!-- Slide 2: Secretariat & Marketing -->
-                    <div class="carousel-item">
-                        <div class="row justify-content-center">
-                            <!-- Secretariat -->
-                            <div class="col-md-6">
-                                <div class="card text-center border-0 shadow-lg h-100">
-                                    <a href="#" data-bs-toggle="modal" data-bs-target="#uwaseModal">
-                                        <img src="image/uwase.png" class="card-img-top rounded-circle mx-auto mt-4" alt="Uwase Joyeuse" style="width: 120px; height: 120px; object-fit: cover; border: 4px solid #28a745; cursor: pointer;">
-                                    </a>
-                                    <div class="card-body">
-                                        <h4 class="card-title fw-bold mb-2">Uwase Joyeuse</h4>
-                                        <p class="card-text text-muted mb-3">Secretariat</p>
-                                        <hr class="divider mx-auto" style="width: 50px; height: 2px; background-color: #007bff;">
-                                        <p class="short-text">Uwase is responsible for handling official documentation, correspondence, and meeting coordination.</p>
-                                        <div class="social-icon mt-4">
-                                            <a href="https://www.facebook.com/" target="_blank" class="mx-2"><i class="fab fa-facebook-f fa-lg" style="color: #1877F2;"></i></a>
-                                            <a href="https://www.instagram.com/" target="_blank" class="mx-2"><i class="fab fa-instagram fa-lg" style="color: #E1306C;"></i></a>
-                                            <a href="https://www.linkedin.com/" target="_blank" class="mx-2"><i class="fab fa-linkedin fa-lg" style="color: #0077B5;"></i></a>
-                                        </div>
-                                    </div>
+                        <!-- HR Manager -->
+                        <div class="col-lg-4 col-md-6" data-department="operations">
+                            <div class="team-card" data-bs-toggle="modal" data-bs-target="#bonkeyModal">
+                                <div class="card-img-container">
+                                    <img src="image/Bonkey.png" alt="Bonkey Muhumure" style="width:90%; height: auto;">
                                 </div>
-                            </div>
-
-                            <!-- Marketing -->
-                            <div class="col-md-6">
-                                <div class="card text-center border-0 shadow-lg h-100">
-                                    <a href="#" data-bs-toggle="modal" data-bs-target="#mikeModal">
-                                        <img src="image/website-logo.png" class="card-img-top rounded-circle mx-auto mt-4" alt="Mike" style="width: 120px; height: 120px; object-fit: cover; border: 4px solid #007bff; cursor: pointer;">
-                                    </a>
-                                    <div class="card-body">
-                                        <h4 class="card-title fw-bold mb-2">Mike</h4>
-                                        <p class="card-text text-muted mb-3">Marketing</p>
-                                        <hr class="divider mx-auto" style="width: 50px; height: 2px; background-color: #007bff;">
-                                        <p class="short-text">Mike develops and implements strategic marketing campaigns to enhance brand visibility and outreach.</p>
-                                        <div class="social-icon mt-4">
-                                            <a href="https://www.facebook.com/" target="_blank" class="mx-2"><i class="fab fa-facebook-f fa-lg" style="color: #1877F2;"></i></a>
-                                            <a href="https://www.instagram.com/" target="_blank" class="mx-2"><i class="fab fa-instagram fa-lg" style="color: #E1306C;"></i></a>
-                                            <a href="https://www.linkedin.com/" target="_blank" class="mx-2"><i class="fab fa-linkedin fa-lg" style="color: #0077B5;"></i></a>
-                                        </div>
-                                    </div>
+                                <div class="team-info">
+                                    <h3>Bonkey Muhumure</h3>
+                                    <p class="position">HR Manager</p>
+                                    <p class="bio">Talent strategist fostering organizational culture and employee development initiatives.</p>
                                 </div>
                             </div>
                         </div>
-                    </div>
 
-                    <!-- Slide 3: IT & Operations Lead -->
-                    <div class="carousel-item">
-                        <div class="row justify-content-center">
-                            <!-- IT -->
-                            <div class="col-md-6">
-                                <div class="card text-center border-0 shadow-lg h-100">
-                                    <a href="#" data-bs-toggle="modal" data-bs-target="#shemaModal">
-                                        <img src="image/shema.png" class="card-img-top rounded-circle mx-auto mt-4" alt="Shema Manasseh" style="width: 120px; height: 120px; object-fit: cover; border: 4px solid #007bff; cursor: pointer;">
-                                    </a>
-                                    <div class="card-body">
-                                        <h4 class="card-title fw-bold mb-2">Shema Manasseh</h4>
-                                        <p class="card-text text-muted mb-3">IT Department</p>
-                                        <hr class="divider mx-auto" style="width: 50px; height: 2px; background-color: #007bff;">
-                                        <p class="short-text">Shema leads the IT infrastructure, ensuring seamless operations of all technical systems.</p>
-                                        <div class="social-icon mt-4">
-                                            <a href="https://www.facebook.com/" target="_blank" class="mx-2"><i class="fab fa-facebook-f fa-lg" style="color: #1877F2;"></i></a>
-                                            <a href="https://www.instagram.com/" target="_blank" class="mx-2"><i class="fab fa-instagram fa-lg" style="color: #E1306C;"></i></a>
-                                            <a href="https://www.linkedin.com/" target="_blank" class="mx-2"><i class="fab fa-linkedin fa-lg" style="color: #0077B5;"></i></a>
-                                        </div>
-                                    </div>
+                        <!-- Secretariat -->
+                        <div class="col-lg-4 col-md-6" data-department="operations">
+                            <div class="team-card" data-bs-toggle="modal" data-bs-target="#uwaseModal">
+                                <div class="card-img-container">
+                                    <img src="image/uwase.png" alt="Uwase Joyeuse" style="width:90%; height: auto;">
                                 </div>
-                            </div>
-
-                            <!-- Operations Lead -->
-                            <div class="col-md-6">
-                                <div class="card text-center border-0 shadow-lg h-100">
-                                    <a href="#" data-bs-toggle="modal" data-bs-target="#pacificModal">
-                                        <img src="image/website-logo.png" class="card-img-top rounded-circle mx-auto mt-4" alt="Pacific Muhumure" style="width: 120px; height: 120px; object-fit: cover; border: 4px solid #007bff; cursor: pointer;">
-                                    </a>
-                                    <div class="card-body">
-                                        <h4 class="card-title fw-bold mb-2">Pacific Muhumure</h4>
-                                        <p class="card-text text-muted mb-3">Operations Lead</p>
-                                        <hr class="divider mx-auto" style="width: 50px; height: 2px; background-color: #007bff;">
-                                        <p class="short-text">Pacific oversees the operational aspects of the organization, ensuring seamless day-to-day operations.</p>
-                                        <div class="social-icon mt-4">
-                                            <a href="https://www.facebook.com/" target="_blank" class="mx-2"><i class="fab fa-facebook-f fa-lg" style="color: #1877F2;"></i></a>
-                                            <a href="https://www.instagram.com/" target="_blank" class="mx-2"><i class="fab fa-instagram fa-lg" style="color: #E1306C;"></i></a>
-                                            <a href="https://www.linkedin.com/" target="_blank" class="mx-2"><i class="fab fa-linkedin fa-lg" style="color: #0077B5;"></i></a>
-                                        </div>
-                                    </div>
+                                <div class="team-info">
+                                    <h3>Uwase Joyeuse</h3>
+                                    <p class="position">Secretariat</p>
+                                    <p class="bio">Ensuring seamless communication and efficient administrative operations across the organization.</p>
                                 </div>
                             </div>
                         </div>
-                    </div>
 
-                    <!-- Slide 4: Finance & Research Department -->
-                    <div class="carousel-item">
-                        <div class="row justify-content-center">
-                            <!-- Finance -->
-                            <div class="col-md-6">
-                                <div class="card text-center border-0 shadow-lg h-100">
-                                    <a href="#" data-bs-toggle="modal" data-bs-target="#fabiolaModal">
-                                        <img src="image/fabiola.png" class="card-img-top rounded-circle mx-auto mt-4" alt="Fabiola Baraka" style="width: 120px; height: 120px; object-fit: cover; border: 4px solid #28a745; cursor: pointer;">
-                                    </a>
-                                    <div class="card-body">
-                                        <h4 class="card-title fw-bold mb-2">Fabiola Baraka</h4>
-                                        <p class="card-text text-muted mb-3">Finance Manager</p>
-                                        <hr class="divider mx-auto" style="width: 50px; height: 2px; background-color: #28a745;">
-                                        <p class="short-text">Fabiola manages budgets, financial planning, and ensures proper allocation of resources.</p>
-                                        <div class="social-icon mt-4">
-                                            <a href="https://www.facebook.com/" target="_blank" class="mx-2"><i class="fab fa-facebook-f fa-lg" style="color: #1877F2;"></i></a>
-                                            <a href="https://www.instagram.com/" target="_blank" class="mx-2"><i class="fab fa-instagram fa-lg" style="color: #E1306C;"></i></a>
-                                            <a href="https://www.linkedin.com/" target="_blank" class="mx-2"><i class="fab fa-linkedin fa-lg" style="color: #0077B5;"></i></a>
-                                        </div>
-                                    </div>
+                        <!-- Marketing -->
+                        <div class="col-lg-4 col-md-6" data-department="marketing">
+                            <div class="team-card" data-bs-toggle="modal" data-bs-target="#mikeModal">
+                                <div class="card-img-container">
+                                    <img src="image/Mick.jpg" alt="Mike" style="width:90%; height: auto;">
+                                </div>
+                                <div class="team-info">
+                                    <h3>Mike</h3>
+                                    <p class="position">Marketing Director</p>
+                                    <p class="bio">Creative strategist building brand awareness and engagement through innovative campaigns.</p>
                                 </div>
                             </div>
+                        </div>
 
-                            <!-- Research Department -->
-                            <div class="col-md-6">
-                                <div class="card text-center border-0 shadow-lg h-100">
-                                    <a href="#" data-bs-toggle="modal" data-bs-target="#graceModal">
-                                        <img src="image/grace.png" class="card-img-top rounded-circle mx-auto mt-4" alt="Ingabire Grace" style="width: 120px; height: 120px; object-fit: cover; border: 4px solid #007bff; cursor: pointer;">
-                                    </a>
-                                    <div class="card-body">
-                                        <h4 class="card-title fw-bold mb-2">Ingabire Grace</h4>
-                                        <p class="card-text text-muted mb-3">Research Department</p>
-                                        <hr class="divider mx-auto" style="width: 50px; height: 2px; background-color: #007bff;">
-                                        <p class="short-text">Grace leads research initiatives, ensuring data-driven decision-making and innovation.</p>
-                                        <div class="social-icon mt-4">
-                                            <a href="https://www.facebook.com/" target="_blank" class="mx-2"><i class="fab fa-facebook-f fa-lg" style="color: #1877F2;"></i></a>
-                                            <a href="https://www.instagram.com/" target="_blank" class="mx-2"><i class="fab fa-instagram fa-lg" style="color: #E1306C;"></i></a>
-                                            <a href="https://www.linkedin.com/" target="_blank" class="mx-2"><i class="fab fa-linkedin fa-lg" style="color: #0077B5;"></i></a>
-                                        </div>
-                                    </div>
+                        <!-- IT Department -->
+                        <div class="col-lg-4 col-md-6" data-department="technology">
+                            <div class="team-card" data-bs-toggle="modal" data-bs-target="#shemaModal">
+                                <div class="card-img-container">
+                                    <img src="image/shema.png" alt="Shema Manasseh" style="width:90%; height: auto;">
+                                </div>
+                                <div class="team-info">
+                                    <h3>Shema Manasseh</h3>
+                                    <p class="position">Software Engineer</p>
+                                    <p class="bio">Technology architect ensuring robust digital infrastructure and innovative solutions.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Operations Lead -->
+                        <div class="col-lg-4 col-md-6" data-department="operations">
+                            <div class="team-card" data-bs-toggle="modal" data-bs-target="#pacificModal">
+                                <div class="card-img-container">
+                                    <img src="image/pacific.jpg" alt="Pacific Muhumure" style="width:90%; height: auto;">
+                                </div>
+                                <div class="team-info">
+                                    <h3>Pacific Muhumure</h3>
+                                    <p class="position">Operations Lead</p>
+                                    <p class="bio">Efficiency expert optimizing processes and ensuring seamless day-to-day operations.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Finance Manager -->
+                        <div class="col-lg-4 col-md-6" data-department="finance">
+                            <div class="team-card" data-bs-toggle="modal" data-bs-target="#fabiolaModal">
+                                <div class="card-img-container">
+                                    <img src="image/fabiola.png" alt="Fabiola Baraka" style="width:90%; height: auto;">
+                                </div>
+                                <div class="team-info">
+                                    <h3>Fabiola Baraka</h3>
+                                    <p class="position">Finance Manager</p>
+                                    <p class="bio">Financial steward ensuring fiscal responsibility and sustainable resource allocation.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Research Department -->
+                        <div class="col-lg-4 col-md-6" data-department="operations">
+                            <div class="team-card" data-bs-toggle="modal" data-bs-target="#graceModal">
+                                <div class="card-img-container">
+                                    <img src="image/grace.png" alt="Ingabire Grace" style="width:90%; height: auto;">
+                                </div>
+                                <div class="team-info">
+                                    <h3>Ingabire Grace</h3>
+                                    <p class="position">Research Lead</p>
+                                    <p class="bio">Data-driven analyst providing insights that shape organizational strategy and impact.</p>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <!-- Carousel Controls -->
-                <div class="carousel-controls">
-                    <a href="#" class="scroll-link prev-link" data-bs-target="#teamCarousel" data-bs-slide="prev">
-                        <i class="fas fa-chevron-left"></i>
-                    </a>
-                    <a href="#" class="scroll-link next-link" data-bs-target="#teamCarousel" data-bs-slide="next">
-                        <i class="fas fa-chevron-right"></i>
-                    </a>
-                </div>
+                <!-- Department-specific tabs would show filtered content via JavaScript -->
+                <div class="tab-pane fade" id="leadership" role="tabpanel" aria-labelledby="leadership-tab"></div>
+                <div class="tab-pane fade" id="operations" role="tabpanel" aria-labelledby="operations-tab"></div>
+                <div class="tab-pane fade" id="marketing" role="tabpanel" aria-labelledby="marketing-tab"></div>
+                <div class="tab-pane fade" id="technology" role="tabpanel" aria-labelledby="technology-tab"></div>
+                <div class="tab-pane fade" id="finance" role="tabpanel" aria-labelledby="finance-tab"></div>
             </div>
         </div>
     </section>
 
     <!-- Modals for Team Members -->
     <!-- Modal for Fiston -->
-    <div class="modal fade" id="fistonModal" tabindex="-1" aria-labelledby="fistonModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered modal-lg">
+    <div class="modal fade team-modal" id="fistonModal" tabindex="-1" aria-labelledby="fistonModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title fw-bold" id="fistonModalLabel">Fiston Ndayishimiye</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
                     <div class="row">
-                        <div class="col-md-6">
-                            <img src="image/fiston.png" class="img-fluid rounded" alt="Fiston Ndayishimiye">
+                        <div class="col-md-5">
+                            <img src="image/fiston.png" class="member-img" alt="Fiston Ndayishimiye">
                         </div>
-                        <div class="col-md-6">
-                            <p class="lead">CEO & Founder</p>
-                            <p>Fiston Ndayishimiye is the visionary founder of Importance Leadership. With a passion for empowering youth, he provides strategic leadership and drives the organization's mission to mobilize, inspire, and empower young individuals to become change-makers.</p>
-                            <p>Under his leadership, Importance Leadership has achieved significant milestones, including financial sustainability, stakeholder engagement, and operational excellence across all departments. Fiston's dedication to innovation and growth continues to inspire the next generation of leaders.</p>
+                        <div class="col-md-7">
+                            <h3 class="member-name">Fiston Ndayishimiye</h3>
+                            <p class="member-position">CEO & Founder</p>
+                            <p class="member-bio">Fiston Ndayishimiye is the visionary founder of Importance Leadership. With a passion for empowering youth, he provides strategic leadership and drives the organization's mission to mobilize, inspire, and empower young individuals to become change-makers.</p>
+                            <p class="member-bio">Under his leadership, Importance Leadership has achieved significant milestones, including financial sustainability, stakeholder engagement, and operational excellence across all departments. Fiston's dedication to innovation and growth continues to inspire the next generation of leaders.</p>
+                            
+                            <div class="member-skills">
+                                <h5 class="skill-title">Key Skills</h5>
+                                <div class="skill-item">
+                                    <p>Strategic Leadership</p>
+                                    <div class="skill-bar">
+                                        <div class="skill-progress" style="width: 95%"></div>
+                                    </div>
+                                </div>
+                                <div class="skill-item">
+                                    <p>Youth Empowerment</p>
+                                    <div class="skill-bar">
+                                        <div class="skill-progress" style="width: 90%"></div>
+                                    </div>
+                                </div>
+                                <div class="skill-item">
+                                    <p>Organizational Development</p>
+                                    <div class="skill-bar">
+                                        <div class="skill-progress" style="width: 85%"></div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
                 </div>
             </div>
         </div>
     </div>
 
     <!-- Modal for Bonkey -->
-    <div class="modal fade" id="bonkeyModal" tabindex="-1" aria-labelledby="bonkeyModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered modal-lg">
+    <div class="modal fade team-modal" id="bonkeyModal" tabindex="-1" aria-labelledby="bonkeyModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title fw-bold" id="bonkeyModalLabel">Bonkey Muhumure</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
                     <div class="row">
-                        <div class="col-md-6">
-                            <img src="image/Bonkey.png" class="img-fluid rounded" alt="Bonkey Muhumure">
+                        <div class="col-md-5">
+                            <img src="image/Bonkey.png" class="member-img" alt="Bonkey Muhumure">
                         </div>
-                        <div class="col-md-6">
-                            <p class="lead">HR Manager</p>
-                            <p>Bonkey ensures compliance with labor laws, handles payroll, and fosters a supportive environment for all employees.</p>
-                            <p>As a key figure in the organization, Bonkey oversees recruitment, training, and employee relations to maintain a positive workplace culture.</p>
+                        <div class="col-md-7">
+                            <h3 class="member-name">Bonkey Muhumure</h3>
+                            <p class="member-position">HR Manager</p>
+                            <p class="member-bio">Bonkey Muhumure, a youth currently residing in Kenya as an urban refugee. My journey began in the Democratic Republic of Congo (DR Congo), where I was born. However, my childhood was abruptly disrupted by conflicts and wars, forcing my family to flee our home. We sought refuge in Bujumbura, Burundi, where we lived for over eight years.</p>
+                            <p class="member-bio">In 2015, a new wave of unrest broke out in Burundi due to political tensions surrounding President Pierre Nkurunziza's bid for a third term in office. This turmoil compelled my family and me to flee once again, leading us to seek safety in Kenya.</p>
+                            <p class="member-bio">Life as a refugee has been fraught with countless challenges, including discrimination, poverty, unemployment, inequality, lack of representation, and limited access to education. I vividly remember the struggle to secure even one meal a day and the immense difficulties in acquiring formal education. To pay my school fees, I had to engage in child labor, all while enduring rampant discrimination wherever I found myself.</p>
+                            <p class="member-bio">Despite these adversities, I made a personal vow to overcome the odds and achieve my dream: to work with international organizations as a humanitarian, serving vulnerable populations such as refugees, minorities, internally displaced persons, and people with disabilities. I held onto the belief that "hard work pays," and my journey has proven the truth of this adage.</p>
+                            <p class="member-bio">Through perseverance and determination, I successfully completed my education, progressing from primary school to university here in Kenya. Along the way, I was fortunate to receive various scholarships that eased my path. These included high school and university scholarships. Currently, I am pursuing a second Bachelor's Degree in Development Studies at Mount Kenya University under another scholarship awarded for my academic excellence.</p>
+                            <p class="member-bio">My hard work has also opened doors to meaningful opportunities. I have had the privilege of working with various organizations and embassies in different capacities:</p>
+                            <ul class="member-bio">
+                                <li>Protection Officer at the Refugee Consortium of Kenya (RCK)</li>
+                                <li>Consultant at HIAS Kenya</li>
+                                <li>Interpreter at Resettlement Support Center Africa</li>
+                                <li>Regional Youth Development Manager at Importance Leadership</li>
+                            </ul>
+                            <p class="member-bio">My journey has not been easy, but it has shaped me into a resilient individual dedicated to serving others. My experiences fuel my passion for humanitarian work, and I remain committed to making a difference in the lives of vulnerable communities.</p>
+                            
+                            <div class="member-skills">
+                                <h5 class="skill-title">Key Skills</h5>
+                                <div class="skill-item">
+                                    <p>Talent Acquisition</p>
+                                    <div class="skill-bar">
+                                        <div class="skill-progress" style="width: 90%"></div>
+                                    </div>
+                                </div>
+                                <div class="skill-item">
+                                    <p>Employee Development</p>
+                                    <div class="skill-bar">
+                                        <div class="skill-progress" style="width: 85%"></div>
+                                    </div>
+                                </div>
+                                <div class="skill-item">
+                                    <p>Workplace Culture</p>
+                                    <div class="skill-bar">
+                                        <div class="skill-progress" style="width: 88%"></div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
                 </div>
             </div>
         </div>
     </div>
 
     <!-- Modal for Uwase -->
-    <div class="modal fade" id="uwaseModal" tabindex="-1" aria-labelledby="uwaseModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered modal-lg">
+    <div class="modal fade team-modal" id="uwaseModal" tabindex="-1" aria-labelledby="uwaseModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title fw-bold" id="uwaseModalLabel">Uwase Joyeuse</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
                     <div class="row">
-                        <div class="col-md-6">
-                            <img src="image/uwase.png" class="img-fluid rounded" alt="Uwase Joyeuse">
+                        <div class="col-md-5">
+                            <img src="image/uwase.png" class="member-img" alt="Uwase Joyeuse">
                         </div>
-                        <div class="col-md-6">
-                            <p class="lead">Secretariat</p>
-                            <p>Uwase is responsible for handling official documentation, correspondence, and ensuring seamless communication within the organization.</p>
-                            <p>She plays a crucial role in scheduling meetings, preparing reports, and maintaining organized records for smooth administrative operations.</p>
+                        <div class="col-md-7">
+                            <h3 class="member-name">Uwase Joyeuse</h3>
+                            <p class="member-position">Secretariat</p>
+                            <p class="member-bio">Uwase is responsible for handling official documentation, correspondence, and ensuring seamless communication within the organization. She plays a crucial role in scheduling meetings, preparing reports, and maintaining organized records for smooth administrative operations.</p>
+                            <p class="member-bio">With exceptional organizational skills and attention to detail, Uwase ensures that all administrative processes run efficiently, supporting the entire team in achieving their goals.</p>
+                            
+                            <div class="member-skills">
+                                <h5 class="skill-title">Key Skills</h5>
+                                <div class="skill-item">
+                                    <p>Administrative Management</p>
+                                    <div class="skill-bar">
+                                        <div class="skill-progress" style="width: 92%"></div>
+                                    </div>
+                                </div>
+                                <div class="skill-item">
+                                    <p>Documentation</p>
+                                    <div class="skill-bar">
+                                        <div class="skill-progress" style="width: 95%"></div>
+                                    </div>
+                                </div>
+                                <div class="skill-item">
+                                    <p>Communication</p>
+                                    <div class="skill-bar">
+                                        <div class="skill-progress" style="width: 88%"></div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
                 </div>
             </div>
         </div>
     </div>
 
     <!-- Modal for Mike -->
-    <div class="modal fade" id="mikeModal" tabindex="-1" aria-labelledby="mikeModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered modal-lg">
+    <div class="modal fade team-modal" id="mikeModal" tabindex="-1" aria-labelledby="mikeModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title fw-bold" id="mikeModalLabel">Mike</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
                     <div class="row">
-                        <div class="col-md-6">
-                            <img src="image/mike.png" class="img-fluid rounded" alt="Mike">
+                        <div class="col-md-5">
+                            <img src="image/Mick.jpg" class="member-img" alt="Mike">
                         </div>
-                        <div class="col-md-6">
-                            <p class="lead">Marketing</p>
-                            <p>Mike is responsible for developing marketing strategies that enhance the organization's public image and outreach efforts.</p>
-                            <p>With expertise in digital marketing and brand communication, Mike ensures that promotional campaigns align with the organization's mission and engage the right audience effectively.</p>
+                        <div class="col-md-7">
+                            <h3 class="member-name">Mike</h3>
+                            <p class="member-position">Marketing Director</p>
+                            <p class="member-bio">Mike is responsible for developing marketing strategies that enhance the organization's public image and outreach efforts. With expertise in digital marketing and brand communication, Mike ensures that promotional campaigns align with the organization's mission and engage the right audience effectively.</p>
+                            <p class="member-bio">His creative approach to marketing has significantly increased the organization's visibility and impact, reaching wider audiences and creating meaningful connections.</p>
+                            
+                            <div class="member-skills">
+                                <h5 class="skill-title">Key Skills</h5>
+                                <div class="skill-item">
+                                    <p>Digital Marketing</p>
+                                    <div class="skill-bar">
+                                        <div class="skill-progress" style="width: 90%"></div>
+                                    </div>
+                                </div>
+                                <div class="skill-item">
+                                    <p>Brand Strategy</p>
+                                    <div class="skill-bar">
+                                        <div class="skill-progress" style="width: 85%"></div>
+                                    </div>
+                                </div>
+                                <div class="skill-item">
+                                    <p>Content Creation</p>
+                                    <div class="skill-bar">
+                                        <div class="skill-progress" style="width: 88%"></div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
                 </div>
             </div>
         </div>
     </div>
 
     <!-- Modal for Shema -->
-    <div class="modal fade" id="shemaModal" tabindex="-1" aria-labelledby="shemaModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered modal-lg">
+    <div class="modal fade team-modal" id="shemaModal" tabindex="-1" aria-labelledby="shemaModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title fw-bold" id="shemaModalLabel">Shema Manasseh</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
                     <div class="row">
-                        <div class="col-md-6">
-                            <img src="image/shema.png" class="img-fluid rounded" alt="Shema Manasseh">
+                        <div class="col-md-5">
+                            <img src="image/shema.png" class="member-img" alt="Shema Manasseh">
                         </div>
-                        <div class="col-md-6">
-                            <p class="lead">IT Department</p>
-                            <p>Shema leads the IT infrastructure, ensuring seamless operations of all technical systems.</p>
-                            <p>With a background in software engineering, he develops, manages, and optimizes applications while keeping the organization at the forefront of technological advancements.</p>
+                        <div class="col-md-7">
+                            <h3 class="member-name">Shema Manasseh</h3>
+                            <p class="member-position">IT Lead</p>
+                            <p class="member-bio">Shema leads the IT infrastructure, ensuring seamless operations of all technical systems. With a background in software engineering, he develops, manages, and optimizes applications while keeping the organization at the forefront of technological advancements.</p>
+                            <p class="member-bio">His innovative solutions have streamlined operations and enhanced the organization's digital presence, making technology an enabler of the mission.</p>
+                            
+                            <div class="member-skills">
+                                <h5 class="skill-title">Key Skills</h5>
+                                <div class="skill-item">
+                                    <p>System Architecture</p>
+                                    <div class="skill-bar">
+                                        <div class="skill-progress" style="width: 92%"></div>
+                                    </div>
+                                </div>
+                                <div class="skill-item">
+                                    <p>Software Development</p>
+                                    <div class="skill-bar">
+                                        <div class="skill-progress" style="width: 88%"></div>
+                                    </div>
+                                </div>
+                                <div class="skill-item">
+                                    <p>Technical Support</p>
+                                    <div class="skill-bar">
+                                        <div class="skill-progress" style="width: 90%"></div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
                 </div>
             </div>
         </div>
     </div>
 
     <!-- Modal for Pacific -->
-    <div class="modal fade" id="pacificModal" tabindex="-1" aria-labelledby="pacificModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered modal-lg">
+    <div class="modal fade team-modal" id="pacificModal" tabindex="-1" aria-labelledby="pacificModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title fw-bold" id="pacificModalLabel">Pacific Muhumure</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
                     <div class="row">
-                        <div class="col-md-6">
-                            <img src="image/website-logo.png" class="img-fluid rounded" alt="Pacific Muhumure">
+                        <div class="col-md-5">
+                            <img src="image/pacific.jpg" class="member-img" alt="Pacific Muhumure">
                         </div>
-                        <div class="col-md-6">
-                            <p class="lead">Operations Lead</p>
-                            <p>Pacific oversees the operational aspects of the organization, ensuring seamless day-to-day operations.</p>
-                            <p>With a focus on efficiency and quality, Pacific leads the operational team to deliver projects on time and within budget.</p>
+                        <div class="col-md-7">
+                            <h3 class="member-name">Pacific Muhumure</h3>
+                            <p class="member-position">Operations Lead</p>
+                            <p class="member-bio">Pacific Muhumure is a dedicated professional with both Associate and Bachelor's degrees in Healthcare Management (specializing in Global Perspective) from Southern New Hampshire University. Currently, Pacific is pursuing his Master's program at the University of Manitoba based in Canada. He also holds a degree in Exercising Leadership from Harvard University, complemented by certifications from Boston University, and the United Nations.</p>
+                            <p class="member-bio">Passionate about community empowerment, Pacific has collaborated with different NGOs, RLOs, Government Agencies, and the Ministry of Education to serve the underserved communities through education and advocacy initiatives.</p>
+                            <p class="member-bio">With diverse experience as an Academic Advisor at Southern New Hampshire University, Alumni Representative at Global Education Movement, Monitoring and Evaluation Officer at Teach For Kenya & Project Manager for different RLOs, Pacific brings wealth of expertise project management, education, community engagement and advocacy. Additionally, he has served as a High School Chemistry/Biology Teacher, Digital Facilitator and Refugee Youth Leader.</p>
+                            <p class="member-bio">Pacific is passionate about community empowerment through education & advocacy and he believes that every youth should have access to quality education regardless of their socio-economic background to enable them unlock their full potential.</p>
+                            
+                            <div class="member-skills">
+                                <h5 class="skill-title">Key Skills</h5>
+                                <div class="skill-item">
+                                    <p>Process Optimization</p>
+                                    <div class="skill-bar">
+                                        <div class="skill-progress" style="width: 90%"></div>
+                                    </div>
+                                </div>
+                                <div class="skill-item">
+                                    <p>Project Management</p>
+                                    <div class="skill-bar">
+                                        <div class="skill-progress" style="width: 85%"></div>
+                                    </div>
+                                </div>
+                                <div class="skill-item">
+                                    <p>Team Leadership</p>
+                                    <div class="skill-bar">
+                                        <div class="skill-progress" style="width: 88%"></div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
                 </div>
             </div>
         </div>
     </div>
 
     <!-- Modal for Fabiola -->
-    <div class="modal fade" id="fabiolaModal" tabindex="-1" aria-labelledby="fabiolaModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered modal-lg">
+    <div class="modal fade team-modal" id="fabiolaModal" tabindex="-1" aria-labelledby="fabiolaModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title fw-bold" id="fabiolaModalLabel">Fabiola Baraka</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
                     <div class="row">
-                        <div class="col-md-6">
-                            <img src="image/fabiola.png" class="img-fluid rounded" alt="Fabiola Baraka">
+                        <div class="col-md-5">
+                            <img src="image/fabiola.png" class="member-img" alt="Fabiola Baraka">
                         </div>
-                        <div class="col-md-6">
-                            <p class="lead">Finance Manager</p>
-                            <p>Fabiola manages budgets, financial planning, and ensures proper allocation of resources.</p>
-                            <p>With a strong background in finance, she oversees financial statements, audits, and tax compliance, ensuring the organization's financial health.</p>
+                        <div class="col-md-7">
+                            <h3 class="member-name">Fabiola Baraka</h3>
+                            <p class="member-position">Finance Manager</p>
+                            <p class="member-bio">Personal Profile</p>
+                            <p class="member-bio">Fabiola Baraka is a finance officer at Importance Leadership, Kenya, who deals with financial planning and analysis.</p>
+                            <p class="member-bio">She is motivated by seeing young, forcibly displaced people in the communities having a voice and using it to lead change through their leadership.</p>
+                            <p class="member-bio">Fabiola graduated with an Associate of Arts degree in Business Administration and a Bachelor of Arts in Healthcare Management, both from Southern New Hampshire University, and a certificate in Refugee and Forced Migration Studies from the University of Oxford. She then went on to work with RefugePoint International as a community navigator and is currently working with Jesuit Refugee Service as an academic coach.</p>
+                            <p class="member-bio">During that period, she developed strong leadership skills and achieved several professional accomplishments.</p>
+                            <p class="member-bio">Her experience in the humanitarian sector, specifically dealing with refugees and vulnerable host communities, makes her adept for this responsibility.</p>
+                            
+                            <div class="member-skills">
+                                <h5 class="skill-title">Key Skills</h5>
+                                <div class="skill-item">
+                                    <p>Financial Planning</p>
+                                    <div class="skill-bar">
+                                        <div class="skill-progress" style="width: 95%"></div>
+                                    </div>
+                                </div>
+                                <div class="skill-item">
+                                    <p>Budget Management</p>
+                                    <div class="skill-bar">
+                                        <div class="skill-progress" style="width: 92%"></div>
+                                    </div>
+                                </div>
+                                <div class="skill-item">
+                                    <p>Financial Reporting</p>
+                                    <div class="skill-bar">
+                                        <div class="skill-progress" style="width: 90%"></div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
                 </div>
             </div>
         </div>
     </div>
 
     <!-- Modal for Grace -->
-    <div class="modal fade" id="graceModal" tabindex="-1" aria-labelledby="graceModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered modal-lg">
+    <div class="modal fade team-modal" id="graceModal" tabindex="-1" aria-labelledby="graceModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title fw-bold" id="graceModalLabel">Ingabire Grace</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
                     <div class="row">
-                        <div class="col-md-6">
-                            <img src="image/grace.png" class="img-fluid rounded" alt="Ingabire Grace">
+                        <div class="col-md-5">
+                            <img src="image/grace.png" class="member-img" alt="Ingabire Grace">
                         </div>
-                        <div class="col-md-6">
-                            <p class="lead">Research Department</p>
-                            <p>Grace leads research initiatives, ensuring data-driven decision-making and innovation.</p>
-                            <p>With a strong background in research methodologies, Grace ensures the organization stays ahead of industry trends and developments.</p>
+                        <div class="col-md-7">
+                            <h3 class="member-name">Ingabire Grace</h3>
+                            <p class="member-position">Research Lead</p>
+                            <p class="member-bio">Ingabire Grace, The youth empowerment specialist in Importance Leadership is a passionate young lady with a keen interest in female and youth empowerment particularly in her community. She was born in the Eastern DRC and fleed to kenya in 2014 due to the unending wars. She finished her primary school and proceeded to highschool on a scholarship for good performance.</p>
+                            <p class="member-bio">While in highschool, She was motivated by the negative view of the girl child in her community and thus co founded an initiative called Her Dignity Girls Organization. It aims to empower girls in her community to step up and reach for their goals, while embracing education instead of opting for the much glorified early marriages.</p>
+                            <p class="member-bio">Ingabire is currently pursuing a law degree (LLB) in Kenya and She hopes to use the knowledge to seek justice for her people and women in the society.</p>
+                            
+                            <div class="member-skills">
+                                <h5 class="skill-title">Key Skills</h5>
+                                <div class="skill-item">
+                                    <p>Data Analysis</p>
+                                    <div class="skill-bar">
+                                        <div class="skill-progress" style="width: 92%"></div>
+                                    </div>
+                                </div>
+                                <div class="skill-item">
+                                    <p>Research Methodology</p>
+                                    <div class="skill-bar">
+                                        <div class="skill-progress" style="width: 90%"></div>
+                                    </div>
+                                </div>
+                                <div class="skill-item">
+                                    <p>Impact Assessment</p>
+                                    <div class="skill-bar">
+                                        <div class="skill-progress" style="width: 88%"></div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
                 </div>
             </div>
         </div>
     </div>
 
+    <!-- Scroll to Top Button -->
+    <div class="scroll-top" onclick="scrollToTop()">
+        <i class="fas fa-arrow-up"></i>
+    </div>
+
     <!-- Footer -->
     <script src="loadFooter.js"></script>
 
-    <!-- Bootstrap JavaScript (Include Popper.js) -->
+    <!-- Bootstrap JS Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-
-    <!-- JavaScript for Scroll Icons -->
+    
+    <!-- Custom JavaScript -->
     <script>
-        // Function to position the scroll icons
-        function positionScrollIcons() {
-            const carousel = document.getElementById('teamCarousel');
-            const carouselInner = carousel.querySelector('.carousel-inner');
-            const prevLink = document.querySelector('.prev-link');
-            const nextLink = document.querySelector('.next-link');
-
-            // Get the first and last carousel items
-            const firstItem = carouselInner.querySelector('.carousel-item:first-child');
-            const lastItem = carouselInner.querySelector('.carousel-item:last-child');
-
-            // Get the bounding rectangles of the first and last items
-            const firstItemRect = firstItem.getBoundingClientRect();
-            const lastItemRect = lastItem.getBoundingClientRect();
-
-            // Position the previous icon at the beginning of the first image
-            prevLink.style.left = `${firstItemRect.left}px`;
-
-            // Position the next icon at the end of the last image
-            nextLink.style.right = `${window.innerWidth - lastItemRect.right}px`;
+        // Scroll to Team Section
+        function scrollToTeam() {
+            const teamSection = document.getElementById('team');
+            teamSection.scrollIntoView({ behavior: 'smooth' });
         }
 
-        // Position the icons on page load and window resize
-        window.addEventListener('load', positionScrollIcons);
-        window.addEventListener('resize', positionScrollIcons);
+        // Scroll to Top Function
+        function scrollToTop() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        }
 
-        // Prevent infinite scrolling
-        const teamCarousel = document.getElementById('teamCarousel');
-        teamCarousel.addEventListener('slid.bs.carousel', function (event) {
-            const carousel = event.target;
-            const firstSlide = carousel.querySelector('.carousel-item:first-child');
-            const lastSlide = carousel.querySelector('.carousel-item:last-child');
-
-            // Disable previous button on the first slide
-            if (event.from === 0) {
-                carousel.querySelector('.prev-link').style.pointerEvents = 'none';
-                carousel.querySelector('.prev-link').style.opacity = '0.5';
+        // Show/Hide Scroll to Top Button
+        window.addEventListener('scroll', function() {
+            const scrollTop = document.querySelector('.scroll-top');
+            if (window.pageYOffset > 300) {
+                scrollTop.classList.add('active');
             } else {
-                carousel.querySelector('.prev-link').style.pointerEvents = 'auto';
-                carousel.querySelector('.prev-link').style.opacity = '1';
+                scrollTop.classList.remove('active');
             }
-
-            // Disable next button on the last slide
-            if (event.from === carousel.querySelectorAll('.carousel-item').length - 1) {
-                carousel.querySelector('.next-link').style.pointerEvents = 'none';
-                carousel.querySelector('.next-link').style.opacity = '0.5';
-            } else {
-                carousel.querySelector('.next-link').style.pointerEvents = 'auto';
-                carousel.querySelector('.next-link').style.opacity = '1';
-            }
-
-            // Reposition the icons after sliding
-            positionScrollIcons();
         });
+
+        // Department Filtering
+        document.addEventListener('DOMContentLoaded', function() {
+            // Initialize Bootstrap tabs
+            const tabElms = document.querySelectorAll('button[data-bs-toggle="tab"]');
+            tabElms.forEach(tabEl => {
+                tabEl.addEventListener('shown.bs.tab', function(event) {
+                    const targetId = event.target.getAttribute('data-bs-target').replace('#', '');
+                    filterTeamMembers(targetId);
+                });
+            });
+
+            // Filter team members by department
+            function filterTeamMembers(department) {
+                if (department === 'all') return; // "All" tab shows everything by default
+                
+                const allMembers = document.querySelectorAll('#all .col-lg-4.col-md-6');
+                const targetContainer = document.getElementById(department);
+                
+                // Clear the target container
+                targetContainer.innerHTML = '';
+                
+                // Create a new row for the filtered members
+                const row = document.createElement('div');
+                row.className = 'row g-4';
+                
+                // Filter and append matching members
+                allMembers.forEach(member => {
+                    if (member.getAttribute('data-department') === department) {
+                        row.appendChild(member.cloneNode(true));
+                    }
+                });
+                
+                // Append row to target container
+                targetContainer.appendChild(row);
+            }
+
+            // Initialize the first tab
+            const firstTab = document.querySelector('#departmentTabs .nav-link.active');
+            if (firstTab) {
+                const firstTabId = firstTab.getAttribute('data-bs-target').replace('#', '');
+                filterTeamMembers(firstTabId);
+            }
+
+            // Initialize all modals
+            const modals = document.querySelectorAll('.team-modal');
+            modals.forEach(modal => {
+                modal.addEventListener('shown.bs.modal', function() {
+                    // Animate skill bars when modal is shown
+                    const skillBars = this.querySelectorAll('.skill-progress');
+                    skillBars.forEach(bar => {
+                        const width = bar.style.width;
+                        bar.style.width = '0';
+                        setTimeout(() => {
+                            bar.style.width = width;
+                        }, 100);
+                    });
+                });
+            });
+        });
+
+        // Animate elements when they come into view
+        const animateOnScroll = function() {
+            const elements = document.querySelectorAll('.team-card, .section-title h2, .section-title p');
+            
+            elements.forEach(element => {
+                const elementPosition = element.getBoundingClientRect().top;
+                const windowHeight = window.innerHeight;
+                
+                if (elementPosition < windowHeight - 100) {
+                    element.classList.add('animate__animated', 'animate__fadeInUp');
+                }
+            });
+        };
+
+        window.addEventListener('scroll', animateOnScroll);
+        window.addEventListener('load', animateOnScroll);
     </script>
 </body>
 </html>
