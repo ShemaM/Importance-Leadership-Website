@@ -2,8 +2,8 @@
 require_once 'auth_check.php';
 require_once 'db_connect.php';
 
-$pageTitle = "Mentor Management";
-$activePage = "mentors";
+$pageTitle = "Mentee Management";
+$activePage = "mentees";
 
 // Handle form submissions
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
@@ -21,23 +21,23 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 $_POST['lastname'],
                 $_POST['email'],
                 $passwordHash,
-                $_POST['profession'],
-                $_POST['expertise']
+                $_POST['interests'],
+                $_POST['goals']
             ]);
-            $_SESSION['message'] = "Mentor added successfully!";
+            $_SESSION['message'] = "Mentee added successfully!";
         } catch (PDOException $e) {
-            $_SESSION['error'] = "Error adding mentor: " . $e->getMessage();
+            $_SESSION['error'] = "Error adding mentee: " . $e->getMessage();
         }
     }
-    header("Location: mentors.php");
+    header("Location: mentees.php");
     exit;
 }
 
 // Get all mentees
 try {
-    $mentees = $pdo->query("SELECT * FROM mentors ORDER BY created_at DESC")->fetchAll();
+    $mentees = $pdo->query("SELECT * FROM mentees ORDER BY created_at DESC")->fetchAll();
 } catch (PDOException $e) {
-    die("Error fetching mentors: " . $e->getMessage());
+    die("Error fetching mentees: " . $e->getMessage());
 }
 ?>
 
@@ -219,9 +219,9 @@ try {
 
             <div class="card mb-4">
                 <div class="card-header d-flex justify-content-between align-items-center">
-                    <h5 class="mb-0">Mentor Management</h5>
+                    <h5 class="mb-0">Mentee Management</h5>
                     <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addMenteeModal">
-                        <i class="fas fa-plus"></i> Add Mentor
+                        <i class="fas fa-plus"></i> Add Mentee
                     </button>
                 </div>
                 <div class="card-body">
@@ -231,23 +231,23 @@ try {
                                 <tr>
                                     <th>Name</th>
                                     <th>Email</th>
-                                    <th>Profession</th>
-                                    <th>Expertise</th>
+                                    <th>Interest</th>
+                                    <th>Goals</th>
                                     <th>Actions</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                <?php foreach ($mentees as $mentor): ?>
+                                <?php foreach ($mentees as $mentee): ?>
                                 <tr>
-                                    <td><?= htmlspecialchars($mentor['firstname'] . ' ' . $mentor['lastname']) ?></td>
-                                    <td><?= htmlspecialchars($mentor['email']) ?></td>
-                                    <td><?= htmlspecialchars($mentor['profession']) ?></td>
-                                    <td><?= htmlspecialchars($mentor['expertise']) ?></td>
+                                    <td><?= htmlspecialchars($mentee['firstname'] . ' ' . $mentee['lastname']) ?></td>
+                                    <td><?= htmlspecialchars($mentee['email']) ?></td>
+                                    <td><?= htmlspecialchars($mentee['interests']) ?></td>
+                                    <td><?= htmlspecialchars($mentee['goals']) ?></td>
                                     <td>
-                                        <a href="mentor_view.php?id=<?= $mentor['id'] ?>" class="btn btn-sm btn-primary">
+                                        <a href="mentee_view.php?id=<?= $mentee['id'] ?>" class="btn btn-sm btn-primary">
                                             <i class="fas fa-eye"></i>
                                         </a>
-                                        <a href="mentor_edit.php?id=<?= $mentor['id'] ?>" class="btn btn-sm btn-warning">
+                                        <a href="mentee_edit.php?id=<?= $mentee['id'] ?>" class="btn btn-sm btn-warning">
                                             <i class="fas fa-edit"></i>
                                         </a>
                                     </td>
@@ -262,13 +262,13 @@ try {
     </div>
 
     <!-- Add Mentee Modal -->
-    <div class="modal fade" id="addMentorModal" tabindex="-1" aria-hidden="true">
+    <div class="modal fade" id="addMenteeModal" tabindex="-1" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
                 <form method="POST">
                     <input type="hidden" name="csrf_token" value="<?= $_SESSION['csrf_token'] ?>">
                     <div class="modal-header">
-                        <h5 class="modal-title">Add New Mentor</h5>
+                        <h5 class="modal-title">Add New Mentee</h5>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
@@ -289,16 +289,16 @@ try {
                             <input type="password" name="password" class="form-control" required>
                         </div>
                         <div class="mb-3">
-                            <label for="interests" class="form-label">Profession</label>
+                            <label for="interests" class="form-label">Interest</label>
                             <input type="text" name="interests" class="form-control" required>
                         </div>
                         <div class="mb-3">
-                            <label for="goals" class="form-label">Expertise</label>
+                            <label for="goals" class="form-label">Goal</label>
                             <textarea name="goals" class="form-control" required></textarea>
                         </div>
                     </div>
                     <div class="modal-footer">
-                        <button type="submit" name="add_mentor" class="btn btn-success">Add Mentor</button>
+                        <button type="submit" name="add_mentee" class="btn btn-success">Add Mentee</button>
                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                     </div>
                 </form>

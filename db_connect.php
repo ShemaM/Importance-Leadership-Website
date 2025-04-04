@@ -23,5 +23,5 @@ try {
 }
 
 // Optional: Set the default timezone
-date_default_timezone_set('America/New_York'); // Change to your preferred timezone
+date_default_timezone_set('Africa/Nairobi'); // Change to your preferred timezone
 ?>
