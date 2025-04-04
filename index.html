@@ -430,12 +430,24 @@ h1, h2, h3, p {
                 </button>
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav ms-auto">
-                        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-                        <li class="nav-item"><a class="nav-link" href="who-we-are.html">Who We Are</a></li>
+                        <li class="nav-item"><a class="nav-link" href="index.html">Home</a>
+                        </li>
+
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="aboutDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Who We Are
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="aboutDropdown">
+                                <li><a class="dropdown-item" href="who-we-are.html">About Us</a></li>
+                                <li><a class="dropdown-item" href="team.html">Our Team</a></li>
+                            </ul>
+                        </li>
+                    
                         <li class="nav-item"><a class="nav-link" href="what-we-do.html">What We Do</a></li>
                         <li class="nav-item"><a class="nav-link" href="impact.html">Impact</a></li>
+                        
                         <li class="nav-item ms-lg-3">
-                            <a class="btn btn-primary" href="donate.html">Donate Now</a>
+                            <a class="btn btn-primary" href="donate.html">Donate</a>
                         </li>
                     </ul>
                 </div>
@@ -724,7 +736,8 @@ document.addEventListener("DOMContentLoaded", function() {
     
 </script>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz4fnFO9gybBogGzW0z8e2QBsH3lEZ9E6EjlE+4zPOeFzRF3rOzTiylYJ8" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js" integrity="sha384-cn7l7gDp0eylAU6zYBI8FnH5zz7bGGGk5A1h7tU5ql1hbBh9E0volhN2BrJxKaJm" crossorigin="anonymous"></script>
 </body>
 
     </script>
