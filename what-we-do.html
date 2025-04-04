@@ -19,7 +19,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <!-- Custom CSS -->
-    <style>
+    <style> 
         :root {
             --primary-color: #3498db;
             --secondary-color: #2c3e50;
@@ -82,6 +82,7 @@
             transition: transform var(--transition-speed), box-shadow var(--transition-speed);
             border: none;
             overflow: hidden;
+            border-radius: 10px;
         }
 
         .card:hover {
@@ -93,6 +94,8 @@
             height: 200px;
             object-fit: cover;
             transition: transform var(--transition-speed);
+            border-top-left-radius: 10px;
+            border-top-right-radius: 10px;
         }
 
         .card:hover img {
@@ -102,9 +105,9 @@
         .upcoming-projects {
             color: black;
             padding: 20px;
-            background-image: url('image/knowledge-sharing.jpg');
-            background-size:cover;
-            background-position:center;
+            background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('image/knowledge-sharing.jpg');
+            background-size: cover;
+            background-position: center;
         }
 
         .upcoming-projects .card {
@@ -141,6 +144,7 @@
             border-radius: 5px;
             cursor: pointer;
             z-index: 1000;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
 
         .dark-mode-toggle:hover {
@@ -159,33 +163,48 @@
         }
 
         .scroll-down-icon {
-    text-align: center;
-    margin-top: 2rem;
-    animation: bounce 2s infinite; /* Bounce animation */
-}
+            text-align: center;
+            margin-top: 2rem;
+            animation: bounce 2s infinite;
+        }
 
-.scroll-down-icon i {
-    font-size: 30px; /* Icon size */
-    color: var(--primary-color); /* Use your primary color */
-    transition: color 0.3s ease;
-}
+        .scroll-down-icon i {
+            font-size: 30px;
+            color: var(--primary-color);
+            transition: color 0.3s ease;
+        }
 
-.scroll-down-icon i:hover {
-    color: #2980b9; /* Hover color */
-}
+        .scroll-down-icon i:hover {
+            color: #2980b9;
+        }
 
-/* Bounce animation */
-@keyframes bounce {
-    0%, 20%, 50%, 80%, 100% {
-        transform: translateY(0);
-    }
-    40% {
-        transform: translateY(-10px);
-    }
-    60% {
-        transform: translateY(-5px);
-    }
-}
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {
+                transform: translateY(0);
+            }
+            40% {
+                transform: translateY(-10px);
+            }
+            60% {
+                transform: translateY(-5px);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .card img {
+                height: 150px;
+            }
+
+            .upcoming-projects {
+                padding: 10px;
+            }
+
+            .dark-mode-toggle {
+                bottom: 10px;
+                right: 10px;
+                padding: 8px 12px;
+            }
+        }
     </style>
 </head>
 <body>

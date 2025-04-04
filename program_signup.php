@@ -299,15 +299,18 @@ if ($stmt->execute()) {
 
         <div class="mt-3">
             <label class="form-label">Goals:</label>
-            <textarea name="goals" class="form-control" rows="3" required></textarea>
+            <textarea name="goals" class="form-control" rows="3" required placeholder="What do you what to achieve? "></textarea>
         </div>
 
         <div class="mt-3">
             <label class="form-label">Motivation:</label>
-            <textarea name="motivation" class="form-control" rows="3" required></textarea>
+            <textarea name="motivation" class="form-control" rows="3" required placeholder="what motivates you to join this program?"></textarea>
         </div>
+        <br>
 
-        <button type="submit" class="btn btn-custom fw-bold fs-30">Submit</button>
+        <button type="submit" class="btn btn-custom fw-bold fs-4" style="background-color: #007bff; color: white; padding: 15px 30px; border-radius: 8px; font-size: 18px; border: none; transition: background-color 0.3s ease;">
+            Submit
+        </button>
     </form>
 </div>
 

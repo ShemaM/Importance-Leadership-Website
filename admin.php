@@ -1,77 +1,221 @@
-<?php
-session_start();
-error_reporting(E_ALL); // Show errors
+
+<?php 
+// Start secure session
+session_start([
+    'cookie_lifetime' => 86400,
+    'cookie_secure' => true,
+    'cookie_httponly' => true,
+    'use_strict_mode' => true
+]);
+
+// Error reporting (disable in production)
+error_reporting(E_ALL);
 ini_set('display_errors', 1);
 
-// Database connection
-$host = 'localhost';
-$dbname = 'importanceleadership';
-$username = 'root';
-$password = 'secret';
+// Constants
+define('BASE_URL', 'http://yourdomain.com/admin');
+define('SITE_NAME', 'Importance Leadership');
+define('ITEMS_PER_PAGE', 20);
 
+// Database configuration
+$dbConfig = [
+    'host' => 'localhost',
+    'dbname' => 'importanceleadership',
+    'username' => 'root',
+    'password' => 'secret'
+];
 
+// Establish PDO connection
 try {
-    $pdo = new PDO("mysql:host=$host;dbname=$dbname", $username, $password);
-    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    $pdo = new PDO(
+        "mysql:host={$dbConfig['host']};dbname={$dbConfig['dbname']};charset=utf8mb4",
+        $dbConfig['username'],
+        $dbConfig['password'],
+        [
+            PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
+            PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
+            PDO::ATTR_EMULATE_PREPARES => false
+        ]
+    );
 } catch (PDOException $e) {
     die("Database connection failed: " . $e->getMessage());
 }
 
-// Authentication check - using your admin_users table
-if (!isset($_SESSION['admin_logged_in'])) {
+// CSRF protection
+if (empty($_SESSION['csrf_token'])) {
+    $_SESSION['csrf_token'] = bin2hex(random_bytes(32));
+}
+
+// Authentication check
+function requireAuth() {
+    if (!isset($_SESSION['admin_logged_in']) || $_SESSION['admin_logged_in'] !== true) {
+        header("Location: login.php");
+        exit();
+    }
+}
+
+// Admin table setup
+try {
+    // Check if table exists
+    $tableExists = $pdo->query("SHOW TABLES LIKE 'admin_users'")->rowCount() > 0;
+
+    if (!$tableExists) {
+        $pdo->exec("CREATE TABLE admin_users (
+            id INT AUTO_INCREMENT PRIMARY KEY,
+            username VARCHAR(50) NOT NULL UNIQUE,
+            password_hash VARCHAR(255) NOT NULL,
+            created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+        )");
+    } else {
+        // Clean old password column if it still exists
+        $passwordColExists = $pdo->query("SHOW COLUMNS FROM admin_users LIKE 'password'")->rowCount() > 0;
+        if ($passwordColExists) {
+            $pdo->exec("ALTER TABLE admin_users DROP COLUMN password");
+        }
+
+        // Ensure password_hash column exists
+        $hashColExists = $pdo->query("SHOW COLUMNS FROM admin_users LIKE 'password_hash'")->rowCount() > 0;
+        if (!$hashColExists) {
+            $pdo->exec("ALTER TABLE admin_users ADD COLUMN password_hash VARCHAR(255) NOT NULL AFTER username");
+        }
+    }
+
+    // Create default admin if table is empty
+    $adminCount = $pdo->query("SELECT COUNT(*) FROM admin_users")->fetchColumn();
+    if ($adminCount == 0) {
+        $username = 'admin';
+        $password = 'admin123'; // Change in production!
+        $hash = password_hash($password, PASSWORD_DEFAULT);
+
+        $stmt = $pdo->prepare("INSERT INTO admin_users (username, password_hash) VALUES (?, ?)");
+        $stmt->execute([$username, $hash]);
+
+        if (strpos(BASE_URL, 'yourdomain.com') !== false) {
+            echo "Default admin created — Username: <strong>admin</strong>, Password: <strong>admin123</strong><br>";
+            echo "⚠️ Please change this password immediately!";
+        }
+    }
+} catch (PDOException $e) {
+    die("Admin user setup error: " . $e->getMessage());
+}
+
+// Logout handler
+if (isset($_GET['logout'])) {
+    session_unset();
+    session_destroy();
     header("Location: login.php");
     exit();
 }
 
-// Check if required tables exist
+// Require authentication before loading dashboard
+requireAuth();
+
+// Validate required tables and columns
 $requiredTables = [
-    'admin_users',
-    'community_impact_participants',
-    'leadership_participants',
-    'mentorship_participants',
-    'donations',
-    'contactmessages'
+    'admin_users' => ['id', 'username', 'password_hash', 'created_at'],
+    'community_impact_participants' => ['id', 'firstname', 'lastname', 'email', 'created_at'],
+    'leadership_participants' => ['id', 'firstname', 'lastname', 'email', 'created_at'],
+    'mentorship_participants' => ['id', 'firstname', 'lastname', 'email', 'created_at'],
+    'donations' => ['id', 'amount', 'donation_date', 'user_id'],
+    'contactmessages' => ['id', 'name', 'email', 'message', 'created_at'],
+    'users' => ['id', 'firstname', 'lastname', 'email', 'created_at'],
+    'mentors' => ['id', 'firstname', 'lastname', 'email', 'password', 'profession', 'expertise', 'created_at'],
+    'newsletter_subscribers' => ['id', 'email', 'created_at'],
+    'mentees' => ['id', 'firstname', 'lastname', 'email', 'password', 'interests', 'goals', 'created_at'],
+    'programs' => ['id', 'name', 'description', 'start_date', 'end_date', 'status'],
+    'subscribers' => ['id', 'email', 'created_at'],
 ];
 
-foreach ($requiredTables as $table) {
+foreach ($requiredTables as $table => $columns) {
     try {
-        $result = $pdo->query("SELECT 1 FROM $table LIMIT 1");
+        $stmt = $pdo->query("DESCRIBE $table");
+        $existingCols = $stmt->fetchAll(PDO::FETCH_COLUMN);
+        $missing = array_diff($columns, $existingCols);
+
+        if (!empty($missing)) {
+            die("Error: Missing columns in `$table`: " . implode(', ', $missing));
+        }
     } catch (PDOException $e) {
-        die("Error: Table '$table' doesn't exist or isn't accessible. Please check your database setup.");
+        die("Error: Table '$table' not found or not accessible.");
     }
 }
 
-// Hardcoded admin credentials (change these to your own)
-define('ADMIN_USERNAME', 'admin');
-define('ADMIN_PASSWORD_HASH', '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi'); // hash of 'password'
+// Dashboard data loading
+try {
+    // Fetch unread notifications count
+    $unreadNotificationsCount = $pdo->query("SELECT COUNT(*) FROM notifications WHERE is_read = 0")->fetchColumn();
+    $totalParticipants = $pdo->query("
+        SELECT 
+            (SELECT COUNT(*) FROM leadership_participants) +
+            (SELECT COUNT(*) FROM mentorship_participants) +
+            (SELECT COUNT(*) FROM community_impact_participants) +
+            (SELECT COUNT(*) FROM mentees)
+        AS total
+    ")->fetch()['total'];
 
+    $recentDonations = $pdo->query("
+        SELECT d.amount, d.donation_date, u.firstname, u.lastname
+        FROM donations d
+        LEFT JOIN users u ON d.user_id = u.id
+        ORDER BY d.donation_date DESC
+        LIMIT 5
+    ")->fetchAll();
 
-// Redirect to login if not authenticated
-if (!isset($_SESSION['admin_logged_in']) || $_SESSION['admin_logged_in'] !== true) {
-    header('Location: login.php');
-    exit;
+    $programStats = $pdo->query("
+        SELECT 
+            p.name AS program,
+            COUNT(DISTINCT lp.id) + COUNT(DISTINCT mp.id) + COUNT(DISTINCT cp.id) AS participants,
+            DATEDIFF(p.end_date, p.start_date) AS duration_days,
+            p.status
+        FROM programs p
+        LEFT JOIN leadership_participants lp ON p.name LIKE '%Leadership%'
+        LEFT JOIN mentorship_participants mp ON p.name LIKE '%Mentorship%'
+        LEFT JOIN community_impact_participants cp ON p.name LIKE '%Community%'
+        GROUP BY p.id
+    ")->fetchAll();
+
+    $totalDonations = $pdo->query("SELECT SUM(amount) as total FROM donations")->fetch()['total'];
+
+    $monthlyDonations = $pdo->query("
+        SELECT SUM(amount) as total 
+        FROM donations 
+        WHERE donation_date >= DATE_SUB(NOW(), INTERVAL 1 MONTH)
+    ")->fetch()['total'];
+
+    $mentorshipStats = $pdo->query("
+        SELECT 
+            COUNT(*) as total_mentors,
+            (SELECT COUNT(*) FROM mentees) as total_mentees,
+            (SELECT COUNT(*) FROM mentors WHERE status = 'active') as active_mentors,
+            (SELECT COUNT(*) FROM mentors WHERE created_at >= DATE_SUB(NOW(), INTERVAL 1 MONTH)) as new_mentors
+        FROM mentors
+    ")->fetch();
+
+    $subscriberStats = $pdo->query("
+        SELECT 
+            (SELECT COUNT(*) FROM newsletter_subscribers) as newsletter_subscribers,
+            (SELECT COUNT(*) FROM subscribers) as general_subscribers,
+            (SELECT COUNT(*) FROM newsletter_subscribers WHERE created_at >= DATE_SUB(NOW(), INTERVAL 1 MONTH)) as new_newsletter_subscribers
+    ")->fetch();
+
+} catch (PDOException $e) {
+    die("Dashboard load error: " . $e->getMessage());
 }
-
-// Logout functionality
-if (isset($_GET['logout'])) {
-    session_unset();
-    session_destroy();
-    header('Location: login.php');
-    exit;
-}
-    
-
-?>
+    ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Importance Leadership - Admin Dashboard</title>
+    <title><?= htmlspecialchars(SITE_NAME) ?> - Admin Dashboard</title>
+    
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Custom CSS -->
     <style>
         :root {
             --primary: #103e6c;
@@ -91,37 +235,34 @@ if (isset($_GET['logout'])) {
             color: var(--dark-text);
         }
         
-        /* Sidebar *//* Sidebar */
-.sidebar {
-    background-color: #ffffff;
-    height: 100vh;
-    width: 250px; /* Set a fixed width */
-    position: fixed;
-    top: 0;
-    left: 0;
-    box-shadow: 2px 0 10px rgba(0,0,0,0.1);
-    z-index: 1000;
-}
-
-/* Sidebar Brand */
-.sidebar-brand {
-    padding: 1.5rem 1rem;
-    border-bottom: 1px solid #eee;
-}
-
-.sidebar-brand img {
-    height: 80px;
-    width:auto;
-}
-
-/* Main Content */
-.main-content {
-    margin-left: 250px; /* Matches sidebar width */
-    padding: 20px;
-    transition: margin-left 0.3s ease-in-out;
-    width: calc(100% - 250px);
-}
-
+        .sidebar {
+            background-color: #ffffff;
+            height: 100vh;
+            width: 250px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            box-shadow: 2px 0 10px rgba(0,0,0,0.1);
+            z-index: 1000;
+        }
+        
+        .sidebar-brand {
+            padding: 1.5rem 1rem;
+            border-bottom: 1px solid #eee;
+            text-align: center;
+        }
+        
+        .sidebar-brand img {
+            height: 80px;
+            width: auto;
+        }
+        
+        .main-content {
+            margin-left: 250px;
+            padding: 20px;
+            transition: margin-left 0.3s ease-in-out;
+            width: calc(100% - 250px);
+        }
         
         .nav-link {
             color: var(--light-text);
@@ -141,12 +282,6 @@ if (isset($_GET['logout'])) {
             margin-right: 0.5rem;
         }
         
-        /* Main Content */
-        .main-content {
-            margin-left: 250px;
-            padding: 20px;
-        }
-        
         .header {
             background-color: white;
             padding: 1rem;
@@ -158,7 +293,6 @@ if (isset($_GET['logout'])) {
             align-items: center;
         }
         
-        /* Cards */
         .card {
             border: none;
             border-radius: 0.5rem;
@@ -166,17 +300,6 @@ if (isset($_GET['logout'])) {
             margin-bottom: 20px;
         }
         
-        .card-header {
-            background-color: white;
-            border-bottom: 1px solid #eee;
-            padding: 1rem 1.25rem;
-            font-weight: 600;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        
-        /* Stats Cards */
         .stat-card {
             padding: 1.25rem;
             border-radius: 0.5rem;
@@ -190,32 +313,14 @@ if (isset($_GET['logout'])) {
             color: var(--primary);
         }
         
-        .stat-card .label {
-            font-size: 0.875rem;
-            color: var(--light-text);
+        .progress {
+            height: 8px;
+            border-radius: 4px;
         }
         
-        .stat-card .trend {
-            font-size: 0.75rem;
-            margin-top: 0.25rem;
-        }
-        
-        .trend.up {
-            color: var(--success);
-        }
-        
-        .trend.down {
-            color: var(--danger);
-        }
-        
-        /* Tables */
         .table-responsive {
             border-radius: 0.5rem;
             overflow: hidden;
-        }
-        
-        .table {
-            margin-bottom: 0;
         }
         
         .table thead th {
@@ -224,38 +329,19 @@ if (isset($_GET['logout'])) {
             border: none;
         }
         
-        .table tbody tr:hover {
-            background-color: rgba(16, 62, 108, 0.05);
+        .badge-active {
+            background-color: var(--success);
         }
         
-        /* Buttons */
-        .btn-primary {
-            background-color: var(--primary);
-            border-color: var(--primary);
+        .badge-inactive {
+            background-color: var(--danger);
         }
         
-        .btn-primary:hover {
-            background-color: var(--primary-light);
-            border-color: var(--primary-light);
-        }
-        
-        .btn-warning {
-            background-color: var(--secondary);
-            border-color: var(--secondary);
+        .badge-pending {
+            background-color: var(--warning);
             color: var(--dark-text);
         }
         
-        /* Progress Bars */
-        .progress {
-            height: 8px;
-            border-radius: 4px;
-        }
-        
-        .progress-bar {
-            background-color: var(--primary);
-        }
-        
-        /* Responsive */
         @media (max-width: 992px) {
             .sidebar {
                 width: 70px;
@@ -280,69 +366,77 @@ if (isset($_GET['logout'])) {
             }
         }
         
-        @media (max-width: 768px) {
-            .stat-card {
-                margin-bottom: 15px;
-            }
+        .admin-avatar {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            object-fit: cover;
         }
-        img{
-            width: 10%;
-            height: 10%;
-            }
-        
     </style>
 </head>
 <body>
     <!-- Sidebar -->
-    <div class="sidebar col-md-3 col-lg-2 d-md-block">
+    <div class="sidebar">
         <div class="sidebar-brand">
-            <img src="image/website-logo.png" alt="Importance Leadership Logo">
+            <img src="image/website-logo.png" alt="<?= htmlspecialchars(SITE_NAME) ?> Logo">
         </div>
         <ul class="nav flex-column">
             <li class="nav-item">
-                <a class="nav-link active" href="#">
+                <a class="nav-link active" href="dashboard.php">
                     <i class="fas fa-tachometer-alt"></i>
                     <span>Dashboard</span>
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#programs">
+                <a class="nav-link" href="programs.php">
                     <i class="fas fa-project-diagram"></i>
                     <span>Programs</span>
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#participants">
+                <a class="nav-link" href="participants.php">
                     <i class="fas fa-users"></i>
                     <span>Participants</span>
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#mentors">
+                <a class="nav-link" href="mentors.php">
                     <i class="fas fa-chalkboard-teacher"></i>
                     <span>Mentors</span>
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#events">
+                <a class="nav-link" href="mentees.php">
+                    <i class="fas fa-user-graduate"></i>
+                    <span>Mentees</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="events.php">
                     <i class="fas fa-calendar-alt"></i>
                     <span>Events</span>
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#donations">
+                <a class="nav-link" href="donations.php">
                     <i class="fas fa-donate"></i>
                     <span>Donations</span>
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#reports">
+                <a class="nav-link" href="subscribers.php">
+                    <i class="fas fa-envelope"></i>
+                    <span>Subscribers</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="reports.php">
                     <i class="fas fa-chart-bar"></i>
                     <span>Reports</span>
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#settings">
+                <a class="nav-link" href="settings.php">
                     <i class="fas fa-cog"></i>
                     <span>Settings</span>
                 </a>
@@ -356,18 +450,22 @@ if (isset($_GET['logout'])) {
         <div class="header">
             <h4>Admin Dashboard</h4>
             <div class="d-flex align-items-center">
-                <div class="me-3">
-                    <i class="fas fa-bell"></i>
-                    <span class="badge bg-danger">3</span>
+                <div class="me-3 position-relative">
+                    <a href="notifications.php" class="text-dark">
+                            <?= htmlspecialchars($unreadNotificationsCount) ?>
+                        <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                            <?= $pdo->query("SELECT COUNT(*) FROM notifications WHERE is_read = 0")->fetchColumn() ?>
+                        </span>
+                    </a>
                 </div>
                 <div class="dropdown">
                     <a href="#" class="d-flex align-items-center text-decoration-none dropdown-toggle" id="userDropdown" data-bs-toggle="dropdown">
-                        <img src="image/shema.png" alt="Admin" class="rounded-circle me-2"> 
-                        <span><?php echo htmlspecialchars(ADMIN_USERNAME); ?></span>
+                        <img src="image/shema.png" alt="Admin" class="admin-avatar me-2"> 
+                        <span><?= htmlspecialchars($_SESSION['admin_username'] ?? 'Admin') ?></span>
                     </a>
                     <ul class="dropdown-menu dropdown-menu-end">
-                        <li><a class="dropdown-item" href="#"><i class="fas fa-user me-2"></i> Profile</a></li>
-                        <li><a class="dropdown-item" href="#"><i class="fas fa-cog me-2"></i> Settings</a></li>
+                        <li><a class="dropdown-item" href="profile.php"><i class="fas fa-user me-2"></i> Profile</a></li>
+                        <li><a class="dropdown-item" href="settings.php"><i class="fas fa-cog me-2"></i> Settings</a></li>
                         <li><hr class="dropdown-divider"></li>
                         <li><a class="dropdown-item" href="?logout=1"><i class="fas fa-sign-out-alt me-2"></i> Logout</a></li>
                     </ul>
@@ -376,322 +474,310 @@ if (isset($_GET['logout'])) {
         </div>
 
         <!-- Stats Overview -->
-        <div class="row">
-    <div class="col-md-6 col-lg-3">
-        <div class="stat-card">
-            <div class="label">Total Participants</div>
-            <div class="value">
-                <?php
-                $stmt = $pdo->query("
-                    SELECT (SELECT COUNT(*) FROM leadership_participants) +
-                           (SELECT COUNT(*) FROM mentorship_participants) +
-                           (SELECT COUNT(*) FROM community_impact_participants) AS total
-                ");
-                echo number_format($stmt->fetch()['total']);
-                ?>
+        <div class="row mb-4">
+            <div class="col-md-6 col-lg-3">
+                <div class="stat-card">
+                    <div class="label">Total Participants</div>
+                    <div class="value"><?= number_format($totalParticipants) ?></div>
+                    <div class="trend up">
+                        <i class="fas fa-arrow-up"></i> 
+                        <?php
+                        $stmt = $pdo->query("
+                            SELECT 
+                                (SELECT COUNT(*) FROM leadership_participants WHERE created_at >= DATE_SUB(NOW(), INTERVAL 1 MONTH)) +
+                                (SELECT COUNT(*) FROM mentorship_participants WHERE created_at >= DATE_SUB(NOW(), INTERVAL 1 MONTH)) +
+                                (SELECT COUNT(*) FROM community_impact_participants WHERE created_at >= DATE_SUB(NOW(), INTERVAL 1 MONTH)) +
+                                (SELECT COUNT(*) FROM mentees WHERE created_at >= DATE_SUB(NOW(), INTERVAL 1 MONTH)) AS current_month
+                        ");
+                        echo $stmt->fetch()['current_month'] . ' new this month';
+                        ?>
+                    </div>
+                </div>
             </div>
-            <div class="trend up">
-                <i class="fas fa-arrow-up"></i> 
-                <?php
-                // Calculate growth (example - adjust with your actual growth logic)
-                $stmt = $pdo->query("
-                    SELECT 
-                        (SELECT COUNT(*) FROM leadership_participants WHERE created_at >= DATE_SUB(NOW(), INTERVAL 1 MONTH)) +
-                        (SELECT COUNT(*) FROM mentorship_participants WHERE created_at >= DATE_SUB(NOW(), INTERVAL 1 MONTH)) +
-                        (SELECT COUNT(*) FROM community_impact_participants WHERE created_at >= DATE_SUB(NOW(), INTERVAL 1 MONTH)) AS current_month,
-                        
-                        (SELECT COUNT(*) FROM leadership_participants WHERE created_at < DATE_SUB(NOW(), INTERVAL 1 MONTH)) +
-                        (SELECT COUNT(*) FROM mentorship_participants WHERE created_at < DATE_SUB(NOW(), INTERVAL 1 MONTH)) +
-                        (SELECT COUNT(*) FROM community_impact_participants WHERE created_at < DATE_SUB(NOW(), INTERVAL 1 MONTH)) AS previous_month
-                ");
-                $growth = $stmt->fetch();
-                $percentage = $growth['previous_month'] > 0 ? 
-                    round(($growth['current_month'] - $growth['previous_month']) / $growth['previous_month'] * 100) : 
-                    0;
-                echo abs($percentage) . '% ' . ($percentage >= 0 ? 'from' : 'from') . ' last month';
-                ?>
+            
+            <div class="col-md-6 col-lg-3">
+                <div class="stat-card">
+                    <div class="label">Mentorship Pairs</div>
+                    <div class="value">
+                        <?= number_format(min($mentorshipStats['active_mentors'], $mentorshipStats['total_mentees'])) ?>
+                    </div>
+                    <div class="trend up">
+                        <i class="fas fa-arrow-up"></i> 
+                        <?= $mentorshipStats['new_mentors'] ?> new mentors
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-3">
+                <div class="stat-card">
+                    <div class="label">Active Programs</div>
+                    <div class="value">
+                        <?= $pdo->query("SELECT COUNT(*) FROM programs WHERE status = 'active'")->fetchColumn() ?>
+                    </div>
+                    <div class="trend up">
+                        <i class="fas fa-check-circle"></i> 
+                        <?= $pdo->query("SELECT COUNT(*) FROM programs")->fetchColumn() ?> total
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-3">
+                <div class="stat-card">
+                    <div class="label">Subscribers</div>
+                    <div class="value"><?= number_format($subscriberStats['newsletter_subscribers'] + $subscriberStats['general_subscribers']) ?></div>
+                    <div class="trend up">
+                        <i class="fas fa-arrow-up"></i> 
+                        <?= $subscriberStats['new_newsletter_subscribers'] ?> new newsletter
+                    </div>
+                </div>
             </div>
         </div>
-    </div>
-
-    <!--active members-->
-
-    <div class="col-md-6 col-lg-3">
-        <div class="stat-card">
-            <div class="label">Active Mentors</div>
-            <div class="value">
-                <?php
-                try {
-                    $stmt = $pdo->query("
-                        SELECT 
-                            (SELECT COUNT(*) FROM leadership_participants) +
-                            (SELECT COUNT(*) FROM mentorship_participants) +
-                            (SELECT COUNT(*) FROM community_impact_participants) AS total
-                    ");
-                    
-                    if (!$stmt) {
-                        throw new Exception("Failed to execute query");
-                    }
-                    
-                    $totalParticipants = $stmt->fetch()['total'];
-                    echo number_format($totalParticipants);
-                    
-                } catch (PDOException $e) {
-                    echo "Error loading participant count: " . $e->getMessage();
-                    // Fallback to 0 if query fails
-                    echo "0";
-                } catch (Exception $e) {
-                    echo "Error: " . $e->getMessage();
-                    echo "0";
-                }
-                ?>
-            </div>
-            <div class="trend up">
-                <i class="fas fa-arrow-up"></i> 
-                <?php
-                $stmt = $pdo->query("
-                    SELECT 
-                        (SELECT COUNT(*) FROM mentors WHERE created_at >= DATE_SUB(NOW(), INTERVAL 1 MONTH)) AS new_mentors
-                ");
-                $newMentors = $stmt->fetchColumn();
-                echo $newMentors . ' new this month';
-                ?>
-            </div>
-        </div>
-    </div>
-
-    <div class="col-md-6 col-lg-3" id="programs">
-        <div class="stat-card">
-            <div class="label">Programs Running</div>
-            <div class="value">3</div> <!-- Fixed as you have 3 participant tables -->
-            <div class="trend up">
-                <i class="fas fa-arrow-up"></i> All active
-            </div>
-        </div>
-    </div>
-
-    <div class="col-md-6 col-lg-3" id="donations">
-        <div class="stat-card">
-            <div class="label">Total Donations</div>
-            <div class="value">
-                $<?php
-                $stmt = $pdo->query("SELECT SUM(amount) FROM donations");
-                echo number_format($stmt->fetchColumn(), 2);
-                ?>
-            </div>
-            <div class="trend up">
-                <i class="fas fa-arrow-up"></i> $
-                <?php
-                $stmt = $pdo->query("SELECT SUM(amount) FROM donations WHERE donation_date >= DATE_SUB(NOW(), INTERVAL 1 MONTH)");
-                echo number_format($stmt->fetchColumn(), 2) . ' this month';
-                ?>
-            </div>
-        </div>
-    </div>
-</div>
 
         <!-- Programs Overview -->
-        
-        <div class="table-responsive">
-    <table class="table table-hover">
-        <thead>
-            <tr>
-                <th>Program</th>
-                <th>Participants</th>
-                <th>Completion</th>
-                <th>Actions</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>Leadership Development</td>
-                <td>
-                    <?php
-                    $stmt = $pdo->query("SELECT COUNT(*) FROM leadership_participants");
-                    echo number_format($stmt->fetchColumn());
-                    ?>
-                </td>
-                <td>
-                    <div class="progress">
-                        <div class="progress-bar" style="width: 78%"></div>
-                    </div>
-                    <small>ongoing</small>
-                </td>
-                <td>
-                    <button class="btn btn-sm btn-primary">View</button>
-                </td>
-            </tr>
-            <tr>
-                <td>Mentorship Program</td>
-                <td>
-                    <?php
-                    $stmt = $pdo->query("SELECT COUNT(*) FROM mentorship_participants");
-                    echo number_format($stmt->fetchColumn());
-                    ?>
-                </td>
-                <td>
-                    <div class="progress">
-                        <div class="progress-bar" style="width: 65%"></div>
-                    </div>
-                    <small>ongoing</small>
-                </td>
-                <td>
-                    <button class="btn btn-sm btn-primary">View</button>
-                </td>
-            </tr>
-            <tr>
-                <td>Community Impact</td>
-                <td>
-                    <?php
-                    $stmt = $pdo->query("SELECT COUNT(*) FROM community_impact_participants");
-                    echo number_format($stmt->fetchColumn());
-                    ?>
-                </td>
-                <td>
-                    <div class="progress">
-                        <div class="progress-bar" style="width: 1%;"></div>
-                    </div>
-                    <small>ongoing</small>
-                </td>
-                <td>
-                    <button class="btn btn-sm btn-primary">View</button>
-                </td>
-            </tr>
-        </tbody>
-    </table>
-</div>
-
-     
-
-<!-- Recent Activity -->
-        <div class="list-group list-group-flush">
-    <?php
-    $stmt = $pdo->query(" 
-        SELECT d.amount, d.donation_date, u.firstname
-            FROM donations d
-            LEFT JOIN users u ON d.user_id = u.id
-            ORDER BY d.donation_date DESC
-            LIMIT 4;
-
-    ");
-    while ($donation = $stmt->fetch()):
-    ?>
-    <div class="list-group-item d-flex justify-content-between align-items-center">
-        <div>
-            <h6 class="mb-1"><?= htmlspecialchars($donation['name'] ?? 'Anonymous') ?></h6>
-            <small class="text-muted">
-                <?= date('F j, Y, g:i a', strtotime($donation['donation_date'])) ?>
-            </small>
+        <div class="card mb-4">
+            <div class="card-header">
+                <h5 class="mb-0">Programs Overview</h5>
+                <a href="programs.php" class="btn btn-sm btn-primary">View All</a>
+            </div>
+            <div class="card-body">
+                <div class="table-responsive">
+                    <table class="table table-hover">
+                        <thead>
+                            <tr>
+                                <th>Program</th>
+                                <th>Participants</th>
+                                <th>Duration</th>
+                                <th>Status</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <?php foreach ($programStats as $program): ?>
+                            <tr>
+                                <td><?= htmlspecialchars($program['program']) ?></td>
+                                <td><?= number_format($program['participants']) ?></td>
+                                <td><?= $program['duration_days'] ?> days</td>
+                                <td>
+                                    <span class="badge <?= $program['status'] == 'active' ? 'badge-active' : ($program['status'] == 'pending' ? 'badge-pending' : 'badge-inactive') ?>">
+                                        <?= ucfirst($program['status']) ?>
+                                    </span>
+                                </td>
+                                <td>
+                                    <a href="program_details.php?id=<?= $program['id'] ?>" class="btn btn-sm btn-primary">View</a>
+                                </td>
+                            </tr>
+                            <?php endforeach; ?>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
         </div>
-        <span class="badge bg-success">$<?= number_format($donation['amount'], 2) ?></span>
-    </div>
-    <?php endwhile; ?>
-</div>
-    </div>
 
-    <tbody>
-    <?php
-    // Combine different types of activities
-    $activities = [];
-    
-    // Get recent contact messages
-    $stmt = $pdo->query("
-        SELECT created_at as date, 'New contact message' as activity, 
-               CONCAT('From: ', name) as details, 'System' as user
-        FROM contactmessages
-        ORDER BY created_at DESC
-        LIMIT 2
-    ");
-    while ($row = $stmt->fetch()) {
-        $activities[] = $row;
-    }
-    
-    // Get recent donations
-    $stmt = $pdo->query("
-        SELECT donation_date as date, 'Donation received' as activity,
-               CONCAT('$', amount, ' from ', COALESCE(u.firstname, 'Anonymous')) as details,
-               'System' as user
-        FROM donations d
-        LEFT JOIN users u ON d.user_id = u.id
-        ORDER BY donation_date DESC
-        LIMIT 2
-    ");
-    while ($row = $stmt->fetch()) {
-        $activities[] = $row;
-    }
-    
-    // Sort all activities by date
-    usort($activities, function($a, $b) {
-        return strtotime($b['date']) - strtotime($a['date']);
-    });
-    
-    // Display the 5 most recent activities
-    $count = 0;
-    foreach ($activities as $activity):
-        if ($count++ >= 5) break;
-    ?>
-    <tr>
-        <td><?= date('M j, H:i', strtotime($activity['date'])) ?></td>
-        <td><?= htmlspecialchars($activity['user']) ?></td>
-        <td><?= htmlspecialchars($activity['activity']) ?></td>
-        <td><?= htmlspecialchars($activity['details']) ?></td>
-    </tr>
-    <?php endforeach; ?>
-</tbody>
+        <!-- Mentorship Stats -->
+        <div class="card mb-4">
+            <div class="card-header">
+                <h5 class="mb-0">Mentorship Statistics</h5>
+                <a href="mentors.php" class="btn btn-sm btn-primary">View All</a>
+            </div>
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-md-3">
+                        <div class="stat-card">
+                            <div class="label">Total Mentors</div>
+                            <div class="value"><?= number_format($mentorshipStats['total_mentors']) ?></div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="stat-card">
+                            <div class="label">Active Mentors</div>
+                            <div class="value"><?= number_format($mentorshipStats['active_mentors']) ?></div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="stat-card">
+                            <div class="label">Total Mentees</div>
+                            <div class="value"><?= number_format($mentorshipStats['total_mentees']) ?></div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="stat-card">
+                            <div class="label">New This Month</div>
+                            <div class="value"><?= number_format($mentorshipStats['new_mentors']) ?></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Recent Activity -->
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="card">
+                    <div class="card-header">
+                        <h5 class="mb-0">Recent Donations</h5>
+                        <a href="donations.php" class="btn btn-sm btn-primary">View All</a>
+                    </div>
+                    <div class="card-body">
+                        <div class="list-group list-group-flush">
+                            <?php foreach ($recentDonations as $donation): ?>
+                            <div class="list-group-item d-flex justify-content-between align-items-center">
+                                <div>
+                                    <h6 class="mb-1">
+                                        <?= htmlspecialchars($donation['firstname'] . ' ' . $donation['lastname']) ?>
+                                    </h6>
+                                    <small class="text-muted">
+                                        <?= date('F j, Y, g:i a', strtotime($donation['donation_date'])) ?>
+                                    </small>
+                                </div>
+                                <span class="badge bg-success">$<?= number_format($donation['amount'], 2) ?></span>
+                            </div>
+                            <?php endforeach; ?>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-lg-6">
+                <div class="card">
+                    <div class="card-header">
+                        <h5 class="mb-0">Recent Subscribers</h5>
+                        <a href="subscribers.php" class="btn btn-sm btn-primary">View All</a>
+                    </div>
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table class="table table-sm">
+                                <thead>
+                                    <tr>
+                                        <th>Email</th>
+                                        <th>Type</th>
+                                        <th>Date</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <?php
+                                    $recentSubscribers = $pdo->query("
+                                        SELECT email, 'Newsletter' as type, created_at 
+                                        FROM newsletter_subscribers
+                                        UNION ALL
+                                        SELECT email, 'General' as type, created_at 
+                                        FROM subscribers
+                                        ORDER BY created_at DESC
+                                        LIMIT 5
+                                    ")->fetchAll();
+                                    
+                                    foreach ($recentSubscribers as $subscriber):
+                                    ?>
+                                    <tr>
+                                        <td><?= htmlspecialchars($subscriber['email']) ?></td>
+                                        <td><?= htmlspecialchars($subscriber['type']) ?></td>
+                                        <td><?= date('M j, H:i', strtotime($subscriber['created_at'])) ?></td>
+                                    </tr>
+                                    <?php endforeach; ?>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
     <!-- Chart.js -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     
     <script>
-        // Sample chart for program participation
+        // Dynamic chart for program participation
         document.addEventListener('DOMContentLoaded', function() {
-            const ctx = document.createElement('canvas');
-            ctx.id = 'programChart';
-            document.querySelector('.card-body').prepend(ctx);
+            // Program Participation Chart
+            const programCtx = document.createElement('canvas');
+            programCtx.id = 'programChart';
+            document.querySelector('.card-body').prepend(programCtx);
             
-            new Chart(ctx, {
-                type: 'bar',
-                data: {
-                    labels: ['Leadership', 'Mentorship', 'Community'],
-                    datasets: [{
-                        label: 'Current Participants',
-                        data: [1240, 850, 453],
-                        backgroundColor: [
-                            'rgba(16, 62, 108, 0.7)',
-                            'rgba(255, 204, 0, 0.7)',
-                            'rgba(40, 167, 69, 0.7)'
-                        ],
-                        borderColor: [
-                            'rgba(16, 62, 108, 1)',
-                            'rgba(255, 204, 0, 1)',
-                            'rgba(40, 167, 69, 1)'
-                        ],
-                        borderWidth: 1
-                    }]
-                },
-                options: {
-                    responsive: true,
-                    plugins: {
-                        legend: {
-                            display: false
+            fetch('api/program_stats.php')
+                .then(response => response.json())
+                .then(data => {
+                    new Chart(programCtx, {
+                        type: 'bar',
+                        data: {
+                            labels: data.labels,
+                            datasets: [{
+                                label: 'Participants',
+                                data: data.values,
+                                backgroundColor: data.colors,
+                                borderColor: data.borderColors,
+                                borderWidth: 1
+                            }]
+                        },
+                        options: {
+                            responsive: true,
+                            plugins: {
+                                legend: {
+                                    display: false
+                                },
+                                tooltip: {
+                                    callbacks: {
+                                        label: function(context) {
+                                            return context.parsed.y.toLocaleString();
+                                        }
+                                    }
+                                }
+                            },
+                            scales: {
+                                y: {
+                                    beginAtZero: true,
+                                    ticks: {
+                                        callback: function(value) {
+                                            return value.toLocaleString();
+                                        }
+                                    }
+                                }
+                            }
                         }
-                    },
-                    scales: {
-                        y: {
-                            beginAtZero: true
-                        }
-                    }
-                }
-            });
+                    });
+                })
+                .catch(error => console.error('Error loading program chart data:', error));
+
+            // Mentorship Stats Chart
+            const mentorshipCtx = document.createElement('canvas');
+            mentorshipCtx.id = 'mentorshipChart';
+            document.querySelector('.card-body').appendChild(mentorshipCtx);
             
-            // Sample notification dropdown
-            document.querySelector('.fa-bell').addEventListener('click', function(e) {
-                e.preventDefault();
-                // In a real app, this would toggle a notifications dropdown
-                alert('You have 3 new notifications');
-            });
+            fetch('api/mentorship_stats.php')
+                .then(response => response.json())
+                .then(data => {
+                    new Chart(mentorshipCtx, {
+                        type: 'doughnut',
+                        data: {
+                            labels: ['Active Mentors', 'Available Mentors', 'Mentees'],
+                            datasets: [{
+                                data: [data.active_mentors, data.available_mentors, data.mentees],
+                                backgroundColor: [
+                                    'rgba(40, 167, 69, 0.7)',
+                                    'rgba(255, 193, 7, 0.7)',
+                                    'rgba(16, 62, 108, 0.7)'
+                                ],
+                                borderColor: [
+                                    'rgba(40, 167, 69, 1)',
+                                    'rgba(255, 193, 7, 1)',
+                                    'rgba(16, 62, 108, 1)'
+                                ],
+                                borderWidth: 1
+                            }]
+                        },
+                        options: {
+                            responsive: true,
+                            plugins: {
+                                legend: {
+                                    position: 'bottom',
+                                }
+                            }
+                        }
+                    });
+                })
+                .catch(error => console.error('Error loading mentorship chart data:', error));
         });
     </script>
 </body>
