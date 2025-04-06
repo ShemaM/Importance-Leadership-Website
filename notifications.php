@@ -2,26 +2,39 @@
 require_once 'auth_check.php';
 require_once 'db_connect.php';
 
-$pageTitle = "Participants Management";
-$activePage = "participants";
+require_once 'mailer.php'; // You'll need to create this
 
-// Get all participants from different tables
+$pageTitle = "Notifications";
+$activePage = "notifications";
+
+// Mark notification as read if ID is provided
+if (isset($_GET['mark_as_read'])) {
+    $notificationId = (int)$_GET['mark_as_read'];
+    try {
+        $stmt = $pdo->prepare("UPDATE notifications SET is_read = TRUE WHERE id = ? AND user_id = ?");
+        $stmt->execute([$notificationId, $_SESSION['user_id']]);
+        $_SESSION['message'] = "Notification marked as read";
+    } catch (PDOException $e) {
+        $_SESSION['error'] = "Error updating notification: " . $e->getMessage();
+    }
+    header("Location: notifications.php");
+    exit;
+}
+
+// Get all notifications for current user
+// Get all notifications for current user
 try {
-    $participants = $pdo->query("
-        SELECT id, firstname, lastname, email, 'Leadership' as program_type, created_at 
-        FROM leadership_participants
-        UNION ALL
-        SELECT id, firstname, lastname, email, 'Mentorship' as program_type, created_at 
-        FROM mentorship_participants
-        UNION ALL
-        SELECT id, firstname, lastname, email, 'Community' as program_type, created_at 
-        FROM community_impact_participants
-        ORDER BY created_at DESC
-    ")->fetchAll();
+    $stmt = $pdo->prepare("SELECT * 
+                           FROM notifications 
+                           WHERE user_id = ? 
+                           ORDER BY created_at DESC");
+    $stmt->execute([$_SESSION['user_id']]);
+    $notifications = $stmt->fetchAll(PDO::FETCH_ASSOC);
 } catch (PDOException $e) {
-    die("Error fetching participants: " . $e->getMessage());
+    die("Error fetching notifications: " . $e->getMessage());
 }
 ?>
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -32,7 +45,6 @@ try {
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        
         :root {
             --primary: #103e6c;
             --primary-light: #1a4f87;
@@ -44,7 +56,6 @@ try {
             --warning: #ffc107;
             --danger: #dc3545;
         }
-        
         body {
             font-family: 'Poppins', sans-serif;
             background-color: #f5f7fa;
@@ -189,6 +200,16 @@ try {
             object-fit: cover;
         }
     </style>
+    <style>
+        .notification.unread {
+            background-color: #f8f9fa;
+            border-left: 4px solid var(--primary);
+        }
+        .notification-time {
+            font-size: 0.8rem;
+            color: #6c757d;
+        }
+    </style>
 </head>
 <body>
     <?php include 'sidebar.php'; ?>
@@ -197,39 +218,52 @@ try {
         <?php include 'header.php'; ?>
         
         <div class="container-fluid">
+            <?php include 'messages.php'; ?>
+
             <div class="card mb-4">
-                <div class="card-header">
-                    <h5 class="mb-0">Participants Management</h5>
+                <div class="card-header d-flex justify-content-between align-items-center">
+                    <h5 class="mb-0">Notifications</h5>
+                    <?php if (!empty($notifications)): ?>
+                        <a href="notifications.php?mark_all_read=1" class="btn btn-sm btn-outline-primary">
+                            <i class="fas fa-check-double"></i> Mark all as read
+                        </a>
+                    <?php endif; ?>
                 </div>
                 <div class="card-body">
-                    <div class="table-responsive">
-                        <table class="table table-hover">
-                            <thead>
-                                <tr>
-                                    <th>Name</th>
-                                    <th>Email</th>
-                                    <th>Program</th>
-                                    <th>Joined</th>
-                                    <th>Actions</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <?php foreach ($participants as $participant): ?>
-                                <tr>
-                                    <td><?= htmlspecialchars($participant['firstname'] . ' ' . $participant['lastname']) ?></td>
-                                    <td><?= htmlspecialchars($participant['email']) ?></td>
-                                    <td><?= htmlspecialchars($participant['program_type']) ?></td>
-                                    <td><?= date('M j, Y', strtotime($participant['created_at'])) ?></td>
-                                    <td>
-                                        <a href="view_participant.php?id=<?= urlencode($participant['id']) ?>" class="btn btn-sm btn-primary">
-                                            <i class="fas fa-eye"></i> View
-                                        </a>
-                                    </td>
-                                </tr>
-                                <?php endforeach; ?>
-                            </tbody>
-                        </table>
-                    </div>
+                    <?php if (empty($notifications)): ?>
+                        <div class="text-center py-5">
+                            <i class="fas fa-bell-slash fa-3x text-muted mb-3"></i>
+                            <h5>No notifications yet</h5>
+                            <p class="text-muted">You'll see important updates here</p>
+                        </div>
+                    <?php else: ?>
+                        <div class="list-group">
+                            <?php foreach ($notifications as $notification): ?>
+                                <div class="list-group-item list-group-item-action notification <?= !$notification['is_read'] ? 'unread' : '' ?>">
+                                    <div class="d-flex justify-content-between">
+                                        <div>
+                                            <h6 class="mb-1"><?= htmlspecialchars($notification['title']) ?></h6>
+                                            <p class="mb-1"><?= htmlspecialchars($notification['message']) ?></p>
+                                            <?php if ($notification['event_id']): ?>
+                                                <small class="text-muted">Related to: <?= htmlspecialchars($notification['event_title']) ?></small>
+                                            <?php endif; ?>
+                                        </div>
+                                        <div class="text-end">
+                                            <small class="notification-time">
+                                                <?= date('M j, Y g:i A', strtotime($notification['created_at'])) ?>
+                                            </small>
+                                            <br>
+                                            <?php if (!$notification['is_read']): ?>
+                                                <a href="notifications.php?mark_as_read=<?= $notification['id'] ?>" class="btn btn-sm btn-outline-success mt-2">
+                                                    <i class="fas fa-check"></i> Mark read
+                                                </a>
+                                            <?php endif; ?>
+                                        </div>
+                                    </div>
+                                </div>
+                            <?php endforeach; ?>
+                        </div>
+                    <?php endif; ?>
                 </div>
             </div>
         </div>

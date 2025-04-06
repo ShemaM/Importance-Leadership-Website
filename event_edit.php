@@ -2,27 +2,74 @@
 require_once 'auth_check.php';
 require_once 'db_connect.php';
 
-$pageTitle = "Events Management";
+$pageTitle = "Edit Event";
 $activePage = "events";
 
-// Handle form submissions
+// Check if event ID is provided
+if (!isset($_GET['id'])) {
+    $_SESSION['error'] = "No event ID provided!";
+    header("Location: events.php");
+    exit; 
+
+}
+
+$eventId = (int)$_GET['id'];
+
+// Fetch event data
+try {
+    $stmt = $pdo->prepare("SELECT * FROM events WHERE id = ?");
+    $stmt->execute([$eventId]);
+    $event = $stmt->fetch(PDO::FETCH_ASSOC);
+
+    if (!$event) {
+        $_SESSION['error'] = "Event not found!";
+        header("Location: events.php");
+        exit;
+    }
+} catch (PDOException $e) {
+    $_SESSION['error'] = "Error fetching event: " . $e->getMessage();
+    header("Location: events.php");
+    exit;
+}
+
+// Handle form submission
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if (!isset($_POST['csrf_token']) || $_POST['csrf_token'] !== $_SESSION['csrf_token']) {
         die("CSRF token validation failed");
     }
 
-    if (isset($_POST['add_event'])) {
+    if (isset($_POST['cancel_event'])) {
         try {
-            $stmt = $pdo->prepare("INSERT INTO events 
-                                  (title, description, location, event_date, event_time, 
-                                   start_datetime, end_datetime, status, created_by) 
-                                  VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)");
-            
+            $stmt = $pdo->prepare("UPDATE events SET status = 'cancelled' WHERE id = ?");
+            $stmt->execute([$eventId]);
+
+            $_SESSION['message'] = "Event cancelled successfully!";
+            header("Location: events.php");
+            exit;
+        } catch (PDOException $e) {
+            $_SESSION['error'] = "Error cancelling event: " . $e->getMessage();
+        }
+    } else {
+        try {
+            $stmt = $pdo->prepare("
+                UPDATE events 
+                SET 
+                    title = ?, 
+                    description = ?, 
+                    location = ?, 
+                    event_date = ?, 
+                    event_time = ?, 
+                    start_datetime = ?, 
+                    end_datetime = ?, 
+                    status = ?
+                WHERE id = ?
+            ");
+
             // Parse datetime into date + time
             $startDateTime = new DateTime($_POST['start_datetime']);
             $eventDate = $startDateTime->format('Y-m-d');
             $eventTime = $startDateTime->format('H:i:s');
-            
+
             $stmt->execute([
                 $_POST['title'],
                 $_POST['description'],
@@ -32,23 +79,27 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 $_POST['start_datetime'],
                 $_POST['end_datetime'],
                 $_POST['status'],
-                $_SESSION['user_id'] // Make sure this is set!
+                $eventId
             ]);
-            
-            $_SESSION['message'] = "Event added successfully!";
+
+            $_SESSION['message'] = "Event updated successfully!";
+            header("Location: events.php");
+            exit;
         } catch (PDOException $e) {
-            $_SESSION['error'] = "Error adding event: " . $e->getMessage();
+            $_SESSION['error'] = "Error updating event: " . $e->getMessage();
         }
-        header("Location: events.php");
-        exit;
     }
 }
 
-// Get all events
-try {
-    $events = $pdo->query("SELECT * FROM events ORDER BY start_datetime DESC")->fetchAll();
-} catch (PDOException $e) {
-    die("Error fetching events: " . $e->getMessage());
+// After successfully adding/updating an event:
+if ($stmt->execute()) {
+    $_SESSION['message'] = "Event saved successfully!";
+    
+    // Send notifications in background (non-blocking)
+    exec("send_event_notification.php > /dev/null &");
+    
+    header("Location: events.php");
+    exit;
 }
 ?>
 
@@ -61,8 +112,7 @@ try {
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        
-        :root {
+                :root {
             --primary: #103e6c;
             --primary-light: #1a4f87;
             --secondary: #ffcc00;
@@ -229,124 +279,60 @@ try {
             <?php include 'messages.php'; ?>
 
             <div class="card mb-4">
-                <div class="card-header d-flex justify-content-between align-items-center">
-                    <h5 class="mb-0">Events Management</h5>
-                    <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addEventModal">
-                        <i class="fas fa-plus"></i> Add Event
-                    </button>
+                <div class="card-header">
+                    <h5 class="mb-0">Edit Event</h5>
                 </div>
                 <div class="card-body">
-                    <div class="table-responsive">
-                        <table class="table table-hover">
-                            <thead>
-                                <tr>
-                                    <th>Title</th>
-                                    <th>Location</th>
-                                    <th>Start Date</th>
-                                    <th>End Date</th>
-                                    <th>Status</th>
-                                    <th>Actions</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <?php foreach ($events as $event): ?>
-                                <tr>
-                                    <td><?= htmlspecialchars($event['title']) ?></td>
-                                    <td><?= htmlspecialchars($event['location']) ?></td>
-                                    <td><?= date('M j, Y g:i A', strtotime($event['start_datetime'])) ?></td>
-                                    <td><?= date('M j, Y g:i A', strtotime($event['end_datetime'])) ?></td>
-                                    <td>
-                                        <span class="badge bg-<?= 
-                                            $event['status'] === 'upcoming' ? 'primary' : 
-                                            ($event['status'] === 'ongoing' ? 'success' : 'secondary')
-                                        ?>">
-                                            <?= ucfirst($event['status']) ?>
-                                        </span>
-                                    </td>
-                                    <td>
-                                        <a href="event_view.php?id=<?= $event['id'] ?>" class="btn btn-sm btn-primary">
-                                            <i class="fas fa-eye"></i>
-                                        </a>
-                                        <a href="event_edit.php?id=<?= $event['id'] ?>" class="btn btn-sm btn-warning">
-                                            <i class="fas fa-edit"></i>
-                                        </a>
-                                    </td>
-                                </tr>
-                                <?php endforeach; ?>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Add Event Modal -->
-    <div class="modal fade" id="addEventModal" tabindex="-1" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <form method="POST">
-                    <input type="hidden" name="csrf_token" value="<?= $_SESSION['csrf_token'] ?>">
-                    <div class="modal-header">
-                        <h5 class="modal-title">Add New Event</h5>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body">
+                    <form method="POST">
+                        <input type="hidden" name="csrf_token" value="<?= $_SESSION['csrf_token'] ?>">
+                        
                         <div class="mb-3">
                             <label class="form-label">Event Title</label>
-                            <input type="text" name="title" class="form-control" required>
+                            <input type="text" name="title" class="form-control" value="<?= htmlspecialchars($event['title']) ?>" required>
                         </div>
+                        
                         <div class="mb-3">
                             <label class="form-label">Description</label>
-                            <textarea name="description" class="form-control" rows="3" required></textarea>
+                            <textarea name="description" class="form-control" rows="3" required><?= htmlspecialchars($event['description']) ?></textarea>
                         </div>
+                        
                         <div class="mb-3">
                             <label class="form-label">Location</label>
-                            <input type="text" name="location" class="form-control" required>
+                            <input type="text" name="location" class="form-control" value="<?= htmlspecialchars($event['location']) ?>" required>
                         </div>
+                        
                         <div class="row">
                             <div class="col-md-6 mb-3">
                                 <label class="form-label">Start Date & Time</label>
-                                <input type="datetime-local" name="start_datetime" class="form-control" required>
+                                <input type="datetime-local" name="start_datetime" class="form-control" 
+                                       value="<?= date('Y-m-d\TH:i', strtotime($event['start_datetime'])) ?>" required>
                             </div>
                             <div class="col-md-6 mb-3">
                                 <label class="form-label">End Date & Time</label>
-                                <input type="datetime-local" name="end_datetime" class="form-control" required>
+                                <input type="datetime-local" name="end_datetime" class="form-control" 
+                                       value="<?= date('Y-m-d\TH:i', strtotime($event['end_datetime'])) ?>">
                             </div>
                         </div>
+                        
                         <div class="mb-3">
                             <label class="form-label">Status</label>
                             <select name="status" class="form-select" required>
-                                <option value="upcoming">Upcoming</option>
-                                <option value="past">Past</option>
-                                <option value="cancelled">Cancelled</option>
+                                <option value="upcoming" <?= $event['status'] === 'upcoming' ? 'selected' : '' ?>>Upcoming</option>
+                                <option value="past" <?= $event['status'] === 'past' ? 'selected' : '' ?>>Past</option>
+                                <option value="cancelled" <?= $event['status'] === 'cancelled' ? 'selected' : '' ?>>Cancelled</option>
                             </select>
                         </div>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                        <button type="submit" name="add_event" class="btn btn-primary">Add Event</button>
-                    </div>
-                </form>
+                        
+                        <div class="d-flex justify-content-end">
+                            <a href="events.php" class="btn btn-secondary me-2">Cancel</a>
+                            <button type="submit" class="btn btn-primary">Update Event</button>
+                        </div>
+                    </form>
+                </div>
             </div>
         </div>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script>
-        // Set default datetime values
-        document.addEventListener('DOMContentLoaded', function() {
-            const now = new Date();
-            const start = new Date(now.getTime() + 60 * 60 * 1000); // 1 hour from now
-            const end = new Date(start.getTime() + 2 * 60 * 60 * 1000); // 3 hours from now
-            
-            document.querySelector('input[name="start_datetime"]').value = formatDateTime(start);
-            document.querySelector('input[name="end_datetime"]').value = formatDateTime(end);
-            
-            function formatDateTime(date) {
-                return date.toISOString().slice(0, 16);
-            }
-        });
-    </script>
 </body>
 </html>
