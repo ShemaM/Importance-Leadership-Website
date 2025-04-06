@@ -217,6 +217,19 @@ try {
             border-radius: 50%;
             object-fit: cover;
         }
+        .event-card.cancelled-event {
+    border-left: 4px solid #dc3545;
+    opacity: 0.9;
+}
+
+.event-card.cancelled-event .card-header {
+    background-color: #dc3545 !important;
+    color: white;
+}
+
+.cancellation-info {
+    border-left: 3px solid #dc3545;
+}
     </style>
 </head>
 <body>
@@ -331,6 +344,7 @@ try {
             </div>
         </div>
     </div>
+   
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script>

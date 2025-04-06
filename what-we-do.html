@@ -1,341 +1,378 @@
+<?php
+require_once 'auth_check.php';
+require_once 'db_connect.php';
+
+$pageTitle = "Programs Management";
+$activePage = "programs";
+
+// Generate CSRF token
+if (empty($_SESSION['csrf_token'])) {
+    $_SESSION['csrf_token'] = bin2hex(random_bytes(32));
+}
+
+// Define our core programs
+$corePrograms = [
+    'Leadership' => [
+        'description' => 'Develop essential leadership skills through workshops and real-world projects',
+        'status' => 'active'
+    ],
+    'Mentorship' => [
+        'description' => 'Pair experienced mentors with mentees for professional development',
+        'status' => 'active'
+    ],
+    'Community Engagement' => [
+        'description' => 'Initiatives that connect participants with community service opportunities',
+        'status' => 'active'
+    ]
+];
+
+// Handle form submissions
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    // CSRF validation
+    if (!isset($_POST['csrf_token']) || !hash_equals($_SESSION['csrf_token'], $_POST['csrf_token'])) {
+        $_SESSION['error'] = "Security token validation failed";
+        header("Location: programs.php");
+        exit;
+    }
+
+    // Process updates to core programs
+    if (isset($_POST['update_programs'])) {
+        try {
+            $pdo->beginTransaction();
+            
+            // Clear existing core programs
+            $pdo->exec("DELETE FROM programs WHERE is_core = 1");
+            
+            // Insert updated core programs
+            $stmt = $pdo->prepare("INSERT INTO programs 
+                                  (name, description, status, is_core, start_date, end_date) 
+                                  VALUES (?, ?, ?, 1, ?, ?)");
+            
+            foreach ($corePrograms as $name => $program) {
+                $start_date = $_POST[$name.'_start'] ?? date('Y-m-d');
+                $end_date = $_POST[$name.'_end'] ?? date('Y-m-d', strtotime('+1 year'));
+                
+                $stmt->execute([
+                    $name,
+                    $program['description'],
+                    $_POST[$name.'_status'] ?? 'active',
+                    $start_date,
+                    $end_date
+                ]);
+            }
+            
+            $pdo->commit();
+            $_SESSION['message'] = "Core programs updated successfully!";
+        } catch (PDOException $e) {
+            $pdo->rollBack();
+            $_SESSION['error'] = "Error updating programs: " . $e->getMessage();
+        }
+        
+        header("Location: programs.php");
+        exit;
+    }
+    
+    // Handle additional program submissions (similar to previous example)
+    // ...
+}
+
+// Get all programs from database
+try {
+    // Core programs
+    $coreProgramsFromDB = $pdo->query("SELECT * FROM programs WHERE is_core = 1 ORDER BY name")->fetchAll(PDO::FETCH_KEY_PAIR);
+    
+    // Additional programs
+    $additionalPrograms = $pdo->query("SELECT * FROM programs WHERE is_core = 0 ORDER BY start_date DESC")->fetchAll();
+    
+    // Merge with default values if not in DB
+    foreach ($corePrograms as $name => &$program) {
+        if (isset($coreProgramsFromDB[$name])) {
+            $program = array_merge($program, $coreProgramsFromDB[$name]);
+        }
+    }
+    
+    // Get participant counts
+    $participantCounts = $pdo->query("
+        SELECT program, COUNT(*) as count 
+        FROM participants 
+        GROUP BY program
+    ")->fetchAll(PDO::FETCH_KEY_PAIR);
+    
+} catch (PDOException $e) {
+    die("Error fetching programs: " . $e->getMessage());
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Discover the transformative programs at Importance Leadership. We empower youth through innovative programs that inspire growth, resilience, and leadership.">
-    <meta name="keywords" content="Leadership, Impact, Community, Mentorship, Youth Empowerment">
-    <meta name="author" content="Importance Leadership">
-    <title>What We Do | Importance Leadership</title>
-    <!-- Bootstrap CSS -->
-     
-    <!-- Favicon -->
-    <link rel="icon" type="image/png" href="image/website-logo.png">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <!-- Animate.css for animations -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <!-- Custom CSS -->
-    <style> 
-        :root {
-            --primary-color: #3498db;
-            --secondary-color: #2c3e50;
-            --background-light: #ffffff;
-            --text-light: #333333;
-            --background-dark: #1a1a1a;
-            --text-dark: #f4f4f4;
-            --transition-speed: 0.3s;
+    <title><?= htmlspecialchars($pageTitle) ?> - <?= SITE_NAME ?></title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .program-card {
+            transition: all 0.3s ease;
+            border-left: 4px solid var(--primary);
         }
-
-        body {
-            font-family: 'Inter', sans-serif;
-            line-height: 1.6;
-            color: var(--text-light);
-            background-color: var(--background-light);
-            transition: background-color var(--transition-speed), color var(--transition-speed);
+        .program-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
         }
-
-        body.dark-mode {
-            background-color: var(--background-dark);
-            color: var(--text-dark);
+        .core-program {
+            border-left-color: var(--success);
         }
-
-        h1, h2, h3, h4, h5, h6 {
-            color: var(--secondary-color);
-            transition: color var(--transition-speed);
+        .program-badge {
+            position: absolute;
+            top: 15px;
+            right: 15px;
         }
-
-        body.dark-mode h1,
-        body.dark-mode h2,
-        body.dark-mode h3,
-        body.dark-mode h4,
-        body.dark-mode h5,
-        body.dark-mode h6 {
-            color: var(--text-dark);
-        }
-
-        a {
-            color: var(--primary-color);
-            text-decoration: none;
-            transition: color var(--transition-speed);
-        }
-
-        a:hover {
-            color: #2980b9;
-        }
-
-        .btn-primary {
-            background-color: var(--primary-color);
-            border-color: var(--primary-color);
-            transition: all var(--transition-speed);
-        }
-
-        .btn-primary:hover {
-            background-color: #2980b9;
-            border-color: #2980b9;
-        }
-
-        .card {
-            transition: transform var(--transition-speed), box-shadow var(--transition-speed);
-            border: none;
-            overflow: hidden;
-            border-radius: 10px;
-        }
-
-        .card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-        }
-
-        .card img {
-            height: 200px;
-            object-fit: cover;
-            transition: transform var(--transition-speed);
-            border-top-left-radius: 10px;
-            border-top-right-radius: 10px;
-        }
-
-        .card:hover img {
-            transform: scale(1.1);
-        }
-
-        .upcoming-projects {
-            color: black;
-            padding: 20px;
-            background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('image/knowledge-sharing.jpg');
-            background-size: cover;
-            background-position: center;
-        }
-
-        .upcoming-projects .card {
-            background: rgba(255, 255, 255, 0.1);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-        }
-
-        .upcoming-projects .card-title {
-            color: #ffffff;
-        }
-
-        .upcoming-projects .card-text {
-            color: rgba(255, 255, 255, 0.8);
-        }
-
-        .upcoming-projects .btn {
-            color: #ffffff;
-            border-color: #ffffff;
-        }
-
-        .upcoming-projects .btn:hover {
-            background: #ffffff;
-            color: var(--primary-color);
-        }
-
-        .dark-mode-toggle {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            background: var(--primary-color);
-            color: var(--background-light);
-            border: none;
-            padding: 10px 15px;
-            border-radius: 5px;
-            cursor: pointer;
-            z-index: 1000;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        }
-
-        .dark-mode-toggle:hover {
-            background: #2980b9;
-        }
-
-        .animate-on-scroll {
-            opacity: 0;
-            transform: translateY(50px);
-            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
-        }
-
-        .animate-on-scroll.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        .scroll-down-icon {
-            text-align: center;
-            margin-top: 2rem;
-            animation: bounce 2s infinite;
-        }
-
-        .scroll-down-icon i {
-            font-size: 30px;
-            color: var(--primary-color);
-            transition: color 0.3s ease;
-        }
-
-        .scroll-down-icon i:hover {
-            color: #2980b9;
-        }
-
-        @keyframes bounce {
-            0%, 20%, 50%, 80%, 100% {
-                transform: translateY(0);
-            }
-            40% {
-                transform: translateY(-10px);
-            }
-            60% {
-                transform: translateY(-5px);
-            }
-        }
-
-        @media (max-width: 768px) {
-            .card img {
-                height: 150px;
-            }
-
-            .upcoming-projects {
-                padding: 10px;
-            }
-
-            .dark-mode-toggle {
-                bottom: 10px;
-                right: 10px;
-                padding: 8px 12px;
-            }
+        .participant-count {
+            font-size: 0.9rem;
+            color: var(--light-text);
         }
     </style>
 </head>
 <body>
-    <!-- Load Header -->
-    <div id="header-container"></div>
-    <script src="loadHeader.js"></script>
-
-    <!-- Hero Section -->
-    <section class="hero-section bg-light py-5">
-        <div class="container text-center">
-            <h1 class="display-4 fw-bold animate-on-scroll">Empowering Youth, Transforming Communities</h1>
-            <p class="lead animate-on-scroll">At Importance Leadership, we are dedicated to fostering leadership, creating opportunities, and driving positive change worldwide.</p>
-            <a href="program_signup.php" class="btn btn-primary">Join One of Our Programs</a>
-           
-            <!--scroll-down icon -->
-<div class="scroll-down-icon animate-on-scroll">
-    <a href="#impact-section" class="scroll-link">
-        <i class="fas fa-chevron-down"></i> <!-- Font Awesome down arrow icon -->
-    </a>
-</div>
-        </div>
-    </section>
-
-    <!-- Impact Section -->
-    <section class="impact-section py-5" id="impact-section">
-        <div class="container">
-            <div class="text-center mb-5">
-                <h2 class="fw-bold animate-on-scroll">Our Transformative Programs</h2>
-                <p class="lead animate-on-scroll">We empower youth through innovative programs that inspire growth, resilience, and leadership.</p>
-            </div>
-            <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
-                <!-- Program 1: Community Engagement -->
-                <div class="col animate-on-scroll">
-                    <div class="card h-100">
-                        <img src="image/community engagement.jpg" class="card-img-top" alt="Community Engagement">
-                        <div class="card-body">
-                            <h5 class="card-title fw-bold">Community Engagement</h5>
-                            <p class="card-text">Back-to-School: Empowering refugee orphans with essential school supplies.</p>
-                            <a href="backToSchool.html" class="btn btn-primary">Learn More</a>
-                        </div>
-                    </div>
+    <?php include 'sidebar.php'; ?>
+    
+    <div class="main-content">
+        <?php include 'header.php'; ?>
+        
+        <div class="container-fluid py-4">
+            <!-- Messages/Alerts -->
+            <?php if (isset($_SESSION['message'])): ?>
+                <div class="alert alert-success alert-dismissible fade show">
+                    <?= $_SESSION['message'] ?>
+                    <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
                 </div>
-                <!-- Program 2: Mental Health and Wellness -->
-                <div class="col animate-on-scroll">
-                    <div class="card h-100">
-                        <img src="image/mentalHealth-pro.jpg" class="card-img-top" alt="Mental Health and Wellness">
-                        <div class="card-body">
-                            <h5 class="card-title fw-bold">Mental Health and Wellness</h5>
-                            <p class="card-text">Emotional intelligence webinars for young leaders to thrive personally and professionally.</p>
-                            <a href="EI.html" class="btn btn-primary">Learn More</a>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Program 5: Advocacy -->
-                <div class="col animate-on-scroll">
-                    <div class="card h-100">
-                        <img src="image/advocacy-program.jpg" class="card-img-top" alt="Advocacy">
-                        <div class="card-body">
-                            <h5 class="card-title fw-bold">Advocacy</h5>
-                            <p class="card-text">Empowering youth with legal knowledge and financial independence through workshops.</p>
-                            <a href="easternCongoCrisis.html" class="btn btn-primary">Learn More</a>
-                        </div>
-                    </div>
-                </div>
+                <?php unset($_SESSION['message']); ?>
+            <?php endif; ?>
             
-               
+            <?php if (isset($_SESSION['error'])): ?>
+                <div class="alert alert-danger alert-dismissible fade show">
+                    <?= $_SESSION['error'] ?>
+                    <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+                </div>
+                <?php unset($_SESSION['error']); ?>
+            <?php endif; ?>
+
+            <!-- Core Programs Section -->
+            <div class="card mb-4">
+                <div class="card-header">
+                    <h5 class="mb-0">Core Programs</h5>
+                </div>
+                <div class="card-body">
+                    <form method="POST">
+                        <input type="hidden" name="csrf_token" value="<?= $_SESSION['csrf_token'] ?>">
+                        
+                        <div class="row">
+                            <?php foreach ($corePrograms as $name => $program): ?>
+                            <div class="col-md-4 mb-4">
+                                <div class="card h-100 program-card core-program">
+                                    <div class="card-body position-relative">
+                                        <span class="badge program-badge bg-<?= 
+                                            ($program['status'] ?? 'active') === 'active' ? 'success' : 
+                                            (($program['status'] ?? 'active') === 'upcoming' ? 'warning' : 'secondary') 
+                                        ?>">
+                                            <?= ucfirst($program['status'] ?? 'active') ?>
+                                        </span>
+                                        
+                                        <h5 class="card-title"><?= htmlspecialchars($name) ?></h5>
+                                        <p class="card-text"><?= htmlspecialchars($program['description']) ?></p>
+                                        
+                                        <div class="participant-count mb-3">
+                                            <i class="fas fa-users"></i> 
+                                            <?= $participantCounts[$name] ?? 0 ?> participants
+                                        </div>
+                                        
+                                        <div class="row g-2">
+                                            <div class="col-md-6">
+                                                <label class="form-label small">Start Date</label>
+                                                <input type="date" class="form-control form-control-sm" 
+                                                       name="<?= $name ?>_start" 
+                                                       value="<?= $program['start_date'] ?? date('Y-m-d') ?>">
+                                            </div>
+                                            <div class="col-md-6">
+                                                <label class="form-label small">End Date</label>
+                                                <input type="date" class="form-control form-control-sm" 
+                                                       name="<?= $name ?>_end" 
+                                                       value="<?= $program['end_date'] ?? date('Y-m-d', strtotime('+1 year')) ?>">
+                                            </div>
+                                            <div class="col-md-12">
+                                                <label class="form-label small">Status</label>
+                                                <select class="form-select form-select-sm" name="<?= $name ?>_status">
+                                                    <option value="active" <?= ($program['status'] ?? 'active') === 'active' ? 'selected' : '' ?>>Active</option>
+                                                    <option value="upcoming" <?= ($program['status'] ?? 'active') === 'upcoming' ? 'selected' : '' ?>>Upcoming</option>
+                                                    <option value="completed" <?= ($program['status'] ?? 'active') === 'completed' ? 'selected' : '' ?>>Completed</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <?php endforeach; ?>
+                        </div>
+                        
+                        <div class="text-end mt-3">
+                            <button type="submit" name="update_programs" class="btn btn-primary">
+                                <i class="fas fa-save me-2"></i>Save Changes
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <!-- Additional Programs Section -->
+            <div class="card">
+                <div class="card-header d-flex justify-content-between align-items-center">
+                    <h5 class="mb-0">Additional Programs</h5>
+                    <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addProgramModal">
+                        <i class="fas fa-plus me-2"></i>Add Program
+                    </button>
+                </div>
+                <div class="card-body">
+                    <?php if (empty($additionalPrograms)): ?>
+                        <div class="text-center py-5 text-muted">
+                            <i class="fas fa-calendar-plus fa-3x mb-3"></i>
+                            <h5>No additional programs</h5>
+                            <p>Add special programs or initiatives beyond the core offerings</p>
+                        </div>
+                    <?php else: ?>
+                        <div class="table-responsive">
+                            <table class="table table-hover">
+                                <thead>
+                                    <tr>
+                                        <th>Name</th>
+                                        <th>Description</th>
+                                        <th>Dates</th>
+                                        <th>Participants</th>
+                                        <th>Status</th>
+                                        <th>Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <?php foreach ($additionalPrograms as $program): ?>
+                                    <tr>
+                                        <td><?= htmlspecialchars($program['name']) ?></td>
+                                        <td><?= htmlspecialchars(substr($program['description'], 0, 50)) ?>...</td>
+                                        <td>
+                                            <?= date('M j', strtotime($program['start_date'])) ?> - 
+                                            <?= date('M j, Y', strtotime($program['end_date'])) ?>
+                                        </td>
+                                        <td><?= $participantCounts[$program['name']] ?? 0 ?></td>
+                                        <td>
+                                            <span class="badge bg-<?= 
+                                                $program['status'] === 'active' ? 'success' : 
+                                                ($program['status'] === 'upcoming' ? 'warning' : 'secondary') 
+                                            ?>">
+                                                <?= ucfirst((string)($program['status'] ?? '')) ?>
+                                            </span>
+                                        </td>
+                                        <td>
+                                            <button class="btn btn-sm btn-outline-primary edit-program"
+                                                    data-id="<?= $program['id'] ?>"
+                                                    data-name="<?= htmlspecialchars($program['name']) ?>"
+                                                    data-description="<?= htmlspecialchars($program['description']) ?>"
+                                                    data-start="<?= $program['start_date'] ?>"
+                                                    data-end="<?= $program['end_date'] ?>"
+                                                    data-status="<?= $program['status'] ?>">
+                                                <i class="fas fa-edit"></i>
+                                            </button>
+                                            <a href="programs.php?delete=<?= $program['id'] ?>" 
+                                               class="btn btn-sm btn-outline-danger"
+                                               onclick="return confirm('Delete this program?\n\nThis will not affect core programs.')">
+                                                <i class="fas fa-trash-alt"></i>
+                                            </a>
+                                        </td>
+                                    </tr>
+                                    <?php endforeach; ?>
+                                </tbody>
+                            </table>
+                        </div>
+                    <?php endif; ?>
+                </div>
             </div>
         </div>
-    </section>
+    </div>
 
-    <!-- Upcoming Projects Section -->
-    <section class="upcoming-projects py-5">
-        <div class="container">
-            <div class="text-center mb-5">
-                <h2 class="fw-bold animate-on-scroll">Upcoming Projects</h2>
-                <p class="lead animate-on-scroll">Join us in our mission to create a better future for youth and communities.</p>
-            </div>
-            <div class="row row-cols-1 row-cols-md-3 g-4">
-                <!-- Project 1: Youth Leadership Retreat -->
-                <div class="col animate-on-scroll">
-                    <div class="card h-100">
-                        <div class="card-body">
-                            <h4 class="card-title">Youth Leadership Retreat</h4>
-                            <p class="card-text">Nurturing leadership skills and global initiatives for youth.</p>
-                            <a href="404.html" class="btn btn-primary">Learn More</a>
+    <!-- Add Program Modal (for additional programs) -->
+    <div class="modal fade" id="addProgramModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <form method="POST">
+                    <input type="hidden" name="csrf_token" value="<?= $_SESSION['csrf_token'] ?>">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Add Additional Program</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="mb-3">
+                            <label class="form-label">Program Name</label>
+                            <input type="text" class="form-control" name="name" required>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Description</label>
+                            <textarea class="form-control" name="description" rows="3"></textarea>
+                        </div>
+                        <div class="row g-2">
+                            <div class="col-md-6 mb-3">
+                                <label class="form-label">Start Date</label>
+                                <input type="date" class="form-control" name="start_date" required>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label class="form-label">End Date</label>
+                                <input type="date" class="form-control" name="end_date" required>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Status</label>
+                            <select class="form-select" name="status" required>
+                                <option value="upcoming">Upcoming</option>
+                                <option value="active">Active</option>
+                                <option value="completed">Completed</option>
+                            </select>
                         </div>
                     </div>
-                </div>
-                <!-- Project 2: Community Service Programs -->
-                <div class="col animate-on-scroll">
-                    <div class="card h-100">
-                        <div class="card-body">
-                            <h4 class="card-title">Community Service Programs</h4>
-                            <p class="card-text">Engage in programs that create a positive impact in local communities.</p>
-                            <a href="404.html" class="btn btn-primary">Learn More</a>
-                        </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                        <button type="submit" name="add_program" class="btn btn-primary">Add Program</button>
                     </div>
-                </div>
-                <!-- Project 3: Youth Advocacy Campaigns -->
-                <div class="col animate-on-scroll">
-                    <div class="card h-100">
-                        <div class="card-body">
-                            <h4 class="card-title">Youth Advocacy Campaigns</h4>
-                            <p class="card-text">Raising awareness and fostering stewardship towards the environment.</p>
-                            <a href="404.html" class="btn btn-primary">Learn More</a>
-                        </div>
-                    </div>
-                </div>
+                </form>
             </div>
         </div>
-    </section>
-    <!-- Load Footer -->
-    <script src="loadFooter.js"></script>
+    </div>
 
-    <!-- Bootstrap JS and Custom JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script>
-    
-
-        // Scroll Animations
-        const animateElements = document.querySelectorAll('.animate-on-scroll');
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                }
-            });
-        }, { threshold: 0.1 });
-
-        animateElements.forEach(element => observer.observe(element));
+        // Set default dates when add modal opens
+        document.getElementById('addProgramModal').addEventListener('shown.bs.modal', function() {
+            const today = new Date().toISOString().split('T')[0];
+            const nextMonth = new Date();
+            nextMonth.setMonth(nextMonth.getMonth() + 1);
+            
+            const modal = this;
+            modal.querySelector('input[name="start_date"]').value = today;
+            modal.querySelector('input[name="end_date"]').value = nextMonth.toISOString().split('T')[0];
+        });
+        
+        // Date validation
+        function validateDates(startField, endField) {
+            if (startField.value > endField.value) {
+                alert('End date must be after start date');
+                endField.value = startField.value;
+            }
+        }
+        
+        // Add validation to all date pairs
+        document.querySelectorAll('input[type="date"][name$="_start"]').forEach(start => {
+            const endName = start.name.replace('_start', '_end');
+            const end = start.closest('form').querySelector(`input[name="${endName}"]`);
+            
+            start.addEventListener('change', () => validateDates(start, end));
+            end.addEventListener('change', () => validateDates(start, end));
+        });
     </script>
 </body>
 </html>

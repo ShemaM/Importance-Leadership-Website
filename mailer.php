@@ -14,7 +14,7 @@ function sendEmailNotification($recipient, $subject, $body) {
         $mail->isSMTP();
         $mail->Host       = 'smtp.gmail.com'; // Your SMTP server
         $mail->SMTPAuth   = true;
-        $mail->Username   = 'shemamanase992@gmail.com'; // SMTP username
+        $mail->Username   = 'info@importanceleadership.com'; // SMTP username
         $mail->Password   = 'xqox zscc ouwq hsli'; // SMTP password
         $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS; // Enable TLS encryption
         $mail->Port       = 465; // TCP port to connect to

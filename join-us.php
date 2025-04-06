@@ -1,11 +1,12 @@
 <?php
 header('Content-Type: application/json'); // Set response type to JSON
 
-// Database configuration
-$host = 'localhost';
-$dbname = 'importanceleadership';
-$username = 'root';
-$password = 'secret';
+// Include database configuration
+$config = include 'db_config.php';
+$host = $config['host'];
+$dbname = $config['dbname'];
+$username = $config['username'];
+$password = $config['password'];
 
 // Connect to the database
 try {

@@ -20,7 +20,7 @@ $body = "
     <div style='text-align: center;'>
         <img src='https://www.importanceleadership.com/' alt='Organization Logo' style='max-width: 200px; margin-bottom: 20px;'>
     </div>
-    <p>Dear <strong>$subscribers</strong>,</p>
+    <p>Dear <strong>Leader</strong>,</p>
     <p>Greeting from <strong>Importance Leadership! </strong></p>
     <p>We are thrilled to invite you to an exciting new event:</p>
     <h2>" . htmlspecialchars($event['title']) . "</h2>

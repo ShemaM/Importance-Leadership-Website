@@ -1,80 +1,109 @@
 <?php
-require_once 'auth_check.php'; // This should contain your session/auth logic
-require_once 'db_connect.php'; // This should contain your PDO connection
+require_once 'auth_check.php';
+require_once 'db_connect.php';
 
 $pageTitle = "Programs Management";
 $activePage = "programs";
 
+// Generate CSRF token
+if (empty($_SESSION['csrf_token'])) {
+    $_SESSION['csrf_token'] = bin2hex(random_bytes(32));
+}
+
+// Define our core programs
+$corePrograms = [
+    'Leadership' => [
+        'description' => 'Develop essential leadership skills through workshops and real-world projects',
+        'status' => 'active'
+    ],
+    'Mentorship' => [
+        'description' => 'Pair experienced mentors with mentees for professional development',
+        'status' => 'active'
+    ],
+    'Community Engagement' => [
+        'description' => 'Initiatives that connect participants with community service opportunities',
+        'status' => 'active'
+    ]
+];
+
+// Get all unique programs from participants table
+try {
+    $participantPrograms = $pdo->query("
+        SELECT DISTINCT program 
+        FROM participants
+        WHERE program IS NOT NULL AND program != ''
+    ")->fetchAll(PDO::FETCH_COLUMN);
+} catch (PDOException $e) {
+    $participantPrograms = [];
+}
+
 // Handle form submissions
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    // Verify CSRF token
-    if (!isset($_POST['csrf_token']) || $_POST['csrf_token'] !== $_SESSION['csrf_token']) {
-        die("CSRF token validation failed");
-    }
-
-    // Handle different actions
-    if (isset($_POST['add_program'])) {
-        // Add new program
-        try {
-            $stmt = $pdo->prepare("INSERT INTO programs 
-                                  (name, description, start_date, end_date, status) 
-                                  VALUES (?, ?, ?, ?, ?)");
-            $stmt->execute([
-                $_POST['name'],
-                $_POST['description'],
-                $_POST['start_date'],
-                $_POST['end_date'],
-                $_POST['status']
-            ]);
-            $_SESSION['message'] = "Program added successfully!";
-        } catch (PDOException $e) {
-            $_SESSION['error'] = "Error adding program: " . $e->getMessage();
-        }
-    } elseif (isset($_POST['update_program'])) {
-        // Update existing program
-        try {
-            $stmt = $pdo->prepare("UPDATE programs SET 
-                                  name = ?, 
-                                  description = ?, 
-                                  start_date = ?, 
-                                  end_date = ?, 
-                                  status = ? 
-                                  WHERE id = ?");
-            $stmt->execute([
-                $_POST['name'],
-                $_POST['description'],
-                $_POST['start_date'],
-                $_POST['end_date'],
-                $_POST['status'],
-                $_POST['program_id']
-            ]);
-            $_SESSION['message'] = "Program updated successfully!";
-        } catch (PDOException $e) {
-            $_SESSION['error'] = "Error updating program: " . $e->getMessage();
-        }
-    } elseif (isset($_GET['delete'])) {
-        // Delete program
-        try {
-            $stmt = $pdo->prepare("DELETE FROM programs WHERE id = ?");
-            $stmt->execute([$_GET['delete']]);
-            $_SESSION['message'] = "Program deleted successfully!";
-        } catch (PDOException $e) {
-            $_SESSION['error'] = "Error deleting program: " . $e->getMessage();
-        }
+    // CSRF validation
+    if (!isset($_POST['csrf_token']) || !hash_equals($_SESSION['csrf_token'], $_POST['csrf_token'])) {
+        $_SESSION['error'] = "Security token validation failed";
         header("Location: programs.php");
         exit;
     }
 
-    // Redirect to prevent form resubmission
-    header("Location: programs.php");
-    exit;
+    // Process updates to core programs
+    if (isset($_POST['update_programs'])) {
+        try {
+            // No need to update database since we're using participants table
+            foreach ($corePrograms as $name => &$program) {
+                $program['status'] = $_POST[$name.'_status'] ?? 'active';
+                $program['start_date'] = $_POST[$name.'_start'] ?? date('Y-m-d');
+                $program['end_date'] = $_POST[$name.'_end'] ?? date('Y-m-d', strtotime('+1 year'));
+                $program['description'] = $_POST[$name.'_description'] ?? $program['description'];
+            }
+            
+            $_SESSION['message'] = "Core programs updated successfully!";
+        } catch (Exception $e) {
+            $_SESSION['error'] = "Error updating programs: " . $e->getMessage();
+        }
+        
+        header("Location: programs.php");
+        exit;
+    }
 }
 
-// Get all programs from database
+// Get participant counts for each program
 try {
-    $programs = $pdo->query("SELECT * FROM programs ORDER BY start_date DESC")->fetchAll();
+    $participantCounts = $pdo->query("
+        SELECT program, COUNT(*) as count 
+        FROM participants 
+        WHERE program IS NOT NULL AND program != ''
+        GROUP BY program
+    ")->fetchAll(PDO::FETCH_KEY_PAIR);
 } catch (PDOException $e) {
-    die("Error fetching programs: " . $e->getMessage());
+    $participantCounts = [];
+}
+
+// Prepare programs data
+$allPrograms = [];
+foreach ($corePrograms as $name => $program) {
+    $allPrograms[$name] = [
+        'name' => $name,
+        'description' => $program['description'],
+        'status' => $program['status'],
+        'start_date' => $program['start_date'] ?? date('Y-m-d'),
+        'end_date' => $program['end_date'] ?? date('Y-m-d', strtotime('+1 year')),
+        'is_core' => true
+    ];
+}
+
+// Add participant programs that aren't core programs
+foreach ($participantPrograms as $programName) {
+    if (!isset($allPrograms[$programName])) {
+        $allPrograms[$programName] = [
+            'name' => $programName,
+            'description' => '',
+            'status' => 'active',
+            'start_date' => date('Y-m-d', strtotime('-1 month')),
+            'end_date' => date('Y-m-d', strtotime('+11 months')),
+            'is_core' => false
+        ];
+    }
 }
 ?>
 
@@ -87,8 +116,32 @@ try {
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
+        .program-card {
+            transition: all 0.3s ease;
+            border-left: 4px solid #103e6c;
+        }
+        .program-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        .core-program {
+            border-left-color: #28a745;
+        }
+        .program-badge {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+        }
+        .participant-count {
+            font-size: 0.9rem;
+            color: #6c757d;
+        }
+        .form-label small {
+            font-size: 0.8rem;
+            color: #6c757d;
+        }
         
-:root {
+        :root {
             --primary: #103e6c;
             --primary-light: #1a4f87;
             --secondary: #ffcc00;
@@ -251,197 +304,159 @@ try {
     <div class="main-content">
         <?php include 'header.php'; ?>
         
-        <div class="container-fluid">
-            <!-- Display messages/errors -->
+        <div class="container-fluid py-4">
+            <!-- Messages/Alerts -->
             <?php if (isset($_SESSION['message'])): ?>
-                <div class="alert alert-success"><?= $_SESSION['message'] ?></div>
+                <div class="alert alert-success alert-dismissible fade show">
+                    <?= $_SESSION['message'] ?>
+                    <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+                </div>
                 <?php unset($_SESSION['message']); ?>
             <?php endif; ?>
             
             <?php if (isset($_SESSION['error'])): ?>
-                <div class="alert alert-danger"><?= $_SESSION['error'] ?></div>
+                <div class="alert alert-danger alert-dismissible fade show">
+                    <?= $_SESSION['error'] ?>
+                    <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+                </div>
                 <?php unset($_SESSION['error']); ?>
             <?php endif; ?>
 
+            <!-- Core Programs Section -->
             <div class="card mb-4">
-                <div class="card-header d-flex justify-content-between align-items-center">
-                    <h5 class="mb-0">Programs Management</h5>
-                    <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addProgramModal">
-                        <i class="fas fa-plus"></i> Add Program
-                    </button>
+                <div class="card-header">
+                    <h5 class="mb-0">Core Programs</h5>
                 </div>
                 <div class="card-body">
-                    <div class="table-responsive">
-                        <table class="table table-hover">
-                            <thead>
-                                <tr>
-                                    <th>Name</th>
-                                    <th>Description</th>
-                                    <th>Start Date</th>
-                                    <th>End Date</th>
-                                    <th>Status</th>
-                                    <th>Actions</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <?php foreach ($programs as $program): ?>
-                                <tr>
-                                    <td><?= htmlspecialchars($program['name']) ?></td>
-                                    <td><?= htmlspecialchars(substr($program['description'], 0, 50)) ?>...</td>
-                                    <td><?= date('M j, Y', strtotime($program['start_date'])) ?></td>
-                                    <td><?= date('M j, Y', strtotime($program['end_date'])) ?></td>
-                                    <td>
-                                        <span class="badge bg-<?= 
+                    <form method="POST">
+                        <input type="hidden" name="csrf_token" value="<?= $_SESSION['csrf_token'] ?>">
+                        
+                        <div class="row">
+                            <?php foreach ($corePrograms as $name => $program): ?>
+                            <div class="col-md-4 mb-4">
+                                <div class="card h-100 program-card core-program">
+                                    <div class="card-body position-relative">
+                                        <span class="badge program-badge bg-<?= 
                                             $program['status'] === 'active' ? 'success' : 
-                                            ($program['status'] === 'upcoming' ? 'warning' : 'danger') 
+                                            ($program['status'] === 'upcoming' ? 'warning' : 'secondary') 
                                         ?>">
                                             <?= ucfirst($program['status']) ?>
                                         </span>
-                                    </td>
-                                    <td>
-                                        <button class="btn btn-sm btn-primary edit-program" 
-                                                data-id="<?= $program['id'] ?>"
-                                                data-name="<?= htmlspecialchars($program['name']) ?>"
-                                                data-description="<?= htmlspecialchars($program['description']) ?>"
-                                                data-start="<?= $program['start_date'] ?>"
-                                                data-end="<?= $program['end_date'] ?>"
-                                                data-status="<?= $program['status'] ?>">
-                                            <i class="fas fa-edit"></i>
-                                        </button>
-                                        <a href="programs.php?delete=<?= $program['id'] ?>" 
-                                           class="btn btn-sm btn-danger"
-                                           onclick="return confirm('Are you sure you want to delete this program?')">
-                                            <i class="fas fa-trash"></i>
-                                        </a>
-                                    </td>
-                                </tr>
-                                <?php endforeach; ?>
-                            </tbody>
-                        </table>
-                    </div>
+                                        
+                                        <h5 class="card-title"><?= htmlspecialchars($name) ?></h5>
+                                        
+                                        <div class="mb-3">
+                                            <label class="form-label small">Description</label>
+                                            <textarea class="form-control form-control-sm" 
+                                                      name="<?= $name ?>_description" 
+                                                      rows="3"><?= htmlspecialchars($program['description']) ?></textarea>
+                                        </div>
+                                        
+                                        <div class="participant-count mb-3">
+                                            <i class="fas fa-users"></i> 
+                                            <?= $participantCounts[$name] ?? 0 ?> participants
+                                        </div>
+                                        
+                                        <div class="row g-2">
+                                            <div class="col-md-6">
+                                                <label class="form-label small">Start Date</label>
+                                                <input type="date" class="form-control form-control-sm" 
+                                                       name="<?= $name ?>_start" 
+                                                       value="<?= $program['start_date'] ?? date('Y-m-d') ?>">
+                                            </div>
+                                            <div class="col-md-6">
+                                                <label class="form-label small">End Date</label>
+                                                <input type="date" class="form-control form-control-sm" 
+                                                       name="<?= $name ?>_end" 
+                                                       value="<?= $program['end_date'] ?? date('Y-m-d', strtotime('+1 year')) ?>">
+                                            </div>
+                                            <div class="col-md-12">
+                                                <label class="form-label small">Status</label>
+                                                <select class="form-select form-select-sm" name="<?= $name ?>_status">
+                                                    <option value="active" <?= ($program['status'] ?? 'active') === 'active' ? 'selected' : '' ?>>Active</option>
+                                                    <option value="upcoming" <?= ($program['status'] ?? 'active') === 'upcoming' ? 'selected' : '' ?>>Upcoming</option>
+                                                    <option value="completed" <?= ($program['status'] ?? 'active') === 'completed' ? 'selected' : '' ?>>Completed</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <?php endforeach; ?>
+                        </div>
+                        
+                        <div class="text-end mt-3">
+                            <button type="submit" name="update_programs" class="btn btn-primary">
+                                <i class="fas fa-save me-2"></i>Save Changes
+                            </button>
+                        </div>
+                    </form>
                 </div>
             </div>
-        </div>
-    </div>
 
-    <!-- Add Program Modal -->
-    <div class="modal fade" id="addProgramModal" tabindex="-1" aria-labelledby="addProgramModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <form method="POST">
-                    <input type="hidden" name="csrf_token" value="<?= $_SESSION['csrf_token'] ?>">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="addProgramModalLabel">Add New Program</h5>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body">
-                        <div class="mb-3">
-                            <label for="name" class="form-label">Program Name</label>
-                            <input type="text" class="form-control" id="name" name="name" required>
+            <!-- Additional Programs Section (from participants table) -->
+            <div class="card">
+                <div class="card-header">
+                    <h5 class="mb-0">Active Programs (from Participants)</h5>
+                </div>
+                <div class="card-body">
+                    <?php if (empty($participantPrograms)): ?>
+                        <div class="text-center py-5 text-muted">
+                            <i class="fas fa-calendar-plus fa-3x mb-3"></i>
+                            <h5>No programs found in participant data</h5>
+                            <p>Programs will appear here as participants register</p>
                         </div>
-                        <div class="mb-3">
-                            <label for="description" class="form-label">Description</label>
-                            <textarea class="form-control" id="description" name="description" rows="3" required></textarea>
+                    <?php else: ?>
+                        <div class="table-responsive">
+                            <table class="table table-hover">
+                                <thead>
+                                    <tr>
+                                        <th>Program Name</th>
+                                        <th>Participants</th>
+                                        <th>Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <?php foreach ($allPrograms as $name => $program): ?>
+                                        <?php if (!$program['is_core'] && isset($participantCounts[$name])): ?>
+                                        <tr>
+                                            <td><?= htmlspecialchars($name) ?></td>
+                                            <td><?= $participantCounts[$name] ?? 0 ?></td>
+                                            <td>
+                                                <a href="participants.php?program=<?= urlencode($name) ?>" 
+                                                   class="btn btn-sm btn-outline-primary">
+                                                    <i class="fas fa-eye me-1"></i> View Participants
+                                                </a>
+                                            </td>
+                                        </tr>
+                                        <?php endif; ?>
+                                    <?php endforeach; ?>
+                                </tbody>
+                            </table>
                         </div>
-                        <div class="row">
-                            <div class="col-md-6 mb-3">
-                                <label for="start_date" class="form-label">Start Date</label>
-                                <input type="date" class="form-control" id="start_date" name="start_date" required>
-                            </div>
-                            <div class="col-md-6 mb-3">
-                                <label for="end_date" class="form-label">End Date</label>
-                                <input type="date" class="form-control" id="end_date" name="end_date" required>
-                            </div>
-                        </div>
-                        <div class="mb-3">
-                            <label for="status" class="form-label">Status</label>
-                            <select class="form-select" id="status" name="status" required>
-                                <option value="active">Active</option>
-                                <option value="upcoming">Upcoming</option>
-                                <option value="completed">Completed</option>
-                            </select>
-                        </div>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                        <button type="submit" name="add_program" class="btn btn-primary">Save Program</button>
-                    </div>
-                </form>
-            </div>
-        </div>
-    </div>
-
-    <!-- Edit Program Modal -->
-    <div class="modal fade" id="editProgramModal" tabindex="-1" aria-labelledby="editProgramModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <form method="POST">
-                    <input type="hidden" name="csrf_token" value="<?= $_SESSION['csrf_token'] ?>">
-                    <input type="hidden" name="program_id" id="edit_program_id">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="editProgramModalLabel">Edit Program</h5>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body">
-                        <div class="mb-3">
-                            <label for="edit_name" class="form-label">Program Name</label>
-                            <input type="text" class="form-control" id="edit_name" name="name" required>
-                        </div>
-                        <div class="mb-3">
-                            <label for="edit_description" class="form-label">Description</label>
-                            <textarea class="form-control" id="edit_description" name="description" rows="3" required></textarea>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-6 mb-3">
-                                <label for="edit_start_date" class="form-label">Start Date</label>
-                                <input type="date" class="form-control" id="edit_start_date" name="start_date" required>
-                            </div>
-                            <div class="col-md-6 mb-3">
-                                <label for="edit_end_date" class="form-label">End Date</label>
-                                <input type="date" class="form-control" id="edit_end_date" name="end_date" required>
-                            </div>
-                        </div>
-                        <div class="mb-3">
-                            <label for="edit_status" class="form-label">Status</label>
-                            <select class="form-select" id="edit_status" name="status" required>
-                                <option value="active">Active</option>
-                                <option value="upcoming">Upcoming</option>
-                                <option value="completed">Completed</option>
-                            </select>
-                        </div>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                        <button type="submit" name="update_program" class="btn btn-primary">Update Program</button>
-                    </div>
-                </form>
+                    <?php endif; ?>
+                </div>
             </div>
         </div>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script>
-        // Handle edit button clicks
-        document.querySelectorAll('.edit-program').forEach(button => {
-            button.addEventListener('click', function() {
-                const modal = new bootstrap.Modal(document.getElementById('editProgramModal'));
-                
-                document.getElementById('edit_program_id').value = this.dataset.id;
-                document.getElementById('edit_name').value = this.dataset.name;
-                document.getElementById('edit_description').value = this.dataset.description;
-                document.getElementById('edit_start_date').value = this.dataset.start;
-                document.getElementById('edit_end_date').value = this.dataset.end;
-                document.getElementById('edit_status').value = this.dataset.status;
-                
-                modal.show();
-            });
-        });
-
-        // Set default dates for new program
-        document.getElementById('addProgramModal').addEventListener('shown.bs.modal', function() {
-            const today = new Date().toISOString().split('T')[0];
-            document.getElementById('start_date').value = today;
-            document.getElementById('end_date').value = today;
+        // Date validation
+        function validateDates(startField, endField) {
+            if (startField.value > endField.value) {
+                alert('End date must be after start date');
+                endField.value = startField.value;
+            }
+        }
+        
+        // Add validation to all date pairs
+        document.querySelectorAll('input[type="date"][name$="_start"]').forEach(start => {
+            const endName = start.name.replace('_start', '_end');
+            const end = start.closest('form').querySelector(`input[name="${endName}"]`);
+            
+            start.addEventListener('change', () => validateDates(start, end));
+            end.addEventListener('change', () => validateDates(start, end));
         });
     </script>
 </body>
