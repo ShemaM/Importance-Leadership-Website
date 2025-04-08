@@ -597,7 +597,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                             
                             <div class="d-flex justify-content-between">
                                 <button type="button" class="btn btn-primary btn-prev" onclick="prevPage(5)">Previous</button>
-                                <button type="submit" class="btn btn-next">Submit</button>
+                                <button type="submit" class="btn btn-primary">Submit</button>
                             </div>
                         </div>
                     </form>

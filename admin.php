@@ -13,7 +13,7 @@ error_reporting(E_ALL);
 ini_set('display_errors', 1);
 
 // Constants
-define('BASE_URL', 'http://yourdomain.com/admin');
+define('BASE_URL', 'https://importanceleadership.com/admin');
 define('SITE_NAME', 'Importance Leadership');
 define('ITEMS_PER_PAGE', 20);
 

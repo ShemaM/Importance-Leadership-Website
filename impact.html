@@ -404,43 +404,79 @@
         </div>
     </section>
 
-    <!-- Testimonials Section -->
-    <section class="testimonial-section">
+    <!-- Feedback Section -->
+    <section class="feedback-section">
         <div class="container">
-            <h2 class="text-center fw-bold mb-4 text-dark">What Our Community Says</h2>
-            <p class="text-center text-muted mb-5">Hear from individuals whose lives have been transformed by our programs and initiatives.</p>
-            <div class="row g-4">
-                <!-- Testimonial 1 -->
-                <div class="col-md-4">
-                    <div class="testimonial-card shadow-lg">
-                        <img src="image/testimonial1.jpg" alt="Testimonial 1" class="img-fluid mb-3">
-                        <p class="text-muted">"This initiative changed my life. I now feel empowered to lead in my community."</p>
-                        <h4 class="fw-bold text-primary">Jane Doe</h4>
-                        <span class="text-secondary">Community Leader</span>
-                    </div>
+            <h2 class="text-center fw-bold mb-4 text-dark">We Value Your Feedback</h2>
+            <p class="text-center text-muted mb-5">Help us improve by sharing your thoughts and experiences with our programs.</p>
+            <form action="submitFeedback.php" method="POST" class="shadow-lg p-4 rounded bg-white">
+                <div class="mb-3">
+                    <label for="name" class="form-label fw-bold">Your Name</label>
+                    <input type="text" class="form-control" id="name" name="name" placeholder="Enter your name" required>
                 </div>
-                <!-- Testimonial 2 -->
-                <div class="col-md-4">
-                    <div class="testimonial-card shadow-lg">
-                        <img src="image/testimonial2.jpg" alt="Testimonial 2" class="img-fluid mb-3">
-                        <p class="text-muted">"The workshops were transformative. I gained skills and confidence to make a difference."</p>
-                        <h4 class="fw-bold text-success">John Smith</h4>
-                        <span class="text-secondary">Youth Advocate</span>
-                    </div>
+                <div class="mb-3">
+                    <label for="email" class="form-label fw-bold">Your Email</label>
+                    <input type="email" class="form-control" id="email" name="email" placeholder="Enter your email" required>
                 </div>
-                <!-- Testimonial 3 -->
-                <div class="col-md-4">
-                    <div class="testimonial-card shadow-lg">
-                        <img src="image/testimonial3.jpg" alt="Testimonial 3" class="img-fluid mb-3">
-                        <p class="text-muted">"I'm grateful for the mentorship I received. It helped me achieve my goals."</p>
-                        <h4 class="fw-bold text-warning">Sarah Johnson</h4>
-                        <span class="text-secondary">Aspiring Leader</span>
-                    </div>
+                <div class="mb-3">
+                    <label for="program" class="form-label fw-bold">Program/Initiative</label>
+                    <select class="form-select" id="program" name="program" required>
+                        <option value="" disabled selected>Select a program</option>
+                        <option value="Youth Empowerment">Youth Empowerment</option>
+                        <option value="Mentorship">Mentorship</option>
+                        <option value="Workshops">Workshops</option>
+                        <option value="Community Support">Community Support</option>
+                        <option value="Other">Other</option>
+                    </select>
                 </div>
-            </div>
+                <div class="mb-3">
+                    <label for="feedback" class="form-label fw-bold">Your Feedback</label>
+                    <textarea class="form-control" id="feedback" name="feedback" rows="5" placeholder="Share your thoughts..." required></textarea>
+                </div>
+                <div class="text-center">
+                    <button type="submit" class="btn btn-primary btn-lg px-5 py-2 shadow-lg" style="border-radius: 50px;">Submit Feedback</button>
+                </div>
+            </form>
         </div>
     </section>
-
+    
+<script>
+    document.querySelector('form').addEventListener('submit', async function(e) {
+    e.preventDefault();
+    
+    const form = e.target;
+    const formData = new FormData(form);
+    const submitBtn = form.querySelector('button[type="submit"]');
+    const originalBtnText = submitBtn.textContent;
+    
+    try {
+        submitBtn.disabled = true;
+        submitBtn.textContent = 'Submitting...';
+        
+        const response = await fetch(form.action, {
+            method: 'POST',
+            body: formData
+        });
+        
+        const result = await response.json();
+        
+        if (result.status === 'success') {
+            // Show success message
+            alert(result.message);
+            form.reset();
+        } else {
+            // Show error message
+            alert(result.message);
+        }
+    } catch (error) {
+        alert('An error occurred while submitting your feedback. Please try again.');
+        console.error(error);
+    } finally {
+        submitBtn.disabled = false;
+        submitBtn.textContent = originalBtnText;
+    }
+});
+</script>
     <!-- Footer -->
     <script src="loadFooter.js"></script>
 

@@ -18,10 +18,10 @@ try {
     // Check if the form data is submitted
     if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         // Validate and sanitize form data
-        $name = filter_input(INPUT_POST, 'name', FILTER_SANITIZE_STRING);
+        $name = filter_input(INPUT_POST, 'name', FILTER_SANITIZE_STRING) ;
         $email = filter_input(INPUT_POST, 'email', FILTER_SANITIZE_EMAIL);
-        $phone = filter_input(INPUT_POST, 'phone', FILTER_SANITIZE_STRING) ?? '';
-        $comment = filter_input(INPUT_POST, 'comment', FILTER_SANITIZE_STRING) ?? '';
+        $phone = filter_input(INPUT_POST, 'phone', FILTER_SANITIZE_STRING) ;
+        $comment = filter_input(INPUT_POST, 'comment', FILTER_SANITIZE_STRING);
 
         // Validate required fields
         if (empty($name) || empty($email)) {

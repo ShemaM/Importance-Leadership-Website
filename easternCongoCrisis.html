@@ -13,180 +13,122 @@
     <style>
         body {
             background-color: #f8f9fa;
-            font-family: 'Arial', sans-serif;
-           
+            font-family: 'Georgia', serif;
+            line-height: 1.8;
+            color: #333;
         }
-        .hero-section {
-            background: linear-gradient(rgba(0, 0, 0, 0.6) );
-            background-size: cover;
-            background-position: center;
+        header {
+            background-color: #2c3e50;
             color: white;
-            padding: 100px 0;
+            padding: 50px 0;
+            text-align: center;
         }
-        .section-title {
-            font-size: 2.5rem;
+        header h1 {
+            font-size: 3rem;
             font-weight: bold;
+        }
+        header p {
+            font-size: 1.2rem;
+        }
+        article {
+            max-width: 1200px;
+            margin: 10px auto;
+            padding: 10px;
+           
+            background-color: rgba(255, 255, 255, 0.8);
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        article h2 {
+            font-size: 2rem;
+            margin-top: 20px;
             color: #2c3e50;
         }
-        .highlight {
-            background-color: #e9ecef;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        article p {
+            margin-bottom: 20px;
         }
-        .btn-custom {
-            font-size: 1.1rem;
-            padding: 10px 25px;
-            border-radius: 25px;
+        article ul {
+            margin-left: 20px;
+        }
+        article ul li {
+            margin-bottom: 10px;
         }
         .chart-container {
-            background: white;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            margin: 20px 0;
+            text-align: center;
+        }
+        footer {
+            background-color: #2c3e50;
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+            margin-top: 30px;
         }
     </style>
 </head>
 <body>
-    <!-- Header -->
-    <div id="header-container"></div>
-    <script src="../loadHeader.js"></script>
-
-    <!-- Hero Section -->
-    <header class="hero-section text-center">
-        <div class="container">
-            <h1 class="display-4 fw-bold text-primary">The Silent Genocide in Eastern DRC</h1>
-            <p class="lead fw-bold text-primary">A Global Discussion on Leadership and Peace</p>
-            <p class="mt-3 text-primary">Massive Turnout at Importance Leadership’s Online Workshop</p>
-        </div>
+    <header>
+        <h1>The Silent Genocide in Eastern DRC</h1>
+        <p>A Global Discussion on Leadership and Peace</p>
     </header>
-
-    <!-- Event Overview -->
-    <section class="container my-5">
-        <div class="highlight">
-            <h2 class="section-title">Event Overview</h2>
-            <p class="fs-5">
-                On March 1, 2025, Importance Leadership hosted a powerful online discussion on the ongoing crisis in eastern DRC, drawing youth from across the world—<strong>Australia, Canada, the USA, Kenya, DRC, Rwanda, South Sudan, Burundi, and beyond</strong>.
-                This urgent meeting aimed to share insights, dispel misinformation, and raise awareness about the true nature of the conflict. The workshop was graced by young researchers with deep knowledge of the region's history.
-            </p>
+    <article>
+        <h2>Event Overview</h2>
+        <p>
+            On March 1, 2025, Importance Leadership hosted a powerful online discussion on the ongoing crisis in eastern DRC, drawing youth from across the world—<strong>Australia, Canada, the USA, Kenya, DRC, Rwanda, South Sudan, Burundi, and beyond</strong>.
+            This urgent meeting aimed to share insights, dispel misinformation, and raise awareness about the true nature of the conflict. The workshop was graced by young researchers with deep knowledge of the region's history.
+        </p>
+        <h2>Workshop Focus</h2>
+        <p>The discussion explored the persistent instability in Eastern DRC, highlighting:</p>
+        <ul>
+            <li><strong>Mineral Wealth:</strong> The abundance of cobalt, cassiterite, gold, and pyrochlore attracting foreign exploitation.</li>
+            <li><strong>Political Instability:</strong> Displacement and marginalization of Congolese Tutsi communities.</li>
+        </ul>
+        <div class="chart-container">
+            <h4>Mineral Distribution in Eastern DRC</h4>
+            <canvas id="mineralsChart"></canvas>
         </div>
-    </section>
-
-    <!-- Workshop Focus -->
-    <section class="container my-5">
-        <div class="highlight">
-            <h2 class="section-title"><i class="fas fa-globe me-2"></i> Workshop Focus</h2>
-            <p class="fs-5 text-secondary">
-                The discussion explored the persistent instability in Eastern DRC, highlighting:
-            </p>
-            <ul class="list-group list-group-flush">
-                <li class="list-group-item border-0 py-2">
-                    <strong class="text-dark">Mineral Wealth:</strong> The abundance of cobalt, cassiterite, gold, and pyrochlore attracting foreign exploitation.
-                </li>
-                <li class="list-group-item border-0 py-2">
-                    <strong class="text-dark">Political Instability:</strong> Displacement and marginalization of Congolese Tutsi communities.
-                </li>
-            </ul>
+        <div class="chart-container">
+            <h4>Refugee Displacement by Region</h4>
+            <canvas id="displacementChart"></canvas>
         </div>
-    </section>
+        <h2>Key Takeaways & Solutions</h2>
+        <ul>
+            <li>Changing the narrative—Recognizing the role of global players.</li>
+            <li>Promoting inclusive governance and equal citizenship.</li>
+            <li>Encouraging regional collaboration through the AU and EAC.</li>
+            <li>Managing minerals for local economic benefit.</li>
+            <li>African-led military and diplomatic strategies for peace.</li>
+        </ul>
 
-    <!-- Data Visualization -->
-    <section class="container my-5">
-        <div class="row g-4">
-            <div class="col-md-6">
-                <div class="chart-container">
-                    <h4 class="text-center">Mineral Distribution in Eastern DRC</h4>
-                    <canvas id="mineralsChart"></canvas>
-                </div>
-            </div>
-            <div class="col-md-6">
-                <div class="chart-container">
-                    <h4 class="text-center">Refugee Displacement by Region</h4>
-                    <canvas id="displacementChart"></canvas>
-                </div>
-            </div>
-        </div>
-    </section>
 
-    <!-- Key Takeaways & Solutions -->
-    <section class="container my-5">
-        <div class="highlight">
-            <h2 class="section-title"><i class="fas fa-lightbulb me-2"></i> Key Takeaways & Solutions</h2>
-            <ul class="fs-5">
-                <li>Changing the narrative—Recognizing the role of global players.</li>
-                <li>Promoting inclusive governance and equal citizenship.</li>
-                <li>Encouraging regional collaboration through the AU and EAC.</li>
-                <li>Managing minerals for local economic benefit.</li>
-                <li>African-led military and diplomatic strategies for peace.</li>
-            </ul>
-        </div>
-    </section>
-
-    <!-- Call to Action -->
-    <section class="container my-5">
-        <div class="highlight">
-            <h2 class="section-title">Call to Action</h2>
-            <p class="fs-5">
-                <em><strong>We call upon the youth</strong> to become champions of peace—leveraging innovation, advocacy, and leadership to promote social cohesion. 
-                By embracing diversity, respecting all cultures, and standing firmly against violence, we can create a brighter, more inclusive Africa. </em>
-            </p>
-
-            <div class="row row-cols-1 row-cols-lg-4 row-cols-md-2 text-center g-4">
-                
-                    <!--Join-->
-            <div class="col">
-                <div class="impact-card p-4 shadow rounded-3 bg-white d-flex flex-column align-items-center">
-                   
-                    <span class="alt-font fw-bold text-primary fs-5">Join the Conversation</span>
-                    <hr class="divider">
-                    
-                    <p class="text-secondary description">   Join us in creating sustainable solutions for conflict resolution and community empowerment. Your partnership can drive meaningful change.
-                    </p>
-                    <a href="join-us.html" class="btn btn-success btn-custom me-3">
-                        <i class="fas fa-comments me-2"></i> Join Now
-                    </a>
-                </div>
-            </div>
-
-            <!--Donate-->
-            <div class="col">
-                <div class="impact-card p-4 shadow rounded-3 bg-white d-flex flex-column align-items-center">
-                   
-                    <span class="alt-font fw-bold text-primary fs-5">Make a Donation</span>
-                    <hr class="divider">
-                    
-                    <p class="text-secondary description">    Support our mission by making a donation. Every contribution helps us provide resources, education, and platforms to advocate for peace and stability across Africa.
-                    </p>
-                    <a href="donate.html" class="btn btn-success btn-custom me-3">
-                        <i class="fas fa-donate me-2"></i> Donate
-                    </a>
-                </div>
-            </div>
-          
-            <!--Contact -->
-            <div class="col">
-                <div class="impact-card p-4 shadow rounded-3 bg-white d-flex flex-column align-items-center">
-                   
-                    <span class="alt-font fw-bold text-primary fs-5">Get in Touch with Us</span>
-                    <hr class="divider">
-                    
-                    <p class="text-secondary description">   Want to get involved? Reach out to us and be part of this transformative movement. 
-                        <strong>Together, we can shape a future where Africa is a beacon of hope, prosperity, and harmony.</strong> </p>
-                    <a href="contact-us.html" class="btn btn-success btn-custom me-3">
-                        <i class="fas fa-phone me-2"></i> Contact Us
-                    </a>
-                </div>
-            </div>
-            </div>
-            
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <div id="footer-container"></div>
+        <h2>Call to Action</h2>
+        <p>
+            Join us in advocating for peace and stability in Eastern DRC. Here’s how you can help:
+        </p>
+        <ul>
+            <li><strong>Spread Awareness:</strong> Share this information with your network to educate others about the crisis.</li>
+            <li><strong>Engage in Dialogue:</strong> Participate in discussions and workshops to explore solutions.</li>
+            <li><strong>Support Local Initiatives:</strong> Donate to organizations working on the ground to provide aid and promote peace.</li>
+            <li><strong>Advocate for Policy Change:</strong> Urge leaders to prioritize inclusive governance and sustainable development in the region.</li>
+        </ul>
+        <p>
+            Together, we can make a difference. <strong>Take action today!</strong>
+            <div class="dropdown mt-2">
+                <button class="btn btn-primary dropdown-toggle" type="button" id="actionDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+                    Choose an Action
+                </button>
+                <ul class="dropdown-menu" aria-labelledby="actionDropdown">
+                    <li><a class="dropdown-item" href="donate.html">Donate</a></li>
+                    <li><a class="dropdown-item" href="join-us.html">Join Us</a></li>
+                </ul>
+            </div></div>
+        </p>
+        
+    </article>
+    
     <script src="loadFooter.js"></script>
-
-    <!-- Chart.js Scripts -->
+    <!-- Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script>
         const mineralsChart = new Chart(document.getElementById('mineralsChart'), {
             type: 'pie',
@@ -224,3 +166,5 @@
     </script>
 </body>
 </html>
+
+

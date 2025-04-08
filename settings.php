@@ -331,7 +331,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                                 
                                 <dt class="col-sm-4">System Load</dt>
                                 <dd class="col-sm-8">
-                                    <?= implode(', ', sys_getloadavg()) ?>
+                                    <?= function_exists('sys_getloadavg') ? implode(', ', sys_getloadavg()) : 'N/A' ?>
                                 </dd>
                             </dl>
                         </div>
