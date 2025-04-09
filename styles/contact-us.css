@@ -1,0 +1,151 @@
+
+        /* Popup Form Container */
+        .contact-form-style-01 {
+            max-width: 600px;
+            background: #fff;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.15);
+            position: relative;
+            margin: 0 auto;
+        }
+
+        /* Form Header */
+        .contact-form-style-01 h3 {
+            font-size: 24px;
+            color: #333;
+            font-weight: bold;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        /* Form Inputs */
+        .contact-form-style-01 .form-control {
+            width: 100%;
+            height: 50px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding-left: 50px;
+            transition: 0.3s ease;
+            font-size: 14px;
+            margin-bottom: 15px;
+        }
+
+        .contact-form-style-01 .form-control:focus {
+            border-color: #215f88;
+            box-shadow: 0px 0px 10px rgba(33, 136, 56, 0.3);
+        }
+
+        /* Textarea */
+        .contact-form-style-01 textarea {
+            height: 120px;
+            resize: none;
+            border-radius: 8px;
+            padding-top: 10px;
+        }
+
+        /* Input Icon Adjustments */
+        .contact-form-style-01 .form-group {
+            position: relative;
+            margin-bottom: 15px;
+        }
+
+        .contact-form-style-01 .form-group i {
+            position: absolute;
+            left: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 16px;
+            color: #777;
+        }
+
+        /* Submit Button */
+        .contact-form-style-01 .submit {
+            background-color: #216788;
+            color: white;
+            font-size: 16px;
+            border: none;
+            padding: 14px;
+            border-radius: 8px;
+            width: 100%;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .contact-form-style-01 .submit:hover {
+            background-color: #1a662e;
+        }
+
+        /* Responsive Adjustments */
+        @media (max-width: 768px) {
+            .contact-form-style-01 {
+                max-width: 100%;
+                padding: 20px;
+            }
+        }
+
+        /* Background Section */
+        .big-section {
+            height: 80vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #f9f9f9;
+        }
+
+        .big-section h2 {
+            font-size: 28px;
+            color: #333;
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+
+        .big-section .btn-primary {
+            background-color: #215f88;
+            border: none;
+            padding: 12px 30px;
+            font-size: 16px;
+            border-radius: 8px;
+            transition: 0.3s;
+        }
+
+        .big-section .btn-primary:hover {
+            background-color: #1a4866;
+        }
+
+        .mfp-fade.mfp-bg {
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .mfp-fade.mfp-bg.mfp-ready {
+            opacity: 0.8;
+        }
+
+        .mfp-fade.mfp-wrap .mfp-content {
+            opacity: 0;
+            transform: scale(0.9);
+            transition: all 0.3s ease;
+        }
+
+        .mfp-fade.mfp-wrap.mfp-ready .mfp-content {
+            opacity: 1;
+            transform: scale(1);
+        }
+
+        .form-results {
+            margin-top: 10px;
+            padding: 10px;
+            border-radius: 5px;
+        }
+
+        .success-message {
+            color: green;
+            background-color: #e6ffe6;
+        }
+
+        .error-message {
+            color: red;
+            background-color: #ffe6e6;
+        }
+    

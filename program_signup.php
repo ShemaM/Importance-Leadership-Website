@@ -342,7 +342,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if ($stmt->execute()) {
         $redirectUrl = $programMap[$program]['redirect'] ?? 'index.html';
         echo "<script>
-            echo 'alert(\"Thank you for registering for the $program program! Get to know what this program entails...  Redirecting...\");';
+            alert('Thank you for registering for the $program program! Get to know what this program entails... Redirecting...');
             window.location.href = '$redirectUrl';
         </script>";
     } else {

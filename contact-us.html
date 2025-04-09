@@ -14,157 +14,8 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
     <!-- Magnific Popup CSS -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.min.css" rel="stylesheet">
-    <style>
-        /* Popup Form Container */
-        .contact-form-style-01 {
-            max-width: 600px;
-            background: #fff;
-            padding: 30px;
-            border-radius: 12px;
-            box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.15);
-            position: relative;
-            margin: 0 auto;
-        }
-
-        /* Form Header */
-        .contact-form-style-01 h3 {
-            font-size: 24px;
-            color: #333;
-            font-weight: bold;
-            text-align: center;
-            margin-bottom: 20px;
-        }
-
-        /* Form Inputs */
-        .contact-form-style-01 .form-control {
-            width: 100%;
-            height: 50px;
-            border: 1px solid #ddd;
-            border-radius: 8px;
-            padding-left: 50px;
-            transition: 0.3s ease;
-            font-size: 14px;
-            margin-bottom: 15px;
-        }
-
-        .contact-form-style-01 .form-control:focus {
-            border-color: #215f88;
-            box-shadow: 0px 0px 10px rgba(33, 136, 56, 0.3);
-        }
-
-        /* Textarea */
-        .contact-form-style-01 textarea {
-            height: 120px;
-            resize: none;
-            border-radius: 8px;
-            padding-top: 10px;
-        }
-
-        /* Input Icon Adjustments */
-        .contact-form-style-01 .form-group {
-            position: relative;
-            margin-bottom: 15px;
-        }
-
-        .contact-form-style-01 .form-group i {
-            position: absolute;
-            left: 15px;
-            top: 50%;
-            transform: translateY(-50%);
-            font-size: 16px;
-            color: #777;
-        }
-
-        /* Submit Button */
-        .contact-form-style-01 .submit {
-            background-color: #216788;
-            color: white;
-            font-size: 16px;
-            border: none;
-            padding: 14px;
-            border-radius: 8px;
-            width: 100%;
-            cursor: pointer;
-            transition: 0.3s;
-        }
-
-        .contact-form-style-01 .submit:hover {
-            background-color: #1a662e;
-        }
-
-        /* Responsive Adjustments */
-        @media (max-width: 768px) {
-            .contact-form-style-01 {
-                max-width: 100%;
-                padding: 20px;
-            }
-        }
-
-        /* Background Section */
-        .big-section {
-            height: 80vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background-color: #f9f9f9;
-        }
-
-        .big-section h2 {
-            font-size: 28px;
-            color: #333;
-            font-weight: 600;
-            margin-bottom: 20px;
-        }
-
-        .big-section .btn-primary {
-            background-color: #215f88;
-            border: none;
-            padding: 12px 30px;
-            font-size: 16px;
-            border-radius: 8px;
-            transition: 0.3s;
-        }
-
-        .big-section .btn-primary:hover {
-            background-color: #1a4866;
-        }
-
-        .mfp-fade.mfp-bg {
-            opacity: 0;
-            transition: opacity 0.3s ease;
-        }
-
-        .mfp-fade.mfp-bg.mfp-ready {
-            opacity: 0.8;
-        }
-
-        .mfp-fade.mfp-wrap .mfp-content {
-            opacity: 0;
-            transform: scale(0.9);
-            transition: all 0.3s ease;
-        }
-
-        .mfp-fade.mfp-wrap.mfp-ready .mfp-content {
-            opacity: 1;
-            transform: scale(1);
-        }
-
-        .form-results {
-            margin-top: 10px;
-            padding: 10px;
-            border-radius: 5px;
-        }
-
-        .success-message {
-            color: green;
-            background-color: #e6ffe6;
-        }
-
-        .error-message {
-            color: red;
-            background-color: #ffe6e6;
-        }
-    </style>
+    <link rel="stylesheet" href="styles/contact-us.css">
+    
 </head>
 <body>
 
@@ -172,20 +23,29 @@
 <header id="header-container"></header>
 <script src="loadHeader.js"></script>
 
-<!-- Main Section -->
-<section class="big-section" style="background-image: url('image/landing.jpg'); background-size: cover; background-position: center;">
-    <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-12 col-xl-8 text-center">
-                <span class="text-primary fs-20 mb-15px d-inline-block">Contact Us</span>
-                <h1 class="text-dark mx-auto mb-50px ls-minus-1px fw-bold">We would love to hear from you.</h1>
-                <a href="#contact-form" class="btn btn-primary btn-lg popup-with-form">
-                    <span class="btn-text">Talk to Us</span>
-                </a>
-            </div>
-        </div>
+<!-- Contact Section -->
+<section class="py-5" style="background: linear-gradient(to bottom, #08436b, #abb4b4);">
+    <div class="container text-center text-white">
+      <!-- Heading -->
+      <div class="mb-5">
+        <span class="d-block text-uppercase fw-semibold mb-2" style="font-size: 16px;">Get in Touch</span>
+        <h1 class="fw-bold mb-3 display-5">Reach Out to Importance Leadership</h1>
+        <p class="lead text-light mx-auto" style="max-width: 750px;">
+          Have questions, feedback, or need assistance? We're here to help. Fill out the form below to send us a message, and our team will get back to you promptly.
+        </p>
+        <a href="#contact-form" class="btn btn-light btn-lg mt-4 popup-with-form">
+          <i class="fas fa-paper-plane me-2"></i>Talk To Us
+        </a>
+      </div>
+  
+      
+  
+  
+        
+      </div>
     </div>
-</section>
+  </section>
+  
 
 <!-- Contact Form Popup -->
 <div id="contact-form" class="mfp-hide contact-form-style-01">
@@ -207,7 +67,8 @@
             <span class="form-icon"><i class="fas fa-comment"></i></span>
             <textarea placeholder="Your message" name="comment" class="form-control" rows="4"></textarea>
         </div>
-        <button class="btn submit" type="submit">Send Message</button>
+        <button class="btn submit" type="submit" onclick="alert('Thank you! Your message has been successfully sent.');">Send Message</button>
+        
         <div class="loading-spinner" style="display: none;">Loading...</div> <!-- Loading spinner -->
         <div class="form-results"></div>
     </form>
@@ -217,7 +78,6 @@
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <!-- Magnific Popup JS -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js"></script>
-
 <script>
     $(document).ready(function () {
         // Initialize Magnific Popup
@@ -247,7 +107,7 @@
 
             // Validate form fields before submission
             if (!validateContactForm(form)) {
-                formResults.text('Please fill out all required fields correctly.').addClass('error-message');
+                formResults.text('Please fill out all required fields correctly.').addClass('error-message').show();
                 return;
             }
 
@@ -255,14 +115,14 @@
             submitButton.prop('disabled', true);
             loadingSpinner.show();
 
-            // Submit form data to the database via join-us.php
+            // Submit form data to the database via contact.php
             submitForm(form, submitButton, loadingSpinner, formResults);
         });
 
         // Function to reset the form and clear messages
         function resetForm() {
             $('#signup-form-inner')[0].reset();
-            $('.form-results').text('').removeClass('success-message error-message');
+            $('.form-results').text('').removeClass('success-message error-message').hide();
             $('.form-control').removeClass('error success');
         }
 
@@ -270,7 +130,7 @@
         function submitForm(form, submitButton, loadingSpinner, formResults) {
             const formData = new FormData(form[0]);
 
-            // Send form data to join-us.php using AJAX
+            // Send form data to contact.php using AJAX
             $.ajax({
                 url: 'contact.php', // URL to your PHP script
                 type: 'POST',
@@ -280,23 +140,22 @@
                 success: function (response) {
                     // Handle the response from the server
                     if (response.success) {
-                        // Hide the form and show success message
-                        form.hide();
-                        formResults.text('Thank you! Your submission has been received.').addClass('success-message');
-
+                        // Show success message and hide the form
+                        formResults.text('Thank you! Your submission has been received.').addClass('success-message').show();
+                        
                         // Close the popup after a short delay
                         setTimeout(() => {
                             $.magnificPopup.close(); // Close the popup
                         }, 2000); // 2-second delay before closing
                     } else {
                         // Show error message if something went wrong
-                        formResults.text(response.message || 'An error occurred. Please try again.').addClass('error-message');
+                        formResults.text(response.message || 'An error occurred. Please try again.').addClass('error-message').show();
                     }
                 },
                 error: function (xhr, status, error) {
                     // Handle AJAX errors
                     console.error('Error:', error);
-                    formResults.text('An error occurred. Please try again.').addClass('error-message');
+                    formResults.text('An error occurred. Please try again.').addClass('error-message').show();
                 },
                 complete: function () {
                     // Re-enable the submit button and hide the loading spinner
@@ -340,6 +199,7 @@
         }
     });
 </script>
+
 
 <!-- Footer -->
 <script src="loadFooter.js"></script>
