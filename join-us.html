@@ -14,6 +14,8 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.min.css">
   <!-- Font Awesome for Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
   <style>
     /* General Styles */
     @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
@@ -36,6 +38,7 @@
       margin: 0;
       padding: 0;
       background-color: var(--background-color);
+      color: var(--text-color);
     }
 
     .cover-background {
@@ -63,7 +66,15 @@
     }
 
     .text-white {
-      color: black;
+      color: white !important;
+    }
+
+    .text-dark {
+      color: var(--text-color);
+    }
+
+    .text-primary {
+      color: var(--primary-color);
     }
 
     .fs-20 {
@@ -86,8 +97,16 @@
       font-weight: 500;
     }
 
+    .fw-100 {
+      font-weight: 100;
+    }
+
     .text-shadow-double-large {
       text-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    }
+
+    .text-shadow-sm {
+      text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
     }
 
     .btn {
@@ -125,12 +144,10 @@
 
     .btn-text {
       margin-right: 10px;
-      
     }
 
     .btn-icon {
       margin-left: 10px;
-      
     }
 
     .mfp-hide {
@@ -253,6 +270,93 @@
     .contact-form-style-01 .form-results.error-message {
       color: var(--error-color);
     }
+
+    .d-inline-block {
+      display: inline-block;
+    }
+
+    .z-index-1 {
+      z-index: 1;
+      position: relative;
+    }
+
+    .text-transform-none {
+      text-transform: none;
+    }
+
+    .btn-medium {
+      padding: 10px 20px;
+      font-size: 16px;
+    }
+
+    .btn-dark-gray {
+      background-color: #333;
+      color: white;
+    }
+
+    .btn-round-edge {
+      border-radius: 5px;
+    }
+
+    .w-100 {
+      width: 100%;
+    }
+
+    .mt-20px {
+      margin-top: 20px;
+    }
+
+    .mb-10px {
+      margin-bottom: 10px;
+    }
+
+    .p-15 {
+      padding: 15px;
+    }
+
+    .lg-p-10 {
+      padding: 10px;
+    }
+
+    .fs-18 {
+      font-size: 18px;
+    }
+
+    .position-relative {
+      position: relative;
+    }
+
+    .justify-content-center {
+      justify-content: center;
+    }
+
+    .row {
+      display: flex;
+      flex-wrap: wrap;
+      margin-right: -15px;
+      margin-left: -15px;
+    }
+
+    .col-12 {
+      flex: 0 0 100%;
+      max-width: 100%;
+      padding-right: 15px;
+      padding-left: 15px;
+    }
+
+    .col-xl-8 {
+      flex: 0 0 66.666667%;
+      max-width: 66.666667%;
+    }
+
+    .col-lg-12 {
+      flex: 0 0 100%;
+      max-width: 100%;
+    }
+
+    .g-0 {
+      gap: 0;
+    }
   </style>
 </head>
 <body>
@@ -262,16 +366,16 @@
   <script src="loadHeader.js"></script>
 
   <!-- Big Section with Background -->
-  <section class="big-section cover-background" style="height: 80lvh; align-content: center; background-image: url('image/landing.jpg'); background-size: cover; background-position: center;">
-    <div class="opacity-extra-medium bg-extra-dark-slate-blue"></div>
+  <section class="big-section cover-background" style="height: 80vh; display: flex; align-items: center; background-image: url('image/landing.jpg');">
+    <div class="opacity-extra-medium bg-extra-dark-slate-blue" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></div>
     <div class="container">
       <div class="row justify-content-center">
         <div class="col-12 col-xl-8 text-center z-index-1">
-          <span class="text-primary fs-20 mb-15px d-inline-block">Join Us Today</span>
-          <h2 class="text-dark mx-auto mb-50px ls-minus-1px fw-500 text-shadow-sm">Start your journey with Importance Leadership. Sign up now!</h2>
+          <span class="text-white fs-20 mb-15px d-inline-block">Join Us Today</span>
+          <h2 class="text-white mx-auto mb-50px ls-minus-1px fw-500 text-shadow-double-large">Start your journey with Importance Leadership. Sign up now!</h2>
           <a href="#signup-form" class="btn btn-extra-large btn-base-color btn-box-shadow text-transform-none btn-rounded popup-with-form btn-hover-animation-switch">
             <span>
-              <span class="btn-text " style="color:blue; font-weight: bold;">Sign Up</span>
+              <span class="btn-text" style="color:white; font-weight: bold;">Sign Up</span>
               <span class="btn-icon"><i class="fas fa-arrow-right"></i></span>
             </span>
           </a>
@@ -282,13 +386,17 @@
                 <div class="p-15 lg-p-10 bg-white">
                   <span class="fs-18 mb-10px">Create Your Account</span> <br>
                   <h3 class="d-inline-block fw-100 text-primary mb-10 ls-minus-1px">Sign Up to Get Started</h3>
-                  <!-- Form with Netlify-->
-                  <form id="signup-form-inner" name="signup-form" netlify>
-                    <input type="hidden" name="form-name" value="signup-form">
+                  <!-- Form with PHP backend -->
+                  <form id="signup-form-inner" action="join-us.php" method="POST">
                     <div class="position-relative form-group mb-10px">
                       <span class="form-icon"><i class="fas fa-user"></i></span>
                       <input type="text" id="firstname" name="firstname" class="form-control required" placeholder="Enter your firstname*" required aria-label="First Name">
                       <div class="form-results" id="firstname-error"></div>
+                    </div>
+                    <div class="position-relative form-group mb-10px">
+                      <span class="form-icon"><i class="fas fa-user"></i></span>
+                      <input type="text" id="lastname" name="lastname" class="form-control required" placeholder="Enter your lastname*" required aria-label="Last Name">
+                      <div class="form-results" id="lastname-error"></div>
                     </div>
                     <div class="position-relative form-group mb-10px">
                       <span class="form-icon"><i class="fas fa-envelope"></i></span>
@@ -305,8 +413,9 @@
                       <span class="form-icon"><i class="fas fa-lock"></i></span>
                       <input type="password" id="repeat-password" name="repeat_password" class="form-control required" placeholder="Repeat your password*" required aria-label="Repeat Password">
                       <div class="form-results" id="repeat-password-error"></div>
+                      <div id="password-match-msg" class="form-results"></div>
                     </div>
-                    <button class="btn btn-medium btn-dark-gray btn-box-shadow btn-round-edge w-100 mt-20px submit" type="submit">
+                    <button class="btn btn-medium btn-base-color btn-box-shadow btn-rounded w-100 mt-20px submit" type="submit">
                       <span class="btn-text">Sign Up</span>
                       <span class="loading-spinner"><i class="fas fa-spinner fa-spin"></i></span>
                     </button>
@@ -328,71 +437,135 @@
   
   <script>
     $(document).ready(function () {
-      // Initialize Magnific Popup
+      // Initialize Popup
       $('.popup-with-form').magnificPopup({
         type: 'inline',
         preloader: false,
         focus: '#firstname',
         callbacks: {
           beforeOpen: function () {
-            // Reset form on open
             $('#signup-form-inner')[0].reset();
-            $('.form-results').text('');
+            $('#form-results').text('').removeClass('success-message error-message');
             $('.form-control').removeClass('error success');
+            $('#password-strength').text('');
+            $('#password-match-msg').text('');
           }
         }
       });
   
-      // Password Strength Indicator
+      // Password Strength Check
       $('#password').on('input', function () {
         const password = $(this).val();
         const strength = checkPasswordStrength(password);
-        $('#password-strength').text(strength.message).removeClass('weak medium strong').addClass(strength.class);
+        $('#password-strength')
+          .text(strength.message)
+          .removeClass('weak medium strong')
+          .addClass(strength.class);
       });
   
-      // Form Submission
+      // Password Match Check
+      $('#repeat-password').on('input', function () {
+        const password = $('#password').val();
+        const repeatPassword = $(this).val();
+        
+        if (repeatPassword === '') {
+          $('#password-match-msg').text('').removeClass('error-message success-message');
+          return;
+        }
+        
+        if (password !== repeatPassword) {
+          $('#password-match-msg').text('Passwords do not match').addClass('error-message').removeClass('success-message');
+        } else {
+          $('#password-match-msg').text('Passwords match').removeClass('error-message').addClass('success-message');
+        }
+      });
+  
+      // Form Submit with AJAX
       $('#signup-form-inner').on('submit', function (e) {
         e.preventDefault();
+  
         const form = $(this);
         const submitButton = form.find('.submit');
         const loadingSpinner = form.find('.loading-spinner');
         const formResults = $('#form-results');
   
-        // Show loading spinner
+        const password = $('#password').val();
+        const repeatPassword = $('#repeat-password').val();
+        const email = $('#email').val();
+  
+        // Reset previous messages
+        formResults.text('').removeClass('success-message error-message');
+  
+        // Validate form
+        let isValid = true;
+        
+        // Check required fields
+        $('.required').each(function() {
+          if ($(this).val() === '') {
+            $(this).addClass('error');
+            isValid = false;
+          } else {
+            $(this).removeClass('error');
+          }
+        });
+  
+        // Check passwords match
+        if (password !== repeatPassword) {
+          $('#repeat-password').addClass('error');
+          $('#password-match-msg').text('Passwords do not match').addClass('error-message');
+          isValid = false;
+        } else if (password !== '') {
+          $('#repeat-password').removeClass('error');
+        }
+  
+        if (!isValid) {
+          formResults.text('Please fill all required fields correctly.').addClass('error-message');
+          return;
+        }
+  
+        // Show spinner
         submitButton.prop('disabled', true);
         loadingSpinner.show();
   
-        // Submit to Netlify
-        const formData = new FormData(form[0]);
-        fetch('/', {
-          method: 'POST',
-          body: new URLSearchParams(formData),
-          headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-        })
-          .then(() => {
-            // Hide the form
-            form.hide();
-  
-            // Show a success message
-            formResults.text('Signup successful! Redirecting...').addClass('success-message');
-  
-            // Redirect to success.html in a new tab
-            setTimeout(() => {
-              window.open('success.html', '_blank');
-            }, 1000);
-          })
-          .catch((error) => {
+        // Submit form via AJAX to PHP backend
+        $.ajax({
+          url: form.attr('action'),
+          method: form.attr('method'),
+          data: form.serialize(),
+          dataType: 'json',
+          success: function(response) {
+            if (response.success) {
+              formResults.text(response.message).removeClass('error-message').addClass('success-message');
+              form[0].reset();
+              $('#password-strength').text('');
+              $('#password-match-msg').text('');
+              
+              // Close popup after 2 seconds
+              setTimeout(function() {
+                $.magnificPopup.close();
+                if (response.redirect) {
+                  window.location.href = response.redirect;
+                }
+              }, 2000);
+            } else {
+              formResults.text(response.message).removeClass('success-message').addClass('error-message');
+              if (response.field) {
+                $('#' + response.field).addClass('error');
+              }
+            }
+          },
+          error: function(xhr, status, error) {
+            formResults.text('An error occurred. Please try again.').removeClass('success-message').addClass('error-message');
             console.error('Error:', error);
-            formResults.text('An error occurred. Please try again.').addClass('error-message');
-          })
-          .finally(() => {
-            // Re-enable the submit button and hide the loading spinner
+          },
+          complete: function() {
             submitButton.prop('disabled', false);
             loadingSpinner.hide();
-          });
+          }
+        });
       });
   
-      // Password Strength Checker
+      // Password Strength Logic
       function checkPasswordStrength(password) {
         const strength = {
           0: { message: 'Weak', class: 'weak' },
@@ -401,12 +574,14 @@
         };
         let score = 0;
         if (password.length >= 8) score++;
-        if (/[A-Z]/.test(password)) score++;
-        if (/[0-9]/.test(password)) score++;
+        if (/[A-Z]/.test(password) && /[0-9]/.test(password)) score++;
         return strength[Math.min(score, 2)];
       }
     });
   </script>
+  
+  <!-- Load Footer -->
+  <div id="footer-container"></div>
   <script src="loadFooter.js"></script>
 </body>
 </html>

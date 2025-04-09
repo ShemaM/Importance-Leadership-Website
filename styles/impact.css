@@ -1,0 +1,148 @@
+
+/* General Styles */
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(to bottom, #3e3ebc, #ffffff);
+    color: #333;
+}
+
+/* Section Styling */
+.impact-section, .initiative-section {
+    padding: 60px 20px;
+    margin: 2rem auto;
+    max-width: 1200px;
+    border-radius: 10px;
+    text-align: center;
+    color: black;
+}
+
+.impact-heading {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    animation: fadeInDown 1s ease-in-out;
+}
+
+.impact-description {
+    font-size: 1.1rem;
+    margin-bottom: 1.5rem;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    animation: fadeIn 1.5s ease-in-out;
+}
+
+/* Card Styling */
+.impact-card {
+    border: none;
+    border-radius: 12px;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease;
+    padding: 20px;
+    text-align: center;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background: linear-gradient(to bottom, #ffffff, #f8f9fa);
+}
+
+.impact-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+}
+
+.impact-card:nth-child(1) { background-color: #d9edf7; }
+.impact-card:nth-child(2) { background-color: #dff0d8; }
+.impact-card:nth-child(3) { background-color: #fcf8e3; }
+.impact-card:nth-child(4) { background-color: #f2dede; }
+
+/* Divider Styling */
+.divider {
+    width: 60px;
+    height: 4px;
+    background-color: #0056b3;
+    margin: 20px auto;
+}
+
+/* Button Styling */
+.btn-primary {
+    background-color: #0056b3;
+    border: none;
+    transition: all 0.3s ease;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+.btn-primary:hover {
+    background-color: #003d80;
+}
+
+/* Testimonial Styling */
+.testimonial-section {
+    background-color: #f8f9fa;
+    padding: 60px 20px;
+}
+
+.testimonial-card {
+    background: #fff;
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s ease-in-out;
+}
+
+.testimonial-card:hover {
+    transform: scale(1.05);
+}
+
+.testimonial-card img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    margin-bottom: 15px;
+}
+
+.testimonial-card p {
+    font-style: italic;
+    color: #555;
+}
+
+.testimonial-card h4 {
+    font-weight: 600;
+    margin-top: 10px;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .impact-heading {
+        font-size: 2rem;
+    }
+    .impact-card {
+        margin-bottom: 20px;
+    }
+}
