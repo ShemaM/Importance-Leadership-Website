@@ -1,66 +1,62 @@
-/**
- * Loads and injects the footer component with:
- * - Smaller logo (150px)
- * - Social media links
- * - Newsletter form with validation
- * - Current year in copyright
- */
 
 document.addEventListener("DOMContentLoaded", function() {
     // Footer HTML template
     const footerHTML = `
-    <footer class="footer py-5">
-        <div class="container">
-            <div class="row align-items-center">
-                <!-- Logo & Quick Links -->
-                <div class="col-lg-4 col-md-6 text-center text-lg-start mb-4 mb-lg-0">
-                    <a href="index.html">
-                        <img src="image/website-logo.png" alt="Importance Leadership" class="footer-logo" style="width: 10%;">
-                    
-                    </a>
-                    <ul class="list-unstyled mt-3">
-                        <li><a href="who-we-are.html" class="fw-bold">Who We Are</a></li>
-                        <li><a href="what-we-do.html" class="fw-bold">What We Do</a></li>
-                        <li><a href="impact.html" class="fw-bold">Impact</a></li>
-                        <li><a href="donate.html" class="fw-bold">Donate</a></li>
-                        <li><a href="contact-us.html" class="fw-bold">Contact Us</a></li>
-                    </ul>
-                </div>
+   <footer class="footer text-white pt-5 pb-4" style = "background: linear-gradient(135deg, #2d8893, #0c1b7b);">
+    <div class="container">
+        <div class="row align-items-start">
+            <!-- Logo & Quick Links -->
+            <div class="col-lg-4 col-md-6 mb-4">
+                <a href="index.html">
+                    <img src="image/website-logo.png" alt="Importance Leadership" class="footer-logo mb-3" style="width: 120px;">
+                </a>
+                <ul class="list-unstyled mt-3">
+                    <li><a href="who-we-are.html" class="text-white-50 d-block py-1">Who We Are</a></li>
+                    <li><a href="what-we-do.html" class="text-white-50 d-block py-1">What We Do</a></li>
+                    <li><a href="impact.html" class="text-white-50 d-block py-1">Impact</a></li>
+                    <li><a href="donate.html" class="text-white-50 d-block py-1">Donate</a></li>
+                    <li><a href="contact-us.html" class="text-white-50 d-block py-1">Contact Us</a></li>
+                </ul>
+            </div>
 
-                <!-- Contact Info & Social Media -->
-                <div class="col-lg-4 col-md-6 text-center text-lg-start mb-4 mb-lg-0">
-                    <h5 class="fw-bold mb-3">Get in Touch</h5>
-                    <p class="mb-3">We'd love to hear from you.</p>
-                    <p class="mb-2"><i class="fas fa-phone-alt me-2"></i> <a href="tel:+16037150801" class="fw-bold">+1 (603) 715-0801</a></p>
-                    <p class="mb-3"><i class="fas fa-envelope me-2"></i> <a href="mailto:info@importanceleadership.com" class="fw-bold">info@importanceleadership.com</a></p>
+            <!-- Contact Info -->
+            <div class="col-lg-4 col-md-6 mb-4">
+                <h5 class="fw-bold mb-3">Get in Touch</h5>
+                <p class="text-white-50">We'd love to hear from you.</p>
+                <p class="text-white-50 mb-2"><i class="fas fa-phone-alt me-2"></i><a href="tel:+16037150801" class="text-white">+1 (603) 715-0801</a></p>
+                <p class="text-white-50"><i class="fas fa-envelope me-2"></i><a href="mailto:info@importanceleadership.com" class="text-white">info@importanceleadership.com</a></p>
 
-                    <div class="social-media">
-                        ${generateSocialIcons()}
-                    </div>
-                </div>
-
-                <!-- Newsletter -->
-                <div class="col-lg-4 col-md-12 text-center text-lg-end">
-                    <h5 class="fw-bold mb-3">Subscribe to Our Newsletter</h5>
-                    <p class="mb-4">Stay updated with our latest news and updates.</p>
-                    <form id="newsletter-form" class="newsletter-form needs-validation" novalidate>
-                        <div class="input-group mb-3">
-                            <input type="email" id="footer-email" name="email" class="form-control" placeholder="Enter your email" required>
-                            <button type="submit" class="btn btn-primary" aria-label="Subscribe">
-                                <i class="fas fa-paper-plane"></i>
-                            </button>
-                            <div class="invalid-feedback text-start">Please provide a valid email.</div>
-                        </div>
-                        <div id="response-message" class="mt-2"></div>
-                    </form>
+                <div class="social-media mt-4">
+                    <a href="https://www.instagram.com/importance_leadership_" class="btn btn-outline-light btn-sm rounded-circle me-2" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.facebook.com/share/12J1CX4vLQ8/?mibextid=wwXIfr" class="btn btn-outline-light btn-sm rounded-circle me-2" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://www.linkedin.com/company/importance-leadership/posts" class="btn btn-outline-light btn-sm rounded-circle me-2" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="https://www.youtube.com/@importanceleadership" class="btn btn-outline-light btn-sm rounded-circle" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
                 </div>
             </div>
 
-            <div class="text-center mt-5 pt-4 border-top">
-                <p class="mb-0">&copy; <span id="currentYear"></span> Importance Leadership. All Rights Reserved.</p>
+            <!-- Newsletter -->
+            <div class="col-lg-4 col-md-12">
+                <h5 class="fw-bold mb-3">Subscribe to Our Newsletter</h5>
+                <p class="text-white-50">Stay updated with our latest news and updates.</p>
+                <form id="newsletter-form" action="subscribe.php" method="post" class="needs-validation" novalidate>
+                    <div class="input-group mb-3">
+                        <input type="email" name="email" class="form-control" placeholder="Enter your email" required>
+                        <button class="btn btn-success" type="submit"><i class="fas fa-paper-plane"></i></button>
+                        <div class="invalid-feedback text-white">Please enter a valid email.</div>
+                    </div>
+                    <div id="response-message" class="mt-2 text-white-50"></div>
+                </form>
             </div>
         </div>
-    </footer>
+
+        
+    </div>
+</footer>
+
+<script>
+    document.getElementById('currentYear').textContent = new Date().getFullYear();
+</script>
+
     `;
 
     // Inject footer if not already present
@@ -137,13 +133,37 @@ document.addEventListener("DOMContentLoaded", function() {
         responseEl.textContent = 'Submitting...';
         responseEl.style.color = 'inherit';
 
-        // Simulate form submission (replace with actual fetch in production)
-        setTimeout(() => {
+        const formData = new FormData(form);
+
+        fetch('https://importanceleadership-database.com/subscribe', {
+            method: 'POST',
+            body: JSON.stringify({
+            email: formData.get('email'),
+            database: 'importanceleadership',
+            username: 'root',
+            password: 'secret'
+            }),
+            headers: {
+            'Content-Type': 'application/json'
+            }
+        })
+        .then(response => {
+            if (!response.ok) {
+            throw new Error('Network response was not ok');
+            }
+            return response.json();
+        })
+        .then(data => {
             responseEl.textContent = 'Thank you for subscribing!';
             responseEl.style.color = 'green';
             form.reset();
             form.classList.remove('was-validated');
-        }, 1000);
+        })
+        .catch(error => {
+            responseEl.textContent = 'An error occurred. Please try again.';
+            responseEl.style.color = 'red';
+            console.error('There was a problem with the fetch operation:', error);
+        });
     }
 
     // Add hover effects to social media icons

@@ -49,7 +49,7 @@ if (empty($_SESSION['csrf_token'])) {
 // Authentication check
 function requireAuth() {
     if (!isset($_SESSION['admin_logged_in']) || $_SESSION['admin_logged_in'] !== true) {
-        header("Location: login.php");
+        header("Location: admin-login.php?error=session_expired");
         exit();
     }
 }
@@ -103,7 +103,7 @@ try {
 if (isset($_GET['logout'])) {
     session_unset();
     session_destroy();
-    header("Location: login.php");
+    header("Location: admin-login.php?error=session_expired");
     exit();
 }
 
@@ -215,7 +215,7 @@ try {
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.5/font/bootstrap-icons.min.css">
-    <link rel="stylesheet" href="styles/dashboard.css">
+    <link rel="stylesheet" href="styles/admin.css">
   
     
 </head>

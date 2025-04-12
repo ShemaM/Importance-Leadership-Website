@@ -50,21 +50,29 @@
     </p>
     
     <div class="action-buttons">
-      <a href="User Dashboard.php" class="btn btn-primary">
+  <!-- Updated button with token passing -->
+      <form id="dashboardForm" action="verify-dashboard-access.php" method="post" style="display:none;">
+        <input type="hidden" name="access_token" value="<?php echo $_SESSION['dashboard_token'] ?? ''; ?>">
+      </form>
+
+      <a href="userDashboard.php" class="btn btn-primary">
+        <button onclick="accessDashboard()" class="btn btn-primary">
         <i class="fas fa-tachometer-alt"></i> Access Dashboard
       </a>
-      <a href="index.html" class="btn btn-outline">
+      <a href="index.html" class="btn btn-info">
         <i class="fas fa-home"></i> Return Home
       </a>
     </div>
   </main>
 
   <!-- Footer Container -->
-  <div id="footer-container">
-    <p>&copy; 2023 Importance Leadership. All rights reserved.</p>
-  </div>
+  <script src="loadFooter.js"></script>
 
   <script>
+
+function accessDashboard() {
+      document.getElementById('dashboardForm').submit();
+    }
     // Add subtle interaction effects
     document.addEventListener('DOMContentLoaded', function() {
       const successContainer = document.querySelector('.success-container');

@@ -314,6 +314,10 @@ try {
                             <textarea name="description" class="form-control" rows="3" required></textarea>
                         </div>
                         <div class="mb-3">
+                            <label class="form-label">Media</label>
+                            <input type="file" name="media" class="form-control" accept="image/*,video/*">
+                        </div>
+                        <div class="mb-3">
                             <label class="form-label">Location</label>
                             <input type="text" name="location" class="form-control" required>
                         </div>

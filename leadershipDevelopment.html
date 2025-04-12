@@ -3,146 +3,34 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Leadership Development</title>
+    <title>Leadership Development | Importance Leadership</title>
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles/leadershipDevelopment.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Leadership Development Programs at Importance Leadership. Empowering youth through innovative programs that inspire growth, resilience, and leadership.">
+    <meta name="keywords" content="Leadership, Impact, Community, Mentorship, Youth Empowerment">
+    <meta name="author" content="Importance Leadership">  
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="image/logo.jpg">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+
+    
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    
     <!-- Custom CSS -->
-    <style>
-        /* Hero Section */
-        .hero-section {
-            background-image: url('image/leadershipCoaching.jpg'); /* Add your leadership hero image */
-            background-size: cover;
-            background-position: center;
-            height: auto; /* Adjust height automatically */
-            padding: 100px 0;
-            color: white !important;
-        }
-
-        .hero-section h1 {
-            font-size: 2.5rem;
-            font-weight: 700;
-            margin-bottom: 20px;
-            color: white !important;
-            text-shadow: 4px 4px 10px rgba(205, 200, 200, 0.5);
-        }
-
-        .hero-section p {
-            font-size: 1.7rem;
-            color: white !important;
-            text-shadow: 4px 4px 10px rgba(0, 0, 0, 0.5);
-            
-            
-        }
-
-        .blockquote {
-            font-size: 1.5rem;
-            font-style: italic;
-            color: #f8f9fa !important;
-            text-shadow: 4px 4px 10px rgba(0, 0, 0, 0.5);
-        }
-
-        .blockquote-footer {
-            font-size: 1rem;
-            color: #ffffff !important; /* Light text for contrast */
-            text-shadow: 4px 4px 10px rgba(0, 0, 0, 0.5);
-        }
-
-        /* Content Section */
-        .content-section {
-            padding: 50px 0;
-            background-color: #93adc7; /* Light blue background */
-            text-shadow: 4px 4px 10px rgba(205, 200, 200, 0.5);
-        }
-
-        .content-section h2 {
-            font-size: 2rem;
-            font-weight: 700;
-            color: #343a40; /* Dark text for contrast */
-            margin-bottom: 20px;
-        }
-
-        .content-section p {
-            font-size: 1rem;
-            line-height: 1.6;
-            color: #343a40; /* Dark text for contrast */
-        }
-
-        .content-section img {
-            width: 100%;
-            height: auto;
-            border-radius: 10px;
-            margin-bottom: 20px;
-        }
-
-  
-
-        /* Image Gallery */
-        .image-gallery {
-            padding: 50px 0;
-            background-color: #ffffff; /* White background */
-        }
-
-        .image-gallery h2 {
-            font-size: 2rem;
-            font-weight: 700;
-            color: #343a40; /* Dark text for contrast */
-            margin-bottom: 20px;
-        }
-
-        .image-gallery img {
-            width: 100%;
-            height: auto;
-            border-radius: 10px;
-            margin-bottom: 20px;
-        }
-
-        .image-gallery blockquote {
-            font-size: 1.2rem;
-            font-weight: bold;
-            color: #343a40; /* Dark text for contrast */
-            font-style: italic;
-            margin-top: 10px;
-            margin-bottom: 20px;
-            text-shadow: 4px 4px 10px rgba(0, 0, 0, 0.1);
-        }
-        Hero Section */
-    .hero-section {
-        background: #f8f9fa;
-    }
-
-    .quote-container {
-        max-width: 500px;
-        margin: auto;
-    }
-
-    .blockquote {
-        border-left: 4px solid #007bff;
-        padding-left: 15px;
-    }
-
-    /* Video Container */
-    .video-container {
-        width: 100%;
-        max-width: 560px;
-    }
-
-    .video-container iframe {
-        width: 100%;
-        height: 315px;
-        border-radius: 10px;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    }
-
-    /* Responsive Tweaks */
-    @media (max-width: 768px) {
-        .hero-section .row {
-            text-align: center;
-        }
-        .video-container iframe {
-            height: 250px;
-        }
-    }
-    </style>
+    
 </head>
 <body>
 
@@ -168,9 +56,35 @@
                 <!-- Column 2: Video -->
                 <div class="col-lg-6 d-flex justify-content-center">
                     <div class="video-container">
-                        <iframe width="560" height="315" src="https://www.youtube.com/embed/SLuh8fanZjs" title="Everybody is Born to Influence the World" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                        <button type="button"
+                            class="btn btn-watch-video animate__animated animate__pulse animate__infinite"
+                            data-bs-toggle="modal"
+                            data-bs-target="#videoModal">
+                            <span class="video-title">Click Here To Watch A Video</span>
+                       </button>
                     </div>
                 </div>
+                
+
+                <!-- Include Animate.css for animations -->
+               
+                <!-- Video Modal -->
+                <div class="modal fade" id="videoModal" tabindex="-1" aria-labelledby="videoModalLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="videoModalLabel">Leadership Video</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <div class="ratio ratio-16x9">
+                                    <iframe width="864" height="486" src="https://www.youtube.com/embed/-ds7EyJf6Ak" title="The Keys to Becoming a True Leader // Motivational Video" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
             </div>
         </div>
     </section>
@@ -206,37 +120,18 @@
     <!-- Video Section -->
     <section class="video-section">
         <div class="container">
-            <h2 class="text-center mb-4">Watch Our Leadership Development in Action</h2>
+            <h2 class="text-center mb-4">The Expectations of Future Leadership </h2>
             <div class="row">
                 <div class="col-md-8 offset-md-2">
-                    <iframe width="100%" height="400" src="https://www.youtube.com/embed/-ds7EyJf6Ak" title="The Keys to Becoming a True Leader // Motivational Video" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    <iframe width="704" height="396" src="https://www.youtube.com/embed/_rts2qZ2cK4" title="Future Leadership Audio" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Image Gallery -->
-    <section class="image-gallery">
-        <div class="container">
-            <h2 class="text-center mb-4">Our Leadership Development Programs</h2>
-            <div class="row">
-                <div class="col-md-4">
-                    <img src="image/community engagement.jpg" alt="Leadership Workshop">
-                    <blockquote>Leadership Workshop</blockquote>
-                </div>
-                <div class="col-md-4">
-                    <img src="image/ourTeam.jpg" alt="Team Collaboration">
-                    <blockquote>Team Collaboration</blockquote>
-                </div>
-                <div class="col-md-4">
-                    <img src="image/leadershipCoaching.jpg" alt="Leadership Coaching">
-                    <blockquote>Leadership Coaching</blockquote>
-                </div>
-            </div>
-           <button class=" text-white fs-32 fw-bold align-content-center"><a  href="program_signup.php">Join Our Programs</a></button> 
-        </div>
-    </section>
-
+    <div class="text-center mt-5 mb-5">
+        <a href="program_signup.php" class="btn btn-warning" style="font-size:30px;">Join Our Programs</a>
+    </div>
     <!-- Footer -->
     <script src="loadFooter.js"></script>
 

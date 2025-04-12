@@ -25,6 +25,12 @@ try {
         header("Location: events.php");
         exit;
     }
+
+    // Fetch event media
+    $mediaStmt = $pdo->prepare("SELECT * FROM event_media WHERE event_id = ? ORDER BY display_order, uploaded_at DESC");
+    $mediaStmt->execute([$eventId]);
+    $mediaFiles = $mediaStmt->fetchAll(PDO::FETCH_ASSOC);
+
 } catch (PDOException $e) {
     $_SESSION['error'] = "Error fetching event: " . $e->getMessage();
     header("Location: events.php");
@@ -40,161 +46,94 @@ try {
     <title><?= htmlspecialchars($pageTitle) ?> - <?= SITE_NAME ?></title> 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/css/lightbox.min.css">
+    <link rel="stylesheet" href="styles/admin.css">
     <style>
-        :root {
-            --primary: #103e6c;
-            --primary-light: #1a4f87;
-            --secondary: #ffcc00;
-            --light-bg: #f8f9fa;
-            --dark-text: #212529;
-            --light-text: #6c757d;
-            --success: #28a745;
-            --warning: #ffc107;
-            --danger: #dc3545;
+        /* [Previous CSS styles remain the same] */
+        
+        /* Media Gallery Styles */
+        .media-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 15px;
+            margin-top: 20px;
         }
         
-        body {
-            font-family: 'Poppins', sans-serif;
-            background-color: #f5f7fa;
-            color: var(--dark-text);
-        }
-        
-        .sidebar {
-            background-color: #ffffff;
-            height: 100vh;
-            width: 250px;
-            position: fixed;
-            top: 0;
-            left: 0;
-            box-shadow: 2px 0 10px rgba(0,0,0,0.1);
-            z-index: 1000;
-        }
-        
-        .sidebar-brand {
-            padding: 1.5rem 1rem;
-            border-bottom: 1px solid #eee;
-            text-align: center;
-        }
-        
-        .sidebar-brand img {
-            height: 80px;
-            width: auto;
-        }
-        
-        .main-content {
-            margin-left: 250px;
-            padding: 20px;
-            transition: margin-left 0.3s ease-in-out;
-            width: calc(100% - 250px);
-        }
-        
-        .nav-link {
-            color: var(--light-text);
-            padding: 0.75rem 1rem;
-            margin: 0.25rem 0;
-            border-radius: 0.25rem;
-        }
-        
-        .nav-link:hover, .nav-link.active {
-            color: var(--primary);
-            background-color: rgba(16, 62, 108, 0.1);
-        }
-        
-        .nav-link i {
-            width: 24px;
-            text-align: center;
-            margin-right: 0.5rem;
-        }
-        
-        .header {
-            background-color: white;
-            padding: 1rem;
-            border-radius: 0.5rem;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-            margin-bottom: 20px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        
-        .card {
-            border: none;
-            border-radius: 0.5rem;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-            margin-bottom: 20px;
-        }
-        
-        .stat-card {
-            padding: 1.25rem;
-            border-radius: 0.5rem;
-            background-color: white;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-        }
-        
-        .stat-card .value {
-            font-size: 1.75rem;
-            font-weight: 700;
-            color: var(--primary);
-        }
-        
-        .progress {
-            height: 8px;
-            border-radius: 4px;
-        }
-        
-        .table-responsive {
-            border-radius: 0.5rem;
+        .media-item {
+            position: relative;
+            border-radius: 8px;
             overflow: hidden;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+            background-color: #fff;
         }
         
-        .table thead th {
-            background-color: var(--primary);
+        .media-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .media-thumbnail {
+            height: 150px;
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+        }
+        
+        .media-thumbnail i {
+            font-size: 3rem;
+            color: rgba(255,255,255,0.8);
+            text-shadow: 0 2px 5px rgba(0,0,0,0.3);
+        }
+        
+        .media-info {
+            padding: 10px;
+        }
+        
+        .media-title {
+            font-size: 0.9rem;
+            margin-bottom: 5px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+        
+        .media-meta {
+            font-size: 0.8rem;
+            color: #6c757d;
+        }
+        
+        .media-actions {
+            position: absolute;
+            top: 5px;
+            right: 5px;
+            display: flex;
+            gap: 5px;
+        }
+        
+        .media-badge {
+            position: absolute;
+            top: 5px;
+            left: 5px;
+            background-color: rgba(0,0,0,0.7);
             color: white;
-            border: none;
+            padding: 3px 6px;
+            border-radius: 4px;
+            font-size: 0.7rem;
         }
         
-        .badge-active {
-            background-color: var(--success);
-        }
-        
-        .badge-inactive {
-            background-color: var(--danger);
-        }
-        
-        .badge-pending {
-            background-color: var(--warning);
-            color: var(--dark-text);
-        }
-        
-        @media (max-width: 992px) {
-            .sidebar {
-                width: 70px;
-                overflow: hidden;
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .media-gallery {
+                grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
             }
             
-            .sidebar-brand span, .nav-link span {
-                display: none;
+            .media-thumbnail {
+                height: 120px;
             }
-            
-            .nav-link {
-                text-align: center;
-            }
-            
-            .nav-link i {
-                margin-right: 0;
-                font-size: 1.25rem;
-            }
-            
-            .main-content {
-                margin-left: 70px;
-            }
-        }
-        
-        .admin-avatar {
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            object-fit: cover;
         }
     </style>
 </head>
@@ -275,6 +214,71 @@ try {
                     </div>
                 </div>
             </div>
+
+            <!-- Media Gallery Section -->
+            <div class="card mb-4">
+                <div class="card-header d-flex justify-content-between align-items-center">
+                    <h5 class="mb-0">Event Media</h5>
+                    <a href="event_media_upload.php?event_id=<?= $event['id'] ?>" class="btn btn-primary btn-sm">
+                        <i class="fas fa-plus"></i> Add Media
+                    </a>
+                </div>
+                <div class="card-body">
+                    <?php if (empty($mediaFiles)): ?>
+                        <div class="alert alert-info">No media files available for this event.</div>
+                    <?php else: ?>
+                        <div class="media-gallery">
+                            <?php foreach ($mediaFiles as $media): ?>
+                                <div class="media-item">
+                                    <div class="media-badge">
+                                        <?= ucfirst($media['media_type']) ?>
+                                    </div>
+                                    
+                                    <?php if ($media['media_type'] === 'image'): ?>
+                                        <a href="<?= htmlspecialchars($media['file_url']) ?>" data-lightbox="event-media" data-title="<?= htmlspecialchars($media['caption'] ?? $media['file_name']) ?>">
+                                            <div class="media-thumbnail" style="background-image: url('<?= htmlspecialchars($media['thumbnail_url'] ?: $media['file_url']) ?>')">
+                                                <i class="fas fa-expand"></i>
+                                            </div>
+                                        </a>
+                                    <?php elseif ($media['media_type'] === 'video'): ?>
+                                        <a href="<?= htmlspecialchars($media['file_url']) ?>" data-lightbox="event-media" data-title="<?= htmlspecialchars($media['caption'] ?? $media['file_name']) ?>">
+                                            <div class="media-thumbnail" style="background-image: url('<?= htmlspecialchars($media['thumbnail_url'] ?: 'https://via.placeholder.com/300x200?text=Video') ?>')">
+                                                <i class="fas fa-play"></i>
+                                            </div>
+                                        </a>
+                                    <?php else: ?>
+                                        <a href="<?= htmlspecialchars($media['file_url']) ?>" target="_blank">
+                                            <div class="media-thumbnail" style="background-image: url('<?= htmlspecialchars($media['thumbnail_url'] ?: 'https://via.placeholder.com/300x200?text=' . ucfirst($media['media_type'])) ?>')">
+                                                <i class="fas fa-file"></i>
+                                            </div>
+                                        </a>
+                                    <?php endif; ?>
+                                    
+                                    <div class="media-info">
+                                        <div class="media-title" title="<?= htmlspecialchars($media['file_name']) ?>">
+                                            <?= htmlspecialchars($media['caption'] ?? $media['file_name']) ?>
+                                        </div>
+                                        <div class="media-meta">
+                                            <?= round($media['file_size'] / 1024, 1) ?> KB
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="media-actions">
+                                        <a href="download.php?file=<?= urlencode($media['file_url']) ?>&name=<?= urlencode($media['file_name']) ?>" class="btn btn-sm btn-outline-secondary" title="Download">
+                                            <i class="fas fa-download"></i>
+                                        </a>
+                                        <?php if ($_SESSION['user_role'] === 'admin' || $_SESSION['user_id'] == $media['uploaded_by']): ?>
+                                            <a href="delete_media.php?id=<?= $media['id'] ?>&event_id=<?= $event['id'] ?>" class="btn btn-sm btn-outline-danger" title="Delete" onclick="return confirm('Are you sure you want to delete this media?')">
+                                                <i class="fas fa-trash"></i>
+                                            </a>
+                                        <?php endif; ?>
+                                    </div>
+                                </div>
+                            <?php endforeach; ?>
+                        </div>
+                    <?php endif; ?>
+                </div>
+            </div>
         </div>
     </div>
 
@@ -315,5 +319,16 @@ try {
     <?php endif; ?>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox.min.js"></script>
+    <script>
+        // Initialize lightbox with custom options
+        lightbox.option({
+            'resizeDuration': 200,
+            'wrapAround': true,
+            'albumLabel': 'Media %1 of %2',
+            'disableScrolling': true,
+            'fitImagesInViewport': true
+        });
+    </script>
 </body>
 </html>

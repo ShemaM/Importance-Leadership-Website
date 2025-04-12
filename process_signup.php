@@ -1,5 +1,10 @@
 <?php
-// Database connection
+
+// After successful signup:
+$_SESSION['signup_success'] = true;
+$_SESSION['user_id'] = $newUserId; // From your registration logic
+header("Location: success.html");
+
 $servername = "localhost"; // Replace with your server name
 $username = "root"; // Replace with your database username
 $password = "secret"; // Replace with your database password
@@ -70,15 +75,20 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     // Execute the statement
     if ($stmt->execute()) {
+      // Close the statement
+      $stmt->close();
       // Redirect to success page
       header("Location: signupSuccess.html");
       exit();
     } else {
-      $errors[] = "Error: " . $stmt->error;
+      // Close the statement
+      $stmt->close();
+      // After successful signup:
+      $_SESSION['signup_success'] = true;
+      $_SESSION['user_id'] = $conn->insert_id; // Store the last inserted ID
+      header("Location: success.html");
+      exit();
     }
-
-    // Close the statement
-    $stmt->close();
   }
 
   // Close the connection
