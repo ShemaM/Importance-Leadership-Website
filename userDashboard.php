@@ -214,7 +214,7 @@ try {
                         <h3>Featured Videos</h3>
                     </div>
                     <div class="card-body">
-                        <?php while ($video = $videos->fetch_assoc()): ?>
+                        <?php while ($video = $videos->fetch(PDO::FETCH_ASSOC)): ?>
                         <div class="media-item">
                             <div class="media-thumbnail" style="background-image: url('<?php echo htmlspecialchars($video['thumbnail_url']); ?>')">
                                 <i class="fas fa-play"></i>
