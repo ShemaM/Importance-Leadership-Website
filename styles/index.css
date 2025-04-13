@@ -384,8 +384,8 @@ background-blend-mode: multiply; /* Or 'multiply' for different effects */
         }
 
 .blue-text {
-    color: #103e6c; /* Dark blue */
-    text-shadow: 4px 4px 10px rgba(255, 255, 255, 0); 
+    color: #000000; /* Dark blue */
+    text-shadow: 4px 4px 10px rgba(18, 193, 172, 0); 
     font-size: 75px;
 }
 

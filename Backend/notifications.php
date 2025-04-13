@@ -2,7 +2,8 @@
 require_once 'auth_check.php';
 require_once 'db_connect.php';
 
-require_once 'mailer.php'; // You'll need to create this
+require_once 'mailer.php'; // Include mailer functions if needed
+
 
 $pageTitle = "Notifications";
 $activePage = "notifications";

@@ -128,7 +128,7 @@ try {
                             <div class="card-header position-relative text-white 
                                 <?= $event['status'] === 'cancelled' ? 'bg-danger' : 'bg-primary' ?>">
                                 <h5><?= htmlspecialchars($event['title']) ?></h5>
-                                <span class="badge <?= $event['status'] === 'cancelled' ? 'bg-warning' : 'bg-light' ?> status-badge">
+                                <span class="badge <?= $event['status'] === 'cancelled' ? 'bg-warning' : 'bg-success' ?> status-badge">
                                     <?= ucfirst($event['status']) ?>
                                 </span>
                             </div>

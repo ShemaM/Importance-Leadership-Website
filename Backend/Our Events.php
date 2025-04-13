@@ -81,6 +81,8 @@ try {
             position: absolute;
             top: 15px;
             right: 15px;
+            color:yellow;
+            font-weight: bold;
         }
         .section-title {
             position: relative;
