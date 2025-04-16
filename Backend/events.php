@@ -73,7 +73,50 @@ try {
             --warning: #ffc107;
             --danger: #dc3545;
         }
-        
+        @media (max-width: 768px) {
+            .main-content {
+                margin-left: 0;
+                width: 100%;
+                padding: 10px;
+            }
+
+            .sidebar {
+                position: static;
+                height: auto;
+                width: 100%;
+                box-shadow: none;
+            }
+
+            .sidebar-brand {
+                text-align: left;
+                padding: 1rem;
+            }
+
+            .nav-link {
+                display: flex;
+                align-items: center;
+                justify-content: flex-start;
+                padding: 0.5rem 1rem;
+            }
+
+            .header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .header h5 {
+                margin-bottom: 10px;
+            }
+
+            .table-responsive {
+                overflow-x: auto;
+            }
+
+            .modal-dialog {
+                margin: 1rem auto;
+                width: 90%;
+            }
+        }
         body {
             font-family: 'Poppins', sans-serif;
             background-color: #f5f7fa;
@@ -243,7 +286,7 @@ try {
 
             <div class="card mb-4">
                 <div class="card-header d-flex justify-content-between align-items-center">
-                    <h5 class="mb-0">Events Management</h5>
+                    <h5 class="mb-0 text-center text-primary">Events Management</h5>
                     <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addEventModal">
                         <i class="fas fa-plus"></i> Add Event
                     </button>
@@ -332,13 +375,15 @@ try {
                             </div>
                         </div>
                         <div class="mb-3">
-                            <label class="form-label">Status</label>
-                            <select name="status" class="form-select" required>
-                                <option value="upcoming">Upcoming</option>
-                                <option value="past">Past</option>
-                                <option value="cancelled">Cancelled</option>
-                            </select>
-                        </div>
+    <label class="form-label" id="statusLabel">Status (Automatically Managed)</label>
+    <input type="hidden" name="status" value="upcoming">
+    <select name="status" class="form-select" id="statusSelect" required disabled>
+        <option value="upcoming">Upcoming</option>
+        <option value="past">Past</option>
+        <option value="cancelled">Cancelled</option>
+    </select>
+    <input type="hidden" id="eventEndTime" value="2025-04-17T15:30:00"> <!-- Set this dynamically -->
+</div>
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
@@ -352,19 +397,19 @@ try {
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script>
-        // Set default datetime values
-        document.addEventListener('DOMContentLoaded', function() {
-            const now = new Date();
-            const start = new Date(now.getTime() + 60 * 60 * 1000); // 1 hour from now
-            const end = new Date(start.getTime() + 2 * 60 * 60 * 1000); // 3 hours from now
-            
-            document.querySelector('input[name="start_datetime"]').value = formatDateTime(start);
-            document.querySelector('input[name="end_datetime"]').value = formatDateTime(end);
-            
-            function formatDateTime(date) {
-                return date.toISOString().slice(0, 16);
-            }
-        });
-    </script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const statusSelect = document.getElementById("statusSelect");
+        const eventEndTime = document.getElementById("eventEndTime").value;
+
+        const now = new Date();
+        const endTime = new Date(eventEndTime);
+
+        if (endTime < now) {
+            statusSelect.value = "past";
+        } else {
+            statusSelect.value = "upcoming";
+        }
+    });
+</script>
 </body>
 </html>

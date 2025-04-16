@@ -52,6 +52,30 @@ try {
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <meta name="csrf-token" content="<?= $_SESSION['csrf_token'] ?>">
     <style>
+        body{
+            background-color:rgb(46, 82, 118);
+            color: #fff;
+            font-family: Arial, sans-serif;
+            font-size: 16px;
+            line-height: 1.5;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            background: linear-gradient(to bottom, rgb(13, 14, 17), rgb(255, 253, 253));
+            background-image: url('../images/landing.jpg');
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-position: center;
+            background-size: cover;
+            background-attachment: fixed;
+            background-size: cover;
+            background-position: center;
+            align-content: center;
+            justify-content: center;
+            
+        }
         .event-card {
             transition: transform 0.3s ease;
             margin-bottom: 20px;
@@ -84,6 +108,7 @@ try {
         }
         .section-title {
             position: relative;
+            font-size: 2rem;
             margin-bottom: 30px;
             padding-bottom: 10px;
         }
@@ -106,14 +131,14 @@ try {
 <body>
     <!-- Header -->
     <div id="header-container"></div>
-    <script src="loadHeader.js"></script>
+    <script src="../loadHeader.js"></script>
 
     <div class="container py-5">
         <?php include 'messages.php'; ?>
 
         <!-- Upcoming Events Section -->
         <div class="mb-5">
-            <h2 class="section-title">Upcoming Events</h2>
+            <h2 class="section-title text-primary text-center">Upcoming Events</h2>
             
             <?php if (empty($upcomingEvents)): ?>
                 <div class="alert alert-info">
@@ -176,7 +201,7 @@ try {
         
         <!-- Past Events Section -->
         <div class="mb-5">
-            <h2 class="section-title">Past Events</h2>
+            <h2 class="section-title text-primary">Past Events</h2>
             <?php if (empty($pastEvents)): ?>
                 <div class="alert alert-info">
                     No past events to display.

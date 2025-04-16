@@ -680,7 +680,7 @@ SELECT
     <!-- Sidebar -->
     <div class="sidebar">
         <div class="sidebar-brand">
-            <img src="../image/website-logo.png" alt="<?= htmlspecialchars(SITE_NAME) ?> Logo">
+            <img src="../image/website-logo.png" alt="<?= htmlspecialchars(defined('SITE_NAME') ? SITE_NAME : 'Default Site Name') ?> Logo">
         </div>
         <ul class="nav flex-column">
             <li class="nav-item">

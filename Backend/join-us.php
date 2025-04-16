@@ -92,7 +92,7 @@ if ($insert) {
         echo json_encode([
             'success' => true,
             'message' => 'Registration successful! Welcome, ' . htmlspecialchars($firstname),
-            'redirect' => 'success.html' // Redirect to a success page
+            'redirect' => 'success.php' // Redirect to a success page
         ]);
     } else {
         echo json_encode([
