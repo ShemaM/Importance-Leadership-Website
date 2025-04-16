@@ -1,47 +1,55 @@
 <?php
+require_once __DIR__ . '/../vendor/autoload.php';
+
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
+use Dotenv\Dotenv;
 
-require 'vendor/autoload.php'; // Path to PHPMailer autoload
+// Load .env environment variables
+$dotenv = Dotenv::createImmutable(__DIR__ . '/../');
+$dotenv->load();
 
 function sendEmailNotification($recipient, $subject, $body) {
     $mail = new PHPMailer(true);
-    
-
 
     try {
-        // Server settings
+        // SMTP server configuration
         $mail->isSMTP();
-        $mail->Host       = 'smtp.gmail.com'; // Your SMTP server
+        $mail->Host       = $_ENV['SMTP_HOST'];
         $mail->SMTPAuth   = true;
-        $mail->Username   = 'info@importanceleadership.com'; // SMTP username
-        $mail->Password   = 'xqox zscc ouwq hsli'; // SMTP password
-        $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS; // Enable TLS encryption
-        $mail->Port       = 465; // TCP port to connect to
-        
-        // Recipients
-        $mail->setFrom('noreply@importanceleadership.com', 'Event Management System');
+        $mail->Username   = $_ENV['SMTP_USERNAME'];
+        $mail->Password   = $_ENV['SMTP_PASSWORD'];
+        $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;
+        $mail->Port       = $_ENV['SMTP_PORT'];
+        $mail->SMTPDebug  = 0; // Set to 2 for full debug output
+        $mail->Debugoutput = 'error_log';
+
+        // Email details
+        $mail->setFrom($_ENV['SMTP_FROM'], $_ENV['SMTP_FROM_NAME']);
         $mail->addAddress($recipient);
-        
-        // Content
+
         $mail->isHTML(true);
         $mail->Subject = $subject;
         $mail->Body    = $body;
-        
+
         $mail->send();
         return true;
     } catch (Exception $e) {
-        error_log("Message could not be sent. Mailer Error: {$mail->ErrorInfo}");
+        error_log("Mailer Error: " . $mail->ErrorInfo);
         return false;
     }
 }
+
+// Optional: cancellation email wrapper
 function sendCancellationEmail($to, $eventTitle, $reason, $cancelledBy, $cancelledAt) {
     $subject = "Event Cancelled: $eventTitle";
-    $body = "<h2>Event Cancellation Notification</h2>
-             <p><strong>Event:</strong> $eventTitle</p>
-             <p><strong>Cancelled by:</strong> $cancelledBy</p>
-             <p><strong>Reason:</strong> $reason</p>
-             <p><strong>Cancelled at:</strong> $cancelledAt</p>";
-    
-    sendEmailNotification($to, $subject, $body);
+    $body = "
+        <h2>Event Cancellation Notification</h2>
+        <p><strong>Event:</strong> $eventTitle</p>
+        <p><strong>Cancelled by:</strong> $cancelledBy</p>
+        <p><strong>Reason:</strong> $reason</p>
+        <p><strong>Cancelled at:</strong> $cancelledAt</p>
+    ";
+
+    return sendEmailNotification($to, $subject, $body);
 }

@@ -1,6 +1,104 @@
+<style>
+    .sidebar {
+        background-color:rgb(5, 37, 69);
+        color: #fff;
+        height: 100vh;
+        padding: 15px;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 250px;
+        transform: translateX(0);
+        transition: transform 0.3s ease-in-out;
+        z-index: 1000;
+    }
+
+    .sidebar.hidden {
+        transform: translateX(-100%);
+    }
+
+    .sidebar-brand img {
+        max-width: 100%;
+        height: auto;
+        margin-bottom: 20px;
+    }
+
+    .nav-link {
+        color:#ffff;
+        font-size: 17px;
+        font-weight:bold;
+        border-radius: 5px;
+        padding: 10px 15px;
+        display: flex;
+        align-items: center;
+        text-decoration: none;
+        transition: background-color 0.3s, color 0.3s;
+    }
+
+    .nav-link i {
+        margin-right: 10px;
+    }
+
+    .nav-link:hover {
+        background-color: #495057;
+        color: #fff;
+    }
+
+    .nav-link.active {
+        background-color: #007bff;
+        color: #fff;
+    }
+
+    .nav-item {
+        margin-bottom: 10px;
+    }
+
+    .sidebar ul {
+        padding-left: 0;
+        list-style: none;
+    }
+
+    .toggle-btn {
+        position: fixed;
+        top: 15px;
+        left: 15px;
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+        padding: 10px 15px;
+        cursor: pointer;
+        z-index: 1100;
+        border-radius: 5px;
+    }
+
+    @media (max-width: 768px) {
+        .sidebar {
+            width: 200px;
+        }
+
+        .toggle-btn {
+            top: 10px;
+            left: 10px;
+        }
+    }
+</style>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const sidebar = document.querySelector('.sidebar');
+        const toggleBtn = document.querySelector('.toggle-btn');
+
+        toggleBtn.addEventListener('click', function () {
+            sidebar.classList.toggle('hidden');
+        });
+    });
+</script>
+
+<button class="toggle-btn">☰</button>
+
 <div class="sidebar">
     <div class="sidebar-brand">
-        <img src="image/website-logo.png" alt="<?= htmlspecialchars(SITE_NAME) ?> Logo">
+        <img src="../image/website-logo.png" alt="<?= htmlspecialchars("Importance Leadership" ) ?> Logo">
     </div>
     <ul class="nav flex-column">
         <li class="nav-item">

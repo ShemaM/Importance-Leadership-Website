@@ -4,10 +4,25 @@ require_once 'db_connect.php';
 
 // Redirect if already logged in
 if (!empty($_SESSION['admin_auth_token'])) {
-    header("Location: adminDashboard.php");
+    header("Location: admin.php");
     exit();
 }
 
+if ($admin && password_verify($password, $admin['password_hash'])) {
+    // Create admin session
+    $_SESSION['admin_id'] = $admin['id'];
+    $_SESSION['admin_username'] = $admin['first_name']; // Add this line
+    $_SESSION['admin_logged_in'] = true; // This is critical
+    $_SESSION['admin_auth_token'] = bin2hex(random_bytes(32));
+    $_SESSION['admin_auth_time'] = time();
+    
+    // Update last login
+    $pdo->prepare("UPDATE admin_users SET last_login = NOW() WHERE id = ?")
+        ->execute([$admin['id']]);
+    
+    header("Location: admin.php");
+    exit();
+}
 // Process login form
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $email = trim($_POST['email']);
@@ -32,7 +47,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $pdo->prepare("UPDATE admin_users SET last_login = NOW() WHERE id = ?")
                 ->execute([$admin['id']]);
             
-            header("Location: adminDashboard.php");
+            header("Location: admin.php");
             exit();
         } else {
             $error = "Invalid credentials";
