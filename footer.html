@@ -6,169 +6,75 @@
     <title>Footer Example</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles/admin.css">
 
-    <style>
-       footer {
-background: linear-gradient(135deg, #080808, #0022ff);
-  color: #0000;
-  padding: 2rem 0;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
-
-.footer-logo {
-  width: 120px;
-  margin-bottom: 1rem;
-}
-
-.footer a {
-  color: black;
-  text-decoration: none;
-  display: block;
-  margin-bottom: 0.5rem;
-  transition: color 0.3s;
-}
-
-.footer a:hover {
-  color: #fff;
-}
-
-.footer h5 {
-  font-weight: bold;
-  margin-bottom: 1rem;
-}
-
-.footer p,
-.footer small {
-  color: #aaa;
-}
-
-.footer .social-media a {
-  width: 36px;
-  height: 36px;
-  border: 1px solid #fff;
-  border-radius: 50%;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  margin-right: 0.5rem;
-  color: #fff;
-  transition: background 0.3s, border-color 0.3s;
-}
-
-.footer .social-media a:hover {
-  background-color: #218838;
-  border-color: #218838;
-  color: #fff;
-}
-
-/* Newsletter */
-.footer .form-control {
-  border-radius: 0.375rem 0 0 0.375rem;
-  border: none;
-  padding: 0.6rem 1rem;
-  font-size: 0.9rem;
-}
-
-.footer .btn {
-  border-radius: 0 0.375rem 0.375rem 0;
-  font-size: 0.9rem;
-  padding: 0.6rem 1rem;
-}
-
-.footer .btn-success {
-  background-color: #05063f;
-  border: none;
-}
-
-.footer .btn-success:hover {
-  background-color: #1c7430;
-}
-
-/* Layout tweaks */
-.footer .row > div {
-  margin-bottom: 2rem;
-}
-
-.footer .input-group {
-  max-width: 100%;
-}
-
-/* Responsive fixes */
-@media (max-width: 768px) {
-  .footer .input-group {
-    flex-direction: column;
-  }
-
-  .footer .form-control,
-  .footer .btn {
-    width: 100%;
-    border-radius: 0.375rem !important;
-    margin-top: 0.5rem;
-  }
-
-  .footer .btn {
-    margin-top: 0.5rem;
-  }
-
-  .footer .social-media {
-    margin-top: 1rem;
-  }
-}   
-    </style>
 </head>
 <body>
-    <footer class="footer text-white pt-5 pb-4">
-        <div class="container">
-            <div class="row align-items-start">
-                <!-- Logo & Quick Links -->
-                <div class="col-lg-4 col-md-6 mb-4">
-                    <a href="index.html">
-                        <img src="image/website-logo.png" alt="Importance Leadership" class="footer-logo mb-3" style="width: 120px;">
-                    </a>
-                    <ul class="list-unstyled mt-3">
-                        <li><a href="who-we-are.html" class="text-white-50 d-block py-1">Who We Are</a></li>
-                        <li><a href="what-we-do.html" class="text-white-50 d-block py-1">What We Do</a></li>
-                        <li><a href="impact.html" class="text-white-50 d-block py-1">Impact</a></li>
-                        <li><a href="donate.html" class="text-white-50 d-block py-1">Donate</a></li>
-                        <li><a href="contact-us.html" class="text-white-50 d-block py-1">Contact Us</a></li>
-                    </ul>
-                </div>
-    
-                <!-- Contact Info -->
-                <div class="col-lg-4 col-md-6 mb-4">
-                    <h5 class="fw-bold mb-3">Get in Touch</h5>
-                    <p class="text-white-50">We'd love to hear from you.</p>
-                    <p class="text-white-50 mb-2"><i class="fas fa-phone-alt me-2"></i><a href="tel:+16037150801" class="text-white">+1 (603) 715-0801</a></p>
-                    <p class="text-white-50"><i class="fas fa-envelope me-2"></i><a href="mailto:info@importanceleadership.com" class="text-white">info@importanceleadership.com</a></p>
-    
-                    <div class="social-media mt-4">
-                        <a href="https://www.instagram.com/importance_leadership_" class="btn btn-outline-light btn-sm rounded-circle me-2" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                        <a href="https://www.facebook.com/share/12J1CX4vLQ8/?mibextid=wwXIfr" class="btn btn-outline-light btn-sm rounded-circle me-2" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-                        <a href="https://www.linkedin.com/company/importance-leadership/posts" class="btn btn-outline-light btn-sm rounded-circle me-2" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-                        <a href="https://www.youtube.com/@importanceleadership" class="btn btn-outline-light btn-sm rounded-circle" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
-                    </div>
-                </div>
-    
-                <!-- Newsletter -->
-                <div class="col-lg-4 col-md-12">
-                    <h5 class="fw-bold mb-3">Subscribe to Our Newsletter</h5>
-                    <p class="text-white-50">Stay updated with our latest news and updates.</p>
-                    <form id="newsletter-form" action="subscribe.php" method="post" class="needs-validation" novalidate>
-                        <div class="input-group mb-3">
-                            <input type="email" name="email" class="form-control" placeholder="Enter your email" required>
-                            <button class="btn btn-success" type="submit"><i class="fas fa-paper-plane"></i></button>
-                            <div class="invalid-feedback text-white">Please enter a valid email.</div>
-                        </div>
-                        <div id="response-message" class="mt-2 text-white-50"></div>
-                    </form>
+  <footer class="bg-dark text-white pt-6 pb-4 position-relative">
+    <div class="container">
+        <div class="row g-4">
+            <div class="col-lg-4">
+                <img src="image/website-logo.png" alt="Importance Leadership Logo" class="mb-3" width="180">
+                <p class="mb-4">Empowering communities through leadership, innovation, and impact.</p>
+                <div class="d-flex gap-3 mb-4">
+                    <a href="#" class="text-white fs-5"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="text-white fs-5"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="text-white fs-5"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="text-white fs-5"><i class="fab fa-linkedin-in"></i></a>
                 </div>
             </div>
-    
-            <div class="text-center border-top pt-3 mt-4" style="border-color: rgba(255, 255, 255, 0.1) !important;">
-                <p class="mb-0 text-white-50">&copy; <span id="currentYear"></span> Importance Leadership. All Rights Reserved.</p>
+            <div class="col-lg-2 col-md-4">
+                <h5 class="fw-bold mb-4">Quick Links</h5>
+                <ul class="list-unstyled">
+                    <li class="mb-2"><a href="index.html" class="text-white text-decoration-none">Home</a></li>
+                    <li class="mb-2"><a href="who-we-are.html" class="text-white text-decoration-none">About Us</a></li>
+                    <li class="mb-2"><a href="what-we-do.html" class="text-white text-decoration-none">Programs</a></li>
+                    <li class="mb-2"><a href="impact.html" class="text-white text-decoration-none">Impact</a></li>
+                    <li class="mb-2"><a href="donate.html" class="text-white text-decoration-none">Donate</a></li>
+                </ul>
+            </div>
+            <div class="col-lg-3 col-md-4">
+                <h5 class="fw-bold mb-4">Contact Us</h5>
+                <ul class="list-unstyled">
+                    <li class="mb-2"><i class="fas fa-map-marker-alt me-2 text-primary"></i> 123 Leadership Ave, City, Country</li>
+                    <li class="mb-2"><i class="fas fa-phone me-2 text-primary"></i> +1 (234) 567-8900</li>
+                    <li class="mb-2"><i class="fas fa-envelope me-2 text-primary"></i> info@importanceleadership.org</li>
+                </ul>
+            </div>
+            <div class="col-lg-3 col-md-4">
+                <h5 class="fw-bold mb-4">Newsletter</h5>
+                <p>Subscribe to our newsletter for updates and news.</p>
+                <form class="mb-3" method="POST" action="subscribe.php">
+                    <div class="input-group">
+                        <input 
+            type="email" 
+            class="form-control" 
+            name="email" 
+            placeholder="Your Email" 
+            aria-label="Your Email"
+            required
+        >
+            <button class="btn btn-primary" type="submit">Subscribe</button>
+                    </div>
+                              <!-- CSRF protection (recommended) -->
+    <input type="hidden" name="csrf_token" value="<?php echo generateCsrfToken(); ?>">
+           
+                </form>
+                <div class="subscription-message mt-2" style="display: none;"></div>
+         </div>
+        </div>
+        <hr class="my-4 bg-secondary">
+        <div class="row">
+            <div class="col-md-6 text-center text-md-center">
+                <p class="mb-0">&copy; 2025 Importance Leadership. All rights reserved.</p>
+            </div>
+            <div class="col-md-6 text-center text-md-end">
+                <a href="#" class="text-white text-decoration-none me-3">Privacy Policy</a>
+                <a href="#" class="text-white text-decoration-none">Terms of Service</a>
             </div>
         </div>
-    </footer>
+    </div>
+</footer>
     
     <script>
         document.getElementById('currentYear').textContent = new Date().getFullYear();

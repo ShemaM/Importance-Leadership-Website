@@ -8,210 +8,408 @@
     <meta name="keywords" content="Leadership, Impact, Community, Mentorship, Youth Empowerment">
     <meta name="author" content="Importance Leadership">
     <title>Importance Leadership - Who We Are</title>
-    <link rel="icon" type="image/png" href="image/logo.jpg" sizes="16x16">
-    <link rel="icon" type="image/png" href="image/logo.jpg" sizes="32x32">
+    <link rel="icon" type="image/png" href="image/logo.jpg">
+    
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    
     <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
     <!-- Font Awesome -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
-    <!-- Custom CSS -->
-    <link rel="stylesheet" href="styles/who-we-are.css">
+    
+    <!-- AOS Animation -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary: #0b1f3a;
+            --secondary: #2605f7;
+            --accent: #123456;
+            --light: #f8f9fa;
+            --dark: #000000;
+            --transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            overflow-x: hidden;
+            scroll-behavior: smooth;
+            background-color: var(--accent);
+        }
+        
+        h1, h2, h3, h4, h5 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+        }
+        
+        /* Background Shapes */
+        .bg-shape {
+            position: absolute;
+            z-index: -1;
+            opacity: 0.1;
+            animation: float 6s ease-in-out infinite;
+        }
+        
+        .bg-shape-1 {
+            top: 10%;
+            left: 5%;
+            width: 200px;
+            height: 200px;
+            fill: var(--primary);
+            animation-delay: 0s;
+        }
+        
+        .bg-shape-2 {
+            bottom: 15%;
+            right: 8%;
+            width: 150px;
+            height: 150px;
+            fill: var(--accent);
+            animation-delay: 1s;
+        }
+        
+        .bg-shape-3 {
+            top: 40%;
+            right: 15%;
+            width: 100px;
+            height: 100px;
+            fill: var(--primary);
+            animation-delay: 2s;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+        }
+        
+        /* Hero Section */
+        .about-hero {
+            position: relative;
+            min-height: 60vh;
+            background: linear-gradient(rgba(11, 31, 58, 0.8), rgba(11, 31, 58, 0.9)), url('image/about-hero.jpg') no-repeat center center/cover;
+            display: flex;
+            align-items: center;
+            overflow: hidden;
+        }
+        
+        .about-hero-content {
+            z-index: 3;
+            position: relative;
+        }
+        
+        .section-title {
+            font-size: 2.5rem;
+            color: white;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            position: relative;
+            margin-bottom: 1.5rem;
+        }
+        
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 4px;
+            background: var(--secondary);
+            margin: 15px auto;
+            border-radius: 2px;
+        }
+        
+        /* Cards */
+        .feature-card {
+            transition: var(--transition);
+            border: none;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 10px 20px rgba(11, 31, 58, 0.1);
+            margin-bottom: 2rem;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(11, 31, 58, 0.2);
+        }
+        
+        .feature-card .card-img-top {
+            transition: var(--transition);
+        }
+        
+        .feature-card:hover .card-img-top {
+            transform: scale(1.05);
+        }
+        
+        /* Button Effects */
+        .btn-gradient {
+            background: linear-gradient(45deg, var(--primary), var(--accent));
+            color: white;
+            border: none;
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+        }
+        
+        .btn-gradient:hover {
+            color: white;
+        }
+        
+        .btn-gradient::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, var(--accent), var(--primary));
+            transition: var(--transition);
+            z-index: -1;
+        }
+        
+        .btn-gradient:hover::before {
+            left: 0;
+        }
+        
+        /* Timeline */
+        .timeline {
+            position: relative;
+            padding-left: 3rem;
+            margin: 4rem 0;
+        }
+        
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 20px;
+            top: 0;
+            height: 100%;
+            width: 3px;
+            background: linear-gradient(to bottom, var(--accent), var(--secondary));
+        }
+        
+        .timeline-item {
+            position: relative;
+            margin-bottom: 3rem;
+            padding-left: 2rem;
+        }
+        
+        .timeline-badge {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: var(--primary);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            border: 3px solid var(--secondary);
+            transform: translateX(-50%);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        /* Responsive Adjustments */
+        @media (max-width: 992px) {
+            .section-title {
+                font-size: 2.2rem;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .about-hero {
+                min-height: 50vh;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+        }
+    </style>
 </head>
 
 <body>
-    
-   <!-- Load Header -->
-   <div id="header-container"></div>
-   <script src="loadHeader.js"></script>
+    <!-- Background Shapes -->
+    <svg class="bg-shape bg-shape-1" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+        <path d="M45.4,-59.4C58.6,-48.9,68.7,-33.5,72.6,-16.6C76.5,0.3,74.2,18.7,64.2,33.5C54.2,48.3,36.4,59.6,16.8,67.3C-2.9,75,-25.4,79.2,-42.1,70.1C-58.8,61,-69.7,38.7,-72.9,15.8C-76.1,-7.1,-71.6,-30.6,-58.1,-45.3C-44.6,-60,-22.3,-65.9,-1.6,-64.4C19.1,-62.9,38.2,-53.9,45.4,-59.4Z" transform="translate(100 100)" />
+    </svg>
 
+    <svg class="bg-shape bg-shape-2" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+        <path d="M38.3,-54.1C50.3,-44.3,61.4,-33.7,65.3,-20.3C69.2,-6.9,65.9,9.3,58.5,24.3C51.1,39.3,39.6,53.1,24.3,61.9C9,70.7,-10.1,74.5,-25.1,67.7C-40.1,60.9,-51,43.5,-58.2,25.2C-65.4,6.9,-68.9,-12.3,-62.8,-28.1C-56.7,-43.9,-40.9,-56.3,-25.8,-64.9C-10.7,-73.5,3.7,-78.3,18.1,-75.1C32.5,-71.9,46.8,-60.8,38.3,-54.1Z" transform="translate(100 100)" />
+    </svg>
+
+    <svg class="bg-shape bg-shape-3" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+        <path d="M42.2,-58.6C55.3,-52.7,66.9,-41.8,70.2,-28.4C73.5,-15,68.5,0.9,62.1,16.2C55.7,31.5,47.9,46.2,35.3,55.3C22.7,64.4,5.3,67.9,-9.6,64.9C-24.5,61.8,-36.9,52.2,-47.1,40.5C-57.3,28.8,-65.2,15,-67.5,-0.8C-69.8,-16.6,-66.5,-33.2,-56.9,-45.4C-47.3,-57.6,-31.4,-65.4,-15.8,-70.2C-0.2,-75,15.2,-76.8,42.2,-58.6Z" transform="translate(100 100)" />
+    </svg>
+
+    <!-- Load Header -->
+    <div id="header-container"></div>
+    <script src="loadHeader.js"></script>
+
+    <!-- About Hero Section -->
+    <section class="about-hero" background="linear-gradient(to right, #000000, #123456)">
+        <div class="container about-hero-content text-center text-white" data-aos="fade-up">
+            <h1 class="display-4 fw-bold mb-4">Who Are We?</h1>
+           <p class="lead mb-5">Empowering communities through leadership, innovation, and impact</p>
+            <a href="#about" class="btn btn-gradient btn-lg px-4 py-3 text-white">Discover Our Story</a>
+        </div>
+        <div class="wave-animation"></div>
+    </section>
 
     <!-- About Us Section -->
-    <section class="about-us-section py-5 bg-light-blue" id="about">
+    <section class="py-6" id="about" style="background: linear-gradient(to right, #000000, #123456); color:#ffff">
         <div class="container">
             <div class="row align-items-center">
-                <!-- Founder's Image and Info -->
-                <div class="col-md-4 text-center mb-4 mb-md-0">
-                    <div class="card border-0 shadow-lg h-100">
-                        <img src="image/fiston.png" class="founder-img mx-auto mt-4" alt="Fiston Ndayishimiye, Founder of Importance Leadership" width="150" height="150">
-                        <div class="card-body">
-                            <h4 class="card-title fw-bold">Fiston Ndayishimiye</h4>
-                            <p class="card-text text-center">Founder & Visionary Leader</p>
-                            <hr class="divider mx-auto" style="width: 50px; height: 2px; background-color: #123456;">
-                            <p class="text-dark fw-semibold" style="font-style: italic;"><a href="team.html#fisto">Fiston</a> is the founder of <strong>Importance Leadership</strong>, dedicated to empowering young people to become ethical, inclusive, and purpose-driven leaders.</p>
+                <div class="col-lg-5 mb-5 mb-lg-0" data-aos="fade-right">
+                    <div class="feature-card">
+                        <img src="image/fiston.png" class="card-img-top img-fluid" alt="Fiston Ndayishimiye" style="height: 40%; width:40%; object-fit: cover;">
+                        <div class="card-body text-center">
+                            <h3 class="card-title">Fiston Ndayishimiye</h3>
+                            <p class="text-accent mb-3">Founder & Visionary Leader</p>
+                            <p class="card-text">"Empowering young people to become ethical, inclusive, and purpose-driven leaders."</p>
+                            <a href="team.html#fisto" class="btn btn-outline-primary">Learn More</a>
                         </div>
                     </div>
                 </div>
-                <!-- About Us Content -->
-                <div class="col-lg-8 text-center">
-                    <h2 class="section-title">About Us</h2>
-                    <p class="text-justify " style="font-size: 1.1rem; line-height: 1.8; color: #0644a0;">
-                        Importance Leadership is a non-profit organization whose mission is to empower youth, especially the
-                        most vulnerable ones such as refugees, minorities, and the poor, through advocacy and education. The
-                        organization advocates for equality, equity, and justice for the youth. It also provides mentorship, training
-                        on mental health, climate change awareness, leadership skills, and networking skills to youth in order to
-                        actively participate in shaping policies and solutions that impact their lives, fostering their resilience,
-                        and building the capacity of society.
-                    </p>
-
-                   <hr  class="divider mx-auto" style="width: 50px; height: 2px; background-color: #123456;">
-
-                    <p class="text-justify">
-                        Importance Leadership was founded by <strong>Fiston Ndayishimiye</strong>, a visionary leader and advocate for youth empowerment. Born in the Democratic Republic of Congo, Fiston's journey is a testament to resilience, determination, and the transformative power of leadership. His mission is to empower young people to become leaders and agents of change, inspired by the struggles and triumphs of his own life.
-                    </p>
-                    <p class="text-justify">
-                        Fiston's story is deeply rooted in the history of his people, the Banyamulenge, who have faced systemic oppression and violence in the Congo. Growing up amidst the chaos of war and ethnic conflict, Fiston witnessed the devastating consequences of broken systems and the urgent need for change. His journey reflects the struggles of countless Africans fighting for self-determination and liberation from colonial legacies.
-                    </p>
-                    <!-- Read More Button -->
-                    <button type="button" class="btn btn-primary-gradient btn-md mt-3" id="readMoreBtn">Read More</button>
-                    <!-- Hidden Content -->
-                    <div id="hiddenContent" style="display: none;">
-                        <p class="text-justify">
-                            Inspired by the words of Patrice Lumumba, the first democratically elected Prime Minister of the Congo, Fiston believes in the power of unity and independence. Lumumba's declaration, <em>"The Congo's independence is a decisive step towards the liberation of the entire African continent,"</em> continues to fuel Fiston's vision for a brighter future. Through Importance Leadership, he seeks to ignite a spark of hope and transformation in the hearts of young people.
-                        </p>
-                        <p class="text-justify">
-                            Fiston's journey took him to the United States in 2016, where he faced the challenges of adapting to a new culture and confronting systemic racism. Despite these obstacles, he remained steadfast in his commitment to empowering others. Drawing from the wisdom of leaders like Martin Luther King Jr. and Malcolm X, Fiston believes that <em>"injustice anywhere is a threat to justice everywhere."</em> His lived experiences of genocide, oppression, and discrimination have shaped his mission to create a more just and equitable world.
-                        </p>
-                        <p class="text-justify">
-                            Today, Fiston leads Importance Leadership with a clear vision: to transform young people into leaders and leaders into agents of change. He envisions a future where every individual has the opportunity to thrive, regardless of their background or circumstances. <em>"I don't believe in democracy, but I believe in the young generation,"</em> Fiston declares. <em>"The future will change; the future must change."</em>
-                        </p>
+                <div class="col-lg-7" data-aos="fade-left">
+                    <h2 class="section-title text-black text-center">Our Story</h2>
+                    <p class="lead">Importance Leadership is a non-profit organization dedicated to empowering youth through advocacy and education.</p>
+                    <p>We advocate for equality, equity, and justice for youth, particularly refugees, minorities, and the underprivileged. Our programs provide mentorship, mental health training, climate change awareness, and leadership development to help young people actively participate in shaping policies and solutions that impact their lives.</p>
+                    <p>Founded by Fiston Ndayishimiye, whose journey from the Democratic Republic of Congo to becoming a visionary leader exemplifies resilience and determination. His experiences with war, ethnic conflict, and systemic oppression fuel his mission to create change.</p>
+                    
+                    <div id="moreContent" style="display: none;">
+                        <p>Inspired by leaders like Patrice Lumumba, Martin Luther King Jr., and Malcolm X, Fiston believes in the power of youth to transform society. "I don't believe in democracy, but I believe in the young generation," he says. "The future will change; the future must change."</p>
+                        <p>Since its founding, Importance Leadership has impacted thousands of young people, helping them develop the skills and confidence to become leaders in their communities.</p>
                     </div>
+                    <button id="readMoreBtn" class="btn btn-gradient mt-3">Read More</button>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Mission Section -->
-    <section id="mission" class="mission-section py-5 bg-light-blue">
+    <!-- Mission & Vision Section -->
+    <section class="py-6" style="background: linear-gradient(to right, #f8f9fa, #e9f0f8);">
         <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-lg-8 text-center">
-                    <h2 class="section-title">Our Mission</h2>
-                    <p class="text-justify" style="font-size: 1.1rem; line-height: 1.8; color: #0644a0;"></p>
-                        At Importance Leadership, our mission is to <strong>Mobilize, Inspire, and Empower</strong> youth to become transformative leaders through education, advocacy, and mentorship. We are dedicated to fostering an inclusive world where every young person has the tools and opportunities to unlock their full potential.
-                    </p>
-                    <p class="text-justify" style="font-size: 1.1rem; line-height: 1.8; color: #0644a0;">
-                        Through our innovative programs, we focus on leadership training, life skills development, environmental awareness, and advocacy. By nurturing personal growth and building essential skills, we aim to inspire a generation of ethical, purpose-driven leaders who will create lasting change in their communities and beyond.
-                    </p>
-                    <p class="text-justify" style="font-size: 1.1rem; line-height: 1.8; color: #0644a0;">
-                        Guided by our motto, <em>"Empowering Leaders, Inspiring Excellence,"</em> we are committed to transforming lives and shaping a brighter, more equitable future. Join us in our mission to empower the next generation of change-makers.
-                    </p>
+            <div class="row">
+                <div class="col-lg-6 mb-5 mb-lg-0" data-aos="fade-up">
+                    <div class="h-100 p-5 bg-white rounded-3 shadow-sm">
+                        <div class="icon-wrapper bg-primary rounded-circle d-inline-flex align-items-center justify-content-center mb-4" style="width: 60px; height: 60px;">
+                            <i class="fas fa-bullseye fa-2x text-white"></i>
+                        </div>
+                        <h3 class="text-primary">Our Mission</h3>
+                        <p class="lead">Mobilize, Inspire, and Empower youth to become transformative leaders.</p>
+                        <p>Through education, advocacy, and mentorship, we foster an inclusive world where every young person can unlock their full potential. Our programs focus on leadership training, life skills development, environmental awareness, and community engagement.</p>
+                    </div>
+                </div>
+                <div class="col-lg-6" data-aos="fade-up" data-aos-delay="200">
+                    <div class="h-100 p-5 bg-white rounded-3 shadow-sm">
+                        <div class="icon-wrapper bg-primary rounded-circle d-inline-flex align-items-center justify-content-center mb-4" style="width: 60px; height: 60px;">
+                            <i class="fas fa-eye fa-2x text-white"></i>
+                        </div>
+                        <h3 class="text-primary">Our Vision</h3>
+                        <p class="lead">An inclusive world where every youth is empowered to lead and create impact.</p>
+                        <p>We envision communities transformed by ethical, purpose-driven young leaders who champion equality and justice. Our vision is rooted in the belief that empowered youth can solve the world's greatest challenges when given the right tools and opportunities.</p>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Vision Section -->
-    <section id="vision" class="vision-section py-5 bg-light-blue">
+    <!-- Key Pillars Section -->
+    <section class="py-6 bg-white">
         <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-lg-8 text-center">
-                    <h2 class="section-title">Our Vision & Key Pillars</h2>
-                    <p class="text-justify">
-                        We envision an inclusive world where every youth is empowered to lead, transform communities, and create a lasting impact.
-                    </p>
-                </div>
+            <div class="text-center mb-5" data-aos="fade-up">
+                <h2 class="section-title text-primary">Our Key Pillars</h2>
+                <p class="lead">The foundation of our work</p>
             </div>
-            <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-4 mt-4revamp this section">
-                <!-- Card 1: Advocacy -->
-                <div class="col">
-                    <div class="card h-100 shadow-sm border-0">
-                        <div class="card-body text-center p-4">
-                            <div class="icon mb-3">
-                                <i class="fas fa-bullhorn fa-2x text-primary-gradient"></i>
-                            </div>
-                            <h5 class="card-title fw-bold">Advocacy</h5>
-                            <p class="card-text">
-                                Amplifying the voices of vulnerable communities, including refugees, minorities, and persons with disabilities, to champion youth rights and foster inclusivity.
-                            </p>
+            
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="100">
+                    <div class="h-100 p-4 bg-light rounded-3 text-center">
+                        <div class="icon-wrapper bg-primary rounded-circle d-inline-flex align-items-center justify-content-center mb-4" style="width: 70px; height: 70px;">
+                            <i class="fas fa-bullhorn fa-2x text-white"></i>
                         </div>
+                        <h4>Advocacy</h4>
+                        <p>Amplifying voices of vulnerable communities to champion youth rights and foster inclusivity.</p>
                     </div>
                 </div>
-                <!-- Card 2: Mental Health -->
-                <div class="col">
-                    <div class="card h-100 shadow-sm border-0">
-                        <div class="card-body text-center p-4">
-                            <div class="icon mb-3">
-                                <i class="fas fa-heartbeat fa-2x text-primary-gradient"></i>
-                            </div>
-                            <h5 class="card-title fw-bold">Mental Health & Well-being</h5>
-                            <p class="card-text">
-                                Empowering youth with tools and resources to enhance emotional, psychological, and social well-being through targeted workshops and support.
-                            </p>
+                
+                <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="200">
+                    <div class="h-100 p-4 bg-light rounded-3 text-center">
+                        <div class="icon-wrapper bg-primary rounded-circle d-inline-flex align-items-center justify-content-center mb-4" style="width: 70px; height: 70px;">
+                            <i class="fas fa-heartbeat fa-2x text-white"></i>
                         </div>
+                        <h4>Mental Health</h4>
+                        <p>Providing tools to enhance emotional, psychological, and social well-being.</p>
                     </div>
                 </div>
-                <!-- Card 3: Leadership Development -->
-                <div class="col">
-                    <div class="card h-100 shadow-sm border-0">
-                        <div class="card-body text-center p-4">
-                            <div class="icon mb-3">
-                                <i class="fas fa-users-cog fa-2x text-primary-gradient"></i>
-                            </div>
-                            <h5 class="card-title fw-bold">Leadership Development</h5>
-                            <p class="card-text">
-                                Inspiring youth to lead with purpose by fostering teamwork, enhancing influence, and driving impactful change in their communities.
-                            </p>
+                
+                <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="300">
+                    <div class="h-100 p-4 bg-light rounded-3 text-center">
+                        <div class="icon-wrapper bg-primary rounded-circle d-inline-flex align-items-center justify-content-center mb-4" style="width: 70px; height: 70px;">
+                            <i class="fas fa-users fa-2x text-white"></i>
                         </div>
+                        <h4>Leadership</h4>
+                        <p>Inspiring youth to lead with purpose and drive impactful change.</p>
                     </div>
                 </div>
-                <!-- Card 4: Mentorship -->
-                <div class="col">
-                    <div class="card h-100 shadow-sm border-0">
-                        <div class="card-body text-center p-4">
-                            <div class="icon mb-3">
-                                <i class="fas fa-chalkboard-teacher fa-2x text-primary-gradient"></i>
-                            </div>
-                            <h5 class="card-title fw-bold">Mentorship & Capacity Building</h5>
-                            <p class="card-text">
-                                Equipping youth with knowledge and skills through training on climate change, career growth, and educational opportunities.
-                            </p>
+                
+                <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="400">
+                    <div class="h-100 p-4 bg-light rounded-3 text-center">
+                        <div class="icon-wrapper bg-primary rounded-circle d-inline-flex align-items-center justify-content-center mb-4" style="width: 70px; height: 70px;">
+                            <i class="fas fa-hands-helping fa-2x text-white"></i>
                         </div>
+                        <h4>Mentorship</h4>
+                        <p>Equipping youth with knowledge and skills for personal growth.</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-
-    <!-- Join Section -->
-    <section class="join-section py-5 bg-light-blue">
-        <div class="container text-center">
-            <h2 class="section-title text-dark">Join Our Movement</h2>
-            <p class="lead mb-4">
-                Become a catalyst for change by joining our mission to empower youth and create a more inclusive, equitable world. Together, we can make a lasting impact.
-            </p>
-            <div class="d-flex justify-content-center gap-3">
-                <a href="join-us.html" class="btn btn-primary-gradient btn-lg px-4 py-2">Get Involved</a>
-                <a href="donate.html" class="btn btn-primary-gradient btn-lg px-4 py-2">Donate Now</a>
+    <!-- CTA Section -->
+    <section class="py-6 text-white" style="background: linear-gradient(135deg, #0b1f3a, #7cade9);">
+        <div class="container text-center" data-aos="fade-up">
+            <h2 class="mb-4">Ready to Join Our Movement?</h2>
+            <p class="lead mb-5">Become part of our mission to empower the next generation of leaders.</p>
+            <div class="d-flex flex-wrap justify-content-center gap-3">
+                <a href="join-us.html" class="btn btn-light btn-lg px-4">Get Involved</a>
+                <a href="donate.html" class="btn btn-outline-light btn-lg px-4">Donate Now</a>
             </div>
         </div>
     </section>
-    
 
-    
+    <!-- Load Footer -->
+    <div id="footer-container"></div>
     <script src="loadFooter.js"></script>
 
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <!-- JavaScript for Read More Functionality -->
+    
+    <!-- AOS Animation -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
+        AOS.init({
+            duration: 800,
+            easing: 'ease-in-out',
+            once: true
+        });
+        
+        // Read More Functionality
         document.getElementById("readMoreBtn").addEventListener("click", function() {
-            const hiddenContent = document.getElementById("hiddenContent");
-            const readMoreBtn = document.getElementById("readMoreBtn");
-
-            if (hiddenContent.style.display === "none") {
-                hiddenContent.style.display = "block";
-                readMoreBtn.textContent = "Read Less";
+            const content = document.getElementById("moreContent");
+            const btn = document.getElementById("readMoreBtn");
+            
+            if (content.style.display === "none") {
+                content.style.display = "block";
+                btn.textContent = "Read Less";
             } else {
-                hiddenContent.style.display = "none";
-                readMoreBtn.textContent = "Read More";
+                content.style.display = "none";
+                btn.textContent = "Read More";
             }
         });
     </script>
-   
 </body>
-
 </html>

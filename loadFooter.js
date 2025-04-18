@@ -1,64 +1,74 @@
 
 document.addEventListener("DOMContentLoaded", function() {
     // Footer HTML template
-    const footerHTML = `
-   <footer class="footer text-white pt-5 pb-4" style = "background: linear-gradient(135deg, #2d8893, #0c1b7b);">
-    <div class="container">
-        <div class="row align-items-start">
-            <!-- Logo & Quick Links -->
-            <div class="col-lg-4 col-md-6 mb-4">
-                <a href="index.html">
-                    <img src="image/website-logo.png" alt="Importance Leadership" class="footer-logo mb-3" style="width: 120px;">
-                </a>
-                <ul class="list-unstyled mt-3">
-                    <li><a href="who-we-are.html" class="text-white-50 d-block py-1">Who We Are</a></li>
-                    <li><a href="what-we-do.html" class="text-white-50 d-block py-1">What We Do</a></li>
-                    <li><a href="impact.html" class="text-white-50 d-block py-1">Impact</a></li>
-                    <li><a href="donate.html" class="text-white-50 d-block py-1">Donate</a></li>
-                    <li><a href="contact-us.html" class="text-white-50 d-block py-1">Contact Us</a></li>
-                </ul>
+    
+const footerHTML = `
+<footer class="bg-dark text-white pt-6 pb-4 position-relative">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-lg-4">
+                    <img src="image/website-logo.png" alt="Importance Leadership Logo" class="mb-3" width="180">
+                    <p class="mb-4">Empowering communities through leadership, innovation, and impact.</p>
+                    <div class="d-flex gap-3 mb-4">
+                        <a href="#" class="text-white fs-5"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="text-white fs-5"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="text-white fs-5"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="text-white fs-5"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-4">
+                    <h5 class="fw-bold mb-4">Quick Links</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="index.html" class="text-white text-decoration-none">Home</a></li>
+                        <li class="mb-2"><a href="who-we-are.html" class="text-white text-decoration-none">About Us</a></li>
+                        <li class="mb-2"><a href="what-we-do.html" class="text-white text-decoration-none">Programs</a></li>
+                        <li class="mb-2"><a href="impact.html" class="text-white text-decoration-none">Impact</a></li>
+                        <li class="mb-2"><a href="donate.html" class="text-white text-decoration-none">Donate</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-4">
+                    <h5 class="fw-bold mb-4">Contact Us</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><i class="fas fa-map-marker-alt me-2 text-primary"></i> 123 Leadership Ave, City, Country</li>
+                        <li class="mb-2"><i class="fas fa-phone me-2 text-primary"></i> +1 (234) 567-8900</li>
+                        <li class="mb-2"><i class="fas fa-envelope me-2 text-primary"></i> info@importanceleadership.org</li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-4">
+                    <h5 class="fw-bold mb-4">Newsletter</h5>
+                    <p>Subscribe to our newsletter for updates and news.</p>
+                    <form class="mb-3" method="POST" action="subscribe.php">
+                        <div class="input-group">
+                            <input 
+                type="email" 
+                class="form-control" 
+                name="email" 
+                placeholder="Your Email" 
+                aria-label="Your Email"
+                required
+            >
+                <button class="btn btn-primary" type="submit">Subscribe</button>
+                        </div>
+                                  <!-- CSRF protection (recommended) -->
+        <input type="hidden" name="csrf_token" value="<?php echo generateCsrfToken(); ?>">
+               
+                    </form>
+                    <div class="subscription-message mt-2" style="display: none;"></div>
+             </div>
             </div>
-
-            <!-- Contact Info -->
-            <div class="col-lg-4 col-md-6 mb-4">
-                <h5 class="fw-bold mb-3">Get in Touch</h5>
-                <p class="text-white-50">We'd love to hear from you.</p>
-                <p class="text-white-50 mb-2"><i class="fas fa-phone-alt me-2"></i><a href="tel:+16037150801" class="text-white">+1 (603) 715-0801</a></p>
-                <p class="text-white-50"><i class="fas fa-envelope me-2"></i><a href="mailto:info@importanceleadership.com" class="text-white">info@importanceleadership.com</a></p>
-
-                <div class="social-media mt-4">
-                    <a href="https://www.instagram.com/importance_leadership_" class="btn btn-outline-light btn-sm rounded-circle me-2" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                    <a href="https://www.facebook.com/share/12J1CX4vLQ8/?mibextid=wwXIfr" class="btn btn-outline-light btn-sm rounded-circle me-2" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-                    <a href="https://www.linkedin.com/company/importance-leadership/posts" class="btn btn-outline-light btn-sm rounded-circle me-2" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-                    <a href="https://www.youtube.com/@importanceleadership" class="btn btn-outline-light btn-sm rounded-circle" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+            <hr class="my-4 bg-secondary">
+            <div class="row">
+                <div class="col-md-6 text-center text-md-center">
+                    <p class="mb-0">&copy; 2025 Importance Leadership. All rights reserved.</p>
+                </div>
+                <div class="col-md-6 text-center text-md-end">
+                    <a href="#" class="text-white text-decoration-none me-3">Privacy Policy</a>
+                    <a href="#" class="text-white text-decoration-none">Terms of Service</a>
                 </div>
             </div>
-
-            <!-- Newsletter -->
-            <div class="col-lg-4 col-md-12">
-                <h5 class="fw-bold mb-3">Subscribe to Our Newsletter</h5>
-                <p class="text-white-50">Stay updated with our latest news and updates.</p>
-                <form id="newsletter-form" action="subscribe.php" method="post" class="needs-validation" novalidate>
-                    <div class="input-group mb-3">
-                        <input type="email" name="email" class="form-control" placeholder="Enter your email" required>
-                        <button class="btn btn-success" type="submit"><i class="fas fa-paper-plane"></i></button>
-                        <div class="invalid-feedback text-white">Please enter a valid email.</div>
-                    </div>
-                    <div id="response-message" class="mt-2 text-white-50"></div>
-                </form>
-            </div>
         </div>
-
-        
-    </div>
-</footer>
-
-<script>
-    document.getElementById('currentYear').textContent = new Date().getFullYear();
-</script>
-
+    </footer>
     `;
-
     // Inject footer if not already present
     if (!document.querySelector("footer")) {
         document.body.insertAdjacentHTML("beforeend", footerHTML);
