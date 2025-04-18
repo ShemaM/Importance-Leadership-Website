@@ -4,7 +4,7 @@ require_once 'db_connect.php';
 
 // Redirect if already logged in
 if (!empty($_SESSION['admin_auth_token'])) {
-    header("Location: dashboard.php");
+    header("Location: clientSide.php");
     exit();
 }
 
@@ -32,7 +32,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $pdo->prepare("UPDATE admin_users SET last_login = NOW() WHERE id = ?")
                 ->execute([$admin['id']]);
             
-            header("Location: dashboard.php");
+            header("Location: clientSide.php");
             exit();
         } else {
             $error = "Invalid credentials";
@@ -43,6 +43,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
 }
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>

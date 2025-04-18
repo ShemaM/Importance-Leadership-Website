@@ -66,7 +66,10 @@ final class FileStore implements StoreInterface
         }
 
         throw new InvalidPathException(
-            \sprintf('Unable to read any of the environment file(s) at [%s].', \implode(', ', $this->filePaths))
+            sprintf(
+            'Unable to read any of the environment file(s) at [%s]. Please check the file paths and ensure they exist and are readable.',
+            implode(', ', $this->filePaths)
+            )
         );
     }
 }

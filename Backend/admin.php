@@ -1,8 +1,12 @@
 <?php 
 // Start secure session
 session_start();
-requireAuth(); // Ensure user is authenticated
 require_once 'db_connect.php'; // Database connection
+
+// Authentication check
+// Removed duplicate function definition
+
+requireAuth(); // Ensure user is authenticated
 // Error reporting (disable in production)
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
@@ -390,279 +394,8 @@ SELECT
     <!-- DataTables CSS -->
     <link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/dataTables.bootstrap5.min.css">
     
-    <style>
-    /* Base Variables */
-    :root {
-        --primary-color: #4361ee;
-        --secondary-color: #3f37c9;
-        --success-color: #28a745;
-        --warning-color: #ffc107;
-        --danger-color: #dc3545;
-        --dark-color: #1d1f21;
-        --light-color: #f4f5f7;
-        --text-color: #333333;
-        --text-muted: #6c757d;
-        --sidebar-width: 240px;
-        --header-height: 60px;
-        --transition: all 0.3s ease;
-        --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.1);
-        --shadow-md: 0 4px 8px rgba(0, 0, 0, 0.15);
-        --sidebar-bg: var(--dark-color);
-        --sidebar-text: rgba(255, 255, 255, 0.8);
-        --sidebar-active: rgba(255, 255, 255, 0.2);
-    }
+    
 
-    /* Base Styles */
-    body {
-        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-        background-color: var(--light-color);
-        color: var(--text-color);
-        overflow-x: hidden;
-    }
-
-    /* Stat Cards */
-    .stat-card {
-        background: #ffffff;
-        border-radius: 8px;
-        padding: 20px;
-        box-shadow: var(--shadow-sm);
-        transition: var(--transition);
-        height: 100%;
-        margin-bottom: 20px;
-    }
-
-    .stat-card:hover {
-        transform: translateY(-5px);
-        box-shadow: var(--shadow-md);
-    }
-
-    .stat-card .value {
-        font-size: 2rem;
-        font-weight: 700;
-        margin: 10px 0;
-        color: var(--text-color);
-    }
-
-    .stat-card .label {
-        color: var(--text-muted);
-        font-size: 0.9rem;
-        text-transform: uppercase;
-        letter-spacing: 0.5px;
-    }
-
-    .trend {
-        font-size: 0.85rem;
-        display: flex;
-        align-items: center;
-    }
-
-    .trend i {
-        margin-right: 5px;
-    }
-
-    .trend.up {
-        color: var(--success-color);
-    }
-
-    .trend.down {
-        color: var(--danger-color);
-    }
-
-    /* Badges */
-    .badge {
-        font-weight: 600;
-        padding: 5px 10px;
-        border-radius: 4px;
-        font-size: 0.75rem;
-        text-transform: uppercase;
-    }
-
-    .badge-active {
-        background-color: var(--success-color);
-        color: white;
-    }
-
-    .badge-pending {
-        background-color: var(--warning-color);
-        color: var(--text-color);
-    }
-
-    .badge-inactive {
-        background-color: var(--text-muted);
-        color: white;
-    }
-
-    /* Sidebar */
-    .sidebar {
-        background-color:rgb(5, 37, 69);
-        color: #fff;
-        height: 100vh;
-        padding: 15px;
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 250px;
-        transform: translateX(0);
-        transition: transform 0.3s ease-in-out;
-        z-index: 1000;
-    }
-
-    .sidebar.hidden {
-        transform: translateX(-100%);
-    }
-
-    .sidebar-brand img {
-        max-width: 100%;
-        height: auto;
-        margin-bottom: 20px;
-    }
-
-    .nav-link {
-        color:#ffff;
-        font-size: 17px;
-        font-weight:bold;
-        border-radius: 5px;
-        padding: 10px 15px;
-        display: flex;
-        align-items: center;
-        text-decoration: none;
-        transition: background-color 0.3s, color 0.3s;
-    }
-
-    .nav-link i {
-        margin-right: 10px;
-    }
-
-    .nav-link:hover {
-        background-color: #495057;
-        color: #fff;
-    }
-
-    .nav-link.active {
-        background-color: #007bff;
-        color: #fff;
-    }
-
-    .nav-item {
-        margin-bottom: 10px;
-    }
-
-    .sidebar ul {
-        padding-left: 0;
-        list-style: none;
-    }
-
-    .toggle-btn {
-        position: fixed;
-        top: 15px;
-        left: 15px;
-        background-color: #007bff;
-        color: #fff;
-        border: none;
-        padding: 10px 15px;
-        cursor: pointer;
-        z-index: 1100;
-        border-radius: 5px;
-    }
-
-    @media (max-width: 768px) {
-        .sidebar {
-            width: 200px;
-        }
-
-        .toggle-btn {
-            top: 10px;
-            left: 10px;
-        }
-    }
-
-
-    .nav-link:hover,
-    .nav-link.active {
-        color: white;
-        background: var(--sidebar-active);
-        text-decoration: none;
-    }
-
-    .nav-link i {
-        margin-right: 10px;
-        width: 20px;
-        text-align: center;
-        font-size: 1.1rem;
-    }
-
-    /* Main Content */
-    .main-content {
-        margin-left: var(--sidebar-width);
-        min-height: 100vh;
-        padding: 20px;
-        transition: var(--transition);
-    }
-
-    /* Header */
-    .header {
-        position: sticky;
-        top: 0;
-        background: white;
-        padding: 15px 20px;
-        box-shadow: var(--shadow-sm);
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        z-index: 1040;
-        margin: -20px -20px 20px -20px;
-    }
-
-    .admin-avatar {
-        width: 40px;
-        height: 40px;
-        border-radius: 50%;
-        object-fit: cover;
-        border: 2px solid var(--primary-color);
-    }
-
-    .menu-toggle {
-        display: none;
-        cursor: pointer;
-        font-size: 1.5rem;
-        color: var(--text-color);
-    }
-
-    /* Mobile Styles */
-    @media (max-width: 768px) {
-        .sidebar {
-            transform: translateX(-100%);
-        }
-
-        .sidebar.active {
-            transform: translateX(0);
-        }
-
-        .main-content {
-            margin-left: 0;
-            padding-top: calc(var(--header-height) + 20px);
-        }
-
-        .header {
-            position: fixed;
-            width: 100%;
-        }
-
-        .menu-toggle {
-            display: inline-block;
-        }
-    }
-
-    /* Animation */
-    @keyframes fadeIn {
-        from { opacity: 0; transform: translateY(10px); }
-        to { opacity: 1; transform: translateY(0); }
-    }
-
-    .animate-fade {
-        animation: fadeIn 0.4s ease forwards;
-    }
-</style>
 <script>
     document.addEventListener('DOMContentLoaded', function () {
         const sidebar = document.querySelector('.sidebar');
@@ -680,7 +413,7 @@ SELECT
     <!-- Sidebar -->
     <div class="sidebar">
         <div class="sidebar-brand">
-            <img src="../image/website-logo.png" alt="<?= htmlspecialchars(defined('SITE_NAME') ? SITE_NAME : 'Default Site Name') ?> Logo">
+            <img src="../image/website-logo.png" alt="<?= htmlspecialchars(SITE_NAME) ?> Logo">
         </div>
         <ul class="nav flex-column">
             <li class="nav-item">
@@ -771,11 +504,12 @@ SELECT
                 <div class="dropdown">
                     <a href="#" class="d-flex align-items-center text-decoration-none dropdown-toggle" id="userDropdown" data-bs-toggle="dropdown">
                         <img src="image/shema.png" alt="Admin" class="admin-avatar me-2"> 
-                        <span><?= htmlspecialchars($_SESSION['admin_username'] ?? 'Admin') ?></span>
+                        <span><?= htmlspecialchars($_SESSION['admin_username'] ?? 'Admin', ENT_QUOTES, 'UTF-8') ?></span>
                     </a>
                     <ul class="dropdown-menu dropdown-menu-end">
                         <li><a class="dropdown-item" href="profile.php"><i class="fas fa-user me-2"></i> Profile</a></li>
-                        <li><a class="dropdown-item" href="settings.php"><i class="fas fa-cog me-2"></i> Settings</a></li>
+                        <li><a class="dropdown-item" href="settings.php"><i class="fas fa-cog me-2"></i> Settings</a></li> 
+
                         <li><hr class="dropdown-divider"></li>
                         <li><a class="dropdown-item" href="?logout=1"><i class="fas fa-sign-out-alt me-2"></i> Logout</a></li>
                     </ul>
@@ -874,7 +608,7 @@ SELECT
                                             <td><?= htmlspecialchars($program['program']) ?></td>
                                             <td><?= number_format($program['participants']) ?></td>
                                             <td><?= $program['duration_days'] ?> days</td>
-                                            <td>
+                                            <td></td></td>
                                                 <span class="badge <?= $program['status'] == 'active' ? 'badge-active' : ($program['status'] == 'pending' ? 'badge-pending' : 'badge-inactive') ?>">
                                                     <?= ucfirst($program['status']) ?>
                                                 </span>
@@ -1118,108 +852,67 @@ SELECT
     <script src="https://cdn.datatables.net/1.13.6/js/dataTables.bootstrap5.min.js"></script>
     
     <script>
-        // Initialize DataTables
-        document.addEventListener('DOMContentLoaded', function() {
-            // Initialize DataTable for programs
+        $(document).ready(function() {
             $('#programsTable').DataTable({
                 responsive: true,
+                order: [[1, 'desc']],
                 pageLength: 5,
-                lengthMenu: [[5, 10, 25, 50, -1], [5, 10, 25, 50, "All"]],
-                order: [[3, 'desc']]
-            });
-            
-            // Program Participation Chart
-            const programCtx = document.createElement('canvas');
-            programCtx.id = 'programChart';
-            document.querySelector('#programsTable_wrapper').before(programCtx);
-            
-            const programData = {
-                labels: <?= json_encode(array_column($programStats, 'program')) ?>,
-                datasets: [{
-                    label: 'Participants',
-                    data: <?= json_encode(array_column($programStats, 'participants')) ?>,
-                    backgroundColor: [
-                        'rgba(40, 167, 69, 0.7)',
-                        'rgba(0, 123, 255, 0.7)',
-                        'rgba(220, 53, 69, 0.7)',
-                        'rgba(255, 193, 7, 0.7)',
-                        'rgba(23, 162, 184, 0.7)'
-                    ],
-                    borderColor: [
-                        'rgba(40, 167, 69, 1)',
-                        'rgba(0, 123, 255, 1)',
-                        'rgba(220, 53, 69, 1)',
-                        'rgba(255, 193, 7, 1)',
-                        'rgba(23, 162, 184, 1)'
-                    ],
-                    borderWidth: 1
-                }]
-            };
-            
-            new Chart(programCtx, {
-                type: 'bar',
-                data: programData,
-                options: {
-                    responsive: true,
-                    plugins: {
-                        legend: { display: false },
-                        tooltip: {
-                            callbacks: {
-                                label: function(context) {
-                                    return context.parsed.y.toLocaleString();
-                                }
-                            }
-                        }
-                    },
-                    scales: {
-                        y: {
-                            beginAtZero: true,
-                            ticks: {
-                                callback: function(value) {
-                                    return value.toLocaleString();
-                                }
-                            }
-                        }
-                    }
-                }
-            });
-
-            // Mentorship Stats Chart
-            const mentorshipCtx = document.createElement('canvas');
-            mentorshipCtx.id = 'mentorshipChart';
-            document.querySelector('.card-body').appendChild(mentorshipCtx);
-            
-            new Chart(mentorshipCtx, {
-                type: 'doughnut',
-                data: {
-                    labels: ['Active Mentors', 'Available Mentors', 'Mentees'],
-                    datasets: [{
-                        data: [
-                            <?= $mentorshipStats['active_mentors'] ?>,
-                            <?= $mentorshipStats['total_mentors'] - $mentorshipStats['active_mentors'] ?>,
-                            <?= $mentorshipStats['total_mentees'] ?>
-                        ],
-                        backgroundColor: [
-                            'rgba(40, 167, 69, 0.7)',
-                            'rgba(255, 193, 7, 0.7)',
-                            'rgba(16, 62, 108, 0.7)'
-                        ],
-                        borderColor: [
-                            'rgba(40, 167, 69, 1)',
-                            'rgba(255, 193, 7, 1)',
-                            'rgba(16, 62, 108, 1)'
-                        ],
-                        borderWidth: 1
-                    }]
-                },
-                options: {
-                    responsive: true,
-                    plugins: {
-                        legend: { position: 'bottom' }
-                    }
-                }
+                lengthChange: false,
+                searching: false,
+                info: false
             });
         });
-    </script>
+    document.addEventListener('DOMContentLoaded', function() {
+    const sidebar = document.querySelector('.sidebar');
+    const menuToggle = document.createElement('div');
+    menuToggle.className = 'menu-toggle';
+    menuToggle.innerHTML = '<i class="fas fa-bars"></i>';
+    document.body.appendChild(menuToggle);
+    
+    // Toggle sidebar
+    menuToggle.addEventListener('click', function(e) {
+        e.stopPropagation();
+        document.body.classList.toggle('sidebar-open');
+        sidebar.classList.toggle('active');
+    });
+    
+    // Close sidebar when clicking outside
+    document.addEventListener('click', function(e) {
+        if (!sidebar.contains(e.target) && e.target !== menuToggle) {
+            document.body.classList.remove('sidebar-open');
+            sidebar.classList.remove('active');
+        }
+    });
+    
+    // Close sidebar when a nav link is clicked (on mobile)
+    document.querySelectorAll('.nav-link').forEach(link => {
+        link.addEventListener('click', function() {
+            if (window.innerWidth < 992) {
+                document.body.classList.remove('sidebar-open');
+                sidebar.classList.remove('active');
+            }
+        });
+    });
+    
+    // Initialize DataTables with responsive settings
+    $('#programsTable').DataTable({
+        responsive: {
+            details: {
+                display: $.fn.dataTable.Responsive.display.modal({
+                    header: function(row) {
+                        return 'Program Details';
+                    }
+                }),
+                renderer: $.fn.dataTable.Responsive.renderer.tableAll({
+                    tableClass: 'table'
+                })
+            }
+        },
+        pageLength: 5,
+        lengthMenu: [[5, 10, 25, 50, -1], [5, 10, 25, 50, "All"]],
+        order: [[3, 'desc']]
+    });
+});
+</script>
 </body>
 </html>

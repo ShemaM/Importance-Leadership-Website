@@ -20,7 +20,7 @@ if ($admin && password_verify($password, $admin['password_hash'])) {
     $pdo->prepare("UPDATE admin_users SET last_login = NOW() WHERE id = ?")
         ->execute([$admin['id']]);
     
-    header("Location: admin.php");
+    header("Location: clientSide.php");
     exit();
 }
 // Process login form
@@ -47,7 +47,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $pdo->prepare("UPDATE admin_users SET last_login = NOW() WHERE id = ?")
                 ->execute([$admin['id']]);
             
-            header("Location: admin.php");
+            header("Location: clientSide.php");
             exit();
         } else {
             $error = "Invalid credentials";

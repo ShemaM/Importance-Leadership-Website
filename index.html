@@ -25,6 +25,265 @@
     <link rel="stylesheet" href="styles/index.css">
     
     
+    <style>
+        /* Base Styles */
+        .hero-section {
+            position: relative;
+            height: 100vh;
+            min-height: 650px;
+            display: flex;
+            align-items: center;
+            overflow: hidden;
+            color: white;
+        }
+        
+        /* Background Styles */
+        .hero-background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('image/website-logo.png');
+            background-size: cover;
+            background-position: center;
+            z-index: -2;
+        }
+        
+        .bg-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.4);
+            z-index: -1;
+        }
+        
+        /* Wave Animation */
+        .wave-animation {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            overflow: hidden;
+            line-height: 0;
+        }
+        
+        .wave-animation svg {
+            position: relative;
+            display: block;
+            width: calc(100% + 1.3px);
+            height: 150px;
+        }
+        
+        .wave-shape {
+            fill: #ffffff;
+            animation: waveAnimation 8s linear infinite;
+        }
+        
+        .wave-shape:nth-child(2) {
+            animation-delay: -2s;
+            animation-duration: 10s;
+        }
+        
+        .wave-shape:nth-child(3) {
+            animation-delay: -4s;
+            animation-duration: 12s;
+        }
+        
+        @keyframes waveAnimation {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+        
+        /* Content Styles */
+        .hero-content {
+            width: 100%;
+            padding: 0 2rem;
+            z-index: 1;
+        }
+        
+        .hero-text {
+            max-width: 650px;
+        }
+        
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            background: linear-gradient(90deg, rgba(0,0,0,0.3), transparent);
+            padding: 0.5rem 1.25rem;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 1.5rem;
+        }
+        
+        .hero-badge i {
+            margin-right: 0.5rem;
+            font-size: 0.9rem;
+        }
+        
+        .hero-title {
+            font-size: 3.5rem;
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: 1.5rem;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+            letter-spacing: -1px;
+        }
+        
+        .hero-description {
+            font-size: 1.25rem;
+            line-height: 1.6;
+            margin-bottom: 2.5rem;
+            opacity: 0.9;
+            max-width: 85%;
+        }
+        
+        /* Button Styles */
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+        
+        .btn-primary, .btn-secondary {
+            display: inline-flex;
+            align-items: center;
+            padding: 0.9rem 2rem;
+            border-radius: 50px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .btn-primary {
+            background: linear-gradient(135deg, #4361ee, #f72585);
+            color: white;
+            box-shadow: 0 4px 15px rgba(67, 97, 238, 0.4);
+        }
+        
+        .btn-secondary {
+            background: transparent;
+            color: white;
+            border: 2px solid rgba(255,255,255,0.3);
+            backdrop-filter: blur(5px);
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(67, 97, 238, 0.6);
+        }
+        
+        .btn-secondary:hover {
+            background: rgba(255,255,255,0.1);
+            border-color: rgba(255,255,255,0.5);
+        }
+        
+        .btn-text {
+            margin-right: 0.75rem;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .btn-primary i, .btn-secondary i {
+            font-size: 0.9rem;
+            position: relative;
+            z-index: 1;
+        }
+        
+        /* Responsive Styles */
+        @media (max-width: 992px) {
+            .hero-title {
+                font-size: 3rem;
+            }
+            
+            .hero-description {
+                font-size: 1.1rem;
+                max-width: 100%;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .hero-section {
+                min-height: 600px;
+            }
+            
+            .hero-title {
+                font-size: 2.5rem;
+            }
+            
+            .hero-badge {
+                font-size: 0.75rem;
+            }
+            
+            .hero-buttons {
+                flex-direction: column;
+                gap: 0.75rem;
+            }
+            
+            .btn-primary, .btn-secondary {
+                padding: 0.8rem 1.5rem;
+                justify-content: center;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .hero-section {
+                min-height: 550px;
+            }
+            
+            .hero-title {
+                font-size: 2rem;
+            }
+            
+            .hero-description {
+                font-size: 1rem;
+            }
+            
+            .hero-content {
+                padding: 0 1.5rem;
+            }
+        }
+        
+        /* Animation */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .hero-text {
+            animation: fadeInUp 0.8s ease-out forwards;
+        }
+        
+        .hero-badge {
+            animation: fadeInUp 0.8s ease-out 0.2s both;
+        }
+        
+        .hero-title {
+            animation: fadeInUp 0.8s ease-out 0.4s both;
+        }
+        
+        .hero-description {
+            animation: fadeInUp 0.8s ease-out 0.6s both;
+        }
+        
+        .hero-buttons {
+            animation: fadeInUp 0.8s ease-out 0.8s both;
+        }
+        </style>
+
 </head>
 
 <body>
@@ -67,21 +326,48 @@
     </header>
 
     <!-- Hero Section -->
-    <section class="hero-section d-flex align-items-center justify-content-center text-center" style="perspective: 1500px; background-color: #103e6c;">
-        <div class="container">
-            <h1 class="styled-text">
-                <span class="blue-text "> Importance  <span class="black-text"> Leadership</span>
-                <blockquote class="p">Empowering Leaders, Inspiring Change</blockquote>
-            </h1>
-            <p class="main-p mt-3">
-                Join a community dedicated to empowering leaders, fostering innovation, and creating meaningful impact.
-            </p>
-            <div class="mt-4">
-                <a href="who-we-are.html" class="btn btn-warning btn-lg me-3 hover-effect">Get To Know Us</a>
-                <a href="join-us.html" class="btn btn-warning btn-lg hover-effect">Get Involved</a>
+    <section class="hero-section">
+        <!-- Background w</section>ith overlay and animated wave -->
+        <div class="hero-background">
+            <div class="bg-overlay"></div>
+            <div class="wave-animation">
+                <svg viewBox="0 0 1200 120" preserveAspectRatio="none">
+                    <path d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z" opacity=".25" class="wave-shape"></path>
+                    <path d="M0,0V15.81C13,36.92,27.64,56.86,47.69,72.05,99.41,111.27,165,111,224.58,91.58c31.15-10.15,60.09-26.07,89.67-39.8,40.92-19,84.73-46,130.83-49.67,36.26-2.85,70.9,9.42,98.6,31.56,31.77,25.39,62.32,62,103.63,73,40.44,10.79,81.35-6.69,119.13-24.28s75.16-39,116.92-43.05c59.73-5.85,113.28,22.88,168.9,38.84,30.2,8.66,59,6.17,87.09-7.5,22.43-10.89,48-26.93,60.65-49.24V0Z" opacity=".5" class="wave-shape"></path>
+                    <path d="M0,0V5.63C149.93,59,314.09,71.32,475.83,42.57c43-7.64,84.23-20.12,127.61-26.46,59-8.63,112.48,12.24,165.56,35.4C827.93,77.22,886,95.24,951.2,90c86.53-7,172.46-45.71,248.8-84.81V0Z" class="wave-shape"></path>
+                </svg>
+            </div>
+        </div>
+    
+        <!-- Content -->
+        <div class="hero-content container">
+            <div class="hero-text">
+               
+                
+                <h1 class="h1 fw-bolder h-100">IMPORTANCE LEADERSHIP</h1>
+                <span class="hero-badge">
+                    <i class="fas fa-hand-holding-heart"></i>Empowering Leaders, Inspiring Excellence
+                </span>
+
+                <p class="hero-description">
+                    We're a fully dedicated corporate service agency collaborating with brands all over the world.
+                </p>
+                
+                <div class="hero-buttons">
+                    <a href="who-we-are.html" class="btn-primary">
+                        <span class="btn-text">Explore</span>
+                        <i class="fas fa-play"></i>
+                    </a>
+                    
+                    <a href="contact-us.html" class="btn-secondary">
+                        <span class="btn-text">Contact us</span>
+                        <i class="fas fa-envelope"></i>
+                    </a>
+                </div>
             </div>
         </div>
     </section>
+    
    
 
     <!-- Programs Section -->

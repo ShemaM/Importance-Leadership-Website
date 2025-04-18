@@ -32,7 +32,7 @@ try {
 
 // Check if user is logged in
 if (!isset($_SESSION['user_id'])) {
-    header("Location: userDashboard.php");
+    header("Location: clientSide.php");
     exit();
 }
 
