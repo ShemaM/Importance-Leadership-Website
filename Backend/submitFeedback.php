@@ -15,6 +15,9 @@ if ($conn->connect_error) {
 }
 
 // Check if form is submitted
+// After processing the form...
+echo json_encode(['success' => true]);
+
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $name = $conn->real_escape_string($_POST['name'] ?? '');
     $email = $conn->real_escape_string($_POST['email'] ?? '');
