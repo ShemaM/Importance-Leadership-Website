@@ -6,89 +6,279 @@
     <meta name="description" content="Impact of Importance Leadership on youth empowerment and community development.">
     <meta name="keywords" content="Leadership, Impact, Community, Mentorship, Youth Empowerment">
     <meta name="author" content="Importance Leadership">
-    <title>Impact | Importnace Leadership</title>
+    <title>Impact | Importance Leadership</title>
     
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="image/logo.jpg">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="styles/impact.css">
-   
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- AOS Animation -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary: #0b1f3a;
+            --secondary: #f5a623;
+            --accent: #7cade9;
+            --light: #f8f9fa;
+            --dark: #212529;
+            --transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            overflow-x: hidden;
+            scroll-behavior: smooth;
+            background-color: var(--light);
+        }
+        
+        h1, h2, h3, h4, h5 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+        }
+        
+        /* Background Shapes */
+        .bg-shape {
+            position: absolute;
+            z-index: -1;
+            opacity: 0.1;
+            animation: float 6s ease-in-out infinite;
+        }
+        
+        .bg-shape-1 {
+            top: 10%;
+            left: 5%;
+            width: 200px;
+            height: 200px;
+            fill: var(--primary);
+            animation-delay: 0s;
+        }
+        
+        .bg-shape-2 {
+            bottom: 15%;
+            right: 8%;
+            width: 150px;
+            height: 150px;
+            fill: var(--accent);
+            animation-delay: 1s;
+        }
+        
+        .bg-shape-3 {
+            top: 40%;
+            right: 15%;
+            width: 100px;
+            height: 100px;
+            fill: var(--primary);
+            animation-delay: 2s;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+        }
+        
+        /* Hero Section */
+        .impact-hero {
+            position: relative;
+            min-height: 60vh;
+            background: linear-gradient(rgba(11, 31, 58, 0.8), rgba(11, 31, 58, 0.9)), url('image/impact-hero.jpg') no-repeat center center/cover;
+            display: flex;
+            align-items: center;
+            overflow: hidden;
+        }
+        
+        .impact-hero-content {
+            z-index: 3;
+            position: relative;
+        }
+        
+        /* Impact Cards */
+        .impact-card {
+            transition: var(--transition);
+            border: none;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 10px 20px rgba(11, 31, 58, 0.1);
+            height: 100%;
+        }
+        
+        .impact-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(11, 31, 58, 0.2);
+        }
+        
+        .impact-card .card-img-top {
+            transition: var(--transition);
+            height: 200px;
+            object-fit: cover;
+        }
+        
+        .impact-card:hover .card-img-top {
+            transform: scale(1.05);
+        }
+        
+        .impact-number {
+            font-size: 3.5rem;
+            font-weight: 700;
+            color: var(--primary);
+            position: relative;
+            display: inline-block;
+        }
+        
+        .impact-number::after {
+            content: '+';
+            position: absolute;
+            right: -20px;
+            top: 0;
+            color: var(--secondary);
+        }
+        
+        /* Initiative Section */
+        .initiative-section {
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            position: relative;
+            overflow: hidden;
+        }
+        
+        /* Feedback Section */
+        .feedback-section {
+            position: relative;
+            overflow: hidden;
+        }
+        
+        /* Wave Animation */
+        .wave-animation {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 100px;
+            background: url('data:image/svg+xml;utf8,<svg viewBox="0 0 1200 120" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none"><path d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z" fill="%230b1f3a" opacity=".25"/><path d="M0,0V15.81C13,36.92,27.64,56.86,47.69,72.05,99.41,111.27,165,111,224.58,91.58c31.15-10.15,60.09-26.07,89.67-39.8,40.92-19,84.73-46,130.83-49.67,36.26-2.85,70.9,9.42,98.6,31.56,31.77,25.39,62.32,62,103.63,73,40.44,10.79,81.35-6.69,119.13-24.28s75.16-39,116.92-43.05c59.73-5.85,113.28,22.88,168.9,38.84,30.2,8.66,59,6.17,87.09-7.5,22.43-10.89,48-26.93,60.65-49.24V0Z" fill="%230b1f3a" opacity=".5"/><path d="M0,0V5.63C149.93,59,314.09,71.32,475.83,42.57c43-7.64,84.23-20.12,127.61-26.46,59-8.63,112.48,12.24,165.56,35.4C827.93,77.22,886,95.24,951.2,90c86.53-7,172.46-45.71,248.8-84.81V0Z" fill="%230b1f3a"/></svg>');
+            background-size: cover;
+            animation: wave 15s linear infinite;
+            z-index: 1;
+        }
+        
+        @keyframes wave {
+            0% { background-position-x: 0; }
+            100% { background-position-x: 1200px; }
+        }
+        
+        /* Responsive Adjustments */
+        @media (max-width: 992px) {
+            .impact-number {
+                font-size: 2.8rem;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .impact-hero {
+                min-height: 50vh;
+            }
+            
+            .impact-card .card-img-top {
+                height: 150px;
+            }
+        }
+    </style>
 </head>
 <body>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="We believe leadership is the key to inspiring action, driving change, and unlocking potential.">
-    <meta name="keywords" content="Leadership, Impact, Community, Mentorship, Youth Empowerment">
-    <meta name="author" content="Importance Leadership">
-    
-    <title>Impact</title>
-    
-    <!-- Favicon -->
-    <link rel="icon" type="image/png" href="image/logo.jpg">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="styles/impact.css">
-</head>
-<body>
+    <!-- Background Shapes -->
+    <svg class="bg-shape bg-shape-1" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+        <path d="M45.4,-59.4C58.6,-48.9,68.7,-33.5,72.6,-16.6C76.5,0.3,74.2,18.7,64.2,33.5C54.2,48.3,36.4,59.6,16.8,67.3C-2.9,75,-25.4,79.2,-42.1,70.1C-58.8,61,-69.7,38.7,-72.9,15.8C-76.1,-7.1,-71.6,-30.6,-58.1,-45.3C-44.6,-60,-22.3,-65.9,-1.6,-64.4C19.1,-62.9,38.2,-53.9,45.4,-59.4Z" transform="translate(100 100)" />
+    </svg>
 
-     <!-- Header -->
-     <header id="header-container"></header>
-     <script src="loadHeader.js"></script>
+    <svg class="bg-shape bg-shape-2" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+        <path d="M38.3,-54.1C50.3,-44.3,61.4,-33.7,65.3,-20.3C69.2,-6.9,65.9,9.3,58.5,24.3C51.1,39.3,39.6,53.1,24.3,61.9C9,70.7,-10.1,74.5,-25.1,67.7C-40.1,60.9,-51,43.5,-58.2,25.2C-65.4,6.9,-68.9,-12.3,-62.8,-28.1C-56.7,-43.9,-40.9,-56.3,-25.8,-64.9C-10.7,-73.5,3.7,-78.3,18.1,-75.1C32.5,-71.9,46.8,-60.8,38.3,-54.1Z" transform="translate(100 100)" />
+    </svg>
 
-   
+    <svg class="bg-shape bg-shape-3" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+        <path d="M42.2,-58.6C55.3,-52.7,66.9,-41.8,70.2,-28.4C73.5,-15,68.5,0.9,62.1,16.2C55.7,31.5,47.9,46.2,35.3,55.3C22.7,64.4,5.3,67.9,-9.6,64.9C-24.5,61.8,-36.9,52.2,-47.1,40.5C-57.3,28.8,-65.2,15,-67.5,-0.8C-69.8,-16.6,-66.5,-33.2,-56.9,-45.4C-47.3,-57.6,-31.4,-65.4,-15.8,-70.2C-0.2,-75,15.2,-76.8,42.2,-58.6Z" transform="translate(100 100)" />
+    </svg>
 
-    <!-- Impact Section -->
-    <section class="impact-section">
+    <!-- Load Header -->
+    <div id="header-container"></div>
+    <script src="loadHeader.js"></script>
+
+    <!-- Hero Section -->
+    <section class="impact-hero">
+        <div class="container impact-hero-content text-center text-white" data-aos="fade-up">
+            <h1 class="display-4 fw-bold mb-4">Our Impact</h1>
+            <p class="lead mb-5">Transforming lives through leadership, mentorship, and community empowerment</p>
+            <a href="#impact-numbers" class="btn btn-gradient btn-lg px-4 py-3 fw-bold fs-15" style="margin-bottom: 50px; color:white; ">
+                <i class="fas fa-chart-line me-2"></i> See Our Results
+            </a>
+        </div>
+        <div class="wave-animation"></div>
+    </section>
+
+    <!-- Impact Numbers Section -->
+    <section class="py-6" id="impact-numbers" style="background-color: #043769;">
         <div class="container">
-            <h2 class="impact-heading text-uppercase text-dark">Our Impact</h2>
-            <p class="impact-description text-dark">Leadership is the cornerstone of progress—the spark that ignites action, the force that drives meaningful change, and the key that unlocks boundless potential. By empowering leaders, we create a ripple effect of innovation, resilience, and hope, transforming challenges into opportunities and dreams into reality.</p>
-            <div class="row row-cols-1 row-cols-lg-4 row-cols-md-2 text-center g-4">
-                <!-- Counter Item -->
-                <div class="col">
-                    <div class="impact-card shadow-lg">
-                        <span class="alt-font fw-bold text-primary fs-5">Youth Empowered</span>
-                        <hr class="divider bg-primary">
-                        <h2 class="fw-bold text-dark display-4">2,500+</h2>
-                        <p class="text-secondary">Opportunities for future leaders</p>
+            <div class="text-center mb-5" data-aos="fade-up">
+                <h2 class="section-title text-black">By The Numbers</h2>
+                <p class="lead text-white">Leadership is the cornerstone of progress—the spark that ignites action, the force that drives meaningful change, and the key that unlocks boundless potential.</p>
+            </div>
+            
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="100">
+                    <div class="impact-card p-4 text-center h-100 bg-light">
+                        <div class="icon-wrapper bg-primary rounded-circle d-inline-flex align-items-center justify-content-center mb-4" style="width: 70px; height: 70px;">
+                            <i class="fas fa-users fa-2x text-white"></i>
+                        </div>
+                        <h3 class="impact-number">2500</h3>
+                        <h5 class="fw-bold text-primary">Youth Empowered</h5>
+                        <p class="text-muted">Opportunities for future leaders</p>
                     </div>
                 </div>
-                <!-- Counter Item -->
-                <div class="col">
-                    <div class="impact-card shadow-lg">
-                        <span class="alt-font fw-bold text-success fs-5">Mentors</span>
-                        <hr class="divider bg-success">
-                        <h2 class="fw-bold text-dark display-4">20+</h2>
-                        <p class="text-secondary">Guiding the next generation</p>
+                
+                <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="200">
+                    <div class="impact-card p-4 text-center h-100 bg-light">
+                        <div class="icon-wrapper bg-primary rounded-circle d-inline-flex align-items-center justify-content-center mb-4" style="width: 70px; height: 70px;">
+                        
+                            <i class="fas fa-user-tie fa-2x text-white"></i>
+                        </div>
+                        <h3 class="impact-number">20</h3>
+                        <h5 class="fw-bold text-primary">Mentors</h5>
+                        <p class="text-muted">Guiding the next generation</p>
                     </div>
                 </div>
-                <!-- Counter Item -->
-                <div class="col">
-                    <div class="impact-card shadow-lg">
-                        <span class="alt-font fw-bold text-warning fs-5">Workshops</span>
-                        <hr class="divider bg-warning">
-                        <h2 class="fw-bold text-dark display-4">13</h2>
-                        <p class="text-secondary">Inspiring change through training</p>
+                
+                <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="300">
+                    <div class="impact-card p-4 text-center h-100 bg-light">
+                        <div class="icon-wrapper bg-primary rounded-circle d-inline-flex align-items-center justify-content-center mb-4" style="width: 70px; height: 70px;">
+                        
+                           <i class="fas fa-chalkboard-teacher fa-2x text-white"></i>
+                        </div>
+                        <h3 class="impact-number">13</h3>
+                        <h5 class="fw-bold text-primary">Workshops</h5>
+                        <p class="text-muted">Inspiring change through training</p>
                     </div>
                 </div>
-                <!-- Counter Item -->
-                <div class="col">
-                    <div class="impact-card shadow-lg">
-                        <span class="alt-font fw-bold text-danger fs-5">Communities</span>
-                        <hr class="divider bg-danger">
-                        <h2 class="fw-bold text-dark display-4">14</h2>
-                        <p class="text-secondary">Transforming lives worldwide</p>
+                
+                <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="400">
+                    <div class="impact-card p-4 text-center h-100 bg-light">
+                        <div class="icon-wrapper bg-primary rounded-circle d-inline-flex align-items-center justify-content-center mb-4" style="width: 70px; height: 70px;">
+                        
+                          <i class="fas fa-globe-africa fa-2x text-white"></i>
+                        </div>
+                        <h3 class="impact-number">14</h3>
+                        <h5 class="fw-bold text-primary">Communities</h5>
+                        <p class="text-muted">Transforming lives worldwide</p>
                     </div>
                 </div>
             </div>
-            <div class="text-center mt-5">
-                <a href="join-us.html" class="btn btn-warning btn-lg px-4 py-2 shadow" style="font-size: 1.1rem; border-radius: 30px; text-transform: uppercase;">
+            
+            <div class="text-center mt-5" data-aos="fade-up">
+                <a href="join-us.html" class="btn btn-primary" style="margin-bottom: 50px; margin-top:30px;">
                     <i class="fas fa-hands-helping me-2"></i> Join Our Mission
                 </a>
             </div>
@@ -96,50 +286,51 @@
     </section>
 
     <!-- Success Stories Section -->
-    <section class="initiative-section">
+    <section class="py-6 initiative-section text-black" id="success-stories"
+    style="background: url('image/bg-impact.jpeg') no-repeat center center / cover; margin-top: -50px; padding-top: 50px; position: relative; overflow: hidden;">
+
+    <svg class="bg-shape" viewBox="0 0 1200 120" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+            <path d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z" fill="#7cade9" opacity=".25"/>
         <div class="container">
-            <h2 class="text-center fw-bold text-dark mb-4">Success Stories</h2>
-            <p class="text-center text-white mb-5">Explore how our programs have empowered young leaders and created lasting change in communities worldwide.</p>
+            <div class="text-center mb-5" data-aos="fade-up">
+                <h2 class="text-black mb-3">Success Stories</h2>
+                <p class="lead text-black">Explore how our programs have empowered young leaders and created lasting change</p>
+            </div>
+            
             <div class="row g-4">
-                <!-- Card 1 -->
-                <div class="col-md-4">
-                    <div class="impact-card shadow-lg">
-                        <img src="image/website-logo.png" alt="Eastern Congo Crisis Discussion" class="img-fluid rounded-3 mb-3">
-                        <span class="alt-font fw-bold text-uppercase text-primary fs-6 mb-2">Discussion</span>
-                        <h3 class="fw-bold text-dark mb-3">The Eastern Congo Crisis</h3>
-                        <p class="text-muted mb-4">Global youth collaborated to propose innovative solutions to the crisis.</p>
-                        <a href="easternCongoCrisis.html" class="btn btn-primary btn-lg w-100">Learn More</a>
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+                    <div class="impact-card h-100">
+                        <img src="image/easterncongocrisis.jpg" alt="Eastern Congo Crisis Discussion" class="card-img-top">
+                        <div class="card-body">
+                            <span class="badge bg-primary mb-2">Discussion</span>
+                            <h4 class="fw-bold">The Eastern Congo Crisis</h4>
+                            <p class="text-muted">Global youth collaborated to propose innovative solutions to the crisis.</p>
+                            <a href="easternCongoCrisis.html" class="btn btn-primary w-100">Learn More</a>
+                        </div>
                     </div>
                 </div>
-                <!-- Card 2 -->
-                <div class="col-md-4">
-                    <div class="impact-card shadow-lg">
-                        <img src="image/website-logo.png" alt="Leadership Conference Workshop" class="img-fluid rounded-3 mb-3">
-                        <span class="alt-font fw-bold text-uppercase text-success fs-6 mb-2">Workshop</span>
-                        <h3 class="fw-bold text-dark mb-3">Leadership Conference</h3>
-                        <p class="text-muted mb-4">Inspiring young leaders to take charge and create meaningful impact.</p>
-                        <a href="leadershipConference.html" class="btn btn-success btn-lg w-100">Learn More</a>
+                
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+                    <div class="impact-card h-100">
+                        <img src="image/website-logo.png" alt="Leadership Conference Workshop" class="card-img-top">
+                        <div class="card-body">
+                            <span class="badge bg-success mb-2">Workshop</span>
+                            <h4 class="fw-bold">Leadership Conference</h4>
+                            <p class="text-muted">Inspiring young leaders to take charge and create meaningful impact.</p>
+                            <a href="leadershipConference.html" class="btn btn-success w-100">Learn More</a>
+                        </div>
                     </div>
                 </div>
-
-                <div class="col-md-4">
-                    <div class="impact-card shadow-lg">
-                        <img src="image/website-logo.png" alt="Leadership Conference Workshop" class="img-fluid rounded-3 mb-3">
-                        <span class="alt-font fw-bold text-uppercase text-success fs-6 mb-2">Workshop</span>
-                        <h3 class="fw-bold text-dark mb-3">Emotional Intelligence</h3>
-                        <p class="text-muted mb-4">Talking about emotionajkhjsdhghsdggsdgdfg</p>
-                        <a href="EI.html" class="btn btn-success btn-lg w-100">Learn More</a>
-                    </div>
-                </div>
-
-                <!-- Card 3 -->
-                <div class="col-md-4">
-                    <div class="impact-card shadow-lg">
-                        <img src="image/website-logo.png" alt="Back to School Drive Event" class="img-fluid rounded-3 mb-3">
-                        <span class="alt-font fw-bold text-uppercase text-warning fs-6 mb-2">Give Back</span>
-                        <h3 class="fw-bold text-dark mb-3">Back To School Drive</h3>
-                        <p class="text-muted mb-4">Providing essential support to refugee orphan school children in Nairobi.</p>
-                        <a href="backToSchool.html" class="btn btn-warning btn-lg w-100">Learn More</a>
+                
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
+                    <div class="impact-card h-100">
+                        <img src="image/backToSchool.jpeg" alt="Back to School Drive Event" class="card-img-top">
+                        <div class="card-body">
+                            <span class="badge bg-warning mb-2">Give Back</span>
+                            <h4 class="fw-bold">Back To School Drive</h4>
+                            <p class="text-muted">Providing essential support to refugee orphan school children in Nairobi.</p>
+                            <a href="backToSchool.html" class="btn btn-warning w-100">Learn More</a>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -147,14 +338,17 @@
     </section>
 
     <!-- Feedback Section -->
-    <section class="feedback-section">
+    <section class="py-6 feedback-section bg-light">
         <div class="container">
-            <h2 class="text-center fw-bold mb-4 text-dark">We Value Your Feedback</h2>
-            <p class="text-center text-muted mb-3">Help us improve by sharing your thoughts and experiences with our programs.</p>
-            <div class="text-center mb-4">
-                <button class="btn btn-secondary btn-lg px-4 py-2 shadow-lg" id="toggleFeedbackForm" style="border-radius: 50px;">Give Feedback</button>
+            <div class="text-center mb-5" data-aos="fade-up">
+                <h2 class="text-primary">We Value Your Feedback</h2>
+                <p class="lead">Help us improve by sharing your thoughts and experiences</p>
+                <button class="btn btn-primary btn-lg px-4 py-2" id="toggleFeedbackForm">
+                    <i class="fas fa-comment-alt me-2"></i> Give Feedback
+                </button>
             </div>
-            <form action="submitFeedback.php" method="POST" class="shadow-lg p-4 rounded bg-white d-none" id="feedbackForm">
+            
+            <form action="submitFeedback.php" method="POST" class="impact-card p-4 mx-auto d-none" id="feedbackForm" style="max-width: 600px;" data-aos="fade-up">
                 <div class="mb-3">
                     <label for="name" class="form-label fw-bold">Your Name</label>
                     <input type="text" class="form-control" id="name" name="name" placeholder="Enter your name" required>
@@ -179,66 +373,72 @@
                     <textarea class="form-control" id="feedback" name="feedback" rows="5" placeholder="Share your thoughts..." required></textarea>
                 </div>
                 <div class="text-center">
-                    <button type="submit" class="btn btn-primary btn-lg px-5 py-2 shadow-lg" style="border-radius: 40px;">Submit Feedback</button>
+                    <button type="submit" class="btn btn-gradient px-5 py-2">
+                        <i class="fas fa-paper-plane me-2"></i> Submit Feedback
+                    </button>
                 </div>
             </form>
         </div>
     </section>
 
-    <script>
-        document.getElementById('toggleFeedbackForm').addEventListener('click', function () {
-            const feedbackForm = document.getElementById('feedbackForm');
-            feedbackForm.classList.toggle('d-none');
-        });
-    </script>
-    
-<script>
-    document.querySelector('form').addEventListener('submit', async function(e) {
-    e.preventDefault();
-    
-    const form = e.target;
-    const formData = new FormData(form);
-    const submitBtn = form.querySelector('button[type="submit"]');
-    const originalBtnText = submitBtn.textContent;
-    
-    try {
-        submitBtn.disabled = true;
-        submitBtn.textContent = 'Submitting...';
-        
-        const response = await fetch(form.action, {
-            method: 'POST',
-            body: formData
-        });
-        
-        if (!response.ok) {
-            throw new Error(`HTTP error! status: ${response.status}`);
-        }
-        
-        const result = await response.json().catch(() => {
-            throw new Error('Invalid JSON response from server.');
-        });
-        
-        if (result.status === 'success') {
-            // Show success message
-            alert(result.message || 'Feedback submitted successfully.');
-            form.reset();
-        } else {
-            // Show error message
-            alert(result.message || 'An error occurred while processing your feedback.');
-        }
-    } catch (error) {
-        alert(`An error occurred: ${error.message}`);
-        console.error(error);
-    } finally {
-        submitBtn.disabled = false;
-        submitBtn.textContent = originalBtnText;
-    }
-});
-</script>
-    <!-- Footer -->
+    <!-- Load Footer -->
+    <div id="footer-container"></div>
     <script src="loadFooter.js"></script>
 
     <!-- Bootstrap Bundle with Popper.js -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- AOS Animation -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 800,
+            easing: 'ease-in-out',
+            once: true
+        });
+        
+        // Toggle Feedback Form
+        document.getElementById('toggleFeedbackForm').addEventListener('click', function() {
+            const form = document.getElementById('feedbackForm');
+            form.classList.toggle('d-none');
+            
+            if (!form.classList.contains('d-none')) {
+                form.scrollIntoView({ behavior: 'smooth' });
+            }
+        });
+        
+        // Counter Animation
+        const counters = document.querySelectorAll('.impact-number');
+        const speed = 200;
+        
+        function animateCounters() {
+            counters.forEach(counter => {
+                const target = +counter.getAttribute('data-count') || +counter.textContent.replace('+', '');
+                const count = +counter.textContent.replace('+', '');
+                const increment = target / speed;
+                
+                if (count < target) {
+                    counter.textContent = Math.ceil(count + increment) + '+';
+                    setTimeout(animateCounters, 1);
+                } else {
+                    counter.textContent = target + '+';
+                }
+            });
+        }
+        
+        // Start counters when section is in view
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    animateCounters();
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.5 });
+        
+        document.querySelectorAll('.impact-number').forEach(counter => {
+            observer.observe(counter);
+        });
+    </script>
 </body>
 </html>
