@@ -45,20 +45,22 @@
 </svg>
 
     <!-- Header -->
+    <div class="wave-animation"></div>
 <header class="fixed-top text-white fw-bold text-center">
     <nav class="navbar navbar-dark text-shadow-double-large custom-navbar">
-
-      <div class="container ">
+        <div class="wave-animation" style="z-index: -20;"></div>
+      <div class="container">
         <a class="navbar-brand" href="index.html">
           <img src="image/website-logo.png" alt="Importance Leadership Logo" class="logo-image" width="180">
         </a>
         <h1>
-            <span class="p fs-10 text-navy">IMPORTANCE</span>
-            <span class="p fs-10 text-black">LEADERSHIP</span>
+            <span class="p fs-10 fw-bold text-navy">IMPORTANCE</span>
+            <span class="p fs-10  fw-bold text-white">LEADERSHIP</span>
         </h1>
         <!-- Navbar Toggler -->
-        <button class="navbar-toggler ms-auto" type="button" data-bs-toggle="offcanvas" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
+        <button class="navbar-toggler ms-auto" type="button" data-bs-toggle="offcanvas" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation" style="background: linear-gradient(rgba(11, 31, 58, 0.8), rgba(11, 31, 58, 0.9)); color: white;">
+          <span class="navbar-toggler-icon " ></span>Open Menu 
+          
         </button>
   
       <!-- Offcanvas Menu -->
@@ -124,11 +126,11 @@ aria-labelledby="navbarNavLabel">
  </li>
 </ul>
 
-<div class="mt-auto pt-4 text-center">
- <div class="d-flex justify-content-center gap-3 mb-3">
-   <a href="#" class="text-white fs-4"><i class="fab fa-facebook"></i></a>
-   <a href="#" class="text-white fs-4"><i class="fab fa-twitter"></i></a>
-   <a href="#" class="text-white fs-4"><i class="fab fa-instagram"></i></a>
+<div class="mt-auto pt-4 text-center"> 
+ <div class="d-flex justify-content-center gap-3 mb-3"> 
+   <a href="#" class="text-white fs-4"><i class="fab fa-facebook"></i></a>  
+   <a href="#" class="text-white fs-4"><i class="fab fa-twitter"></i></a> 
+   <a href="#" class="text-white fs-4"><i class="fab fa-instagram"></i></a> 
    <a href="#" class="text-white fs-4"><i class="fab fa-linkedin"></i></a>
  </div>
  <p class="text-white-50 small mb-0">&copy; 2025 Importance Leadership</p>
@@ -174,6 +176,7 @@ aria-labelledby="navbarNavLabel">
     border-radius: 16px;
     overflow: hidden;
     box-shadow: 0 10px 30px rgba(11, 31, 58, 0.2);
+    background-color: #000;
 ">
     <!-- Responsive Wrapper -->
     <div style="
@@ -189,6 +192,7 @@ aria-labelledby="navbarNavLabel">
                 width: 100%;
                 height: 100%;
                 border: none;
+                z-index: 10;
             "
             src="https://www.youtube.com/embed/_rts2qZ2cK4?enablejsapi=1" 
             title="Future Leadership Audio"
@@ -217,11 +221,11 @@ aria-labelledby="navbarNavLabel">
     <!-- Programs Section -->
     <section class="hero-section d-flex align-items-center" style="background: linear-gradient(rgba(11, 31, 58, 0.8), rgba(11, 31, 58, 0.9)), url('image/advocacy-program.jpg') no-repeat center center/cover;">
        
-    <div class="container">
+    <div class="container" style="margin: 100px;">
             <div class="row justify-content-center mb-5">
-                <div class="col-lg-8 text-center" data-aos="fade-up" style="margin-top: 200px;">
-                    <span class="text-uppercase fw-bold text-black mb-3 d-inline-block">OUR PROGRAMS</span>
-                    <h2 class="fw-bold mb-4 text-white " style="color: black">Empowering the Next Generation of Leaders</h2>
+                <div class="col-lg-8 text-center" data-aos="fade-up">
+                    <span class="text-uppercase fw-bold text-black d-inline-block mt-3" >OUR PROGRAMS</span>
+                    <h2 class="fw-bold mb-4 text-white " style="color: black; margin-top: 100px;">Empowering the Next Generation of Leaders</h2>
                     <p class="fs-5 text-white">Discover how our programs are transforming lives and creating lasting impact in communities worldwide.</p>
                 </div>
             </div>
@@ -237,11 +241,8 @@ aria-labelledby="navbarNavLabel">
                         <div class="card-body">
                             <p class="card-text">Empowering young leaders with the skills and confidence to drive change in their communities.</p>
                             <div class="d-flex align-items-center">
-                                <a href="leadershipDevelopment.html" class="btn btn-sm btn-outline-primary rounded-pill" style="margin: bottom 20px;">Learn More</a>
-                                <svg width="50" height="20" viewBox="0 0 50 20" fill="none" xmlns="http://www.w3.org/2000/svg" class="ms-auto">
-                                    <path d="M40 10L50 10M40 10L34 4M40 10L34 16" stroke="#0b1f3a" stroke-width="2"/>
-                                    <path d="M0 10H30" stroke="#0b1f3a" stroke-width="2" stroke-dasharray="5 5"/>
-                                </svg>
+                                <a href="leadershipDevelopment.html" class="btn btn-sm btn-outline-primary rounded-pill text-md-center" style="margin: bottom 20px;">Learn More</a>
+                                
                             </div>
                         </div>
                     </div>
@@ -257,11 +258,8 @@ aria-labelledby="navbarNavLabel">
                         <div class="card-body">
                             <p class="card-text">Connecting young individuals with experienced mentors to guide their personal and professional growth.</p>
                             <div class="d-flex align-items-center">
-                                <a href="mentorshipProgram.html" class="btn btn-sm btn-outline-primary rounded-pill" style="margin: bottom 20px;">Learn More</a>
-                                <svg width="50" height="20" viewBox="0 0 50 20" fill="none" xmlns="http://www.w3.org/2000/svg" class="ms-auto">
-                                    <path d="M40 10L50 10M40 10L34 4M40 10L34 16" stroke="#0b1f3a" stroke-width="2"/>
-                                    <path d="M0 10H30" stroke="#0b1f3a" stroke-width="2" stroke-dasharray="5 5"/>
-                                </svg>
+                                <a href="mentorshipProgram.html" class="btn btn-sm btn-outline-primary rounded-pill text-md-center" style="margin: bottom 20px;">Learn More</a>
+                               
                             </div>
                         </div>
                     </div>
@@ -277,11 +275,8 @@ aria-labelledby="navbarNavLabel">
                         <div class="card-body">
                             <p class="card-text">Driving meaningful change through community-driven projects and initiatives.</p>
                             <div class="d-flex align-items-center">
-                                <a href="communityImpact.html" class="btn btn-sm btn-outline-primary rounded-pill" style="margin: bottom 20px;">Learn More</a>
-                                <svg width="50" height="20" viewBox="0 0 50 20" fill="none" xmlns="http://www.w3.org/2000/svg" class="ms-auto">
-                                    <path d="M40 10L50 10M40 10L34 4M40 10L34 16" stroke="#0b1f3a" stroke-width="2"/>
-                                    <path d="M0 10H30" stroke="#0b1f3a" stroke-width="2" stroke-dasharray="5 5"/>
-                                </svg>
+                                <a href="communityImpact.html" class="btn btn-sm btn-outline-primary rounded-pill text-md-center" style="margin: bottom 20px;">Learn More</a>
+                                
                             </div>
                         </div>
                     </div>
@@ -294,7 +289,7 @@ aria-labelledby="navbarNavLabel">
     </section>
 
     <!-- Impact Section -->
-    <section class="hero-section d-flex align-items-center" style="background: linear-gradient(rgba(11, 31, 58, 0.8), rgba(11, 31, 58, 0.9)), url('image/bg-impact.jpg') no-repeat center center/cover;">
+    <section class="hero-section d-flex align-items-center" style="background: linear-gradient(rgba(11, 31, 58, 0.8), rgba(11, 31, 58, 0.9)), url('image/bg-impact.jpg') no-repeat center center/cover; z-index: 10;">
         
       <div class="container">
             <div class="row justify-content-center mb-5">
@@ -549,7 +544,31 @@ align-items: center;
     </svg>
 </div>
 </section>
+    
+        <!-- Partners Section -->
 
+<section class="partners-section">
+    <div class="container">
+      <h2 class="partners-title">Partners</h2>
+      <div class="row justify-content-center align-items-center">
+        <div class="col-6 col-sm-4 col-md-2">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSzl2OnwzUSFf3inFxWDYhEJk6qDSrdnc567g&s" alt="US Flag" class="partner-logo">
+        </div>
+        <div class="col-6 col-sm-4 col-md-2">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRzQt5AJWXNF98qPJBfDPEQJu5fK-QEM3Ko9g&s" alt="EU Humanitarian Aid" class="partner-logo">
+        </div>
+        <div class="col-6 col-sm-4 col-md-2">
+          <img src="https://refugepoint.applicantstack.com/userdata/refugepoint/jobboard_Primary_Logo.jpg" alt="RFSU" class="partner-logo">
+        </div>
+        <div class="col-6 col-sm-4 col-md-2">
+          <img src="https://socialjustice.org.ge/uploads/donors/covers/1516977667rfsu-2.png" alt="Refuge Point" class="partner-logo">
+        </div>
+        <div class="col-6 col-sm-4 col-md-2">
+          <img src="https://www.mhinnovation.net/sites/default/files/content/organisation/logo/2024-09/RCK.JPG" alt="RCK" class="partner-logo">
+        </div>
+      </div>
+    </div>
+  </section>
     <!-- Footer -->
     <footer class="bg-dark text-white pt-6 pb-4 position-relative">
         <div class="container">
@@ -656,18 +675,15 @@ align-items: center;
                 }
             });
         });
-        
-        // Navbar scroll effect
         window.addEventListener('scroll', function() {
-            const navbar = document.querySelector('.navbar');
-            if (window.scrollY > 50) {
-                navbar.classList.add('bg-primary', 'shadow');
-                navbar.classList.remove('bg-transparent');
-            } else {
-                navbar.classList.add('bg-transparent');
-                navbar.classList.remove('bg-primary', 'shadow');
-            }
-        });
+  if (window.scrollY > 50) {
+    document.querySelector('.navbar').classList.add('scrolled');
+    // Or similar code that modifies the navbar
+  } else {
+    document.querySelector('.navbar').classList.remove('scrolled');
+  }
+});
+        
     </script>
 </body>
 </html>
