@@ -15,7 +15,9 @@
     <!-- Font Awesome -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
-
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css">
+<script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -26,7 +28,51 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css">
     <link rel="stylesheet" href="styles/index.css">
     
-    
+    <style>
+        .testimonials-section {
+          background: linear-gradient(rgba(11, 31, 58, 0.9), rgba(11, 31, 58, 0.95)), 
+                      url('image/feedback-bg.jpg') no-repeat center/cover;
+          color: white;
+        }
+        
+        .testimonial-carousel {
+          padding: 2rem;
+        }
+        
+        .swiper-slide {
+          background: rgba(10, 48, 89, 0.05);
+          backdrop-filter: blur(10px);
+          border-radius: 16px;
+          padding: 2.5rem;
+          border: 1px solid rgba(255, 255, 255, 0.1);
+          transition: all 0.3s ease;
+          height: auto;
+          color:white;
+        }
+        
+        .swiper-slide-active {
+          background: rgba(15, 79, 122, 0.1);
+          transform: scale(1.02);
+        }
+        
+        /* Loading animation */
+        .ph-item {
+          padding: 2rem;
+        }
+        .ph-picture {
+          height: 100px;
+          width: 100px;
+          margin: 0 auto 1.5rem;
+          background: rgba(255,255,255,0.1);
+          border-radius: 50%;
+        }
+        .ph-lines div {
+          height: 10px;
+          margin-bottom: 1rem;
+          background: rgba(182, 173, 173, 0.1);
+          border-radius: 4px;
+        }
+        </style>
 </head>
 
 <body>
@@ -69,9 +115,9 @@ aria-labelledby="navbarNavLabel">
 <div class="offcanvas-header border-bottom border-secondary">
 <div class="d-flex align-items-center">
  <img src="image/website-logo.png" alt="Logo" width="40" class="me-2">
- <h5 class="offcanvas-title mb-0 text-white" id="navbarNavLabel">Importance Leadership</h5>
+ <h5 class="offcanvas-title mb-0 text-white" id="navbarNavLabel">Navigate Pages</h5>
 </div>
-<button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+<button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close" style="color:red; background-color: red;"></button>
 </div>
 
 <div class="offcanvas-body d-flex flex-column">
@@ -408,113 +454,7 @@ aria-labelledby="navbarNavLabel">
         </div>
     </section>
 
-    <!-- Testimonials Section -->
-    <section class="hero-section d-flex align-items-center" style="background: linear-gradient(rgba(11, 31, 58, 0.8), rgba(11, 31, 58, 0.9)), url('image/feedback\ \(1\).png') no-repeat center center/cover;">
-        
-        <div class="container">
-            <div class="row justify-content-center mb-5">
-                <div class="col-lg-8 text-center" data-aos="fade-up">
-                    <span class="text-uppercase fw-bold text-primary mb-3 d-inline-block">VOICES OF IMPACT</span>
-                    <h2 class="fw-bold mb-4">What People Say About Us</h2>
-                    <p class="fs-5 text-muted">Hear from those whose lives have been transformed through our programs.</p>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-12" data-aos="fade-up">
-                    <div id="testimonialCarousel" class="carousel slide" data-bs-ride="carousel">
-                        <div class="carousel-inner">
-                            <div class="carousel-item active">
-                                <div class="testimonial-card bg-light mx-auto" style="max-width: 800px;">
-                                    <div class="row align-items-center">
-                                        <div class="col-md-3 text-center mb-4 mb-md-0">
-                                            <img src="image/shema.png" class="rounded-circle img-fluid" width="120" alt="Testimonial 1">
-                                        </div>
-                                        <div class="col-md-9">
-                                            <div class="d-flex align-items-center mb-3">
-                                                <svg width="24" height="24" viewBox="0 0 24 24" fill="#F5A623" xmlns="http://www.w3.org/2000/svg">
-                                                    <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" stroke="#F5A623" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                                </svg>
-                                                <svg width="24" height="24" viewBox="0 0 24 24" fill="#F5A623" xmlns="http://www.w3.org/2000/svg" class="ms-1">
-                                                    <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" stroke="#F5A623" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                                </svg>
-                                                <svg width="24" height="24" viewBox="0 0 24 24" fill="#F5A623" xmlns="http://www.w3.org/2000/svg" class="ms-1">
-                                                    <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" stroke="#F5A623" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                                </svg>
-                                                <svg width="24" height="24" viewBox="0 0 24 24" fill="#F5A623" xmlns="http://www.w3.org/2000/svg" class="ms-1">
-                                                    <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" stroke="#F5A623" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                                </svg>
-                                                <svg width="24" height="24" viewBox="0 0 24 24" fill="#F5A623" xmlns="http://www.w3.org/2000/svg" class="ms-1">
-                                                    <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" stroke="#F5A623" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                                </svg>
-                                            </div>
-                                            <p class="fs-5 mb-4">"The mentorship program completely transformed my perspective on leadership. I went from being a shy student to leading community projects that impact hundreds of people."</p>
-                                            <div class="d-flex align-items-center">
-                                                <div>
-                                                    <h5 class="fw-bold mb-1">SM</h5>
-                                                    <p class="text-muted mb-0">Program Participant, 2024</p>
-                                                </div>
-                                                <svg width="50" height="20" viewBox="0 0 50 20" fill="none" xmlns="http://www.w3.org/2000/svg" class="ms-auto">
-                                                    <path d="M40 10L50 10M40 10L34 4M40 10L34 16" stroke="#0b1f3a" stroke-width="2"/>
-                                                    <path d="M0 10H30" stroke="#0b1f3a" stroke-width="2" stroke-dasharray="5 5"/>
-                                                </svg>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="carousel-item">
-                                <div class="testimonial-card bg-light mx-auto" style="max-width: 800px;">
-                                    <div class="row align-items-center">
-                                        <div class="col-md-3 text-center mb-4 mb-md-0">
-                                            <img src="image/Bonkey.png" class="rounded-circle img-fluid" width="120" alt="Testimonial 2">
-                                        </div>
-                                        <div class="col-md-9">
-                                            <div class="d-flex align-items-center mb-3">
-                                                <svg width="24" height="24" viewBox="0 0 24 24" fill="#F5A623" xmlns="http://www.w3.org/2000/svg">
-                                                    <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" stroke="#F5A623" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                                </svg>
-                                                <svg width="24" height="24" viewBox="0 0 24 24" fill="#F5A623" xmlns="http://www.w3.org/2000/svg" class="ms-1">
-                                                    <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" stroke="#F5A623" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                                </svg>
-                                                <svg width="24" height="24" viewBox="0 0 24 24" fill="#F5A623" xmlns="http://www.w3.org/2000/svg" class="ms-1">
-                                                    <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" stroke="#F5A623" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                                </svg>
-                                                <svg width="24" height="24" viewBox="0 0 24 24" fill="#F5A623" xmlns="http://www.w3.org/2000/svg" class="ms-1">
-                                                    <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" stroke="#F5A623" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                                </svg>
-                                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="ms-1">
-                                                    <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" stroke="#F5A623" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                                </svg>
-                                            </div>
-                                            <p class="fs-5 mb-4">"As a mentor, I've witnessed incredible growth in the young leaders I work with. The structure and support provided by Importance Leadership make this program truly special."</p>
-                                            <div class="d-flex align-items-center">
-                                                <div>
-                                                    <h5 class="fw-bold mb-1">Bonkey</h5>
-                                                    <p class="text-muted mb-0">Program Mentor, 2021-Present</p>
-                                                </div>
-                                                <svg width="50" height="20" viewBox="0 0 50 20" fill="none" xmlns="http://www.w3.org/2000/svg" class="ms-auto">
-                                                    <path d="M40 10L50 10M40 10L34 4M40 10L34 16" stroke="#0b1f3a" stroke-width="2"/>
-                                                    <path d="M0 10H30" stroke="#0b1f3a" stroke-width="2" stroke-dasharray="5 5"/>
-                                                </svg>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <button class="carousel-control-prev text-black" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="prev">
-                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                            <span class="visually-hidden text-black">Previous</span>
-                        </button>
-                        <button class="carousel-control-next" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="next">
-                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                            <span class="visually-hidden">Next</span>
-                        </button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+  
 
     <!-- CTA Section -->
 <section class="py-10 position-relative overflow-hidden" style="
@@ -547,28 +487,76 @@ align-items: center;
     
         <!-- Partners Section -->
 
-<section class="partners-section">
-    <div class="container">
-      <h2 class="partners-title">Partners</h2>
-      <div class="row justify-content-center align-items-center">
-        <div class="col-6 col-sm-4 col-md-2">
-          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSzl2OnwzUSFf3inFxWDYhEJk6qDSrdnc567g&s" alt="US Flag" class="partner-logo">
+        <section class="partners-section">
+            <div class="container">
+                <h2 class="partners-title">Partners</h2>
+                <div class="row justify-content-center align-items-center">
+                    <!-- Partner Logos - Animated -->
+                    <div class="col-6 col-sm-4 col-md-2">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSzl2OnwzUSFf3inFxWDYhEJk6qDSrdnc567g&s" alt="US Flag" class="partner-logo animate-fade-in">
+                    </div>
+                    <div class="col-6 col-sm-4 col-md-2">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRzQt5AJWXNF98qPJBfDPEQJu5fK-QEM3Ko9g&s" alt="EU Humanitarian Aid" class="partner-logo animate-fade-in">
+                    </div>
+                    <div class="col-6 col-sm-4 col-md-2">
+                        <img src="https://refugepoint.applicantstack.com/userdata/refugepoint/jobboard_Primary_Logo.jpg" alt="RFSU" class="partner-logo animate-fade-in">
+                    </div>
+                    <div class="col-6 col-sm-4 col-md-2">
+                        <img src="https://socialjustice.org.ge/uploads/donors/covers/1516977667rfsu-2.png" alt="Refuge Point" class="partner-logo animate-fade-in">
+                    </div>
+                    <div class="col-6 col-sm-4 col-md-2">
+                        <img src="https://www.mhinnovation.net/sites/default/files/content/organisation/logo/2024-09/RCK.JPG" alt="RCK" class="partner-logo animate-fade-in">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- VOICES OF IMPACT SECTION -->
+<section class="testimonials-section py-7 position-relative overflow-hidden">
+    <!-- Decorative elements -->
+    <div class="position-absolute top-0 start-0 w-100 h-100 bg-dark opacity-10"></div>
+    <div class="position-absolute bottom-0 end-0" style="width: 300px; height: 300px;">
+      <div class="rounded-circle bg-primary opacity-10 w-100 h-100"></div>
+    </div>
+  
+    <div class="container position-relative z-1">
+      <!-- Section Header -->
+      <div class="row justify-content-center mb-6" data-aos="fade-up">
+        <div class="col-lg-9 col-xl-8 text-center">
+          <span class="badge bg-primary-soft text-primary mb-3">VOICES OF IMPACT</span>
+          <h2 class="display-5 fw-bold mb-3">Hear From Our Community</h2>
+          <p class="lead text-muted">Real stories from people who've experienced our programs firsthand.</p>
         </div>
-        <div class="col-6 col-sm-4 col-md-2">
-          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRzQt5AJWXNF98qPJBfDPEQJu5fK-QEM3Ko9g&s" alt="EU Humanitarian Aid" class="partner-logo">
-        </div>
-        <div class="col-6 col-sm-4 col-md-2">
-          <img src="https://refugepoint.applicantstack.com/userdata/refugepoint/jobboard_Primary_Logo.jpg" alt="RFSU" class="partner-logo">
-        </div>
-        <div class="col-6 col-sm-4 col-md-2">
-          <img src="https://socialjustice.org.ge/uploads/donors/covers/1516977667rfsu-2.png" alt="Refuge Point" class="partner-logo">
-        </div>
-        <div class="col-6 col-sm-4 col-md-2">
-          <img src="https://www.mhinnovation.net/sites/default/files/content/organisation/logo/2024-09/RCK.JPG" alt="RCK" class="partner-logo">
+      </div>
+  
+      <!-- Testimonials Carousel -->
+      <div class="row" data-aos="fade-up" data-aos-delay="100">
+        <div class="col-12">
+          <div class="testimonial-carousel swiper">
+            <!-- Loading Placeholder -->
+            <div class="swiper-wrapper" id="testimonials-container">
+              <div class="swiper-slide">
+                <div class="placeholder-content">
+                  <div class="ph-item">
+                    <div class="ph-picture"></div>
+                    <div class="ph-lines"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+  
+            <!-- Navigation -->
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
+            <div class="swiper-pagination"></div>
+          </div>
         </div>
       </div>
     </div>
   </section>
+  
+  
+
     <!-- Footer -->
     <footer class="bg-dark text-white pt-6 pb-4 position-relative">
         <div class="container">
@@ -684,6 +672,141 @@ align-items: center;
   }
 });
         
+        // Subscription form submission
+        document.querySelector('form').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const email = this.email.value;
+            const messageDiv = document.querySelector('.subscription-message');
+            
+            // Simulate an AJAX request (replace with actual AJAX code)
+            setTimeout(function() {
+                messageDiv.innerText = 'Thank you for subscribing!';
+                messageDiv.style.display = 'block';
+                messageDiv.classList.add('alert', 'alert-success');
+            }, 1000);
+        });
+
+        document.addEventListener('DOMContentLoaded', () => {
+        const logos = document.querySelectorAll('.partner-logo');
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate-fade-in');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.1 });
+
+        logos.forEach(logo => observer.observe(logo));
+    });
+
+
+    
+        document.addEventListener('DOMContentLoaded', function() {
+          // Initialize Swiper
+          const swiper = new Swiper('.testimonial-carousel', {
+            loop: true,
+            spaceBetween: 30,
+            centeredSlides: true,
+            navigation: {
+              nextEl: '.swiper-button-next',
+              prevEl: '.swiper-button-prev',
+            },
+            pagination: {
+              el: '.swiper-pagination',
+              clickable: true,
+            },
+            breakpoints: {
+              768: {
+                slidesPerView: 1.2
+              },
+              992: {
+                slidesPerView: 1.5
+              }
+            }
+          });
+        
+          // Fetch testimonials
+          // Fetch testimonials
+fetch('./Backend/submitFeedback.php?action=getFeedback')
+  .then(response => {
+    console.log('Raw response:', response); // Log the raw response
+    return response.json(); // Properly returned now
+  })
+  .then(data => {
+    console.log('Parsed data:', data); // Log the parsed data
+    if (!data || !data.data) {
+      throw new Error('Invalid data format');
+    }
+    return data;
+  })
+  .then(data => {
+    const container = document.getElementById('testimonials-container');
+    container.innerHTML = ''; // Clear loading state
+
+    if (!data.data || data.data.length === 0) {
+      container.innerHTML = `
+        <div class="swiper-slide">
+          <div class="text-center py-5">
+            <i class="bi bi-emoji-smile fs-1"></i>
+            <h5 class="mt-3">No testimonials yet</h5>
+            <p>Be the first to share your experience!</p>
+          </div>
+        </div>`;
+      return;
+    }
+
+    data.data.forEach(testimonial => {
+      const stars = Array(5).fill().map((_, i) =>
+        `<i class="bi bi-star${i < testimonial.rating ? '-fill' : ''} text-warning"></i>`
+      ).join('');
+
+      const slide = document.createElement('div');
+      slide.className = 'swiper-slide';
+      slide.innerHTML = `
+        <div class="d-flex flex-column h-100">
+          <div class="text-center mb-4">
+            <img src="${testimonial.avatar}" 
+                 class="rounded-circle img-thumbnail" 
+                 width="100" height="100"
+                 alt="${testimonial.name}"
+                 onerror="this.src='image/default-avatar.png'">
+          </div>
+          <div class="flex-grow-1">
+            <div class="mb-3">${stars}</div>
+            <blockquote class="mb-4">
+              <p>"${testimonial.message}"</p>
+            </blockquote>
+          </div>
+          <div class="mt-auto text-center">
+            <h5 class="mb-1">${testimonial.name}</h5>
+            <small class="text-muted">${testimonial.program || ''}</small>
+          </div>
+        </div>`;
+
+      container.appendChild(slide);
+    });
+
+    swiper.update(); // Refresh swiper after content load
+  })
+  .catch(error => {
+    console.error('Error:', error);
+    document.getElementById('testimonials-container').innerHTML = `
+      <div class="swiper-slide">
+        <div class="alert alert-danger">
+          <i class="bi bi-exclamation-triangle"></i>
+          Error loading testimonials. Please try again later.
+        </div>
+      </div>`;
+  });
+
+        });
     </script>
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/phosphor-icons"></script>
+    <script src="https://cdn.jsdelivr.net/npm/phosphor-icons@1.4.0/dist/phosphor-icons.min.js"></script>
+    
 </body>
-</html>
+</html> 
