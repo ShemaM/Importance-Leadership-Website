@@ -1,3 +1,7 @@
+
+
+
+
 name: Deploy Website to Hostinger via FTP
 
 on:
@@ -20,15 +24,11 @@ jobs:
 
       - name: Deploy to FTP Server
         run: |
-          lftp -f "
-          open ftp://$FTP_USERNAME:$FTP_PASSWORD@$FTP_HOST
-          mirror -R ./ $FTP_TARGET_DIR --ignore-time --delete
-          "
+          lftp -u $FTP_USERNAME,$FTP_PASSWORD $FTP_HOST <<EOF
+          mirror -R ./ public_html --ignore-time --delete
+          quit
+          EOF
         env:
           FTP_USERNAME: ${{ secrets.FTP_USERNAME }}
           FTP_PASSWORD: ${{ secrets.FTP_PASSWORD }}
           FTP_HOST: ${{ secrets.FTP_HOST }}
-          FTP_TARGET_DIR: "public_html"  # You can modify this to match your directory
-
-
-
