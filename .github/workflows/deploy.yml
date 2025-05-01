@@ -1,4 +1,4 @@
-name: Deploy Website to Hostinger via FTP. 
+name: Deploy Website to Hostinger via FTP
 
 on:
   push:
@@ -21,6 +21,7 @@ jobs:
       - name: Deploy to FTP Server
         run: |
           lftp -u $FTP_USERNAME,$FTP_PASSWORD $FTP_HOST <<EOF
+          set ssl:verify-certificate no
           mirror -R ./ public_html --ignore-time --delete
           quit
           EOF
@@ -28,3 +29,4 @@ jobs:
           FTP_USERNAME: ${{ secrets.FTP_USERNAME }}
           FTP_PASSWORD: ${{ secrets.FTP_PASSWORD }}
           FTP_HOST: ${{ secrets.FTP_HOST }}
+
