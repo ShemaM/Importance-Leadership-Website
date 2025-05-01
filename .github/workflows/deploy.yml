@@ -1,23 +1,33 @@
-name: Deploy to importanceleadership.com
+name: Deploy to Hostinger via FTP
+
 on:
   push:
-    branches: [ main ]
+    branches:
+      - main  # or master if that's your main branch
+
 jobs:
   deploy:
     runs-on: ubuntu-latest
+
     steps:
-    - uses: actions/checkout@v3
-    - uses: SamKirkland/FTP-Deploy-Action@4.3.0
-      with:
-        server: '31.170.161.26'  # Using IP since DNS may not be ready
-        username: 'u677171043'  # Your FTP username
-        password: ${{ secrets.FTP_PASSWORD }}  # Still use secret for password
-        local-dir: './'
-        server-dir: '/public_html/'
-        exclude: |
-          .git*
-          .github/*
-          README.md
-        # Additional reliability settings:
-        dangerous-clean-slate: false
-        ftp-timeout: 120
+      - name: Checkout Repository
+        uses: actions/checkout@v3
+
+      - name: Install FTP Deploy
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y lftp
+
+      - name: Deploy to FTP Server
+        run: |
+          lftp -f "
+          open ftp://$FTP_USERNAME:$FTP_PASSWORD@$FTP_HOST
+          mirror -R ./ $FTP_TARGET_DIR --ignore-time --delete
+          "
+        env:
+          FTP_USERNAME: ${{ secrets.FTP_USERNAME }}
+          FTP_PASSWORD: ${{ secrets.FTP_PASSWORD }}
+          FTP_HOST: ${{ secrets.FTP_HOST }}
+          FTP_TARGET_DIR: "public_html"  # You can modify this to match your directory
+
+
