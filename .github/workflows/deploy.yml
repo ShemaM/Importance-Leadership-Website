@@ -9,12 +9,15 @@ jobs:
     - uses: actions/checkout@v3
     - uses: SamKirkland/FTP-Deploy-Action@4.3.0
       with:
-        server: ftp.importanceleadership.com
-        username: ${{ secrets.FTP_USERNAME }}
-        password: ${{ secrets.FTP_PASSWORD }}
-        local-dir: ./  # Your built files
-        server-dir: /public_html/
+        server: '31.170.161.26'  # Using IP since DNS may not be ready
+        username: 'u677171043'  # Your FTP username
+        password: ${{ secrets.FTP_PASSWORD }}  # Still use secret for password
+        local-dir: './'
+        server-dir: '/public_html/'
         exclude: |
           .git*
           .github/*
           README.md
+        # Additional reliability settings:
+        dangerous-clean-slate: false
+        ftp-timeout: 120
