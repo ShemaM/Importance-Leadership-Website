@@ -1,4 +1,4 @@
-name: Deploy to Hostinger via FTP
+name: Deploy Website to Hostinger via FTP
 
 on:
   push:
@@ -29,5 +29,6 @@ jobs:
           FTP_PASSWORD: ${{ secrets.FTP_PASSWORD }}
           FTP_HOST: ${{ secrets.FTP_HOST }}
           FTP_TARGET_DIR: "public_html"  # You can modify this to match your directory
+
 
 
