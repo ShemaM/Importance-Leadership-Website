@@ -1,0 +1,33 @@
+name: Deploy Website to Hostinger via FTP
+
+on:
+  push:
+    branches:
+      - main  # or master if that's your main branch
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v3
+
+      - name: Install FTP Deploy
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y lftp
+
+      - name: Deploy to FTP Server
+        run: |
+          lftp -u $FTP_USERNAME,$FTP_PASSWORD $FTP_HOST <<EOF
+          set ssl:verify-certificate no
+          mirror -R ./Importance-Leadership-Websitebsite public_html --ignore-time --delete
+          quit
+          EOF
+        env:
+          FTP_USERNAME: ${{ secrets.FTP_USERNAME }}
+          FTP_PASSWORD: ${{ secrets.FTP_PASSWORD }}
+          FTP_HOST: ${{ secrets.FTP_HOST }}
+
+
