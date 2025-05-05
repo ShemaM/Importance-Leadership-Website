@@ -3,7 +3,7 @@
 // After successful signup:
 $_SESSION['signup_success'] = true;
 $_SESSION['user_id'] = $newUserId; // From your registration logic
-header("Location: success.html");
+header("Location: signUpSuccess.html");
 
 $servername = "localhost"; // Replace with your server name
 $username = "root"; // Replace with your database username
@@ -86,7 +86,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
       // After successful signup:
       $_SESSION['signup_success'] = true;
       $_SESSION['user_id'] = $conn->insert_id; // Store the last inserted ID
-      header("Location: success.html");
+      header("Location: signUpSuccess.html");
       exit();
     }
   }
