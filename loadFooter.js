@@ -29,9 +29,9 @@ const footerHTML = `
                 <div class="col-lg-3 col-md-4">
                     <h5 class="fw-bold mb-4">Contact Us</h5>
                     <ul class="list-unstyled">
-                        <li class="mb-2"><i class="fas fa-map-marker-alt me-2 text-primary"></i> 123 Leadership Ave, City, Country</li>
+                        <li class="mb-2"><i class="fas fa-map-marker-alt me-2 text-primary"></i>USA, Kenya, Canada</li>
                         <li class="mb-2"><i class="fas fa-phone me-2 text-primary"></i> +1 (234) 567-8900</li>
-                        <li class="mb-2"><i class="fas fa-envelope me-2 text-primary"></i> info@importanceleadership.org</li>
+                        <li class="mb-2"><i class="fas fa-envelope me-2 text-primary"></i> info@importanceleadership.com</li>
                     </ul>
                 </div>
                 <div class="col-lg-3 col-md-4">
