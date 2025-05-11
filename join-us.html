@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,579 +8,561 @@
   <meta name="keywords" content="Leadership, Impact, Community, Mentorship, Youth Empowerment">
   <meta name="author" content="Importance Leadership">
   
-  <!-- Favicon -->
-  <link rel="icon" type="image/png" href="image/website-logo.png">
+  <link rel="icon" type="image/png" href="images/logo.jpg">
   <title>Signup - Importance Leadership</title>
-  <!-- Magnific Popup CSS -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.min.css">
-  <!-- Font Awesome for Icons -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-  <!-- Bootstrap CSS -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  
   <style>
-    /* General Styles */
-    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
-
     :root {
-      --primary-color: #6C63FF;
-      --primary-hover: #574fdb;
-      --text-color: #2E2B41;
-      --background-color: #F9F9F9;
-      --input-background: #FFFFFF;
-      --border-color: #E0E0E0;
-      --error-color: #FF4D4D;
-      --success-color: #4CAF50;
-      --footer-background: #2E2B41;
-      --footer-text: #FFFFFF;
+      --primary: #4361ee;
+      --primary-dark: #3a56d4;
+      --secondary: #3f37c9;
+      --accent: #4895ef;
+      --text: #2b2d42;
+      --text-light: #8d99ae;
+      --bg: #f8f9fa;
+      --card-bg: #ffffff;
+      --input-bg: #ffffff;
+      --border: #e9ecef;
+      --error: #ef233c;
+      --success: #4cc9f0;
+      --warning: #f8961e;
+      --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
     }
 
     body {
-      font-family: 'Poppins', sans-serif;
-      margin: 0;
-      padding: 0;
-      background-color: var(--background-color);
-      color: var(--text-color);
+      font-family: 'Inter', sans-serif;
+      background-color: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
     }
 
-    .cover-background {
-      background-size: cover;
-      background-position: center;
-      background-repeat: no-repeat;
-    }
-
-    .opacity-extra-medium {
-      opacity: 0.8;
-    }
-
-    .bg-extra-dark-slate-blue {
-      background-color: #1a1a2e;
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      background: linear-gradient(135deg, rgba(67, 97, 238, 0.9), rgba(63, 55, 201, 0.9)), 
+                  url('images/hero-bg.jpg') center/cover no-repeat;
+      padding: 2rem;
     }
 
     .container {
       max-width: 1200px;
+      width: 100%;
       margin: 0 auto;
-      padding: 2rem;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 2rem;
     }
 
-    .text-center {
+    .hero-content {
+      flex: 1;
+      min-width: 300px;
+      color: white;
+      animation: fadeIn 1s ease-out;
+    }
+
+    .hero-title {
+      font-size: clamp(2rem, 5vw, 3rem);
+      font-weight: 700;
+      margin-bottom: 1.5rem;
+      line-height: 1.2;
+    }
+
+    .hero-subtitle {
+      font-size: clamp(1rem, 2vw, 1.25rem);
+      max-width: 600px;
+      margin-bottom: 2rem;
+      opacity: 0.9;
+    }
+
+    .signup-form {
+      flex: 1;
+      min-width: 300px;
+      max-width: 500px;
+      background: var(--card-bg);
+      border-radius: 16px;
+      padding: 2.5rem;
+      box-shadow: var(--shadow);
+      animation: slideUp 1s ease-out;
+    }
+
+    .form-title {
+      font-size: 1.75rem;
+      color: var(--primary);
+      margin-bottom: 0.5rem;
       text-align: center;
     }
 
-    .text-white {
-      color: white !important;
+    .form-subtitle {
+      color: var(--text-light);
+      text-align: center;
+      margin-bottom: 2rem;
     }
 
-    .text-dark {
-      color: var(--text-color);
+    .form-group {
+      margin-bottom: 1.25rem;
+      position: relative;
     }
 
-    .text-primary {
-      color: var(--primary-color);
-    }
-
-    .fs-20 {
-      font-size: 20px;
-    }
-
-    .mb-15px {
-      margin-bottom: 15px;
-    }
-
-    .mb-50px {
-      margin-bottom: 50px;
-    }
-
-    .ls-minus-1px {
-      letter-spacing: -1px;
-    }
-
-    .fw-500 {
+    .form-label {
+      display: block;
+      margin-bottom: 0.5rem;
+      font-size: 0.875rem;
       font-weight: 500;
     }
 
-    .fw-100 {
-      font-weight: 100;
+    .form-control {
+      width: 100%;
+      padding: 0.875rem 1rem 0.875rem 2.5rem;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      font-size: 0.9375rem;
+      background: var(--input-bg);
+      transition: all 0.3s ease;
     }
 
-    .text-shadow-double-large {
-      text-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    .form-control:focus {
+      border-color: var(--primary);
+      box-shadow: 0 0 0 3px rgba(67, 97, 238, 0.2);
+      outline: none;
     }
 
-    .text-shadow-sm {
-      text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    .form-icon {
+      position: absolute;
+      left: 1rem;
+      top: 50%;
+      transform: translateY(-50%);
+      color: var(--text-light);
+    }
+
+    .password-toggle {
+      position: absolute;
+      right: 1rem;
+      top: 50%;
+      transform: translateY(-50%);
+      color: var(--text-light);
+      cursor: pointer;
+    }
+
+    .feedback {
+      display: block;
+      margin-top: 0.25rem;
+      font-size: 0.75rem;
+    }
+
+    .error {
+      color: var(--error);
+    }
+
+    .success {
+      color: var(--success);
+    }
+
+    .password-meter {
+      height: 4px;
+      background: var(--border);
+      border-radius: 2px;
+      margin-top: 0.5rem;
+      overflow: hidden;
+    }
+
+    .meter-bar {
+      height: 100%;
+      width: 0;
+      transition: width 0.3s ease;
+    }
+
+    .weak {
+      background: var(--error);
+      width: 33%;
+    }
+
+    .medium {
+      background: var(--warning);
+      width: 66%;
+    }
+
+    .strong {
+      background: var(--success);
+      width: 100%;
     }
 
     .btn {
-      display: inline-block;
-      padding: 12px 24px;
-      font-size: 16px;
-      font-weight: 600;
-      border-radius: 5px;
-      text-decoration: none;
-      transition: background 0.3s ease, transform 0.3s ease;
-    }
-
-    .btn-extra-large {
-      padding: 16px 32px;
-      font-size: 18px;
-    }
-
-    .btn-base-color {
-      background: var(--primary-color);
-      color: white;
-    }
-
-    .btn-box-shadow {
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    }
-
-    .btn-rounded {
-      border-radius: 50px;
-    }
-
-    .btn-hover-animation-switch:hover {
-      background: var(--primary-hover);
-      transform: translateY(-2px);
-    }
-
-    .btn-text {
-      margin-right: 10px;
-    }
-
-    .btn-icon {
-      margin-left: 10px;
-    }
-
-    .mfp-hide {
-      display: none;
-    }
-
-    /* Form Styling */
-    .contact-form-style-01 {
-      background: white;
-      border-radius: 15px;
-      overflow: hidden;
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-      max-width: 600px;
-      margin: 0 auto;
-      padding: 2rem;
-    }
-
-    .contact-form-style-01 h3 {
-      font-size: 1.75rem;
-      font-weight: 600;
-      color: var(--text-color);
-      margin-bottom: 1.5rem;
-      text-align: center;
-    }
-
-    .contact-form-style-01 .form-group {
-      margin-bottom: 1.5rem;
-      position: relative;
-    }
-
-    .contact-form-style-01 .form-icon {
-      position: absolute;
-      left: 15px;
-      top: 50%;
-      transform: translateY(-50%);
-      color: var(--primary-color);
-      font-size: 1.1rem;
-    }
-
-    .contact-form-style-01 .form-control {
       width: 100%;
-      padding: 12px 12px 12px 40px;
-      border: 1px solid var(--border-color);
-      border-radius: 8px;
-      font-size: 1rem;
-      outline: none;
-      transition: border-color 0.3s ease, box-shadow 0.3s ease;
-    }
-
-    .contact-form-style-01 .form-control:focus {
-      border-color: var(--primary-color);
-      box-shadow: 0 0 0 3px rgba(108, 99, 255, 0.1);
-    }
-
-    .contact-form-style-01 .form-control::placeholder {
-      color: #999;
-    }
-
-    .contact-form-style-01 .form-control.error {
-      border-color: var(--error-color);
-    }
-
-    .contact-form-style-01 .form-control.success {
-      border-color: var(--success-color);
-    }
-
-    .contact-form-style-01 .password-strength {
-      margin-top: 5px;
-      font-size: 0.9rem;
-      color: var(--text-color);
-    }
-
-    .contact-form-style-01 .password-strength.weak {
-      color: var(--error-color);
-    }
-
-    .contact-form-style-01 .password-strength.medium {
-      color: orange;
-    }
-
-    .contact-form-style-01 .password-strength.strong {
-      color: var(--success-color);
-    }
-
-    .contact-form-style-01 .submit {
-      background: var(--primary-color);
+      padding: 1rem;
+      background: var(--primary);
       color: white;
       border: none;
-      padding: 12px 24px;
       border-radius: 8px;
       font-size: 1rem;
       font-weight: 600;
-      cursor: pointer;
-      transition: background 0.3s ease, transform 0.3s ease;
-      width: 100%;
-    }
-
-    .contact-form-style-01 .submit:hover {
-      background: var(--primary-hover);
-      transform: translateY(-2px);
-    }
-
-    .contact-form-style-01 .loading-spinner {
-      display: none;
-      margin-left: 10px;
-      font-size: 1.2rem;
-      color: white;
-    }
-
-    .contact-form-style-01 .form-results {
       margin-top: 1rem;
-      font-size: 0.9rem;
-      text-align: center;
+      cursor: pointer;
+      transition: all 0.3s ease;
     }
 
-    .contact-form-style-01 .form-results.success-message {
-      color: var(--success-color);
+    .btn:hover {
+      background: var(--primary-dark);
+      transform: translateY(-2px);
+      box-shadow: var(--shadow);
     }
 
-    .contact-form-style-01 .form-results.error-message {
-      color: var(--error-color);
+    .btn:disabled {
+      background: var(--text-light);
+      cursor: not-allowed;
+      transform: none;
+      box-shadow: none;
     }
 
-    .d-inline-block {
+    .spinner {
       display: inline-block;
+      margin-left: 0.5rem;
+      animation: spin 1s linear infinite;
     }
 
-    .z-index-1 {
-      z-index: 1;
-      position: relative;
+    .login-link {
+      text-align: center;
+      margin-top: 1.5rem;
+      font-size: 0.875rem;
     }
 
-    .text-transform-none {
-      text-transform: none;
+    .login-link a {
+      color: var(--primary);
+      text-decoration: none;
+      font-weight: 500;
     }
 
-    .btn-medium {
-      padding: 10px 20px;
-      font-size: 16px;
+    .login-link a:hover {
+      text-decoration: underline;
     }
 
-    .btn-dark-gray {
-      background-color: #333;
-      color: white;
+    @keyframes spin {
+      to { transform: rotate(360deg); }
     }
 
-    .btn-round-edge {
-      border-radius: 5px;
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
     }
 
-    .w-100 {
-      width: 100%;
+    @keyframes slideUp {
+      from { opacity: 0; transform: translateY(40px); }
+      to { opacity: 1; transform: translateY(0); }
     }
 
-    .mt-20px {
-      margin-top: 20px;
-    }
-
-    .mb-10px {
-      margin-bottom: 10px;
-    }
-
-    .p-15 {
-      padding: 15px;
-    }
-
-    .lg-p-10 {
-      padding: 10px;
-    }
-
-    .fs-18 {
-      font-size: 18px;
-    }
-
-    .position-relative {
-      position: relative;
-    }
-
-    .justify-content-center {
-      justify-content: center;
-    }
-
-    .row {
-      display: flex;
-      flex-wrap: wrap;
-      margin-right: -15px;
-      margin-left: -15px;
-    }
-
-    .col-12 {
-      flex: 0 0 100%;
-      max-width: 100%;
-      padding-right: 15px;
-      padding-left: 15px;
-    }
-
-    .col-xl-8 {
-      flex: 0 0 66.666667%;
-      max-width: 66.666667%;
-    }
-
-    .col-lg-12 {
-      flex: 0 0 100%;
-      max-width: 100%;
-    }
-
-    .g-0 {
-      gap: 0;
+    @media (max-width: 768px) {
+      .container {
+        flex-direction: column;
+        padding: 1rem;
+      }
+      
+      .signup-form {
+        width: 100%;
+        padding: 1.5rem;
+      }
     }
   </style>
 </head>
 <body>
 
-  <!--Load Header-->
-  <div id="header-container"></div>
-  <script src="loadHeader.js"></script>
-
-  <!-- Big Section with Background -->
-  <section class="big-section cover-background" style="height: 80vh; display: flex; align-items: center; background-image: url('image/landing.jpg');">
-    <div class="opacity-extra-medium bg-extra-dark-slate-blue" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></div>
+  <section class="hero">
     <div class="container">
-      <div class="row justify-content-center">
-        <div class="col-12 col-xl-8 text-center z-index-1">
-          <span class="text-white fs-20 mb-15px d-inline-block">Join Us Today</span>
-          <h2 class="text-white mx-auto mb-50px ls-minus-1px fw-500 text-shadow-double-large">Start your journey with Importance Leadership. Sign up now!</h2>
-          <a href="#signup-form" class="btn btn-extra-large btn-base-color btn-box-shadow text-transform-none btn-rounded popup-with-form btn-hover-animation-switch">
-            <span>
-              <span class="btn-text" style="color:white; font-weight: bold;">Sign Up</span>
-              <span class="btn-icon"><i class="fas fa-arrow-right"></i></span>
-            </span>
-          </a>
-          <!-- Start Signup Popup -->
-          <div id="signup-form" class="container p-0 contact-form-style-01 position-relative text-center mfp-hide">
-            <div class="row g-0">
-              <div class="col-lg-12">
-                <div class="p-15 lg-p-10 bg-white">
-                  <span class="fs-18 mb-10px">Create Your Account</span> <br>
-                  <h3 class="d-inline-block fw-100 text-primary mb-10 ls-minus-1px">Sign Up to Get Started</h3>
-                  <!-- Form with PHP backend -->
-                  <form id="signup-form-inner" action="join-us.php" method="POST">
-                    <div class="position-relative form-group mb-10px">
-                      <span class="form-icon"><i class="fas fa-user"></i></span>
-                      <input type="text" id="firstname" name="firstname" class="form-control required" placeholder="Enter your firstname*" required aria-label="First Name">
-                      <div class="form-results" id="firstname-error"></div>
-                    </div>
-                    <div class="position-relative form-group mb-10px">
-                      <span class="form-icon"><i class="fas fa-user"></i></span>
-                      <input type="text" id="lastname" name="lastname" class="form-control required" placeholder="Enter your lastname*" required aria-label="Last Name">
-                      <div class="form-results" id="lastname-error"></div>
-                    </div>
-                    <div class="position-relative form-group mb-10px">
-                      <span class="form-icon"><i class="fas fa-envelope"></i></span>
-                      <input type="email" id="email" name="email" class="form-control required" placeholder="Enter your email*" required aria-label="Email">
-                      <div class="form-results" id="email-error"></div>
-                    </div>
-                    <div class="position-relative form-group mb-10px">
-                      <span class="form-icon"><i class="fas fa-lock"></i></span>
-                      <input type="password" id="password" name="password" class="form-control required" placeholder="Enter your password*" required aria-label="Password">
-                      <div class="password-strength" id="password-strength"></div>
-                      <div class="form-results" id="password-error"></div>
-                    </div>
-                    <div class="position-relative form-group mb-10px">
-                      <span class="form-icon"><i class="fas fa-lock"></i></span>
-                      <input type="password" id="repeat-password" name="repeat_password" class="form-control required" placeholder="Repeat your password*" required aria-label="Repeat Password">
-                      <div class="form-results" id="repeat-password-error"></div>
-                      <div id="password-match-msg" class="form-results"></div>
-                    </div>
-                    <button class="btn btn-medium btn-base-color btn-box-shadow btn-rounded w-100 mt-20px submit" type="submit">
-                      <span class="btn-text">Sign Up</span>
-                      <span class="loading-spinner"><i class="fas fa-spinner fa-spin"></i></span>
-                    </button>
-                    <div class="form-results mt-10px" id="form-results"></div>
-                  </form>
-                </div>
-              </div>
-            </div>
+      <div class="hero-content">
+        <h1 class="hero-title">Empower Your Leadership Journey</h1>
+        <p class="hero-subtitle">Join a community of passionate leaders making a difference. Sign up today to access exclusive resources, mentorship, and growth opportunities.</p>
+      </div>
+      
+      <div class="signup-form">
+        <h2 class="form-title">Create Your Account</h2>
+        <p class="form-subtitle">Join Importance Leadership in just a few steps</p>
+        
+        <form id="signupForm">
+          <div class="form-group">
+            <label for="firstName" class="form-label">First Name</label>
+            <i class="fas fa-user form-icon"></i>
+            <input type="text" id="firstName" class="form-control" placeholder="John" required>
+            <span id="firstNameError" class="feedback"></span>
           </div>
-          <!-- End Signup Popup -->
-        </div>
+          
+          <div class="form-group">
+            <label for="lastName" class="form-label">Last Name</label>
+            <i class="fas fa-user form-icon"></i>
+            <input type="text" id="lastName" class="form-control" placeholder="Doe" required>
+            <span id="lastNameError" class="feedback"></span>
+          </div>
+          
+          <div class="form-group">
+            <label for="email" class="form-label">Email Address</label>
+            <i class="fas fa-envelope form-icon"></i>
+            <input type="email" id="email" class="form-control" placeholder="your@email.com" required>
+            <span id="emailError" class="feedback"></span>
+          </div>
+          
+          <div class="form-group">
+            <label for="password" class="form-label">Password</label>
+            <i class="fas fa-lock form-icon"></i>
+            <input type="password" id="password" class="form-control" placeholder="At least 8 characters" required>
+            <i class="fas fa-eye password-toggle" id="togglePassword"></i>
+            <div class="password-meter">
+              <div class="meter-bar" id="passwordStrength"></div>
+            </div>
+            <span id="passwordStrengthText" class="feedback"></span>
+            <span id="passwordError" class="feedback"></span>
+          </div>
+          
+          <div class="form-group">
+            <label for="confirmPassword" class="form-label">Confirm Password</label>
+            <i class="fas fa-lock form-icon"></i>
+            <input type="password" id="confirmPassword" class="form-control" placeholder="Repeat your password" required>
+            <i class="fas fa-eye password-toggle" id="toggleConfirmPassword"></i>
+            <span id="confirmPasswordError" class="feedback"></span>
+            <span id="passwordMatchMsg" class="feedback"></span>
+          </div>
+          
+          <button type="submit" class="btn" id="submitBtn">
+            Sign Up
+            <i class="fas fa-spinner spinner" id="submitSpinner" style="display:none;"></i>
+          </button>
+          
+          <div id="formMessage" class="feedback" style="margin-top:1rem;"></div>
+          
+          <div class="login-link">
+            Already have an account? <a href="login.html">Log in</a>
+          </div>
+        </form>
       </div>
     </div>
   </section>
 
-  <!-- Load jQuery and Magnific Popup JS -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js"></script>
-  
   <script>
-    $(document).ready(function () {
-      // Initialize Popup
-      $('.popup-with-form').magnificPopup({
-        type: 'inline',
-        preloader: false,
-        focus: '#firstname',
-        callbacks: {
-          beforeOpen: function () {
-            $('#signup-form-inner')[0].reset();
-            $('#form-results').text('').removeClass('success-message error-message');
-            $('.form-control').removeClass('error success');
-            $('#password-strength').text('');
-            $('#password-match-msg').text('');
-          }
-        }
+    document.addEventListener('DOMContentLoaded', function() {
+      // DOM Elements
+      const form = document.getElementById('signupForm');
+      const passwordInput = document.getElementById('password');
+      const confirmPasswordInput = document.getElementById('confirmPassword');
+      const togglePassword = document.getElementById('togglePassword');
+      const toggleConfirmPassword = document.getElementById('toggleConfirmPassword');
+      const submitBtn = document.getElementById('submitBtn');
+      const spinner = document.getElementById('submitSpinner');
+      const formMessage = document.getElementById('formMessage');
+
+      // Toggle password visibility
+      [togglePassword, toggleConfirmPassword].forEach(toggle => {
+        toggle.addEventListener('click', function() {
+          const input = this.previousElementSibling;
+          const type = input.type === 'password' ? 'text' : 'password';
+          input.type = type;
+          this.classList.toggle('fa-eye');
+          this.classList.toggle('fa-eye-slash');
+        });
       });
-  
-      // Password Strength Check
-      $('#password').on('input', function () {
-        const password = $(this).val();
-        const strength = checkPasswordStrength(password);
-        $('#password-strength')
-          .text(strength.message)
-          .removeClass('weak medium strong')
-          .addClass(strength.class);
-      });
-  
-      // Password Match Check
-      $('#repeat-password').on('input', function () {
-        const password = $('#password').val();
-        const repeatPassword = $(this).val();
+
+      // Password strength meter
+      passwordInput.addEventListener('input', function() {
+        const password = this.value;
+        const strengthBar = document.getElementById('passwordStrength');
+        const strengthText = document.getElementById('passwordStrengthText');
         
-        if (repeatPassword === '') {
-          $('#password-match-msg').text('').removeClass('error-message success-message');
+        strengthBar.className = 'meter-bar';
+        
+        if (password.length === 0) {
+          strengthText.textContent = '';
           return;
         }
         
-        if (password !== repeatPassword) {
-          $('#password-match-msg').text('Passwords do not match').addClass('error-message').removeClass('success-message');
+        const strength = checkPasswordStrength(password);
+        strengthBar.classList.add(strength.class);
+        strengthText.textContent = strength.message;
+        strengthText.className = `feedback ${strength.textClass}`;
+      });
+
+      // Confirm password match
+      confirmPasswordInput.addEventListener('input', function() {
+        const password = passwordInput.value;
+        const confirmPassword = this.value;
+        const matchMsg = document.getElementById('passwordMatchMsg');
+        
+        if (confirmPassword.length === 0) {
+          matchMsg.textContent = '';
+          return;
+        }
+        
+        if (password !== confirmPassword) {
+          matchMsg.textContent = 'Passwords do not match';
+          matchMsg.className = 'feedback error';
         } else {
-          $('#password-match-msg').text('Passwords match').removeClass('error-message').addClass('success-message');
+          matchMsg.textContent = 'Passwords match';
+          matchMsg.className = 'feedback success';
         }
       });
-  
-      // Form Submit with AJAX
-      $('#signup-form-inner').on('submit', function (e) {
+
+      // Form submission
+      form.addEventListener('submit', async function(e) {
         e.preventDefault();
-  
-        const form = $(this);
-        const submitButton = form.find('.submit');
-        const loadingSpinner = form.find('.loading-spinner');
-        const formResults = $('#form-results');
-  
-        const password = $('#password').val();
-        const repeatPassword = $('#repeat-password').val();
-        const email = $('#email').val();
-  
-        // Reset previous messages
-        formResults.text('').removeClass('success-message error-message');
-  
+        
+        // Reset messages
+        formMessage.textContent = '';
+        formMessage.className = 'feedback';
+        document.querySelectorAll('.feedback').forEach(el => el.textContent = '');
+        
         // Validate form
+        const isValid = validateForm();
+        
+        if (!isValid) {
+          formMessage.textContent = 'Please correct the errors below';
+          formMessage.className = 'feedback error';
+          return;
+        }
+        
+        // Disable submit button and show spinner
+        submitBtn.disabled = true;
+        spinner.style.display = 'inline-block';
+        
+        try {
+          // Simulate form submission (replace with actual fetch/AJAX call)
+          await submitForm();
+          
+          formMessage.textContent = 'Account created successfully! Redirecting...';
+          formMessage.className = 'feedback success';
+          
+          // Reset form
+          form.reset();
+          document.getElementById('passwordStrength').className = 'meter-bar';
+          
+          // Redirect after delay (simulate success)
+          setTimeout(() => {
+            window.location.href = 'dashboard.html';
+          }, 2000);
+        } catch (error) {
+          formMessage.textContent = error.message || 'An error occurred. Please try again.';
+          formMessage.className = 'feedback error';
+        } finally {
+          submitBtn.disabled = false;
+          spinner.style.display = 'none';
+        }
+      });
+
+      // Form validation
+      function validateForm() {
         let isValid = true;
         
-        // Check required fields
-        $('.required').each(function() {
-          if ($(this).val() === '') {
-            $(this).addClass('error');
+        // Required fields
+        ['firstName', 'lastName', 'email', 'password', 'confirmPassword'].forEach(id => {
+          const input = document.getElementById(id);
+          const errorEl = document.getElementById(`${id}Error`);
+          
+          if (!input.value.trim()) {
+            errorEl.textContent = 'This field is required';
+            errorEl.className = 'feedback error';
             isValid = false;
-          } else {
-            $(this).removeClass('error');
           }
         });
-  
-        // Check passwords match
-        if (password !== repeatPassword) {
-          $('#repeat-password').addClass('error');
-          $('#password-match-msg').text('Passwords do not match').addClass('error-message');
+        
+        // Email validation
+        const email = document.getElementById('email').value.trim();
+        if (email && !validateEmail(email)) {
+          document.getElementById('emailError').textContent = 'Please enter a valid email';
+          document.getElementById('emailError').className = 'feedback error';
           isValid = false;
-        } else if (password !== '') {
-          $('#repeat-password').removeClass('error');
         }
-  
-        if (!isValid) {
-          formResults.text('Please fill all required fields correctly.').addClass('error-message');
-          return;
+        
+        // Password validation
+        const password = passwordInput.value;
+        if (password.length > 0 && password.length < 8) {
+          document.getElementById('passwordError').textContent = 'Password must be at least 8 characters';
+          document.getElementById('passwordError').className = 'feedback error';
+          isValid = false;
         }
-  
-        // Show spinner
-        submitButton.prop('disabled', true);
-        loadingSpinner.show();
-  
-        // Submit form via AJAX to PHP backend
-        $.ajax({
-          url: form.attr('action'),
-          method: form.attr('method'),
-          data: form.serialize(),
-          dataType: 'json',
-          success: function(response) {
-            if (response.success) {
-              formResults.text(response.message).removeClass('error-message').addClass('success-message');
-              form[0].reset();
-              $('#password-strength').text('');
-              $('#password-match-msg').text('');
-              
-              // Close popup after 2 seconds
-              setTimeout(function() {
-                $.magnificPopup.close();
-                if (response.redirect) {
-                  window.location.href = response.redirect;
-                }
-              }, 2000);
-            } else {
-              formResults.text(response.message).removeClass('success-message').addClass('error-message');
-              if (response.field) {
-                $('#' + response.field).addClass('error');
-              }
-            }
-          },
-          error: function(xhr, status, error) {
-            formResults.text('An error occurred. Please try again.').removeClass('success-message').addClass('error-message');
-            console.error('Error:', error);
-          },
-          complete: function() {
-            submitButton.prop('disabled', false);
-            loadingSpinner.hide();
-          }
-        });
-      });
-  
-      // Password Strength Logic
+        
+        // Password match
+        if (passwordInput.value !== confirmPasswordInput.value) {
+          document.getElementById('confirmPasswordError').textContent = 'Passwords must match';
+          document.getElementById('confirmPasswordError').className = 'feedback error';
+          isValid = false;
+        }
+        
+        return isValid;
+      }
+
+      // Helper functions
       function checkPasswordStrength(password) {
-        const strength = {
-          0: { message: 'Weak', class: 'weak' },
-          1: { message: 'Medium', class: 'medium' },
-          2: { message: 'Strong', class: 'strong' }
-        };
         let score = 0;
-        if (password.length >= 8) score++;
-        if (/[A-Z]/.test(password) && /[0-9]/.test(password)) score++;
-        return strength[Math.min(score, 2)];
+        let message = '';
+        let className = '';
+        let textClass = '';
+        
+        // Length check
+        const hasMinLength = password.length >= 8;
+        // Complexity checks
+        const hasUpperCase = /[A-Z]/.test(password);
+        const hasNumber = /[0-9]/.test(password);
+        const hasSpecialChar = /[^A-Za-z0-9]/.test(password);
+        
+        if (!hasMinLength) {
+          message = 'Too short (min 8 characters)';
+          className = 'weak';
+          textClass = 'error';
+        } else {
+          // Calculate score
+          if (hasUpperCase) score++;
+          if (hasNumber) score++;
+          if (hasSpecialChar) score++;
+          
+          if (score <= 1) {
+            message = 'Weak - add uppercase, numbers, or symbols';
+            className = 'weak';
+            textClass = 'error';
+          } else if (score === 2) {
+            message = 'Medium - could be stronger';
+            className = 'medium';
+          } else {
+            message = 'Strong password!';
+            className = 'strong';
+            textClass = 'success';
+          }
+        }
+        
+        return { class: className, message: message, textClass: textClass };
+      }
+
+      function validateEmail(email) {
+        const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        return re.test(email);
+      }
+
+      function submitForm() {
+        return new Promise((resolve, reject) => {
+          // Simulate API call delay
+          setTimeout(() => {
+            // In a real app, you would make an actual fetch/AJAX call here
+            // For demo purposes, we'll randomly succeed or fail
+            const shouldFail = Math.random() > 0.8; // 20% chance of failure
+            
+            if (shouldFail) {
+              reject(new Error('Registration failed. Please try again later.'));
+            } else {
+              resolve();
+            }
+          }, 1500);
+        });
       }
     });
   </script>
-  
+
   <!-- Load Footer -->
   <div id="footer-container"></div>
   <script src="loadFooter.js"></script>

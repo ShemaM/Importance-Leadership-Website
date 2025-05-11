@@ -43,7 +43,7 @@ $email = isset($_GET['email']) ? htmlspecialchars($_GET['email']) : '';
                                 No email address was provided.
                             <?php endif; ?>
                         </p>
-                        <a href="index.html" class="btn btn-success btn-lg mt-3">Return to Homepage</a>
+                        <a href="../index.html" class="btn btn-success btn-lg mt-3">Return to Homepage</a>
                     </div>
                 </div>
             </div>

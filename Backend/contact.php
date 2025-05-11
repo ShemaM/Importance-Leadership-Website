@@ -5,10 +5,6 @@ error_reporting(E_ALL);
 
 header('Content-Type: application/json');
 
-$host = 'localhost';
-$dbname = 'importanceleadership';
-$username = 'root';
-$password = 'secret';
 
 try {
     $conn = new PDO("mysql:host=$host;dbname=$dbname", $username, $password);

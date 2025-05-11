@@ -1,9 +1,5 @@
 <?php
-$host = 'localhost';
-$db   = 'importanceleadership';
-$user = 'root';
-$pass = 'secret';
-$charset = 'utf8mb4';
+
 
 $dsn = "mysql:host=$host;dbname=$db;charset=$charset";
 $options = [

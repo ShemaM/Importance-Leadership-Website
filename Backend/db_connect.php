@@ -1,9 +1,4 @@
 <?php
-// Database configuration
-define('DB_HOST', 'localhost');
-define('DB_NAME', 'importanceleadership'); // Replace with your database name
-define('DB_USER', 'root'); // Replace with your database username
-define('DB_PASS', 'secret'); // Replace with your database password
 
 // Create a PDO instance to handle the database connection
 try {
