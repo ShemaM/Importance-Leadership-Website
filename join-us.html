@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -33,6 +32,7 @@
       --success: #4cc9f0;
       --warning: #f8961e;
       --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      --transition: all 0.3s ease;
     }
 
     * {
@@ -53,7 +53,7 @@
       display: flex;
       align-items: center;
       background: linear-gradient(135deg, rgba(67, 97, 238, 0.9), rgba(63, 55, 201, 0.9)), 
-                  url('images/hero-bg.jpg') center/cover no-repeat;
+                  url('https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1471&q=80') center/cover no-repeat;
       padding: 2rem;
     }
 
@@ -98,8 +98,172 @@
       padding: 2.5rem;
       box-shadow: var(--shadow);
       animation: slideUp 1s ease-out;
+      position: relative;
     }
 
+    /* Confirmation Modal Styles */
+    .confirmation-modal {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.7);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 1000;
+      opacity: 0;
+      visibility: hidden;
+      transition: var(--transition);
+    }
+
+    .confirmation-modal.active {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .confirmation-content {
+      background: white;
+      padding: 2.5rem;
+      border-radius: 16px;
+      max-width: 500px;
+      width: 90%;
+      text-align: center;
+      box-shadow: var(--shadow);
+      transform: translateY(20px);
+      transition: var(--transition);
+    }
+
+    .confirmation-modal.active .confirmation-content {
+      transform: translateY(0);
+    }
+
+    .confirmation-icon {
+      font-size: 4rem;
+      color: var(--success);
+      margin-bottom: 1.5rem;
+    }
+
+    .confirmation-title {
+      font-size: 1.75rem;
+      margin-bottom: 1rem;
+      color: var(--primary);
+    }
+
+    .confirmation-message {
+      margin-bottom: 2rem;
+      color: var(--text);
+    }
+
+    .confirmation-email {
+      font-weight: 600;
+      color: var(--primary);
+      word-break: break-all;
+    }
+
+    .confirmation-btn {
+      padding: 0.75rem 1.5rem;
+      background: var(--primary);
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-size: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: var(--transition);
+    }
+
+    .confirmation-btn:hover {
+      background: var(--primary-dark);
+      transform: translateY(-2px);
+    }
+
+    /* Error Modal Styles */
+    .error-modal {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.7);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 1000;
+      opacity: 0;
+      visibility: hidden;
+      transition: var(--transition);
+    }
+
+    .error-modal.active {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .error-content {
+      background: white;
+      padding: 2.5rem;
+      border-radius: 16px;
+      max-width: 500px;
+      width: 90%;
+      text-align: center;
+      box-shadow: var(--shadow);
+      transform: translateY(20px);
+      transition: var(--transition);
+    }
+
+    .error-modal.active .error-content {
+      transform: translateY(0);
+    }
+
+    .error-icon {
+      font-size: 4rem;
+      color: var(--error);
+      margin-bottom: 1.5rem;
+    }
+
+    .error-title {
+      font-size: 1.75rem;
+      margin-bottom: 1rem;
+      color: var(--error);
+    }
+
+    .error-message {
+      margin-bottom: 2rem;
+      color: var(--text);
+    }
+
+    .error-details {
+      background: #f8f9fa;
+      padding: 1rem;
+      border-radius: 8px;
+      margin-bottom: 1.5rem;
+      font-family: monospace;
+      font-size: 0.9rem;
+      text-align: left;
+      max-height: 150px;
+      overflow-y: auto;
+    }
+
+    .error-btn {
+      padding: 0.75rem 1.5rem;
+      background: var(--error);
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-size: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: var(--transition);
+    }
+
+    .error-btn:hover {
+      background: #d90429;
+      transform: translateY(-2px);
+    }
+
+    /* Rest of your existing styles... */
     .form-title {
       font-size: 1.75rem;
       color: var(--primary);
@@ -132,7 +296,7 @@
       border-radius: 8px;
       font-size: 0.9375rem;
       background: var(--input-bg);
-      transition: all 0.3s ease;
+      transition: var(--transition);
     }
 
     .form-control:focus {
@@ -156,6 +320,11 @@
       transform: translateY(-50%);
       color: var(--text-light);
       cursor: pointer;
+      transition: var(--transition);
+    }
+
+    .password-toggle:hover {
+      color: var(--primary);
     }
 
     .feedback {
@@ -212,7 +381,11 @@
       font-weight: 600;
       margin-top: 1rem;
       cursor: pointer;
-      transition: all 0.3s ease;
+      transition: var(--transition);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
     }
 
     .btn:hover {
@@ -229,8 +402,6 @@
     }
 
     .spinner {
-      display: inline-block;
-      margin-left: 0.5rem;
       animation: spin 1s linear infinite;
     }
 
@@ -244,6 +415,7 @@
       color: var(--primary);
       text-decoration: none;
       font-weight: 500;
+      transition: var(--transition);
     }
 
     .login-link a:hover {
@@ -295,33 +467,33 @@
             <label for="firstName" class="form-label">First Name</label>
             <i class="fas fa-user form-icon"></i>
             <input type="text" id="firstName" class="form-control" placeholder="John" required>
-            <span id="firstNameError" class="feedback"></span>
+            <span id="firstNameError" class="feedback error"></span>
           </div>
           
           <div class="form-group">
             <label for="lastName" class="form-label">Last Name</label>
             <i class="fas fa-user form-icon"></i>
             <input type="text" id="lastName" class="form-control" placeholder="Doe" required>
-            <span id="lastNameError" class="feedback"></span>
+            <span id="lastNameError" class="feedback error"></span>
           </div>
           
           <div class="form-group">
             <label for="email" class="form-label">Email Address</label>
             <i class="fas fa-envelope form-icon"></i>
             <input type="email" id="email" class="form-control" placeholder="your@email.com" required>
-            <span id="emailError" class="feedback"></span>
+            <span id="emailError" class="feedback error"></span>
           </div>
           
           <div class="form-group">
             <label for="password" class="form-label">Password</label>
             <i class="fas fa-lock form-icon"></i>
-            <input type="password" id="password" class="form-control" placeholder="At least 8 characters" required>
+            <input type="password" id="password" class="form-control" placeholder="At least 8 characters" required minlength="8">
             <i class="fas fa-eye password-toggle" id="togglePassword"></i>
             <div class="password-meter">
               <div class="meter-bar" id="passwordStrength"></div>
             </div>
             <span id="passwordStrengthText" class="feedback"></span>
-            <span id="passwordError" class="feedback"></span>
+            <span id="passwordError" class="feedback error"></span>
           </div>
           
           <div class="form-group">
@@ -329,12 +501,12 @@
             <i class="fas fa-lock form-icon"></i>
             <input type="password" id="confirmPassword" class="form-control" placeholder="Repeat your password" required>
             <i class="fas fa-eye password-toggle" id="toggleConfirmPassword"></i>
-            <span id="confirmPasswordError" class="feedback"></span>
+            <span id="confirmPasswordError" class="feedback error"></span>
             <span id="passwordMatchMsg" class="feedback"></span>
           </div>
           
           <button type="submit" class="btn" id="submitBtn">
-            Sign Up
+            <span>Sign Up</span>
             <i class="fas fa-spinner spinner" id="submitSpinner" style="display:none;"></i>
           </button>
           
@@ -348,6 +520,36 @@
     </div>
   </section>
 
+  <!-- Confirmation Modal -->
+  <div class="confirmation-modal" id="confirmationModal">
+    <div class="confirmation-content">
+      <div class="confirmation-icon">
+        <i class="fas fa-check-circle"></i>
+      </div>
+      <h2 class="confirmation-title">Thank You for Signing Up!</h2>
+      <p class="confirmation-message">
+        We've sent a confirmation email to <span class="confirmation-email" id="confirmedEmail"></span>.
+        Please check your inbox to verify your account.
+      </p>
+      <button class="confirmation-btn" id="confirmationBtn">Got It!</button>
+    </div>
+  </div>
+
+  <!-- Error Modal -->
+  <div class="error-modal" id="errorModal">
+    <div class="error-content">
+      <div class="error-icon">
+        <i class="fas fa-exclamation-circle"></i>
+      </div>
+      <h2 class="error-title">Registration Failed</h2>
+      <p class="error-message" id="errorModalMessage">
+        We encountered an issue while processing your registration.
+      </p>
+      <div class="error-details" id="errorDetails"></div>
+      <button class="error-btn" id="errorModalBtn">Try Again</button>
+    </div>
+  </div>
+
   <script>
     document.addEventListener('DOMContentLoaded', function() {
       // DOM Elements
@@ -359,6 +561,29 @@
       const submitBtn = document.getElementById('submitBtn');
       const spinner = document.getElementById('submitSpinner');
       const formMessage = document.getElementById('formMessage');
+      const confirmationModal = document.getElementById('confirmationModal');
+      const confirmedEmail = document.getElementById('confirmedEmail');
+      const confirmationBtn = document.getElementById('confirmationBtn');
+      const errorModal = document.getElementById('errorModal');
+      const errorModalMessage = document.getElementById('errorModalMessage');
+      const errorDetails = document.getElementById('errorDetails');
+      const errorModalBtn = document.getElementById('errorModalBtn');
+
+      // Backend endpoint configuration
+      const backendEndpoints = {
+        local: 'http://localhost:3000/api/signup', // Your local endpoint
+        live: 'https://your-live-site.com/api/signup' // Your live endpoint
+      };
+
+      // Determine which endpoint to use
+      function getBackendEndpoint() {
+        // Check if we're on localhost or live site
+        if (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') {
+          return backendEndpoints.local;
+        } else {
+          return backendEndpoints.live;
+        }
+      }
 
       // Toggle password visibility
       [togglePassword, toggleConfirmPassword].forEach(toggle => {
@@ -371,9 +596,199 @@
         });
       });
 
+      // Real-time validation for each field
+      document.querySelectorAll('input').forEach(input => {
+        input.addEventListener('input', function() {
+          validateField(this);
+        });
+        
+        input.addEventListener('blur', function() {
+          validateField(this);
+        });
+      });
+
       // Password strength meter
       passwordInput.addEventListener('input', function() {
-        const password = this.value;
+        updatePasswordStrength(this.value);
+        validateField(this);
+        
+        // Also validate confirm password when password changes
+        if (confirmPasswordInput.value) {
+          validateField(confirmPasswordInput);
+        }
+      });
+
+      // Confirm password match
+      confirmPasswordInput.addEventListener('input', function() {
+        validateField(this);
+      });
+
+      // Confirmation modal close button
+      confirmationBtn.addEventListener('click', function() {
+        confirmationModal.classList.remove('active');
+      });
+
+      // Error modal close button
+      errorModalBtn.addEventListener('click', function() {
+        errorModal.classList.remove('active');
+      });
+
+      // Form submission
+      form.addEventListener('submit', async function(e) {
+        e.preventDefault();
+        
+        // Validate all fields before submission
+        let isValid = true;
+        document.querySelectorAll('input').forEach(input => {
+          if (!validateField(input)) {
+            isValid = false;
+          }
+        });
+        
+        if (!isValid) {
+          formMessage.textContent = 'Please correct the errors below';
+          formMessage.className = 'feedback error';
+          return;
+        }
+        
+        // Disable submit button and show spinner
+        submitBtn.disabled = true;
+        spinner.style.display = 'inline-block';
+        submitBtn.querySelector('span').textContent = 'Processing...';
+        
+        try {
+          // Prepare form data
+          const formData = {
+            firstName: document.getElementById('firstName').value.trim(),
+            lastName: document.getElementById('lastName').value.trim(),
+            email: document.getElementById('email').value.trim(),
+            password: passwordInput.value
+          };
+
+          // Get the appropriate backend endpoint
+          const endpoint = getBackendEndpoint();
+          
+          // Send data to backend
+          const response = await fetch(endpoint, {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(formData)
+          });
+
+          const data = await response.json();
+
+          if (!response.ok) {
+            // Handle backend validation errors
+            if (data.errors) {
+              let errorMessage = '';
+              for (const [field, message] of Object.entries(data.errors)) {
+                const errorEl = document.getElementById(`${field}Error`);
+                if (errorEl) {
+                  errorEl.textContent = message;
+                }
+                errorMessage += `${field}: ${message}\n`;
+              }
+              throw new Error('Please correct the highlighted errors');
+            }
+            throw new Error(data.message || 'Registration failed');
+          }
+
+          // Show success confirmation
+          confirmedEmail.textContent = formData.email;
+          confirmationModal.classList.add('active');
+          
+          // Reset form
+          form.reset();
+          document.getElementById('passwordStrength').className = 'meter-bar';
+          
+          // Clear all error messages
+          document.querySelectorAll('.feedback').forEach(el => {
+            el.textContent = '';
+          });
+          
+        } catch (error) {
+          // Show error modal with details
+          errorModalMessage.textContent = error.message || 'An error occurred. Please try again.';
+          
+          // For debugging - show more details in development
+          if (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') {
+            errorDetails.textContent = `Error Details:\n${error.stack || error.toString()}`;
+          } else {
+            errorDetails.textContent = ''; // Don't show technical details on live site
+          }
+          
+          errorModal.classList.add('active');
+        } finally {
+          submitBtn.disabled = false;
+          spinner.style.display = 'none';
+          submitBtn.querySelector('span').textContent = 'Sign Up';
+        }
+      });
+
+      // Field validation function
+      function validateField(field) {
+        const value = field.value.trim();
+        const errorEl = document.getElementById(`${field.id}Error`);
+        let isValid = true;
+        
+        // Clear previous error
+        errorEl.textContent = '';
+        
+        // Required field validation
+        if (field.required && !value) {
+          errorEl.textContent = 'This field is required';
+          isValid = false;
+        }
+        
+        // Field-specific validation
+        if (isValid && value) {
+          switch(field.id) {
+            case 'email':
+              if (!validateEmail(value)) {
+                errorEl.textContent = 'Please enter a valid email';
+                isValid = false;
+              }
+              break;
+              
+            case 'password':
+              if (value.length < 8) {
+                errorEl.textContent = 'Password must be at least 8 characters';
+                isValid = false;
+              }
+              break;
+              
+            case 'confirmPassword':
+              if (value !== passwordInput.value) {
+                errorEl.textContent = 'Passwords must match';
+                isValid = false;
+              }
+              break;
+          }
+        }
+        
+        // Update password match message
+        if (field.id === 'password' || field.id === 'confirmPassword') {
+          const matchMsg = document.getElementById('passwordMatchMsg');
+          if (passwordInput.value && confirmPasswordInput.value) {
+            if (passwordInput.value === confirmPasswordInput.value) {
+              matchMsg.textContent = 'Passwords match';
+              matchMsg.className = 'feedback success';
+            } else {
+              matchMsg.textContent = 'Passwords do not match';
+              matchMsg.className = 'feedback error';
+            }
+          } else {
+            matchMsg.textContent = '';
+          }
+        }
+        
+        return isValid;
+      }
+
+      // Update password strength meter
+      function updatePasswordStrength(password) {
         const strengthBar = document.getElementById('passwordStrength');
         const strengthText = document.getElementById('passwordStrengthText');
         
@@ -388,114 +803,6 @@
         strengthBar.classList.add(strength.class);
         strengthText.textContent = strength.message;
         strengthText.className = `feedback ${strength.textClass}`;
-      });
-
-      // Confirm password match
-      confirmPasswordInput.addEventListener('input', function() {
-        const password = passwordInput.value;
-        const confirmPassword = this.value;
-        const matchMsg = document.getElementById('passwordMatchMsg');
-        
-        if (confirmPassword.length === 0) {
-          matchMsg.textContent = '';
-          return;
-        }
-        
-        if (password !== confirmPassword) {
-          matchMsg.textContent = 'Passwords do not match';
-          matchMsg.className = 'feedback error';
-        } else {
-          matchMsg.textContent = 'Passwords match';
-          matchMsg.className = 'feedback success';
-        }
-      });
-
-      // Form submission
-      form.addEventListener('submit', async function(e) {
-        e.preventDefault();
-        
-        // Reset messages
-        formMessage.textContent = '';
-        formMessage.className = 'feedback';
-        document.querySelectorAll('.feedback').forEach(el => el.textContent = '');
-        
-        // Validate form
-        const isValid = validateForm();
-        
-        if (!isValid) {
-          formMessage.textContent = 'Please correct the errors below';
-          formMessage.className = 'feedback error';
-          return;
-        }
-        
-        // Disable submit button and show spinner
-        submitBtn.disabled = true;
-        spinner.style.display = 'inline-block';
-        
-        try {
-          // Simulate form submission (replace with actual fetch/AJAX call)
-          await submitForm();
-          
-          formMessage.textContent = 'Account created successfully! Redirecting...';
-          formMessage.className = 'feedback success';
-          
-          // Reset form
-          form.reset();
-          document.getElementById('passwordStrength').className = 'meter-bar';
-          
-          // Redirect after delay (simulate success)
-          setTimeout(() => {
-            window.location.href = 'dashboard.html';
-          }, 2000);
-        } catch (error) {
-          formMessage.textContent = error.message || 'An error occurred. Please try again.';
-          formMessage.className = 'feedback error';
-        } finally {
-          submitBtn.disabled = false;
-          spinner.style.display = 'none';
-        }
-      });
-
-      // Form validation
-      function validateForm() {
-        let isValid = true;
-        
-        // Required fields
-        ['firstName', 'lastName', 'email', 'password', 'confirmPassword'].forEach(id => {
-          const input = document.getElementById(id);
-          const errorEl = document.getElementById(`${id}Error`);
-          
-          if (!input.value.trim()) {
-            errorEl.textContent = 'This field is required';
-            errorEl.className = 'feedback error';
-            isValid = false;
-          }
-        });
-        
-        // Email validation
-        const email = document.getElementById('email').value.trim();
-        if (email && !validateEmail(email)) {
-          document.getElementById('emailError').textContent = 'Please enter a valid email';
-          document.getElementById('emailError').className = 'feedback error';
-          isValid = false;
-        }
-        
-        // Password validation
-        const password = passwordInput.value;
-        if (password.length > 0 && password.length < 8) {
-          document.getElementById('passwordError').textContent = 'Password must be at least 8 characters';
-          document.getElementById('passwordError').className = 'feedback error';
-          isValid = false;
-        }
-        
-        // Password match
-        if (passwordInput.value !== confirmPasswordInput.value) {
-          document.getElementById('confirmPasswordError').textContent = 'Passwords must match';
-          document.getElementById('confirmPasswordError').className = 'feedback error';
-          isValid = false;
-        }
-        
-        return isValid;
       }
 
       // Helper functions
@@ -509,6 +816,7 @@
         const hasMinLength = password.length >= 8;
         // Complexity checks
         const hasUpperCase = /[A-Z]/.test(password);
+        const hasLowerCase = /[a-z]/.test(password);
         const hasNumber = /[0-9]/.test(password);
         const hasSpecialChar = /[^A-Za-z0-9]/.test(password);
         
@@ -519,16 +827,18 @@
         } else {
           // Calculate score
           if (hasUpperCase) score++;
+          if (hasLowerCase) score++;
           if (hasNumber) score++;
           if (hasSpecialChar) score++;
           
-          if (score <= 1) {
-            message = 'Weak - add uppercase, numbers, or symbols';
+          if (score <= 2) {
+            message = 'Weak - add more complexity';
             className = 'weak';
             textClass = 'error';
-          } else if (score === 2) {
+          } else if (score === 3) {
             message = 'Medium - could be stronger';
             className = 'medium';
+            textClass = '';
           } else {
             message = 'Strong password!';
             className = 'strong';
@@ -543,28 +853,7 @@
         const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
         return re.test(email);
       }
-
-      function submitForm() {
-        return new Promise((resolve, reject) => {
-          // Simulate API call delay
-          setTimeout(() => {
-            // In a real app, you would make an actual fetch/AJAX call here
-            // For demo purposes, we'll randomly succeed or fail
-            const shouldFail = Math.random() > 0.8; // 20% chance of failure
-            
-            if (shouldFail) {
-              reject(new Error('Registration failed. Please try again later.'));
-            } else {
-              resolve();
-            }
-          }, 1500);
-        });
-      }
     });
   </script>
-
-  <!-- Load Footer -->
-  <div id="footer-container"></div>
-  <script src="loadFooter.js"></script>
 </body>
 </html>

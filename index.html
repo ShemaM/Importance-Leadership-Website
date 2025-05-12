@@ -1,19 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <title>Importance Leadership</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   
+    <title>Importance Leadership | Developing Ethical Leaders for Global Impact</title>
+    <meta name="description" content="Importance Leadership empowers young leaders through mentorship, education, and advocacy programs. Join our movement to create positive change in communities worldwide.">
+    <meta name="keywords" content="youth leadership, leadership development, mentorship programs, community impact, African leadership, social change">
+    <meta name="author" content="Importance Leadership">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://www.importanceleadership.com" />
     
+    <!-- Open Graph / Social Media Meta Tags -->
+    <meta property="og:title" content="Importance Leadership | Developing Ethical Leaders for Global Impact">
+    <meta property="og:description" content="Empowering young leaders through mentorship, education, and advocacy programs.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.importanceleadership.org">
+    <meta property="og:image" content="https://www.importanceleadership.org/image/logo.png">
+    <meta property="og:image:alt" content="Importance Leadership Logo">
+    <meta property="og:site_name" content="Importance Leadership">
+    
+    <!-- Favicon -->
+    <link rel="icon" href="image/logo.jpg" type="image/x-icon">
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16x16.png">
+    <link rel="manifest" href="assets/site.webmanifest">
+    
+    <!-- Preload critical resources -->
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" as="style">
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;500;600;700&display=swap" as="style">
+    <link rel="preload" href="assets/css/main.min.css" as="style">
+    <link rel="preload" href="assets/images/hero-bg.webp" as="image">
     
     <!-- Font Awesome -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css">
-<script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -21,788 +42,1288 @@
     
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css">
-    <link rel="stylesheet" href="styles/index.css">
+    
+    <!-- AOS Animation -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <!-- Main CSS -->
+    <link href="assets/css/main.min.css" rel="stylesheet">
     
     <style>
-        .testimonials-section {
-          background: linear-gradient(rgba(11, 31, 58, 0.9), rgba(11, 31, 58, 0.95)), 
-                      url('image/feedback-bg.jpg') no-repeat center/cover;
-          color: white;
+        :root {
+            --primary: #0b1f3a;      /* Dark blue */
+            --primary-light: #1a365d;
+            --secondary: #f5a623;    /* Gold accent */
+            --secondary-light: #f8b84a;
+            --accent: #7cade9;      /* Light blue */
+            --light: #f8f9fa;       /* Light background */
+            --dark: #212529;        /* Dark text */
+            --text-light: #ffffff;
+            --text-dark: #343a40;
+            --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
         }
         
-        .testimonial-carousel {
-          padding: 2rem;
+        body {
+            font-family: 'Poppins', sans-serif;
+            overflow-x: hidden;
+            color: var(--text-dark);
+            line-height: 1.7;
+            scroll-behavior: smooth;
         }
         
-        .swiper-slide {
-          background: rgba(10, 48, 89, 0.05);
-          backdrop-filter: blur(10px);
-          border-radius: 16px;
-          padding: 2.5rem;
-          border: 1px solid rgba(255, 255, 255, 0.1);
-          transition: all 0.3s ease;
-          height: auto;
-          color:white;
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+            color: var(--primary);
+            line-height: 1.3;
         }
         
-        .swiper-slide-active {
-          background: rgba(15, 79, 122, 0.1);
-          transform: scale(1.02);
+        /* Header styles */
+        .navbar {
+            transition: var(--transition);
+            padding: 1.5rem 0;
+            background-color: rgba(11, 31, 58, 0.95);
+            backdrop-filter: blur(10px);
         }
         
-        /* Loading animation */
-        .ph-item {
-          padding: 2rem;
+        .navbar.scrolled {
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.15);
+            padding: 0.8rem 0;
         }
-        .ph-picture {
-          height: 100px;
-          width: 100px;
-          margin: 0 auto 1.5rem;
-          background: rgba(255,255,255,0.1);
-          border-radius: 50%;
+        
+        .nav-link {
+            font-weight: 500;
+            padding: 0.5rem 1rem;
+            position: relative;
+            color: rgba(255,255,255,0.9);
         }
-        .ph-lines div {
-          height: 10px;
-          margin-bottom: 1rem;
-          background: rgba(182, 173, 173, 0.1);
-          border-radius: 4px;
+        
+        .nav-link:hover,
+        .nav-link.active {
+            color: white;
         }
-        </style>
+        
+        .nav-link:after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: 0;
+            left: 0;
+            background-color: var(--secondary);
+            transition: width 0.3s ease;
+        }
+        
+        .nav-link:hover:after,
+        .nav-link.active:after {
+            width: 100%;
+        }
+        
+        /* Hero section */
+        .hero-section {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+            background: linear-gradient(135deg, rgba(11, 31, 58, 0.95) 0%, rgba(11, 31, 58, 0.85) 100%), url('assets/images/hero-bg.webp') no-repeat center center/cover;
+            color: white;
+            padding-top: 80px;
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 2;
+        }
+        
+        .hero-title {
+            font-size: 3.5rem;
+            line-height: 1.2;
+            margin-bottom: 1.5rem;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        .hero-subtitle {
+            font-size: 1.25rem;
+            opacity: 0.9;
+            margin-bottom: 2rem;
+        }
+        
+        /* Section styling */
+        .section {
+            padding: 7rem 0;
+            position: relative;
+        }
+        
+        .section-title {
+            position: relative;
+            margin-bottom: 3.5rem;
+            text-align: center;
+        }
+        
+        .section-title:after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 4px;
+            background: var(--secondary);
+            margin: 1.5rem auto 0;
+        }
+        
+        /* Cards */
+        .feature-card {
+            border: none;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 15px 30px rgba(11, 31, 58, 0.1);
+            transition: var(--transition);
+            height: 100%;
+            background-color: white;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(11, 31, 58, 0.15);
+        }
+        
+        .feature-card .card-img-top {
+            height: 220px;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .feature-card:hover .card-img-top {
+            transform: scale(1.05);
+        }
+        
+        .card-badge {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background-color: var(--secondary);
+            color: var(--primary);
+            font-weight: 600;
+            padding: 0.25rem 0.75rem;
+            border-radius: 50px;
+            font-size: 0.8rem;
+            z-index: 2;
+        }
+        
+        /* Impact numbers */
+        .impact-number {
+            font-size: 3.5rem;
+            font-weight: 700;
+            color: var(--primary);
+            position: relative;
+            display: inline-block;
+            line-height: 1;
+        }
+        
+        .impact-number::after {
+            content: '+';
+            position: absolute;
+            right: -20px;
+            top: 0;
+            color: var(--secondary);
+        }
+        
+        /* Pillars section */
+        .pillars-section {
+            background: linear-gradient(135deg, rgba(11, 31, 58, 0.95) 0%, rgba(11, 31, 58, 0.9) 100%), url('image/website-logo.png') no-repeat center center/cover;
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .pillar-card {
+            background: rgba(255,255,255,0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 16px;
+            padding: 2.5rem 2rem;
+            height: 100%;
+            border: 1px solid rgba(255,255,255,0.15);
+            transition: var(--transition);
+        }
+        
+        .pillar-card:hover {
+            transform: translateY(-10px);
+            background: rgba(255,255,255,0.15);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+        }
+        
+        .pillar-icon {
+            width: 90px;
+            height: 90px;
+            background-color: var(--secondary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem;
+            font-size: 2.5rem;
+            color: var(--primary);
+            transition: var(--transition);
+        }
+        
+        .pillar-card:hover .pillar-icon {
+            transform: rotate(15deg) scale(1.1);
+            background-color: white;
+        }
+        
+        /* Buttons */
+        .btn {
+            font-weight: 600;
+            padding: 0.75rem 1.75rem;
+            border-radius: 50px;
+            transition: var(--transition);
+            border-width: 2px;
+        }
+        
+        .btn-primary {
+            background-color: var(--primary);
+            border-color: var(--primary);
+            color: white;
+        }
+        
+        .btn-primary:hover {
+            background-color: var(--primary-light);
+            border-color: var(--primary-light);
+            color: white;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(11, 31, 58, 0.2);
+        }
+        
+        .btn-outline-primary {
+            color: var(--primary);
+            border-color: var(--primary);
+        }
+        
+        .btn-outline-primary:hover {
+            background-color: var(--primary);
+            border-color: var(--primary);
+            color: white;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(11, 31, 58, 0.2);
+        }
+        
+        .btn-accent {
+            background-color: var(--secondary);
+            border-color: var(--secondary);
+            color: var(--primary);
+            font-weight: 700;
+        }
+        
+        .btn-accent:hover {
+            background-color: var(--secondary-light);
+            border-color: var(--secondary-light);
+            color: var(--primary);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(245, 166, 35, 0.3);
+        }
+        
+        .btn-outline-light {
+            border-color: rgba(255,255,255,0.5);
+            color: white;
+        }
+        
+        .btn-outline-light:hover {
+            background-color: white;
+            border-color: white;
+            color: var(--primary);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(255,255,255,0.2);
+        }
+        
+        /* Testimonials */
+        .testimonial-card {
+            background: white;
+            border-radius: 16px;
+            padding: 2.5rem;
+            box-shadow: 0 15px 30px rgba(11, 31, 58, 0.1);
+            position: relative;
+            height: 100%;
+        }
+        
+        .testimonial-card:before {
+            content: '\201C';
+            position: absolute;
+            top: 30px;
+            left: 30px;
+            font-size: 5rem;
+            color: rgba(11, 31, 58, 0.05);
+            font-family: Georgia, serif;
+            line-height: 1;
+        }
+        
+        .testimonial-img {
+            width: 90px;
+            height: 90px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid var(--secondary);
+            margin: 0 auto 1.5rem;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+        
+        .testimonial-rating {
+            color: var(--secondary);
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+        }
+        
+        /* CTA section */
+        .cta-section {
+            background: linear-gradient(135deg, rgba(11, 31, 58, 0.95) 0%, rgba(11, 31, 58, 0.9) 100%), url('image/feedback\ \(1\).png') no-repeat center center/cover;
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .cta-content {
+            position: relative;
+            z-index: 2;
+        }
+        
+        .cta-pattern {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0.1;
+            background-image: radial-gradient(var(--secondary) 1px, transparent 1px);
+            background-size: 20px 20px;
+        }
+        
+        /* Footer */
+        .footer {
+            background-color: var(--primary);
+            color: white;
+            padding: 5rem 0 2rem;
+            position: relative;
+        }
+        
+        .footer:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100px;
+            background: linear-gradient(to bottom, rgba(11, 31, 58, 0) 0%, var(--primary) 100%);
+            transform: translateY(-100%);
+        }
+        
+        .footer-logo {
+            width: 200px;
+            margin-bottom: 1.5rem;
+            filter: brightness(0) invert(1);
+        }
+        
+        .footer-links h5 {
+            color: white;
+            margin-bottom: 1.5rem;
+            position: relative;
+            padding-bottom: 0.75rem;
+        }
+        
+        .footer-links h5:after {
+            content: '';
+            position: absolute;
+            width: 50px;
+            height: 3px;
+            bottom: 0;
+            left: 0;
+            background-color: var(--secondary);
+        }
+        
+        .footer-links ul {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .footer-links li {
+            margin-bottom: 0.75rem;
+        }
+        
+        .footer-links a {
+            color: rgba(255,255,255,0.7);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        .footer-links a:hover {
+            color: white;
+            padding-left: 5px;
+        }
+        
+        .social-links a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 42px;
+            height: 42px;
+            background-color: rgba(255,255,255,0.1);
+            border-radius: 50%;
+            color: white;
+            margin-right: 0.75rem;
+            transition: var(--transition);
+        }
+        
+        .social-links a:hover {
+            background-color: var(--secondary);
+            color: var(--primary);
+            transform: translateY(-3px);
+        }
+        
+        /* Back to top button */
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            background-color: var(--secondary);
+            color: var(--primary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.25rem;
+            cursor: pointer;
+            opacity: 0;
+            visibility: hidden;
+            transition: var(--transition);
+            z-index: 999;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+        
+        .back-to-top.active {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .back-to-top:hover {
+            transform: translateY(-3px) scale(1.1);
+        }
+        
+        /* Responsive adjustments */
+        @media (max-width: 1199px) {
+            .hero-title {
+                font-size: 3rem;
+            }
+        }
+        
+        @media (max-width: 991px) {
+            .hero-title {
+                font-size: 2.5rem;
+            }
+            
+            .section {
+                padding: 5rem 0;
+            }
+            
+            .navbar {
+                padding: 1rem 0;
+                background-color: var(--primary);
+            }
+        }
+        
+        @media (max-width: 767px) {
+            .hero-title {
+                font-size: 2.2rem;
+            }
+            
+            .hero-subtitle {
+                font-size: 1.1rem;
+            }
+            
+            .section {
+                padding: 4rem 0;
+            }
+            
+            .impact-number {
+                font-size: 2.5rem;
+            }
+            
+            .feature-card .card-img-top {
+                height: 180px;
+            }
+            
+            .pillar-icon {
+                width: 70px;
+                height: 70px;
+                font-size: 2rem;
+            }
+        }
+        
+        @media (max-width: 575px) {
+            .hero-title {
+                font-size: 2rem;
+            }
+            
+            .section-title {
+                margin-bottom: 2.5rem;
+            }
+            
+            .btn {
+                padding: 0.6rem 1.5rem;
+            }
+        }
+    </style>
 </head>
-
 <body>
-   
-  <!-- Background Shapes with Official Importance Leadership Colors -->
-<svg class="bg-shape bg-shape-1" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
-    <path fill="#2B3D8C" d="M45.4,-59.4C58.6,-48.9,68.7,-33.5,72.6,-16.6C76.5,0.3,74.2,18.7,64.2,33.5C54.2,48.3,36.4,59.6,16.8,67.3C-2.9,75,-25.4,79.2,-42.1,70.1C-58.8,61,-69.7,38.7,-72.9,15.8C-76.1,-7.1,-71.6,-30.6,-58.1,-45.3C-44.6,-60,-22.3,-65.9,-1.6,-64.4C19.1,-62.9,38.2,-53.9,45.4,-59.4Z" transform="translate(100 100)" />
-</svg>
-
-<svg class="bg-shape bg-shape-2" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
-    <path fill="#000000" d="M38.3,-54.1C50.3,-44.3,61.4,-33.7,65.3,-20.3C69.2,-6.9,65.9,9.3,58.5,24.3C51.1,39.3,39.6,53.1,24.3,61.9C9,70.7,-10.1,74.5,-25.1,67.7C-40.1,60.9,-51,43.5,-58.2,25.2C-65.4,6.9,-68.9,-12.3,-62.8,-28.1C-56.7,-43.9,-40.9,-56.3,-25.8,-64.9C-10.7,-73.5,3.7,-78.3,18.1,-75.1C32.5,-71.9,46.8,-60.8,38.3,-54.1Z" transform="translate(100 100)" />
-</svg>
-
-<svg class="bg-shape bg-shape-3" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
-    <path fill="#C5C5C5" d="M42.2,-58.6C55.3,-52.7,66.9,-41.8,70.2,-28.4C73.5,-15,68.5,0.9,62.1,16.2C55.7,31.5,47.9,46.2,35.3,55.3C22.7,64.4,5.3,67.9,-9.6,64.9C-24.5,61.8,-36.9,52.2,-47.1,40.5C-57.3,28.8,-65.2,15,-67.5,-0.8C-69.8,-16.6,-66.5,-33.2,-56.9,-45.4C-47.3,-57.6,-31.4,-65.4,-15.8,-70.2C-0.2,-75,15.2,-76.8,42.2,-58.6Z" transform="translate(100 100)" />
-</svg>
-
-    <!-- Header -->
-    <div class="wave-animation"></div>
-<header class="text-white fw-bold text-center">
-    <nav class="navbar navbar-dark text-shadow-double-large custom-navbar">
-        <div class="wave-animation" style="z-index: -20;"></div>
-      <div class="container">
-        <a class="navbar-brand" href="index.html">
-          <img src="image/website-logo.png" alt="Importance Leadership Logo" class="logo-image" width="180">
-        </a>
-        <h1>
-            <span class="p fs-10 fw-bold text-navy">IMPORTANCE</span>
-            <span class="p fs-10  fw-bold text-white">LEADERSHIP</span>
-        </h1>
-        <!-- Navbar Toggler -->
-        <button class="navbar-toggler ms-auto" type="button" data-bs-toggle="offcanvas" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation" style="background: linear-gradient(rgba(11, 31, 58, 0.8), rgba(11, 31, 58, 0.9)); color: white;">
-          <span class="navbar-toggler-icon " ></span>Open Menu 
-          
-        </button>
-  
-      <!-- Offcanvas Menu -->
-<div class="offcanvas offcanvas-end stylish-offcanvas" tabindex="-1" id="navbarNav" 
-aria-labelledby="navbarNavLabel">
-<div class="offcanvas-header border-bottom border-secondary">
-<div class="d-flex align-items-center">
- <img src="image/website-logo.png" alt="Logo" width="40" class="me-2">
- <h5 class="offcanvas-title mb-0 text-white" id="navbarNavLabel">Navigate Pages</h5>
-</div>
-<button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close" style="color:red; background-color: red;"></button>
-</div>
-
-<div class="offcanvas-body d-flex flex-column">
-<ul class="navbar-nav flex-grow-1">
- <li class="nav-item border-bottom border-secondary py-2">
-   <a class="nav-link text-white fs-5 fw-semibold" href="index.html">
-     <i class="fas fa-home me-2"></i>Home
-   </a>
- </li>
- 
- <li class="nav-item border-bottom border-secondary py-2">
-   <a class="nav-link text-white fs-5 fw-semibold dropdown-toggle" 
-      href="#" id="aboutDropdown" role="button" 
-      data-bs-toggle="dropdown" aria-expanded="false">
-     <i class="fas fa-users me-2"></i>Who We Are
-   </a>
-   <ul class="dropdown-menu bg-primary border-0 rounded-0" aria-labelledby="aboutDropdown">
-     <li>
-       <a class="dropdown-item text-white py-3" href="who-we-are.html">
-         <i class="fas fa-info-circle me-2"></i>About Us
-       </a>
-     </li>
-     <li>
-       <a class="dropdown-item text-white py-3" href="team.html">
-         <i class="fas fa-user-tie me-2"></i>Our Team
-       </a>
-     </li>
-     <li>
-       <a class="dropdown-item text-white py-3" href="Our Events.php">
-         <i class="fas fa-calendar-alt me-2"></i>Our Events
-       </a>
-     </li>
-   </ul>
- </li>
- 
- <li class="nav-item border-bottom border-secondary py-2">
-   <a class="nav-link text-white fs-5 fw-semibold" href="what-we-do.html">
-     <i class="fas fa-tasks me-2"></i>What We Do
-   </a>
- </li>
- 
- <li class="nav-item border-bottom border-secondary py-2">
-   <a class="nav-link text-white fs-5 fw-semibold" href="impact.html">
-     <i class="fas fa-chart-line me-2"></i>Impact
-   </a>
- </li>
- 
- <li class="nav-item mt-auto pt-4">
-   <a class="btn btn-gradient w-100 py-3 fw-bold" href="donate.html">
-     <i class="fas fa-heart me-2"></i>Donate Now
-   </a>
- </li>
-</ul>
-
-<div class="mt-auto pt-4 text-center"> 
- <div class="d-flex justify-content-center gap-3 mb-3"> 
-   <a href="#" class="text-white fs-4"><i class="fab fa-facebook"></i></a>  
-   <a href="#" class="text-white fs-4"><i class="fab fa-twitter"></i></a> 
-   <a href="#" class="text-white fs-4"><i class="fab fa-instagram"></i></a> 
-   <a href="#" class="text-white fs-4"><i class="fab fa-linkedin"></i></a>
- </div>
- <p class="text-white-50 small mb-0">&copy; 2025 Importance Leadership</p>
-</div>
-</div>
-</div>
-
-      </div>
-    </nav>
-  </header>
-  
-    <!-- Hero Section -->
-    <section class="hero-section d-flex align-items-center" style="background: linear-gradient(rgba(11, 31, 58, 0.8), rgba(11, 31, 58, 0.9))">
-        <div class="container hero-content">
-            <div class="row align-items-center">
-                <div class="col-lg-7">
-                    
-                
-                    <h4 class="text-white mb-4 hero-subtitle" style="font-style:italic">
-                        Empowering Communities, Inspiring Excellence
-                    </h4>
-                    <p class="text-white mb-5 fs-5 animate__animated animate__fadeIn animate__delay-1s">
-                        We are a people-centered organization committed to empowering leaders and transforming communities through mentorship, education, and innovation.
-                    </p>
-                    <div class="d-flex flex-wrap gap-3 animate__animated animate__fadeInUp animate__delay-2s" style="margin-bottom:40px;">
-                        <a href="who-we-are.html" class="btn btn-dark btn-lg px-4 py-3 rounded-pill fw-bold">
-                            Learn More <i class="fas fa-arrow-right ms-2"></i>
-                        </a>
-                        <a href="join-us.html" class="btn btn-dark btn-lg px-4 py-3 rounded-pill fw-bold">
-                            Get Involved <i class="fas fa-handshake-angle ms-2"></i>
-                        </a>
-                    </div>
-                </div>
-                <div class="col-lg-5 d-none d-lg-block animate__animated animate__fadeInRight animate__delay-1s">
-                    <div class="position-relative">
-        
-                        
-<!-- Responsive Video Container -->
-<div class="video-container my-5" style="
-    width: 100%;
-    max-width: 864px;
-    margin: 0 auto;
-    border-radius: 16px;
-    overflow: hidden;
-    box-shadow: 0 10px 30px rgba(11, 31, 58, 0.2);
-    background-color: #000;
-">
-    <!-- Responsive Wrapper -->
-    <div style="
-        position: relative;
-        padding-bottom: 56.25%; /* 16:9 aspect ratio */
-        height: 0;
-    ">
-        <iframe 
-            style="
-                position: absolute;
-                top: 0;
-                left: 0;
-                width: 100%;
-                height: 100%;
-                border: none;
-                z-index: 10;
-            "
-            src="https://www.youtube.com/embed/_rts2qZ2cK4?enablejsapi=1" 
-            title="Future Leadership Audio"
-            allowfullscreen
-            loading="lazy"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-        ></iframe>
-    </div>
-</div>
-
-                       <div class="position-absolute top-0 start-0 w-100 h-100 animate__animated animate__pulse animate__infinite" style="animation-duration: 3s;">
-                            <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" class="position-absolute" style="width: 100px; height: 100px; top: 20%; left: -10%;">
-                                <path fill="#F5A623" d="M41.5,-58.9C53.9,-52.1,64.4,-40.5,71.5,-26.3C78.6,-12.1,82.3,4.8,77.7,19.1C73.1,33.4,60.3,45.1,46.2,53.9C32.1,62.7,16.1,68.6,-0.3,68.9C-16.6,69.3,-33.3,64.1,-47.1,54.8C-60.9,45.5,-71.9,32.1,-75.2,16.8C-78.5,1.5,-74.1,-15.7,-64.5,-29.8C-54.9,-43.9,-40.1,-54.9,-26.2,-61.1C-12.3,-67.3,0.6,-68.7,13.5,-65.8C26.4,-62.9,39.2,-55.7,41.5,-58.9Z" transform="translate(100 100)" />
-                            </svg>
-                            <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" class="position-absolute" style="width: 80px; height: 80px; bottom: 10%; right: -5%;">
-                                <path fill="#7CADEA" d="M48.1,-60.4C60.6,-51.8,68.1,-36.1,72.3,-19.9C76.5,-3.7,77.4,12.9,69.8,25.8C62.2,38.7,46.1,48,29.2,56.3C12.3,64.7,-5.4,72.2,-20.2,67.8C-35,63.4,-46.9,47.1,-55.9,30.6C-64.9,14.1,-71,2.4,-69.1,-8.2C-67.3,-18.8,-57.5,-28.3,-45.2,-36.8C-32.9,-45.3,-18,-52.7,-1.1,-51.8C15.8,-50.9,31.6,-41.7,48.1,-60.4Z" transform="translate(100 100)" />
-                            </svg>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="wave-animation"></div>
-    </section>
-
-    <!-- Programs Section -->
-    <section class="hero-section d-flex align-items-center" style="background: linear-gradient(rgba(11, 31, 58, 0.8), rgba(11, 31, 58, 0.9)), url('image/advocacy-program.jpg') no-repeat center center/cover;">
-       
-    <div class="container" style="margin: 100px;">
-            <div class="row justify-content-center mb-5">
-                <div class="col-lg-8 text-center" data-aos="fade-up">
-                    <span class="text-uppercase fw-bold text-black d-inline-block mt-3" >OUR PROGRAMS</span>
-                    <h2 class="fw-bold mb-4 text-white " style="color: black; margin-top: 100px;">Empowering the Next Generation of Leaders</h2>
-                    <p class="fs-5 text-white">Discover how our programs are transforming lives and creating lasting impact in communities worldwide.</p>
-                </div>
-            </div>
-            <div class="row g-4">
-                <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
-                    <div class="card card-hover h-100 border-0">
-                        <div class="position-relative overflow-hidden">
-                            <img src="image/leadershipCoaching.jpg" class="card-img-top" alt="Leadership Development Program">
-                            <div class="position-absolute bottom-0 start-0 w-100 p-3 text-white" style="background: linear-gradient(to top, rgba(11, 31, 58, 0.8), transparent);">
-                                <h5 class="mb-0">Leadership Development</h5>
-                            </div>
-                        </div>
-                        <div class="card-body">
-                            <p class="card-text">Empowering young leaders with the skills and confidence to drive change in their communities.</p>
-                            <div class="d-flex align-items-center">
-                                <a href="leadershipDevelopment.html" class="btn btn-sm btn-outline-primary rounded-pill text-md-center" style="margin: bottom 20px;">Learn More</a>
-                                
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
-                    <div class="card card-hover h-100 border-0">
-                        <div class="position-relative overflow-hidden">
-                            <img src="image/mentorship.jpg" class="card-img-top" alt="Mentorship Program">
-                            <div class="position-absolute bottom-0 start-0 w-100 p-3 text-white" style="background: linear-gradient(to top, rgba(11, 31, 58, 0.8), transparent);">
-                                <h5 class="mb-0">Mentorship Program</h5>
-                            </div>
-                        </div>
-                        <div class="card-body">
-                            <p class="card-text">Connecting young individuals with experienced mentors to guide their personal and professional growth.</p>
-                            <div class="d-flex align-items-center">
-                                <a href="mentorshipProgram.html" class="btn btn-sm btn-outline-primary rounded-pill text-md-center" style="margin: bottom 20px;">Learn More</a>
-                               
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
-                    <div class="card card-hover h-100 border-0">
-                        <div class="position-relative overflow-hidden">
-                            <img src="image/community engagement.jpg" class="card-img-top" alt="Community Impact Program">
-                            <div class="position-absolute bottom-0 start-0 w-100 p-3 text-white" style="background: linear-gradient(to top, rgba(11, 31, 58, 0.8), transparent);">
-                                <h5 class="mb-0">Community Impact</h5>
-                            </div>
-                        </div>
-                        <div class="card-body">
-                            <p class="card-text">Driving meaningful change through community-driven projects and initiatives.</p>
-                            <div class="d-flex align-items-center">
-                                <a href="communityImpact.html" class="btn btn-sm btn-outline-primary rounded-pill text-md-center" style="margin: bottom 20px;">Learn More</a>
-                                
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="text-center mt-5" data-aos="fade-up" data-aos-delay="400">
-                <a href="what-we-do.html" class="btn btn-dark btn-lg px-4 py-3 rounded-pill fw-bold" style="margin-bottom:40px;">Explore All Programs</a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Impact Section -->
-    <section class="hero-section d-flex align-items-center" style="background: linear-gradient(rgba(11, 31, 58, 0.8), rgba(11, 31, 58, 0.9)), url('image/bg-impact.jpg') no-repeat center center/cover; z-index: 10;">
-        
-      <div class="container">
-            <div class="row justify-content-center mb-5">
-                <div class="col-lg-8 text-center" data-aos="fade-up">
-                    <span class="text-uppercase fw-bold text-primary mb-3 d-inline-block">OUR IMPACT</span>
-                    <h2 class="fw-bold mb-4 text-black">Making a Difference in Numbers</h2>
-                    <p class="fs-5 text-white">Discover the tangible results of our efforts in empowering communities and fostering leadership.</p>
-                </div>
-            </div>
-            <div class="row g-4">
-                <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="100">
-                    <div class="text-center p-4 bg-white rounded-3 shadow-sm h-100">
-                        <div class="impact-counter mb-3" data-count="2500">0</div>
-                        <h5 class="fw-bold">Youth Empowered</h5>
-                        <svg width="80" height="4" viewBox="0 0 80 4" fill="none" xmlns="http://www.w3.org/2000/svg" class="my-3 mx-auto">
-                            <path d="M0 2H80" stroke="#F5A623" stroke-width="4" stroke-linecap="round"/>
-                        </svg>
-                        <p class="mb-0">Young individuals equipped with leadership skills</p>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="200">
-                    <div class="text-center p-4 bg-white rounded-3 shadow-sm h-100">
-                        <div class="impact-counter mb-3" data-count="120">0</div>
-                        <h5 class="fw-bold">Dedicated Mentors</h5>
-                        <svg width="80" height="4" viewBox="0 0 80 4" fill="none" xmlns="http://www.w3.org/2000/svg" class="my-3 mx-auto">
-                            <path d="M0 2H80" stroke="#F5A623" stroke-width="4" stroke-linecap="round"/>
-                        </svg>
-                        <p class="mb-0">Experienced professionals guiding our youth</p>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="300">
-                    <div class="text-center p-4 bg-white rounded-3 shadow-sm h-100">
-                        <div class="impact-counter mb-3" data-count="50">0</div>
-                        <h5 class="fw-bold">Leadership Workshops</h5>
-                        <svg width="80" height="4" viewBox="0 0 80 4" fill="none" xmlns="http://www.w3.org/2000/svg" class="my-3 mx-auto">
-                            <path d="M0 2H80" stroke="#F5A623" stroke-width="4" stroke-linecap="round"/>
-                        </svg>
-                        <p class="mb-0">Interactive sessions conducted annually</p>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="400">
-                    <div class="text-center p-4 bg-white rounded-3 shadow-sm h-100">
-                        <div class="impact-counter mb-3" data-count="30">0</div>
-                        <h5 class="fw-bold">Communities Impacted</h5>
-                        <svg width="80" height="4" viewBox="0 0 80 4" fill="none" xmlns="http://www.w3.org/2000/svg" class="my-3 mx-auto">
-                            <path d="M0 2H80" stroke="#F5A623" stroke-width="4" stroke-linecap="round"/>
-                        </svg>
-                        <p class="mb-0">Local communities transformed by our programs</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Key Pillars Section -->
-    <section class="hero-section d-flex align-items-center" style="background: linear-gradient(rgba(11, 31, 58, 0.8), rgba(11, 31, 58, 0.9)), url('image/homepage-bg.jpg') no-repeat center center/cover;">   
-        <div class="wave-animation"></div>
-     <div class="container">
-            <div class="row justify-content-center mb-5">
-                <div class="col-lg-8 text-center" data-aos="fade-up">
-                    <span class="text-uppercase fw-bold text-black mb-3 d-inline-block">OUR PILLARS</span>
-                    <h2 class="fw-bold text-white mb-4">Core Foundations of Our Work</h2>
-                    <p class="fs-5 text-light">We envision an inclusive world where every youth is empowered to lead, transform communities, and create a lasting impact.</p>
-                </div>
-            </div>
-            <div class="row g-4" style="margin-bottom: 50px;">
-                <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="100">
-                    <div class="bg-white p-4 rounded-3 shadow-sm h-100 text-center">
-                        <div class="icon-wrapper bg-primary rounded-circle d-inline-flex align-items-center justify-content-center mb-4" style="width: 80px; height: 80px;">
-                            <i class="fas fa-bullhorn fa-2x text-white"></i>
-                        </div>
-                        <h4 class="fw-bold mb-3">Advocacy</h4>
-                        <p>Amplifying the voices of vulnerable communities to champion youth rights and foster inclusivity.</p>
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="mt-3">
-                            <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="#0b1f3a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                        </svg>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="200">
-                    <div class="bg-white p-4 rounded-3 shadow-sm h-100 text-center">
-                        <div class="icon-wrapper bg-primary rounded-circle d-inline-flex align-items-center justify-content-center mb-4" style="width: 80px; height: 80px;">
-                            <i class="fas fa-brain fa-2x text-white"></i>
-                        </div>
-                        <h4 class="fw-bold mb-3">Mental Health</h4>
-                        <p>Empowering youth with tools and resources to enhance emotional and psychological well-being.</p>
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="mt-3">
-                            <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="#0b1f3a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                        </svg>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="300">
-                    <div class="bg-white p-4 rounded-3 shadow-sm h-100 text-center">
-                        <div class="icon-wrapper bg-primary rounded-circle d-inline-flex align-items-center justify-content-center mb-4" style="width: 80px; height: 80px;">
-                            <i class="fas fa-chess-queen fa-2x text-white"></i>
-                        </div>
-                        <h4 class="fw-bold mb-3">Leadership</h4>
-                        <p>Inspiring youth to lead with purpose by fostering teamwork and driving impactful change.</p>
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="mt-3">
-                            <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="#0b1f3a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                        </svg>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="400">
-                    <div class="bg-white p-4 rounded-3 shadow-sm h-100 text-center">
-                        <div class="icon-wrapper bg-primary rounded-circle d-inline-flex align-items-center justify-content-center mb-4" style="width: 80px; height: 80px;">
-                            <i class="fas fa-hands-helping fa-2x text-white"></i>
-                        </div>
-                        <h4 class="fw-bold mb-3" >Mentorship</h4>
-                        <p>Equipping youth with knowledge and skills through training and educational opportunities.</p>
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="mt-3">
-                            <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="#0b1f3a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                        </svg>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-  
-
-    <!-- CTA Section -->
-<section class="py-10 position-relative overflow-hidden" style="
-min-height: 800px;
-background: linear-gradient(rgba(11, 31, 58, 0.9), rgba(11, 31, 58, 0.9)), 
-            url('image/logo.jpg') no-repeat center center/cover;
-display: flex;
-align-items: center;
-">
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-lg-8 text-center" data-aos="fade-up">
-            <h2 class="fw-bold text-white mb-4 display-4">Ready to Make a Difference?</h2>
-            <p class="fs-3 text-light mb-5">Join our community of changemakers and be part of the movement to empower the next generation of leaders.</p>
-            <div class="d-flex flex-wrap justify-content-center gap-4">
-                <a href="donate.html" class="btn btn-warning btn-lg px-5 py-3 rounded-pill fw-bold fs-4">Donate Now</a>
-                <a href="join-us.html" class="btn btn-outline-light btn-lg px-5 py-3 rounded-pill fw-bold fs-4">Get Involved</a>
-            </div>
-        </div>
-    </div>
-</div>
-<div class="position-absolute bottom-0 start-0 w-100 overflow-hidden" style="line-height: 0;">
-    <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none" class="w-100" style="height: 100px;">
-        <path d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z" opacity=".25" fill="#ffffff"></path>
-        <path d="M0,0V15.81C13,36.92,27.64,56.86,47.69,72.05,99.41,111.27,165,111,224.58,91.58c31.15-10.15,60.09-26.07,89.67-39.8,40.92-19,84.73-46,130.83-49.67,36.26-2.85,70.9,9.42,98.6,31.56,31.77,25.39,62.32,62,103.63,73,40.44,10.79,81.35-6.69,119.13-24.28s75.16-39,116.92-43.05c59.73-5.85,113.28,22.88,168.9,38.84,30.2,8.66,59,6.17,87.09-7.5,22.43-10.89,48-26.93,60.65-49.24V0Z" opacity=".5" fill="#ffffff"></path>
-        <path d="M0,0V5.63C149.93,59,314.09,71.32,475.83,42.57c43-7.64,84.23-20.12,127.61-26.46,59-8.63,112.48,12.24,165.56,35.4C827.93,77.22,886,95.24,951.2,90c86.53-7,172.46-45.71,248.8-84.81V0Z" fill="#ffffff"></path>
-    </svg>
-</div>
-</section>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-XXXXXX"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
     
-        <!-- Partners Section -->
-
-        <section class="partners-section">
+    <!-- Skip to content link for accessibility -->
+    <a href="#main-content" class="visually-hidden-focusable position-absolute top-0 start-0 p-3 bg-primary text-white">Skip to main content</a>
+    
+    <!-- Header/Navigation -->
+    <header class="fixed-top">
+        <nav class="navbar navbar-expand-lg navbar-dark">
             <div class="container">
-                <h2 class="partners-title">Partners</h2>
-                <div class="row justify-content-center align-items-center">
-                    <!-- Partner Logos - Animated -->
-                    <div class="col-6 col-sm-4 col-md-2">
-                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSzl2OnwzUSFf3inFxWDYhEJk6qDSrdnc567g&s" alt="US Flag" class="partner-logo animate-fade-in">
+                <a class="navbar-brand" href="index.html">
+                    <img src="image/website-logo.png" alt="Importance Leadership Logo" width="180" height="auto" loading="lazy">
+                </a>
+                
+                <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                
+                <div class="offcanvas offcanvas-end bg-primary" tabindex="-1" id="navbarNav" aria-labelledby="navbarNavLabel">
+                    <div class="offcanvas-header border-bottom border-secondary">
+                        <h5 class="offcanvas-title text-white" id="navbarNavLabel">Menu</h5>
+                        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2">
-                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRzQt5AJWXNF98qPJBfDPEQJu5fK-QEM3Ko9g&s" alt="EU Humanitarian Aid" class="partner-logo animate-fade-in">
+                    <div class="offcanvas-body">
+                        <ul class="navbar-nav ms-auto align-items-lg-center">
+                            <li class="nav-item">
+                                <a class="nav-link active" href="index.html">Home</a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" id="aboutDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    Who We Are
+                                </a>
+                                 <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="programsDropdown">
+                                    
+                                    <li><hr class="dropdown-divider bg-secondary"></li>
+                                    <li><a class="dropdown-item" href="what-we-do.html#about">About Us</a></li>
+                                   <li><a class="dropdown-item" href="team.html">Team</a></li>
+                                    <li><a class="dropdown-item" href="Our Events.php">Events</a></li>
+
+    
+                                </ul>
+                            </li>
+
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" id="programsDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    Where We Work
+                                </a>
+                                <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="programsDropdown">
+                                    
+                                    <li><hr class="dropdown-divider bg-secondary"></li>
+                                    <li><a class="dropdown-item" href="#">USA</a></li>
+                                    <li><a class="dropdown-item" href="#">Canada</a></li>
+                                    <li><a class="dropdown-item" href="#">Kenya</a></li>
+                                   
+                              
+                                </ul>
+                            </li>
+
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" id="programsDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    What We Do
+                                </a>
+                                <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="programsDropdown">
+                                    <li><a class="dropdown-item" href="programs.html">All Programs</a></li>
+                                    <li><hr class="dropdown-divider bg-secondary"></li>
+                                    <li><a class="dropdown-item" href="#">Advocacy</a></li>
+                                    <li><a class="dropdown-item" href="#">Mental Health</a></li>
+                                    <li><a class="dropdown-item" href="#">Networking</a></li>
+                                    <li><a class="dropdown-item" href="#">Leadership</a></li>
+                                    <li><a class="dropdown-item" href="#">Climate Change Awareness </a></li>
+                              
+                                </ul>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="impact.html">Impact</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Blog</a>
+                            </li>
+                            <li class="nav-item ms-lg-3 mt-3 mt-lg-0">
+                                <a href="donate.html" class="btn btn-accent btn-lg px-3 px-lg-4">Donate</a>
+                            </li>
+                        </ul>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2">
-                        <img src="https://refugepoint.applicantstack.com/userdata/refugepoint/jobboard_Primary_Logo.jpg" alt="RFSU" class="partner-logo animate-fade-in">
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main id="main-content">
+        <!-- Hero Section -->
+        <section class="hero-section">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-lg-6" data-aos="fade-right" data-aos-delay="100">
+                        <h1 class="hero-title text-white">Empowering Leaders, Inspiring Excellence</h1>
+                        <p class="hero-subtitle text-white">We develop visionary young leaders through transformative mentorship, education, and community engagement programs that drive sustainable change.</p>
+                        <div class="d-flex flex-wrap gap-3 mb-4 mb-lg-5">
+                            <a href="programs.html" class="btn btn-accent btn-lg px-4">Explore Programs</a>
+                            <a href="join-us.html" class="btn btn-outline-light btn-lg px-4">Join Our Movement</a>
+                        </div>
+                        <div class="d-flex align-items-center gap-4">
+                            <div class="d-flex">
+                                <div class="me-n3">
+                                    <img src="image/Bonkey.png" alt="Participant" width="40" height="40" class="rounded-circle border-2 border-white">
+                                </div>
+                                <div class="me-n3">
+                                    <img src="image/shema.png" alt="Participant" width="40" height="40" class="rounded-circle border-2 border-white">
+                                </div>
+                                <div>
+                                    <img src="image/Grace.png" alt="Participant" width="40" height="40" class="rounded-circle border-2 border-white">
+                                </div>
+                            </div>
+                            <div>
+                                <p class="mb-0 small">Join <strong>2,500+</strong> young leaders transforming their communities</p>
+                            </div>
+                        </div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2">
-                        <img src="https://socialjustice.org.ge/uploads/donors/covers/1516977667rfsu-2.png" alt="Refuge Point" class="partner-logo animate-fade-in">
-                    </div>
-                    <div class="col-6 col-sm-4 col-md-2">
-                        <img src="https://www.mhinnovation.net/sites/default/files/content/organisation/logo/2024-09/RCK.JPG" alt="RCK" class="partner-logo animate-fade-in">
+                    <div class="col-lg-6 d-none d-lg-block" data-aos="fade-left" data-aos-delay="300">
+                        <div class="position-relative">
+                          <iframe width="704" height="396" src="https://www.youtube.com/embed/_rts2qZ2cK4" title="WHAT IS TRUE LEADERSHIP?" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                          
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- VOICES OF IMPACT SECTION -->
-<section class="testimonials-section py-7 position-relative overflow-hidden">
-    <!-- Decorative elements -->
-    <div class="position-absolute top-0 start-0 w-100 h-100 bg-dark opacity-10"></div>
-    <div class="position-absolute bottom-0 end-0" style="width: 300px; height: 300px;">
-      <div class="rounded-circle bg-primary opacity-10 w-100 h-100"></div>
-    </div>
-  
-    <div class="container position-relative z-1">
-      <!-- Section Header -->
-      <div class="row justify-content-center mb-6" data-aos="fade-up">
-        <div class="col-lg-9 col-xl-8 text-center">
-          <span class="badge bg-primary-soft text-primary mb-3">VOICES OF IMPACT</span>
-          <h2 class="display-5 fw-bold mb-3">Hear From Our Community</h2>
-          <p class="lead text-muted">Real stories from people who've experienced our programs firsthand.</p>
-        </div>
-      </div>
-  
-      <!-- Testimonials Carousel -->
-      <div class="row" data-aos="fade-up" data-aos-delay="100">
-        <div class="col-12">
-          <div class="testimonial-carousel swiper">
-            <!-- Loading Placeholder -->
-            <div class="swiper-wrapper" id="testimonials-container">
-              <div class="swiper-slide">
-                <div class="placeholder-content">
-                  <div class="ph-item">
-                    <div class="ph-picture"></div>
-                    <div class="ph-lines"></div>
-                  </div>
+        <!-- Trust Badges Section -->
+        <section class="py-4 bg-light">
+            <div class="container">
+                <div class="row align-items-center justify-content-center g-4">
+                    <div class="col-auto">
+                        <p class="mb-0 small text-muted">TRUSTED BY:</p>
+                    </div>
+                    <div class="col-auto">
+                        <img src="image/mukirambi.png" alt="Partner logo" height="30" loading="lazy">
+                    </div>
+                    <div class="col-auto">
+                        <img src="image/cohere logo.png" alt="Partner logo" height="30" loading="lazy">
+                    </div>
+                    <div class="col-auto">
+                        <img src="image/cohere logo.png" alt="Partner logo" height="30" loading="lazy">
+                    </div>
+                    <div class="col-auto">
+                        <img src="image/mukirambi.png" alt="Partner logo" height="30" loading="lazy">
+                    </div>
                 </div>
-              </div>
             </div>
-  
-            <!-- Navigation -->
-            <div class="swiper-button-prev"></div>
-            <div class="swiper-button-next"></div>
-            <div class="swiper-pagination"></div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-  
-  
+        </section>
+
+        <!-- Programs Section -->
+        <section class="section bg-light">
+            <div class="container">
+                <div class="row justify-content-center mb-5">
+                    <div class="col-lg-8 text-center" data-aos="fade-up">
+                        <span class="badge bg-primary mb-3">OUR PROGRAMS</span>
+                        <h2 class="section-title">Comprehensive Leadership Development</h2>
+                        <p class="lead">Our innovative programs are designed to equip young Africans with the skills, mindset, and networks needed to become transformative leaders in their communities and beyond.</p>
+                    </div>
+                </div>
+                
+                <div class="row g-4">
+                    <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="100">
+                        <div class="feature-card card h-100">
+                            <div class="position-relative">
+                                <img src="image/leadershipDevelopemnt.jpg" class="card-img-top" alt="Leadership Development Program" loading="lazy">
+                                <span class="card-badge">12 Weeks</span>
+                            </div>
+                            <div class="card-body">
+                                <h3 class="h4 fw-bold mb-3">Emerging Leaders Program</h3>
+                                <p class="card-text">A 12-week intensive that builds core leadership competencies through workshops, case studies, and real-world projects.</p>
+                                <ul class="list-unstyled mb-4">
+                                    <li class="mb-2"><i class="fas fa-check-circle text-secondary me-2"></i> Ethical decision-making</li>
+                                    <li class="mb-2"><i class="fas fa-check-circle text-secondary me-2"></i> Strategic thinking</li>
+                                    <li class="mb-2"><i class="fas fa-check-circle text-secondary me-2"></i> Community engagement</li>
+                                </ul>
+                            </div>
+                            <div class="card-footer bg-transparent border-top-0">
+                                <a href="#" class="btn btn-outline-primary w-100">Program Details</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="200">
+                        <div class="feature-card card h-100">
+                            <div class="position-relative">
+                                <img src="image/mentorship.jpg" class="card-img-top" alt="Mentorship Program" loading="lazy">
+                                <span class="card-badge">6 Months</span>
+                            </div>
+                            <div class="card-body">
+                                <h3 class="h4 fw-bold mb-3">Executive Mentorship Initiative</h3>
+                                <p class="card-text">One-on-one guidance connecting promising youth with seasoned professionals for personalized development.</p>
+                                <ul class="list-unstyled mb-4">
+                                    <li class="mb-2"><i class="fas fa-check-circle text-secondary me-2"></i> Career guidance</li>
+                                    <li class="mb-2"><i class="fas fa-check-circle text-secondary me-2"></i> Skill development</li>
+                                    <li class="mb-2"><i class="fas fa-check-circle text-secondary me-2"></i> Networking opportunities</li>
+                                </ul>
+                            </div>
+                            <div class="card-footer bg-transparent border-top-0">
+                                <a href="#" class="btn btn-outline-primary w-100">Program Details</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="300">
+                        <div class="feature-card card h-100">
+                            <div class="position-relative">
+                                <img src="image/community engagement.jpg" class="card-img-top" alt="Community Impact Program" loading="lazy">
+                                <span class="card-badge">Ongoing</span>
+                            </div>
+                            <div class="card-body">
+                                <h3 class="h4 fw-bold mb-3">Community Changemakers</h3>
+                                <p class="card-text">Hands-on initiatives that address local challenges while developing practical leadership experience.</p>
+                                <ul class="list-unstyled mb-4">
+                                    <li class="mb-2"><i class="fas fa-check-circle text-secondary me-2"></i> Project management</li>
+                                    <li class="mb-2"><i class="fas fa-check-circle text-secondary me-2"></i> Social innovation</li>
+                                    <li class="mb-2"><i class="fas fa-check-circle text-secondary me-2"></i> Sustainable solutions</li>
+                                </ul>
+                            </div>
+                            <div class="card-footer bg-transparent border-top-0">
+                                <a href="#" class="btn btn-outline-primary w-100">Program Details</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="text-center mt-5" data-aos="fade-up" data-aos-delay="400">
+                    <a href="what-we-do.html" class="btn btn-primary btn-lg px-5">Explore All Programs <i class="fas fa-arrow-right ms-2"></i></a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Impact Section -->
+        <section class="section">
+            <div class="container">
+                <div class="row g-4 align-items-center">
+                    <div class="col-lg-6" data-aos="fade-right">
+                        <span class="badge bg-primary mb-3">OUR IMPACT</span>
+                        <h2 class="section-title text-start">Transforming Lives, Shaping Futures</h2>
+                        <p class="lead">Since our founding, we've empowered thousands of young leaders to create positive change in their communities.</p>
+                        <p>Our holistic approach combines leadership training with practical experience, ensuring our participants are equipped to tackle real-world challenges.</p>
+                        
+                        <div class="row mt-4 g-4">
+                            <div class="col-6" data-aos="fade-up" data-aos-delay="100">
+                                <div class="p-4 bg-light rounded-3 h-100">
+                                    <div class="impact-number mb-3" data-count="2500">0</div>
+                                    <h3 class="h5 fw-bold">Youth Empowered</h3>
+                                    <p class="mb-0 small">Through our leadership programs</p>
+                                </div>
+                            </div>
+                            
+                            <div class="col-6" data-aos="fade-up" data-aos-delay="200">
+                                <div class="p-4 bg-light rounded-3 h-100">
+                                    <div class="impact-number mb-3" data-count="85">0</div>
+                                    <h3 class="h5 fw-bold">Community Projects</h3>
+                                    <p class="mb-0 small">Initiated by our participants</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="mt-4" data-aos="fade-up" data-aos-delay="300">
+                            <a href="impact.html" class="btn btn-outline-primary btn-lg px-4">See Our Full Impact</a>
+                        </div>
+                    </div>
+                    
+                    <div class="col-lg-6" data-aos="fade-left">
+                        <div class="position-relative">
+                            <img src="image/bg-impact.jpg" alt="Leadership program participants" class="img-fluid rounded-4 shadow" loading="lazy">
+                            <div class="position-absolute bottom-0 end-0 p-4 bg-white rounded-tl-4 shadow-sm" style="max-width: 300px;">
+                                <div class="d-flex">
+                                    <i class="fas fa-quote-left fs-1 text-secondary me-3"></i>
+                                    <div>
+                                        <p class="mb-2">"This program transformed my perspective on leadership and gave me the tools to create change in my community."</p>
+                                        <h6 class="mb-0">- Sarah K., Program Graduate</h6>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Pillars Section -->
+        <section class="section pillars-section">
+            <div class="container">
+                <div class="row justify-content-center mb-5">
+                    <div class="col-lg-8 text-center" data-aos="fade-up">
+                        <span class="badge bg-accent text-dark mb-3">OUR APPROACH</span>
+                        <h2 class="section-title text-white">The Four Pillars of Our Work</h2>
+                        <p class="lead text-light">These foundational principles guide every aspect of our leadership development model.</p>
+                    </div>
+                </div>
+                
+                <div class="row g-4">
+                    <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="100">
+                        <div class="pillar-card text-center">
+                            <div class="pillar-icon">
+                                <i class="fas fa-bullhorn"></i>
+                            </div>
+                            <h3 class="h4 fw-bold mb-3">Advocacy</h3>
+                            <p>Amplifying youth voices to champion rights, equity, and inclusive policies at local and national levels.</p>
+                            <a href="#" class="btn btn-sm btn-outline-light mt-3">Learn More</a>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="200">
+                        <div class="pillar-card text-center">
+                            <div class="pillar-icon">
+                                <i class="fas fa-brain"></i>
+                            </div>
+                            <h3 class="h4 fw-bold mb-3">Wellbeing</h3>
+                            <p>Promoting mental health awareness and providing tools for emotional resilience and self-care.</p>
+                            <a href="#" class="btn btn-sm btn-outline-light mt-3">Learn More</a>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="300">
+                        <div class="pillar-card text-center">
+                            <div class="pillar-icon">
+                                <i class="fas fa-chess-queen"></i>
+                            </div>
+                            <h3 class="h4 fw-bold mb-3">Leadership</h3>
+                            <p>Developing ethical, visionary leaders who can navigate complexity and drive meaningful change.</p>
+                            <a href="#" class="btn btn-sm btn-outline-light mt-3">Learn More</a>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="400">
+                        <div class="pillar-card text-center">
+                            <div class="pillar-icon">
+                                <i class="fas fa-hands-helping"></i>
+                            </div>
+                            <h3 class="h4 fw-bold mb-3">Mentorship</h3>
+                            <p>Connecting emerging leaders with experienced guides for personalized growth and development.</p>
+                            <a href="mentorshipProgram.html" class="btn btn-sm btn-outline-light mt-3">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Testimonials Section -->
+        <section class="section bg-light">
+            <div class="container">
+                <div class="row justify-content-center mb-5">
+                    <div class="col-lg-8 text-center" data-aos="fade-up">
+                        <span class="badge bg-primary mb-3">SUCCESS STORIES</span>
+                        <h2 class="section-title">Voices of Transformation</h2>
+                        <p class="lead">Hear directly from our program participants about their leadership journeys.</p>
+                    </div>
+                </div>
+                
+                <div class="row g-4">
+                    <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="100">
+                        <div class="testimonial-card">
+                            <img src="image/uwase.png" alt="Testimonial" class="testimonial-img" loading="lazy">
+                            <div class="testimonial-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <p class="mb-4">"The mentorship I received completely changed my career trajectory. My mentor helped me see possibilities I never imagined for myself."</p>
+                            <h4 class="h5 mb-1">David M.</h4>
+                            <p class="small text-muted mb-0">Community Organizer, Nairobi</p>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="200">
+                        <div class="testimonial-card">
+                            <img src="image/fabiola.png" alt="Testimonial" class="testimonial-img" loading="lazy">
+                            <div class="testimonial-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <p class="mb-4">"Through the leadership program, I gained the confidence and skills to start my own social enterprise addressing clean water access."</p>
+                            <h4 class="h5 mb-1">Amina S.</h4>
+                            <p class="small text-muted mb-0">Social Entrepreneur, Kampala</p>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="300">
+                        <div class="testimonial-card">
+                            <img src="image/Mick.jpg" alt="Testimonial" class="testimonial-img" loading="lazy">
+                            <div class="testimonial-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                            </div>
+                            <p class="mb-4">"The community projects component gave me practical experience that set me apart when applying for graduate programs and jobs."</p>
+                            <h4 class="h5 mb-1">Thomas K.</h4>
+                            <p class="small text-muted mb-0">Public Policy Student, Johannesburg</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="text-center mt-5" data-aos="fade-up">
+                    <a href="#" class="btn btn-outline-primary btn-lg px-5">Read More Stories</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Partners Section -->
+        <section class="section">
+            <div class="container">
+                <div class="row justify-content-center mb-5">
+                    <div class="col-lg-8 text-center" data-aos="fade-up">
+                        <span class="badge bg-primary mb-3">OUR PARTNERS</span>
+                        <h2 class="section-title">Collaborating for Greater Impact</h2>
+                        <p class="lead">We work with leading organizations to amplify our reach and effectiveness.</p>
+                    </div>
+                </div>
+                
+                <div class="row g-4 align-items-center justify-content-center">
+                    <div class="col-6 col-md-4 col-lg-2" data-aos="fade-up" data-aos-delay="100">
+                        <div class="p-4 bg-light rounded-3 text-center">
+                            <img src="image/cohere logo.png" alt="Partner logo" class="img-fluid" style="height: 40px;" loading="lazy">
+                        </div>
+                    </div>
+                    <div class="col-6 col-md-4 col-lg-2" data-aos="fade-up" data-aos-delay="200">
+                        <div class="p-4 bg-light rounded-3 text-center">
+                            <img src="image/hias-logo-blue.png" alt="Partner logo" class="img-fluid" style="height: 40px;" loading="lazy">
+                        </div>
+                    </div>
+                    <div class="col-6 col-md-4 col-lg-2" data-aos="fade-up" data-aos-delay="300">
+                        <div class="p-4 bg-light rounded-3 text-center">
+                            <img src="image/mukirambi.png" alt="Partner logo" class="img-fluid" style="height: 40px;" loading="lazy">
+                        </div>
+                    </div>
+                    <div class="col-6 col-md-4 col-lg-2" data-aos="fade-up" data-aos-delay="400">
+                        <div class="p-4 bg-light rounded-3 text-center">
+                            <img src="image/reframe" alt="Partner logo" class="img-fluid" style="height: 40px;" loading="lazy">
+                        </div>
+                    </div>
+                    <div class="col-6 col-md-4 col-lg-2" data-aos="fade-up" data-aos-delay="500">
+                        <div class="p-4 bg-light rounded-3 text-center">
+                            <img src="image/shema.png" alt="Partner logo" class="img-fluid" style="height: 40px;" loading="lazy">
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="text-center mt-5" data-aos="fade-up">
+                    <a href="#" class="btn btn-outline-primary btn-lg px-5">Become a Partner</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="section cta-section">
+            <div class="cta-pattern"></div>
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-lg-10 text-center" data-aos="fade-up">
+                        <h2 class="display-5 fw-bold mb-4 text-white">Ready to Be Part of the Change?</h2>
+                        <p class="lead mb-5 text-white">Whether you're a young leader looking to grow, a professional willing to mentor, or an organization wanting to partner, there are many ways to get involved in our mission.</p>
+                        <div class="d-flex flex-wrap justify-content-center gap-3">
+                            <a href="#" class="btn btn-accent btn-lg px-5">Apply Now</a>
+                            <a href="#" class="btn btn-outline-light btn-lg px-5">Volunteer</a>
+                            <a href="donate.html" class="btn btn-light btn-lg px-5">Donate</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Blog Section 
+        <section class="section bg-light">
+            <div class="container">
+                <div class="row justify-content-center mb-5">
+                    <div class="col-lg-8 text-center" data-aos="fade-up">
+                        <span class="badge bg-primary mb-3">FROM OUR BLOG</span>
+                        <h2 class="section-title">Insights & Inspiration</h2>
+                        <p class="lead">Discover articles, stories and resources to fuel your leadership journey.</p>
+                    </div>
+                </div>
+                
+                <div class="row g-4">
+                    <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="100">
+                        <div class="card border-0 h-100">
+                            <img src="assets/images/blog-1.webp" class="card-img-top rounded-3" alt="Blog post" loading="lazy">
+                            <div class="card-body">
+                                <span class="badge bg-secondary mb-2">Leadership</span>
+                                <h3 class="h5 fw-bold">5 Essential Qualities of Ethical Leaders</h3>
+                                <p class="card-text">Explore the core characteristics that distinguish truly impactful leaders in today's complex world.</p>
+                            </div>
+                            <div class="card-footer bg-transparent border-top-0 pt-0">
+                                <a href="blog-post.html" class="btn btn-link ps-0">Read More <i class="fas fa-arrow-right ms-2"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="200">
+                        <div class="card border-0 h-100">
+                            <img src="assets/images/blog-2.webp" class="card-img-top rounded-3" alt="Blog post" loading="lazy">
+                            <div class="card-body">
+                                <span class="badge bg-secondary mb-2">Mentorship</span>
+                                <h3 class="h5 fw-bold">Building Effective Mentor-Mentee Relationships</h3>
+                                <p class="card-text">Practical tips for both mentors and mentees to maximize the value of their partnership.</p>
+                            </div>
+                            <div class="card-footer bg-transparent border-top-0 pt-0">
+                                <a href="blog-post.html" class="btn btn-link ps-0">Read More <i class="fas fa-arrow-right ms-2"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="300">
+                        <div class="card border-0 h-100">
+                            <img src="assets/images/blog-3.webp" class="card-img-top rounded-3" alt="Blog post" loading="lazy">
+                            <div class="card-body">
+                                <span class="badge bg-secondary mb-2">Community</span>
+                                <h3 class="h5 fw-bold">Youth-Led Initiatives Changing African Communities</h3>
+                                <p class="card-text">Spotlight on innovative projects started by our program alumni across the continent.</p>
+                            </div>
+                            <div class="card-footer bg-transparent border-top-0 pt-0">
+                                <a href="blog-post.html" class="btn btn-link ps-0">Read More <i class="fas fa-arrow-right ms-2"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="text-center mt-5" data-aos="fade-up">
+                    <a href="blog.html" class="btn btn-primary btn-lg px-5">View All Articles</a>
+                </div>
+            </div>
+        </section>
+        -->
+    </main>
 
     <!-- Footer -->
-    <footer class="bg-dark text-white pt-6 pb-4 position-relative">
+    <footer class="footer">
         <div class="container">
             <div class="row g-4">
                 <div class="col-lg-4">
-                    <img src="image/website-logo.png" alt="Importance Leadership Logo" class="mb-3" width="180">
-                    <p class="mb-4">Empowering communities through leadership, innovation, and impact.</p>
-                    <div class="d-flex gap-3 mb-4">
-                        <a href="#" class="text-white fs-5"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#" class="text-white fs-5"><i class="fab fa-twitter"></i></a>
-                        <a href="#" class="text-white fs-5"><i class="fab fa-instagram"></i></a>
-                        <a href="#" class="text-white fs-5"><i class="fab fa-linkedin-in"></i></a>
+                    <img src="image/website-logo.png" alt="Importance Leadership Logo" class="footer-logo" loading="lazy">
+                    <p class="mb-4">Developing ethical, visionary leaders who drive positive change in Africa and beyond through mentorship, education, and community engagement.</p>
+                    <div class="social-links mb-4">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
                     </div>
                 </div>
+                
                 <div class="col-lg-2 col-md-4">
-                    <h5 class="fw-bold mb-4">Quick Links</h5>
-                    <ul class="list-unstyled">
-                        <li class="mb-2"><a href="index.html" class="text-white text-decoration-none">Home</a></li>
-                        <li class="mb-2"><a href="who-we-are.html" class="text-white text-decoration-none">About Us</a></li>
-                        <li class="mb-2"><a href="what-we-do.html" class="text-white text-decoration-none">Programs</a></li>
-                        <li class="mb-2"><a href="impact.html" class="text-white text-decoration-none">Impact</a></li>
-                        <li class="mb-2"><a href="donate.html" class="text-white text-decoration-none">Donate</a></li>
-                    </ul>
+                    <div class="footer-links">
+                        <h5>Navigation</h5>
+                        <ul>
+                            <li><a href="index.html">Home</a></li>
+                            <li><a href="about.html">About Us</a></li>
+                            <li><a href="programs.html">Programs</a></li>
+                            <li><a href="impact.html">Impact</a></li>
+                            <li><a href="#">Blog</a></li>
+                            <li><a href="contact-us.html">Contact</a></li>
+                        </ul>
+                    </div>
                 </div>
+                
                 <div class="col-lg-3 col-md-4">
-                    <h5 class="fw-bold mb-4">Contact Us</h5>
-                    <ul class="list-unstyled">
-                        <li class="mb-2"><i class="fas fa-map-marker-alt me-2 text-primary"></i> 123 Leadership Ave, City, Country</li>
-                        <li class="mb-2"><i class="fas fa-phone me-2 text-primary"></i> +1 (234) 567-8900</li>
-                        <li class="mb-2"><i class="fas fa-envelope me-2 text-primary"></i> info@importanceleadership.org</li>
-                    </ul>
+                    <div class="footer-links">
+                        <h5>Programs</h5>
+                        <ul>
+                            <li><a href="#">Emerging Leaders</a></li>
+                            <li><a href="#">Executive Mentorship</a></li>
+                            <li><a href="#">Community Changemakers</a></li>
+                            <li><a href="#">Women in Leadership</a></li>
+                            <li><a href="#">Corporate Training</a></li>
+                        </ul>
+                    </div>
                 </div>
+                
                 <div class="col-lg-3 col-md-4">
-                    <h5 class="fw-bold mb-4">Newsletter</h5>
-                    <p>Subscribe to our newsletter for updates and news.</p>
-                    <form class="mb-3" method="POST" action="subscribe.php">
-                        <div class="input-group">
-                            <input 
-                type="email" 
-                class="form-control" 
-                name="email" 
-                placeholder="Your Email" 
-                aria-label="Your Email"
-                required
-            >
-                <button class="btn btn-primary" type="submit">Subscribe</button>
-                        </div>
-                                  <!-- CSRF protection (recommended) -->
-        <input type="hidden" name="csrf_token" value="<?php echo generateCsrfToken(); ?>">
-               
-                    </form>
-                    <div class="subscription-message mt-2" style="display: none;"></div>
-             </div>
+                    <div class="footer-links">
+                        <h5>Contact Us</h5>
+                        <ul>
+                            <li><i class="fas fa-map-marker-alt me-2 text-secondary"></i> Kenya, USA, Canada</li>
+                            <li><i class="fas fa-phone me-2 text-secondary"></i> +254 792 732 177</li>
+                            <li><i class="fas fa-envelope me-2 text-secondary"></i> info@importanceleadership.com</li>
+                        </ul>
+                        
+                        <h5 class="mt-4">Newsletter</h5>
+                        <p class="small">Subscribe for updates and insights</p>
+                        <form>
+                            <div class="input-group mb-3">
+                                <input type="email" class="form-control form-control-sm" placeholder="Your Email" required>
+                                <button class="btn btn-accent btn-sm" type="submit">Join</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
             </div>
-            <hr class="my-4 bg-secondary">
+            
+            <hr class="my-4 bg-secondary opacity-25">
+            
             <div class="row">
-                <div class="col-md-6 text-center text-md-center">
-                    <p class="mb-0">&copy; 2025 Importance Leadership. All rights reserved.</p>
+                <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+                    <p class="mb-0 small">&copy; 2025 Importance Leadership. All rights reserved.</p>
                 </div>
                 <div class="col-md-6 text-center text-md-end">
-                    <a href="#" class="text-white text-decoration-none me-3">Privacy Policy</a>
-                    <a href="#" class="text-white text-decoration-none">Terms of Service</a>
+                    <a href="#" class="text-white text-decoration-none small me-3">Privacy Policy</a>
+                    <a href="#" class="text-white text-decoration-none small me-3">Terms of Service</a>
+                    <a href="#" class="text-white text-decoration-none small">Cookie Policy</a>
                 </div>
             </div>
         </div>
     </footer>
 
+    <!-- Back to top button -->
+    <div class="back-to-top" id="backToTop">
+        <i class="fas fa-arrow-up"></i>
+    </div>
+
     <!-- Scripts -->
+    <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    
+    <!-- AOS Animation -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    
+    <!-- Main JS -->
     <script>
         // Initialize AOS animation
         AOS.init({
             duration: 800,
             easing: 'ease-in-out',
-            once: true
+            once: true,
+            offset: 100
         });
         
         // Counter animation
-        document.addEventListener("DOMContentLoaded", function() {
-            const counters = document.querySelectorAll('.impact-counter');
+        function animateCounters() {
+            const counters = document.querySelectorAll('.impact-number');
             const speed = 200;
             
             counters.forEach(counter => {
                 const target = +counter.getAttribute('data-count');
-                const count = +counter.innerText;
+                const count = +counter.textContent.replace('+', '');
                 const increment = target / speed;
                 
                 if (count < target) {
-                    counter.innerText = Math.ceil(count + increment);
-                    setTimeout(updateCounter, 1);
+                    counter.textContent = Math.ceil(count + increment) + '+';
+                    setTimeout(animateCounters, 1);
                 } else {
-                    counter.innerText = target;
-                }
-                
-                function updateCounter() {
-                    const current = +counter.innerText;
-                    if (current < target) {
-                        counter.innerText = Math.ceil(current + increment);
-                        setTimeout(updateCounter, 1);
-                    } else {
-                        counter.innerText = target;
-                    }
+                    counter.textContent = target + '+';
                 }
             });
-        });
-        window.addEventListener('scroll', function() {
-  if (window.scrollY > 50) {
-    document.querySelector('.navbar').classList.add('scrolled');
-    // Or similar code that modifies the navbar
-  } else {
-    document.querySelector('.navbar').classList.remove('scrolled');
-  }
-});
+        }
         
-        // Subscription form submission
-        document.querySelector('form').addEventListener('submit', function(event) {
-            event.preventDefault();
-            const email = this.email.value;
-            const messageDiv = document.querySelector('.subscription-message');
+        // Run counter animation when scrolled to
+        function checkCounters() {
+            const countersSection = document.querySelector('.impact-number');
+            if (!countersSection) return;
             
-            // Simulate an AJAX request (replace with actual AJAX code)
-            setTimeout(function() {
-                messageDiv.innerText = 'Thank you for subscribing!';
-                messageDiv.style.display = 'block';
-                messageDiv.classList.add('alert', 'alert-success');
-            }, 1000);
-        });
-
-        document.addEventListener('DOMContentLoaded', () => {
-        const logos = document.querySelectorAll('.partner-logo');
-        
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('animate-fade-in');
-                    observer.unobserve(entry.target);
-                }
-            });
-        }, { threshold: 0.1 });
-
-        logos.forEach(logo => observer.observe(logo));
-    });
-
-
-    
-        document.addEventListener('DOMContentLoaded', function() {
-          // Initialize Swiper
-          const swiper = new Swiper('.testimonial-carousel', {
-            loop: true,
-            spaceBetween: 30,
-            centeredSlides: true,
-            navigation: {
-              nextEl: '.swiper-button-next',
-              prevEl: '.swiper-button-prev',
-            },
-            pagination: {
-              el: '.swiper-pagination',
-              clickable: true,
-            },
-            breakpoints: {
-              768: {
-                slidesPerView: 1.2
-              },
-              992: {
-                slidesPerView: 1.5
-              }
+            const position = countersSection.getBoundingClientRect().top;
+            const screenPosition = window.innerHeight / 1.3;
+            
+            if (position < screenPosition) {
+                animateCounters();
+                window.removeEventListener('scroll', checkCounters);
             }
-          });
+        }
         
-          // Fetch testimonials
-          // Fetch testimonials
-fetch('./Backend/submitFeedback.php?action=getFeedback')
-  .then(response => {
-    console.log('Raw response:', response); // Log the raw response
-    return response.json(); // Properly returned now
-  })
-  .then(data => {
-    console.log('Parsed data:', data); // Log the parsed data
-    if (!data || !data.data) {
-      throw new Error('Invalid data format');
-    }
-    return data;
-  })
-  .then(data => {
-    const container = document.getElementById('testimonials-container');
-    container.innerHTML = ''; // Clear loading state
-
-    if (!data.data || data.data.length === 0) {
-      container.innerHTML = `
-        <div class="swiper-slide">
-          <div class="text-center py-5">
-            <i class="bi bi-emoji-smile fs-1"></i>
-            <h5 class="mt-3">No testimonials yet</h5>
-            <p>Be the first to share your experience!</p>
-          </div>
-        </div>`;
-      return;
-    }
-
-    data.data.forEach(testimonial => {
-      const stars = Array(5).fill().map((_, i) =>
-        `<i class="bi bi-star${i < testimonial.rating ? '-fill' : ''} text-warning"></i>`
-      ).join('');
-
-      const slide = document.createElement('div');
-      slide.className = 'swiper-slide';
-      slide.innerHTML = `
-        <div class="d-flex flex-column h-100">
-          <div class="text-center mb-4">
-            <img src="${testimonial.avatar}" 
-                 class="rounded-circle img-thumbnail" 
-                 width="100" height="100"
-                 alt="${testimonial.name}"
-                 onerror="this.src='image/default-avatar.png'">
-          </div>
-          <div class="flex-grow-1">
-            <div class="mb-3">${stars}</div>
-            <blockquote class="mb-4">
-              <p>"${testimonial.message}"</p>
-            </blockquote>
-          </div>
-          <div class="mt-auto text-center">
-            <h5 class="mb-1">${testimonial.name}</h5>
-            <small class="text-muted">${testimonial.program || ''}</small>
-          </div>
-        </div>`;
-
-      container.appendChild(slide);
-    });
-
-    swiper.update(); // Refresh swiper after content load
-  })
-  .catch(error => {
-    console.error('Error:', error);
-    document.getElementById('testimonials-container').innerHTML = `
-      <div class="swiper-slide">
-        <div class="alert alert-danger">
-          <i class="bi bi-exclamation-triangle"></i>
-          Error loading testimonials. Please try again later.
-        </div>
-      </div>`;
-  });
-
+        window.addEventListener('scroll', checkCounters);
+        
+        // Navbar scroll effect
+        window.addEventListener('scroll', function() {
+            const navbar = document.querySelector('.navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+        
+        // Close mobile menu when clicking a link
+        document.querySelectorAll('.offcanvas-body .nav-link, .dropdown-item').forEach(link => {
+            link.addEventListener('click', () => {
+                const offcanvas = bootstrap.Offcanvas.getInstance(document.getElementById('navbarNav'));
+                offcanvas.hide();
+            });
+        });
+        
+        // Back to top button
+        const backToTopButton = document.getElementById('backToTop');
+        
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                backToTopButton.classList.add('active');
+            } else {
+                backToTopButton.classList.remove('active');
+            }
+        });
+        
+        backToTopButton.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+        
+        // Initialize tooltips
+        const tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'));
+        tooltipTriggerList.map(function (tooltipTriggerEl) {
+            return new bootstrap.Tooltip(tooltipTriggerEl);
         });
     </script>
-    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/phosphor-icons"></script>
-    <script src="https://cdn.jsdelivr.net/npm/phosphor-icons@1.4.0/dist/phosphor-icons.min.js"></script>
     
+    <!-- Schema.org markup for Google -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "Importance Leadership",
+      "url": "https://www.importanceleadership.org",
+      "logo": "https://www.importanceleadership.org/assets/images/logo.svg",
+      "description": "Developing ethical, visionary leaders who drive positive change in Africa and beyond through mentorship, education, and community engagement.",
+      "foundingDate": "2020",
+      "founders": [
+        {
+          "@type": "Person",
+          "name": "Founder Name"
+        }
+      ],
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "",
+        "addressLocality": "Nairobi",
+        "addressCountry": "Kenya"
+      },
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+254700123456",
+        "contactType": "customer service",
+        "email": "info@importanceleadership.org",
+        "availableLanguage": "English"
+      },
+      "sameAs": [
+        "https://www.facebook.com/importanceleadership",
+        "https://www.twitter.com/importancelead",
+        "https://www.instagram.com/importanceleadership",
+        "https://www.linkedin.com/company/importance-leadership"
+      ]
+    }
+    </script>
 </body>
-</html> 
+</html>
