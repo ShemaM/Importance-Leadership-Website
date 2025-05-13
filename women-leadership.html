@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Women in Leadership Program | Importance Leadership</title>
+    <meta name="description" content="Empowering Africa's next generation of female leaders through specialized training and mentorship">
+    <meta name="keywords" content="youth leadership, leadership development, mentorship programs, community impact, African leadership, social change">
+    <meta name="author" content="Importance Leadership">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://www.importanceleadership.com" />
+    
+    <!-- Open Graph / Social Media Meta Tags -->
+    <meta property="og:title" content="Importance Leadership | Developing Ethical Leaders for Global Impact">
+    <meta property="og:description" content="Empowering young leaders through mentorship, education, and advocacy programs.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.importanceleadership.org">
+    <meta property="og:image" content="https://www.importanceleadership.org/image/logo.png">
+    <meta property="og:image:alt" content="Importance Leadership Logo">
+    <meta property="og:site_name" content="Importance Leadership">
+    
+    <!-- Favicon -->
+    <link rel="icon" href="image/logo.jpg" type="image/x-icon">
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16x16.png">
+    <link rel="manifest" href="assets/site.webmanifest">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#0b1f3a',
+                        secondary: '#f5a623',
+                        accent: '#7cade9',
+                    },
+                    animation: {
+                        'fade-in': 'fadeIn 0.5s ease-out',
+                        'slide-up': 'slideUp 0.5s ease-out',
+                    },
+                    keyframes: {
+                        fadeIn: {
+                            '0%': { opacity: '0' },
+                            '100%': { opacity: '1' },
+                        },
+                        slideUp: {
+                            '0%': { transform: 'translateY(20px)', opacity: '0' },
+                            '100%': { transform: 'translateY(0)', opacity: '1' },
+                        },
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <!-- Framer Motion -->
+    <script src="https://unpkg.com/framer-motion@10.16.4/dist/framer-motion.js"></script>
+    
+    <style>
+        .hero-gradient {
+            background: linear-gradient(rgba(11, 31, 58, 0.9), rgba(11, 31, 58, 0.9)), 
+                        url('images/women-leadership-bg.webp') center/cover;
+        }
+        .feature-icon {
+            width: 80px;
+            height: 80px;
+            background: rgba(245, 166, 35, 0.1);
+            color: #f5a623;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.75rem;
+            margin: 0 auto 1.5rem;
+        }
+        .timeline-item {
+            position: relative;
+            padding-left: 2rem;
+        }
+        .timeline-item:before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 4px;
+            height: 100%;
+            background: #f5a623;
+        }
+        /* Accessibility */
+        button:focus, a:focus, input:focus {
+            outline: 2px solid #f5a623;
+            outline-offset: 2px;
+        }
+        @media (prefers-reduced-motion: reduce) {
+            .animate-fade-in, .animate-slide-up {
+                animation: none !important;
+            }
+        }
+    </style>
+</head>
+<body class="font-sans antialiased text-gray-800 bg-white">
+    <!-- Navigation -->
+    <header class="fixed w-full bg-primary text-white z-50">
+        <div class="container mx-auto px-6 py-4">
+            <div class="flex justify-between items-center">
+                <a href="index.html" class="text-2xl font-bold">
+                    <img src="image/website-logo.png" alt="Importance Leadership" class="h-10" width="180" height="40">
+                </a>
+                <nav aria-label="Main navigation">
+                    <ul class="hidden md:flex space-x-8">
+                        <li><a href="index.html" class="hover:text-secondary transition">Home</a></li>
+                        <li class="relative group">
+                            <button aria-expanded="false" class="hover:text-secondary transition flex items-center">
+                                Programs
+                                <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                                </svg>
+                            </button>
+                            <ul class="absolute hidden group-hover:block bg-white text-gray-800 shadow-lg rounded-md py-2 w-48">
+                                <li><a href="emerging-leaders.html" class="block px-4 py-2 hover:bg-gray-100">Emerging Leaders</a></li>
+                                <li><a href="women-leadership.html" class="block px-4 py-2 hover:bg-gray-100 bg-gray-100">Women in Leadership</a></li>
+                                <li><a href="executive-mentorship.html" class="block px-4 py-2 hover:bg-gray-100">Executive Mentorship</a></li>
+                                <li><a href="community-changemakers.html" class="block px-4 py-2 hover:bg-gray-100">Community Changemakers</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="about.html" class="hover:text-secondary transition">About</a></li>
+                        <li><a href="donate.html" class="bg-secondary text-primary px-4 py-2 rounded-md font-medium hover:bg-opacity-90 transition">Donate</a></li>
+                    </ul>
+                    <button class="md:hidden text-white focus:outline-none" aria-label="Mobile menu">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                        </svg>
+                    </button>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero-gradient min-h-screen flex items-center pt-20">
+        <div class="container mx-auto px-6">
+            <div class="max-w-2xl">
+                <span class="bg-secondary text-primary text-sm font-semibold px-3 py-1 rounded-full inline-block mb-4 animate-fade-in">9-MONTH FELLOWSHIP</span>
+                <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 animate-fade-in" style="animation-delay: 0.1s;">Women in Leadership</h1>
+                <p class="text-xl text-gray-300 mb-8 animate-fade-in" style="animation-delay: 0.2s;">Developing Africa's next generation of empowered female leaders through mentorship, skills training, and community building.</p>
+                <div class="flex flex-col sm:flex-row gap-4 animate-fade-in" style="animation-delay: 0.3s;">
+                    <a href="#apply" class="bg-secondary hover:bg-secondary/90 text-primary font-bold py-3 px-6 rounded-md text-center transition">Apply Now</a>
+                    <a href="#curriculum" class="border-2 border-white text-white hover:bg-white/10 font-bold py-3 px-6 rounded-md text-center transition">Learn More</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Program Stats -->
+    <section class="py-16 bg-gray-50">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-white p-8 rounded-lg shadow-sm text-center animate-slide-up">
+                    <div class="text-5xl font-bold text-primary mb-2" id="alumni-count">0</div>
+                    <h3 class="text-xl font-semibold mb-2">Alumni</h3>
+                    <p class="text-gray-600">Women leaders across Africa</p>
+                </div>
+                <div class="bg-white p-8 rounded-lg shadow-sm text-center animate-slide-up" style="animation-delay: 0.1s;">
+                    <div class="text-5xl font-bold text-primary mb-2" id="mentors-count">0</div>
+                    <h3 class="text-xl font-semibold mb-2">Mentors</h3>
+                    <p class="text-gray-600">Established female executives</p>
+                </div>
+                <div class="bg-white p-8 rounded-lg shadow-sm text-center animate-slide-up" style="animation-delay: 0.2s;">
+                    <div class="text-5xl font-bold text-primary mb-2" id="countries-count">0</div>
+                    <h3 class="text-xl font-semibold mb-2">Countries</h3>
+                    <p class="text-gray-600">Represented in our network</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Program Features -->
+    <section class="py-16">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-12 animate-slide-up">
+                <h2 class="text-3xl font-bold mb-3">Program Features</h2>
+                <p class="text-xl text-gray-600">Comprehensive development for emerging female leaders</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="text-center p-6 bg-white rounded-lg shadow-sm animate-slide-up">
+                    <div class="feature-icon">
+                        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3">Leadership Labs</h3>
+                    <p class="text-gray-600">Interactive workshops on authentic leadership styles and executive presence</p>
+                </div>
+                
+                <div class="text-center p-6 bg-white rounded-lg shadow-sm animate-slide-up" style="animation-delay: 0.1s;">
+                    <div class="feature-icon">
+                        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3">Mentorship</h3>
+                    <p class="text-gray-600">One-on-one guidance from senior women leaders in your field</p>
+                </div>
+                
+                <div class="text-center p-6 bg-white rounded-lg shadow-sm animate-slide-up" style="animation-delay: 0.2s;">
+                    <div class="feature-icon">
+                        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3">Sponsorship</h3>
+                    <p class="text-gray-600">Connections with potential sponsors and advocates</p>
+                </div>
+                
+                <div class="text-center p-6 bg-white rounded-lg shadow-sm animate-slide-up" style="animation-delay: 0.3s;">
+                    <div class="feature-icon">
+                        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3">Sisterhood</h3>
+                    <p class="text-gray-600">Lifelong network of supportive peers across Africa</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Curriculum Section -->
+    <section id="curriculum" class="py-16 bg-gray-50">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col lg:flex-row gap-12">
+                <div class="lg:w-1/2 animate-slide-up">
+                    <h2 class="text-3xl font-bold mb-6">Program Curriculum</h2>
+                    
+                    <div class="space-y-4">
+                        <div class="border border-gray-200 rounded-lg overflow-hidden">
+                            <details class="group" open>
+                                <summary class="flex justify-between items-center p-4 bg-white cursor-pointer">
+                                    <h3 class="font-semibold">Module 1: Foundational Leadership</h3>
+                                    <svg class="w-5 h-5 text-gray-500 group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                                    </svg>
+                                </summary>
+                                <div class="p-4 bg-gray-50">
+                                    <ul class="space-y-2">
+                                        <li class="flex items-start">
+                                            <svg class="w-5 h-5 text-secondary mr-2 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                            </svg>
+                                            <span>Developing your leadership identity</span>
+                                        </li>
+                                        <li class="flex items-start">
+                                            <svg class="w-5 h-5 text-secondary mr-2 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                            </svg>
+                                            <span>Overcoming imposter syndrome</span>
+                                        </li>
+                                        <li class="flex items-start">
+                                            <svg class="w-5 h-5 text-secondary mr-2 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                            </svg>
+                                            <span>Communication & executive presence</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </details>
+                        </div>
+                        
+                        <!-- Add 3 more accordion items -->
+                    </div>
+                </div>
+                
+                <div class="lg:w-1/2 animate-slide-up" style="animation-delay: 0.2s;">
+                    <div class="bg-white rounded-xl shadow-lg overflow-hidden">
+                        <img src="image/women-leadership-group.jpg" alt="Women in Leadership cohort" class="w-full h-64 object-cover" loading="lazy">
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold mb-4">2025 Fellowship Details</h3>
+                            <div class="grid grid-cols-2 gap-4 mb-6">
+                                <div>
+                                    <p class="text-sm font-medium text-gray-500">Starts</p>
+                                    <p class="font-semibold">April 5, 2025</p>
+                                </div>
+                                <div>
+                                    <p class="text-sm font-medium text-gray-500">Duration</p>
+                                    <p class="font-semibold">9 Months</p>
+                                </div>
+                                <div>
+                                    <p class="text-sm font-medium text-gray-500">Format</p>
+                                    <p class="font-semibold">Hybrid</p>
+                                </div>
+                                <div>
+                                    <p class="text-sm font-medium text-gray-500">Location</p>
+                                    <p class="font-semibold">Pan-African</p>
+                                </div>
+                            </div>
+                            <a href="#apply" class="block w-full bg-primary hover:bg-primary/90 text-white font-bold py-3 px-6 rounded-md text-center transition">Apply Now</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="py-16">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-12 animate-slide-up">
+                <h2 class="text-3xl font-bold mb-3">Alumni Success Stories</h2>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-white p-6 rounded-lg shadow-sm animate-slide-up">
+                    <div class="w-20 h-20 rounded-full overflow-hidden border-4 border-secondary mx-auto mb-4">
+                        <img src="images/alumni-women-1.webp" alt="Ngozi E." class="w-full h-full object-cover" loading="lazy">
+                    </div>
+                    <div class="flex justify-center mb-4">
+                        <!-- 5 star rating -->
+                    </div>
+                    <blockquote class="text-center mb-4">
+                        <p class="text-gray-700 italic">"This program gave me the confidence to pursue executive roles I never thought were possible for someone like me."</p>
+                    </blockquote>
+                    <div class="text-center">
+                        <p class="font-semibold">Ngozi E.</p>
+                        <p class="text-sm text-gray-500">Now: Director at Pan-African Bank</p>
+                    </div>
+                </div>
+                
+                <!-- Add 2 more testimonials -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Apply Section -->
+    <section id="apply" class="py-16 bg-primary text-white">
+        <div class="container mx-auto px-6">
+            <div class="max-w-4xl mx-auto text-center animate-slide-up">
+                <h2 class="text-3xl font-bold mb-4">Applications Open for 2025</h2>
+                <p class="text-xl mb-8">Join our next cohort of emerging female leaders</p>
+                
+                <div class="bg-white rounded-lg shadow-lg p-8 text-gray-800 animate-slide-up" style="animation-delay: 0.2s;">
+                    <h3 class="text-2xl font-bold mb-6">Application Form</h3>
+                    <form class="space-y-4 text-left">
+                        <div>
+                            <label for="name" class="block text-sm font-medium text-gray-700 mb-1">Full Name</label>
+                            <input type="text" id="name" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-secondary focus:border-transparent" required>
+                        </div>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <div>
+                                <label for="email" class="block text-sm font-medium text-gray-700 mb-1">Email Address</label>
+                                <input type="email" id="email" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-secondary focus:border-transparent" required>
+                            </div>
+                            <div>
+                                <label for="country" class="block text-sm font-medium text-gray-700 mb-1">Country</label>
+                                <select id="country" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-secondary focus:border-transparent">
+                                    <option value="">Select Country</option>
+                                    <!-- African countries -->
+                                </select>
+                            </div>
+                        </div>
+                        <div>
+                            <label for="current-role" class="block text-sm font-medium text-gray-700 mb-1">Current Role</label>
+                            <input type="text" id="current-role" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-secondary focus:border-transparent">
+                        </div>
+                        <div>
+                            <label for="essay" class="block text-sm font-medium text-gray-700 mb-1">What leadership impact do you hope to achieve through this program? (300 words)</label>
+                            <textarea id="essay" rows="4" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-secondary focus:border-transparent"></textarea>
+                        </div>
+                        <button type="submit" class="w-full bg-secondary hover:bg-secondary/90 text-primary font-bold py-3 px-6 rounded-md transition">Submit Application</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-primary text-white py-12">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <img src="images/logo-white.svg" alt="Importance Leadership" class="h-10 mb-4" width="180" height="40">
+                    <p class="text-gray-300">Developing ethical, visionary leaders who drive positive change in Africa and beyond.</p>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Quick Links</h3>
+                    <ul class="space-y-2">
+                        <li><a href="index.html" class="text-gray-300 hover:text-white transition">Home</a></li>
+                        <li><a href="about.html" class="text-gray-300 hover:text-white transition">About Us</a></li>
+                        <li><a href="programs.html" class="text-gray-300 hover:text-white transition">Programs</a></li>
+                        <li><a href="contact.html" class="text-gray-300 hover:text-white transition">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Programs</h3>
+                    <ul class="space-y-2">
+                        <li><a href="emerging-leaders.html" class="text-gray-300 hover:text-white transition">Emerging Leaders</a></li>
+                        <li><a href="women-leadership.html" class="text-gray-300 hover:text-white transition">Women in Leadership</a></li>
+                        <li><a href="executive-mentorship.html" class="text-gray-300 hover:text-white transition">Executive Mentorship</a></li>
+                        <li><a href="community-changemakers.html" class="text-gray-300 hover:text-white transition">Community Changemakers</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Contact Us</h3>
+                    <address class="not-italic text-gray-300">
+                        <p class="mb-2">123 Leadership Avenue</p>
+                        <p class="mb-2">Nairobi, Kenya</p>
+                        <p class="mb-2">+254 700 123 456</p>
+                        <p class="mb-4">info@importanceleadership.org</p>
+                    </address>
+                    <div class="flex space-x-4">
+                        <a href="#" aria-label="Facebook" class="text-gray-300 hover:text-white transition">
+                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z"></path>
+                            </svg>
+                        </a>
+                        <!-- Add other social icons -->
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 mt-8 pt-8 text-center text-gray-400">
+                <p>&copy; 2025 Importance Leadership. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Animations and Interactions -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Animate stats counting
+            function animateValue(id, start, end, duration) {
+                const obj = document.getElementById(id);
+                let startTimestamp = null;
+                const step = (timestamp) => {
+                    if (!startTimestamp) startTimestamp = timestamp;
+                    const progress = Math.min((timestamp - startTimestamp) / duration, 1);
+                    obj.innerHTML = Math.floor(progress * (end - start) + start);
+                    if (progress < 1) {
+                        window.requestAnimationFrame(step);
+                    }
+                };
+                window.requestAnimationFrame(step);
+            }
+            
+            // Start counting when stats are in view
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        animateValue('alumni-count', 0, 320, 2000);
+                        animateValue('mentors-count', 0, 85, 2000);
+                        animateValue('countries-count', 0, 42, 2000);
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.5 });
+            
+            observer.observe(document.querySelector('#alumni-count').parentElement.parentElement);
+            
+            // Mobile menu toggle
+            const mobileMenuButton = document.querySelector('button[aria-label="Mobile menu"]');
+            const mobileMenu = document.createElement('div');
+            mobileMenu.className = 'fixed inset-0 bg-primary z-50 hidden flex items-center justify-center';
+            mobileMenu.innerHTML = `
+                <div class="text-center p-6">
+                    <button class="absolute top-4 right-4 text-white" aria-label="Close menu">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                        </svg>
+                    </button>
+                    <nav aria-label="Mobile navigation">
+                        <ul class="space-y-6 text-white text-xl">
+                            <li><a href="index.html" class="hover:text-secondary transition">Home</a></li>
+                            <li><a href="about.html" class="hover:text-secondary transition">About</a></li>
+                            <li class="relative">
+                                <button class="hover:text-secondary transition flex items-center mx-auto" aria-expanded="false">
+                                    Programs
+                                    <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                                    </svg>
+                                </button>
+                                <ul class="mt-2 space-y-2">
+                                    <li><a href="emerging-leaders.html" class="block hover:text-secondary transition">Emerging Leaders</a></li>
+                                    <li><a href="women-leadership.html" class="block hover:text-secondary transition">Women in Leadership</a></li>
+                                    <li><a href="executive-mentorship.html" class="block hover:text-secondary transition">Executive Mentorship</a></li>
+                                    <li><a href="community-changemakers.html" class="block hover:text-secondary transition">Community Changemakers</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="donate.html" class="bg-secondary text-primary px-6 py-2 rounded-md font-medium inline-block hover:bg-opacity-90 transition">Donate</a></li>
+                        </ul>
+                    </nav>
+                </div>
+            `;
+            
+            document.body.appendChild(mobileMenu);
+            
+            mobileMenuButton.addEventListener('click', function() {
+                mobileMenu.classList.remove('hidden');
+                document.body.style.overflow = 'hidden';
+            });
+            
+            mobileMenu.querySelector('button[aria-label="Close menu"]').addEventListener('click', function() {
+                mobileMenu.classList.add('hidden');
+                document.body.style.overflow = '';
+            });
+        });
+    </script>
+</body>
+</html>
