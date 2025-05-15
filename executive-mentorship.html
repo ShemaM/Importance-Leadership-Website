@@ -61,6 +61,19 @@
     
     <style>
         /* Custom styles */
+
+        :root {
+            --primary: #0b1f3a;      /* Dark blue */
+            --primary-light: #1a365d;
+            --secondary: #f5a623;    /* Gold accent */
+            --secondary-light: #f8b84a;
+            --accent: #7cade9;      /* Light blue */
+            --light: #f8f9fa;       /* Light background */
+            --dark: #212529;        /* Dark text */
+            --text-light: #ffffff;
+            --text-dark: #343a40;
+            --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+        }
         .hero-gradient {
             background: linear-gradient(rgba(11, 31, 58, 0.9), rgba(11, 31, 58, 0.9)), 
                         url('image/emerging-leaders.jpg') center/cover;
@@ -94,43 +107,10 @@
     </style>
 </head>
 <body class="font-sans antialiased text-gray-800 bg-white">
-    <!-- Navigation -->
-    <header class="fixed w-full bg-primary text-white z-50">
-        <div class="container mx-auto px-6 py-4">
-            <div class="flex justify-between items-center">
-                <a href="index.html" class="text-2xl font-bold">
-                    <img src="image/website-logo.png" alt="Importance Leadership" class="h-10" width="180" height="40">
-                </a>
-                <nav aria-label="Main navigation">
-                    <ul class="hidden md:flex space-x-8">
-                        <li><a href="index.html" class="hover:text-secondary transition">Home</a></li>
-                        <li><a href="about.html" class="hover:text-secondary transition">About</a></li>
-                        <li class="relative group">
-                            <button aria-expanded="false" class="hover:text-secondary transition flex items-center">
-                                Programs
-                                <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-                                </svg>
-                            </button>
-                            <ul class="absolute hidden group-hover:block bg-white text-gray-800 shadow-lg rounded-md py-2 w-48">
-                                <li><a href="emerging-leaders.html" class="block px-4 py-2 hover:bg-gray-100">Emerging Leaders</a></li>
-                                <li><a href="executive-mentorship.html" class="block px-4 py-2 hover:bg-gray-100">Executive Mentorship</a></li>
-                                <li><a href="community-changemakers.html" class="block px-4 py-2 hover:bg-gray-100">Community Changemakers</a></li>
-                                <li><a href="women-leadership.html" class="block px-4 py-2 hover:bg-gray-100">Women in Leadership</a></li>
-                            </ul>
-                        </li>
-                        <li><a href="contact.html" class="hover:text-secondary transition">Contact</a></li>
-                        <li><a href="donate.html" class="bg-secondary text-primary px-4 py-2 rounded-md font-medium hover:bg-opacity-90 transition">Donate</a></li>
-                    </ul>
-                    <button class="md:hidden text-white focus:outline-none" aria-label="Mobile menu">
-                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
-                        </svg>
-                    </button>
-                </nav>
-            </div>
-        </div>
-    </header>
+    
+    <!-- Load Header -->
+    <div id="header-container"></div>
+    <script src="loadHeader.js"></script>
 
     <!-- Hero Section -->
     <section class="hero-gradient min-h-screen flex items-center pt-20">

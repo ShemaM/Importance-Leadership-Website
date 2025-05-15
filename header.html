@@ -1,254 +1,282 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <title>Importance Leadership</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Empowering communities through leadership, innovation, and impact. Importance Leadership fosters change by providing mentorship, resources, and opportunities for young individuals to thrive and create a better future.">
-    <meta name="keywords" content="Leadership, Impact, Community, Mentorship, Youth Empowerment">
-    <meta name="author" content="Importance Leadership">
-    
-    <!-- Favicon -->
-    <!-- Favicon -->
-    <link rel="icon" type="image/png" href="image/logo.jpg">
-    
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
-    
+    <title>Importance Leadership</title>
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
-    
+    <!-- Custom CSS -->
     <style>
-        /* Custom Styles */
+        /* ====== Root Variables ====== */
+        :root {
+            --primary: #0b1f3a;
+            --primary-light: #1a365d;
+            --secondary: #004b6b;
+            --secondary-light: #0c677e;
+            --accent: #7cade9;
+            --light: #f8f9fa;
+            --dark: #212529;
+            --text-light: #fff;
+            --text-dark: #23272f;
+            --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+            --shadow: 0 4px 24px rgba(11, 31, 58, 0.08);
+        }
+
+        /* ====== Base Styles ====== */
         body {
-            font-family: 'Poppins', sans-serif;
-            color: #333;
+            font-family: 'Poppins', Arial, sans-serif;
+            color: var(--text-dark);
+            background: var(--light);
+            line-height: 1.7;
+            scroll-behavior: smooth;
         }
 
-        /* Navbar Styling */
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+            color: var(--primary);
+            line-height: 1.2;
+            margin-bottom: 0.5em;
+        }
+
+        /* ====== Navbar Styles ====== */
         .navbar {
-            background-color: #ffff !important;
-            padding: 1rem 0;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            background: rgba(11, 31, 58, 0.98);
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            padding: 1.2rem 0;
         }
-
+        .navbar.scrolled {
+            background: rgba(11, 31, 58, 0.98);
+            box-shadow: 0 2px 16px rgba(11, 31, 58, 0.12);
+            padding: 0.7rem 0;
+        }
         .navbar-brand img {
-            height: auto; /* Maintain aspect ratio */
-            max-height: 180px; /* Set a maximum height for the logo */
-            width: auto; /* Maintain aspect ratio */
-            max-width: 240px; /* Set a maximum width for the logo */
-            border-radius: 10px; /* Slightly rounded corners */
-            padding: 10px; /* Add padding around the logo */
-            transition: all 0.5s ease; /* Smooth transition for animations */
+            max-height: 48px;
+            width: auto;
+            transition: var(--transition);
         }
-
-        .navbar-nav .nav-link {
-            font-size: 1.1rem;
+        .navbar .navbar-nav .nav-link {
+            color: var(--text-light);
             font-weight: 500;
-            color: #123456 !important;
-            margin: 0 0.5rem;
-            padding: 0.5rem 1rem;
-            transition: all 0.3s ease;
+            font-size: 1.08rem;
+            letter-spacing: 0.01em;
+            padding: 0.5rem 1.1rem;
+            position: relative;
+            transition: color 0.2s;
         }
-
-        .navbar-nav .nav-link:hover {
-            color: #504a4a !important; /* Hover color */
-            transform: translateY(-2px);
+        .navbar .navbar-nav .nav-link:hover,
+        .navbar .navbar-nav .nav-link.active {
+            color: var(--secondary);
         }
-
-        .dropdown-menu {
-            background-color: #123456;
-            border: none;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        .navbar .navbar-nav .nav-link::after {
+            content: '';
+            display: block;
+            width: 0;
+            height: 2px;
+            background: var(--secondary);
+            transition: width 0.3s;
+            position: absolute;
+            left: 0;
+            bottom: 0;
         }
-
-        .dropdown-item {
-            color: #fff !important;
-            font-size: 1rem;
-            padding: 0.5rem 1rem;
-            transition: all 0.3s ease;
-        }
-
-        .dropdown-item:hover {
-            background-color: #ffcc00;
-            color: #123456 !important;
-        }
-
-                /* Navbar Styling */
-                .navbar {
-            background-color: #ffff !important;
+        .navbar .navbar-nav .nav-link:hover::after,
+        .navbar .navbar-nav .nav-link.active::after {
             width: 100%;
-            padding: 15px 20px;
-            min-height: 120px;
-            display: flex;
-            align-items: center;
+        }
+        .navbar .dropdown-menu {
+            background: var(--primary-light);
+            border: none;
+            border-radius: 0.5rem;
+            box-shadow: 0 8px 32px rgba(11, 31, 58, 0.12);
+            min-width: 200px;
+            padding: 0.5rem 0;
+        }
+        .navbar .dropdown-item {
+            color: var(--text-light);
+            font-size: 1rem;
+            padding: 0.6rem 1.5rem;
+            transition: background 0.2s, color 0.2s;
+        }
+        .navbar .dropdown-item:hover,
+        .navbar .dropdown-item:focus {
+            background: var(--secondary);
+            color: var(--primary);
+        }
+        .navbar .dropdown-toggle::after {
+            margin-left: 0.4em;
         }
 
-        @media (max-width: 768px) {
-            .navbar {
-            padding: 10px 15px;
-            min-height: 120px;
+        /* ====== Donate Button ====== */
+        .btn-donate {
+            background: linear-gradient(90deg, var(--secondary), var(--secondary-light));
+            color: var(--primary);
+            font-weight: 600;
+            border: none;
+            border-radius: 2rem;
+            box-shadow: 0 2px 8px rgba(245, 166, 35, 0.08);
+            transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+        }
+        .btn-donate:hover, .btn-donate:focus {
+            background: linear-gradient(90deg, var(--secondary-light), var(--secondary));
+            color: var(--primary);
+            box-shadow: 0 4px 16px rgba(245, 166, 35, 0.16);
+        }
+
+        /* ====== Offcanvas Styles ====== */
+        .offcanvas-fullscreen {
+            width: 50vw !important;
+            max-width: 100vw !important;
+            height: 100vh;
+            top: 0;
+            right: 0;
+            left: 0;
+            bottom: 0;
+            border-radius: 0;
+            background: var(--primary);
+            padding: 2rem;
+        }
+        .offcanvas-header {
+            border-bottom: 1px solid var(--secondary-light);
+        }
+        .offcanvas-title {
+            color: var(--text-light);
+            font-size: 1.3rem;
+            font-weight: 600;
+        }
+        .offcanvas .btn-close {
+            filter: invert(1);
+        }
+        @media (max-width: 991.98px) {
+            .navbar .navbar-nav .nav-link {
+                padding: 0.8rem 1.2rem;
+                font-size: 1.1rem;
+            }
+            .offcanvas-body {
+                padding-top: 1.5rem;
             }
         }
-
-        .navbar-brand img {
-            height: auto;
-            max-height: 100px;
-            width: auto;
-            max-width: 240px;
-            border-radius: 10px;
-            padding: 10px;
-            transition: all 0.5s ease;
-            margin-right: auto;
-            position: absolute;
-            top: 10px;
-            left: 20px;
+        @media (max-width: 575.98px) {
+            .navbar-brand img {
+                max-height: 38px;
+            }
+            .btn-donate {
+                font-size: 1rem;
+                padding: 0.5rem 1.2rem;
+            }
         }
-        .navbar-toggler {
-            padding: 0.5rem 1rem;
-            font-size: 1.2rem;
-            color: #ffffff;
-            background-color: #123456;
-            border: none;
-            border-radius: 8px;
-            transition: background-color 0.3s ease, transform 0.3s ease;
-            margin-left: auto;
-        }
-
-        .navbar-toggler:hover {
-            background-color: #7cade9;
-            transform: scale(1.05);
-        }
-        .navbar-nav .nav-link {
-            font-size: 1.1rem;
-            font-weight: 500;
-            color: #123456 !important;
-            margin: 0 0.5rem;
-            padding: 0.5rem 1rem;
-            transition: all 0.3s ease;
-        }
-
-        .navbar-nav .nav-link:hover {
-            color: #504a4a !important;
-            transform: translateY(-2px);
-        }
-
-        
-        
     </style>
+ 
 </head>
-
-<body data-mobile-nav-style="full-screen-menu" data-mobile-nav-bg-color="#2d2c2b" class="custom-cursor">
-   
-    <!-- Header -->
-    <header>
-        <nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow-sm">
-            <div class="container-fluid">
-                <!-- Logo -->
-                <a class="navbar-brand logo" href="index.html" aria-label="Home">
-                    <img src="image/website-logo.png" alt="Importance Leadership Logo" class="logo-image">
+<body>
+    <!-- Header/Navigation -->
+    <header class="fixed-top">
+        <nav class="navbar navbar-expand-lg navbar-dark">
+            <div class="container">
+                <!-- Logo/Brand -->
+                <a class="navbar-brand" href="index.html">
+                    <img src="image/website-logo.png" alt="Importance Leadership Logo" width="180" height="auto" loading="lazy">
                 </a>
-
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                
+                <!-- Mobile Toggle Button -->
+                <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#navbarNav" aria-controls="navbarNav">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-
-                <!-- Navbar Links -->
-                <div class="collapse navbar-collapse" id="navbarNav">
-                    <ul class="navbar-nav ms-auto" id="navbarLinks">
-                        <!-- Who We Are -->
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="aboutDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                Who We Are
-                            </a>
-                            <ul class="dropdown-menu" aria-labelledby="aboutDropdown">
-                                <li><a class="dropdown-item" href="who-we-are.html">About Us</a></li>
-                                <li><a class="dropdown-item" href="team.html">Our Team</a></li>
-                                <li><a class="dropdown-item" href="Our Events.php">Our Events</a></li>
-                            </ul>
-                        </li>
-
-                        <!-- What We Do -->
-                        <li class="nav-item">
-                            <a class="nav-link" href="what-we-do.html">
-                                What We Do
-                            </a>
-                        </li>
-
-                        <!-- Impact -->
-                        <li class="nav-item">
-                            <a class="nav-link" href="impact.html">
-                                Impact
-                            </a>
-                        </li>
-
-                        <!-- Call-to-Action Button -->
-                        <li class="nav-item ms-lg-3">
-                            <a class="nav-link" href="donate.html">DONATE</a>
-                        </li>
-                    </ul>
+                
+                <!-- Offcanvas Mobile Menu -->
+                <div class="offcanvas offcanvas-end" tabindex="-1" id="navbarNav" aria-labelledby="navbarNavLabel">
+                    <div class="offcanvas-header border-bottom border-secondary">
+                        <h5 class="offcanvas-title text-dark" id="navbarNavLabel">Menu</h5>
+                        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                    </div>
+                    <div class="offcanvas-body">
+                        <ul class="navbar-nav ms-auto align-items-lg-center">
+                            <li class="nav-item">
+                                <a class="nav-link active" href="index.html">Home</a>
+                            </li>
+                            
+                            <!-- Who We Are Dropdown -->
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" id="whoWeAreDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    Who We Are
+                                </a>
+                                <ul class="dropdown-menu" aria-labelledby="whoWeAreDropdown">
+                                    <li><a class="dropdown-item" href="what-we-do.html#about">About Us</a></li>
+                                    <li><a class="dropdown-item" href="team.html">Our Team</a></li>
+                                    <li><a class="dropdown-item" href="Our Events.php">Events</a></li>
+                                </ul>
+                            </li>
+                            
+                            <!-- Where We Work Dropdown -->
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" id="whereWeWorkDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    Where We Work
+                                </a>
+                                <ul class="dropdown-menu" aria-labelledby="whereWeWorkDropdown">
+                                    <li><a class="dropdown-item" href="#">USA</a></li>
+                                    <li><a class="dropdown-item" href="#">Canada</a></li>
+                                    <li><a class="dropdown-item" href="#">Kenya</a></li>
+                                </ul>
+                            </li>
+                            
+                            <!-- What We Do Dropdown -->
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" id="whatWeDoDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    What We Do
+                                </a>
+                                <ul class="dropdown-menu" aria-labelledby="whatWeDoDropdown">
+                                    <li><a class="dropdown-item" href="programs.html">All Programs</a></li>
+                                    <li><a class="dropdown-item" href="#">Advocacy</a></li>
+                                    <li><a class="dropdown-item" href="#">Mental Health</a></li>
+                                    <li><a class="dropdown-item" href="#">Networking</a></li>
+                                    <li><a class="dropdown-item" href="#">Leadership</a></li>
+                                    <li><a class="dropdown-item" href="#">Climate Change Awareness</a></li>
+                                </ul>
+                            </li>
+                            
+                            <li class="nav-item">
+                                <a class="nav-link" href="impact.html">Our Impact</a>
+                            </li>
+                            
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Blog</a>
+                            </li>
+                            
+                            <!-- Donate Button -->
+                            <li class="nav-item ms-lg-3 mt-3 mt-lg-0">
+                                <a href="donate.html" class="btn btn-donate btn-lg px-3 px-lg-4">Donate</a>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
-
-                    
             </div>
         </nav>
     </header>
 
-    <!-- JavaScript -->
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- Bootstrap JS Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
-
-    <script>
-        const menuElement = document.querySelector('.navbar-toggler');
-const data = {};
-if (menuElement) {
-  const styles = window.getComputedStyle(menuElement);
-  data.menu = {
-    tagName: menuElement.tagName,
-    display: styles['display'],
-    visibility: styles['visibility'],
-    position: styles['position'],
-    zIndex: styles['z-index'],
-    opacity: styles['opacity'],
-    color: styles['color'],
-    backgroundColor: styles['background-color'],
-    width: styles.getPropertyValue('width'),
-    height: styles.getPropertyValue('height'),
-  };
-  const parent = menuElement.parentElement;
-  if (parent) {
-    const parentStyles = window.getComputedStyle(parent);
-    data.menu.parent = {
-      tagName: parent.tagName,
-      display: parentStyles['display'],
-      position: parentStyles['position'],
-      zIndex: parentStyles['z-index'],
-      backgroundColor: parentStyles['background-color'],
-    };
-  }
-  const previousSibling = menuElement.previousElementSibling;
-  if (previousSibling) {
-      const previousSiblingStyles = window.getComputedStyle(previousSibling);
-      data.menu.previousSibling = {
-          tagName: previousSibling.tagName,
-          display: previousSiblingStyles['display'],
-          position: previousSiblingStyles['position'],
-          zIndex: previousSiblingStyles['z-index'],
-          backgroundColor: previousSiblingStyles['background-color'],
-          width: previousSiblingStyles['width'],
-          height: previousSiblingStyles['height'],
-          color: previousSiblingStyles['color'],
-      };
-  }
-} else {
-    data.menu = null;
-}
-    </script>
     
+    <!-- Custom JS -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const navbar = document.querySelector('.navbar');
+            
+            // Add scroll effect
+            window.addEventListener('scroll', function() {
+                if (window.scrollY > 50) {
+                    navbar.classList.add('scrolled');
+                } else {
+                    navbar.classList.remove('scrolled');
+                }
+            });
+            
+            // Initialize tooltips
+            const tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'));
+            tooltipTriggerList.map(function (tooltipTriggerEl) {
+                return new bootstrap.Tooltip(tooltipTriggerEl);
+            });
+        });
+    </script>
 </body>
-
 </html>

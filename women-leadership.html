@@ -5,299 +5,547 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Women in Leadership Program | Importance Leadership</title>
     <meta name="description" content="Empowering Africa's next generation of female leaders through specialized training and mentorship">
-    <meta name="keywords" content="youth leadership, leadership development, mentorship programs, community impact, African leadership, social change">
-    <meta name="author" content="Importance Leadership">
-    <meta name="robots" content="index, follow">
-    <link rel="canonical" href="https://www.importanceleadership.com" />
-    
-    <!-- Open Graph / Social Media Meta Tags -->
-    <meta property="og:title" content="Importance Leadership | Developing Ethical Leaders for Global Impact">
-    <meta property="og:description" content="Empowering young leaders through mentorship, education, and advocacy programs.">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://www.importanceleadership.org">
-    <meta property="og:image" content="https://www.importanceleadership.org/image/logo.png">
-    <meta property="og:image:alt" content="Importance Leadership Logo">
-    <meta property="og:site_name" content="Importance Leadership">
+    <meta name="keywords" content="women leadership, leadership development, mentorship programs, Africa leadership, female empowerment">
     
     <!-- Favicon -->
     <link rel="icon" href="image/logo.jpg" type="image/x-icon">
-    <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16x16.png">
-    <link rel="manifest" href="assets/site.webmanifest">
     
-    <!-- Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        primary: '#0b1f3a',
-                        secondary: '#f5a623',
-                        accent: '#7cade9',
-                    },
-                    animation: {
-                        'fade-in': 'fadeIn 0.5s ease-out',
-                        'slide-up': 'slideUp 0.5s ease-out',
-                    },
-                    keyframes: {
-                        fadeIn: {
-                            '0%': { opacity: '0' },
-                            '100%': { opacity: '1' },
-                        },
-                        slideUp: {
-                            '0%': { transform: 'translateY(20px)', opacity: '0' },
-                            '100%': { transform: 'translateY(0)', opacity: '1' },
-                        },
-                    }
-                }
-            }
-        }
-    </script>
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     
-    <!-- Framer Motion -->
-    <script src="https://unpkg.com/framer-motion@10.16.4/dist/framer-motion.js"></script>
+    <!-- Animate On Scroll (AOS) -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Custom CSS -->
     <style>
-        .hero-gradient {
-            background: linear-gradient(rgba(11, 31, 58, 0.9), rgba(11, 31, 58, 0.9)), 
-                        url('images/women-leadership-bg.webp') center/cover;
+        :root {
+            --primary: #0b1f3a;
+            --secondary: #f5a623;
+            --accent: #7cade9;
+            --light: #f8f9fa;
+            --dark: #212529;
+            --transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
         }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            color: var(--dark);
+            overflow-x: hidden;
+        }
+        
+        h1, h2, h3, h4, h5 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 600;
+        }
+        
+        /* Hero Section */
+        .hero-section {
+            background: linear-gradient(135deg, rgba(11,31,58,0.95) 0%, rgba(124,173,233,0.7) 100%), 
+                        url('images/women-leadership-bg.webp') center/cover no-repeat;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero-section::before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 100px;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none"><path d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z" opacity=".25" fill="%23f8f9fa"></path><path d="M0,0V15.81C13,36.92,27.64,56.86,47.69,72.05,99.41,111.27,165,111,224.58,91.58c31.15-10.15,60.09-26.07,89.67-39.8,40.92-19,84.73-46,130.83-49.67,36.26-2.85,70.9,9.42,98.6,31.56,31.77,25.39,62.32,62,103.63,73,40.44,10.79,81.35-6.69,119.13-24.28s75.16-39,116.92-43.05c59.73-5.85,113.28,22.88,168.9,38.84,30.2,8.66,59,6.17,87.09-7.5,22.43-10.89,48-26.93,60.65-49.24V0Z" opacity=".5" fill="%23f8f9fa"></path><path d="M0,0V5.63C149.93,59,314.09,71.32,475.83,42.57c43-7.64,84.23-20.12,127.61-26.46,59-8.63,112.48,12.24,165.56,35.4C827.93,77.22,886,95.24,951.2,90c86.53-7,172.46-45.71,248.8-84.81V0Z" fill="%23f8f9fa"></path></svg>');
+            background-size: cover;
+            z-index: 1;
+        }
+        
+        /* Feature Cards */
+        .feature-card {
+            background: white;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            transition: var(--transition);
+            height: 100%;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+        }
+        
         .feature-icon {
             width: 80px;
             height: 80px;
-            background: rgba(245, 166, 35, 0.1);
-            color: #f5a623;
+            background: linear-gradient(135deg, rgba(245,166,35,0.1) 0%, rgba(124,173,233,0.1) 100%);
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 1.75rem;
+            font-size: 2rem;
+            color: var(--secondary);
             margin: 0 auto 1.5rem;
+            transition: var(--transition);
         }
-        .timeline-item {
+        
+        .feature-card:hover .feature-icon {
+            transform: scale(1.1);
+            background: linear-gradient(135deg, var(--secondary) 0%, var(--accent) 100%);
+            color: white;
+        }
+        
+        /* Testimonial Cards */
+        .testimonial-card {
+            background: white;
+            border-radius: 16px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            padding: 2rem;
             position: relative;
-            padding-left: 2rem;
+            overflow: hidden;
         }
-        .timeline-item:before {
+        
+        .testimonial-card::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            font-size: 8rem;
+            line-height: 1;
+            color: rgba(245,166,35,0.1);
+            font-family: 'Playfair Display', serif;
+            z-index: 0;
+        }
+        
+        .testimonial-img {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid var(--secondary);
+            margin: 0 auto 1rem;
+        }
+        
+        /* Animated Underline */
+        .underline-animation {
+            position: relative;
+            display: inline-block;
+        }
+        
+        .underline-animation::after {
             content: '';
             position: absolute;
+            bottom: -5px;
             left: 0;
+            width: 0;
+            height: 3px;
+            background: var(--secondary);
+            transition: var(--transition);
+        }
+        
+        .underline-animation:hover::after {
+            width: 100%;
+        }
+        
+        /* Custom Buttons */
+        .btn-primary-custom {
+            background: var(--primary);
+            color: white;
+            border: none;
+            padding: 0.75rem 1.75rem;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .btn-primary-custom:hover {
+            color: white;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(11,31,58,0.2);
+        }
+        
+        .btn-primary-custom::before {
+            content: '';
+            position: absolute;
             top: 0;
-            width: 4px;
+            left: -100%;
+            width: 100%;
             height: 100%;
-            background: #f5a623;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            transition: 0.5s;
         }
-        /* Accessibility */
-        button:focus, a:focus, input:focus {
-            outline: 2px solid #f5a623;
-            outline-offset: 2px;
+        
+        .btn-primary-custom:hover::before {
+            left: 100%;
         }
-        @media (prefers-reduced-motion: reduce) {
-            .animate-fade-in, .animate-slide-up {
-                animation: none !important;
+        
+        .btn-secondary-custom {
+            background: var(--secondary);
+            color: var(--primary);
+            border: none;
+            padding: 0.75rem 1.75rem;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: var(--transition);
+        }
+        
+        .btn-secondary-custom:hover {
+            color: var(--primary);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(245,166,35,0.3);
+        }
+        
+        /* Floating Elements */
+        .floating {
+            animation: floating 6s ease-in-out infinite;
+        }
+        
+        .floating-2 {
+            animation: floating 5s ease-in-out infinite;
+            animation-delay: 1s;
+        }
+        
+        .floating-3 {
+            animation: floating 7s ease-in-out infinite;
+            animation-delay: 2s;
+        }
+        
+        @keyframes floating {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-15px); }
+            100% { transform: translateY(0px); }
+        }
+        
+        /* Custom Accordion */
+        .accordion-button:not(.collapsed) {
+            background-color: rgba(245,166,35,0.1);
+            color: var(--primary);
+        }
+        
+        .accordion-button:focus {
+            box-shadow: 0 0 0 0.25rem rgba(245,166,35,0.25);
+        }
+        
+        /* Stats Counter */
+        .stat-item {
+            background: white;
+            border-radius: 16px;
+            padding: 2rem;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            text-align: center;
+            transition: var(--transition);
+        }
+        
+        .stat-item:hover {
+            transform: translateY(-5px);
+        }
+        
+        .stat-number {
+            font-size: 3.5rem;
+            font-weight: 700;
+            color: var(--primary);
+            line-height: 1;
+            margin-bottom: 0.5rem;
+            font-family: 'Playfair Display', serif;
+        }
+        
+        /* Custom Form Styles */
+        .form-control-custom {
+            border: 1px solid #ced4da;
+            border-radius: 8px;
+            padding: 0.75rem 1.25rem;
+            transition: var(--transition);
+        }
+        
+        .form-control-custom:focus {
+            border-color: var(--secondary);
+            box-shadow: 0 0 0 0.25rem rgba(245,166,35,0.25);
+        }
+        
+        /* Responsive Adjustments */
+        @media (max-width: 768px) {
+            .hero-section {
+                min-height: 80vh;
+            }
+            
+            .stat-number {
+                font-size: 2.5rem;
             }
         }
     </style>
 </head>
-<body class="font-sans antialiased text-gray-800 bg-white">
+<body>
     <!-- Navigation -->
-    <header class="fixed w-full bg-primary text-white z-50">
-        <div class="container mx-auto px-6 py-4">
-            <div class="flex justify-between items-center">
-                <a href="index.html" class="text-2xl font-bold">
-                    <img src="image/website-logo.png" alt="Importance Leadership" class="h-10" width="180" height="40">
-                </a>
-                <nav aria-label="Main navigation">
-                    <ul class="hidden md:flex space-x-8">
-                        <li><a href="index.html" class="hover:text-secondary transition">Home</a></li>
-                        <li class="relative group">
-                            <button aria-expanded="false" class="hover:text-secondary transition flex items-center">
-                                Programs
-                                <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-                                </svg>
-                            </button>
-                            <ul class="absolute hidden group-hover:block bg-white text-gray-800 shadow-lg rounded-md py-2 w-48">
-                                <li><a href="emerging-leaders.html" class="block px-4 py-2 hover:bg-gray-100">Emerging Leaders</a></li>
-                                <li><a href="women-leadership.html" class="block px-4 py-2 hover:bg-gray-100 bg-gray-100">Women in Leadership</a></li>
-                                <li><a href="executive-mentorship.html" class="block px-4 py-2 hover:bg-gray-100">Executive Mentorship</a></li>
-                                <li><a href="community-changemakers.html" class="block px-4 py-2 hover:bg-gray-100">Community Changemakers</a></li>
-                            </ul>
-                        </li>
-                        <li><a href="about.html" class="hover:text-secondary transition">About</a></li>
-                        <li><a href="donate.html" class="bg-secondary text-primary px-4 py-2 rounded-md font-medium hover:bg-opacity-90 transition">Donate</a></li>
-                    </ul>
-                    <button class="md:hidden text-white focus:outline-none" aria-label="Mobile menu">
-                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
-                        </svg>
-                    </button>
-                </nav>
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top" style="background-color: rgba(11,31,58,0.95); backdrop-filter: blur(10px);">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <img src="image/website-logo.png" alt="Importance Leadership" height="40">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="programsDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Programs
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="programsDropdown">
+                            <li><a class="dropdown-item" href="emerging-leaders.html">Emerging Leaders</a></li>
+                            <li><a class="dropdown-item active" href="women-leadership.html">Women in Leadership</a></li>
+                            <li><a class="dropdown-item" href="executive-mentorship.html">Executive Mentorship</a></li>
+                            <li><a class="dropdown-item" href="community-changemakers.html">Community Changemakers</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">About</a>
+                    </li>
+                    <li class="nav-item ms-lg-3">
+                        <a href="donate.html" class="btn btn-secondary-custom">Donate</a>
+                    </li>
+                </ul>
             </div>
         </div>
-    </header>
+    </nav>
 
     <!-- Hero Section -->
-    <section class="hero-gradient min-h-screen flex items-center pt-20">
-        <div class="container mx-auto px-6">
-            <div class="max-w-2xl">
-                <span class="bg-secondary text-primary text-sm font-semibold px-3 py-1 rounded-full inline-block mb-4 animate-fade-in">9-MONTH FELLOWSHIP</span>
-                <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 animate-fade-in" style="animation-delay: 0.1s;">Women in Leadership</h1>
-                <p class="text-xl text-gray-300 mb-8 animate-fade-in" style="animation-delay: 0.2s;">Developing Africa's next generation of empowered female leaders through mentorship, skills training, and community building.</p>
-                <div class="flex flex-col sm:flex-row gap-4 animate-fade-in" style="animation-delay: 0.3s;">
-                    <a href="#apply" class="bg-secondary hover:bg-secondary/90 text-primary font-bold py-3 px-6 rounded-md text-center transition">Apply Now</a>
-                    <a href="#curriculum" class="border-2 border-white text-white hover:bg-white/10 font-bold py-3 px-6 rounded-md text-center transition">Learn More</a>
+    <section class="hero-section pt-5" style="    background: linear-gradient(rgba(11, 31, 58, 0.9), rgba(11, 31, 58, 0.9)), 
+                        url('image/women-leadership-group.jpg') center/cover;
+        ">
+        <div class="container position-relative z-index-1">
+            <div class="row align-items-center">
+                <div class="col-lg-7" data-aos="fade-right" data-aos-duration="800">
+                    <span class="badge bg-secondary text-primary mb-3 px-3 py-2 fs-6 fw-bold">9-MONTH FELLOWSHIP</span>
+                    <h1 class="display-4 fw-bold text-white mb-4">Women in Leadership Program</h1>
+                    <p class="lead text-white-80 mb-5">Developing Africa's next generation of empowered female leaders through mentorship, skills training, and community building.</p>
+                    <div class="d-flex flex-wrap gap-3">
+                        <a href="#apply" class="btn btn-secondary-custom btn-lg">Apply Now</a>
+                        <a href="#curriculum" class="btn btn-outline-light btn-lg">Learn More</a>
+                    </div>
+                </div>
+                <div class="col-lg-5 d-none d-lg-block" data-aos="fade-left" data-aos-duration="800" data-aos-delay="200">
+                    <div class="position-relative">
+                        <img src="image/women-leadership-illustration.jpg" alt="Women in Leadership" class="img-fluid floating">
+                        <img src="image/abstract-shape.jpg" alt="" class="position-absolute top-0 start-0 floating-2" style="width: 100px; z-index: -1;">
+                        <img src="image/abstract-background.jpg" alt="" class="position-absolute bottom-0 end-0 floating-3" style="width: 120px; z-index: -1;">
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Program Stats -->
-    <section class="py-16 bg-gray-50">
-        <div class="container mx-auto px-6">
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <div class="bg-white p-8 rounded-lg shadow-sm text-center animate-slide-up">
-                    <div class="text-5xl font-bold text-primary mb-2" id="alumni-count">0</div>
-                    <h3 class="text-xl font-semibold mb-2">Alumni</h3>
-                    <p class="text-gray-600">Women leaders across Africa</p>
+    <section class="py-5 py-lg-6 bg-light">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-md-4" data-aos="fade-up" data-aos-duration="600">
+                    <div class="stat-item h-100">
+                        <div class="stat-number text-primary mb-2" data-count="320">0</div>
+                        <h3 class="h5 mb-1">Alumni</h3>
+                        <p class="text-muted mb-0">Women leaders across Africa</p>
+                    </div>
                 </div>
-                <div class="bg-white p-8 rounded-lg shadow-sm text-center animate-slide-up" style="animation-delay: 0.1s;">
-                    <div class="text-5xl font-bold text-primary mb-2" id="mentors-count">0</div>
-                    <h3 class="text-xl font-semibold mb-2">Mentors</h3>
-                    <p class="text-gray-600">Established female executives</p>
+                <div class="col-md-4" data-aos="fade-up" data-aos-duration="600" data-aos-delay="100">
+                    <div class="stat-item h-100">
+                        <div class="stat-number text-primary mb-2" data-count="85">0</div>
+                        <h3 class="h5 mb-1">Mentors</h3>
+                        <p class="text-muted mb-0">Established female executives</p>
+                    </div>
                 </div>
-                <div class="bg-white p-8 rounded-lg shadow-sm text-center animate-slide-up" style="animation-delay: 0.2s;">
-                    <div class="text-5xl font-bold text-primary mb-2" id="countries-count">0</div>
-                    <h3 class="text-xl font-semibold mb-2">Countries</h3>
-                    <p class="text-gray-600">Represented in our network</p>
+                <div class="col-md-4" data-aos="fade-up" data-aos-duration="600" data-aos-delay="200">
+                    <div class="stat-item h-100">
+                        <div class="stat-number text-primary mb-2" data-count="42">0</div>
+                        <h3 class="h5 mb-1">Countries</h3>
+                        <p class="text-muted mb-0">Represented in our network</p>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Program Features -->
-    <section class="py-16">
-        <div class="container mx-auto px-6">
-            <div class="text-center mb-12 animate-slide-up">
-                <h2 class="text-3xl font-bold mb-3">Program Features</h2>
-                <p class="text-xl text-gray-600">Comprehensive development for emerging female leaders</p>
+    <section class="py-5 py-lg-6">
+        <div class="container">
+            <div class="text-center mb-5" data-aos="fade-up">
+                <h2 class="display-5 fw-bold mb-3">Program Features</h2>
+                <p class="lead text-muted mx-auto" style="max-width: 700px;">Comprehensive development for emerging female leaders</p>
             </div>
             
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-                <div class="text-center p-6 bg-white rounded-lg shadow-sm animate-slide-up">
-                    <div class="feature-icon">
-                        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
-                        </svg>
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-duration="600">
+                    <div class="feature-card p-4 text-center h-100">
+                        <div class="feature-icon mb-4">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <h3 class="h4 mb-3">Leadership Labs</h3>
+                        <p class="text-muted">Interactive workshops on authentic leadership styles and executive presence</p>
                     </div>
-                    <h3 class="text-xl font-semibold mb-3">Leadership Labs</h3>
-                    <p class="text-gray-600">Interactive workshops on authentic leadership styles and executive presence</p>
                 </div>
                 
-                <div class="text-center p-6 bg-white rounded-lg shadow-sm animate-slide-up" style="animation-delay: 0.1s;">
-                    <div class="feature-icon">
-                        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"></path>
-                        </svg>
+                <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-duration="600" data-aos-delay="100">
+                    <div class="feature-card p-4 text-center h-100">
+                        <div class="feature-icon mb-4">
+                            <i class="fas fa-hands-helping"></i>
+                        </div>
+                        <h3 class="h4 mb-3">Mentorship</h3>
+                        <p class="text-muted">One-on-one guidance from senior women leaders in your field</p>
                     </div>
-                    <h3 class="text-xl font-semibold mb-3">Mentorship</h3>
-                    <p class="text-gray-600">One-on-one guidance from senior women leaders in your field</p>
                 </div>
                 
-                <div class="text-center p-6 bg-white rounded-lg shadow-sm animate-slide-up" style="animation-delay: 0.2s;">
-                    <div class="feature-icon">
-                        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z"></path>
-                        </svg>
+                <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-duration="600" data-aos-delay="200">
+                    <div class="feature-card p-4 text-center h-100">
+                        <div class="feature-icon mb-4">
+                            <i class="fas fa-handshake"></i>
+                        </div>
+                        <h3 class="h4 mb-3">Sponsorship</h3>
+                        <p class="text-muted">Connections with potential sponsors and advocates</p>
                     </div>
-                    <h3 class="text-xl font-semibold mb-3">Sponsorship</h3>
-                    <p class="text-gray-600">Connections with potential sponsors and advocates</p>
                 </div>
                 
-                <div class="text-center p-6 bg-white rounded-lg shadow-sm animate-slide-up" style="animation-delay: 0.3s;">
-                    <div class="feature-icon">
-                        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path>
-                        </svg>
+                <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-duration="600" data-aos-delay="300">
+                    <div class="feature-card p-4 text-center h-100">
+                        <div class="feature-icon mb-4">
+                            <i class="fas fa-heart"></i>
+                        </div>
+                        <h3 class="h4 mb-3">Sisterhood</h3>
+                        <p class="text-muted">Lifelong network of supportive peers across Africa</p>
                     </div>
-                    <h3 class="text-xl font-semibold mb-3">Sisterhood</h3>
-                    <p class="text-gray-600">Lifelong network of supportive peers across Africa</p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Curriculum Section -->
-    <section id="curriculum" class="py-16 bg-gray-50">
-        <div class="container mx-auto px-6">
-            <div class="flex flex-col lg:flex-row gap-12">
-                <div class="lg:w-1/2 animate-slide-up">
-                    <h2 class="text-3xl font-bold mb-6">Program Curriculum</h2>
+    <section id="curriculum" class="py-5 py-lg-6 bg-light">
+        <div class="container">
+            <div class="row g-5 align-items-center">
+                <div class="col-lg-6" data-aos="fade-right">
+                    <h2 class="display-5 fw-bold mb-4">Program Curriculum</h2>
                     
-                    <div class="space-y-4">
-                        <div class="border border-gray-200 rounded-lg overflow-hidden">
-                            <details class="group" open>
-                                <summary class="flex justify-between items-center p-4 bg-white cursor-pointer">
-                                    <h3 class="font-semibold">Module 1: Foundational Leadership</h3>
-                                    <svg class="w-5 h-5 text-gray-500 group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-                                    </svg>
-                                </summary>
-                                <div class="p-4 bg-gray-50">
-                                    <ul class="space-y-2">
-                                        <li class="flex items-start">
-                                            <svg class="w-5 h-5 text-secondary mr-2 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-                                            </svg>
-                                            <span>Developing your leadership identity</span>
-                                        </li>
-                                        <li class="flex items-start">
-                                            <svg class="w-5 h-5 text-secondary mr-2 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-                                            </svg>
-                                            <span>Overcoming imposter syndrome</span>
-                                        </li>
-                                        <li class="flex items-start">
-                                            <svg class="w-5 h-5 text-secondary mr-2 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-                                            </svg>
-                                            <span>Communication & executive presence</span>
-                                        </li>
+                    <div class="accordion" id="curriculumAccordion">
+                        <div class="accordion-item mb-3 border-0 shadow-sm">
+                            <h3 class="accordion-header" id="headingOne">
+                                <button class="accordion-button collapsed fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                                    Module 1: Foundational Leadership
+                                </button>
+                            </h3>
+                            <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#curriculumAccordion">
+                                <div class="accordion-body">
+                                    <ul class="list-unstyled">
+                                        <li class="mb-2"><i class="fas fa-check-circle text-secondary me-2"></i> Developing your leadership identity</li>
+                                        <li class="mb-2"><i class="fas fa-check-circle text-secondary me-2"></i> Overcoming imposter syndrome</li>
+                                        <li class="mb-2"><i class="fas fa-check-circle text-secondary me-2"></i> Communication & executive presence</li>
                                     </ul>
                                 </div>
-                            </details>
+                            </div>
                         </div>
                         
-                        <!-- Add 3 more accordion items -->
+                        <div class="accordion-item mb-3 border-0 shadow-sm">
+                            <h3 class="accordion-header" id="headingTwo">
+                                <button class="accordion-button collapsed fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                    Module 2: Strategic Leadership
+                                </button>
+                            </h3>
+                            <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#curriculumAccordion">
+                                <div class="accordion-body">
+                                    <ul class="list-unstyled">
+                                        <li class="mb-2"><i class="fas fa-check-circle text-secondary me-2"></i> Decision-making frameworks</li>
+                                        <li class="mb-2"><i class="fas fa-check-circle text-secondary me-2"></i> Negotiation strategies</li>
+                                        <li class="mb-2"><i class="fas fa-check-circle text-secondary me-2"></i> Building high-performing teams</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="accordion-item mb-3 border-0 shadow-sm">
+                            <h3 class="accordion-header" id="headingThree">
+                                <button class="accordion-button collapsed fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                    Module 3: Personal Branding
+                                </button>
+                            </h3>
+                            <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#curriculumAccordion">
+                                <div class="accordion-body">
+                                    <ul class="list-unstyled">
+                                        <li class="mb-2"><i class="fas fa-check-circle text-secondary me-2"></i> Crafting your leadership narrative</li>
+                                        <li class="mb-2"><i class="fas fa-check-circle text-secondary me-2"></i> Visibility strategies</li>
+                                        <li class="mb-2"><i class="fas fa-check-circle text-secondary me-2"></i> Networking with purpose</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
                 
-                <div class="lg:w-1/2 animate-slide-up" style="animation-delay: 0.2s;">
-                    <div class="bg-white rounded-xl shadow-lg overflow-hidden">
-                        <img src="image/women-leadership-group.jpg" alt="Women in Leadership cohort" class="w-full h-64 object-cover" loading="lazy">
-                        <div class="p-6">
-                            <h3 class="text-xl font-bold mb-4">2025 Fellowship Details</h3>
-                            <div class="grid grid-cols-2 gap-4 mb-6">
-                                <div>
-                                    <p class="text-sm font-medium text-gray-500">Starts</p>
-                                    <p class="font-semibold">April 5, 2025</p>
-                                </div>
-                                <div>
-                                    <p class="text-sm font-medium text-gray-500">Duration</p>
-                                    <p class="font-semibold">9 Months</p>
-                                </div>
-                                <div>
-                                    <p class="text-sm font-medium text-gray-500">Format</p>
-                                    <p class="font-semibold">Hybrid</p>
-                                </div>
-                                <div>
-                                    <p class="text-sm font-medium text-gray-500">Location</p>
-                                    <p class="font-semibold">Pan-African</p>
+                <div class="col-lg-6" data-aos="fade-left" data-aos-delay="200">
+                    <div class="card border-0 shadow-lg overflow-hidden">
+                        <div class="row g-0">
+                            <div class="col-md-6">
+                                <img src="image/women-leadership-group.jpg" class="img-fluid h-100 object-cover" alt="Women in Leadership cohort" loading="lazy" style="background: linear-gradient('--primary-dark, --primary-dark, --primary-light, --primary-light');">
+                            </div>
+                            <div class="col-md-6">
+                                <div class="card-body p-4">
+                                    <h3 class="h4 fw-bold mb-3">2025 Fellowship Details</h3>
+                                    <ul class="list-unstyled mb-4">
+                                        <li class="mb-3">
+                                            <div class="d-flex align-items-center">
+                                                <div class="bg-primary bg-opacity-10 text-primary rounded-circle p-2 me-3">
+                                                    <i class="fas fa-calendar-alt"></i>
+                                                </div>
+                                                <div>
+                                                    <h6 class="mb-0 fw-bold">Starts</h6>
+                                                    <small class="text-muted">April 5, 2025</small>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li class="mb-3">
+                                            <div class="d-flex align-items-center">
+                                                <div class="bg-primary bg-opacity-10 text-primary rounded-circle p-2 me-3">
+                                                    <i class="fas fa-clock"></i>
+                                                </div>
+                                                <div>
+                                                    <h6 class="mb-0 fw-bold">Duration</h6>
+                                                    <small class="text-muted">9 Months</small>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li class="mb-3">
+                                            <div class="d-flex align-items-center">
+                                                <div class="bg-primary bg-opacity-10 text-primary rounded-circle p-2 me-3">
+                                                    <i class="fas fa-laptop"></i>
+                                                </div>
+                                                <div>
+                                                    <h6 class="mb-0 fw-bold">Format</h6>
+                                                    <small class="text-muted">Hybrid</small>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="d-flex align-items-center">
+                                                <div class="bg-primary bg-opacity-10 text-primary rounded-circle p-2 me-3">
+                                                    <i class="fas fa-globe-africa"></i>
+                                                </div>
+                                                <div>
+                                                    <h6 class="mb-0 fw-bold">Location</h6>
+                                                    <small class="text-muted">Pan-African</small>
+                                                </div>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                    <a href="#apply" class="btn btn-primary-custom w-100">Apply Now</a>
                                 </div>
                             </div>
-                            <a href="#apply" class="block w-full bg-primary hover:bg-primary/90 text-white font-bold py-3 px-6 rounded-md text-center transition">Apply Now</a>
                         </div>
                     </div>
                 </div>
@@ -306,203 +554,262 @@
     </section>
 
     <!-- Testimonials -->
-    <section class="py-16">
-        <div class="container mx-auto px-6">
-            <div class="text-center mb-12 animate-slide-up">
-                <h2 class="text-3xl font-bold mb-3">Alumni Success Stories</h2>
+    <section class="py-5 py-lg-6">
+        <div class="container">
+            <div class="text-center mb-5" data-aos="fade-up">
+                <h2 class="display-5 fw-bold mb-3">Alumni Success Stories</h2>
+                <p class="lead text-muted mx-auto" style="max-width: 700px;">Hear from women who have transformed their leadership journey</p>
             </div>
             
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <div class="bg-white p-6 rounded-lg shadow-sm animate-slide-up">
-                    <div class="w-20 h-20 rounded-full overflow-hidden border-4 border-secondary mx-auto mb-4">
-                        <img src="images/alumni-women-1.webp" alt="Ngozi E." class="w-full h-full object-cover" loading="lazy">
-                    </div>
-                    <div class="flex justify-center mb-4">
-                        <!-- 5 star rating -->
-                    </div>
-                    <blockquote class="text-center mb-4">
-                        <p class="text-gray-700 italic">"This program gave me the confidence to pursue executive roles I never thought were possible for someone like me."</p>
-                    </blockquote>
-                    <div class="text-center">
-                        <p class="font-semibold">Ngozi E.</p>
-                        <p class="text-sm text-gray-500">Now: Director at Pan-African Bank</p>
+            <div class="row g-4">
+                <div class="col-md-4" data-aos="fade-up" data-aos-duration="600">
+                    <div class="testimonial-card h-100">
+                        <div class="text-center position-relative">
+                            <img src="images/alumni-women-1.webp" alt="Ngozi E." class="testimonial-img mb-3">
+                            <div class="mb-3">
+                                <i class="fas fa-star text-warning"></i>
+                                <i class="fas fa-star text-warning"></i>
+                                <i class="fas fa-star text-warning"></i>
+                                <i class="fas fa-star text-warning"></i>
+                                <i class="fas fa-star text-warning"></i>
+                            </div>
+                            <p class="mb-4 position-relative">"This program gave me the confidence to pursue executive roles I never thought were possible for someone like me."</p>
+                            <h5 class="mb-1 fw-bold">Ngozi E.</h5>
+                            <p class="text-muted small">Director at Pan-African Bank</p>
+                        </div>
                     </div>
                 </div>
                 
-                <!-- Add 2 more testimonials -->
+                <div class="col-md-4" data-aos="fade-up" data-aos-duration="600" data-aos-delay="100">
+                    <div class="testimonial-card h-100">
+                        <div class="text-center position-relative">
+                            <img src="images/alumni-women-2.webp" alt="Amina K." class="testimonial-img mb-3">
+                            <div class="mb-3">
+                                <i class="fas fa-star text-warning"></i>
+                                <i class="fas fa-star text-warning"></i>
+                                <i class="fas fa-star text-warning"></i>
+                                <i class="fas fa-star text-warning"></i>
+                                <i class="fas fa-star text-warning"></i>
+                            </div>
+                            <p class="mb-4 position-relative">"The mentorship I received completely changed my career trajectory. I went from middle management to C-suite in 18 months."</p>
+                            <h5 class="mb-1 fw-bold">Amina K.</h5>
+                            <p class="text-muted small">CEO, Tech Startup</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-4" data-aos="fade-up" data-aos-duration="600" data-aos-delay="200">
+                    <div class="testimonial-card h-100">
+                        <div class="text-center position-relative">
+                            <img src="images/alumni-women-3.webp" alt="Thandi M." class="testimonial-img mb-3">
+                            <div class="mb-3">
+                                <i class="fas fa-star text-warning"></i>
+                                <i class="fas fa-star text-warning"></i>
+                                <i class="fas fa-star text-warning"></i>
+                                <i class="fas fa-star text-warning"></i>
+                                <i class="fas fa-star text-warning"></i>
+                            </div>
+                            <p class="mb-4 position-relative">"The sisterhood I found in this program continues to support me years after graduation. These women are my professional lifeline."</p>
+                            <h5 class="mb-1 fw-bold">Thandi M.</h5>
+                            <p class="text-muted small">Minister of Education</p>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
     <!-- Apply Section -->
-    <section id="apply" class="py-16 bg-primary text-white">
-        <div class="container mx-auto px-6">
-            <div class="max-w-4xl mx-auto text-center animate-slide-up">
-                <h2 class="text-3xl font-bold mb-4">Applications Open for 2025</h2>
-                <p class="text-xl mb-8">Join our next cohort of emerging female leaders</p>
-                
-                <div class="bg-white rounded-lg shadow-lg p-8 text-gray-800 animate-slide-up" style="animation-delay: 0.2s;">
-                    <h3 class="text-2xl font-bold mb-6">Application Form</h3>
-                    <form class="space-y-4 text-left">
-                        <div>
-                            <label for="name" class="block text-sm font-medium text-gray-700 mb-1">Full Name</label>
-                            <input type="text" id="name" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-secondary focus:border-transparent" required>
+    <section id="apply" class="py-5 py-lg-6 bg-primary text-white">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-8" data-aos="zoom-in">
+                    <div class="text-center mb-5">
+                        <h2 class="display-5 fw-bold mb-3">Applications Open for 2025</h2>
+                        <p class="lead">Join our next cohort of emerging female leaders</p>
+                    </div>
+                    
+                    <div class="card shadow-lg border-0">
+                        <div class="card-body p-4 p-lg-5">
+                            <h3 class="h2 fw-bold text-center mb-4 text-primary">Application Form</h3>
+                            <form>
+                                <div class="row g-3">
+                                    <div class="col-md-6">
+                                        <label for="firstName" class="form-label">First Name</label>
+                                        <input type="text" class="form-control form-control-custom" id="firstName" required>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label for="lastName" class="form-label">Last Name</label>
+                                        <input type="text" class="form-control form-control-custom" id="lastName" required>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label for="email" class="form-label">Email Address</label>
+                                        <input type="email" class="form-control form-control-custom" id="email" required>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label for="phone" class="form-label">Phone Number</label>
+                                        <input type="tel" class="form-control form-control-custom" id="phone">
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label for="country" class="form-label">Country</label>
+                                        <select class="form-select form-control-custom" id="country" required>
+                                            <option value="" selected disabled>Select Country</option>
+                                            <option value="Nigeria">Nigeria</option>
+                                            <option value="Kenya">Kenya</option>
+                                            <option value="South Africa">South Africa</option>
+                                            <!-- Add more African countries -->
+                                        </select>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label for="currentRole" class="form-label">Current Role</label>
+                                        <input type="text" class="form-control form-control-custom" id="currentRole">
+                                    </div>
+                                    <div class="col-12">
+                                        <label for="leadershipExperience" class="form-label">Leadership Experience (years)</label>
+                                        <input type="number" class="form-control form-control-custom" id="leadershipExperience" min="0">
+                                    </div>
+                                    <div class="col-12">
+                                        <label for="essay" class="form-label">What leadership impact do you hope to achieve through this program? (300 words)</label>
+                                        <textarea class="form-control form-control-custom" id="essay" rows="4" required></textarea>
+                                    </div>
+                                    <div class="col-12 mt-4">
+                                        <button type="submit" class="btn btn-secondary-custom w-100 py-3 fw-bold">Submit Application</button>
+                                    </div>
+                                </div>
+                            </form>
                         </div>
-                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                            <div>
-                                <label for="email" class="block text-sm font-medium text-gray-700 mb-1">Email Address</label>
-                                <input type="email" id="email" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-secondary focus:border-transparent" required>
-                            </div>
-                            <div>
-                                <label for="country" class="block text-sm font-medium text-gray-700 mb-1">Country</label>
-                                <select id="country" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-secondary focus:border-transparent">
-                                    <option value="">Select Country</option>
-                                    <!-- African countries -->
-                                </select>
-                            </div>
-                        </div>
-                        <div>
-                            <label for="current-role" class="block text-sm font-medium text-gray-700 mb-1">Current Role</label>
-                            <input type="text" id="current-role" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-secondary focus:border-transparent">
-                        </div>
-                        <div>
-                            <label for="essay" class="block text-sm font-medium text-gray-700 mb-1">What leadership impact do you hope to achieve through this program? (300 words)</label>
-                            <textarea id="essay" rows="4" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-secondary focus:border-transparent"></textarea>
-                        </div>
-                        <button type="submit" class="w-full bg-secondary hover:bg-secondary/90 text-primary font-bold py-3 px-6 rounded-md transition">Submit Application</button>
-                    </form>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer class="bg-primary text-white py-12">
-        <div class="container mx-auto px-6">
-            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
-                <div>
-                    <img src="images/logo-white.svg" alt="Importance Leadership" class="h-10 mb-4" width="180" height="40">
-                    <p class="text-gray-300">Developing ethical, visionary leaders who drive positive change in Africa and beyond.</p>
-                </div>
-                <div>
-                    <h3 class="text-lg font-semibold mb-4">Quick Links</h3>
-                    <ul class="space-y-2">
-                        <li><a href="index.html" class="text-gray-300 hover:text-white transition">Home</a></li>
-                        <li><a href="about.html" class="text-gray-300 hover:text-white transition">About Us</a></li>
-                        <li><a href="programs.html" class="text-gray-300 hover:text-white transition">Programs</a></li>
-                        <li><a href="contact.html" class="text-gray-300 hover:text-white transition">Contact</a></li>
-                    </ul>
-                </div>
-                <div>
-                    <h3 class="text-lg font-semibold mb-4">Programs</h3>
-                    <ul class="space-y-2">
-                        <li><a href="emerging-leaders.html" class="text-gray-300 hover:text-white transition">Emerging Leaders</a></li>
-                        <li><a href="women-leadership.html" class="text-gray-300 hover:text-white transition">Women in Leadership</a></li>
-                        <li><a href="executive-mentorship.html" class="text-gray-300 hover:text-white transition">Executive Mentorship</a></li>
-                        <li><a href="community-changemakers.html" class="text-gray-300 hover:text-white transition">Community Changemakers</a></li>
-                    </ul>
-                </div>
-                <div>
-                    <h3 class="text-lg font-semibold mb-4">Contact Us</h3>
-                    <address class="not-italic text-gray-300">
-                        <p class="mb-2">123 Leadership Avenue</p>
-                        <p class="mb-2">Nairobi, Kenya</p>
-                        <p class="mb-2">+254 700 123 456</p>
-                        <p class="mb-4">info@importanceleadership.org</p>
-                    </address>
-                    <div class="flex space-x-4">
-                        <a href="#" aria-label="Facebook" class="text-gray-300 hover:text-white transition">
-                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
-                                <path d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z"></path>
-                            </svg>
-                        </a>
-                        <!-- Add other social icons -->
+    <footer class="bg-dark text-white py-5">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-lg-4">
+                    <img src="image/website-logo.png" alt="Importance Leadership" height="40" class="mb-3">
+                    <p class="mb-4">Developing ethical, visionary leaders who drive positive change in Africa and beyond.</p>
+                    <div class="d-flex gap-3">
+                        <a href="#" class="text-white fs-5"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="text-white fs-5"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="text-white fs-5"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" class="text-white fs-5"><i class="fab fa-instagram"></i></a>
                     </div>
                 </div>
+                <div class="col-lg-2 col-md-4">
+                    <h5 class="h6 fw-bold mb-3">Quick Links</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="index.html" class="text-white-50 underline-animation">Home</a></li>
+                        <li class="mb-2"><a href="about.html" class="text-white-50 underline-animation">About</a></li>
+                        <li class="mb-2"><a href="programs.html" class="text-white-50 underline-animation">Programs</a></li>
+                        <li class="mb-2"><a href="contact.html" class="text-white-50 underline-animation">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-2 col-md-4">
+                    <h5 class="h6 fw-bold mb-3">Programs</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="emerging-leaders.html" class="text-white-50 underline-animation">Emerging Leaders</a></li>
+                        <li class="mb-2"><a href="women-leadership.html" class="text-white-50 underline-animation">Women in Leadership</a></li>
+                        <li class="mb-2"><a href="executive-mentorship.html" class="text-white-50 underline-animation">Executive Mentorship</a></li>
+                        <li class="mb-2"><a href="community-changemakers.html" class="text-white-50 underline-animation">Community Changemakers</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-4 col-md-4">
+                    <h5 class="h6 fw-bold mb-3">Contact Us</h5>
+                    <address class="text-white-50 mb-0">
+                        <p class="mb-2"><i class="fas fa-map-marker-alt me-2"></i> 123 Leadership Avenue, Nairobi, Kenya</p>
+                        <p class="mb-2"><i class="fas fa-phone me-2"></i> +254 700 123 456</p>
+                        <p class="mb-2"><i class="fas fa-envelope me-2"></i> info@importanceleadership.org</p>
+                    </address>
+                </div>
             </div>
-            <div class="border-t border-gray-700 mt-8 pt-8 text-center text-gray-400">
-                <p>&copy; 2025 Importance Leadership. All rights reserved.</p>
+            <hr class="my-4 border-secondary">
+            <div class="row">
+                <div class="col-md-6 text-center text-md-start">
+                    <p class="mb-0 small">&copy; 2025 Importance Leadership. All rights reserved.</p>
+                </div>
+                <div class="col-md-6 text-center text-md-end">
+                    <p class="mb-0 small">
+                        <a href="#" class="text-white-50 underline-animation">Privacy Policy</a> | 
+                        <a href="#" class="text-white-50 underline-animation">Terms of Service</a>
+                    </p>
+                </div>
             </div>
         </div>
     </footer>
 
-    <!-- Animations and Interactions -->
+    <!-- Back to Top Button -->
+    <a href="#" class="btn btn-primary-custom position-fixed bottom-3 end-3 rounded-circle p-3" id="backToTop" style="display: none;">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+
+    <!-- Bootstrap JS Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- AOS Animation Library -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    
+    <!-- Custom JS -->
     <script>
+        // Initialize AOS animation
+        AOS.init({
+            duration: 800,
+            easing: 'ease-in-out',
+            once: true,
+            mirror: false
+        });
+        
+        // Counter animation for stats
         document.addEventListener('DOMContentLoaded', function() {
-            // Animate stats counting
-            function animateValue(id, start, end, duration) {
-                const obj = document.getElementById(id);
-                let startTimestamp = null;
-                const step = (timestamp) => {
-                    if (!startTimestamp) startTimestamp = timestamp;
-                    const progress = Math.min((timestamp - startTimestamp) / duration, 1);
-                    obj.innerHTML = Math.floor(progress * (end - start) + start);
-                    if (progress < 1) {
-                        window.requestAnimationFrame(step);
+            const counters = document.querySelectorAll('.stat-number');
+            const speed = 200;
+            
+            counters.forEach(counter => {
+                const target = +counter.getAttribute('data-count');
+                const count = +counter.innerText;
+                const increment = target / speed;
+                
+                if (count < target) {
+                    counter.innerText = Math.ceil(count + increment);
+                    setTimeout(updateCount, 1);
+                } else {
+                    counter.innerText = target;
+                }
+                
+                function updateCount() {
+                    const count = +counter.innerText;
+                    if (count < target) {
+                        counter.innerText = Math.ceil(count + increment);
+                        setTimeout(updateCount, 1);
+                    } else {
+                        counter.innerText = target;
                     }
-                };
-                window.requestAnimationFrame(step);
-            }
-            
-            // Start counting when stats are in view
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        animateValue('alumni-count', 0, 320, 2000);
-                        animateValue('mentors-count', 0, 85, 2000);
-                        animateValue('countries-count', 0, 42, 2000);
-                        observer.unobserve(entry.target);
-                    }
-                });
-            }, { threshold: 0.5 });
-            
-            observer.observe(document.querySelector('#alumni-count').parentElement.parentElement);
-            
-            // Mobile menu toggle
-            const mobileMenuButton = document.querySelector('button[aria-label="Mobile menu"]');
-            const mobileMenu = document.createElement('div');
-            mobileMenu.className = 'fixed inset-0 bg-primary z-50 hidden flex items-center justify-center';
-            mobileMenu.innerHTML = `
-                <div class="text-center p-6">
-                    <button class="absolute top-4 right-4 text-white" aria-label="Close menu">
-                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
-                        </svg>
-                    </button>
-                    <nav aria-label="Mobile navigation">
-                        <ul class="space-y-6 text-white text-xl">
-                            <li><a href="index.html" class="hover:text-secondary transition">Home</a></li>
-                            <li><a href="about.html" class="hover:text-secondary transition">About</a></li>
-                            <li class="relative">
-                                <button class="hover:text-secondary transition flex items-center mx-auto" aria-expanded="false">
-                                    Programs
-                                    <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-                                    </svg>
-                                </button>
-                                <ul class="mt-2 space-y-2">
-                                    <li><a href="emerging-leaders.html" class="block hover:text-secondary transition">Emerging Leaders</a></li>
-                                    <li><a href="women-leadership.html" class="block hover:text-secondary transition">Women in Leadership</a></li>
-                                    <li><a href="executive-mentorship.html" class="block hover:text-secondary transition">Executive Mentorship</a></li>
-                                    <li><a href="community-changemakers.html" class="block hover:text-secondary transition">Community Changemakers</a></li>
-                                </ul>
-                            </li>
-                            <li><a href="donate.html" class="bg-secondary text-primary px-6 py-2 rounded-md font-medium inline-block hover:bg-opacity-90 transition">Donate</a></li>
-                        </ul>
-                    </nav>
-                </div>
-            `;
-            
-            document.body.appendChild(mobileMenu);
-            
-            mobileMenuButton.addEventListener('click', function() {
-                mobileMenu.classList.remove('hidden');
-                document.body.style.overflow = 'hidden';
+                }
             });
             
-            mobileMenu.querySelector('button[aria-label="Close menu"]').addEventListener('click', function() {
-                mobileMenu.classList.add('hidden');
-                document.body.style.overflow = '';
+            // Back to top button
+            const backToTopButton = document.getElementById('backToTop');
+            window.addEventListener('scroll', function() {
+                if (window.pageYOffset > 300) {
+                    backToTopButton.style.display = 'block';
+                } else {
+                    backToTopButton.style.display = 'none';
+                }
+            });
+            
+            backToTopButton.addEventListener('click', function(e) {
+                e.preventDefault();
+                window.scrollTo({top: 0, behavior: 'smooth'});
+            });
+            
+            // Mobile menu toggle
+            const mobileMenuButton = document.querySelector('.navbar-toggler');
+            const mobileMenu = document.querySelector('#navbarNav');
+            
+            mobileMenuButton.addEventListener('click', function() {
+                mobileMenu.classList.toggle('show');
             });
         });
     </script>

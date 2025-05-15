@@ -3,71 +3,85 @@ document.addEventListener("DOMContentLoaded", function() {
     // Footer HTML template
     
 const footerHTML = `
-<footer class="bg-dark text-white pt-6 pb-4 position-relative">
+     <!-- Footer -->
+    <footer class="footer">
         <div class="container">
             <div class="row g-4">
                 <div class="col-lg-4">
-                    <img src="image/website-logo.png" alt="Importance Leadership Logo" class="mb-3" width="180">
-                    <p class="mb-4">Empowering communities through leadership, innovation, and impact.</p>
-                    <div class="d-flex gap-3 mb-4">
-                        <a href="#" class="text-white fs-5"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#" class="text-white fs-5"><i class="fab fa-twitter"></i></a>
-                        <a href="#" class="text-white fs-5"><i class="fab fa-instagram"></i></a>
-                        <a href="#" class="text-white fs-5"><i class="fab fa-linkedin-in"></i></a>
+                    <img src="image/website-logo.png" alt="Importance Leadership Logo" class="footer-logo" loading="lazy">
+                    <p class="mb-4">Developing ethical, visionary leaders who drive positive change in Africa and beyond through mentorship, education, and community engagement.</p>
+                    <div class="social-links mb-4">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
                     </div>
                 </div>
+                
                 <div class="col-lg-2 col-md-4">
-                    <h5 class="fw-bold mb-4">Quick Links</h5>
-                    <ul class="list-unstyled">
-                        <li class="mb-2"><a href="index.html" class="text-white text-decoration-none">Home</a></li>
-                        <li class="mb-2"><a href="who-we-are.html" class="text-white text-decoration-none">About Us</a></li>
-                        <li class="mb-2"><a href="what-we-do.html" class="text-white text-decoration-none">Programs</a></li>
-                        <li class="mb-2"><a href="impact.html" class="text-white text-decoration-none">Impact</a></li>
-                        <li class="mb-2"><a href="donate.html" class="text-white text-decoration-none">Donate</a></li>
-                    </ul>
+                    <div class="footer-links">
+                        <h5>Navigation</h5>
+                        <ul>
+                            <li><a href="index.html">Home</a></li>
+                            <li><a href="about.html">About Us</a></li>
+                            <li><a href="programs.html">Programs</a></li>
+                            <li><a href="impact.html">Impact</a></li>
+                            <li><a href="#">Blog</a></li>
+                            <li><a href="contact-us.html">Contact</a></li>
+                        </ul>
+                    </div>
                 </div>
+                
                 <div class="col-lg-3 col-md-4">
-                    <h5 class="fw-bold mb-4">Contact Us</h5>
-                    <ul class="list-unstyled">
-                        <li class="mb-2"><i class="fas fa-map-marker-alt me-2 text-primary"></i>USA, Kenya, Canada</li>
-                        <li class="mb-2"><i class="fas fa-phone me-2 text-primary"></i> +1 (234) 567-8900</li>
-                        <li class="mb-2"><i class="fas fa-envelope me-2 text-primary"></i> info@importanceleadership.com</li>
-                    </ul>
+                    <div class="footer-links">
+                        <h5>Programs</h5>
+                        <ul>
+                            <li><a href="#">Emerging Leaders</a></li>
+                            <li><a href="#">Executive Mentorship</a></li>
+                            <li><a href="#">Community Changemakers</a></li>
+                            <li><a href="#">Women in Leadership</a></li>
+                            <li><a href="#">Corporate Training</a></li>
+                        </ul>
+                    </div>
                 </div>
+                
                 <div class="col-lg-3 col-md-4">
-                    <h5 class="fw-bold mb-4">Newsletter</h5>
-                    <p>Subscribe to our newsletter for updates and news.</p>
-                    <form class="mb-3" method="POST" action="subscribe.php">
-                        <div class="input-group">
-                            <input 
-                type="email" 
-                class="form-control" 
-                name="email" 
-                placeholder="Your Email" 
-                aria-label="Your Email"
-                required
-            >
-                <button class="btn btn-primary" type="submit">Subscribe</button>
-                        </div>
-                                  <!-- CSRF protection (recommended) -->
-        <input type="hidden" name="csrf_token" value="<?php echo generateCsrfToken(); ?>">
-               
-                    </form>
-                    <div class="subscription-message mt-2" style="display: none;"></div>
-             </div>
+                    <div class="footer-links">
+                        <h5>Contact Us</h5>
+                        <ul>
+                            <li><i class="fas fa-map-marker-alt me-2 text-secondary"></i> Kenya, USA, Canada</li>
+                            <li><i class="fas fa-phone me-2 text-secondary"></i> +254 792 732 177</li>
+                            <li><i class="fas fa-envelope me-2 text-secondary"></i> info@importanceleadership.com</li>
+                        </ul>
+                        
+                        <h5 class="mt-4">Newsletter</h5>
+                        <p class="small">Subscribe for updates and insights</p>
+                        <form>
+                            <div class="input-group mb-3">
+                                <input type="email" class="form-control form-control-sm" placeholder="Your Email" required>
+                                <button class="btn btn-accent btn-sm" type="submit">Join</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
             </div>
-            <hr class="my-4 bg-secondary">
+            
+            <hr class="my-4 bg-secondary opacity-25">
+            
             <div class="row">
-                <div class="col-md-6 text-center text-md-center">
-                    <p class="mb-0">&copy; 2025 Importance Leadership. All rights reserved.</p>
+                <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+                    <p class="mb-0 small">&copy; 2025 Importance Leadership. All rights reserved.</p>
                 </div>
                 <div class="col-md-6 text-center text-md-end">
-                    <a href="#" class="text-white text-decoration-none me-3">Privacy Policy</a>
-                    <a href="#" class="text-white text-decoration-none">Terms of Service</a>
+                    <a href="#" class="text-white text-decoration-none small me-3">Privacy Policy</a>
+                    <a href="#" class="text-white text-decoration-none small me-3">Terms of Service</a>
+                    <a href="#" class="text-white text-decoration-none small">Cookie Policy</a>
                 </div>
             </div>
         </div>
     </footer>
+         
     `;
     // Inject footer if not already present
     if (!document.querySelector("footer")) {
