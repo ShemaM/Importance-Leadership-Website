@@ -1,87 +1,279 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Corporate Leadership Training | Importance Leadership</title>
     <meta name="description" content="Custom leadership development programs for African organizations and businesses">
-    <meta name="keywords" content="youth leadership, leadership development, mentorship programs, community impact, African leadership, social change">
-    <meta name="author" content="Importance Leadership">
-    <meta name="robots" content="index, follow">
-    <link rel="canonical" href="https://www.importanceleadership.com" />
-    
-    <!-- Open Graph / Social Media Meta Tags -->
-    <meta property="og:title" content="Importance Leadership | Developing Ethical Leaders for Global Impact">
-    <meta property="og:description" content="Empowering young leaders through mentorship, education, and advocacy programs.">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://www.importanceleadership.org">
-    <meta property="og:image" content="https://www.importanceleadership.org/image/logo.png">
-    <meta property="og:image:alt" content="Importance Leadership Logo">
-    <meta property="og:site_name" content="Importance Leadership">
+    <meta name="keywords" content="corporate leadership, leadership training, executive development, African businesses, organizational leadership">
     
     <!-- Favicon -->
     <link rel="icon" href="image/logo.jpg" type="image/x-icon">
-    <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16x16.png">
-    <link rel="manifest" href="assets/site.webmanifest">
-    <!-- All CSS/JS includes same as homepage -->
+    
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Animate On Scroll (AOS) -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Custom CSS -->
     <style>
-        .program-hero {
-            background: linear-gradient(rgba(11, 31, 58, 0.9), url('assets/images/corporate-bg.webp')) center/cover;
+        :root {
+            --primary: #0b1f3a;
+            --secondary: #f5a623;
+            --accent: #7cade9;
+            --light: #f8f9fa;
+            --dark: #212529;
+            --transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
         }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            color: var(--dark);
+            overflow-x: hidden;
+        }
+        
+        h1, h2, h3, h4, h5 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 600;
+        }
+        
+        /* Hero Section */
+        .program-hero {
+            background: linear-gradient(135deg, rgba(11,31,58,0.95) 0%, rgba(124,173,233,0.7) 100%), 
+                        url('image/corporate-leadership-bg.jpg') center/cover no-repeat;
+            min-height: 80vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+            padding-top: 80px;
+        }
+        
+        /* Client Logos */
         .client-logo {
             height: 60px;
             object-fit: contain;
             filter: grayscale(100%) opacity(60%);
-            transition: all 0.3s ease;
+            transition: var(--transition);
         }
+        
         .client-logo:hover {
             filter: grayscale(0%) opacity(100%);
+            transform: scale(1.05);
+        }
+        
+        /* Feature Cards */
+        .feature-card {
+            background: white;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            transition: var(--transition);
+            height: 100%;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+        }
+        
+        .feature-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, rgba(245,166,35,0.1) 0%, rgba(124,173,233,0.1) 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            color: var(--secondary);
+            margin: 0 auto 1.5rem;
+            transition: var(--transition);
+        }
+        
+        .feature-card:hover .feature-icon {
+            transform: scale(1.1);
+            background: linear-gradient(135deg, var(--secondary) 0%, var(--accent) 100%);
+            color: white;
+        }
+        
+        /* Impact Numbers */
+        .impact-number {
+            font-size: 3rem;
+            font-weight: 700;
+            color: var(--primary);
+            line-height: 1;
+            margin-bottom: 0.5rem;
+            font-family: 'Playfair Display', serif;
+        }
+        
+        /* Custom Buttons */
+        .btn-primary-custom {
+            background: var(--primary);
+            color: white;
+            border: none;
+            padding: 0.75rem 1.75rem;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .btn-primary-custom:hover {
+            color: white;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(11,31,58,0.2);
+        }
+        
+        .btn-secondary-custom {
+            background: var(--secondary);
+            color: var(--primary);
+            border: none;
+            padding: 0.75rem 1.75rem;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: var(--transition);
+        }
+        
+        .btn-secondary-custom:hover {
+            color: var(--primary);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(245,166,35,0.3);
+        }
+        
+        /* Floating Elements */
+        .floating {
+            animation: floating 6s ease-in-out infinite;
+        }
+        
+        @keyframes floating {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-15px); }
+            100% { transform: translateY(0px); }
+        }
+        
+        /* Custom Form Styles */
+        .form-control-custom {
+            border: 1px solid #ced4da;
+            border-radius: 8px;
+            padding: 0.75rem 1.25rem;
+            transition: var(--transition);
+        }
+        
+        .form-control-custom:focus {
+            border-color: var(--secondary);
+            box-shadow: 0 0 0 0.25rem rgba(245,166,35,0.25);
+        }
+        
+        /* Responsive Adjustments */
+        @media (max-width: 768px) {
+            .program-hero {
+                min-height: 60vh;
+                text-align: center;
+            }
+            
+            .impact-number {
+                font-size: 2rem;
+            }
         }
     </style>
 </head>
 <body>
-    <!-- Navigation (same as homepage) -->
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top" style="background-color: rgba(11,31,58,0.95); backdrop-filter: blur(10px);">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <img src="image/website-logo.png" alt="Importance Leadership" height="40">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="programsDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Programs
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="programsDropdown">
+                            <li><a class="dropdown-item" href="emerging-leaders.html">Emerging Leaders</a></li>
+                            <li><a class="dropdown-item" href="women-leadership.html">Women in Leadership</a></li>
+                            <li><a class="dropdown-item active" href="corporate-leadership.html">Corporate Leadership</a></li>
+                            <li><a class="dropdown-item" href="community-changemakers.html">Community Changemakers</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">About</a>
+                    </li>
+                    <li class="nav-item ms-lg-3">
+                        <a href="donate.html" class="btn btn-secondary-custom">Donate</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
 
     <!-- Hero Section -->
-    <section class="program-hero d-flex align-items-center text-white">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-8">
-                    <span class="badge bg-accent text-dark mb-3">CUSTOM SOLUTIONS</span>
-                    <h1 class="display-4 fw-bold mb-4">Corporate Leadership Training</h1>
-                    <p class="lead mb-4">Develop your organization's leadership pipeline with our tailored programs based on proven African leadership principles.</p>
-                    <a href="#contact" class="btn btn-accent btn-lg me-3">Request Proposal</a>
-                    <a href="#solutions" class="btn btn-outline-light btn-lg">Our Solutions</a>
+    <section class="program-hero">
+        <div class="container position-relative z-index-1">
+            <div class="row align-items-center">
+                <div class="col-lg-8" data-aos="fade-right" data-aos-duration="800">
+                    <span class="badge bg-secondary text-primary mb-3 px-3 py-2 fs-6 fw-bold">CUSTOM SOLUTIONS</span>
+                    <h1 class="display-4 fw-bold text-white mb-4">Corporate Leadership Training</h1>
+                    <p class="lead text-white-80 mb-5">Develop your organization's leadership pipeline with our tailored programs based on proven African leadership principles.</p>
+                    <div class="d-flex flex-wrap gap-3">
+                        <a href="#contact" class="btn btn-secondary-custom btn-lg">Request Proposal</a>
+                        <a href="#solutions" class="btn btn-outline-light btn-lg">Our Solutions</a>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Client Logos -->
-    <section class="py-4 bg-light">
+    <section class="py-4 py-lg-5 bg-light">
         <div class="container">
             <div class="row g-4 align-items-center justify-content-center">
-                <div class="col-6 col-md-4 col-lg-2 text-center">
-                    <img src="assets/images/client-1.svg" class="client-logo img-fluid" alt="Client logo" loading="lazy">
+                <div class="col-6 col-md-4 col-lg-2 text-center" data-aos="fade-up" data-aos-duration="600">
+                    <img src="image/client-logo-1.png" class="client-logo img-fluid" alt="Client logo" loading="lazy">
                 </div>
-                <!-- Add 5 more client logos -->
+                <div class="col-6 col-md-4 col-lg-2 text-center" data-aos="fade-up" data-aos-duration="600" data-aos-delay="100">
+                    <img src="image/client-logo-2.png" class="client-logo img-fluid" alt="Client logo" loading="lazy">
+                </div>
+                <div class="col-6 col-md-4 col-lg-2 text-center" data-aos="fade-up" data-aos-duration="600" data-aos-delay="200">
+                    <img src="image/client-logo-3.png" class="client-logo img-fluid" alt="Client logo" loading="lazy">
+                </div>
+                <div class="col-6 col-md-4 col-lg-2 text-center" data-aos="fade-up" data-aos-duration="600" data-aos-delay="300">
+                    <img src="image/client-logo-4.png" class="client-logo img-fluid" alt="Client logo" loading="lazy">
+                </div>
+                <div class="col-6 col-md-4 col-lg-2 text-center" data-aos="fade-up" data-aos-duration="600" data-aos-delay="400">
+                    <img src="image/client-logo-5.png" class="client-logo img-fluid" alt="Client logo" loading="lazy">
+                </div>
             </div>
         </div>
     </section>
 
     <!-- Program Overview -->
-    <section class="py-5">
+    <section class="py-5 py-lg-6">
         <div class="container">
             <div class="row g-5 align-items-center">
-                <div class="col-lg-6">
-                    <h2 class="mb-4">Custom Leadership Development</h2>
-                    <p>Our corporate programs are designed to address the unique leadership challenges facing African organizations, combining global best practices with local context.</p>
+                <div class="col-lg-6" data-aos="fade-right">
+                    <h2 class="display-5 fw-bold mb-4">Custom Leadership Development</h2>
+                    <p class="lead">Our corporate programs are designed to address the unique leadership challenges facing African organizations, combining global best practices with local context.</p>
                     <p>We work closely with each client to develop tailored solutions that align with your organizational culture and strategic objectives.</p>
                     
                     <div class="mt-4">
-                        <h4>Our Approach:</h4>
+                        <h4 class="fw-bold">Our Approach:</h4>
                         <ul class="list-unstyled">
                             <li class="mb-2"><i class="fas fa-check-circle text-secondary me-2"></i> Comprehensive needs assessment</li>
                             <li class="mb-2"><i class="fas fa-check-circle text-secondary me-2"></i> Customized curriculum design</li>
@@ -91,37 +283,45 @@
                         </ul>
                     </div>
                 </div>
-                <div class="col-lg-6">
-                    <div class="card border-0 shadow-lg">
-                        <div class="card-body p-4">
-                            <h3 class="h4 mb-4">Program Formats</h3>
+                <div class="col-lg-6" data-aos="fade-left" data-aos-delay="200">
+                    <div class="card border-0 shadow-lg overflow-hidden">
+                        <div class="card-body p-4 p-lg-5">
+                            <h3 class="h2 fw-bold text-center mb-4">Program Formats</h3>
                             <div class="row g-4">
                                 <div class="col-md-6">
-                                    <div class="p-4 border rounded-3 h-100">
-                                        <i class="fas fa-users fs-1 text-primary mb-3"></i>
-                                        <h5>Cohort Programs</h5>
-                                        <p class="small">6-12 month leadership development journeys for high-potential employees</p>
+                                    <div class="feature-card p-4 text-center h-100">
+                                        <div class="feature-icon mb-4">
+                                            <i class="fas fa-users"></i>
+                                        </div>
+                                        <h5 class="h5 mb-3">Cohort Programs</h5>
+                                        <p class="text-muted small">6-12 month leadership development journeys for high-potential employees</p>
                                     </div>
                                 </div>
                                 <div class="col-md-6">
-                                    <div class="p-4 border rounded-3 h-100">
-                                        <i class="fas fa-chalkboard-teacher fs-1 text-primary mb-3"></i>
-                                        <h5>Executive Retreats</h5>
-                                        <p class="small">2-5 day intensive experiences for senior leadership teams</p>
+                                    <div class="feature-card p-4 text-center h-100">
+                                        <div class="feature-icon mb-4">
+                                            <i class="fas fa-chalkboard-teacher"></i>
+                                        </div>
+                                        <h5 class="h5 mb-3">Executive Retreats</h5>
+                                        <p class="text-muted small">2-5 day intensive experiences for senior leadership teams</p>
                                     </div>
                                 </div>
                                 <div class="col-md-6">
-                                    <div class="p-4 border rounded-3 h-100">
-                                        <i class="fas fa-laptop fs-1 text-primary mb-3"></i>
-                                        <h5>Digital Learning</h5>
-                                        <p class="small">Custom e-learning platforms with African leadership content</p>
+                                    <div class="feature-card p-4 text-center h-100">
+                                        <div class="feature-icon mb-4">
+                                            <i class="fas fa-laptop"></i>
+                                        </div>
+                                        <h5 class="h5 mb-3">Digital Learning</h5>
+                                        <p class="text-muted small">Custom e-learning platforms with African leadership content</p>
                                     </div>
                                 </div>
                                 <div class="col-md-6">
-                                    <div class="p-4 border rounded-3 h-100">
-                                        <i class="fas fa-handshake fs-1 text-primary mb-3"></i>
-                                        <h5>Consulting</h5>
-                                        <p class="small">Leadership pipeline and succession planning advisory</p>
+                                    <div class="feature-card p-4 text-center h-100">
+                                        <div class="feature-icon mb-4">
+                                            <i class="fas fa-handshake"></i>
+                                        </div>
+                                        <h5 class="h5 mb-3">Consulting</h5>
+                                        <p class="text-muted small">Leadership pipeline and succession planning advisory</p>
                                     </div>
                                 </div>
                             </div>
@@ -133,55 +333,51 @@
     </section>
 
     <!-- Solutions -->
-    <section id="solutions" class="py-5 bg-light">
+    <section id="solutions" class="py-5 py-lg-6 bg-light">
         <div class="container">
-            <div class="text-center mb-5">
-                <h2>Our Leadership Solutions</h2>
-                <p class="lead">Addressing key organizational leadership challenges</p>
+            <div class="text-center mb-5" data-aos="fade-up">
+                <h2 class="display-5 fw-bold mb-3">Our Leadership Solutions</h2>
+                <p class="lead text-muted mx-auto" style="max-width: 700px;">Addressing key organizational leadership challenges</p>
             </div>
             <div class="row g-4">
-                <div class="col-md-6 col-lg-3">
-                    <div class="card border-0 shadow-sm h-100">
-                        <div class="card-body">
-                            <h5 class="card-title">Emerging Leaders</h5>
-                            <p class="card-text">Developing high-potential mid-level managers for senior roles</p>
+                <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-duration="600">
+                    <div class="feature-card p-4 text-center h-100">
+                        <div class="feature-icon mb-4">
+                            <i class="fas fa-user-tie"></i>
                         </div>
-                        <div class="card-footer bg-transparent border-top-0">
-                            <a href="#" class="btn btn-link ps-0">Learn More →</a>
-                        </div>
+                        <h3 class="h4 mb-3">Emerging Leaders</h3>
+                        <p class="text-muted">Developing high-potential mid-level managers for senior roles</p>
+                        <a href="#" class="btn btn-link ps-0 mt-3">Learn More →</a>
                     </div>
                 </div>
-                <div class="col-md-6 col-lg-3">
-                    <div class="card border-0 shadow-sm h-100">
-                        <div class="card-body">
-                            <h5 class="card-title">Women's Leadership</h5>
-                            <p class="card-text">Advancing gender diversity in leadership pipelines</p>
+                <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-duration="600" data-aos-delay="100">
+                    <div class="feature-card p-4 text-center h-100">
+                        <div class="feature-icon mb-4">
+                            <i class="fas fa-female"></i>
                         </div>
-                        <div class="card-footer bg-transparent border-top-0">
-                            <a href="#" class="btn btn-link ps-0">Learn More →</a>
-                        </div>
+                        <h3 class="h4 mb-3">Women's Leadership</h3>
+                        <p class="text-muted">Advancing gender diversity in leadership pipelines</p>
+                        <a href="#" class="btn btn-link ps-0 mt-3">Learn More →</a>
                     </div>
                 </div>
-                <div class="col-md-6 col-lg-3">
-                    <div class="card border-0 shadow-sm h-100">
-                        <div class="card-body">
-                            <h5 class="card-title">Executive Transition</h5>
-                            <p class="card-text">Preparing leaders for C-suite and board-level roles</p>
+                <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-duration="600" data-aos-delay="200">
+                    <div class="feature-card p-4 text-center h-100">
+                        <div class="feature-icon mb-4">
+                            <i class="fas fa-briefcase"></i>
                         </div>
-                        <div class="card-footer bg-transparent border-top-0">
-                            <a href="#" class="btn btn-link ps-0">Learn More →</a>
-                        </div>
+                        <h3 class="h4 mb-3">Executive Transition</h3>
+                        <p class="text-muted">Preparing leaders for C-suite and board-level roles</p>
+                        <a href="#" class="btn btn-link ps-0 mt-3">Learn More →</a>
                     </div>
                 </div>
-                <div class="col-md-6 col-lg-3">
-                    <div class="card border-0 shadow-sm h-100">
-                        <div class="card-body">
-                            <h5 class="card-title">Team Leadership</h5>
-                            <p class="card-text">Building high-performing, collaborative teams</p>
+                <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-duration="600" data-aos-delay="300">
+                    <div class="feature-card p-4 text-center h-100">
+                        <div class="feature-icon mb-4">
+                            <i class="fas fa-people-arrows"></i>
                         </div>
-                        <div class="card-footer bg-transparent border-top-0">
-                            <a href="#" class="btn btn-link ps-0">Learn More →</a>
-                        </div>
+                        <h3 class="h4 mb-3">Team Leadership</h3>
+                        <p class="text-muted">Building high-performing, collaborative teams</p>
+                        <a href="#" class="btn btn-link ps-0 mt-3">Learn More →</a>
                     </div>
                 </div>
             </div>
@@ -189,70 +385,192 @@
     </section>
 
     <!-- Results -->
-    <section class="py-5">
+    <section class="py-5 py-lg-6">
         <div class="container">
             <div class="row g-5 align-items-center">
-                <div class="col-lg-6">
+                <div class="col-lg-6" data-aos="fade-right">
                     <div class="card border-0 shadow-lg">
-                        <div class="card-body p-4">
-                            <h3 class="h4 mb-4">Measurable Impact</h3>
+                        <div class="card-body p-4 p-lg-5">
+                            <h3 class="h2 fw-bold text-center mb-4">Measurable Impact</h3>
                             <div class="row g-4">
                                 <div class="col-6">
                                     <div class="text-center p-3">
                                         <div class="impact-number mb-3" data-count="92">0</div>
-                                        <p class="mb-0 small">% of participants report increased leadership confidence</p>
+                                        <p class="mb-0 small text-muted">% of participants report increased leadership confidence</p>
                                     </div>
                                 </div>
                                 <div class="col-6">
                                     <div class="text-center p-3">
                                         <div class="impact-number mb-3" data-count="78">0</div>
-                                        <p class="mb-0 small">% receive promotions within 2 years</p>
+                                        <p class="mb-0 small text-muted">% receive promotions within 2 years</p>
                                     </div>
                                 </div>
                                 <div class="col-6">
                                     <div class="text-center p-3">
                                         <div class="impact-number mb-3" data-count="85">0</div>
-                                        <p class="mb-0 small">% retention rate for program graduates</p>
+                                        <p class="mb-0 small text-muted">% retention rate for program graduates</p>
                                     </div>
                                 </div>
                                 <div class="col-6">
                                     <div class="text-center p-3">
                                         <div class="impact-number mb-3" data-count="4">0</div>
-                                        <p class="mb-0 small">x ROI for client organizations</p>
+                                        <p class="mb-0 small text-muted">x ROI for client organizations</p>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-6">
-                    <h2 class="mb-4">Proven Results</h2>
-                    <p>Our corporate leadership programs deliver measurable impact for both participants and their organizations.</p>
+                <div class="col-lg-6" data-aos="fade-left" data-aos-delay="200">
+                    <h2 class="display-5 fw-bold mb-4">Proven Results</h2>
+                    <p class="lead">Our corporate leadership programs deliver measurable impact for both participants and their organizations.</p>
                     <p>We combine rigorous evaluation with continuous improvement to ensure our programs meet your specific business objectives.</p>
-                    <a href="#" class="btn btn-outline-primary mt-3">Download Impact Report</a>
+                    <a href="#" class="btn btn-secondary-custom mt-3">Download Impact Report</a>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Contact Section -->
-    <section id="contact" class="py-5 bg-primary text-white">
+    <section id="contact" class="py-5 py-lg-6 bg-primary text-white">
         <div class="container">
             <div class="row justify-content-center">
-                <div class="col-lg-8 text-center">
-                    <h2 class="mb-4">Ready to Develop Your Leaders?</h2>
+                <div class="col-lg-8 text-center" data-aos="zoom-in">
+                    <h2 class="display-5 fw-bold mb-4">Ready to Develop Your Leaders?</h2>
                     <p class="lead mb-5">Contact us to discuss a customized solution for your organization</p>
-                    <a href="tel:+254700123456" class="btn btn-accent btn-lg px-5 me-3">
-                        <i class="fas fa-phone me-2"></i> Call Us
-                    </a>
-                    <a href="mailto:corporate@importanceleadership.org" class="btn btn-outline-light btn-lg px-5">
-                        <i class="fas fa-envelope me-2"></i> Email Us
-                    </a>
+                    <div class="d-flex flex-wrap justify-content-center gap-3">
+                        <a href="tel:+254700123456" class="btn btn-secondary-custom btn-lg px-5">
+                            <i class="fas fa-phone me-2"></i> Call Us
+                        </a>
+                        <a href="mailto:corporate@importanceleadership.org" class="btn btn-outline-light btn-lg px-5">
+                            <i class="fas fa-envelope me-2"></i> Email Us
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Footer (same as homepage) -->
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-5">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-lg-4">
+                    <img src="image/website-logo.png" alt="Importance Leadership" height="40" class="mb-3">
+                    <p class="mb-4">Developing ethical, visionary leaders who drive positive change in Africa and beyond.</p>
+                    <div class="d-flex gap-3">
+                        <a href="#" class="text-white fs-5"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="text-white fs-5"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="text-white fs-5"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" class="text-white fs-5"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-4">
+                    <h5 class="h6 fw-bold mb-3">Quick Links</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="index.html" class="text-white-50 underline-animation">Home</a></li>
+                        <li class="mb-2"><a href="about.html" class="text-white-50 underline-animation">About</a></li>
+                        <li class="mb-2"><a href="programs.html" class="text-white-50 underline-animation">Programs</a></li>
+                        <li class="mb-2"><a href="contact.html" class="text-white-50 underline-animation">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-2 col-md-4">
+                    <h5 class="h6 fw-bold mb-3">Programs</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="emerging-leaders.html" class="text-white-50 underline-animation">Emerging Leaders</a></li>
+                        <li class="mb-2"><a href="women-leadership.html" class="text-white-50 underline-animation">Women in Leadership</a></li>
+                        <li class="mb-2"><a href="corporate-leadership.html" class="text-white-50 underline-animation">Corporate Leadership</a></li>
+                        <li class="mb-2"><a href="community-changemakers.html" class="text-white-50 underline-animation">Community Changemakers</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-4 col-md-4">
+                    <h5 class="h6 fw-bold mb-3">Contact Us</h5>
+                    <address class="text-white-50 mb-0">
+                        <p class="mb-2"><i class="fas fa-map-marker-alt me-2"></i> 123 Leadership Avenue, Nairobi, Kenya</p>
+                        <p class="mb-2"><i class="fas fa-phone me-2"></i> +254 700 123 456</p>
+                        <p class="mb-2"><i class="fas fa-envelope me-2"></i> info@importanceleadership.org</p>
+                    </address>
+                </div>
+            </div>
+            <hr class="my-4 border-secondary">
+            <div class="row">
+                <div class="col-md-6 text-center text-md-start">
+                    <p class="mb-0 small">&copy; 2025 Importance Leadership. All rights reserved.</p>
+                </div>
+                <div class="col-md-6 text-center text-md-end">
+                    <p class="mb-0 small">
+                        <a href="#" class="text-white-50 underline-animation">Privacy Policy</a> | 
+                        <a href="#" class="text-white-50 underline-animation">Terms of Service</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <a href="#" class="btn btn-primary-custom position-fixed bottom-3 end-3 rounded-circle p-3" id="backToTop" style="display: none;">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+
+    <!-- Bootstrap JS Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- AOS Animation Library -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    
+    <!-- Custom JS -->
+    <script>
+        // Initialize AOS animation
+        AOS.init({
+            duration: 800,
+            easing: 'ease-in-out',
+            once: true,
+            mirror: false
+        });
+        
+        // Counter animation for stats
+        document.addEventListener('DOMContentLoaded', function() {
+            const counters = document.querySelectorAll('.impact-number');
+            const speed = 200;
+            
+            counters.forEach(counter => {
+                const target = +counter.getAttribute('data-count');
+                const count = +counter.innerText;
+                const increment = target / speed;
+                
+                if (count < target) {
+                    counter.innerText = Math.ceil(count + increment);
+                    setTimeout(updateCount, 1);
+                } else {
+                    counter.innerText = target;
+                }
+                
+                function updateCount() {
+                    const count = +counter.innerText;
+                    if (count < target) {
+                        counter.innerText = Math.ceil(count + increment);
+                        setTimeout(updateCount, 1);
+                    } else {
+                        counter.innerText = target;
+                    }
+                }
+            });
+            
+            // Back to top button
+            const backToTopButton = document.getElementById('backToTop');
+            window.addEventListener('scroll', function() {
+                if (window.pageYOffset > 300) {
+                    backToTopButton.style.display = 'block';
+                } else {
+                    backToTopButton.style.display = 'none';
+                }
+            });
+            
+            backToTopButton.addEventListener('click', function(e) {
+                e.preventDefault();
+                window.scrollTo({top: 0, behavior: 'smooth'});
+            });
+        });
+    </script>
 </body>
 </html>
