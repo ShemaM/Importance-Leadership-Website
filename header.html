@@ -17,6 +17,7 @@
             --light: #f8f9fa;       /* Light background */
             --dark: #212529;        /* Dark text */
             --text-light: #ffffff;
+            --header-padding: 0.7rem 0;
             --text-dark: #343a40;
             --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
         }
@@ -143,7 +144,7 @@
             overflow: hidden;
             background: linear-gradient(135deg, rgba(11, 31, 58, 0.95) 0%, rgba(11, 31, 58, 0.85) 100%), url('assets/images/hero-bg.webp') no-repeat center center/cover;
             color: white;
-            padding-top: 80px;
+            padding-top: 120px; /* Increased to prevent header overlap */
         }
         
         .hero-content {

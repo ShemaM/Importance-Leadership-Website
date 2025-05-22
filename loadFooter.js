@@ -2,8 +2,8 @@
 document.addEventListener("DOMContentLoaded", function() {
     // Footer HTML template
     
+    
 const footerHTML = `
-      <!-- footer.html -->
 <footer class="footer">
   <div class="container">
     <div class="row g-4">
