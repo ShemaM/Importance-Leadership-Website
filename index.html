@@ -147,7 +147,7 @@
             overflow: hidden;
             background: linear-gradient(135deg, rgba(11, 31, 58, 0.95) 0%, rgba(11, 31, 58, 0.85) 100%), url('assets/images/hero-bg.webp') no-repeat center center/cover;
             color: white;
-            padding-top: 80px;
+            padding-top: 120px; /* Increased to prevent header overlap */
         }
         
         .hero-content {
@@ -645,25 +645,25 @@
                             </li>
                             <li class="nav-item dropdown">
                                 <a class="nav-link dropdown-toggle text-white" href="#" id="whatWeDoDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                    What We Do
+                                    Programs
                                 </a>
                                 <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="whatWeDoDropdown">
-                                    <li ;"><a class="dropdown-item" href="programs.html">All Programs</a></li>
-                                    <li><a class="dropdown-item" href="#">Advocacy Initiatives</a></li>
-                                    <li><a class="dropdown-item" href="#">Mental Health Program</a></li>
-                                    <li><a class="dropdown-item" href="#">Networking</a></li>
-                                    <li><a class="dropdown-item" href="#">Leadership Development</a></li>
-                                    <li><a class="dropdown-item" href="#">Climate Change Awareness</a></li>
+                                    
+                                    <li><a class="dropdown-item" href="AdvocacyInitiatives.html">Advocacy Initiatives</a></li>
+                                    <li><a class="dropdown-item" href="MentalHealth.html">Mental Health Program</a></li>
+                                    <li><a class="dropdown-item" href="Networking.html">Networking</a></li>
+                                    <li><a class="dropdown-item" href="leadershipDev.html">Leadership Development</a></li>
+                                    <li><a class="dropdown-item" href="ClimateChange.html">Climate Change Awareness</a></li>
                                 </ul>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link text-white" href="impact.html">Our Impact</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link text-white" href="#">Blog</a>
+                               <!-- <a class="nav-link text-white" href="#">Blog</a>--> 
                             </li>
                             <li class="nav-item ms-lg-3 mt-3 mt-lg-0">
-                                <a href="donate.html" class="btn btn-accent btn-lg px-3 px-lg-4">Donate</a>
+                                <a href="donate.html" class="btn btn-warning btn-lg px-3 px-lg-4">Donate</a>
                             </li>
                         </ul>
                     </div>
@@ -712,8 +712,10 @@
                     </div>
                     <div class="col-lg-6 mt-5" data-aos="fade-left" data-aos-delay="300">
                         <div class="position-relative">
-                          <iframe width="704" height="396" src="https://www.youtube.com/embed/_rts2qZ2cK4" title="WHAT IS TRUE LEADERSHIP?" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-                          <caption class="h4 fw-bold text-center mt-4 mb-3">Click To Watch</caption>
+                          <div class="ratio ratio-16x9">
+                            <iframe src="https://www.youtube.com/embed/_rts2qZ2cK4" title="WHAT IS TRUE LEADERSHIP?" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                          </div>
+                          <div class="h4 fw-bold text-center mt-4 mb-3">Click To Watch</div>
                         </div>
                     </div>
                 </div>
@@ -755,112 +757,117 @@
                 </div>
                 
                 <div class="row g-4">
-                    <!--emerging leaders-->
+                    <!--leadership development-->
                     <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="100">
                         <div class="feature-card card h-100">
                             <div class="position-relative">
                                 <img src="image/leadershipDevelopemnt.jpg" class="card-img-top" alt="Leadership Development Program" loading="lazy">
-                                <span class="card-badge">12 Weeks</span>
+                                <!--<span class="card-badge">12 Weeks</span> -->
                             </div>
                             <div class="card-body">
-                                <h3 class="h4 fw-bold mb-3">Emerging Leaders Program</h3>
-                                <p class="card-text">A 12-week intensive that builds core leadership competencies through workshops, case studies, and real-world projects.</p>
+                                <h3 class="h4 fw-bold mb-3">Leadership Development</h3>
+                                <p class="card-text">A transformative 12-week program focused on building core leadership competencies. Participants engage in interactive workshops, hands-on projects, and receive mentorship to develop ethical decision-making, strategic vision, and effective communication skills.</p>
                                 <ul class="list-unstyled mb-4">
-                                    <li class="mb-2"><i class="fas fa-check-circle text-secondary me-2"></i> Ethical decision-making</li>
-                                    <li class="mb-2"><i class="fas fa-check-circle text-secondary me-2"></i> Strategic thinking</li>
-                                    <li class="mb-2"><i class="fas fa-check-circle text-secondary me-2"></i> Community engagement</li>
+                                    <li class="mb-2"><i class="fas fa-check-circle text-secondary me-2"></i> Ethical leadership training</li>
+                                    <li class="mb-2"><i class="fas fa-check-circle text-secondary me-2"></i> Strategic planning & execution</li>
+                                    <li class="mb-2"><i class="fas fa-check-circle text-secondary me-2"></i> Real-world community projects</li>
+                                    <li class="mb-2"><i class="fas fa-check-circle text-secondary me-2"></i> Personalized mentorship</li>
                                 </ul>
                             </div>
                             <div class="card-footer bg-transparent border-top-0">
-                                <a href="emerging-leaders.html" class="btn btn-outline-primary w-100">Program Details</a>
+                                <a href="leadershipDev.html" class="btn btn-outline-primary w-100">Program Details</a>
                             </div>
                         </div>
                     </div>
 
-                    <!--executive mentorship-->
+                    <!--networking-->
                     <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="200">
                         <div class="feature-card card h-100">
                             <div class="position-relative">
-                                <img src="image/mentorship.jpg" class="card-img-top" alt="Mentorship Program" loading="lazy">
-                                <span class="card-badge">6 Months</span>
+                                <img src="image/networking.jpg" class="card-img-top" alt="Networking Program" loading="lazy">
+                                <!-- <span class="card-badge">Ongoing</span> -->
                             </div>
                             <div class="card-body">
-                                <h3 class="h4 fw-bold mb-3">Executive Mentorship Initiative</h3>
-                                <p class="card-text">One-on-one guidance connecting promising youth with seasoned professionals for personalized development.</p>
+                                <h3 class="h4 fw-bold mb-3">Networking</h3>
+                                <p class="card-text">Expand your professional and social circles through curated networking events, peer collaborations, and access to a vibrant community of young leaders and industry experts.</p>
                                 <ul class="list-unstyled mb-4">
-                                    <li class="mb-2"><i class="fas fa-check-circle text-secondary me-2"></i> Career guidance</li>
-                                    <li class="mb-2"><i class="fas fa-check-circle text-secondary me-2"></i> Skill development</li>
-                                    <li class="mb-2"><i class="fas fa-check-circle text-secondary me-2"></i> Networking opportunities</li>
+                                    <li class="mb-2"><i class="fas fa-check-circle text-secondary me-2"></i> Curated networking events</li>
+                                    <li class="mb-2"><i class="fas fa-check-circle text-secondary me-2"></i> Peer-to-peer collaboration</li>
+                                    <li class="mb-2"><i class="fas fa-check-circle text-secondary me-2"></i> Access to industry leaders</li>
+                                    <li class="mb-2"><i class="fas fa-check-circle text-secondary me-2"></i> Community support</li>
                                 </ul>
                             </div>
                             <div class="card-footer bg-transparent border-top-0">
-                                <a href="executive-mentorship.html" class="btn btn-outline-primary w-100">Program Details</a>
+                                <a href="Networking.html" class="btn btn-outline-primary w-100">Program Details</a>
                             </div>
                         </div>
                     </div>
                     
-                    <!--community changemakers-->
+                    <!--advocacy initiatives-->
                     <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="300">
                         <div class="feature-card card h-100">
                             <div class="position-relative">
-                                <img src="image/community engagement.jpg" class="card-img-top" alt="Community Impact Program" loading="lazy">
-                                <span class="card-badge">Ongoing</span>
+                                <img src="image/advocacy.jpg" class="card-img-top" alt="Advocacy Initiatives Program" loading="lazy">
+                                <!--<span class="card-badge">Ongoing</span>-->
                             </div>
                             <div class="card-body">
-                                <h3 class="h4 fw-bold mb-3">Community Changemakers</h3>
-                                <p class="card-text">Hands-on initiatives that address local challenges while developing practical leadership experience.</p>
+                                <h3 class="h4 fw-bold mb-3">Advocacy Initiatives</h3>
+                                <p class="card-text">Our Advocacy Initiatives program empowers youth to become effective advocates for social justice, equity, and policy change. Participants learn how to raise awareness, influence decision-makers, and mobilize communities around critical issues.</p>
                                 <ul class="list-unstyled mb-4">
-                                    <li class="mb-2"><i class="fas fa-check-circle text-secondary me-2"></i> Project management</li>
-                                    <li class="mb-2"><i class="fas fa-check-circle text-secondary me-2"></i> Social innovation</li>
-                                    <li class="mb-2"><i class="fas fa-check-circle text-secondary me-2"></i> Sustainable solutions</li>
+                                    <li class="mb-2"><i class="fas fa-check-circle text-secondary me-2"></i> Advocacy and public speaking training</li>
+                                    <li class="mb-2"><i class="fas fa-check-circle text-secondary me-2"></i> Campaign planning and execution</li>
+                                    <li class="mb-2"><i class="fas fa-check-circle text-secondary me-2"></i> Policy engagement and civic education</li>
+                                    <li class="mb-2"><i class="fas fa-check-circle text-secondary me-2"></i> Community mobilization</li>
                                 </ul>
                             </div>
                             <div class="card-footer bg-transparent border-top-0">
-                                <a href="community-changemakers.html" class="btn btn-outline-primary w-100">Program Details</a>
+                                <a href="AdvocacyInitiatives.html" class="btn btn-outline-primary w-100">Program Details</a>
                             </div>
                         </div>
                     </div>
 
-                    <!--women in leadership-->
-                     <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="300">
+                    <!--menatl health program-->
+                    <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="300">
                         <div class="feature-card card h-100">
                             <div class="position-relative">
-                                <img src="image/community engagement.jpg" class="card-img-top" alt="Community Impact Program" loading="lazy">
-                                <span class="card-badge">ongoing</span>
+                                <img src="image/mental-health.jpg" class="card-img-top" alt="Mental Health Program" loading="lazy">
+                                <span class="card-badge">Ongoing</span>
                             </div>
                             <div class="card-body">
-                                <h3 class="h4 fw-bold mb-3">Women In Leadership</h3>
-                                <p class="card-text">Empowering women to take on leadership roles through tailored workshops, mentorship, and community-building initiatives.</p>
+                                <h3 class="h4 fw-bold mb-3">Mental Health Program</h3>
+                                <p class="card-text">Supporting youth wellbeing through mental health education, peer support, and access to professional resources. Our program fosters resilience, emotional intelligence, and a culture of openness around mental health.</p>
                                 <ul class="list-unstyled mb-4">
-                                    <li class="mb-2"><i class="fas fa-check-circle text-secondary me-2"></i> Empowerment workshops</li>
-                                    <li class="mb-2"><i class="fas fa-check-circle text-secondary me-2"></i> Tailored mentorship</li>
-                                    <li class="mb-2"><i class="fas fa-check-circle text-secondary me-2"></i> Community-building initiatives</li>
+                                    <li class="mb-2"><i class="fas fa-check-circle text-secondary me-2"></i> Mental health awareness workshops</li>
+                                    <li class="mb-2"><i class="fas fa-check-circle text-secondary me-2"></i> Peer support groups</li>
+                                    <li class="mb-2"><i class="fas fa-check-circle text-secondary me-2"></i> Access to counseling resources</li>
+                                    <li class="mb-2"><i class="fas fa-check-circle text-secondary me-2"></i> Building emotional resilience</li>
                                 </ul>
                             </div>
                             <div class="card-footer bg-transparent border-top-0">
-                                <a href="women-leadership.html" class="btn btn-outline-primary w-100">Program Details</a>
+                                <a href="MentalHealth.html" class="btn btn-outline-primary w-100">Program Details</a>
                             </div>
                         </div>
                     </div>
 
-                    
-                    <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="300">
+                    <!--climate change awareness-->
+                    <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="300"></div>
                         <div class="feature-card card h-100">
                             <div class="position-relative">
-                                <img src="image/community engagement.jpg" class="card-img-top" alt="Community Impact Program" loading="lazy">
-                                <span class="card-badge">Ongoing</span>
+                                <img src="image/climate-change.jpg" class="card-img-top" alt="Climate Change Awareness Program" loading="lazy">
+                               <!--<span class="card-badge">Ongoing</span> --> 
                             </div>
                             <div class="card-body">
-                                <h3 class="h4 fw-bold mb-3">Corporate Training</h3>
-                                <p class="card-text">Customized training programs designed to enhance leadership, teamwork, and organizational effectiveness within corporate environments.</p>
+                                <h3 class="h4 fw-bold mb-3">Climate Change Awareness</h3>
+                                <p class="card-text">Empowering youth to understand, address, and advocate for solutions to climate change through education, community projects, and environmental leadership.</p>
                                 <ul class="list-unstyled mb-4">
-                                    <li class="mb-2"><i class="fas fa-check-circle text-secondary me-2"></i> Project management</li>
-                                    <li class="mb-2"><i class="fas fa-check-circle text-secondary me-2"></i> Social innovation</li>
-                                    <li class="mb-2"><i class="fas fa-check-circle text-secondary me-2"></i> Sustainable solutions</li>
+                                    <li class="mb-2"><i class="fas fa-check-circle text-secondary me-2"></i> Environmental education workshops</li>
+                                    <li class="mb-2"><i class="fas fa-check-circle text-secondary me-2"></i> Community clean-up and tree planting</li>
+                                    <li class="mb-2"><i class="fas fa-check-circle text-secondary me-2"></i> Youth-led climate advocacy campaigns</li>
+                                    <li class="mb-2"><i class="fas fa-check-circle text-secondary me-2"></i> Promoting sustainable practices</li>
                                 </ul>
                             </div>
                             <div class="card-footer bg-transparent border-top-0">
-                                <a href="community-changemakers.html" class="btn btn-outline-primary w-100">Program Details</a>
+                                <a href="ClimateChange.html" class="btn btn-outline-primary w-100">Program Details</a>
                             </div>
                         </div>
                     </div>
