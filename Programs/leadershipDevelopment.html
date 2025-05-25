@@ -38,372 +38,42 @@
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
     
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "EducationalOrganization",
+      "name": "Importance Leadership",
+      "description": "Developing ethical, visionary leaders who drive positive change in Africa and beyond.",
+      "url": "https://www.importanceleadership.org",
+      "logo": "https://www.importanceleadership.org/image/website-logo.png",
+      "sameAs": [
+        "https://www.facebook.com/importanceleadership",
+        "https://twitter.com/importancelead",
+        "https://www.linkedin.com/company/importance-leadership"
+      ]
+    }
+    </script>
+    
     <style>
+        /* Your existing CSS styles */
         :root {
-            --primary: #0b1f3a;      /* Dark blue */
-            --primary-light: #1a365d;
-            --secondary: #f5a623;    /* Gold accent */
-            --secondary-light: #f8b84a;
-            --accent: #7cade9;      /* Light blue */
-            --light: #f8f9fa;       /* Light background */
-            --dark: #212529;        /* Dark text */
-            --text-light: #ffffff;
-            --text-dark: #343a40;
-            --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+            --primary: #0b1f3a;
+            --secondary: #f5a623;
+            --accent: #7cade9;
+            --light: #f8f9fa;
+            --dark: #212529;
+            --transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
         }
         
         body {
             font-family: 'Poppins', sans-serif;
+            color: var(--dark);
             overflow-x: hidden;
-            color: var(--text-dark);
-            line-height: 1.7;
-            scroll-behavior: smooth;
+            padding-top: 80px; /* Adjusted for fixed header */
         }
-        
-            .offcanvas-fullscreen {
-        width: 50vw !important;
-        max-width: 1000vw !important;
-        height: 100vh;
-        top: 0;
-        right: 0;
-        left: 0;
-        bottom: 0;
-        border-radius: 0;
-        background-color: #0b1f3a;
-        padding: 2rem;
-    }
 
-    @media (min-width: 992px) {
-        .offcanvas-fullscreen {
-            border-left: 0;
-        }
-    }
-        h1, h2, h3, h4, h5, h6 {
-            font-family: 'Playfair Display', serif;
-            font-weight: 700;
-            color: var(--primary);
-            line-height: 1.3;
-            color: var(--text-dark);
-        }
-        
-        /* Header styles */
-        .navbar {
-            transition: var(--transition);
-            padding: 1.5rem 0;
-            background-color: rgba(11, 31, 58, 0.95);
-            backdrop-filter: blur(10px);
-        }
-        
-        .navbar.scrolled {
-            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.15);
-            padding: 0.8rem 0;
-        }
-        
-        .nav-link {
-            font-weight: 500;
-            padding: 0.5rem 1rem;
-            position: relative;
-            color: rgba(255,255,255,0.9);
-        }
-        
-        .nav-link:hover,
-        .nav-link.active {
-            color: white;
-        }
-        
-        .nav-link:after {
-            content: '';
-            position: absolute;
-            width: 0;
-            height: 2px;
-            bottom: 0;
-            left: 0;
-            background-color: var(--secondary);
-            transition: width 0.3s ease;
-        }
-        
-        .nav-link:hover:after,
-        .nav-link.active:after {
-            width: 100%;
-        }
-        
-        /* Hero section */
-        .hero-section {
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            position: relative;
-            overflow: hidden;
-            background: linear-gradient(135deg, rgba(11, 31, 58, 0.95) 0%, rgba(11, 31, 58, 0.85) 100%), url('assets/images/hero-bg.webp') no-repeat center center/cover;
-            color: white;
-            padding-top: 120px; /* Increased to prevent header overlap */
-        }
-        
-        .hero-content {
-            position: relative;
-            z-index: 2;
-        }
-        
-        .hero-title {
-            font-size: 3.5rem;
-            line-height: 1.2;
-            margin-bottom: 1.5rem;
-            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
-        }
-        
-        .hero-subtitle {
-            font-size: 1.25rem;
-            opacity: 0.9;
-            margin-bottom: 2rem;
-        }
-        
-        /* Section styling */
-        .section {
-            padding: 7rem 0;
-            position: relative;
-        }
-        
-        .section-title {
-            position: relative;
-            margin-bottom: 3.5rem;
-            text-align: center;
-        }
-        
-        .section-title:after {
-            content: '';
-            display: block;
-            width: 80px;
-            height: 4px;
-            background: var(--secondary);
-            margin: 1.5rem auto 0;
-        }
-        
-        /* Cards */
-        .feature-card {
-            border: none;
-            border-radius: 16px;
-            overflow: hidden;
-            box-shadow: 0 15px 30px rgba(11, 31, 58, 0.1);
-            transition: var(--transition);
-            height: 100%;
-            background-color: white;
-        }
-        
-        .feature-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 20px 40px rgba(11, 31, 58, 0.15);
-        }
-        
-        .feature-card .card-img-top {
-            height: 220px;
-            object-fit: cover;
-            transition: transform 0.5s ease;
-        }
-        
-        .feature-card:hover .card-img-top {
-            transform: scale(1.05);
-        }
-        
-        .card-badge {
-            position: absolute;
-            top: 15px;
-            right: 15px;
-            background-color: var(--secondary);
-            color: var(--primary);
-            font-weight: 600;
-            padding: 0.25rem 0.75rem;
-            border-radius: 50px;
-            font-size: 0.8rem;
-            z-index: 2;
-        }
-        
-        /* Impact numbers */
-        .impact-number {
-            font-size: 3.5rem;
-            font-weight: 700;
-            color: var(--primary);
-            position: relative;
-            display: inline-block;
-            line-height: 1;
-        }
-        
-        .impact-number::after {
-            content: '+';
-            position: absolute;
-            right: -20px;
-            top: 0;
-            color: var(--secondary);
-        }
-        
-        /* Pillars section */
-        .pillars-section {
-            background: linear-gradient(135deg, rgba(11, 31, 58, 0.95) 0%, rgba(11, 31, 58, 0.9) 100%), url('image/website-logo.png') no-repeat center center/cover;
-            color: white;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .pillar-card {
-            background: rgba(255,255,255,0.1);
-            backdrop-filter: blur(10px);
-            border-radius: 16px;
-            padding: 2.5rem 2rem;
-            height: 100%;
-            border: 1px solid rgba(255,255,255,0.15);
-            transition: var(--transition);
-        }
-        
-        .pillar-card:hover {
-            transform: translateY(-10px);
-            background: rgba(255,255,255,0.15);
-            box-shadow: 0 15px 30px rgba(0,0,0,0.2);
-        }
-        
-        .pillar-icon {
-            width: 90px;
-            height: 90px;
-            background-color: var(--secondary);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto 1.5rem;
-            font-size: 2.5rem;
-            color: var(--primary);
-            transition: var(--transition);
-        }
-        
-        .pillar-card:hover .pillar-icon {
-            transform: rotate(15deg) scale(1.1);
-            background-color: white;
-        }
-        
-        /* Buttons */
-        .btn {
-            font-weight: 600;
-            padding: 0.75rem 1.75rem;
-            border-radius: 50px;
-            transition: var(--transition);
-            border-width: 3px;
-        }
-        
-        .btn-primary {
-            background-color: var(--primary);
-            border-color: var(--primary);
-            color: white;
-        }
-        
-        .btn-primary:hover {
-            background-color: var(--primary-light);
-            border-color: var(--primary-light);
-            color: white;
-            transform: translateY(-3px);
-            box-shadow: 0 10px 20px rgba(11, 31, 58, 0.2);
-        }
-        
-        .btn-outline-primary {
-            color: var(--primary);
-            border-color: var(--primary);
-        }
-        
-        .btn-outline-primary:hover {
-            background-color: var(--primary);
-            border-color: var(--primary);
-            color: white;
-            transform: translateY(-3px);
-            box-shadow: 0 10px 20px rgba(11, 31, 58, 0.2);
-        }
-        
-        .btn-accent {
-            background-color: var(--secondary);
-            border-color: var(--secondary);
-            color: var(--primary);
-            font-weight: 700;
-        }
-        
-        .btn-accent:hover {
-            background-color: var(--secondary-light);
-            border-color: var(--secondary-light);
-            color: var(--primary);
-            transform: translateY(-3px);
-            box-shadow: 0 10px 20px rgba(245, 166, 35, 0.3);
-        }
-        
-        .btn-outline-light {
-            border-color: rgba(255,255,255,0.5);
-            color: white;
-        }
-        
-        .btn-outline-light:hover {
-            background-color: white;
-            border-color: white;
-            color: var(--primary);
-            transform: translateY(-3px);
-            box-shadow: 0 10px 20px rgba(255,255,255,0.2);
-        }
-        
-        /* Testimonials */
-        .testimonial-card {
-            background: white;
-            border-radius: 16px;
-            padding: 2.5rem;
-            box-shadow: 0 15px 30px rgba(11, 31, 58, 0.1);
-            position: relative;
-            height: 100%;
-        }
-        
-        .testimonial-card:before {
-            content: '\201C';
-            position: absolute;
-            top: 30px;
-            left: 30px;
-            font-size: 5rem;
-            color: rgba(11, 31, 58, 0.05);
-            font-family: Georgia, serif;
-            line-height: 1;
-        }
-        
-        .testimonial-img {
-            width: 90px;
-            height: 90px;
-            border-radius: 50%;
-            object-fit: cover;
-            border: 4px solid var(--secondary);
-            margin: 0 auto 1.5rem;
-            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
-        }
-        
-        .testimonial-rating {
-            color: var(--secondary);
-            font-size: 1.2rem;
-            margin-bottom: 1rem;
-        }
-        
-        /* CTA section */
-        .cta-section {
-            background: linear-gradient(135deg, rgba(11, 31, 58, 0.95) 0%, rgba(11, 31, 58, 0.9) 100%), url('image/feedback\ \(1\).png') no-repeat center center/cover;
-            color: white;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .cta-content {
-            position: relative;
-            z-index: 2;
-        }
-        
-        .cta-pattern {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            opacity: 0.1;
-            background-image: radial-gradient(var(--secondary) 1px, transparent 1px);
-            background-size: 20px 20px;
-        }
-        
-        /* Footer */
+                /* Footer */
         .footer {
             background-color: var(--primary);
             color: white;
@@ -514,8 +184,67 @@
         .back-to-top:hover {
             transform: translateY(-3px) scale(1.1);
         }
+           
+            .offcanvas-fullscreen {
+        width: 50vw !important;
+        max-width: 1000vw !important;
+        height: 100vh;
+        top: 0;
+        right: 0;
+        left: 0;
+        bottom: 0;
+        border-radius: 0;
+        background-color: #0b1f3a;
+        padding: 2rem;
+    }
+
+    @media (min-width: 992px) {
+        .offcanvas-fullscreen {
+            border-left: 0;
+        }
+    }
+
+            /* Header styles */
+        .navbar {
+            transition: var(--transition);
+            padding: 1.5rem 0;
+            background-color: rgba(11, 31, 58, 0.95);
+            backdrop-filter: blur(10px);
+        }
         
-        /* Responsive adjustments */
+        .navbar.scrolled {
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.15);
+            padding: 0.8rem 0;
+        }
+        
+        .nav-link {
+            font-weight: 500;
+            padding: 0.5rem 1rem;
+            position: relative;
+            color: rgba(255,255,255,0.9);
+        }
+        
+        .nav-link:hover,
+        .nav-link.active {
+            color: white;
+        }
+        
+        .nav-link:after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: 0;
+            left: 0;
+            background-color: var(--secondary);
+            transition: width 0.3s ease;
+        }
+        
+        .nav-link:hover:after,
+        .nav-link.active:after {
+            width: 100%;
+        }
+          /* Responsive adjustments */
         @media (max-width: 1199px) {
             .hero-title {
                 font-size: 3rem;
@@ -578,7 +307,6 @@
                 padding: 0.6rem 1.5rem;
             }
         }
-     
     </style>
 </head>
 <body>
@@ -628,18 +356,18 @@
                                     What We Do
                                 </a>
                                 <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="whatWeDoDropdown">
-                                    <li><a class="dropdown-item" href="advocacy-initiatives.html">Advocacy Initiatives</a></li>
-                                    <li><a class="dropdown-item" href="mental-health-program.html">Mental Health Program</a></li>
-                                    <li><a class="dropdown-item" href="networking.html">Networking</a></li>
-                                    <li><a class="dropdown-item active" href="leadership-development.html">Leadership Development</a></li>
-                                    <li><a class="dropdown-item" href="climate-change-awareness.html">Climate Change Awareness</a></li>
+                                    <li><a class="dropdown-item" href="../programs/advocacy-initiatives.html">Advocacy Initiatives</a></li>
+                                    <li><a class="dropdown-item" href="../programs/mental-health-program.html">Mental Health Program</a></li>
+                                    <li><a class="dropdown-item" href="../programs/networking.html">Networking</a></li>
+                                    <li><a class="dropdown-item active" href="../programs/leadership-development.html">Leadership Development</a></li>
+                                    <li><a class="dropdown-item" href="../programs/climate-change-awareness.html">Climate Change Awareness</a></li>
                                 </ul>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link text-white" href="impact.html">Our Impact</a>
+                                <a class="nav-link text-white" href="../impact.html">Our Impact</a>
                             </li>
                             <li class="nav-item ms-lg-3 mt-3 mt-lg-0">
-                                <a href="donate.html" class="btn btn-accent btn-lg px-3 px-lg-4">Donate</a>
+                                <a href="../donate.html" class="btn btn-accent btn-lg px-3 px-lg-4">Donate</a>
                             </li>
                         </ul>
                     </div>
@@ -657,23 +385,14 @@
                     <h1 class="display-4 fw-bold text-white mb-4">Leadership Development Program</h1>
                     <p class="lead text-white mb-5">Transformative leadership training for emerging African leaders to develop core competencies through workshops, real-world projects, and mentorship.</p>
                     <div class="d-flex flex-wrap gap-3">
-                        <a href="#apply" class="btn btn-warning btn-lg">Apply Now</a>
-                        <a href="#curriculum" class="btn btn-warning btn-lg">Program Details</a>
+                        <a href="#apply" class="btn btn-secondary-custom btn-lg">Apply Now</a>
+                        <a href="#curriculum" class="btn btn-outline-light btn-lg">Program Details</a>
                     </div>
                 </div>
                 <div class="col-lg-5 d-none d-lg-block" data-aos="fade-left" data-aos-delay="200">
-                    <img src="image/leadershipDevelopemnt.jpg" alt="Leadership workshop participants engaged in discussion" class="img-fluid rounded shadow" loading="lazy">
+                    <img src="../image/leadershipDevelopemnt.jpg" alt="Leadership workshop participants engaged in discussion" class="img-fluid rounded shadow" loading="lazy">
                 </div>
             </div>
-
-             <div class="col-lg-6 mt-5" data-aos="fade-left" data-aos-delay="300">
-                        <div class="position-relative">
-                          <div class="ratio ratio-16x9">
-                            <iframe src="https://www.youtube.com/embed/_rts2qZ2cK4" title="WHAT IS TRUE LEADERSHIP?" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-                          </div>
-                          <div class="h4 fw-bold text-center mt-4 mb-3">Click To Watch</div>
-                        </div>
-                    </div>
         </div>
     </section>
 
@@ -771,11 +490,12 @@
                     </ul>
                     <div class="d-flex flex-wrap gap-3">
                         <a href="#apply" class="btn btn-primary-custom">Apply Now</a>
-                     </div>
+                        <a href="../downloads/leadership-program-brochure.pdf" class="btn btn-outline-primary" download="Importance-Leadership-Program-Brochure">Download Brochure</a>
+                    </div>
                 </div>
                 <div class="col-lg-6" data-aos="fade-left">
                     <div class="card border-0 shadow-sm h-100">
-                        <img src="image/teamCollaboration.jpg" alt="Leadership training session in progress" class="card-img-top" loading="lazy">
+                        <img src="../image/leadership-training-session.jpg" alt="Leadership training session in progress" class="card-img-top" loading="lazy">
                         <div class="card-body">
                             <h3 class="h5 fw-bold">2024 Program Schedule</h3>
                             <ul class="list-unstyled">
@@ -791,7 +511,72 @@
         </div>
     </section>
 
-   
+    <!-- Testimonials Section -->
+    <section class="py-5 py-lg-6">
+        <div class="container">
+            <div class="text-center mb-5" data-aos="fade-up">
+                <h2 class="display-5 fw-bold mb-3">Alumni Success Stories</h2>
+                <p class="lead text-muted mx-auto" style="max-width: 700px;">Hear from our graduates about their leadership journeys</p>
+            </div>
+            
+            <div class="row g-4">
+                <div class="col-md-4" data-aos="fade-up">
+                    <div class="testimonial-card h-100">
+                        <div class="text-center position-relative">
+                            <img src="../image/alumni-1.jpg" alt="John M., Program Graduate" class="testimonial-img mb-3" loading="lazy">
+                            <div class="mb-3">
+                                <i class="fas fa-star text-warning" aria-hidden="true"></i>
+                                <i class="fas fa-star text-warning" aria-hidden="true"></i>
+                                <i class="fas fa-star text-warning" aria-hidden="true"></i>
+                                <i class="fas fa-star text-warning" aria-hidden="true"></i>
+                                <i class="fas fa-star text-warning" aria-hidden="true"></i>
+                            </div>
+                            <p class="mb-4 position-relative">"This program transformed my approach to leadership. Within 6 months of completing the program, I was promoted to a management position at my organization."</p>
+                            <h5 class="mb-1 fw-bold">John M.</h5>
+                            <p class="text-muted small">Community Development Manager, Kenya</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+                    <div class="testimonial-card h-100">
+                        <div class="text-center position-relative">
+                            <img src="../image/alumni-2.jpg" alt="Amina K., Program Graduate" class="testimonial-img mb-3" loading="lazy">
+                            <div class="mb-3">
+                                <i class="fas fa-star text-warning" aria-hidden="true"></i>
+                                <i class="fas fa-star text-warning" aria-hidden="true"></i>
+                                <i class="fas fa-star text-warning" aria-hidden="true"></i>
+                                <i class="fas fa-star text-warning" aria-hidden="true"></i>
+                                <i class="fas fa-star text-warning" aria-hidden="true"></i>
+                            </div>
+                            <p class="mb-4 position-relative">"The mentorship I received gave me the confidence to launch my social enterprise. We've now impacted over 5,000 women in rural Nigeria."</p>
+                            <h5 class="mb-1 fw-bold">Amina K.</h5>
+                            <p class="text-muted small">Social Entrepreneur, Nigeria</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+                    <div class="testimonial-card h-100">
+                        <div class="text-center position-relative">
+                            <img src="../image/alumni-3.jpg" alt="David T., Program Graduate" class="testimonial-img mb-3" loading="lazy">
+                            <div class="mb-3">
+                                <i class="fas fa-star text-warning" aria-hidden="true"></i>
+                                <i class="fas fa-star text-warning" aria-hidden="true"></i>
+                                <i class="fas fa-star text-warning" aria-hidden="true"></i>
+                                <i class="fas fa-star text-warning" aria-hidden="true"></i>
+                                <i class="fas fa-star text-warning" aria-hidden="true"></i>
+                            </div>
+                            <p class="mb-4 position-relative">"The practical projects were game-changing. I applied what I learned immediately in my community, leading to tangible improvements in local education access."</p>
+                            <h5 class="mb-1 fw-bold">David T.</h5>
+                            <p class="text-muted small">Education Advocate, South Africa</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Apply Section -->
     <section id="apply" class="py-5 py-lg-6 bg-primary text-white">
         <div class="container">
@@ -827,7 +612,7 @@
                                         <label for="country" class="form-label">Country <span class="text-danger">*</span></label>
                                         <select class="form-select form-control-custom" id="country" name="country" required>
                                             <option value="" selected disabled>Select Country</option>
-                                            <option value="Nigeria">N</option>
+                                            <option value="Nigeria">Nigeria</option>
                                             <option value="Kenya">Kenya</option>
                                             <option value="South Africa">South Africa</option>
                                             <!-- More African countries -->
