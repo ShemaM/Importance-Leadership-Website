@@ -4,6 +4,7 @@ document.addEventListener("DOMContentLoaded", function() {
     
     
 const footerHTML = `
+   <!-- footer.html -->
 <footer class="footer">
   <div class="container">
     <div class="row g-4">
@@ -11,11 +12,10 @@ const footerHTML = `
         <img src="image/website-logo.png" alt="Importance Leadership Logo" class="footer-logo" loading="lazy">
         <p class="mb-4">Developing ethical, visionary leaders who drive positive change in Africa and beyond through mentorship, education, and community engagement.</p>
         <div class="social-links mb-4">
-          <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-          <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-          <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-          <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-          <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+          <a href="https://www.facebook.com/share/15LKEyn6fy/?mibextid=wwXIfr" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+          <a href="https://www.instagram.com/importance_leadership_?igsh=bGZ1bHB1dm1vdHY2&utm_source=qr" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+          <a href="https://www.linkedin.com/company/105744530/admin/dashboard/" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+          <a href="https://youtube.com/@importanceleadership?si=mzd00nPXob5XBBBl" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
         </div>
       </div>
 
@@ -24,8 +24,7 @@ const footerHTML = `
           <h5>Navigation</h5>
           <ul>
             <li><a href="index.html">Home</a></li>
-            <li><a href="about.html">About Us</a></li>
-            <li><a href="programs.html">Programs</a></li>
+            <li><a href="who-we-are.html">Who We Are</a></li>
             <li><a href="impact.html">Impact</a></li>
             <li><a href="#">Blog</a></li>
             <li><a href="contact-us.html">Contact</a></li>
@@ -33,18 +32,18 @@ const footerHTML = `
         </div>
       </div>
 
-      <div class="col-lg-3 col-md-4">
-        <div class="footer-links">
-          <h5>Programs</h5>
-          <ul>
-            <li><a href="#">Emerging Leaders</a></li>
-            <li><a href="#">Executive Mentorship</a></li>
-            <li><a href="#">Community Changemakers</a></li>
-            <li><a href="#">Women in Leadership</a></li>
-            <li><a href="#">Corporate Training</a></li>
-          </ul>
-        </div>
-      </div>
+       <div class="col-lg-3 col-md-4">
+                    <div class="footer-links">
+                        <h5>Programs</h5>
+                        <ul>
+                            <li><a href="AdvocacyInitiatives.html">Advocacy Initiatives</a></li>
+                            <li><a href="MentalHealth.html">Mental Health Programs</a></li>
+                            <li><a href="Networking.html">Networking</a></li>
+                            <li><a href="leadershipDev.html">Leadership Developement</a></li>
+                            <li><a href="ClimateChange.html">Climate Change Awareness</a></li>
+                        </ul>
+                    </div>
+                </div>
 
       <div class="col-lg-3 col-md-4">
         <div class="footer-links">

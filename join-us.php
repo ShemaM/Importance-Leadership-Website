@@ -23,21 +23,20 @@ if ($conn->connect_error) {
 $firstname = trim($_POST['firstname'] ?? '');
 $email = trim($_POST['email'] ?? '');
 $password = $_POST['password'] ?? '';
-$repeat_password = $_POST['repeat_password'] ?? '';
+$repeat_password = $_POST['confirmPassword'] ?? ''; // match your form field name exactly
 
-// Initialize error array
+// Validation errors container
 $errors = [];
 
-// Validate first name
+// Validate firstname
 if (empty($firstname)) {
     $errors['firstname'] = 'First name is required';
 }
 
-// Validate email
+// Validate email and check uniqueness
 if (empty($email) || !filter_var($email, FILTER_VALIDATE_EMAIL)) {
     $errors['email'] = 'Valid email is required';
 } else {
-    // Check if email already exists in the database
     $stmt = $conn->prepare("SELECT id FROM users WHERE email = ?");
     if ($stmt) {
         $stmt->bind_param("s", $email);
@@ -50,7 +49,7 @@ if (empty($email) || !filter_var($email, FILTER_VALIDATE_EMAIL)) {
     } else {
         echo json_encode([
             'success' => false,
-            'message' => 'Query preparation failed: ' . $conn->error
+            'message' => 'Database query failed: ' . $conn->error
         ]);
         $conn->close();
         exit;
@@ -61,15 +60,15 @@ if (empty($email) || !filter_var($email, FILTER_VALIDATE_EMAIL)) {
 if (empty($password)) {
     $errors['password'] = 'Password is required';
 } elseif (strlen($password) < 8) {
-    $errors['password'] = 'Password must be at least 8 characters long';
+    $errors['password'] = 'Password must be at least 8 characters';
 }
 
-// Check if passwords match
+// Validate password confirmation
 if ($password !== $repeat_password) {
-    $errors['repeat_password'] = 'Passwords do not match';
+    $errors['confirmPassword'] = 'Passwords do not match';
 }
 
-// If there are validation errors, return the first one
+// Return first validation error, if any
 if (!empty($errors)) {
     $firstErrorKey = array_key_first($errors);
     echo json_encode([
@@ -84,29 +83,32 @@ if (!empty($errors)) {
 // Hash the password securely
 $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
 
-// Insert user into the database
+// Insert user into database
 $insert = $conn->prepare("INSERT INTO users (firstname, email, password) VALUES (?, ?, ?)");
-if ($insert) {
-    $insert->bind_param("sss", $firstname, $email, $hashedPassword);
-    if ($insert->execute()) {
-        echo json_encode([
-            'success' => true,
-            'message' => 'Registration successful! Welcome, ' . htmlspecialchars($firstname),
-            'redirect' => 'success.html' // Redirect to a success page
-        ]);
-    } else {
-        echo json_encode([
-            'success' => false,
-            'message' => 'Registration failed. Please try again. Error: ' . $insert->error
-        ]);
-    }
-    $insert->close();
-} else {
+if (!$insert) {
     echo json_encode([
         'success' => false,
         'message' => 'Insert preparation failed: ' . $conn->error
     ]);
+    $conn->close();
+    exit;
 }
 
+$insert->bind_param("sss", $firstname, $email, $hashedPassword);
+
+if ($insert->execute()) {
+    echo json_encode([
+        'success' => true,
+        'message' => 'Registration successful! Welcome, ' . htmlspecialchars($firstname),
+        'redirect' => 'signupSuccess.html'
+    ]);
+} else {
+    echo json_encode([
+        'success' => false,
+        'message' => 'Registration failed. Please try again. Error: ' . $insert->error
+    ]);
+}
+
+$insert->close();
 $conn->close();
 ?>

@@ -11,309 +11,380 @@
     <link rel="icon" type="image/png" href="image/logo.jpg">
     
     <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
     
     <!-- Font Awesome -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <meta name="description" content="Importance Leadership empowers young leaders through mentorship, education, and advocacy programs. Join our movement to create positive change in communities worldwide.">
+    <meta name="keywords" content="youth leadership, leadership development, mentorship programs, community impact, African leadership, social change">
+    <meta name="author" content="Importance Leadership">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://www.importanceleadership.com" />
+    
+    <!-- Open Graph / Social Media Meta Tags -->
+    <meta property="og:title" content="Importance Leadership | Developing Ethical Leaders for Global Impact">
+    <meta property="og:description" content="Empowering young leaders through mentorship, education, and advocacy programs.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.importanceleadership.com">
+    <meta property="og:image" content="https://www.importanceleadership.com/image/logo.png">
+    <meta property="og:image:alt" content="Importance Leadership Logo">
+    <meta property="og:site_name" content="Importance Leadership">
+    
+    <!-- Favicon -->
+    <link rel="icon" href="image/logo.jpg" type="image/x-icon">
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16x16.png">
+    <link rel="manifest" href="assets/site.webmanifest">
+    
+    <!-- Preload critical resources -->
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" as="style">
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;500;600;700&display=swap" as="style">
+    <link rel="preload" href="assets/css/main.min.css" as="style">
+    <link rel="preload" href="image/website-logo.png" as="image">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     
     <!-- AOS Animation -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     
+    <!-- Main CSS -->
+    <link href="assets/css/main.min.css" rel="stylesheet">
+    
     <style>
         :root {
-            --primary: #0b1f3a;
-            --secondary: #2605f7;
-            --accent: #123456;
-            --light: #f8f9fa;
-            --dark: #000000;
-            --transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            --primary: #0b1f3a;      /* Dark blue */
+            --primary-light: #1a365d;
+            --secondary: #f5a623;    /* Gold accent */
+            --secondary-light: #f8b84a;
+            --accent: #7cade9;      /* Light blue */
+            --light: #f8f9fa;       /* Light background */
+            --dark: #212529;        /* Dark text */
+            --text-light: #ffffff;
+            --text-dark: #343a40;
+            --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
         }
-        
+
         body {
             font-family: 'Poppins', sans-serif;
+            color: var(--dark);
+            line-height: 1.6;
             overflow-x: hidden;
-            scroll-behavior: smooth;
-            background-color: var(--accent);
         }
-        
+
         h1, h2, h3, h4, h5 {
             font-family: 'Playfair Display', serif;
-            font-weight: 700;
+            font-weight: 600;
+            color: var(--primary);
         }
-        
-        /* Background Shapes */
-        .bg-shape {
-            position: absolute;
-            z-index: -1;
-            opacity: 0.1;
-            animation: float 6s ease-in-out infinite;
-        }
-        
-        .bg-shape-1 {
-            top: 10%;
-            left: 5%;
-            width: 200px;
-            height: 200px;
-            fill: var(--primary);
-            animation-delay: 0s;
-        }
-        
-        .bg-shape-2 {
-            bottom: 15%;
-            right: 8%;
-            width: 150px;
-            height: 150px;
-            fill: var(--accent);
-            animation-delay: 1s;
-        }
-        
-        .bg-shape-3 {
-            top: 40%;
-            right: 15%;
-            width: 100px;
-            height: 100px;
-            fill: var(--primary);
-            animation-delay: 2s;
-        }
-        
-        @keyframes float {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-20px); }
-        }
-        
+
         /* Hero Section */
-        .about-hero {
-            position: relative;
-            min-height: 60vh;
-            background: linear-gradient(rgba(11, 31, 58, 0.8), rgba(11, 31, 58, 0.9)), url('image/about-hero.jpg') no-repeat center center/cover;
+        .hero-section {
+            background: linear-gradient(rgba(11, 31, 58, 0.9), rgba(11, 31, 58, 0.9)), 
+                        url('image/hero-bg.jpg') no-repeat center center/cover;
+            min-height: 70vh;
             display: flex;
             align-items: center;
-            overflow: hidden;
-        }
-        
-        .about-hero-content {
-            z-index: 3;
-            position: relative;
-        }
-        
-        .section-title {
-            font-size: 2.5rem;
             color: white;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
             position: relative;
-            margin-bottom: 1.5rem;
+            padding-top: 80px;
         }
-        
-        .section-title::after {
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-title {
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .hero-subtitle {
+            font-size: 1.25rem;
+            max-width: 700px;
+            margin: 0 auto 2rem;
+            opacity: 0.9;
+        }
+
+        /* Section Styling */
+        .section {
+            padding: 5rem 0;
+        }
+
+        .section-title {
+            position: relative;
+            margin-bottom: 3rem;
+            text-align: center;
+        }
+
+        .section-title:after {
             content: '';
             display: block;
             width: 80px;
             height: 4px;
             background: var(--secondary);
-            margin: 15px auto;
+            margin: 1rem auto 0;
             border-radius: 2px;
         }
-        
-        /* Cards */
-        .feature-card {
-            transition: var(--transition);
-            border: none;
-            border-radius: 12px;
+
+        /* About Section */
+        .about-card {
+            border-radius: 8px;
             overflow: hidden;
-            box-shadow: 0 10px 20px rgba(11, 31, 58, 0.1);
-            margin-bottom: 2rem;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            height: 100%;
         }
-        
-        .feature-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 30px rgba(11, 31, 58, 0.2);
-        }
-        
-        .feature-card .card-img-top {
-            transition: var(--transition);
-        }
-        
-        .feature-card:hover .card-img-top {
-            transform: scale(1.05);
-        }
-        
-        /* Button Effects */
-        .btn-gradient {
-            background: linear-gradient(45deg, var(--primary), var(--accent));
-            color: white;
-            border: none;
-            position: relative;
-            overflow: hidden;
-            z-index: 1;
-        }
-        
-        .btn-gradient:hover {
-            color: white;
-        }
-        
-        .btn-gradient::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
+
+        .about-card-img {
+            height: 350px;
+            object-fit: cover;
             width: 100%;
+        }
+
+        .about-card-body {
+            padding: 2rem;
+        }
+
+        .about-card-title {
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .about-card-subtitle {
+            color: var(--secondary);
+            font-weight: 500;
+            margin-bottom: 1rem;
+        }
+
+        /* Mission & Vision */
+        .mission-card {
+            background: white;
+            border-radius: 8px;
+            padding: 2rem;
             height: 100%;
-            background: linear-gradient(45deg, var(--accent), var(--primary));
-            transition: var(--transition);
-            z-index: -1;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            border-top: 4px solid var(--secondary);
         }
-        
-        .btn-gradient:hover::before {
-            left: 0;
-        }
-        
-        /* Timeline */
-        .timeline {
-            position: relative;
-            padding-left: 3rem;
-            margin: 4rem 0;
-        }
-        
-        .timeline::before {
-            content: '';
-            position: absolute;
-            left: 20px;
-            top: 0;
-            height: 100%;
-            width: 3px;
-            background: linear-gradient(to bottom, var(--accent), var(--secondary));
-        }
-        
-        .timeline-item {
-            position: relative;
-            margin-bottom: 3rem;
-            padding-left: 2rem;
-        }
-        
-        .timeline-badge {
-            position: absolute;
-            left: 0;
-            top: 0;
-            width: 40px;
-            height: 40px;
+
+        .mission-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, var(--secondary) 0%, var(--accent) 100%);
             border-radius: 50%;
-            background: var(--primary);
-            color: white;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-weight: bold;
-            border: 3px solid var(--secondary);
-            transform: translateX(-50%);
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            margin-bottom: 1.5rem;
+            color: white;
+            font-size: 1.5rem;
         }
-        
+
+        /* Pillars Section */
+        .pillars-section {
+            background-color: var(--light);
+        }
+
+        .pillar-card {
+            background: white;
+            border-radius: 8px;
+            padding: 2rem;
+            text-align: center;
+            height: 100%;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            border-bottom: 4px solid var(--secondary);
+        }
+
+        .pillar-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, var(--secondary) 0%, var(--accent) 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem;
+            color: white;
+            font-size: 1.5rem;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            color: white;
+            padding: 5rem 0;
+            text-align: center;
+        }
+
+        .cta-title {
+            color: white;
+            margin-bottom: 1.5rem;
+        }
+
+        .cta-subtitle {
+            opacity: 0.9;
+            margin-bottom: 2rem;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .btn-primary {
+            background-color: var(--secondary);
+            border: none;
+            padding: 0.75rem 2rem;
+            font-weight: 600;
+            border-radius: 8px;
+        }
+
+        .btn-outline-light {
+            border: 2px solid white;
+            color: white;
+            background: transparent;
+            padding: 0.75rem 2rem;
+            font-weight: 600;
+            border-radius: 8px;
+        }
+
         /* Responsive Adjustments */
         @media (max-width: 992px) {
-            .section-title {
-                font-size: 2.2rem;
+            .hero-title {
+                font-size: 2.5rem;
+            }
+            
+            .section {
+                padding: 4rem 0;
             }
         }
-        
+
         @media (max-width: 768px) {
-            .about-hero {
-                min-height: 50vh;
+            .hero-title {
+                font-size: 2rem;
+            }
+            
+            .hero-subtitle, .cta-subtitle {
+                font-size: 1.1rem;
             }
             
             .section-title {
                 font-size: 2rem;
+            }
+            
+            .about-card-img {
+                height: 300px;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .hero-section {
+                min-height: 60vh;
+                padding-top: 70px;
+            }
+            
+            .hero-title {
+                font-size: 1.8rem;
+            }
+            
+            .section {
+                padding: 3rem 0;
             }
         }
     </style>
 </head>
 
 <body>
-    <!-- Background Shapes -->
-    <svg class="bg-shape bg-shape-1" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
-        <path d="M45.4,-59.4C58.6,-48.9,68.7,-33.5,72.6,-16.6C76.5,0.3,74.2,18.7,64.2,33.5C54.2,48.3,36.4,59.6,16.8,67.3C-2.9,75,-25.4,79.2,-42.1,70.1C-58.8,61,-69.7,38.7,-72.9,15.8C-76.1,-7.1,-71.6,-30.6,-58.1,-45.3C-44.6,-60,-22.3,-65.9,-1.6,-64.4C19.1,-62.9,38.2,-53.9,45.4,-59.4Z" transform="translate(100 100)" />
-    </svg>
-
-    <svg class="bg-shape bg-shape-2" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
-        <path d="M38.3,-54.1C50.3,-44.3,61.4,-33.7,65.3,-20.3C69.2,-6.9,65.9,9.3,58.5,24.3C51.1,39.3,39.6,53.1,24.3,61.9C9,70.7,-10.1,74.5,-25.1,67.7C-40.1,60.9,-51,43.5,-58.2,25.2C-65.4,6.9,-68.9,-12.3,-62.8,-28.1C-56.7,-43.9,-40.9,-56.3,-25.8,-64.9C-10.7,-73.5,3.7,-78.3,18.1,-75.1C32.5,-71.9,46.8,-60.8,38.3,-54.1Z" transform="translate(100 100)" />
-    </svg>
-
-    <svg class="bg-shape bg-shape-3" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
-        <path d="M42.2,-58.6C55.3,-52.7,66.9,-41.8,70.2,-28.4C73.5,-15,68.5,0.9,62.1,16.2C55.7,31.5,47.9,46.2,35.3,55.3C22.7,64.4,5.3,67.9,-9.6,64.9C-24.5,61.8,-36.9,52.2,-47.1,40.5C-57.3,28.8,-65.2,15,-67.5,-0.8C-69.8,-16.6,-66.5,-33.2,-56.9,-45.4C-47.3,-57.6,-31.4,-65.4,-15.8,-70.2C-0.2,-75,15.2,-76.8,42.2,-58.6Z" transform="translate(100 100)" />
-    </svg>
-
     <!-- Load Header -->
     <div id="header-container"></div>
     <script src="loadHeader.js"></script>
 
-    <!-- About Hero Section -->
-    <section class="about-hero" background="linear-gradient(to right, #000000, #123456)">
-        <div class="container about-hero-content text-center text-white" data-aos="fade-up">
-            <h1 class="display-4 fw-bold mb-4">Who We Are</h1>
-           <p class="mb-5">At Importance Leadership, we are a dynamic team of visionaries, educators, and change-makers committed to empowering the next generation of leaders. Founded on the principles of integrity, innovation, and impact, we provide transformative programs, mentorship, and resources to help individuals and organizations unlock their full potential. Through our tailored workshops, thought-provoking events, and hands-on training, we cultivate the skills and mindset needed to drive meaningful change in communities and industries worldwide. Our passion lies in fostering leadership that not only achieves success but also inspires and uplifts others. Join us in shaping a future where leadership is synonymous with purpose, growth, and collective progress</p>
-            <a href="#about" class="btn btn-gradient btn-lg px-4 py-3 text-white" style="margin-bottom: 40px;">Discover Our Story</a>
-        </div>
-        <div class="wave-animation"></div>
-    </section>
-
-    <!-- About Us Section -->
-    <section class="py-6" id="about" style="background: linear-gradient(to right, #000000, #123456); color:#ffff">
+    <!-- Hero Section -->
+    <section class="hero-section">
         <div class="container">
             <div class="row align-items-center">
-                <div class="col-lg-5 mb-5 mb-lg-0" data-aos="fade-right">
-                    <div class="feature-card">
-                        <img src="image/fiston.png" class="card-img-top img-fluid" alt="Fiston Ndayishimiye" style="height: 300px; object-fit: cover;">
-                        <div class="card-body text-center">
-                            <h3 class="card-title">Fiston Ndayishimiye</h3>
-                            <p class="text-accent mb-3">Founder & Visionary Leader</p>
-                            <p class="card-text">"Empowering young people to become ethical, inclusive, and purpose-driven leaders."</p>
-                            <a href="team.html#fisto" class="btn btn-primary text-center">Learn More</a>
+                <div class="col-lg-7 text-center text-lg-start hero-content">
+                    <h1 class="hero-title" data-aos="fade-right" data-aos-delay="100">
+                        Meet the Heart of <span style="color: var(--secondary);">Importance Leadership</span>
+                    </h1>
+                    <p class="hero-subtitle" data-aos="fade-right" data-aos-delay="200">
+                        We are a dynamic movement of changemakers, mentors, and advocates committed to unlocking the leadership potential in every young person. Our mission is to inspire, empower, and equip youth to create lasting impact in their communities and beyond.
+                    </p>
+                    <div class="mt-4" data-aos="fade-up" data-aos-delay="300">
+                        <a href="#about" class="btn btn-primary me-2">Our Story</a>
+                        <a href="team.html" class="btn btn-outline-light">Meet the Team</a>
+                    </div>
+                </div>
+                <div class="col-lg-5 d-none d-lg-block" data-aos="zoom-in" data-aos-delay="250">
+                    <img src="image/hero-bg.jpg" alt="Importance Leadership Team" class="img-fluid rounded shadow" style="max-height: 350px; object-fit: cover;">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section">
+        <div class="container">
+            <h2 class="section-title">Our Story</h2>
+            
+            <div class="row align-items-center">
+                <div class="col-lg-5 mb-5 mb-lg-0">
+                    <div class="about-card">
+                        <img src="image/fiston.png" class="about-card-img" alt="Fiston Ndayishimiye">
+                        <div class="about-card-body">
+                            <h3 class="about-card-title">Fiston Ndayishimiye</h3>
+                            <p class="about-card-subtitle">Founder & Visionary Leader</p>
+                            <p>"Empowering young people to become ethical, inclusive, and purpose-driven leaders."</p>
+                            <a href="team.html#fisto" class="btn btn-primary mt-3">Learn More</a>
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-7" data-aos="fade-left">
-                    <h2 class="section-title text-black text-center">Our Story</h2>
+                
+                <div class="col-lg-7">
                     <p class="lead">Importance Leadership is a non-profit organization dedicated to empowering youth through advocacy and education.</p>
                     <p>We advocate for equality, equity, and justice for youth, particularly refugees, minorities, and the underprivileged. Our programs provide mentorship, mental health training, climate change awareness, and leadership development to help young people actively participate in shaping policies and solutions that impact their lives.</p>
                     <p>Founded by Fiston Ndayishimiye, whose journey from the Democratic Republic of Congo to becoming a visionary leader exemplifies resilience and determination. His experiences with war, ethnic conflict, and systemic oppression fuel his mission to create change.</p>
-                    
-                    <div id="moreContent" style="display: none;">
-                        <p>Inspired by leaders like Patrice Lumumba, Martin Luther King Jr., and Malcolm X, Fiston believes in the power of youth to transform society. "I don't believe in democracy, but I believe in the young generation," he says. "The future will change; the future must change."</p>
-                        <p>Since its founding, Importance Leadership has impacted thousands of young people, helping them develop the skills and confidence to become leaders in their communities.</p>
-                    </div>
-                    <button id="readMoreBtn" class="btn btn-primary text-center" style="margin-bottom:50px;">Read More</button>
+                    <p>Inspired by leaders like Patrice Lumumba, Martin Luther King Jr., and Malcolm X, Fiston believes in the power of youth to transform society. "I don't believe in democracy, but I believe in the young generation," he says. "The future will change; the future must change."</p>
+                    <p>Since its founding, Importance Leadership has impacted thousands of young people, helping them develop the skills and confidence to become leaders in their communities.</p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Mission & Vision Section -->
-    <section class="py-6" id="mission">
-        <div class="animate__animated"></div>
-        <div class="wave-animation"></div>
+    <section class="section bg-light">
         <div class="container">
-
-            <div class="row" style="margin-top: 50px;">
-                <div class="about-hero col-lg-6 mb-5 mb-lg-0" data-aos="fade-up" >
-                    <div class="h-100 p-5 bg-white rounded-3 shadow-sm" style="background:linear-gradient(to right, #000000, #123456)">
-                        <div class="icon-wrapper bg-primary rounded-circle d-inline-flex align-items-center justify-content-center mb-4" style="width: 60px; height: 60px;">
-                            <i class="fas fa-bullseye fa-2x text-white"></i>
+            <div class="row g-4">
+                <div class="col-md-6">
+                    <div class="mission-card">
+                        <div class="mission-icon">
+                            <i class="fas fa-bullseye"></i>
                         </div>
-                        <h3 class="text-primary">Our Mission</h3>
-                        <p class="lead text-white">Mobilize, Inspire, and Empower youth to become transformative leaders.</p>
-                        <p class="text-white">Through education, advocacy, and mentorship, we foster an inclusive world where every young person can unlock their full potential. Our programs focus on leadership training, life skills development, environmental awareness, and community engagement.</p>
+                        <h3>Our Mission</h3>
+                        <p class="lead">Mobilize, Inspire, and Empower youth to become transformative leaders.</p>
+                        <p>Through education, advocacy, and mentorship, we foster an inclusive world where every young person can unlock their full potential. Our programs focus on leadership training, life skills development, environmental awareness, and community engagement.</p>
                     </div>
                 </div>
-                <div class="col-lg-6" data-aos="fade-up" data-aos-delay="200" >
-                    <div class="h-100 p-5 bg-white rounded-3 shadow-sm" style="background:linear-gradient(to right, #000000, #123456)">
-                        <div class="icon-wrapper bg-primary rounded-circle d-inline-flex align-items-center justify-content-center mb-4" style="width: 60px; height: 60px;">
-                            <i class="fas fa-eye fa-2x text-white"></i>
+                
+                <div class="col-md-6">
+                    <div class="mission-card">
+                        <div class="mission-icon">
+                            <i class="fas fa-eye"></i>
                         </div>
-                        <h3 class="text-primary">Our Vision</h3>
-                        <p class="lead text-white">An inclusive world where every youth is empowered to lead and create impact.</p>
-                        <p class="text-white">We envision communities transformed by ethical, purpose-driven young leaders who champion equality and justice. Our vision is rooted in the belief that empowered youth can solve the world's greatest challenges when given the right tools and opportunities.</p>
+                        <h3>Our Vision</h3>
+                        <p class="lead">An inclusive world where every youth is empowered to lead and create impact.</p>
+                        <p>We envision communities transformed by ethical, purpose-driven young leaders who champion equality and justice. Our vision is rooted in the belief that empowered youth can solve the world's greatest challenges when given the right tools and opportunities.</p>
                     </div>
                 </div>
             </div>
@@ -321,48 +392,46 @@
     </section>
 
     <!-- Key Pillars Section -->
-    <section class="py-6 bg-white">
-        <div class="container" style="margin-bottom:50px; color:white;">
-            <div class="text-center mb-5" data-aos="fade-up">
-                <h2 class="section-title text-primary">Our Key Pillars</h2>
-                <p class="lead text-black">The foundation of our work</p>
-            </div>
+    <section class="section pillars-section">
+        <div class="container">
+            <h2 class="section-title">Our Key Pillars</h2>
+            <p class="text-center mb-5">The foundation of our work</p>
             
             <div class="row g-4">
-                <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="100">
-                    <div class="h-100 p-4 bg-light rounded-3 text-center" style="background:linear-gradient(to right, #000000, #123456)">
-                        <div class="icon-wrapper bg-primary rounded-circle d-inline-flex align-items-center justify-content-center mb-4" style="width: 70px; height: 70px;">
-                            <i class="fas fa-bullhorn fa-2x text-white"></i>
+                <div class="col-md-6 col-lg-3">
+                    <div class="pillar-card">
+                        <div class="pillar-icon">
+                            <i class="fas fa-bullhorn"></i>
                         </div>
                         <h4>Advocacy</h4>
                         <p>Amplifying voices of vulnerable communities to champion youth rights and foster inclusivity.</p>
                     </div>
                 </div>
                 
-                <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="200">
-                    <div class="h-100 p-4 bg-light rounded-3 text-center" style="background:linear-gradient(to right, #000000, #123456)">
-                        <div class="icon-wrapper bg-primary rounded-circle d-inline-flex align-items-center justify-content-center mb-4" style="width: 70px; height: 70px;">
-                            <i class="fas fa-heartbeat fa-2x text-white"></i>
+                <div class="col-md-6 col-lg-3">
+                    <div class="pillar-card">
+                        <div class="pillar-icon">
+                            <i class="fas fa-heartbeat"></i>
                         </div>
                         <h4>Mental Health</h4>
                         <p>Providing tools to enhance emotional, psychological, and social well-being.</p>
                     </div>
                 </div>
                 
-                <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="300">
-                    <div class="h-100 p-4 bg-light rounded-3 text-center" style="background:linear-gradient(to right, #000000, #123456)">
-                        <div class="icon-wrapper bg-primary rounded-circle d-inline-flex align-items-center justify-content-center mb-4" style="width: 70px; height: 70px;">
-                            <i class="fas fa-users fa-2x text-white"></i>
+                <div class="col-md-6 col-lg-3">
+                    <div class="pillar-card">
+                        <div class="pillar-icon">
+                            <i class="fas fa-users"></i>
                         </div>
                         <h4>Leadership</h4>
                         <p>Inspiring youth to lead with purpose and drive impactful change.</p>
                     </div>
                 </div>
                 
-                <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="400">
-                    <div class="h-100 p-4 bg-light rounded-3 text-center" style="background:linear-gradient(to right, #000000, #123456)">
-                        <div class="icon-wrapper bg-primary rounded-circle d-inline-flex align-items-center justify-content-center mb-4" style="width: 70px; height: 70px;">
-                            <i class="fas fa-hands-helping fa-2x text-white"></i>
+                <div class="col-md-6 col-lg-3">
+                    <div class="pillar-card">
+                        <div class="pillar-icon">
+                            <i class="fas fa-hands-helping"></i>
                         </div>
                         <h4>Mentorship</h4>
                         <p>Equipping youth with knowledge and skills for personal growth.</p>
@@ -373,39 +442,28 @@
     </section>
 
     <!-- CTA Section -->
-    <section class="py-6 text-white" style="background: linear-gradient(135deg, #0b1f3a, #7cade9); height: 60vh; display: flex; align-items: center;">
-        <svg class="bg-shape bg-shape-1" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
-            <path d="M45.4,-59.4C58.6,-48.9,68.7,-33.5,72.6,-16.6C76.5,0.3,74.2,18.7,64.2,33.5C54.2,48.3,36.4,59.6,16.8,67.3C-2.9,75,-25.4,79.2,-42.1,70.1C-58.8,61,-69.7,38.7,-72.9,15.8C-76.1,-7.1,-71.6,-30.6,-58.1,-45.3C-44.6,-60,-22.3,-65.9,-1.6,-64.4C19.1,-62.9,38.2,-53.9,45.4,-59.4Z" transform="translate(100 100)" />
-        <div class="container text-center" data-aos="fade-up">
-            <h2 class="mb-4">Ready to Join Our Movement?</h2>
-            <p class="lead mb-5">Become part of our mission to empower the next generation of leaders.</p>
+    <section class="cta-section">
+        <div class="container">
+            <h2 class="cta-title">Ready to Join Our Movement?</h2>
+            <p class="cta-subtitle">
+                Become part of our mission to empower the next generation of leaders.
+            </p>
             <div class="d-flex flex-wrap justify-content-center gap-3">
-                <a href="join-us.html" class="btn btn-info btn-lg px-4">Get Involved</a>
-                <a href="donate.html" class="btn btn-warning btn-lg px-4">Donate Now</a>
+                <a href="join-us.html" class="btn btn-primary">Get Involved</a>
+                <a href="donate.html" class="btn btn-outline-light">Donate Now</a>
             </div>
         </div>
     </section>
-
-
 
     <!-- Load Footer -->
     <div id="footer-container">
         <script src="loadFooter.js"></script>
     </div>
-   
 
     <!-- Bootstrap JS -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     
-    <!-- AOS Animation -->
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
-        AOS.init({
-            duration: 800,
-            easing: 'ease-in-out',
-            once: true
-        });
-        
         // Read More Functionality
         document.getElementById("readMoreBtn").addEventListener("click", function() {
             const content = document.getElementById("moreContent");

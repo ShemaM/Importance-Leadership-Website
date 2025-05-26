@@ -154,15 +154,17 @@
     }
 
     /* Signup Form */
-    .signup-form-container {
+    .signup-form-container { 
       flex: 1;
-      max-width: 480px;
-      background: white;
+      max-width: 700px;
+      background: linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(255, 255, 255, 0.85) 100%);
+      border: 1px solid rgba(11, 31, 58, 0.1);
       border-radius: var(--radius);
       padding: 2.5rem;
       box-shadow: var(--shadow);
       position: relative;
       overflow: hidden;
+      margin-right: 30px;
     }
 
     .form-header {
@@ -520,13 +522,9 @@
 </head>
 <body>
   <!-- Navigation -->
-  <nav class="navbar">
-    <div class="container">
-      <a class="navbar-brand" href="index.html">
-        <img src="image/website-logo.png" alt="Importance Leadership Logo" width="180" height="auto">
-      </a>
-    </div>
-  </nav>
+ <!-- Header -->
+    <div id="header-container"></div>
+    <script src="loadHeader.js"></script>
 
   <!-- Hero Section -->
   <section class="signup-hero">
@@ -534,7 +532,7 @@
     
     <div class="hero-container">
       <div class="hero-content">
-        <h1 class="hero-title">Join Our Community of Leaders</h1>
+        <h1 class="hero-title  text-white" style="margin-top: -20px;">Join Our Community of Leaders</h1>
         <p class="hero-subtitle">Become part of a movement that's shaping the future of leadership in Africa. Sign up to access exclusive resources, mentorship, and growth opportunities.</p>
         
         <ul class="hero-features">
@@ -570,14 +568,14 @@
           <div class="form-group">
             <label for="firstName" class="form-label">First Name</label>
             <i class="fas fa-user form-icon"></i>
-            <input type="text" id="firstName" name="firstName" class="form-control" placeholder="John" required>
+            <input type="text" id="firstName" name="firstname" class="form-control" placeholder="John" required>
             <span id="firstNameError" class="feedback error"></span>
           </div>
           
           <div class="form-group">
             <label for="lastName" class="form-label">Last Name</label>
             <i class="fas fa-user form-icon"></i>
-            <input type="text" id="lastName" name="lastName" class="form-control" placeholder="Doe" required>
+            <input type="text" id="lastName" name="lastname" class="form-control" placeholder="Doe" required>
             <span id="lastNameError" class="feedback error"></span>
           </div>
           
@@ -627,12 +625,12 @@
       <div class="modal-icon success-icon">
         <i class="fas fa-check-circle"></i>
       </div>
-      <h2 class="modal-title">Welcome to Importance Leadership!</h2>
+      <h2 class="modal-title text-white">Welcome to Importance Leadership!</h2>
       <p class="modal-message">
         We've sent a confirmation email to <span class="modal-email" id="confirmedEmail"></span>.
         Please check your inbox to verify your account and complete your registration.
       </p>
-      <button class="modal-btn success-btn" id="successModalBtn">Continue to Dashboard</button>
+      <button class="modal-btn success-btn" id="successModalBtn">Proceed</button>
     </div>
   </div>
 
@@ -651,243 +649,237 @@
   </div>
 
   <script>
-    document.addEventListener('DOMContentLoaded', function() {
-      // DOM Elements
-      const form = document.getElementById('signupForm');
-      const passwordInput = document.getElementById('password');
-      const confirmPasswordInput = document.getElementById('confirmPassword');
-      const togglePassword = document.getElementById('togglePassword');
-      const toggleConfirmPassword = document.getElementById('toggleConfirmPassword');
-      const submitBtn = document.getElementById('submitBtn');
-      const spinner = document.getElementById('submitSpinner');
-      const successModal = document.getElementById('successModal');
-      const errorModal = document.getElementById('errorModal');
-      const confirmedEmail = document.getElementById('confirmedEmail');
-      const errorModalMessage = document.getElementById('errorModalMessage');
-      const successModalBtn = document.getElementById('successModalBtn');
-      const errorModalBtn = document.getElementById('errorModalBtn');
+document.addEventListener('DOMContentLoaded', () => {
+  // Get DOM elements
+  const form = document.getElementById('signupForm');
+  const passwordInput = document.getElementById('password');
+  const confirmPasswordInput = document.getElementById('confirmPassword');
+  const togglePassword = document.getElementById('togglePassword');
+  const toggleConfirmPassword = document.getElementById('toggleConfirmPassword');
+  const submitBtn = document.getElementById('submitBtn');
+  const spinner = document.getElementById('submitSpinner');
+  const successModal = document.getElementById('successModal');
+  const errorModal = document.getElementById('errorModal');
+  const confirmedEmail = document.getElementById('confirmedEmail');
+  const errorModalMessage = document.getElementById('errorModalMessage');
+  const successModalBtn = document.getElementById('successModalBtn');
+  const errorModalBtn = document.getElementById('errorModalBtn');
+  const passwordStrengthBar = document.getElementById('passwordStrength');
+  const passwordStrengthText = document.getElementById('passwordStrengthText');
 
-      // Toggle password visibility
-      [togglePassword, toggleConfirmPassword].forEach(toggle => {
-        toggle.addEventListener('click', function() {
-          const input = this.previousElementSibling;
-          const type = input.type === 'password' ? 'text' : 'password';
-          input.type = type;
-          this.classList.toggle('fa-eye');
-          this.classList.toggle('fa-eye-slash');
-        });
-      });
+  // Toggle password visibility for password and confirm password
+  function setupPasswordToggle(toggleElement, inputElement) {
+    toggleElement.addEventListener('click', () => {
+      const isPassword = inputElement.type === 'password';
+      inputElement.type = isPassword ? 'text' : 'password';
+      toggleElement.classList.toggle('fa-eye');
+      toggleElement.classList.toggle('fa-eye-slash');
+    });
+  }
 
-      // Real-time validation
-      document.querySelectorAll('input').forEach(input => {
-        input.addEventListener('input', function() {
-          validateField(this);
-        });
-        
-        input.addEventListener('blur', function() {
-          validateField(this);
-        });
-      });
+  setupPasswordToggle(togglePassword, passwordInput);
+  setupPasswordToggle(toggleConfirmPassword, confirmPasswordInput);
 
-      // Password strength meter
-      passwordInput.addEventListener('input', function() {
-        updatePasswordStrength(this.value);
-        validateField(this);
-        
-        // Also validate confirm password when password changes
-        if (confirmPasswordInput.value) {
-          validateField(confirmPasswordInput);
-        }
-      });
+  // Validate single field and show error message
+  function validateField(field) {
+    const value = field.value.trim();
+    const errorEl = document.getElementById(`${field.id}Error`);
+    if (!errorEl) return true; // No error element, skip validation display
 
-      // Confirm password match
-      confirmPasswordInput.addEventListener('input', function() {
-        validateField(this);
-      });
+    let isValid = true;
+    errorEl.textContent = '';
 
-      // Modal close buttons
-      successModalBtn.addEventListener('click', function() {
-        successModal.classList.remove('active');
-        window.location.href = 'dashboard.html';
-      });
-
-      errorModalBtn.addEventListener('click', function() {
-        errorModal.classList.remove('active');
-      });
-
-      // Form submission
-      form.addEventListener('submit', async function(e) {
-        e.preventDefault();
-        
-        // Validate all fields before submission
-        let isValid = true;
-        document.querySelectorAll('input').forEach(input => {
-          if (!validateField(input)) {
+    if (field.required && !value) {
+      errorEl.textContent = 'This field is required';
+      isValid = false;
+    } else if (value) {
+      switch (field.id) {
+        case 'email':
+          if (!validateEmail(value)) {
+            errorEl.textContent = 'Please enter a valid email address';
             isValid = false;
           }
-        });
-        
-        if (!isValid) {
-          return;
-        }
-        
-        // Disable submit button and show spinner
-        submitBtn.disabled = true;
-        spinner.style.display = 'inline-block';
-        submitBtn.querySelector('span').textContent = 'Creating Account...';
-        
-        try {
-          // Create FormData object from the form
-          const formData = new FormData(form);
-          
-          // Send data to PHP backend
-          const response = await fetch(form.action, {
-            method: 'POST',
-            body: formData
-          });
-
-          // Parse the JSON response
-          const result = await response.json();
-
-          if (!response.ok || !result.success) {
-            throw new Error(result.message || 'Registration failed');
+          break;
+        case 'password':
+          if (value.length < 8) {
+            errorEl.textContent = 'Password must be at least 8 characters';
+            isValid = false;
           }
-
-          // Show success modal
-          confirmedEmail.textContent = document.getElementById('email').value;
-          successModal.classList.add('active');
-          
-          // Reset form
-          form.reset();
-          document.getElementById('passwordStrength').className = 'meter-bar';
-          
-          // Clear all error messages
-          document.querySelectorAll('.feedback').forEach(el => {
-            el.textContent = '';
-          });
-          
-        } catch (error) {
-          // Show error modal
-          errorModalMessage.textContent = error.message || 'An unexpected error occurred. Please try again.';
-          errorModal.classList.add('active');
-        } finally {
-          submitBtn.disabled = false;
-          spinner.style.display = 'none';
-          submitBtn.querySelector('span').textContent = 'Create Account';
-        }
-      });
-
-      // Field validation function
-      function validateField(field) {
-        const value = field.value.trim();
-        const errorEl = document.getElementById(`${field.id}Error`);
-        let isValid = true;
-        
-        // Clear previous error
-        errorEl.textContent = '';
-        
-        // Required field validation
-        if (field.required && !value) {
-          errorEl.textContent = 'This field is required';
-          isValid = false;
-        }
-        
-        // Field-specific validation
-        if (isValid && value) {
-          switch(field.id) {
-            case 'email':
-              if (!validateEmail(value)) {
-                errorEl.textContent = 'Please enter a valid email address';
-                isValid = false;
-              }
-              break;
-              
-            case 'password':
-              if (value.length < 8) {
-                errorEl.textContent = 'Password must be at least 8 characters';
-                isValid = false;
-              }
-              break;
-              
-            case 'confirmPassword':
-              if (value !== passwordInput.value) {
-                errorEl.textContent = 'Passwords do not match';
-                isValid = false;
-              }
-              break;
+          break;
+        case 'confirmPassword':
+          if (value.trim() !== passwordInput.value.trim()) {
+            errorEl.textContent = 'Passwords do not match';
+            isValid = false;
           }
-        }
-        
-        return isValid;
+          break;
+      }
+    }
+
+    return isValid;
+  }
+
+  // Email regex validator
+  function validateEmail(email) {
+    const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return re.test(email);
+  }
+
+  // Password strength checking and updating UI
+  function updatePasswordStrength(password) {
+    passwordStrengthBar.className = 'meter-bar'; // reset classes
+    passwordStrengthText.textContent = '';
+    passwordStrengthText.className = 'feedback';
+
+    if (!password) {
+      // empty password, clear
+      return;
+    }
+
+    const strength = getPasswordStrength(password);
+
+    passwordStrengthBar.classList.add(strength.class);
+    passwordStrengthText.textContent = strength.message;
+    passwordStrengthText.classList.add(strength.textClass);
+  }
+
+  function getPasswordStrength(password) {
+    let score = 0;
+    const lengthRequirement = password.length >= 8;
+    const hasUpper = /[A-Z]/.test(password);
+    const hasLower = /[a-z]/.test(password);
+    const hasNumber = /[0-9]/.test(password);
+    const hasSpecial = /[^A-Za-z0-9]/.test(password);
+
+    if (!lengthRequirement) {
+      return {
+        class: 'weak',
+        message: 'Too short (min 8 characters)',
+        textClass: 'error'
+      };
+    }
+
+    if (hasUpper) score++;
+    if (hasLower) score++;
+    if (hasNumber) score++;
+    if (hasSpecial) score++;
+
+    if (score <= 2) {
+      return {
+        class: 'weak',
+        message: 'Weak - add more complexity',
+        textClass: 'error'
+      };
+    } else if (score === 3) {
+      return {
+        class: 'medium',
+        message: 'Medium - could be stronger',
+        textClass: ''
+      };
+    } else {
+      return {
+        class: 'strong',
+        message: 'Strong password!',
+        textClass: 'success'
+      };
+    }
+  }
+
+  // Add real-time validation listeners on all inputs
+  const inputs = form.querySelectorAll('input');
+  inputs.forEach(input => {
+    input.addEventListener('input', () => {
+      validateField(input);
+
+      // If password changes, update strength meter and confirm password validation
+      if (input.id === 'password') {
+        updatePasswordStrength(input.value);
+        if (confirmPasswordInput.value) validateField(confirmPasswordInput);
       }
 
-      // Update password strength meter
-      function updatePasswordStrength(password) {
-        const strengthBar = document.getElementById('passwordStrength');
-        const strengthText = document.getElementById('passwordStrengthText');
-        
-        strengthBar.className = 'meter-bar';
-        
-        if (password.length === 0) {
-          strengthText.textContent = '';
-          return;
-        }
-        
-        const strength = checkPasswordStrength(password);
-        strengthBar.classList.add(strength.class);
-        strengthText.textContent = strength.message;
-        strengthText.className = `feedback ${strength.textClass}`;
-      }
-
-      // Helper functions
-      function checkPasswordStrength(password) {
-        let score = 0;
-        let message = '';
-        let className = '';
-        let textClass = '';
-        
-        // Length check
-        const hasMinLength = password.length >= 8;
-        // Complexity checks
-        const hasUpperCase = /[A-Z]/.test(password);
-        const hasLowerCase = /[a-z]/.test(password);
-        const hasNumber = /[0-9]/.test(password);
-        const hasSpecialChar = /[^A-Za-z0-9]/.test(password);
-        
-        if (!hasMinLength) {
-          message = 'Too short (min 8 characters)';
-          className = 'weak';
-          textClass = 'error';
-        } else {
-          // Calculate score
-          if (hasUpperCase) score++;
-          if (hasLowerCase) score++;
-          if (hasNumber) score++;
-          if (hasSpecialChar) score++;
-          
-          if (score <= 2) {
-            message = 'Weak - add more complexity';
-            className = 'weak';
-            textClass = 'error';
-          } else if (score === 3) {
-            message = 'Medium - could be stronger';
-            className = 'medium';
-            textClass = '';
-          } else {
-            message = 'Strong password!';
-            className = 'strong';
-            textClass = 'success';
-          }
-        }
-        
-        return { class: className, message: message, textClass: textClass };
-      }
-
-      function validateEmail(email) {
-        const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        return re.test(email);
+      if (input.id === 'confirmPassword') {
+        validateField(input);
       }
     });
-  </script>
+
+    input.addEventListener('blur', () => {
+      validateField(input);
+    });
+  });
+
+  // Modal buttons handlers
+  successModalBtn.addEventListener('click', () => {
+    successModal.classList.remove('active');
+    window.location.href = 'signupSuccess.html'; // Redirect to success page
+  });
+
+  errorModalBtn.addEventListener('click', () => {
+    errorModal.classList.remove('active');
+  });
+
+  // Form submission handler
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+
+    // Validate all fields before submit
+    let isFormValid = true;
+    inputs.forEach(input => {
+      if (!validateField(input)) {
+        isFormValid = false;
+      }
+    });
+
+    if (!isFormValid) return;
+
+    // Disable submit and show spinner
+    submitBtn.disabled = true;
+    spinner.style.display = 'inline-block';
+    const submitBtnTextSpan = submitBtn.querySelector('span');
+    if (submitBtnTextSpan) submitBtnTextSpan.textContent = 'Creating Account...';
+
+    try {
+      const formData = new FormData(form);
+      const response = await fetch(form.action, {
+        method: 'POST',
+        body: formData,
+      });
+
+      let result;
+      try {
+        result = await response.json();
+      } catch (jsonError) {
+        // If response is not JSON, treat as error
+        throw new Error('Unexpected server response. Please contact support.');
+      }
+
+      if (!response.ok || !result.success) {
+        throw new Error(result.message || 'Registration failed');
+      }
+
+      // Show success modal with confirmed email
+      confirmedEmail.textContent = formData.get('email');
+      successModal.classList.add('active');
+
+      // Reset form and password strength meter
+      form.reset();
+      passwordStrengthBar.className = 'meter-bar';
+      passwordStrengthText.textContent = '';
+      passwordStrengthText.className = 'feedback';
+
+      // Clear all validation messages
+      form.querySelectorAll('.feedback').forEach(el => (el.textContent = ''));
+
+    } catch (error) {
+      errorModalMessage.textContent = error.message || 'An unexpected error occurred. Please try again.';
+      errorModal.classList.add('active');
+    } finally {
+      submitBtn.disabled = false;
+      spinner.style.display = 'none';
+      if (submitBtnTextSpan) submitBtnTextSpan.textContent = 'Create Account';
+    }
+  });
+});
+</script>
+<script src="loadFooter.js"></script>
+
 </body>
 </html>
