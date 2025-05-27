@@ -686,7 +686,7 @@
                         <h1 class="hero-title text-white mt-5">Empowering Leaders, Inspiring Excellence</h1>
                         <p class="hero-subtitle text-white">We develop visionary young leaders through transformative mentorship, education, and community engagement programs that drive sustainable change.</p>
                         <div class="d-flex flex-wrap gap-3 mb-4 mb-lg-5">
-                            <a href="programs.html" class="btn btn-accent btn-lg px-4">Explore Programs</a>
+                            <a href="who-we-are.html" class="btn btn-accent btn-lg px-4">Learn More</a>
                             <a href="join-us.html" class="btn btn-outline-light btn-lg px-4">Join Our Movement</a>
                         </div>
                         <div class="d-flex align-items-center gap-4">
@@ -744,143 +744,175 @@
         </section>
 
         <!-- Programs Section -->
-        <section class="section text-white" style="
-            background: linear-gradient(rgba(74, 132, 208, 0.9), rgba(11, 31, 58, 0.9)), 
-                        url('image/emerging-leaders.jpg') center/cover;">
+        <section class="section bg-light">
+            <style>
+                /* Ensure all program cards and images are the same height */
+                .program-card {
+                    height: 100%;
+                    display: flex;
+                    flex-direction: column;
+                }
+                .program-card .card-img-top {
+                    width: 100%;
+                    height: 220px;
+                    object-fit: cover;
+                    object-position: center;
+                }
+                @media (max-width: 767px) {
+                    .program-card .card-img-top {
+                        height: 160px;
+                    }
+                }
+            </style>
             <div class="container">
-                <div class="row justify-content-center mb-5">
-                    <div class="col-lg-8 text-center" data-aos="fade-up">
-                        <span class="badge bg-primary mb-3">OUR PROGRAMS</span>
-                        <h2 class="section-title text-white">Comprehensive Leadership Development</h2>
-                        <p class="lead">Our innovative programs are designed to equip young Africans with the skills, mindset, and networks needed to become transformative leaders in their communities and beyond.</p>
+                <div class="row align-items-center mb-5 py-5" style="background: linear-gradient(135deg, rgba(11,31,58,0.95) 0%, rgba(11,31,58,0.85) 100%), url('image/leadershipDevelopemnt.jpg') center/cover; border-radius: 2rem;">
+                    <div class="col-lg-7 text-white text-lg-start text-center" data-aos="fade-right">
+                        <span class="badge bg-accent text-info mb-3">What We Do</span>
+                        <h2 class="display-4 fw-bold mb-3 text-white">Discover Our Core Programs</h2>
+                        <p class="lead mb-4">Our innovative programs equip young Africans with the skills, mindset, and networks needed to become transformative leaders in their communities and beyond.</p>
+                       
                     </div>
-                </div>
+                    <div class="col-lg-5 d-none d-lg-flex align-items-center justify-content-center" data-aos="fade-left">
+                        <svg width="340" height="340" viewBox="0 0 340 340" fill="none" xmlns="http://www.w3.org/2000/svg" class="img-fluid rounded-4 shadow-lg" style="max-height:340px;">
+                            <defs>
+                                <linearGradient id="leadershipGradient" x1="0" y1="0" x2="340" y2="340" gradientUnits="userSpaceOnUse">
+                                    <stop stop-color="#0b1f3a"/>
+                                    <stop offset="1" stop-color="#7cade9"/>
+                                </linearGradient>
+                            </defs>
+                            <rect width="340" height="340" rx="32" fill="url(#leadershipGradient)"/>
+                            <g>
+                                <circle cx="170" cy="110" r="48" fill="#fff" fill-opacity="0.95"/>
+                                <circle cx="170" cy="110" r="38" fill="#f5a623" fill-opacity="0.9"/>
+                                <text x="170" y="120" text-anchor="middle" font-size="32" font-family="Playfair Display, serif" fill="#0b1f3a" font-weight="bold">LEAD</text>
+                            </g>
+                            <g>
+                                <rect x="70" y="180" width="200" height="90" rx="24" fill="#fff" fill-opacity="0.95"/>
+                                <rect x="90" y="200" width="160" height="50" rx="16" fill="#7cade9" fill-opacity="0.8"/>
+                                <text x="170" y="232" text-anchor="middle" font-size="22" font-family="Poppins, sans-serif" fill="#0b1f3a" font-weight="600">Mentorship</text>
+                            </g>
+                            <g>
+                                <circle cx="90" cy="290" r="18" fill="#f5a623"/>
+                                <circle cx="250" cy="290" r="18" fill="#f5a623"/>
+                                <rect x="108" y="278" width="124" height="24" rx="12" fill="#0b1f3a" fill-opacity="0.9"/>
+                                <text x="170" y="295" text-anchor="middle" font-size="14" font-family="Poppins, sans-serif" fill="#fff" font-weight="500">Community</text>
+                            </g>
+                            <g>
+                                <rect x="30" y="30" width="40" height="12" rx="6" fill="#f5a623" fill-opacity="0.7"/>
+                                <rect x="270" y="50" width="40" height="12" rx="6" fill="#f5a623" fill-opacity="0.7"/>
+                                <rect x="50" y="270" width="12" height="40" rx="6" fill="#7cade9" fill-opacity="0.7"/>
+                                <rect x="278" y="270" width="12" height="40" rx="6" fill="#7cade9" fill-opacity="0.7"/>
+                            </g>
+                        </svg>
+                    </div>
                 
                 <div class="row g-4">
-                    <!--leadership development-->
-                    <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="100">
-                        <div class="feature-card card h-100">
-                            <div class="position-relative">
-                                <img src="image/leadershipDevelopemnt.jpg" class="card-img-top" alt="Leadership Development Program" loading="lazy">
-                                <!--<span class="card-badge">12 Weeks</span> -->
-                            </div>
-                            <div class="card-body">
-                                <h3 class="h4 fw-bold mb-3">Leadership Development</h3>
-                                <p class="card-text">A transformative 12-week program focused on building core leadership competencies. Participants engage in interactive workshops, hands-on projects, and receive mentorship to develop ethical decision-making, strategic vision, and effective communication skills.</p>
+                    <!-- Leadership Development -->
+                    <div class="col-md-6 col-lg-4" data-aos="zoom-in" data-aos-delay="100">
+                        <div class="card program-card shadow-sm border-0">
+                            <img src="image/leadershipDevelopemnt.jpg" class="card-img-top rounded-top" alt="Leadership Development Program" loading="lazy">
+                            <div class="card-body d-flex flex-column">
+                                <h3 class="h5 fw-bold mb-2 text-primary">Leadership Development</h3>
+                                <p class="card-text mb-3">A transformative 12-week program focused on building core leadership competencies. Participants engage in interactive workshops, hands-on projects, and receive mentorship to develop ethical decision-making, strategic vision, and effective communication skills.</p>
                                 <ul class="list-unstyled mb-4">
                                     <li class="mb-2"><i class="fas fa-check-circle text-secondary me-2"></i> Ethical leadership training</li>
                                     <li class="mb-2"><i class="fas fa-check-circle text-secondary me-2"></i> Strategic planning & execution</li>
                                     <li class="mb-2"><i class="fas fa-check-circle text-secondary me-2"></i> Real-world community projects</li>
                                     <li class="mb-2"><i class="fas fa-check-circle text-secondary me-2"></i> Personalized mentorship</li>
                                 </ul>
-                            </div>
-                            <div class="card-footer bg-transparent border-top-0">
-                                <a href="leadershipDev.html" class="btn btn-outline-primary w-100">Program Details</a>
+                                <div class="mt-auto">
+                                    <a href="leadershipDev.html" class="btn btn-outline-primary w-100">Program Details</a>
+                                </div>
                             </div>
                         </div>
                     </div>
-
-                    <!--networking-->
-                    <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="200">
-                        <div class="feature-card card h-100">
-                            <div class="position-relative">
-                                <img src="image/networking.jpg" class="card-img-top" alt="Networking Program" loading="lazy">
-                                <!-- <span class="card-badge">Ongoing</span> -->
-                            </div>
-                            <div class="card-body">
-                                <h3 class="h4 fw-bold mb-3">Networking</h3>
-                                <p class="card-text">Expand your professional and social circles through curated networking events, peer collaborations, and access to a vibrant community of young leaders and industry experts.</p>
+                    <!-- Networking -->
+                    <div class="col-md-6 col-lg-4" data-aos="zoom-in" data-aos-delay="200">
+                        <div class="card program-card shadow-sm border-0">
+                            <img src="image/networking.jpg" class="card-img-top rounded-top" alt="Networking Program" loading="lazy">
+                            <div class="card-body d-flex flex-column">
+                                <h3 class="h5 fw-bold mb-2 text-primary">Networking</h3>
+                                <p class="card-text mb-3">Expand your professional and social circles through curated networking events, peer collaborations, and access to a vibrant community of young leaders and industry experts.</p>
                                 <ul class="list-unstyled mb-4">
                                     <li class="mb-2"><i class="fas fa-check-circle text-secondary me-2"></i> Curated networking events</li>
                                     <li class="mb-2"><i class="fas fa-check-circle text-secondary me-2"></i> Peer-to-peer collaboration</li>
                                     <li class="mb-2"><i class="fas fa-check-circle text-secondary me-2"></i> Access to industry leaders</li>
                                     <li class="mb-2"><i class="fas fa-check-circle text-secondary me-2"></i> Community support</li>
                                 </ul>
-                            </div>
-                            <div class="card-footer bg-transparent border-top-0">
-                                <a href="Networking.html" class="btn btn-outline-primary w-100">Program Details</a>
+                                <div class="mt-auto">
+                                    <a href="Networking.html" class="btn btn-outline-primary w-100">Program Details</a>
+                                </div>
                             </div>
                         </div>
                     </div>
-                    
-                    <!--advocacy initiatives-->
-                    <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="300">
-                        <div class="feature-card card h-100">
-                            <div class="position-relative">
-                                <img src="image/advocacy.jpg" class="card-img-top" alt="Advocacy Initiatives Program" loading="lazy">
-                                <!--<span class="card-badge">Ongoing</span>-->
-                            </div>
-                            <div class="card-body">
-                                <h3 class="h4 fw-bold mb-3">Advocacy Initiatives</h3>
-                                <p class="card-text">Our Advocacy Initiatives program empowers youth to become effective advocates for social justice, equity, and policy change. Participants learn how to raise awareness, influence decision-makers, and mobilize communities around critical issues.</p>
+                    <!-- Advocacy Initiatives -->
+                    <div class="col-md-6 col-lg-4" data-aos="zoom-in" data-aos-delay="300">
+                        <div class="card program-card shadow-sm border-0">
+                            <img src="image/advocacy-program.jpg" class="card-img-top rounded-top" alt="Advocacy Initiatives Program" loading="lazy">
+                            <div class="card-body d-flex flex-column">
+                                <h3 class="h5 fw-bold mb-2 text-primary">Advocacy Initiatives</h3>
+                                <p class="card-text mb-3">Our Advocacy Initiatives program empowers youth to become effective advocates for social justice, equity, and policy change. Participants learn how to raise awareness, influence decision-makers, and mobilize communities around critical issues.</p>
                                 <ul class="list-unstyled mb-4">
                                     <li class="mb-2"><i class="fas fa-check-circle text-secondary me-2"></i> Advocacy and public speaking training</li>
                                     <li class="mb-2"><i class="fas fa-check-circle text-secondary me-2"></i> Campaign planning and execution</li>
                                     <li class="mb-2"><i class="fas fa-check-circle text-secondary me-2"></i> Policy engagement and civic education</li>
                                     <li class="mb-2"><i class="fas fa-check-circle text-secondary me-2"></i> Community mobilization</li>
                                 </ul>
-                            </div>
-                            <div class="card-footer bg-transparent border-top-0">
-                                <a href="AdvocacyInitiatives.html" class="btn btn-outline-primary w-100">Program Details</a>
+                                <div class="mt-auto">
+                                    <a href="AdvocacyInitiatives.html" class="btn btn-outline-primary w-100">Program Details</a>
+                                </div>
                             </div>
                         </div>
                     </div>
-
-                    <!--menatl health program-->
-                    <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="300">
-                        <div class="feature-card card h-100">
-                            <div class="position-relative">
-                                <img src="image/mental-health.jpg" class="card-img-top" alt="Mental Health Program" loading="lazy">
-                                <span class="card-badge">Ongoing</span>
-                            </div>
-                            <div class="card-body">
-                                <h3 class="h4 fw-bold mb-3">Mental Health Program</h3>
-                                <p class="card-text">Supporting youth wellbeing through mental health education, peer support, and access to professional resources. Our program fosters resilience, emotional intelligence, and a culture of openness around mental health.</p>
+                    <!-- Mental Health Program -->
+                    <div class="col-md-6 col-lg-4" data-aos="zoom-in" data-aos-delay="400">
+                        <div class="card program-card shadow-sm border-0 position-relative">
+                            <img src="image/mentalHealth-pro.jpg" class="card-img-top rounded-top" alt="Mental Health Program" loading="lazy">
+                            <span class="position-absolute top-0 end-0 m-2 badge bg-warning text-dark">Ongoing</span>
+                            <div class="card-body d-flex flex-column">
+                                <h3 class="h5 fw-bold mb-2 text-primary">Mental Health Program</h3>
+                                <p class="card-text mb-3">Supporting youth wellbeing through mental health education, peer support, and access to professional resources. Our program fosters resilience, emotional intelligence, and a culture of openness around mental health.</p>
                                 <ul class="list-unstyled mb-4">
                                     <li class="mb-2"><i class="fas fa-check-circle text-secondary me-2"></i> Mental health awareness workshops</li>
                                     <li class="mb-2"><i class="fas fa-check-circle text-secondary me-2"></i> Peer support groups</li>
                                     <li class="mb-2"><i class="fas fa-check-circle text-secondary me-2"></i> Access to counseling resources</li>
                                     <li class="mb-2"><i class="fas fa-check-circle text-secondary me-2"></i> Building emotional resilience</li>
                                 </ul>
-                            </div>
-                            <div class="card-footer bg-transparent border-top-0">
-                                <a href="MentalHealth.html" class="btn btn-outline-primary w-100">Program Details</a>
+                                <div class="mt-auto">
+                                    <a href="MentalHealth.html" class="btn btn-outline-primary w-100">Program Details</a>
+                                </div>
                             </div>
                         </div>
                     </div>
-
-                    <!--climate change awareness-->
-                    <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="300"></div>
-                        <div class="feature-card card h-100">
-                            <div class="position-relative">
-                                <img src="image/climate-change.jpg" class="card-img-top" alt="Climate Change Awareness Program" loading="lazy">
-                               <!--<span class="card-badge">Ongoing</span> --> 
-                            </div>
-                            <div class="card-body">
-                                <h3 class="h4 fw-bold mb-3">Climate Change Awareness</h3>
-                                <p class="card-text">Empowering youth to understand, address, and advocate for solutions to climate change through education, community projects, and environmental leadership.</p>
+                    <!-- Climate Change Awareness -->
+                    <div class="col-md-6 col-lg-4" data-aos="zoom-in" data-aos-delay="500">
+                        <div class="card program-card shadow-sm border-0">
+                            <img src="image/environmentalHealth.jpg" class="card-img-top rounded-top" alt="Climate Change Awareness Program" loading="lazy">
+                            <div class="card-body d-flex flex-column">
+                                <h3 class="h5 fw-bold mb-2 text-primary">Climate Change Awareness</h3>
+                                <p class="card-text mb-3">Empowering youth to understand, address, and advocate for solutions to climate change through education, community projects, and environmental leadership.</p>
                                 <ul class="list-unstyled mb-4">
                                     <li class="mb-2"><i class="fas fa-check-circle text-secondary me-2"></i> Environmental education workshops</li>
                                     <li class="mb-2"><i class="fas fa-check-circle text-secondary me-2"></i> Community clean-up and tree planting</li>
                                     <li class="mb-2"><i class="fas fa-check-circle text-secondary me-2"></i> Youth-led climate advocacy campaigns</li>
                                     <li class="mb-2"><i class="fas fa-check-circle text-secondary me-2"></i> Promoting sustainable practices</li>
                                 </ul>
-                            </div>
-                            <div class="card-footer bg-transparent border-top-0">
-                                <a href="ClimateChange.html" class="btn btn-outline-primary w-100">Program Details</a>
+                                <div class="mt-auto">
+                                    <a href="ClimateChange.html" class="btn btn-outline-primary w-100">Program Details</a>
+                                </div>
                             </div>
                         </div>
                     </div>
-
                 </div>
 
-                 </div>
-            
+                </div>
+            </div>
         </section>
+        
 
         <!-- Impact Section -->
         <section class="section text-white" style="
-            background: linear-gradient(rgba(11, 31, 58, 0.9), rgba(11, 31, 58, 0.9)), 
+            background: linear-gradient(rgba(11, 31, 58, 0.9), rgba(72, 89, 111, 0.9)), 
                         url('image/impact-bg.jpg') center/cover;">
             <div class="container">
                 <div class="row g-4 align-items-center">
@@ -908,88 +940,62 @@
                             </div>
                         </div>
                         
-                        <div class="mt-4" data-aos="fade-up" data-aos-delay="300">
-                            <a href="impact.html" class="btn btn-outline-primary btn-lg px-4">See Our Full Impact</a>
+                        <div class="mt-4 text-center" data-aos="fade-up" data-aos-delay="300">
+                            <a href="impact.html" class="btn btn-warning btn-lg px-4">See Our Full Impact</a>
                         </div>
                     </div>
                     
                     <div class="col-lg-6" data-aos="fade-left">
-                        <div class="position-relative">
-                            <img src="image/bg-impact.jpg" alt="Leadership program participants" class="img-fluid rounded-4 shadow" loading="lazy">
-                            <div class="position-absolute bottom-0 end-0 p-4 bg-white rounded-tl-4 shadow-sm" style="max-width: 300px;">
-                                <div class="d-flex">
-                                    <i class="fas fa-quote-left fs-1 text-secondary me-3"></i>
-                                    <div>
-                                        <p class="mb-2">"This program transformed my perspective on leadership and gave me the tools to create change in my community."</p>
-                                        <h6 class="mb-0">- Sarah K., Program Graduate</h6>
-                                    </div>
-                                </div>
-                            </div>
+                        <div class="position-relative text-center">
+                            <!-- SVG Illustration: Transforming Lives, Shaping Futures -->
+                            <svg width="100%" height="340" viewBox="0 0 500 340" fill="none" xmlns="http://www.w3.org/2000/svg" class="img-fluid rounded-4 shadow bg-light" style="max-width: 480px;">
+                                <defs>
+                                    <linearGradient id="lifeGradient" x1="0" y1="0" x2="500" y2="340" gradientUnits="userSpaceOnUse">
+                                        <stop stop-color="#7cade9"/>
+                                        <stop offset="1" stop-color="#f5a623"/>
+                                    </linearGradient>
+                                    <radialGradient id="futureGlow2" cx="0.5" cy="0.5" r="0.7">
+                                        <stop offset="0%" stop-color="#f5a623" stop-opacity="0.25"/>
+                                        <stop offset="100%" stop-color="#fff" stop-opacity="0"/>
+                                    </radialGradient>
+                                </defs>
+                                <!-- Ground for stability -->
+                                <ellipse cx="250" cy="300" rx="100" ry="22" fill="#e9ecef"/>
+                                <!-- Three figures: central (future), two sides (lives transformed) -->
+                                <!-- Left figure -->
+                                <circle cx="170" cy="210" r="22" fill="#7cade9" stroke="#0b1f3a" stroke-width="3"/>
+                                <rect x="160" y="232" width="20" height="48" rx="10" fill="#7cade9"/>
+                                <path d="M170 245 Q150 260 135 285" stroke="#f5a623" stroke-width="6" fill="none" stroke-linecap="round"/>
+                                <path d="M170 245 Q190 260 205 285" stroke="#f5a623" stroke-width="6" fill="none" stroke-linecap="round"/>
+                                <!-- Right figure -->
+                                <circle cx="330" cy="210" r="22" fill="#f5a623" stroke="#0b1f3a" stroke-width="3"/>
+                                <rect x="320" y="232" width="20" height="48" rx="10" fill="#f5a623"/>
+                                <path d="M330 245 Q310 260 295 285" stroke="#7cade9" stroke-width="6" fill="none" stroke-linecap="round"/>
+                                <path d="M330 245 Q350 260 365 285" stroke="#7cade9" stroke-width="6" fill="none" stroke-linecap="round"/>
+                                <!-- Central figure (future) -->
+                                <circle cx="250" cy="170" r="32" fill="url(#lifeGradient)" stroke="#0b1f3a" stroke-width="4"/>
+                                <rect x="238" y="202" width="24" height="70" rx="12" fill="#7cade9"/>
+                                <!-- Outstretched arms (central) -->
+                                <path d="M250 215 Q215 230 190 265" stroke="#f5a623" stroke-width="8" fill="none" stroke-linecap="round"/>
+                                <path d="M250 215 Q285 230 310 265" stroke="#f5a623" stroke-width="8" fill="none" stroke-linecap="round"/>
+                                <!-- Radiating lines (future) -->
+                                <g stroke="#f5a623" stroke-width="4">
+                                    <line x1="250" y1="140" x2="250" y2="100"/>
+                                    <line x1="230" y1="150" x2="200" y2="120"/>
+                                    <line x1="270" y1="150" x2="300" y2="120"/>
+                                    <line x1="235" y1="180" x2="200" y2="190"/>
+                                    <line x1="265" y1="180" x2="300" y2="190"/>
+                                </g>
+                                <!-- Glow for future -->
+                                <ellipse cx="250" cy="170" rx="80" ry="34" fill="url(#futureGlow2)" />
+                            </svg>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Pillars Section -->
-        <section class="section pillars-section">
-            <div class="container">
-                <div class="row justify-content-center mb-5">
-                    <div class="col-lg-8 text-center" data-aos="fade-up">
-                        <span class="badge bg-accent text-dark mb-3">OUR APPROACH</span>
-                        <h2 class="section-title text-white">The Four Pillars of Our Work</h2>
-                        <p class="lead text-light">These foundational principles guide every aspect of our leadership development model.</p>
-                    </div>
-                </div>
-                
-                <div class="row g-4">
-                    <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="100">
-                        <div class="pillar-card text-center">
-                            <div class="pillar-icon">
-                                <i class="fas fa-bullhorn"></i>
-                            </div>
-                            <h3 class="h4 fw-bold mb-3">Advocacy</h3>
-                            <p>Amplifying youth voices to champion rights, equity, and inclusive policies at local and national levels.</p>
-                            <a href="#" class="btn btn-sm btn-outline-light mt-3">Learn More</a>
-                        </div>
-                    </div>
-                    
-                    <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="200">
-                        <div class="pillar-card text-center">
-                            <div class="pillar-icon">
-                                <i class="fas fa-brain"></i>
-                            </div>
-                            <h3 class="h4 fw-bold mb-3">Wellbeing</h3>
-                            <p>Promoting mental health awareness and providing tools for emotional resilience and self-care.</p>
-                            <a href="#" class="btn btn-sm btn-outline-light mt-3">Learn More</a>
-                        </div>
-                    </div>
-                    
-                    <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="300">
-                        <div class="pillar-card text-center">
-                            <div class="pillar-icon">
-                                <i class="fas fa-chess-queen"></i>
-                            </div>
-                            <h3 class="h4 fw-bold mb-3">Leadership</h3>
-                            <p>Developing ethical, visionary leaders who can navigate complexity and drive meaningful change.</p>
-                            <a href="#" class="btn btn-sm btn-outline-light mt-3">Learn More</a>
-                        </div>
-                    </div>
-                    
-                    <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="400">
-                        <div class="pillar-card text-center">
-                            <div class="pillar-icon">
-                                <i class="fas fa-hands-helping"></i>
-                            </div>
-                            <h3 class="h4 fw-bold mb-3">Mentorship</h3>
-                            <p>Connecting emerging leaders with experienced guides for personalized growth and development.</p>
-                            <a href="mentorshipProgram.html" class="btn btn-sm btn-outline-light mt-3">Learn More</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
+       
         <!-- Testimonials Section -->
         <section class="section bg-light">
             <div class="container">
@@ -1014,7 +1020,7 @@
                             </div>
                             <p class="mb-4">"The mentorship I received completely changed my career trajectory. My mentor helped me see possibilities I never imagined for myself."</p>
                             <h4 class="h5 mb-1">David M.</h4>
-                            <p class="small text-muted mb-0">Community Organizer, Nairobi</p>
+                           
                         </div>
                     </div>
                     
@@ -1030,7 +1036,7 @@
                             </div>
                             <p class="mb-4">"Through the leadership program, I gained the confidence and skills to start my own social enterprise addressing clean water access."</p>
                             <h4 class="h5 mb-1">Amina S.</h4>
-                            <p class="small text-muted mb-0">Social Entrepreneur, Kampala</p>
+                           
                         </div>
                     </div>
                     
@@ -1046,13 +1052,13 @@
                             </div>
                             <p class="mb-4">"The community projects component gave me practical experience that set me apart when applying for graduate programs and jobs."</p>
                             <h4 class="h5 mb-1">Thomas K.</h4>
-                            <p class="small text-muted mb-0">Public Policy Student, Johannesburg</p>
+                            
                         </div>
                     </div>
                 </div>
                 
                 <div class="text-center mt-5" data-aos="fade-up">
-                    <a href="#" class="btn btn-outline-primary btn-lg px-5">Read More Stories</a>
+                    <a href="contact-us.html" class="btn btn-outline-primary btn-lg px-5">Share Your Story</a>
                 </div>
             </div>
         </section>

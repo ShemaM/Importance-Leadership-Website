@@ -38,11 +38,16 @@
     
     <style>
         :root {
-            --primary-color: #2c3e50;
-            --secondary-color: #0a222d;
-            --accent-color: #3498db;
-            --light-color: #f8f9fa;
-            --dark-color: #212529;
+            --primary-color: #0b1f3a;      /* Dark blue */
+            --primary-light-color: #1a365d;
+            --secondary-color: #f5a623;    /* Gold accent */
+            --secondary-light-color: #f8b84a;
+            --accent-color: #7cade9;      /* Light blue */
+            --light-color: #f8f9fa;       /* Light background */
+            --dark-color: #212529;        /* Dark text */
+            --text-light-color: #ffffff;
+            --text-dark-color: #343a40;
+            --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
         }
         
         body {
@@ -272,190 +277,249 @@
     </style>
 </head>
 <body>
+    <!-- Header -->
+    <header id="header-container"></header>
+    <script src="loadHeader.js"></script>
 
-    
-   <!-- Header -->
-   <header id="header-container"></header>
-   <script src="loadHeader.js"></script>
-
-  
-        
-        <article>
-            <div class="row mb-5">
-                <div class="col-md-6">
-                    <img src="https://images.unsplash.com/photo-1563986768609-322da13575f3" alt="DRC landscape with minerals" class="img-fluid rounded">
-                </div>
-                <div class="col-md-6">
-                    <h2>Event Overview</h2>
-                    <p>
-                        On March 1, 2025, Importance Leadership hosted a powerful online discussion on the ongoing crisis in eastern DRC, drawing youth from across the world—<strong>Australia, Canada, the USA, Kenya, DRC, Rwanda, South Sudan, Burundi, and beyond</strong>.
-                        This urgent meeting aimed to share insights, dispel misinformation, and raise awareness about the true nature of the conflict. The workshop was graced by young researchers with deep knowledge of the region's history.
-                    </p>
-                </div>
+    <!-- Hero Section -->
+    <section class="container-fluid py-5 position-relative" style="background: linear-gradient(120deg, #0b1f3a 60%, #ff0303 100%); margin-top: 10px;">
+        <div class="row align-items-center">
+            <div class="col-lg-6 text-white animate__animated animate__fadeInLeft">
+                <h1 class="display-3 fw-bold mb-4 text-white" style="text-shadow: 2px 2px 8px #000; margin-top: 20px;">The Silent Genocide in Eastern DRC</h1>
+                <p class="lead mb-4" style="max-width: 600px;">
+                    A global call to action: Uncover the truth, amplify voices, and drive change for peace and justice in the heart of Africa.
+                </p>
+                
             </div>
-            
-            <div class="row mb-5">
-                <div class="col-12">
-                    <h2>Understanding the Crisis</h2>
-                    <p>The discussion explored the persistent instability in Eastern DRC, highlighting the complex factors contributing to what many call a "silent genocide":</p>
+            <div class="col-lg-6 text-center animate__animated animate__fadeInRight">
+                <svg viewBox="0 0 400 400" width="100%" height="400" class="img-fluid rounded-4 shadow-lg" aria-label="Crimes, Discrimination, Violence, War, and Silence illustration" role="img">
+                    <!-- Crimes: Broken scale -->
+                    <g class="bg-dark text-white">
+                        <rect x="30" y="320" width="20" height="40" fill="#888"/>
+                        <rect x="37" y="200" width="6" height="120" fill="#888"/>
+                        <rect x="20" y="190" width="40" height="20" rx="6" fill="#f5a623"/>
+                        <line x1="40" y1="210" x2="20" y2="250" stroke="#c0392b" stroke-width="5"/>
+                        <line x1="40" y1="210" x2="60" y2="250" stroke="#c0392b" stroke-width="5"/>
+                        <ellipse cx="20" cy="250" rx="18" ry="8" fill="#f8b84a" opacity="0.7"/>
+                        <ellipse cx="60" cy="250" rx="10" ry="5" fill="#f8b84a" opacity="0.7"/>
+                    </g>
+                    <!-- Discrimination: Segregated figures -->
+                    <g>
+                        <circle cx="110" cy="250" r="18" fill="#7cade9"/>
+                        <rect x="92" y="268" width="36" height="40" rx="10" fill="#7cade9"/>
+                        <circle cx="170" cy="250" r="18" fill="#e74c3c"/>
+                        <rect x="152" y="268" width="36" height="40" rx="10" fill="#e74c3c"/>
+                        <line x1="140" y1="240" x2="140" y2="320" stroke="#343a40" stroke-width="4" stroke-dasharray="6,6"/>
+                    </g>
+                    <!-- Violence: Fist and blood drop -->
+                    <g>
+                        <rect x="220" y="260" width="36" height="36" rx="10" fill="#212529"/>
+                        <ellipse cx="238" cy="250" rx="18" ry="14" fill="#212529"/>
+                        <ellipse cx="238" cy="245" rx="10" ry="6" fill="#343a40"/>
+                        <ellipse cx="238" cy="300" rx="6" ry="10" fill="#c0392b"/>
+                    </g>
+                    <!-- War: Exploding shell and barbed wire -->
+                    <g>
+                        <ellipse cx="320" cy="270" rx="22" ry="10" fill="#0b1f3a"/>
+                        <rect x="308" y="250" width="24" height="30" rx="8" fill="#1a365d"/>
+                        <polygon points="320,245 325,235 315,235" fill="#f1c40f"/>
+                        <polyline points="295,320 305,310 315,320 325,310 335,320" fill="none" stroke="#888" stroke-width="3"/>
+                        <circle cx="320" cy="245" r="4" fill="#e74c3c"/>
+                    </g>
+                    <!-- Silence: Face with finger on lips -->
+                    <g>
+                        <ellipse cx="360" cy="120" rx="28" ry="32" fill="#f8f9fa" stroke="#888" stroke-width="2"/>
+                        <ellipse cx="360" cy="120" rx="24" ry="28" fill="#fff" opacity="0.8"/>
+                        <ellipse cx="350" cy="115" rx="3" ry="5" fill="#343a40"/>
+                        <ellipse cx="370" cy="115" rx="3" ry="5" fill="#343a40"/>
+                        <rect x="357" y="130" width="6" height="18" rx="3" fill="#f5a623"/>
+                        <ellipse cx="360" cy="150" rx="8" ry="4" fill="#c0392b" opacity="0.5"/>
+                        <rect x="362" y="140" width="4" height="18" rx="2" fill="#888"/>
+                    </g>
+                    <!-- Title -->
                     
-                    <div class="row mt-4">
-                        <div class="col-md-4">
-                            <div class="stat-card">
-                                <i class="fas fa-gem"></i>
-                                <h3>80%</h3>
-                                <p>Of global cobalt reserves are in DRC</p>
-                            </div>
-                        </div>
-                        <div class="col-md-4">
-                            <div class="stat-card">
-                                <i class="fas fa-users"></i>
-                                <h3>6.9M</h3>
-                                <p>People displaced internally</p>
-                            </div>
-                        </div>
-                        <div class="col-md-4">
-                            <div class="stat-card">
-                                <i class="fas fa-skull"></i>
-                                <h3>6M+</h3>
-                                <p>Deaths since 1996</p>
-                            </div>
-                        </div>
+                </svg>
+            </div>
+        </div>
+        <div class="position-absolute bottom-0 start-50 translate-middle-x" style="width: 80px; height: 80px;">
+            <img src="image/easterncongocrisis.jpg" alt="Importance Leadership Logo" class="rounded-circle border border-3 border-light shadow" style="width: 80px; height: 80px;">
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="container py-5">
+        <div class="row mb-4">
+            <div class="col-12 text-center">
+                <h2 class="mb-3">Crisis by the Numbers</h2>
+                <p class="lead">Key statistics highlighting the scale and impact of the Eastern DRC crisis.</p>
+            </div>
+        </div>
+        <div class="row justify-content-center g-4">
+            <div class="col-md-4">
+                <div class="stat-card shadow-lg border-0 h-100 d-flex flex-column align-items-center animate__animated animate__fadeInUp">
+                    <i class="fas fa-gem fa-3x mb-3 text-warning"></i>
+                    <h3 class="fw-bold">80%</h3>
+                    <p class="mb-0 text-center">of global cobalt reserves<br>are in DRC</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="stat-card shadow-lg border-0 h-100 d-flex flex-column align-items-center animate__animated animate__fadeInUp animate__delay-1s">
+                    <i class="fas fa-users fa-3x mb-3 text-primary"></i>
+                    <h3 class="fw-bold">6.9M</h3>
+                    <p class="mb-0 text-center">People displaced<br>internally</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="stat-card shadow-lg border-0 h-100 d-flex flex-column align-items-center animate__animated animate__fadeInUp animate__delay-2s">
+                    <i class="fas fa-skull fa-3x mb-3 text-danger"></i>
+                    <h3 class="fw-bold">6M+</h3>
+                    <p class="mb-0 text-center">Deaths since<br>1996</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About & Charts Section -->
+    <section class="container py-5">
+        <div class="row align-items-center mb-5">
+            <div class="col-lg-6 animate__animated animate__fadeInLeft">
+                <h2 class="mb-4">Understanding the Crisis</h2>
+                <p>
+                    The crisis in Eastern DRC is a complex humanitarian emergency driven by mineral exploitation, ethnic tensions, and political instability. The region's vast resources have attracted global interests, fueling conflict and displacement.
+                </p>
+                <ul>
+                    <li>Global demand for minerals like cobalt, gold, and cassiterite</li>
+                    <li>Marginalization of vulnerable communities</li>
+                    <li>Regional and international power struggles</li>
+                </ul>
+            </div>
+            <div class="col-lg-6 animate__animated animate__fadeInRight">
+                <div class="chart-container mb-4">
+                    <h4>Mineral Distribution in Eastern DRC</h4>
+                    <canvas id="mineralsChart"></canvas>
+                </div>
+                <div class="chart-container">
+                    <h4>Refugee Displacement by Region</h4>
+                    <canvas id="displacementChart"></canvas>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Solutions Section -->
+    <section class="container py-5">
+        <div class="row mb-4">
+            <div class="col-12 text-center">
+                <h2 class="mb-3">Key Solutions & Takeaways</h2>
+                <p class="lead">Empowering local voices, fostering inclusive governance, and promoting responsible resource management are vital for lasting peace.</p>
+            </div>
+        </div>
+        <div class="row g-4">
+            <div class="col-md-4">
+                <div class="card h-100 border-0 shadow animate__animated animate__fadeInUp">
+                    <div class="card-body">
+                        <h5 class="card-title"><i class="fas fa-globe-africa me-2 text-success"></i>Regional Collaboration</h5>
+                        <p class="card-text">Strengthen AU and EAC partnerships for peace and security.</p>
                     </div>
                 </div>
             </div>
-            
-            <div class="row mb-5">
-                <div class="col-12">
-                    <h2>Workshop Focus</h2>
-                    <div class="row">
-                        <div class="col-md-6">
-                            <h3>Mineral Wealth</h3>
-                            <p>The abundance of cobalt, cassiterite, gold, and pyrochlore attracting foreign exploitation and fueling conflict.</p>
-                            
-                            <div class="chart-container">
-                                <h4>Mineral Distribution in Eastern DRC</h4>
-                                <canvas id="mineralsChart"></canvas>
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <h3>Political Instability</h3>
-                            <p>Displacement and marginalization of Congolese Tutsi communities and other vulnerable groups.</p>
-                            
-                            <div class="chart-container">
-                                <h4>Refugee Displacement by Region</h4>
-                                <canvas id="displacementChart"></canvas>
-                            </div>
-                        </div>
+            <div class="col-md-4">
+                <div class="card h-100 border-0 shadow animate__animated animate__fadeInUp animate__delay-1s">
+                    <div class="card-body">
+                        <h5 class="card-title"><i class="fas fa-balance-scale me-2 text-warning"></i>Inclusive Governance</h5>
+                        <p class="card-text">Promote equal citizenship and representation for all ethnic groups.</p>
                     </div>
                 </div>
             </div>
-            
-            <div class="row mb-5">
-                <div class="col-12">
-                    <h2>Key Takeaways & Solutions</h2>
-                    <div class="row">
-                        <div class="col-md-6">
-                            <ul>
-                                <li>Changing the narrative—Recognizing the role of global players in the conflict</li>
-                                <li>Promoting inclusive governance and equal citizenship for all ethnic groups</li>
-                                <li>Encouraging regional collaboration through the AU and EAC</li>
-                            </ul>
-                        </div>
-                        <div class="col-md-6">
-                            <ul>
-                                <li>Managing minerals for local economic benefit rather than foreign exploitation</li>
-                                <li>African-led military and diplomatic strategies for peace</li>
-                                <li>Youth engagement in peacebuilding processes</li>
-                            </ul>
-                        </div>
+            <div class="col-md-4">
+                <div class="card h-100 border-0 shadow animate__animated animate__fadeInUp animate__delay-2s">
+                    <div class="card-body">
+                        <h5 class="card-title"><i class="fas fa-leaf me-2 text-primary"></i>Sustainable Resource Management</h5>
+                        <p class="card-text">Ensure minerals benefit local communities, not just foreign interests.</p>
                     </div>
                 </div>
             </div>
-            
-            <div class="cta-section animate__animated animate__pulse animate__infinite animate__slower">
-                <h3>Join the Movement for Peace</h3>
-                <p class="mb-4">Your voice matters in ending this humanitarian crisis. Take action today to support the people of Eastern DRC.</p>
-                <div class="d-flex justify-content-center gap-3">
-                    <button class="btn btn-primary btn-lg" onclick="location.href='donate.html'">
-                        <i class="fas fa-hand-holding-heart me-2"></i>Donate Now
-                    </button>
-                    <button class="btn btn-outline-light btn-lg" onclick="location.href='join-us.html'">
-                        <i class="fas fa-users me-2"></i>Join Our Network
-                    </button>
-                </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section animate__animated animate__pulse animate__infinite animate__slower">
+        <h3 class="mb-3">Be Part of the Solution</h3>
+        <p class="mb-4">Your action can help end the suffering. Stand with the people of Eastern DRC—donate, join, and advocate for peace.</p>
+        <div class="d-flex justify-content-center gap-3">
+            <a href="donate.html" class="btn btn-primary btn-lg"><i class="fas fa-hand-holding-heart me-2"></i>Donate Now</a>
+            <a href="join-us.html" class="btn btn-outline-light btn-lg"><i class="fas fa-users me-2"></i>Join Our Network</a>
+        </div>
+    </section>
+
+    <!-- Call to Action Cards -->
+    <section class="container py-5">
+        <div class="row mb-4">
+            <div class="col-12 text-center">
+                <h2 class="mb-3">How You Can Help</h2>
+                <p class="lead">Every voice and action counts. Here’s how you can make a difference:</p>
             </div>
-            
-            <div class="row">
-                <div class="col-12">
-                    <h2>Call to Action</h2>
-                    <p>
-                        Join us in advocating for peace and stability in Eastern DRC. Here's how you can help make a difference:
-                    </p>
-                    <div class="row mt-4">
-                        <div class="col-md-3 mb-4">
-                            <div class="card h-100 border-0 shadow-sm">
-                                <div class="card-body text-center">
-                                    <div class="bg-primary bg-opacity-10 rounded-circle p-3 mb-3 d-inline-block">
-                                        <i class="fas fa-bullhorn fs-2 text-primary"></i>
-                                    </div>
-                                    <h5 class="card-title">Spread Awareness</h5>
-                                    <p class="card-text">Share this information with your network to educate others about the crisis.</p>
-                                </div>
-                            </div>
+        </div>
+        <div class="row g-4">
+            <div class="col-md-3">
+                <div class="card h-100 border-0 shadow-sm text-center animate__animated animate__fadeInUp">
+                    <div class="card-body">
+                        <div class="bg-primary bg-opacity-10 rounded-circle p-3 mb-3 d-inline-block">
+                            <i class="fas fa-bullhorn fs-2 text-primary"></i>
                         </div>
-                        <div class="col-md-3 mb-4">
-                            <div class="card h-100 border-0 shadow-sm">
-                                <div class="card-body text-center">
-                                    <div class="bg-primary bg-opacity-10 rounded-circle p-3 mb-3 d-inline-block">
-                                        <i class="fas fa-comments fs-2 text-primary"></i>
-                                    </div>
-                                    <h5 class="card-title">Engage in Dialogue</h5>
-                                    <p class="card-text">Participate in discussions and workshops to explore solutions.</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-3 mb-4">
-                            <div class="card h-100 border-0 shadow-sm">
-                                <div class="card-body text-center">
-                                    <div class="bg-primary bg-opacity-10 rounded-circle p-3 mb-3 d-inline-block">
-                                        <i class="fas fa-hands-helping fs-2 text-primary"></i>
-                                    </div>
-                                    <h5 class="card-title">Support Local Initiatives</h5>
-                                    <p class="card-text">Donate to organizations working on the ground to provide aid and promote peace.</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-3 mb-4">
-                            <div class="card h-100 border-0 shadow-sm">
-                                <div class="card-body text-center">
-                                    <div class="bg-primary bg-opacity-10 rounded-circle p-3 mb-3 d-inline-block">
-                                        <i class="fas fa-gavel fs-2 text-primary"></i>
-                                    </div>
-                                    <h5 class="card-title">Advocate for Change</h5>
-                                    <p class="card-text">Urge leaders to prioritize inclusive governance and sustainable development.</p>
-                                </div>
-                            </div>
-                        </div>
+                        <h5 class="card-title">Spread Awareness</h5>
+                        <p class="card-text">Share facts and stories to educate your network about the crisis.</p>
                     </div>
                 </div>
             </div>
-        </article>
-    </div>
-    
+            <div class="col-md-3">
+                <div class="card h-100 border-0 shadow-sm text-center animate__animated animate__fadeInUp animate__delay-1s">
+                    <div class="card-body">
+                        <div class="bg-primary bg-opacity-10 rounded-circle p-3 mb-3 d-inline-block">
+                            <i class="fas fa-comments fs-2 text-primary"></i>
+                        </div>
+                        <h5 class="card-title">Engage in Dialogue</h5>
+                        <p class="card-text">Join discussions and workshops to explore solutions together.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card h-100 border-0 shadow-sm text-center animate__animated animate__fadeInUp animate__delay-2s">
+                    <div class="card-body">
+                        <div class="bg-primary bg-opacity-10 rounded-circle p-3 mb-3 d-inline-block">
+                            <i class="fas fa-hands-helping fs-2 text-primary"></i>
+                        </div>
+                        <h5 class="card-title">Support Local Initiatives</h5>
+                        <p class="card-text">Donate to organizations providing aid and promoting peace.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card h-100 border-0 shadow-sm text-center animate__animated animate__fadeInUp animate__delay-3s">
+                    <div class="card-body">
+                        <div class="bg-primary bg-opacity-10 rounded-circle p-3 mb-3 d-inline-block">
+                            <i class="fas fa-gavel fs-2 text-primary"></i>
+                        </div>
+                        <h5 class="card-title">Advocate for Change</h5>
+                        <p class="card-text">Urge leaders to prioritize inclusive governance and sustainable development.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <script src="loadFooter.js"></script>
-    
+
     <div class="back-to-top" id="backToTop">
         <i class="fas fa-arrow-up"></i>
     </div>
-    
+
     <!-- Bootstrap Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    
+
     <script>
         // Back to top button
         const backToTopButton = document.getElementById('backToTop');
-        
         window.addEventListener('scroll', () => {
             if (window.pageYOffset > 300) {
                 backToTopButton.classList.add('active');
@@ -463,11 +527,10 @@
                 backToTopButton.classList.remove('active');
             }
         });
-        
         backToTopButton.addEventListener('click', () => {
             window.scrollTo({ top: 0, behavior: 'smooth' });
         });
-        
+
         // Charts
         const mineralsChart = new Chart(document.getElementById('mineralsChart'), {
             type: 'doughnut',
@@ -546,7 +609,7 @@
             }
         });
     </script>
-    
+
     <!-- Schema.org markup for Google -->
     <script type="application/ld+json">
     {
