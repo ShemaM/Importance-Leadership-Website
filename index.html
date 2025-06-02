@@ -71,24 +71,7 @@
             scroll-behavior: smooth;
         }
         
-            .offcanvas-fullscreen {
-        width: 50vw !important;
-        max-width: 1000vw !important;
-        height: 100vh;
-        top: 0;
-        right: 0;
-        left: 0;
-        bottom: 0;
-        border-radius: 0;
-        background-color: #0b1f3a;
-        padding: 2rem;
-    }
-
-    @media (min-width: 992px) {
-        .offcanvas-fullscreen {
-            border-left: 0;
-        }
-    }
+    /* Remove custom .offcanvas-fullscreen styles to allow Bootstrap's default responsive behavior */
         h1, h2, h3, h4, h5, h6 {
             font-family: 'Playfair Display', serif;
             font-weight: 700;
@@ -600,8 +583,8 @@
     
     <!-- Skip to content link for accessibility -->
     <a href="#main-content" class="visually-hidden-focusable position-absolute top-0 start-0 p-3 bg-primary text-white">Skip to main content</a>
-    
-    <!-- Header/Navigation -->
+
+      <!-- Header/Navigation -->
     <header class="fixed-top">
         <nav class="navbar navbar-expand-lg navbar-dark">
             <div class="container">
@@ -609,7 +592,7 @@
                     <img src="image/website-logo.png" alt="Importance Leadership Logo" width="180" height="auto" loading="lazy">
                 </a>
                 
-                <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <button class="navbar-toggler bg-warning text-white d-lg-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation" style="z-index:1051;"></button>
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 
@@ -628,9 +611,9 @@
                                     Who We Are
                                 </a>
                                 <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="whoWeAreDropdown">
-                                    <li><a class="dropdown-item" href="what-we-do.html#about">About Us</a></li>
+                                    <li><a class="dropdown-item" href="who-we-are.html">About Us</a></li>
                                     <li><a class="dropdown-item" href="team.html">Our Team</a></li>
-                                  <!--<li><a class="dropdown-item" href="Our Events.php">Events</a></li>-->  
+                                    <!--<li><a class="dropdown-item" href="Our Events.php">Events</a></li>-->
                                 </ul>
                             </li>
                             <li class="nav-item dropdown">
@@ -645,12 +628,12 @@
                             </li>
                             <li class="nav-item dropdown">
                                 <a class="nav-link dropdown-toggle text-white" href="#" id="whatWeDoDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                    Programs
+                                    Our Programs
                                 </a>
                                 <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="whatWeDoDropdown">
                                     
                                     <li><a class="dropdown-item" href="AdvocacyInitiatives.html">Advocacy Initiatives</a></li>
-                                    <li><a class="dropdown-item" href="MentalHealth.html">Mental Health Program</a></li>
+                                    <li><a class="dropdown-item" href="MentalHealth.html">Mental Health Programs</a></li>
                                     <li><a class="dropdown-item" href="Networking.html">Networking</a></li>
                                     <li><a class="dropdown-item" href="leadershipDev.html">Leadership Development</a></li>
                                     <li><a class="dropdown-item" href="ClimateChange.html">Climate Change Awareness</a></li>
@@ -660,10 +643,10 @@
                                 <a class="nav-link text-white" href="impact.html">Our Impact</a>
                             </li>
                             <li class="nav-item">
-                               <!-- <a class="nav-link text-white" href="#">Blog</a>--> 
+                               <!--<a class="nav-link text-white" href="#">Blog</a>--> 
                             </li>
                             <li class="nav-item ms-lg-3 mt-3 mt-lg-0">
-                                <a href="donate.html" class="btn btn-warning btn-lg px-3 px-lg-4">Donate</a>
+                                <a href="donate.html" class="btn btn-accent btn-lg px-3 px-lg-4">Donate</a>
                             </li>
                         </ul>
                     </div>
@@ -675,6 +658,7 @@
             </div>
         </nav>
     </header>
+
 
     <!-- Main Content -->
     <main id="main-content">
@@ -1087,7 +1071,7 @@
                     </div>
                     <div class="col-6 col-md-4 col-lg-2" data-aos="fade-up" data-aos-delay="300">
                         <div class="p-4 bg-light rounded-3 text-center">
-                            <img src="image/mukirambi.png" alt="Partner logo" class="img-fluid" style="height: 40px;" loading="lazy">
+                            <img src="image/cohere logo.png" alt="Partner logo" class="img-fluid" style="height: 40px;" loading="lazy">
                         </div>
                     </div>
                     <div class="col-6 col-md-4 col-lg-2" data-aos="fade-up" data-aos-delay="400">
@@ -1097,13 +1081,13 @@
                     </div>
                     <div class="col-6 col-md-4 col-lg-2" data-aos="fade-up" data-aos-delay="500">
                         <div class="p-4 bg-light rounded-3 text-center">
-                            <img src="image/shema.png" alt="Partner logo" class="img-fluid" style="height: 40px;" loading="lazy">
+                            <img src="image/cropped-RCK-Logo-for-Website.jpg" alt="Partner logo" class="img-fluid" style="height: 40px;" loading="lazy">
                         </div>
                     </div>
                 </div>
                 
                 <div class="text-center mt-5" data-aos="fade-up">
-                    <a href="#" class="btn btn-outline-primary btn-lg px-5">Become a Partner</a>
+                    <a href="sig" class="btn btn-outline-primary btn-lg px-5">Become a Partner</a>
                 </div>
             </div>
         </section>
@@ -1117,8 +1101,8 @@
                         <h2 class="display-5 fw-bold mb-4 text-white">Ready to Be Part of the Change?</h2>
                         <p class="lead mb-5 text-white">Whether you're a young leader looking to grow, a professional willing to mentor, or an organization wanting to partner, there are many ways to get involved in our mission.</p>
                         <div class="d-flex flex-wrap justify-content-center gap-3">
-                            <a href="#" class="btn btn-accent btn-lg px-5">Apply Now</a>
-                            <a href="#" class="btn btn-outline-light btn-lg px-5">Volunteer</a>
+                            <a href="join-us.html" class="btn btn-accent btn-lg px-5">Sign Up Now</a>
+                            
                             <a href="donate.html" class="btn btn-light btn-lg px-5">Donate</a>
                         </div>
                     </div>
