@@ -81,11 +81,26 @@
         }
         
         /* Hero section */
-         .hero-section {
-        background: url('https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80') no-repeat center center;
-        background-size: cover;
-        background-attachment: fixed;
-    }
+        .hero-section {
+            position: relative;
+            z-index: 1;
+            color: var(--text-primary);
+        }
+        .hero-section::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: url('image/homepage-bg.jpg') no-repeat center center;
+            background-size: cover;
+            background-attachment: fixed;
+            z-index: 0;
+            opacity: 0.5;
+        }
+        .hero-section > * {
+            position: relative;
+            z-index: 2;
+        }
+     
     .floating-element {
         position: absolute;
         animation: float 6s ease-in-out infinite;
@@ -393,7 +408,10 @@
         .footer-logo {
             width: 200px;
             margin-bottom: 1.5rem;
-            filter: brightness(0) invert(1);
+            transition: transform 0.3s ease;
+            border-radius: 10px;
+            background-color: var(--primary);
+            
         }
         
         .footer-links h5 {
@@ -546,6 +564,205 @@
                 padding: 0.6rem 1.5rem;
             }
         }
+
+        /* PARTNERSHIP SECTION */
+        .partners-grid .partner-card {
+            background: none !important;
+            border: none !important;
+            box-shadow: none !important;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: transform 0.2s cubic-bezier(0.4,0,0.2,1), box-shadow 0.2s;
+            border-radius: 0;
+            padding: 0;
+        }
+        .partner-logo-container {
+            background: none !important;
+            box-shadow: none !important;
+            border: none !important;
+            border-radius: 0 !important;
+            height: 70px;
+            width: 140px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0;
+            position: relative;
+            transition: transform 0.2s cubic-bezier(0.4,0,0.2,1);
+        }
+        .partner-card img {
+            max-height: 60px;
+            max-width: 120px;
+            width: auto;
+            height: auto;
+            object-fit: contain;
+            filter: none !important;
+            opacity: 1 !important;
+            transition: transform 0.2s cubic-bezier(0.4,0,0.2,1);
+            background: none !important;
+        }
+        .partner-card:hover .partner-logo-container {
+            transform: scale(1.07);
+        }
+        .partner-hover-bg {
+            display: none !important;
+        }
+        /* Responsive adjustments */
+        @media (max-width: 991.98px) {
+            .partner-logo-container {
+            height: 56px;
+            width: 100px;
+            }
+            .partner-card img {
+            max-height: 44px;
+            max-width: 80px;
+            }
+        }
+        @media (max-width: 575.98px) {
+            .partner-logo-container {
+            height: 40px;
+            width: 70px;
+            }
+            .partner-card img {
+            max-height: 32px;
+            max-width: 60px;
+            }
+        }
+   
+ /*PROGRAMS */
+ /* Modern Program Section Styles */
+    :root {
+        --primary: #0b1f3a;
+        --primary-light: #1e365d;
+        --secondary: #f5a623;
+        --secondary-light: #ffd27f;
+        --accent: #7cade9;
+        --light: #f8f9fa;
+        --dark: #212529;
+    }
+
+    .text-gradient-primary {
+        background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+
+    .program-card {
+        transition: all 0.3s ease;
+        border-radius: 12px !important;
+    }
+
+    .hover-scale:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 20px 40px rgba(11, 31, 58, 0.15) !important;
+    }
+
+    .card-img-container {
+        height: 200px;
+        overflow: hidden;
+        border-radius: 12px 12px 0 0 !important;
+    }
+
+    .card-img-container img {
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+        transition: transform 0.5s ease;
+    }
+
+    .program-card:hover .card-img-container img {
+        transform: scale(1.05);
+    }
+
+    .program-category {
+        position: absolute;
+        top: 20px;
+        left: 0;
+        font-size: 0.75rem;
+        font-weight: 600;
+        letter-spacing: 0.5px;
+    }
+
+    .hover-content {
+        transition: opacity 0.3s ease;
+    }
+
+    .program-card:hover .hover-content {
+        opacity: 1;
+    }
+
+    .program-features li {
+        transition: transform 0.2s ease;
+    }
+
+    .program-features li:hover {
+        transform: translateX(5px);
+    }
+
+    .program-icon {
+        transition: all 0.3s ease;
+    }
+
+    .program-card:hover .program-icon {
+        transform: rotate(10deg) scale(1.1);
+    }
+
+    .interactive-svg-container .icon-hover {
+        transition: all 0.3s ease;
+        cursor: pointer;
+    }
+
+    .interactive-svg-container .icon-hover:hover {
+        transform: scale(1.1);
+        opacity: 0.9;
+    }
+
+    @media (max-width: 767.98px) {
+        .card-img-container {
+            height: 160px;
+        }
+        
+        .display-5 {
+            font-size: 2.2rem;
+        }
+    }
+
+    /* Hero Section 3D buttons */
+       .three-d-btn {
+                    box-shadow: 0 6px 0 0 #b68b2c, 0 10px 24px rgba(11,31,58,0.12);
+                    transform: translateY(-2px);
+                    transition: box-shadow 0.2s, transform 0.2s;
+                    position: relative;
+                }
+                .three-d-btn .btn-3d-bg {
+                    content: "";
+                    position: absolute;
+                    inset: 0;
+                    border-radius: 50px;
+                    z-index: 0;
+                    background: linear-gradient(180deg, rgba(255,255,255,0.08) 0%, rgba(0,0,0,0.10) 100%);
+                    pointer-events: none;
+                }
+                .three-d-btn.btn-primary {
+                    box-shadow: 0 6px 0 0 #1a365d, 0 10px 24px rgba(11,31,58,0.12);
+                }
+                .three-d-btn.btn-accent {
+                    box-shadow: 0 6px 0 0 #f8b84a, 0 10px 24px rgba(245,166,35,0.10);
+                }
+                .three-d-btn:active {
+                    box-shadow: 0 2px 0 0 #b68b2c, 0 4px 12px rgba(11,31,58,0.10);
+                    transform: translateY(2px);
+                }
+                .three-d-btn:hover, .three-d-btn:focus {
+                    box-shadow: 0 2px 0 0 #b68b2c, 0 2px 8px rgba(11,31,58,0.15);
+                    transform: translateY(2px) scale(1.03);
+                }
+                .three-d-btn .position-relative {
+                    position: relative;
+                    z-index: 2;
+                }
      
     </style>
 </head>
@@ -576,8 +793,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <div class="row align-items-center min-vh-75 py-5">
             <div class="col-lg-6" data-aos="fade-right" data-aos-delay="100">
                 <!-- Animated Text Gradient -->
-                <h1 class="hero-title display-4 fw-bold mb-4 text-transparent" style="
-                    background: linear-gradient(90deg, #00dbde, #fc00ff, #00dbde);
+                <h1 class="hero-title display-4 fw-bold mb-4 text-black" style="
+                    background: linear-gradient(90deg, #0165fb, #000000, #f4f7f7);
                     background-size: 200% auto;
                     -webkit-background-clip: text;
                     background-clip: text;
@@ -587,7 +804,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 </h1>
                 
                 <!-- Glowing Text -->
-                <p class="hero-subtitle fs-5 mb-4 text-white" style="
+                <p class="hero-subtitle fs-5 mb-4 text-black fw-bold" style="
                     text-shadow: 0 0 10px rgba(255,255,255,0.3);
                 ">
                     We develop visionary young leaders through transformative mentorship, education, and community engagement programs that drive sustainable change.
@@ -595,40 +812,40 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 
                 <!-- 3D Buttons with Hover Effects -->
                 <div class="d-flex flex-wrap gap-3 mb-4 mb-lg-5">
-                    <a href="who-we-are.html" class="btn-neon btn-lg px-4 py-2 fw-bold">
-                        <span class="btn-neon-content">
+                    <a href="who-we-are.html" class="btn btn-warning btn-lg px-4 py-2 fw-bold shadow rounded-pill position-relative three-d-btn" style="overflow:hidden;">
+                        <span class="btn-3d-bg"></span>
+                        <span class="position-relative" style="z-index:1;">
                             Learn More <i class="fas fa-arrow-right ms-2"></i>
                         </span>
                     </a>
-                    <a href="join-us.html" class="btn-holographic btn-lg px-4 py-2 fw-bold">
-                        <span class="btn-holographic-content">
-                            Join Our Movement <i class="fas fa-users ms-2"></i>
+                    <a href="join-us.html" class="btn btn-warning btn-lg px-4 py-2 fw-bold shadow rounded-pill position-relative three-d-btn" style="overflow:hidden;">
+                        <span class="btn-3d-bg"></span>
+                        <span class="position-relative" style="z-index:1;">
+                            Join Us <i class="fas fa-users ms-2"></i>
                         </span>
                     </a>
                 </div>
                 
+              
                 <!-- Interactive Avatar Grid -->
-                <div class="d-flex align-items-center gap-4 mt-4">
-                    <div class="avatar-grid">
-                        <div class="avatar-cell" data-tooltip="Bonkey">
-                            <img src="image/Bonkey.png" alt="Participant" class="avatar-img">
+                <div class="d-flex align-items-center gap-3 mt-4">
+                    <div class="avatar-group d-flex">
+                        <div class="avatar-cell me-1" data-bs-toggle="tooltip" title="Bonkey">
+                            <img src="image/Bonkey.png" alt="Participant" class="avatar-img rounded-circle" style="width:38px;height:38px;object-fit:cover;border:2px solid #fff;box-shadow:0 2px 6px rgba(11,31,58,0.08);">
                         </div>
-                        <div class="avatar-cell" data-tooltip="Mick">
-                            <img src="image/Mick.jpg" alt="Participant" class="avatar-img">
+                        <div class="avatar-cell me-1" data-bs-toggle="tooltip" title="Mick">
+                            <img src="image/Mick.jpg" alt="Participant" class="avatar-img rounded-circle" style="width:38px;height:38px;object-fit:cover;border:2px solid #fff;box-shadow:0 2px 6px rgba(11,31,58,0.08);">
                         </div>
-                        <div class="avatar-cell" data-tooltip="Fabiola">
-                            <img src="image/fabiola.png" alt="Participant" class="avatar-img">
+                        <div class="avatar-cell me-1" data-bs-toggle="tooltip" title="Fabiola">
+                            <img src="image/fabiola.png" alt="Participant" class="avatar-img rounded-circle" style="width:38px;height:38px;object-fit:cover;border:2px solid #fff;box-shadow:0 2px 6px rgba(11,31,58,0.08);">
                         </div>
-                        <div class="avatar-cell" data-tooltip="Pacific">
-                            <img src="image/pacific.jpg" alt="Participant" class="avatar-img">
-                        </div>
-                        <div class="avatar-cell-more">
-                            +2,496
+                        <div class="avatar-cell" data-bs-toggle="tooltip" title="Pacific">
+                            <img src="image/pacific.jpg" alt="Participant" class="avatar-img rounded-circle" style="width:38px;height:38px;object-fit:cover;border:2px solid #fff;box-shadow:0 2px 6px rgba(11,31,58,0.08);">
                         </div>
                     </div>
                     <div>
-                        <p class="mb-0 text-white" style="opacity: 0.9;">
-                            Join <strong class="fw-bold">2,500+</strong> young leaders transforming their communities
+                        <p class="mb-0 text-black" style="opacity: 0.9; font-size: 0.98rem;">
+                            Join <strong class="fw-bold">1500+</strong> young leaders transforming their communities
                         </p>
                     </div>
                 </div>
@@ -636,545 +853,334 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             
             <!-- Interactive Video Hologram -->
             <div class="col-lg-6 mt-5 mt-lg-0" data-aos="fade-left" data-aos-delay="300">
-                <div class="holographic-container">
-                    <div class="holographic-inner">
-                        <div class="ratio ratio-16x9 holographic-video">
+                <div>
+                    <div class="ratio ratio-16x9 mb-4">
+                        <div class="ratio ratio-16x9">
+
                             <iframe src="https://www.youtube.com/embed/_rts2qZ2cK4" title="WHAT IS TRUE LEADERSHIP?" 
                                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                                    allowfullscreen></iframe>
+                                    allowfullscreen></iframe>   
                         </div>
-                        <div class="holographic-effect"></div>
+                        
                     </div>
-                    <a href="#" class="btn-holographic-play mt-3">
-                        <i class="fas fa-play-circle me-2"></i> Watch Our Story
-                    </a>
+                   
                 </div>
             </div>
         </div>
     </div>
     
-    <!-- Floating Web 3.0 Icons -->
+    <!-- Floating Icons -->
     <div class="web3-icons">
-        <i class="web3-icon fa-brands fa-ethereum" style="top: 15%; left: 5%;"></i>
-        <i class="web3-icon fa-solid fa-link" style="top: 75%; left: 10%;"></i>
-        <i class="web3-icon fa-solid fa-cube" style="top: 30%; right: 8%;"></i>
-        <i class="web3-icon fa-solid fa-network-wired" style="bottom: 20%; right: 15%;"></i>
+        <!-- Leadership: Crown icon -->
+        <i class="web3-icon fas fa-chess-king" style="top: 12%; left: 7%;"></i>
+        <!-- Youth Empowerment: Raised fist icon -->
+        <i class="web3-icon fas fa-hand-fist" style="top: 70%; left: 12%;"></i>
+        <!-- Community Impact: People group icon -->
+        <i class="web3-icon fas fa-people-group" style="top: 28%; right: 10%;"></i>
+        <!-- Community Impact: Heart hands icon -->
+        <i class="web3-icon fas fa-hands-holding-heart" style="bottom: 18%; right: 16%;"></i>
     </div>
 </section>
 
-<style>
-    /* Base Styles */
-    .hero-section {
-        background: radial-gradient(circle at center, #0f0c29 0%, #302b63 50%, #24243e 100%);
-        color: white;
-        border-bottom: 1px solid rgba(255,255,255,0.1);
-    }
-    
-    /* Particle Canvas */
-    #particle-canvas {
-        opacity: 0.5;
-    }
-    
-    /* Animated Gradient Text */
-    @keyframes gradientText {
-        0% { background-position: 0% center; }
-        100% { background-position: 200% center; }
-    }
-    
-    /* Neon Button */
-    .btn-neon {
-        position: relative;
-        border: none;
-        background: transparent;
-        color: transparent;
-        overflow: hidden;
-        border-radius: 8px;
-    }
-    
-    .btn-neon-content {
-        display: block;
-        padding: 0.5rem 1rem;
-        background: linear-gradient(90deg, #00dbde, #fc00ff);
-        background-size: 200% auto;
-        -webkit-background-clip: text;
-        background-clip: text;
-        color: transparent;
-        transition: all 0.3s ease;
-    }
-    
-    .btn-neon:before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        border: 2px solid transparent;
-        border-radius: 8px;
-        background: linear-gradient(90deg, #00dbde, #fc00ff) border-box;
-        -webkit-mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
-        mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
-        -webkit-mask-composite: destination-out;
-        mask-composite: exclude;
-        animation: gradientText 6s linear infinite;
-    }
-    
-    .btn-neon:hover .btn-neon-content {
-        transform: translateY(-2px);
-        text-shadow: 0 0 10px rgba(255,255,255,0.5);
-    }
-    
-    /* Holographic Button */
-    .btn-holographic {
-        position: relative;
-        background: rgba(255,255,255,0.1);
-        backdrop-filter: blur(5px);
-        border: 1px solid rgba(255,255,255,0.2);
-        color: white;
-        border-radius: 8px;
-        overflow: hidden;
-        transition: all 0.3s ease;
-    }
-    
-    .btn-holographic:before {
-        content: '';
-        position: absolute;
-        top: -50%;
-        left: -50%;
-        width: 200%;
-        height: 200%;
-        background: linear-gradient(
-            to bottom right,
-            rgba(255,255,255,0) 0%,
-            rgba(255,255,255,0.1) 50%,
-            rgba(255,255,255,0) 100%
-        );
-        transform: rotate(30deg);
-        transition: all 0.6s ease;
-    }
-    
-    .btn-holographic:hover {
-        background: rgba(255,255,255,0.15);
-        box-shadow: 0 0 15px rgba(124, 58, 237, 0.5);
-    }
-    
-    .btn-holographic:hover:before {
-        left: 100%;
-    }
-    
-    /* Avatar Grid */
-    .avatar-grid {
-        display: grid;
-        grid-template-columns: repeat(4, 1fr);
-        grid-gap: 0.5rem;
-        width: 180px;
-    }
-    
-    .avatar-cell {
-        position: relative;
-        width: 42px;
-        height: 42px;
-        border-radius: 50%;
-        overflow: hidden;
-        border: 2px solid white;
-        transition: all 0.3s ease;
-    }
-    
-    .avatar-cell:hover {
-        transform: translateY(-5px) scale(1.1);
-        box-shadow: 0 5px 15px rgba(0,0,0,0.3);
-        z-index: 2;
-    }
-    
-    .avatar-cell-more {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        width: 42px;
-        height: 42px;
-        border-radius: 50%;
-        background: rgba(255,255,255,0.2);
-        color: white;
-        font-size: 0.8rem;
-        font-weight: bold;
-    }
-    
-    .avatar-img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-    }
-    
-    /* Holographic Video */
-    .holographic-container {
-        position: relative;
-        perspective: 1000px;
-    }
-    
-    .holographic-inner {
-        position: relative;
-        transform-style: preserve-3d;
-        transition: transform 0.5s ease;
-    }
-    
-    .holographic-video {
-        border-radius: 12px;
-        overflow: hidden;
-        box-shadow: 0 0 30px rgba(124, 58, 237, 0.3);
-        transform: translateZ(20px);
-    }
-    
-    .holographic-effect {
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background: linear-gradient(
-            135deg,
-            rgba(124, 58, 237, 0.2) 0%,
-            rgba(124, 58, 237, 0) 20%,
-            rgba(124, 58, 237, 0) 80%,
-            rgba(124, 58, 237, 0.2) 100%
-        );
-        border-radius: 12px;
-        pointer-events: none;
-    }
-    
-    .btn-holographic-play {
-        display: inline-block;
-        color: white;
-        text-decoration: none;
-        font-weight: bold;
-        margin-top: 1rem;
-        transition: all 0.3s ease;
-    }
-    
-    .btn-holographic-play:hover {
-        color: #7c3aed;
-        text-shadow: 0 0 10px rgba(124, 58, 237, 0.5);
-    }
-    
-    /* Web 3.0 Icons */
-    .web3-icons {
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        pointer-events: none;
-    }
-    
-    .web3-icon {
-        position: absolute;
-        font-size: 1.5rem;
-        color: rgba(255,255,255,0.15);
-        animation: float 6s ease-in-out infinite;
-    }
-    
-    @keyframes float {
-        0%, 100% { transform: translateY(0) rotate(0deg); }
-        50% { transform: translateY(-20px) rotate(5deg); }
-    }
-    
-    /* Tooltips */
-    [data-tooltip] {
-        position: relative;
-    }
-    
-    [data-tooltip]:hover:after {
-        content: attr(data-tooltip);
-        position: absolute;
-        bottom: 100%;
-        left: 50%;
-        transform: translateX(-50%);
-        background: rgba(0,0,0,0.8);
-        color: white;
-        padding: 0.3rem 0.6rem;
-        border-radius: 4px;
-        font-size: 0.8rem;
-        white-space: nowrap;
-        margin-bottom: 5px;
-    }
-</style>
 
-<script>
-    // Particle Network Animation
-    document.addEventListener('DOMContentLoaded', function() {
-        // Initialize WebGL Particle Network
-        const canvas = document.getElementById('particle-canvas');
-        const ctx = canvas.getContext('2d');
-        
-        // Set canvas size
-        canvas.width = canvas.offsetWidth;
-        canvas.height = canvas.offsetHeight;
-        
-        // Particles array
-        const particles = [];
-        const particleCount = window.innerWidth < 768 ? 30 : 80;
-        
-        // Create particles
-        for (let i = 0; i < particleCount; i++) {
-            particles.push({
-                x: Math.random() * canvas.width,
-                y: Math.random() * canvas.height,
-                size: Math.random() * 3 + 1,
-                speedX: Math.random() * 1 - 0.5,
-                speedY: Math.random() * 1 - 0.5,
-                color: `rgba(124, 58, 237, ${Math.random() * 0.3 + 0.1})`
-            });
-        }
-        
-        // Animation loop
-        function animate() {
-            ctx.clearRect(0, 0, canvas.width, canvas.height);
-            
-            // Update and draw particles
-            for (let i = 0; i < particles.length; i++) {
-                const p = particles[i];
-                
-                // Update position
-                p.x += p.speedX;
-                p.y += p.speedY;
-                
-                // Bounce off edges
-                if (p.x < 0 || p.x > canvas.width) p.speedX *= -1;
-                if (p.y < 0 || p.y > canvas.height) p.speedY *= -1;
-                
-                // Draw particle
-                ctx.beginPath();
-                ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
-                ctx.fillStyle = p.color;
-                ctx.fill();
-                
-                // Draw connections
-                for (let j = i + 1; j < particles.length; j++) {
-                    const p2 = particles[j];
-                    const dist = Math.sqrt(Math.pow(p.x - p2.x, 2) + Math.pow(p.y - p2.y, 2));
-                    
-                    if (dist < 150) {
-                        ctx.beginPath();
-                        ctx.strokeStyle = `rgba(124, 58, 237, ${1 - dist/150})`;
-                        ctx.lineWidth = 0.5;
-                        ctx.moveTo(p.x, p.y);
-                        ctx.lineTo(p2.x, p2.y);
-                        ctx.stroke();
-                    }
-                }
-            }
-            
-            requestAnimationFrame(animate);
-        }
-        
-        animate();
-        
-        // Resize handler
-        window.addEventListener('resize', function() {
-            canvas.width = canvas.offsetWidth;
-            canvas.height = canvas.offsetHeight;
-        });
-        
-        // Interactive hologram effect
-        const hologram = document.querySelector('.holographic-inner');
-        document.addEventListener('mousemove', function(e) {
-            if (window.innerWidth > 992) {
-                const xAxis = (window.innerWidth / 2 - e.pageX) / 25;
-                const yAxis = (window.innerHeight / 2 - e.pageY) / 25;
-                hologram.style.transform = `rotateY(${xAxis}deg) rotateX(${yAxis}deg)`;
-            }
-        });
-    });
-</script>
+<!-- Modern Programs Section -->
 
 
-
-        <!-- Trust Badges Section -->
-        <section class="py-4 bg-light">
-            <div class="container">
-                <div class="row align-items-center justify-content-center g-4">
-                    <div class="col-auto">
-                        <p class="mb-0 small text-muted">TRUSTED BY:</p>
-                    </div>
-                    
-                    <div class="col-auto">
-                        <img src="image/cohere logo.png" alt="Partner logo" height="30" loading="lazy">
-                    </div>
-                    <div class="col-auto">
-                        <img src="image/hias-logo-blue.png" alt="Partner logo" height="30" loading="lazy">
-                    </div>
-                    <div class="col-auto">
-                        <img src="image/reframe.png" alt="Partner logo" height="30" loading="lazy">
-                    </div>
-                </div>
+<section class="py-6 py-lg-7 position-relative overflow-hidden">
+    <!-- Background elements -->
+    <div class="position-absolute top-0 start-0 w-100 h-100 bg-light" style="z-index: -2;"></div>
+    <div class="position-absolute bottom-0 end-0 w-100 h-50 bg-primary bg-opacity-5" style="z-index: -1; clip-path: polygon(0 40%, 100% 0, 100% 100%, 0 100%);"></div>
+    
+    <div class="container position-relative">
+        <!-- Section Header with Animated SVG -->
+        <div class="row align-items-center mb-5 mb-lg-6 g-4">
+            <div class="col-lg-6" data-aos="fade-right">
+                <span class="badge bg-accent bg-opacity-10 text-accent px-3 py-2 mb-3 d-inline-flex align-items-center">
+                    <span class="d-inline-block me-2" style="width: 8px; height: 8px; background-color: var(--accent); border-radius: 50%;"></span>
+                    OUR PROGRAMS
+                </span>
+                <h2 class="display-5 fw-bold mb-3">Transformative <span class="text-gradient-primary">Leadership</span> Initiatives</h2>
+                <p class="lead mb-0">Our innovative programs equip young Africans with the skills, mindset, and networks needed to become transformative leaders in their communities and beyond.</p>
             </div>
-        </section>
-
-        <!-- Programs Section -->
-        <section class="section bg-light">
-            <style>
-                /* Ensure all program cards and images are the same height */
-                .program-card {
-                    height: 100%;
-                    display: flex;
-                    flex-direction: column;
-                }
-                .program-card .card-img-top {
-                    width: 100%;
-                    height: 220px;
-                    object-fit: cover;
-                    object-position: center;
-                }
-                @media (max-width: 767px) {
-                    .program-card .card-img-top {
-                        height: 160px;
-                    }
-                }
-            </style>
-            <div class="container">
-                <div class="row align-items-center mb-5 py-5" style="background: linear-gradient(135deg, rgba(11,31,58,0.95) 0%, rgba(11,31,58,0.85) 100%), url('image/leadershipDevelopemnt.jpg') center/cover; border-radius: 2rem;">
-                    <div class="col-lg-7 text-white text-lg-start text-center" data-aos="fade-right">
-                        <span class="badge bg-accent text-info mb-3">What We Do</span>
-                        <h2 class="display-4 fw-bold mb-3 text-white">Discover Our Core Programs</h2>
-                        <p class="lead mb-4">Our innovative programs equip young Africans with the skills, mindset, and networks needed to become transformative leaders in their communities and beyond.</p>
-                       
-                    </div>
-                    <div class="col-lg-5 d-none d-lg-flex align-items-center justify-content-center" data-aos="fade-left">
-                        <svg width="340" height="340" viewBox="0 0 340 340" fill="none" xmlns="http://www.w3.org/2000/svg" class="img-fluid rounded-4 shadow-lg" style="max-height:340px;">
+            <div class="col-lg-6" data-aos="fade-left">
+                <div class="d-flex justify-content-lg-end justify-content-center">
+                    <div class="interactive-svg-container" style="max-width: 400px;">
+                        <svg class="img-fluid" viewBox="0 0 400 240" xmlns="http://www.w3.org/2000/svg">
                             <defs>
-                                <linearGradient id="leadershipGradient" x1="0" y1="0" x2="340" y2="340" gradientUnits="userSpaceOnUse">
-                                    <stop stop-color="#0b1f3a"/>
-                                    <stop offset="1" stop-color="#7cade9"/>
+                                <linearGradient id="programGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="0%" stop-color="#0b1f3a"/>
+                                    <stop offset="100%" stop-color="#7cade9"/>
                                 </linearGradient>
                             </defs>
-                            <rect width="340" height="340" rx="32" fill="url(#leadershipGradient)"/>
-                            <g>
-                                <circle cx="170" cy="110" r="48" fill="#fff" fill-opacity="0.95"/>
-                                <circle cx="170" cy="110" r="38" fill="#f5a623" fill-opacity="0.9"/>
-                                <text x="170" y="120" text-anchor="middle" font-size="32" font-family="Playfair Display, serif" fill="#0b1f3a" font-weight="bold">LEAD</text>
+                            <rect x="20" y="20" width="360" height="200" rx="20" fill="url(#programGradient)"/>
+                            <g class="program-icons">
+                                <circle cx="100" cy="100" r="30" fill="#f5a623" class="icon-hover"/>
+                                <text x="100" y="105" text-anchor="middle" fill="#0b1f3a" font-family="Poppins" font-weight="600" font-size="14">LEAD</text>
+                                
+                                <rect x="180" cy="100" width="60" height="60" rx="15" fill="#ffffff" class="icon-hover"/>
+                                <text x="210" y="115" text-anchor="middle" fill="#0b1f3a" font-family="Poppins" font-weight="600" font-size="12">MENTOR</text>
+                                
+                                <path d="M300,70 L340,100 L300,130 L260,100 Z" fill="#7cade9" class="icon-hover"/>
+                                <text x="300" y="115" text-anchor="middle" fill="#ffffff" font-family="Poppins" font-weight="600" font-size="12">NETWORK</text>
                             </g>
-                            <g>
-                                <rect x="70" y="180" width="200" height="90" rx="24" fill="#fff" fill-opacity="0.95"/>
-                                <rect x="90" y="200" width="160" height="50" rx="16" fill="#7cade9" fill-opacity="0.8"/>
-                                <text x="170" y="232" text-anchor="middle" font-size="22" font-family="Poppins, sans-serif" fill="#0b1f3a" font-weight="600">Mentorship</text>
-                            </g>
-                            <g>
-                                <circle cx="90" cy="290" r="18" fill="#f5a623"/>
-                                <circle cx="250" cy="290" r="18" fill="#f5a623"/>
-                                <rect x="108" y="278" width="124" height="24" rx="12" fill="#0b1f3a" fill-opacity="0.9"/>
-                                <text x="170" y="295" text-anchor="middle" font-size="14" font-family="Poppins, sans-serif" fill="#fff" font-weight="500">Community</text>
-                            </g>
-                            <g>
-                                <rect x="30" y="30" width="40" height="12" rx="6" fill="#f5a623" fill-opacity="0.7"/>
-                                <rect x="270" y="50" width="40" height="12" rx="6" fill="#f5a623" fill-opacity="0.7"/>
-                                <rect x="50" y="270" width="12" height="40" rx="6" fill="#7cade9" fill-opacity="0.7"/>
-                                <rect x="278" y="270" width="12" height="40" rx="6" fill="#7cade9" fill-opacity="0.7"/>
-                            </g>
+                            <path d="M50,180 Q200,220 350,180" stroke="#ffffff" stroke-width="2" stroke-dasharray="5,5" fill="none"/>
+                            <text x="200" y="200" text-anchor="middle" fill="#ffffff" font-family="Poppins" font-weight="500" font-size="14">Building Future Leaders</text>
                         </svg>
                     </div>
-                
-                <div class="row g-4">
-                    <!-- Leadership Development -->
-                    <div class="col-md-6 col-lg-4" data-aos="zoom-in" data-aos-delay="100">
-                        <div class="card program-card shadow-sm border-0">
-                            <img src="image/leadershipDevelopemnt.jpg" class="card-img-top rounded-top" alt="Leadership Development Program" loading="lazy">
-                            <div class="card-body d-flex flex-column">
-                                <h3 class="h5 fw-bold mb-2 text-primary">Leadership Development</h3>
-                                <p class="card-text mb-3">A transformative 12-week program focused on building core leadership competencies. Participants engage in interactive workshops, hands-on projects, and receive mentorship to develop ethical decision-making, strategic vision, and effective communication skills.</p>
-                                <ul class="list-unstyled mb-4">
-                                    <li class="mb-2"><i class="fas fa-check-circle text-secondary me-2"></i> Ethical leadership training</li>
-                                    <li class="mb-2"><i class="fas fa-check-circle text-secondary me-2"></i> Strategic planning & execution</li>
-                                    <li class="mb-2"><i class="fas fa-check-circle text-secondary me-2"></i> Real-world community projects</li>
-                                    <li class="mb-2"><i class="fas fa-check-circle text-secondary me-2"></i> Personalized mentorship</li>
-                                </ul>
-                                <div class="mt-auto">
-                                    <a href="leadershipDev.html" class="btn btn-outline-primary w-100">Program Details</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Networking -->
-                    <div class="col-md-6 col-lg-4" data-aos="zoom-in" data-aos-delay="200">
-                        <div class="card program-card shadow-sm border-0">
-                            <img src="image/networking.jpg" class="card-img-top rounded-top" alt="Networking Program" loading="lazy">
-                            <div class="card-body d-flex flex-column">
-                                <h3 class="h5 fw-bold mb-2 text-primary">Networking</h3>
-                                <p class="card-text mb-3">Expand your professional and social circles through curated networking events, peer collaborations, and access to a vibrant community of young leaders and industry experts.</p>
-                                <ul class="list-unstyled mb-4">
-                                    <li class="mb-2"><i class="fas fa-check-circle text-secondary me-2"></i> Curated networking events</li>
-                                    <li class="mb-2"><i class="fas fa-check-circle text-secondary me-2"></i> Peer-to-peer collaboration</li>
-                                    <li class="mb-2"><i class="fas fa-check-circle text-secondary me-2"></i> Access to industry leaders</li>
-                                    <li class="mb-2"><i class="fas fa-check-circle text-secondary me-2"></i> Community support</li>
-                                </ul>
-                                <div class="mt-auto">
-                                    <a href="Networking.html" class="btn btn-outline-primary w-100">Program Details</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Advocacy Initiatives -->
-                    <div class="col-md-6 col-lg-4" data-aos="zoom-in" data-aos-delay="300">
-                        <div class="card program-card shadow-sm border-0">
-                            <img src="image/advocacy-program.jpg" class="card-img-top rounded-top" alt="Advocacy Initiatives Program" loading="lazy">
-                            <div class="card-body d-flex flex-column">
-                                <h3 class="h5 fw-bold mb-2 text-primary">Advocacy Initiatives</h3>
-                                <p class="card-text mb-3">Our Advocacy Initiatives program empowers youth to become effective advocates for social justice, equity, and policy change. Participants learn how to raise awareness, influence decision-makers, and mobilize communities around critical issues.</p>
-                                <ul class="list-unstyled mb-4">
-                                    <li class="mb-2"><i class="fas fa-check-circle text-secondary me-2"></i> Advocacy and public speaking training</li>
-                                    <li class="mb-2"><i class="fas fa-check-circle text-secondary me-2"></i> Campaign planning and execution</li>
-                                    <li class="mb-2"><i class="fas fa-check-circle text-secondary me-2"></i> Policy engagement and civic education</li>
-                                    <li class="mb-2"><i class="fas fa-check-circle text-secondary me-2"></i> Community mobilization</li>
-                                </ul>
-                                <div class="mt-auto">
-                                    <a href="AdvocacyInitiatives.html" class="btn btn-outline-primary w-100">Program Details</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Mental Health Program -->
-                    <div class="col-md-6 col-lg-4" data-aos="zoom-in" data-aos-delay="400">
-                        <div class="card program-card shadow-sm border-0 position-relative">
-                            <img src="image/mentalHealth-pro.jpg" class="card-img-top rounded-top" alt="Mental Health Program" loading="lazy">
-                            <span class="position-absolute top-0 end-0 m-2 badge bg-warning text-dark">Ongoing</span>
-                            <div class="card-body d-flex flex-column">
-                                <h3 class="h5 fw-bold mb-2 text-primary">Mental Health Program</h3>
-                                <p class="card-text mb-3">Supporting youth wellbeing through mental health education, peer support, and access to professional resources. Our program fosters resilience, emotional intelligence, and a culture of openness around mental health.</p>
-                                <ul class="list-unstyled mb-4">
-                                    <li class="mb-2"><i class="fas fa-check-circle text-secondary me-2"></i> Mental health awareness workshops</li>
-                                    <li class="mb-2"><i class="fas fa-check-circle text-secondary me-2"></i> Peer support groups</li>
-                                    <li class="mb-2"><i class="fas fa-check-circle text-secondary me-2"></i> Access to counseling resources</li>
-                                    <li class="mb-2"><i class="fas fa-check-circle text-secondary me-2"></i> Building emotional resilience</li>
-                                </ul>
-                                <div class="mt-auto">
-                                    <a href="MentalHealth.html" class="btn btn-outline-primary w-100">Program Details</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Climate Change Awareness -->
-                    <div class="col-md-6 col-lg-4" data-aos="zoom-in" data-aos-delay="500">
-                        <div class="card program-card shadow-sm border-0">
-                            <img src="image/environmentalHealth.jpg" class="card-img-top rounded-top" alt="Climate Change Awareness Program" loading="lazy">
-                            <div class="card-body d-flex flex-column">
-                                <h3 class="h5 fw-bold mb-2 text-primary">Climate Change Awareness</h3>
-                                <p class="card-text mb-3">Empowering youth to understand, address, and advocate for solutions to climate change through education, community projects, and environmental leadership.</p>
-                                <ul class="list-unstyled mb-4">
-                                    <li class="mb-2"><i class="fas fa-check-circle text-secondary me-2"></i> Environmental education workshops</li>
-                                    <li class="mb-2"><i class="fas fa-check-circle text-secondary me-2"></i> Community clean-up and tree planting</li>
-                                    <li class="mb-2"><i class="fas fa-check-circle text-secondary me-2"></i> Youth-led climate advocacy campaigns</li>
-                                    <li class="mb-2"><i class="fas fa-check-circle text-secondary me-2"></i> Promoting sustainable practices</li>
-                                </ul>
-                                <div class="mt-auto">
-                                    <a href="ClimateChange.html" class="btn btn-outline-primary w-100">Program Details</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
                 </div>
             </div>
-        </section>
-        
+        </div>
+
+        <!-- Program Cards - Interactive Grid -->
+        <div class="row g-4 program-grid">
+            <!-- Leadership Development -->
+            <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="100">
+                <div class="card program-card h-100 border-0 shadow-sm overflow-hidden transition-all hover-scale">
+                    <div class="card-img-container position-relative overflow-hidden">
+                        <img src="image/leadershipDevelopemnt.jpg" class="card-img-top" alt="Leadership Development Program" loading="lazy">
+                        <div class="card-img-overlay d-flex align-items-end p-0">
+                            <div class="program-category bg-primary text-white px-3 py-1 rounded-end">Core Program</div>
+                        </div>
+                        <div class="hover-content position-absolute w-100 h-100 top-0 start-0 d-flex align-items-center justify-content-center bg-primary bg-opacity-90 opacity-0 transition-all">
+                            <a href="leadershipDev.html" class="btn btn-accent btn-lg rounded-pill px-4 shadow">Explore Program</a>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <div class="d-flex align-items-center mb-3">
+                            <div class="program-icon bg-primary bg-opacity-10 text-primary rounded-circle d-flex align-items-center justify-content-center me-3" style="width: 48px; height: 48px;">
+                                <i class="fas fa-chess-king fs-5"></i>
+                            </div>
+                            <h3 class="h5 mb-0">Leadership Development</h3>
+                        </div>
+                        <p class="card-text text-muted mb-4">A transformative 12-week program focused on building core leadership competencies through workshops, projects, and mentorship.</p>
+                        <ul class="list-unstyled program-features mb-4">
+                            <li class="d-flex align-items-start mb-2">
+                                <i class="fas fa-check-circle text-accent mt-1 me-2"></i>
+                                <span>Ethical leadership training</span>
+                            </li>
+                            <li class="d-flex align-items-start mb-2">
+                                <i class="fas fa-check-circle text-accent mt-1 me-2"></i>
+                                <span>Strategic planning & execution</span>
+                            </li>
+                            <li class="d-flex align-items-start mb-2">
+                                <i class="fas fa-check-circle text-accent mt-1 me-2"></i>
+                                <span>Real-world community projects</span>
+                            </li>
+                        </ul>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <div class="program-duration">
+                                <i class="far fa-clock text-muted me-1"></i>
+                                <small class="text-muted">12 weeks</small>
+                            </div>
+                            <a href="leadershipDev.html" class="btn btn-sm btn-outline-primary stretched-link">Details <i class="fas fa-arrow-right ms-1"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Networking -->
+            <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="150">
+                <div class="card program-card h-100 border-0 shadow-sm overflow-hidden transition-all hover-scale">
+                    <div class="card-img-container position-relative overflow-hidden">
+                        <img src="image/networking.jpg" class="card-img-top" alt="Networking Program" loading="lazy">
+                        <div class="card-img-overlay d-flex align-items-end p-0">
+                            <div class="program-category bg-info text-white px-3 py-1 rounded-end">Community</div>
+                        </div>
+                        <div class="hover-content position-absolute w-100 h-100 top-0 start-0 d-flex align-items-center justify-content-center bg-primary bg-opacity-90 opacity-0 transition-all">
+                            <a href="Networking.html" class="btn btn-accent btn-lg rounded-pill px-4 shadow">Explore Program</a>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <div class="d-flex align-items-center mb-3">
+                            <div class="program-icon bg-info bg-opacity-10 text-info rounded-circle d-flex align-items-center justify-content-center me-3" style="width: 48px; height: 48px;">
+                                <i class="fas fa-network-wired fs-5"></i>
+                            </div>
+                            <h3 class="h5 mb-0">Professional Networking</h3>
+                        </div>
+                        <p class="card-text text-muted mb-4">Expand your professional and social circles through curated networking events and access to a vibrant community of leaders.</p>
+                        <ul class="list-unstyled program-features mb-4">
+                            <li class="d-flex align-items-start mb-2">
+                                <i class="fas fa-check-circle text-accent mt-1 me-2"></i>
+                                <span>Curated networking events</span>
+                            </li>
+                            <li class="d-flex align-items-start mb-2">
+                                <i class="fas fa-check-circle text-accent mt-1 me-2"></i>
+                                <span>Peer-to-peer collaboration</span>
+                            </li>
+                            <li class="d-flex align-items-start mb-2">
+                                <i class="fas fa-check-circle text-accent mt-1 me-2"></i>
+                                <span>Access to industry leaders</span>
+                            </li>
+                        </ul>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <div class="program-duration">
+                                <i class="fas fa-calendar-alt text-muted me-1"></i>
+                                <small class="text-muted">Ongoing</small>
+                            </div>
+                            <a href="Networking.html" class="btn btn-sm btn-outline-primary stretched-link">Details <i class="fas fa-arrow-right ms-1"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Advocacy Initiatives -->
+            <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="200">
+                <div class="card program-card h-100 border-0 shadow-sm overflow-hidden transition-all hover-scale">
+                    <div class="card-img-container position-relative overflow-hidden">
+                        <img src="image/advocacy-program.jpg" class="card-img-top" alt="Advocacy Initiatives Program" loading="lazy">
+                        <div class="card-img-overlay d-flex align-items-end p-0">
+                            <div class="program-category bg-warning text-dark px-3 py-1 rounded-end">Activism</div>
+                        </div>
+                        <div class="hover-content position-absolute w-100 h-100 top-0 start-0 d-flex align-items-center justify-content-center bg-primary bg-opacity-90 opacity-0 transition-all">
+                            <a href="AdvocacyInitiatives.html" class="btn btn-accent btn-lg rounded-pill px-4 shadow">Explore Program</a>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <div class="d-flex align-items-center mb-3">
+                            <div class="program-icon bg-warning bg-opacity-10 text-warning rounded-circle d-flex align-items-center justify-content-center me-3" style="width: 48px; height: 48px;">
+                                <i class="fas fa-bullhorn fs-5"></i>
+                            </div>
+                            <h3 class="h5 mb-0">Advocacy Initiatives</h3>
+                        </div>
+                        <p class="card-text text-muted mb-4">Empowers youth to become effective advocates for social justice, equity, and policy change in their communities.</p>
+                        <ul class="list-unstyled program-features mb-4">
+                            <li class="d-flex align-items-start mb-2">
+                                <i class="fas fa-check-circle text-accent mt-1 me-2"></i>
+                                <span>Public speaking training</span>
+                            </li>
+                            <li class="d-flex align-items-start mb-2">
+                                <i class="fas fa-check-circle text-accent mt-1 me-2"></i>
+                                <span>Campaign planning</span>
+                            </li>
+                            <li class="d-flex align-items-start mb-2">
+                                <i class="fas fa-check-circle text-accent mt-1 me-2"></i>
+                                <span>Policy engagement</span>
+                            </li>
+                        </ul>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <div class="program-duration">
+                                <i class="fas fa-calendar-check text-muted me-1"></i>
+                                <small class="text-muted">Quarterly</small>
+                            </div>
+                            <a href="AdvocacyInitiatives.html" class="btn btn-sm btn-outline-primary stretched-link">Details <i class="fas fa-arrow-right ms-1"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Mental Health Program -->
+            <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="250">
+                <div class="card program-card h-100 border-0 shadow-sm overflow-hidden transition-all hover-scale">
+                    <div class="card-img-container position-relative overflow-hidden">
+                        <img src="image/mentalHealth-pro.jpg" class="card-img-top" alt="Mental Health Program" loading="lazy">
+                        <div class="card-img-overlay d-flex align-items-end p-0">
+                            <div class="program-category bg-success text-white px-3 py-1 rounded-end">Wellness</div>
+                            <span class="position-absolute top-0 end-0 m-2 badge bg-warning text-dark">Featured</span>
+                        </div>
+                        <div class="hover-content position-absolute w-100 h-100 top-0 start-0 d-flex align-items-center justify-content-center bg-primary bg-opacity-90 opacity-0 transition-all">
+                            <a href="MentalHealth.html" class="btn btn-accent btn-lg rounded-pill px-4 shadow">Explore Program</a>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <div class="d-flex align-items-center mb-3">
+                            <div class="program-icon bg-success bg-opacity-10 text-success rounded-circle d-flex align-items-center justify-content-center me-3" style="width: 48px; height: 48px;">
+                                <i class="fas fa-brain fs-5"></i>
+                            </div>
+                            <h3 class="h5 mb-0">Mental Health Program</h3>
+                        </div>
+                        <p class="card-text text-muted mb-4">Supporting youth wellbeing through mental health education, peer support, and access to professional resources.</p>
+                        <ul class="list-unstyled program-features mb-4">
+                            <li class="d-flex align-items-start mb-2">
+                                <i class="fas fa-check-circle text-accent mt-1 me-2"></i>
+                                <span>Awareness workshops</span>
+                            </li>
+                            <li class="d-flex align-items-start mb-2">
+                                <i class="fas fa-check-circle text-accent mt-1 me-2"></i>
+                                <span>Peer support groups</span>
+                            </li>
+                            <li class="d-flex align-items-start mb-2">
+                                <i class="fas fa-check-circle text-accent mt-1 me-2"></i>
+                                <span>Counseling resources</span>
+                            </li>
+                        </ul>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <div class="program-duration">
+                                <i class="fas fa-calendar-alt text-muted me-1"></i>
+                                <small class="text-muted">Ongoing</small>
+                            </div>
+                            <a href="MentalHealth.html" class="btn btn-sm btn-outline-primary stretched-link">Details <i class="fas fa-arrow-right ms-1"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Climate Change Awareness -->
+            <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="300">
+                <div class="card program-card h-100 border-0 shadow-sm overflow-hidden transition-all hover-scale">
+                    <div class="card-img-container position-relative overflow-hidden">
+                        <img src="image/environmentalHealth.jpg" class="card-img-top" alt="Climate Change Awareness Program" loading="lazy">
+                        <div class="card-img-overlay d-flex align-items-end p-0">
+                            <div class="program-category bg-danger text-white px-3 py-1 rounded-end">Environment</div>
+                        </div>
+                        <div class="hover-content position-absolute w-100 h-100 top-0 start-0 d-flex align-items-center justify-content-center bg-primary bg-opacity-90 opacity-0 transition-all">
+                            <a href="ClimateChange.html" class="btn btn-accent btn-lg rounded-pill px-4 shadow">Explore Program</a>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <div class="d-flex align-items-center mb-3">
+                            <div class="program-icon bg-danger bg-opacity-10 text-danger rounded-circle d-flex align-items-center justify-content-center me-3" style="width: 48px; height: 48px;">
+                                <i class="fas fa-leaf fs-5"></i>
+                            </div>
+                            <h3 class="h5 mb-0">Climate Change Awareness</h3>
+                        </div>
+                        <p class="card-text text-muted mb-4">Empowering youth to understand, address, and advocate for solutions to climate change through education and projects.</p>
+                        <ul class="list-unstyled program-features mb-4">
+                            <li class="d-flex align-items-start mb-2">
+                                <i class="fas fa-check-circle text-accent mt-1 me-2"></i>
+                                <span>Environmental education</span>
+                            </li>
+                            <li class="d-flex align-items-start mb-2">
+                                <i class="fas fa-check-circle text-accent mt-1 me-2"></i>
+                                <span>Community clean-ups</span>
+                            </li>
+                            <li class="d-flex align-items-start mb-2">
+                                <i class="fas fa-check-circle text-accent mt-1 me-2"></i>
+                                <span>Advocacy campaigns</span>
+                            </li>
+                        </ul>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <div class="program-duration">
+                                <i class="fas fa-calendar-check text-muted me-1"></i>
+                                <small class="text-muted">Seasonal</small>
+                            </div>
+                            <a href="ClimateChange.html" class="btn btn-sm btn-outline-primary stretched-link">Details <i class="fas fa-arrow-right ms-1"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CTA Card -->
+            <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="350">
+                <div class="card h-100 border-0 bg-primary text-white p-4 d-flex flex-column justify-content-center text-center">
+                    <div class="mb-4">
+                        <i class="fas fa-lightbulb display-4 text-accent mb-3"></i>
+                        <h3 class="h4 mb-3">Have a Program Idea?</h3>
+                        <p class="mb-4 opacity-75">We're always looking for new ways to empower young leaders. Share your ideas with us!</p>
+                    </div>
+                    <a href="contact.html" class="btn btn-accent btn-lg rounded-pill px-4 shadow">Suggest a Program</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- View All Button -->
+        <div class="text-center mt-5" data-aos="fade-up">
+            <a href="programs.html" class="btn btn-outline-primary btn-lg px-4 rounded-pill">
+                View All Programs <i class="fas fa-arrow-right ms-2"></i>
+            </a>
+        </div>
+    </div>
+</section>
+
 
         <!-- Impact Section -->
         <section class="section text-white" style="
@@ -1193,21 +1199,21 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                                 <div class="p-4 bg-light rounded-3 h-100">
                                     <div class="impact-number mb-3" data-count="2500">0</div>
                                     <h3 class="h5 fw-bold text-black">Youth Empowered</h3>
-                                    <p class="mb-0 small text-warning">Through our leadership programs</p>
+                                    <p class="mb-0 small text-secondary">Through our leadership programs</p>
                                 </div>
                             </div>
                             
                             <div class="col-6" data-aos="fade-up" data-aos-delay="200">
                                 <div class="p-4 bg-light rounded-3 h-100">
                                     <div class="impact-number mb-3" data-count="85">0</div>
-                                    <h3 class="h5 fw-bold">Community Projects</h3>
-                                    <p class="mb-0 small">Initiated by our participants</p>
+                                    <h3 class="h5 fw-bold text-black">Community Projects</h3>
+                                    <p class="mb-0 small text-secondary">Initiated by our participants</p>
                                 </div>
                             </div>
                         </div>
                         
                         <div class="mt-4 text-center" data-aos="fade-up" data-aos-delay="300">
-                            <a href="impact.html" class="btn btn-warning btn-lg px-4">See Our Full Impact</a>
+                            <a href="impact.html" class="btn btn-warning btn-lg px-4">Learn More</a>
                         </div>
                     </div>
                     
@@ -1262,7 +1268,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         </section>
 
        
-        <!-- Testimonials Section -->
+        <!-- Testimonials Section
         <section class="section bg-light">
             <div class="container">
                 <div class="row justify-content-center mb-5">
@@ -1329,50 +1335,127 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             </div>
         </section>
 
+         -->
+
         <!-- Partners Section -->
-        <section class="section">
-            <div class="container">
-                <div class="row justify-content-center mb-5">
-                    <div class="col-lg-8 text-center" data-aos="fade-up">
-                        <span class="badge bg-primary mb-3">OUR PARTNERS</span>
-                        <h2 class="section-title">Collaborating for Greater Impact</h2>
-                        <p class="lead">We work with leading organizations to amplify our reach and effectiveness.</p>
-                    </div>
+    
+<section class="py-7 position-relative overflow-hidden" styles="background: linear-gradient(135deg, #123456, #e9ecef);">
+    <!-- Decorative elements -->
+    <div class="position-absolute top-0 start-0 w-100 h-100 opacity-10">
+        <div class="partnership-pattern"></div>
+    </div>
+    
+    <div class="container position-relative">
+        <div class="text-center mb-6" data-aos="fade-up">
+            <span class="badge bg-primary bg-opacity-10 text-primary px-3 py-2 mb-3 rounded-pill fw-semibold">STRATEGIC COLLABORATIONS</span>
+            <h2 class="display-5 fw-bold mb-3">Our <span class="text-gradient-primary">Valued Partners</span></h2>
+            <p class="lead text-muted mx-auto" style="max-width: 720px;">
+                Together with mission-aligned organizations, we're creating transformative youth leadership opportunities. 
+                Join our network to amplify your impact.
+            </p>
+        </div>
+        
+        <!-- Partners Logos Grid -->
+        <div class="partners-grid mb-6" data-aos="fade-up" data-aos-delay="100">
+            <div class="row row-cols-2 row-cols-md-3 row-cols-lg-6 g-4 justify-content-center">
+                <!-- UNICEF -->
+                <div class="col">
+                    <a href="https://www.unicef.org" target="_blank" rel="noopener noreferrer" class="partner-card">
+                        <div class="partner-logo-container">
+                            <img src="image/UNICEF.png" 
+                                 alt="UNICEF Logo" 
+                                 class="img-fluid"
+                                 title="United Nations Children's Fund"
+                                 loading="lazy">
+                            <div class="partner-hover-bg"></div>
+                        </div>
+                    </a>
                 </div>
                 
-                <div class="row g-4 align-items-center justify-content-center">
-                    <div class="col-6 col-md-4 col-lg-2" data-aos="fade-up" data-aos-delay="100">
-                        <div class="p-4 bg-light rounded-3 text-center">
-                            <img src="image/cohere logo.png" alt="Partner logo" class="img-fluid" style="height: 40px;" loading="lazy">
+                <!-- Save the Children -->
+                <div class="col">
+                    <a href="https://www.savethechildren.org" target="_blank" rel="noopener noreferrer" class="partner-card">
+                        <div class="partner-logo-container">
+                            <img src="image/Save the children.png" 
+                                 alt="Save the Children Logo" 
+                                 class="img-fluid"
+                                 title="Save the Children International"
+                                 loading="lazy">
+                            <div class="partner-hover-bg"></div>
                         </div>
-                    </div>
-                    <div class="col-6 col-md-4 col-lg-2" data-aos="fade-up" data-aos-delay="200">
-                        <div class="p-4 bg-light rounded-3 text-center">
-                            <img src="image/hias-logo-blue.png" alt="Partner logo" class="img-fluid" style="height: 40px;" loading="lazy">
-                        </div>
-                    </div>
-                    <div class="col-6 col-md-4 col-lg-2" data-aos="fade-up" data-aos-delay="300">
-                        <div class="p-4 bg-light rounded-3 text-center">
-                            <img src="image/cohere logo.png" alt="Partner logo" class="img-fluid" style="height: 40px;" loading="lazy">
-                        </div>
-                    </div>
-                    <div class="col-6 col-md-4 col-lg-2" data-aos="fade-up" data-aos-delay="400">
-                        <div class="p-4 bg-light rounded-3 text-center">
-                            <img src="image/reframe" alt="Partner logo" class="img-fluid" style="height: 40px;" loading="lazy">
-                        </div>
-                    </div>
-                    <div class="col-6 col-md-4 col-lg-2" data-aos="fade-up" data-aos-delay="500">
-                        <div class="p-4 bg-light rounded-3 text-center">
-                            <img src="image/cropped-RCK-Logo-for-Website.jpg" alt="Partner logo" class="img-fluid" style="height: 40px;" loading="lazy">
-                        </div>
-                    </div>
+                    </a>
                 </div>
                 
-                <div class="text-center mt-5" data-aos="fade-up">
-                    <a href="sig" class="btn btn-outline-primary btn-lg px-5">Become a Partner</a>
+                <!-- World Youth Alliance -->
+                <div class="col">
+                    <a href="https://www.wya.net" target="_blank" rel="noopener noreferrer" class="partner-card">
+                        <div class="partner-logo-container">
+                            <img src="image/World Youth Alliance.png" 
+                                 alt="World Youth Alliance Logo" 
+                                 class="img-fluid"
+                                 title="World Youth Alliance"
+                                 loading="lazy">
+                            <div class="partner-hover-bg"></div>
+                        </div>
+                    </a>
+                </div>
+                
+                <!-- Plan International -->
+                <div class="col">
+                    <a href="https://plan-international.org" target="_blank" rel="noopener noreferrer" class="partner-card">
+                        <div class="partner-logo-container">
+                            <img src="image/Plan International.png" 
+                                 alt="Plan International Logo" 
+                                 class="img-fluid"
+                                 title="Plan International"
+                                 loading="lazy">
+                            <div class="partner-hover-bg"></div>
+                        </div>
+                    </a>
+                </div>
+                
+                <!-- Global Youth Action Network -->
+                <div class="col">
+                    <a href="https://web.archive.org/web/20180321000000*/http://gyan.tigweb.org" target="_blank" rel="noopener noreferrer" class="partner-card">
+                        <div class="partner-logo-container">
+                            <img src="image/GYAN.jpg" 
+                                 alt="Global Youth Action Network Logo" 
+                                 class="img-fluid"
+                                 title="Global Youth Action Network (Archive)"
+                                 loading="lazy">
+                            <div class="partner-hover-bg"></div>
+                        </div>
+                    </a>
+                </div>
+                
+                <!-- International Youth Foundation -->
+                <div class="col">
+                    <a href="https://www.iyfnet.org" target="_blank" rel="noopener noreferrer" class="partner-card">
+                        <div class="partner-logo-container">
+                            <img src="image/iyf.png" 
+                                 alt="International Youth Foundation Logo" 
+                                 class="img-fluid"
+                                 title="International Youth Foundation"
+                                 loading="lazy">
+                            <div class="partner-hover-bg"></div>
+                        </div>
+                    </a>
                 </div>
             </div>
-        </section>
+        </div>
+        
+        <!-- CTA Section -->
+        <div class="text-center" data-aos="fade-up" data-aos-delay="200">
+            <h3 class="h4 fw-semibold mb-4">Ready to join our partner network?</h3>
+            <a href="partnerships.html" class="btn btn-primary btn-lg px-5 py-3 rounded-pill shadow-sm">
+                <i class="fas fa-handshake me-2"></i> Explore Partnership Opportunities
+                <i class="fas fa-arrow-right ms-2"></i>
+            </a>
+            <p class="small text-muted mt-3">Let's discuss how we can create impact together</p>
+        </div>
+    </div>
+</section>
+
 
         <!-- CTA Section -->
         <section class="section cta-section">
@@ -1383,9 +1466,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                         <h2 class="display-5 fw-bold mb-4 text-white">Ready to Be Part of the Change?</h2>
                         <p class="lead mb-5 text-white">Whether you're a young leader looking to grow, a professional willing to mentor, or an organization wanting to partner, there are many ways to get involved in our mission.</p>
                         <div class="d-flex flex-wrap justify-content-center gap-3">
-                            <a href="join-us.html" class="btn btn-accent btn-lg px-5">Sign Up Now</a>
+                            <a href="join-us.html" class="btn btn-warning btn-lg px-5">Sign Up Now</a>
                             
-                            <a href="donate.html" class="btn btn-light btn-lg px-5">Donate</a>
+                            <a href="donate.html" class="btn btn-warning btn-lg px-5">Donate</a>
                         </div>
                     </div>
                 </div>
@@ -1478,7 +1561,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                             <li><a href="about.html">About Us</a></li>
                             <li><a href="programs.html">Programs</a></li>
                             <li><a href="impact.html">Impact</a></li>
-                            <li><a href="#">Blog</a></li>
+                            
                             <li><a href="contact-us.html">Contact</a></li>
                         </ul>
                     </div>
@@ -1486,7 +1569,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 
                  <div class="col-lg-3 col-md-4">
                     <div class="footer-links">
-                        <h5>Programs</h5>
+                        <h5>What We Do</h5>
                         <ul>
                             <li><a href="AdvocacyInitiatives.html">Advocacy Initiatives</a></li>
                             <li><a href="MentalHealth.html">Mental Health Programs</a></li>
@@ -1544,6 +1627,63 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     
     <!-- AOS Animation -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+    // Animate program cards on scroll
+    document.addEventListener('DOMContentLoaded', function() {
+        document.querySelectorAll('.program-card').forEach(card => {
+            card.style.opacity = '0';
+            card.style.transform = 'translateY(20px)';
+            card.style.transition = 'opacity 0.5s, transform 0.5s';
+        });
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, { threshold: 0.1 });
+        document.querySelectorAll('.program-card').forEach(card => observer.observe(card));
+    });
+</script>
+    
+<script>
+    // Add interactive SVG animation
+    document.addEventListener('DOMContentLoaded', function() {
+        const icons = document.querySelectorAll('.program-icons .icon-hover');
+        
+        icons.forEach(icon => {
+            icon.addEventListener('mouseenter', function() {
+                this.style.transform = 'scale(1.15)';
+                this.style.opacity = '0.95';
+            });
+            
+            icon.addEventListener('mouseleave', function() {
+                this.style.transform = 'scale(1)';
+                this.style.opacity = '1';
+            });
+        });
+        
+        // Animate program cards on scroll
+        const programCards = document.querySelectorAll('.program-card');
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, { threshold: 0.1 });
+        
+        programCards.forEach(card => {
+            card.style.opacity = '0';
+            card.style.transform = 'translateY(20px)';
+            card.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+            observer.observe(card);
+        });
+    });
+</script>
     
     <!-- Main JS -->
     <script>
@@ -1667,5 +1807,140 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       ]
     }
     </script>
+    <script>
+    // Particle Network Animation - Reflecting Main Programs/Pillars
+    document.addEventListener('DOMContentLoaded', function() {
+        const canvas = document.getElementById('particle-canvas');
+        const ctx = canvas.getContext('2d');
+
+        // Set canvas size to match container
+        function resizeCanvas() {
+            canvas.width = canvas.offsetWidth;
+            canvas.height = canvas.offsetHeight;
+        }
+        resizeCanvas();
+        window.addEventListener('resize', resizeCanvas);
+
+        // Define main programs/pillars with unique colors/icons
+        const pillars = [
+            { name: 'Leadership', color: '#0b1f3a', icon: '\uf43f' }, // fa-chess-king
+            { name: 'Networking', color: '#7cade9', icon: '\uf6ff' }, // fa-network-wired
+            { name: 'Advocacy', color: '#f5a623', icon: '\uf0a1' },   // fa-bullhorn
+            { name: 'Mental Health', color: '#28a745', icon: '\uf5dc' }, // fa-brain
+            { name: 'Climate', color: '#dc3545', icon: '\uf06c' }     // fa-leaf
+        ];
+
+        // Place pillar nodes in a circle
+        const centerX = () => canvas.width / 2;
+        const centerY = () => canvas.height / 2;
+        const radius = () => Math.min(canvas.width, canvas.height) / 2.5;
+        function getPillarPositions() {
+            const positions = [];
+            for (let i = 0; i < pillars.length; i++) {
+                const angle = (i / pillars.length) * Math.PI * 2 - Math.PI / 2;
+                positions.push({
+                    x: centerX() + radius() * Math.cos(angle),
+                    y: centerY() + radius() * Math.sin(angle)
+                });
+            }
+            return positions;
+        }
+
+        // Regular particles
+        const particles = [];
+        const particleCount = window.innerWidth < 768 ? 18 : 40;
+        for (let i = 0; i < particleCount; i++) {
+            particles.push({
+                x: Math.random() * canvas.width,
+                y: Math.random() * canvas.height,
+                size: Math.random() * 2 + 1,
+                speedX: Math.random() * 0.7 - 0.35,
+                speedY: Math.random() * 0.7 - 0.35,
+                color: 'rgba(124, 173, 233, 0.18)'
+            });
+        }
+
+        // Animation loop
+        function animate() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+            // Draw pillar nodes
+            const pillarPositions = getPillarPositions();
+            pillarPositions.forEach((pos, i) => {
+                // Glow
+                ctx.beginPath();
+                ctx.arc(pos.x, pos.y, 28, 0, Math.PI * 2);
+                ctx.fillStyle = pillars[i].color + '33';
+                ctx.shadowColor = pillars[i].color;
+                ctx.shadowBlur = 18;
+                ctx.fill();
+                ctx.shadowBlur = 0;
+
+                // Main circle
+                ctx.beginPath();
+                ctx.arc(pos.x, pos.y, 18, 0, Math.PI * 2);
+                ctx.fillStyle = pillars[i].color;
+                ctx.fill();
+
+                // Draw FontAwesome icon (fallback: letter if not supported)
+                ctx.save();
+                ctx.font = 'bold 20px "Font Awesome 6 Free", "FontAwesome", Arial, sans-serif';
+                ctx.textAlign = 'center';
+                ctx.textBaseline = 'middle';
+                ctx.fillStyle = '#fff';
+                ctx.globalAlpha = 0.95;
+                ctx.fillText(pillars[i].icon, pos.x, pos.y + 1);
+                ctx.globalAlpha = 1;
+                ctx.restore();
+            });
+
+            // Draw connections between pillar nodes (network)
+            for (let i = 0; i < pillarPositions.length; i++) {
+                for (let j = i + 1; j < pillarPositions.length; j++) {
+                    ctx.beginPath();
+                    ctx.moveTo(pillarPositions[i].x, pillarPositions[i].y);
+                    ctx.lineTo(pillarPositions[j].x, pillarPositions[j].y);
+                    ctx.strokeStyle = '#7cade9';
+                    ctx.globalAlpha = 0.18;
+                    ctx.lineWidth = 2;
+                    ctx.stroke();
+                    ctx.globalAlpha = 1;
+                }
+            }
+
+            // Animate and draw regular particles
+            for (let i = 0; i < particles.length; i++) {
+                const p = particles[i];
+                p.x += p.speedX;
+                p.y += p.speedY;
+                if (p.x < 0 || p.x > canvas.width) p.speedX *= -1;
+                if (p.y < 0 || p.y > canvas.height) p.speedY *= -1;
+
+                ctx.beginPath();
+                ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
+                ctx.fillStyle = p.color;
+                ctx.fill();
+
+                // Connect to nearest pillar node if close
+                for (let k = 0; k < pillarPositions.length; k++) {
+                    const dist = Math.hypot(p.x - pillarPositions[k].x, p.y - pillarPositions[k].y);
+                    if (dist < 90) {
+                        ctx.beginPath();
+                        ctx.moveTo(p.x, p.y);
+                        ctx.lineTo(pillarPositions[k].x, pillarPositions[k].y);
+                        ctx.strokeStyle = pillars[k].color;
+                        ctx.globalAlpha = 0.12 + 0.18 * (1 - dist / 90);
+                        ctx.lineWidth = 1;
+                        ctx.stroke();
+                        ctx.globalAlpha = 1;
+                    }
+                }
+            }
+
+            requestAnimationFrame(animate);
+        }
+        animate();
+    });
+</script>
 </body>
 </html>
