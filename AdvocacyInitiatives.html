@@ -586,72 +586,11 @@
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 </head>
 <body>
-    <!-- Navigation (same as Leadership Development page) -->
- <!-- Navigation -->
-    <header class="fixed-top">
-        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-            <div class="container">
-                <a class="navbar-brand" href="../index.html" aria-label="Importance Leadership Home">
-                    <img src="../image/website-logo.png" alt="Importance Leadership Logo" width="180" height="auto" loading="lazy">
-                </a>
-                
-                <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                
-                <div class="offcanvas offcanvas-end offcanvas-fullscreen bg-dark" tabindex="-1" id="navbarNav" aria-labelledby="navbarNavLabel">
-                    <div class="offcanvas-header border-bottom border-secondary">
-                        <h5 class="offcanvas-title text-white" id="navbarNavLabel">Navigation Menu</h5>
-                        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-                    </div>
-                    <div class="offcanvas-body">
-                        <ul class="navbar-nav ms-auto align-items-lg-center">
-                            <li class="nav-item">
-                                <a class="nav-link text-white" href="../index.html">Home</a>
-                            </li>
-                            <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle text-white" href="#" id="whoWeAreDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                    Who We Are
-                                </a>
-                                <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="whoWeAreDropdown">
-                                    <li><a class="dropdown-item" href="../what-we-do.html#about">About Us</a></li>
-                                    <li><a class="dropdown-item" href="../team.html">Our Team</a></li>
-                                </ul>
-                            </li>
-                            <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle text-white" href="#" id="whereWeWorkDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                    Where We Work
-                                </a>
-                                <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="whereWeWorkDropdown">
-                                    <li><a class="dropdown-item" href="../locations/usa.html">USA</a></li>
-                                    <li><a class="dropdown-item" href="../locations/canada.html">Canada</a></li>
-                                    <li><a class="dropdown-item" href="../locations/kenya.html">Kenya</a></li>
-                                </ul>
-                            </li>
-                            <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle text-white active" href="#" id="whatWeDoDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false" aria-current="page">
-                                    What We Do
-                                </a>
-                                <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="whatWeDoDropdown">
-                                    <li><a class="dropdown-item" href="advocacy-initiatives.html">Advocacy Initiatives</a></li>
-                                    <li><a class="dropdown-item" href="mental-health-program.html">Mental Health Program</a></li>
-                                    <li><a class="dropdown-item" href="networking.html">Networking</a></li>
-                                    <li><a class="dropdown-item active" href="leadership-development.html">Leadership Development</a></li>
-                                    <li><a class="dropdown-item" href="climate-change-awareness.html">Climate Change Awareness</a></li>
-                                </ul>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link text-white" href="impact.html">Our Impact</a>
-                            </li>
-                            <li class="nav-item ms-lg-3 mt-3 mt-lg-0">
-                                <a href="donate.html" class="btn btn-accent btn-lg px-3 px-lg-4">Donate</a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </nav>
-    </header>
+    <!-- Header -->
+        <!-- Load Header -->
+    <div id="header-container"></div>
+    <script src="loadHeader.js"></script>
+
 
     <!-- Hero Section -->
     <section class="hero-section" style="background: linear-gradient(rgba(11, 31, 58, 0.9), rgba(11, 31, 58, 0.9)), url('../image/advocacy.jpg') center/cover;">
@@ -676,6 +615,28 @@
                           <div class="h4 fw-bold text-center mt-4 mb-3">Click To Watch</div>
                         </div>
                     </div>
+        </div>
+    </section>
+
+    <!-- Advocacy Program Description -->
+    <section class="section bg-light">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-9" data-aos="fade-up"></div>
+                    <h2 class="section-title mb-4">Our Advocacy Approach</h2>
+                    <p>
+                        We believe that real change begins with strong, informed voices. Through our advocacy program, we identify and address pressing issues affecting refugees, IDPs, and minority groups, such as discriminatory policies, systemic exclusion, abandonment, and injustice. We advocate for their rights and inclusion by:
+                    </p>
+                    <ul class="mb-4">
+                        <li>Raising awareness through public forums, conferences, and workshops</li>
+                        <li>Issuing press releases and engaging in strategic litigation</li>
+                        <li>Organizing capacity-building trainings on rights and civic participation</li>
+                    </ul>
+                    <p>
+                        Our goal is to ensure that marginalized voices are heard, respected, and empowered in decision-making spaces.
+                    </p>
+                </div>
+            </div>
         </div>
     </section>
 

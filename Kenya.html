@@ -1,0 +1,1132 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kenyan Branch | Importance Leadership - Empowering African Leaders</title>
+    <meta name="description" content="Importance Leadership Kenyan branch programs, events and impact. Developing ethical leaders across Kenya through mentorship, training and community engagement.">
+    <meta name="keywords" content="leadership Kenya, Nairobi leadership, Kenyan leaders, leadership training Kenya, mentorship Kenya">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://www.importanceleadership.org/kenya">
+    
+    <!-- Favicon -->
+    <link rel="icon" href="../image/logo.jpg" type="image/x-icon">
+    
+    <!-- Open Graph / Social Media Meta Tags -->
+    <meta property="og:title" content="Kenyan Branch | Importance Leadership">
+    <meta property="og:description" content="Importance Leadership Kenyan branch programs, events and impact">
+    <meta property="og:image" content="https://www.importanceleadership.org/image/kenya-leadership.jpg">
+    <meta property="og:url" content="https://www.importanceleadership.org/kenya">
+    <meta property="og:type" content="website">
+    
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Kenyan Branch | Importance Leadership">
+    <meta name="twitter:description" content="Importance Leadership Kenyan branch programs, events and impact">
+    <meta name="twitter:image" content="https://www.importanceleadership.org/image/kenya-leadership.jpg">
+    
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Animate On Scroll (AOS) -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary: #0b1f3a;      /* Dark blue */
+            --primary-light: #1a365d;
+            --secondary: #f5a623;    /* Gold accent */
+            --secondary-light: #f8b84a;
+            --accent: #7cade9;      /* Light blue */
+            --light: #f8f9fa;       /* Light background */
+            --dark: #212529;        /* Dark text */
+            --text-light: #ffffff;
+            --text-dark: #343a40;
+            --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            overflow-x: hidden;
+            color: var(--text-dark);
+            line-height: 1.7;
+            scroll-behavior: smooth;
+        }
+        
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+            color: var(--primary);
+            line-height: 1.3;
+        }
+        
+        /* Header styles */
+        .navbar {
+            transition: var(--transition);
+            padding: 1.5rem 0;
+            background-color: rgba(11, 31, 58, 0.95);
+            backdrop-filter: blur(10px);
+        }
+        
+        .navbar.scrolled {
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.15);
+            padding: 0.8rem 0;
+        }
+        
+        .nav-link {
+            font-weight: 500;
+            padding: 0.5rem 1rem;
+            position: relative;
+            color: rgba(255,255,255,0.9);
+        }
+        
+        .nav-link:hover,
+        .nav-link.active {
+            color: white;
+        }
+        
+        /* Hero section */
+        .hero-section {
+            min-height: 80vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+            background: linear-gradient(135deg, rgba(11, 31, 58, 0.95) 0%, rgba(11, 31, 58, 0.85) 100%), url('image/kenya-hero.jpg') no-repeat center center/cover;
+            color: white;
+            padding-top: 120px;
+        }
+        
+        .hero-title {
+            font-size: 3.5rem;
+            line-height: 1.2;
+            margin-bottom: 1.5rem;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        .hero-subtitle {
+            font-size: 1.25rem;
+            opacity: 0.9;
+            margin-bottom: 2rem;
+        }
+        
+        /* Section styling */
+        .section {
+            padding: 6rem 0;
+            position: relative;
+        }
+        
+        .section-title {
+            position: relative;
+            margin-bottom: 3.5rem;
+            text-align: center;
+        }
+        
+        .section-title:after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 4px;
+            background: var(--secondary);
+            margin: 1.5rem auto 0;
+        }
+        
+        /* Cards */
+        .event-card {
+            border: none;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 15px 30px rgba(11, 31, 58, 0.1);
+            transition: var(--transition);
+            height: 100%;
+            background-color: white;
+        }
+        
+        .event-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(11, 31, 58, 0.15);
+        }
+        
+        .event-card .card-img-top {
+            height: 220px;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .event-card:hover .card-img-top {
+            transform: scale(1.05);
+        }
+        
+        .event-date {
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            background-color: var(--secondary);
+            color: var(--primary);
+            font-weight: 600;
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
+            font-size: 0.9rem;
+            z-index: 2;
+        }
+        
+        /* Impact numbers */
+        .impact-number {
+            font-size: 3.5rem;
+            font-weight: 700;
+            color: var(--primary);
+            position: relative;
+            display: inline-block;
+            line-height: 1;
+        }
+        
+        .impact-number::after {
+            content: '+';
+            position: absolute;
+            right: -20px;
+            top: 0;
+            color: var(--secondary);
+        }
+        
+        /* Timeline */
+        .timeline {
+            position: relative;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .timeline::after {
+            content: '';
+            position: absolute;
+            width: 6px;
+            background-color: var(--secondary);
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            margin-left: -3px;
+        }
+        
+        .timeline-item {
+            padding: 10px 40px;
+            position: relative;
+            width: 50%;
+            box-sizing: border-box;
+        }
+        
+        .timeline-item::after {
+            content: '';
+            position: absolute;
+            width: 25px;
+            height: 25px;
+            right: -12px;
+            background-color: white;
+            border: 4px solid var(--secondary);
+            top: 15px;
+            border-radius: 50%;
+            z-index: 1;
+        }
+        
+        .left {
+            left: 0;
+        }
+        
+        .right {
+            left: 50%;
+        }
+        
+        .left::before {
+            content: " ";
+            height: 0;
+            position: absolute;
+            top: 22px;
+            width: 0;
+            z-index: 1;
+            right: 30px;
+            border: medium solid var(--light);
+            border-width: 10px 0 10px 10px;
+            border-color: transparent transparent transparent white;
+        }
+        
+        .right::before {
+            content: " ";
+            height: 0;
+            position: absolute;
+            top: 22px;
+            width: 0;
+            z-index: 1;
+            left: 30px;
+            border: medium solid var(--light);
+            border-width: 10px 10px 10px 0;
+            border-color: transparent white transparent transparent;
+        }
+        
+        .right::after {
+            left: -12px;
+        }
+        
+        .timeline-content {
+            padding: 20px 30px;
+            background-color: white;
+            position: relative;
+            border-radius: 6px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+        
+        /* Buttons */
+        .btn {
+            font-weight: 600;
+            padding: 0.75rem 1.75rem;
+            border-radius: 50px;
+            transition: var(--transition);
+            border-width: 3px;
+        }
+        
+        .btn-primary {
+            background-color: var(--primary);
+            border-color: var(--primary);
+            color: white;
+        }
+        
+        .btn-primary:hover {
+            background-color: var(--primary-light);
+            border-color: var(--primary-light);
+            color: white;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(11, 31, 58, 0.2);
+        }
+        
+        .btn-outline-primary {
+            color: var(--primary);
+            border-color: var(--primary);
+        }
+        
+        .btn-outline-primary:hover {
+            background-color: var(--primary);
+            border-color: var(--primary);
+            color: white;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(11, 31, 58, 0.2);
+        }
+        
+        .btn-accent {
+            background-color: var(--secondary);
+            border-color: var(--secondary);
+            color: var(--primary);
+            font-weight: 700;
+        }
+        
+        .btn-accent:hover {
+            background-color: var(--secondary-light);
+            border-color: var(--secondary-light);
+            color: var(--primary);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(245, 166, 35, 0.3);
+        }
+        
+        /* Testimonials */
+        .testimonial-card {
+            background: white;
+            border-radius: 16px;
+            padding: 2.5rem;
+            box-shadow: 0 15px 30px rgba(11, 31, 58, 0.1);
+            position: relative;
+            height: 100%;
+        }
+        
+        .testimonial-card:before {
+            content: '\201C';
+            position: absolute;
+            top: 30px;
+            left: 30px;
+            font-size: 5rem;
+            color: rgba(11, 31, 58, 0.05);
+            font-family: Georgia, serif;
+            line-height: 1;
+        }
+        
+        .testimonial-img {
+            width: 90px;
+            height: 90px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid var(--secondary);
+            margin: 0 auto 1.5rem;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+        
+        .testimonial-rating {
+            color: var(--secondary);
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+        }
+        
+        /* Footer */
+        .footer {
+            background-color: var(--primary);
+            color: white;
+            padding: 5rem 0 2rem;
+            position: relative;
+        }
+        
+        .footer:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100px;
+            background: linear-gradient(to bottom, rgba(11, 31, 58, 0) 0%, var(--primary) 100%);
+            transform: translateY(-100%);
+        }
+        
+        .footer-logo {
+            width: 200px;
+            margin-bottom: 1.5rem;
+            filter: brightness(0) invert(1);
+        }
+        
+        .footer-links h5 {
+            color: white;
+            margin-bottom: 1.5rem;
+            position: relative;
+            padding-bottom: 0.75rem;
+        }
+        
+        .footer-links h5:after {
+            content: '';
+            position: absolute;
+            width: 50px;
+            height: 3px;
+            bottom: 0;
+            left: 0;
+            background-color: var(--secondary);
+        }
+        
+        .footer-links ul {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .footer-links li {
+            margin-bottom: 0.75rem;
+        }
+        
+        .footer-links a {
+            color: rgba(255,255,255,0.7);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        .footer-links a:hover {
+            color: white;
+            padding-left: 5px;
+        }
+        
+        .social-links a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 42px;
+            height: 42px;
+            background-color: rgba(255,255,255,0.1);
+            border-radius: 50%;
+            color: white;
+            margin-right: 0.75rem;
+            transition: var(--transition);
+        }
+        
+        .social-links a:hover {
+            background-color: var(--secondary);
+            color: var(--primary);
+            transform: translateY(-3px);
+        }
+        
+        /* Back to top button */
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            background-color: var(--primary);
+            color: var(--secondary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.25rem;
+            cursor: pointer;
+            opacity: 0;
+            visibility: hidden;
+            transition: var(--transition);
+            z-index: 999;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+        
+        .back-to-top.active {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .back-to-top:hover {
+            transform: translateY(-3px) scale(1.1);
+        }
+        
+        /* Responsive adjustments */
+        @media (max-width: 1199px) {
+            .hero-title {
+                font-size: 3rem;
+            }
+        }
+        
+        @media (max-width: 991px) {
+            .hero-title {
+                font-size: 2.5rem;
+            }
+            
+            .section {
+                padding: 5rem 0;
+            }
+            
+            .timeline::after {
+                left: 31px;
+            }
+            
+            .timeline-item {
+                width: 100%;
+                padding-left: 70px;
+                padding-right: 25px;
+            }
+            
+            .timeline-item::before {
+                left: 60px;
+                border: medium solid white;
+                border-width: 10px 10px 10px 0;
+                border-color: transparent white transparent transparent;
+            }
+            
+            .left::after, .right::after {
+                left: 18px;
+            }
+            
+            .right {
+                left: 0%;
+            }
+        }
+        
+        @media (max-width: 767px) {
+            .hero-title {
+                font-size: 2.2rem;
+            }
+            
+            .hero-subtitle {
+                font-size: 1.1rem;
+            }
+            
+            .section {
+                padding: 4rem 0;
+            }
+            
+            .impact-number {
+                font-size: 2.5rem;
+            }
+            
+            .event-card .card-img-top {
+                height: 180px;
+            }
+        }
+        
+        @media (max-width: 575px) {
+            .hero-title {
+                font-size: 2rem;
+            }
+            
+            .section-title {
+                margin-bottom: 2.5rem;
+            }
+            
+            .btn {
+                padding: 0.6rem 1.5rem;
+            }
+        }
+        
+        /* Kenyan flag colors */
+        .kenya-flag {
+            position: relative;
+            height: 4px;
+            background: linear-gradient(to right, 
+                #000 0%, #000 20%, 
+                #fff 20%, #fff 40%, 
+                #060 40%, #060 60%, 
+                #fff 60%, #fff 80%, 
+                #c00 80%, #c00 100%);
+            margin: 1rem 0;
+        }
+        
+        .kenya-flag::before {
+            content: '';
+            position: absolute;
+            top: -8px;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(to right, 
+                #000 0%, #000 20%, 
+                #fff 20%, #fff 40%, 
+                #060 40%, #060 60%, 
+                #fff 60%, #fff 80%, 
+                #c00 80%, #c00 100%);
+        }
+        
+        .kenya-flag::after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(to right, 
+                #000 0%, #000 20%, 
+                #fff 20%, #fff 40%, 
+                #060 40%, #060 60%, 
+                #fff 60%, #fff 80%, 
+                #c00 80%, #c00 100%);
+        }
+    </style>
+</head>
+<body>
+
+
+    <!-- Header -->
+    <header id="header-container"></header>
+    <script src="loadHeader.js"></script>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="container position-relative z-index-1">
+            <div class="row align-items-center">
+                <div class="col-lg-8" data-aos="fade-right" data-aos-duration="800">
+                    <div class="kenya-flag mb-3"></div>
+                    <h1 class="hero-title fw-bold text-white mb-4">Importance Leadership Kenya</h1>
+                    <p class="hero-subtitle text-white mb-5">Developing ethical, visionary leaders who drive positive change across Kenya through mentorship, education, and community engagement.</p>
+                    <div class="d-flex flex-wrap gap-3">
+                        <a href="#programs" class="btn btn-accent btn-lg">Our Programs</a>
+                        <a href="#events" class="btn btn-outline-light btn-lg">Past Events</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Kenya Stats -->
+    <section class="py-5 py-lg-6 bg-light">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-md-4" data-aos="fade-up">
+                    <div class="stat-item h-100">
+                        <div class="stat-number text-primary mb-2" data-count="1200">0</div>
+                        <h3 class="h5 mb-1">Kenyan Leaders Trained</h3>
+                        <p class="text-muted mb-0">Across 15 counties since 2020</p>
+                        <ul class="mt-3 ps-3 small text-muted"></ul>
+                            <li>Back-to-School Programs</li>
+                            <li>Leadership Conference</li>
+                            <li>Emotional Intelligence Conference</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+                    <div class="stat-item h-100">
+                        <div class="stat-number text-primary mb-2" data-count="42">0</div>
+                        <h3 class="h5 mb-1">Community Projects</h3>
+                        <p class="text-muted mb-0">Implemented by our alumni</p>
+                        <ul class="mt-3 ps-3 small text-muted">
+                            <li>Scholarship Mapping</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+                    <div class="stat-item h-100">
+                        <div class="stat-number text-primary mb-2" data-count="78">0</div>
+                        <h3 class="h5 mb-1">Partner Organizations</h3>
+                        <p class="text-muted mb-0">Collaborating with us in Kenya</p>
+                        <ul class="mt-3 ps-3 small text-muted">
+                            <li>Advocacy (Eastern Congo Crisis)</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Kenya Branch -->
+    <section id="about" class="py-5 py-lg-6">
+        <div class="container">
+            <div class="row g-5 align-items-center">
+                <div class="col-lg-6" data-aos="fade-right">
+                    <h2 class="section-title">Our Kenyan Journey</h2>
+                    <p class="lead">Since launching our Kenyan operations in 2020, we've been committed to developing leaders who can address the unique challenges and opportunities facing Kenya today.</p>
+                    <p>Our programs are tailored to the Kenyan context, focusing on:</p>
+                    <ul class="list-unstyled mb-4">
+                        <li class="mb-3"><i class="fas fa-check-circle text-secondary me-2"></i> Ethical leadership in public service</li>
+                        <li class="mb-3"><i class="fas fa-check-circle text-secondary me-2"></i> Youth empowerment and employment</li>
+                        <li class="mb-3"><i class="fas fa-check-circle text-secondary me-2"></i> Community-driven development</li>
+                        <li class="mb-3"><i class="fas fa-check-circle text-secondary me-2"></i> Gender equality in leadership</li>
+                        <li class="mb-3"><i class="fas fa-check-circle text-secondary me-2"></i> Sustainable business practices</li>
+                    </ul>
+                    <a href="#contact" class="btn btn-primary">Get Involved</a>
+                </div>
+                <div class="col-lg-6" data-aos="fade-left">
+                    <div class="card border-0 shadow-sm h-100">
+                        <img src="image/kenya-team.jpg" alt="Importance Leadership Kenya team" class="card-img-top" loading="lazy">
+                        <div class="card-body">
+                            <h3 class="h5 fw-bold">Our Nairobi Headquarters</h3>
+                            <p>Located in the heart of Nairobi, our Kenyan office serves as the hub for all our East African operations, with satellite programs in Mombasa, Kisumu, and Nakuru.</p>
+                            <div class="d-flex align-items-center mt-3">
+                                <i class="fas fa-map-marker-alt text-secondary me-2"></i>
+                                <span>Pioneer House, 4th Floor, Kimathi Street, Nairobi</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Current Programs -->
+    <section id="programs" class="py-5 py-lg-6 bg-light">
+        <div class="container">
+            <h2 class="section-title">Our Kenyan Programs</h2>
+            <p class="lead text-center mb-5 mx-auto" style="max-width: 800px;">We offer a range of leadership development programs tailored for Kenyan professionals, students, and community leaders.</p>
+            
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-4" data-aos="fade-up">
+                    <div class="event-card">
+                        <div class="position-relative">
+                            <span class="event-date">Ongoing</span>
+                            <img src="image/youth-leadership.jpg" class="card-img-top" alt="Youth Leadership Program" loading="lazy">
+                        </div>
+                        <div class="card-body">
+                            <h3 class="h4 mb-3">Youth Leadership Initiative</h3>
+                            <p class="text-muted mb-4">6-month program for Kenyans aged 18-25 focusing on personal leadership development and community impact.</p>
+                            <a href="#" class="btn btn-outline-primary">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="100">
+                    <div class="event-card">
+                        <div class="position-relative">
+                            <span class="event-date">Quarterly</span>
+                            <img src="image/women-leadership.jpg" class="card-img-top" alt="Women in Leadership" loading="lazy">
+                        </div>
+                        <div class="card-body">
+                            <h3 class="h4 mb-3">Women in Leadership Forum</h3>
+                            <p class="text-muted mb-4">Empowering Kenyan women leaders through mentorship, skills training, and networking opportunities.</p>
+                            <a href="#" class="btn btn-outline-primary">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="200">
+                    <div class="event-card">
+                        <div class="position-relative">
+                            <span class="event-date">Annual</span>
+                            <img src="image/civic-leadership.jpg" class="card-img-top" alt="Civic Leadership Program" loading="lazy">
+                        </div>
+                        <div class="card-body">
+                            <h3 class="h4 mb-3">Civic Leadership Program</h3>
+                            <p class="text-muted mb-4">Year-long intensive for emerging leaders in public service and community organizations.</p>
+                            <a href="#" class="btn btn-outline-primary">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Past Events Timeline -->
+    <section id="events" class="py-5 py-lg-6">
+        <div class="container">
+            <h2 class="section-title">Our Kenyan Events Timeline</h2>
+            <p class="lead text-center mb-5 mx-auto" style="max-width: 800px;">Highlights of our key events and milestones in Kenya since 2020.</p>
+            
+            <div class="timeline">
+                <div class="timeline-item left" data-aos="fade-right">
+                    <div class="timeline-content">
+                        <h3>2024 Leadership Summit</h3>
+                        <p class="text-muted mb-2">March 15-17, 2024 | Nairobi</p>
+                        <p>Our largest gathering yet with 300+ leaders from across Kenya discussing "Ethical Leadership for Sustainable Development".</p>
+                        <img src="image/summit-2024.jpg" class="img-fluid rounded mt-3" alt="2024 Summit" loading="lazy">
+                    </div>
+                </div>
+                
+                <div class="timeline-item right" data-aos="fade-left" data-aos-delay="100">
+                    <div class="timeline-content">
+                        <h3>Coastal Leadership Forum</h3>
+                        <p class="text-muted mb-2">November 2023 | Mombasa</p>
+                        <p>First regional forum focusing on leadership challenges unique to Kenya's coastal region, with special focus on tourism and blue economy.</p>
+                        <img src="image/mombasa-forum.jpg" class="img-fluid rounded mt-3" alt="Mombasa Forum" loading="lazy">
+                    </div>
+                </div>
+                
+                <div class="timeline-item left" data-aos="fade-right" data-aos-delay="200">
+                    <div class="timeline-content">
+                        <h3>Youth Innovation Challenge</h3>
+                        <p class="text-muted mb-2">August 2023 | Nationwide</p>
+                        <p>Competition for young Kenyan entrepreneurs with 50 finalists receiving mentorship and seed funding.</p>
+                        <img src="image/youth-challenge.jpg" class="img-fluid rounded mt-3" alt="Youth Challenge" loading="lazy">
+                    </div>
+                </div>
+                
+                <div class="timeline-item right" data-aos="fade-left" data-aos-delay="300">
+                    <div class="timeline-content">
+                        <h3>Women Leaders Conference</h3>
+                        <p class="text-muted mb-2">March 2023 | Nairobi</p>
+                        <p>Annual gathering of 150 women leaders from politics, business and civil society to share experiences and strategies.</p>
+                        <img src="image/women-conference.jpg" class="img-fluid rounded mt-3" alt="Women Conference" loading="lazy">
+                    </div>
+                </div>
+                
+                <div class="timeline-item left" data-aos="fade-right" data-aos-delay="400">
+                    <div class="timeline-content">
+                        <h3>County Leadership Program</h3>
+                        <p class="text-muted mb-2">2022-2023 | 5 Counties</p>
+                        <p>Expanded our reach to county governments with specialized training for local administrators and officials.</p>
+                        <img src="image/county-program.jpg" class="img-fluid rounded mt-3" alt="County Program" loading="lazy">
+                    </div>
+                </div>
+                
+                <div class="timeline-item right" data-aos="fade-left" data-aos-delay="500">
+                    <div class="timeline-content">
+                        <h3>Kenya Launch Event</h3>
+                        <p class="text-muted mb-2">June 2020 | Nairobi</p>
+                        <p>Official launch of Importance Leadership Kenya with keynote by prominent Kenyan leaders.</p>
+                        <img src="image/kenya-launch.jpg" class="img-fluid rounded mt-3" alt="Kenya Launch" loading="lazy">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Success Stories -->
+    <section class="py-5 py-lg-6 bg-primary text-white">
+        <div class="container">
+            <h2 class="section-title text-white">Kenyan Success Stories</h2>
+            <p class="lead text-center mb-5 mx-auto" style="max-width: 800px;">Hear from some of our Kenyan program alumni making an impact.</p>
+            
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-4" data-aos="fade-up">
+                    <div class="testimonial-card">
+                        <img src="image/alumni-1.jpg" class="testimonial-img" alt="Grace Mwangi" loading="lazy">
+                        <div class="testimonial-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <blockquote class="mb-4">
+                            "The Women in Leadership program transformed my confidence and equipped me with skills to grow my business while mentoring other women."
+                        </blockquote>
+                        <h4 class="h5 mb-1">Grace Mwangi</h4>
+                        <p class="text-muted">Founder, Green Farms Kenya</p>
+                    </div>
+                </div>
+                
+                <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="100">
+                    <div class="testimonial-card">
+                        <img src="image/alumni-2.jpg" class="testimonial-img" alt="James Omondi" loading="lazy">
+                        <div class="testimonial-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <blockquote class="mb-4">
+                            "As a county official, the Civic Leadership Program helped me implement more transparent and effective community projects."
+                        </blockquote>
+                        <h4 class="h5 mb-1">James Omondi</h4>
+                        <p class="text-muted">County Executive, Kisumu</p>
+                    </div>
+                </div>
+                
+                <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="200">
+                    <div class="testimonial-card">
+                        <img src="image/alumni-3.jpg" class="testimonial-img" alt="Amina Hassan" loading="lazy">
+                        <div class="testimonial-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                        </div>
+                        <blockquote class="mb-4">
+                            "The Youth Initiative connected me with mentors and gave me courage to start my social enterprise addressing plastic waste."
+                        </blockquote>
+                        <h4 class="h5 mb-1">Amina Hassan</h4>
+                        <p class="text-muted">CEO, Eco-Taka Solutions</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Get Involved -->
+    <section id="contact" class="py-5 py-lg-6">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-8 text-center" data-aos="zoom-in">
+                    <h2 class="section-title">Get Involved in Kenya</h2>
+                    <p class="lead mb-5">Join our growing network of Kenyan leaders driving positive change.</p>
+                    
+                    <div class="row g-4">
+                        <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+                            <div class="p-4 h-100">
+                                <div class="feature-icon mb-4">
+                                    <i class="fas fa-user-graduate"></i>
+                                </div>
+                                <h3 class="h4 mb-3">Apply for Programs</h3>
+                                <p class="text-muted mb-0">Join one of our leadership development programs</p>
+                                <a href="program_signup.php" class="btn btn-primary mt-3">Apply Now</a>
+                            </div>
+                        </div>
+                        
+                        <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+                            <div class="p-4 h-100">
+                                <div class="feature-icon mb-4">
+                                    <i class="fas fa-hands-helping"></i>
+                                </div>
+                                <h3 class="h4 mb-3">Become a Mentor</h3>
+                                <p class="text-muted mb-0">Share your experience with emerging leaders</p>
+                                <a href="mentorshipProgram.html" class="btn btn-primary mt-3">Volunteer</a>
+                            </div>
+                        </div>
+                        
+                        <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
+                            <div class="p-4 h-100">
+                                <div class="feature-icon mb-4">
+                                    <i class="fas fa-handshake"></i>
+                                </div>
+                                <h3 class="h4 mb-3">Partner With Us</h3>
+                                <p class="text-muted mb-0">Collaborate on leadership initiatives</p>
+                                <a href="partnerships.html" class="btn btn-primary mt-3">Contact Us</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+   
+    <!-- Contact Kenya -->
+    <section class="py-5 py-lg-6">
+        <div class="container">
+            <div class="row g-5 align-items-center">
+                <div class="col-lg-6" data-aos="fade-right">
+                    <h2 class="section-title">Contact Our Kenya Office</h2>
+                    <p class="lead">We'd love to hear from you and explore how we can work together to develop Kenya's next generation of leaders.</p>
+                    
+                    <div class="mt-5">
+                        
+                        
+                        <div class="d-flex align-items-start mb-4">
+                            <i class="fas fa-phone-alt text-secondary mt-1 me-3 fs-5"></i>
+                            <div>
+                                <h4 class="h5 mb-1">Call Us</h4>
+                                <p class="mb-0">+254 792 732 177<br>Mon-Fri, 8:00 AM - 5:00 PM</p>
+                            </div>
+                        </div>
+                        
+                        <div class="d-flex align-items-start mb-4">
+                            <i class="fas fa-envelope text-secondary mt-1 me-3 fs-5"></i>
+                            <div>
+                                <h4 class="h5 mb-1">Email Us</h4>
+                                <p class="mb-0">kenya@importanceleadership.com</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-6" data-aos="fade-left">
+                    <div class="card border-0 shadow-sm">
+                        <div class="card-body p-4 p-lg-5">
+                            <h3 class="h4 fw-bold mb-4">Send Us a Message</h3>
+                            <form>
+                                <div class="row g-3">
+                                    <div class="col-md-6">
+                                        <label for="name" class="form-label">Your Name</label>
+                                        <input type="text" class="form-control" id="name" required>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label for="email" class="form-label">Email Address</label>
+                                        <input type="email" class="form-control" id="email" required>
+                                    </div>
+                                    <div class="col-12">
+                                        <label for="subject" class="form-label">Subject</label>
+                                        <input type="text" class="form-control" id="subject" required>
+                                    </div>
+                                    <div class="col-12">
+                                        <label for="message" class="form-label">Message</label>
+                                        <textarea class="form-control" id="message" rows="4" required></textarea>
+                                    </div>
+                                    <div class="col-12 mt-4">
+                                        <button type="submit" class="btn btn-primary w-100">Send Message</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-lg-4">
+                    <img src="image/website-logo.png" alt="Importance Leadership Logo" class="footer-logo" loading="lazy">
+                    <p class="mb-4">Developing ethical, visionary leaders who drive positive change in Africa and beyond through mentorship, education, and community engagement.</p>
+                    <div class="social-links mb-4">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                
+                <div class="col-lg-2 col-md-4">
+                    <div class="footer-links">
+                        <h5>Navigation</h5>
+                        <ul>
+                            <li><a href="index.html">Home</a></li>
+                            <li><a href="about.html">About Us</a></li>
+                            <li><a href="programs.html">Programs</a></li>
+                            <li><a href="impact.html">Impact</a></li>
+                            <li><a href="#">Blog</a></li>
+                            <li><a href="contact-us.html">Contact</a></li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="col-lg-3 col-md-4">
+                    <div class="footer-links">
+                        <h5>Kenya Programs</h5>
+                        <ul>
+                            <li><a href="#">Youth Leadership</a></li>
+                            <li><a href="#">Women in Leadership</a></li>
+                            <li><a href="#">Civic Leadership</a></li>
+                            <li><a href="#">Corporate Training</a></li>
+                            <li><a href="#">Community Projects</a></li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="col-lg-3 col-md-4">
+                    <div class="footer-links">
+                        <h5>Contact Kenya</h5>
+                        <ul>
+                            <li><i class="fas fa-map-marker-alt me-2 text-secondary"></i> Pioneer House, Nairobi</li>
+                            <li><i class="fas fa-phone me-2 text-secondary"></i> +254 792 732 177</li>
+                            <li><i class="fas fa-envelope me-2 text-secondary"></i> kenya@importanceleadership.com</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <hr class="my-4 bg-secondary opacity-25">
+            
+            <div class="row">
+                <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+                    <p class="mb-0 small">&copy; 2025 Importance Leadership Kenya. All rights reserved.</p>
+                </div>
+                <div class="col-md-6 text-center text-md-end">
+                    <a href="#" class="text-white text-decoration-none small me-3">Privacy Policy</a>
+                    <a href="#" class="text-white text-decoration-none small me-3">Terms of Service</a>
+                    <a href="#" class="text-white text-decoration-none small">Cookie Policy</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- Back to top button -->
+    <button class="back-to-top btn btn-primary rounded-circle p-3" id="backToTop" aria-label="Back to top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- Scripts -->
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- AOS Animation -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    
+    <!-- Custom JS -->
+    <script>
+        // Initialize AOS animation
+        document.addEventListener('DOMContentLoaded', function() {
+            if (typeof AOS !== 'undefined') {
+                AOS.init({
+                    duration: 800,
+                    easing: 'ease-in-out',
+                    once: true,
+                    mirror: false
+                });
+            }
+            
+            // Back to top button
+            const backToTop = document.getElementById('backToTop');
+            window.addEventListener('scroll', function() {
+                if (window.scrollY > 300) {
+                    backToTop.style.display = 'flex';
+                } else {
+                    backToTop.style.display = 'none';
+                }
+            });
+            backToTop.addEventListener('click', function() {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            });
+
+            // Animated stats counter
+            const statNumbers = document.querySelectorAll('.stat-number');
+            let statsAnimated = false;
+            function animateStats() {
+                if (statsAnimated) return;
+                const statsSection = document.querySelector('.stat-number');
+                if (!statsSection) return;
+                const rect = statsSection.getBoundingClientRect();
+                if (rect.top < window.innerHeight) {
+                    statNumbers.forEach(function(stat) {
+                        const target = +stat.getAttribute('data-count');
+                        let count = 0;
+                        const increment = target > 100 ? Math.ceil(target / 50) : 1;
+                        const interval = setInterval(function() {
+                            count += increment;
+                            if (count >= target) {
+                                stat.textContent = target;
+                                clearInterval(interval);
+                            } else {
+                                stat.textContent = count;
+                            }
+                        }, 20);
+                    });
+                    statsAnimated = true;
+                }
+            }
+            window.addEventListener('scroll', animateStats);
+            animateStats();
+        });
+    </script>
+</body>
+</html>

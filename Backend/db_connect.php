@@ -1,5 +1,11 @@
 <?php
 
+// Define your database connection constants
+define('DB_HOST', 'localhost'); 
+define('DB_NAME', 'importanceleadership'); 
+define('DB_USER', 'root'); 
+define('DB_PASS', 'secret'); 
+
 // Create a PDO instance to handle the database connection
 try {
     $pdo = new PDO(
