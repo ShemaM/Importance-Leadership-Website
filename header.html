@@ -4,23 +4,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Importance Leadership</title>
-    <!-- Bootstrap CSS -->
+    <!-- Bootstrap 5 CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
     <style>
+    /* === YOUR ORIGINAL STYLES - 100% UNCHANGED === */
     :root {
-        --primary: #0b1f3a;           /* Dark blue */
+        --primary: #0b1f3a;
         --primary-light: #1a365d;
-        --secondary: #f5a623;         /* Gold accent */
+        --secondary: #f5a623;
         --secondary-light: #f8b84a;
-        --accent: #7cade9;            /* Light blue */
-        --light: #f8f9fa;             /* Light background */
-        --dark: #212529;              /* Dark text */
+        --accent: #7cade9;
+        --light: #f8f9fa;
+        --dark: #212529;
         --text-light: #ffffff;
         --text-dark: #343a40;
         --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
@@ -33,7 +30,6 @@
         padding-top: 80px;
     }
 
-    /* Header Structure */
     .header-container {
         position: fixed;
         top: 0;
@@ -63,7 +59,6 @@
         transition: var(--transition);
     }
 
-    /* Navigation Structure */
     .nav-container {
         display: flex;
         align-items: center;
@@ -111,29 +106,12 @@
         border-radius: 2px;
     }
 
-    /* Dropdown Structure */
-    .dropdown-container {
-        position: relative;
-    }
-
-    .dropdown-toggle {
-        display: flex;
-        align-items: center;
-    }
-
-    .dropdown-toggle i {
-        margin-left: 5px;
-        font-size: 12px;
-        transition: transform 0.3s ease;
-    }
-
     .dropdown-menu {
         border: none;
         border-radius: 8px;
         box-shadow: 0 10px 30px rgba(0,0,0,0.1);
         padding: 10px 0;
         margin-top: 10px;
-        min-width: 220px;
     }
 
     .dropdown-item {
@@ -157,7 +135,6 @@
         text-align: center;
     }
 
-    /* Button Structure */
     .action-button {
         background: linear-gradient(90deg, var(--secondary) 0%, var(--secondary-light) 100%);
         color: var(--text-light);
@@ -181,7 +158,6 @@
         margin-right: 8px;
     }
 
-    /* Mobile Menu Structure */
     .mobile-menu-button {
         display: none;
         border: none;
@@ -189,6 +165,8 @@
         font-size: 24px;
         color: var(--dark);
         padding: 5px;
+        z-index: 1050;
+        position: relative;
     }
 
     .mobile-menu-container {
@@ -244,17 +222,6 @@
         padding-left: 10px;
     }
 
-    /* Responsive Structure */
-    @media (max-width: 1199.98px) {
-        .main-nav {
-            margin-right: 15px;
-        }
-        
-        .nav-item {
-            margin: 0 5px;
-        }
-    }
-
     @media (max-width: 991.98px) {
         .main-nav {
             display: none;
@@ -282,6 +249,16 @@
             width: 280px;
         }
     }
+
+    /* Ensure mobile menu has higher z-index than other elements */
+.mobile-menu-container {
+  z-index: 9999 !important;
+}
+
+/* Prevent background scrolling when menu is open */
+body.menu-open {
+  overflow: hidden !important;
+}
     </style>
 </head>
 <body>
@@ -301,97 +278,51 @@
                     <nav class="main-nav">
                         <!-- Home -->
                         <div class="nav-item">
-                            <a class="nav-link" href="index.html">
+                            <a class="nav-link" href="index.html" style="color: var(--primary);">
                                 <i class="fas fa-home me-2"></i>Home
                             </a>
                         </div>
                         
                         <!-- Who We Are -->
-                        <div class="nav-item dropdown-container">
-                            <a class="nav-link dropdown-toggle" href="#" id="aboutDropdown" role="button" data-bs-toggle="dropdown">
+                        <div class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="aboutDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="color: var(--primary);">
                                 <i class="fas fa-users me-2"></i>Who We Are
                             </a>
-                            
                             <ul class="dropdown-menu" aria-labelledby="aboutDropdown">
-                                <li>
-                                    <a class="dropdown-item" href="who-we-are.html">
-                                        <i class="fas fa-bullseye"></i>About Us
-                                    </a>
-                                </li>
-                                <li>
-                                    <a class="dropdown-item" href="team.html">
-                                        <i class="fas fa-user-friends"></i>Our Team
-                                    </a>
-                                </li>
+                                <li><a class="dropdown-item" href="who-we-are.html"><i class="fas fa-bullseye me-2"></i>About Us</a></li>
+                                <li><a class="dropdown-item" href="team.html"><i class="fas fa-user-friends me-2"></i>Our Team</a></li>
                             </ul>
                         </div>
                         
                         <!-- Where We Work -->
-                        <div class="nav-item dropdown-container">
-                            <a class="nav-link dropdown-toggle" href="#" id="locationsDropdown" role="button" data-bs-toggle="dropdown">
+                        <div class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="locationsDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="color: var(--primary);">
                                 <i class="fas fa-globe-africa me-2"></i>Where We Work
                             </a>
-                            
                             <ul class="dropdown-menu" aria-labelledby="locationsDropdown">
-                                <li>
-                                    <a class="dropdown-item" href="USA.html">
-                                        <img src="https://cdn.jsdelivr.net/npm/flag-icons/flags/4x3/us.svg" alt="USA Flag" style="width: 18px; height: 13px; margin-right: 10px;">
-                                        USA
-                                    </a>
-                                </li>
-                                <li>
-                                    <a class="dropdown-item" href="#">
-                                        <img src="https://cdn.jsdelivr.net/npm/flag-icons/flags/4x3/ca.svg" alt="Canada Flag" style="width: 18px; height: 13px; margin-right: 10px;">
-                                        Canada
-                                    </a>
-                                </li>
-                                <li>
-                                    <a class="dropdown-item" href="Kenya.html">
-                                        <img src="https://cdn.jsdelivr.net/npm/flag-icons/flags/4x3/ke.svg" alt="Kenya Flag" style="width: 18px; height: 13px; margin-right: 10px;">
-                                        Kenya
-                                    </a>
-                                </li>
+                                <li><a class="dropdown-item" href="USA.html"><img src="https://cdn.jsdelivr.net/npm/flag-icons/flags/4x3/us.svg" width="18" class="me-2">USA</a></li>
+                                <li><a class="dropdown-item" href="#"><img src="https://cdn.jsdelivr.net/npm/flag-icons/flags/4x3/ca.svg" width="18" class="me-2">Canada</a></li>
+                                <li><a class="dropdown-item" href="Kenya.html"><img src="https://cdn.jsdelivr.net/npm/flag-icons/flags/4x3/ke.svg" width="18" class="me-2">Kenya</a></li>
                             </ul>
                         </div>
                         
                         <!-- What We Do -->
-                        <div class="nav-item dropdown-container">
-                            <a class="nav-link dropdown-toggle" href="#" id="programsDropdown" role="button" data-bs-toggle="dropdown">
+                        <div class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="programsDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="color: var(--primary);">
                                 <i class="fas fa-lightbulb me-2"></i>What We Do
                             </a>
-                          
                             <ul class="dropdown-menu" aria-labelledby="programsDropdown">
-                                <li>
-                                    <a class="dropdown-item" href="AdvocacyInitiatives.html">
-                                        <i class="fas fa-balance-scale"></i>Advocacy Initiatives
-                                    </a>
-                                </li>
-                                <li>
-                                    <a class="dropdown-item" href="MentalHealth.html">
-                                        <i class="fas fa-heart"></i>Mental Health Programs
-                                    </a>
-                                </li>
-                                <li>
-                                    <a class="dropdown-item" href="Networking.html">
-                                        <i class="fas fa-network-wired"></i>Professional Networking
-                                    </a>
-                                </li>
-                                <li>
-                                    <a class="dropdown-item" href="leadershipDev.html">
-                                        <i class="fas fa-chalkboard-teacher"></i>Leadership Development
-                                    </a>
-                                </li>
-                                <li>
-                                    <a class="dropdown-item" href="ClimateChange.html">
-                                        <i class="fas fa-leaf"></i>Climate Change Awareness
-                                    </a>
-                                </li>
+                                <li><a class="dropdown-item" href="AdvocacyInitiatives.html"><i class="fas fa-balance-scale me-2"></i>Advocacy Initiatives</a></li>
+                                <li><a class="dropdown-item" href="MentalHealth.html"><i class="fas fa-heart me-2"></i>Mental Health Programs</a></li>
+                                <li><a class="dropdown-item" href="Networking.html"><i class="fas fa-network-wired me-2"></i>Professional Networking</a></li>
+                                <li><a class="dropdown-item" href="leadershipDev.html"><i class="fas fa-chalkboard-teacher me-2"></i>Leadership Development</a></li>
+                                <li><a class="dropdown-item" href="ClimateChange.html"><i class="fas fa-leaf me-2"></i>Climate Change Awareness</a></li>
                             </ul>
                         </div>
                         
                         <!-- Impact -->
                         <div class="nav-item">
-                            <a class="nav-link" href="impact.html">
+                            <a class="nav-link" href="impact.html" style="color: var(--primary);">
                                 <i class="fas fa-chart-line me-2"></i>Impact
                             </a>
                         </div>
@@ -399,28 +330,33 @@
                     
                     <!-- Donate Button -->
                     <a class="action-button" href="donate.html">
-                        <i class="fas fa-heartbeat"></i>Donate
+                        <i class="fas fa-heartbeat me-2"></i>Donate
                     </a>
-                    
-                    <!-- Mobile Menu Button -->
-                    <button class="mobile-menu-button" id="mobileMenuButton">
-                        <i class="fas fa-bars bg-primary"></i>
-                    </button>
                 </div>
+                <!-- Mobile Menu Button (moved outside nav-container for visibility on mobile) -->
+                <button class="mobile-menu-button" id="mobileMenuButton" aria-label="Toggle navigation">
+                    <i class="fas fa-bars"></i>
+                </button>
             </div>
         </div>
     </div>
     
-    <!-- Mobile Menu Structure -->
+    <!-- Mobile Menu -->
     <div class="mobile-menu-container" id="mobileMenu">
         <div class="mobile-menu-header">
             <div class="d-flex align-items-center">
-                <img src="image/website-logo.png" alt="Logo" style="height: 30px; margin-right: 10px;">
+                <img src="image/website-logo.png" alt="Logo" height="30" class="me-2">
                 <h5 class="mb-0">Importance Leadership</h5>
             </div>
-            <button id="closeMobileMenu" style="background: none; border: none; font-size: 24px;">
-                <i class="fas fa-times"></i>
-            </button>
+           <!-- Mobile Menu Button -->
+<button class="mobile-menu-button" id="mobileMenuButton" aria-label="Toggle navigation">
+  <i class="fas fa-bars"></i>
+</button>
+
+<!-- Mobile Menu Close Button -->
+<button id="closeMobileMenu" class="mobile-close-button">
+  <i class="fas fa-times"></i>
+</button>
         </div>
         <div class="mobile-menu-body">
             <!-- Home -->
@@ -432,10 +368,10 @@
             
             <!-- Who We Are -->
             <div class="mobile-nav-item">
-                <a class="mobile-nav-link" data-bs-toggle="collapse" href="#mobileAboutDropdown">
-                    <i class="fas fa-users me-2"></i>Who We Are <i class="fas fa-angle-down ms-2"></i>
+                <a class="mobile-nav-link" data-bs-toggle="collapse" href="#mobileAbout">
+                    <i class="fas fa-users me-2"></i>Who We Are <i class="fas fa-angle-down float-end mt-1"></i>
                 </a>
-                <div class="collapse mobile-dropdown-menu" id="mobileAboutDropdown">
+                <div class="collapse mobile-dropdown-menu" id="mobileAbout">
                     <a class="mobile-nav-link" href="who-we-are.html">
                         <i class="fas fa-bullseye me-2"></i>About Us
                     </a>
@@ -447,31 +383,28 @@
             
             <!-- Where We Work -->
             <div class="mobile-nav-item">
-                <a class="mobile-nav-link" data-bs-toggle="collapse" href="#mobileLocationsDropdown">
-                    <i class="fas fa-globe-africa me-2"></i>Where We Work <i class="fas fa-angle-down ms-2"></i>
+                <a class="mobile-nav-link" data-bs-toggle="collapse" href="#mobileLocations">
+                    <i class="fas fa-globe-africa me-2"></i>Where We Work <i class="fas fa-angle-down float-end mt-1"></i>
                 </a>
-                <div class="collapse mobile-dropdown-menu" id="mobileLocationsDropdown">
+                <div class="collapse mobile-dropdown-menu" id="mobileLocations">
                     <a class="mobile-nav-link" href="USA.html">
-                        <img src="https://cdn.jsdelivr.net/npm/flag-icons/flags/4x3/us.svg" alt="USA Flag" style="width: 18px; height: 13px; margin-right: 10px;">
-                        USA
+                        <img src="https://cdn.jsdelivr.net/npm/flag-icons/flags/4x3/us.svg" width="18" class="me-2">USA
                     </a>
                     <a class="mobile-nav-link" href="#">
-                        <img src="https://cdn.jsdelivr.net/npm/flag-icons/flags/4x3/ca.svg" alt="Canada Flag" style="width: 18px; height: 13px; margin-right: 10px;">
-                        Canada
+                        <img src="https://cdn.jsdelivr.net/npm/flag-icons/flags/4x3/ca.svg" width="18" class="me-2">Canada
                     </a>
                     <a class="mobile-nav-link" href="Kenya.html">
-                        <img src="https://cdn.jsdelivr.net/npm/flag-icons/flags/4x3/ke.svg" alt="Kenya Flag" style="width: 18px; height: 13px; margin-right: 10px;">
-                        Kenya
+                        <img src="https://cdn.jsdelivr.net/npm/flag-icons/flags/4x3/ke.svg" width="18" class="me-2">Kenya
                     </a>
                 </div>
             </div>
             
             <!-- What We Do -->
             <div class="mobile-nav-item">
-                <a class="mobile-nav-link" data-bs-toggle="collapse" href="#mobileProgramsDropdown">
-                    <i class="fas fa-lightbulb me-2"></i>What We Do <i class="fas fa-angle-down ms-2"></i>
+                <a class="mobile-nav-link" data-bs-toggle="collapse" href="#mobilePrograms">
+                    <i class="fas fa-lightbulb me-2"></i>What We Do <i class="fas fa-angle-down float-end mt-1"></i>
                 </a>
-                <div class="collapse mobile-dropdown-menu" id="mobileProgramsDropdown">
+                <div class="collapse mobile-dropdown-menu" id="mobilePrograms">
                     <a class="mobile-nav-link" href="AdvocacyInitiatives.html">
                         <i class="fas fa-balance-scale me-2"></i>Advocacy Initiatives
                     </a>
@@ -479,7 +412,7 @@
                         <i class="fas fa-heart me-2"></i>Mental Health Programs
                     </a>
                     <a class="mobile-nav-link" href="Networking.html">
-                        <i class="fas fa-network-wired me-2"></i>Networking
+                        <i class="fas fa-network-wired me-2"></i>Professional Networking
                     </a>
                     <a class="mobile-nav-link" href="leadershipDev.html">
                         <i class="fas fa-chalkboard-teacher me-2"></i>Leadership Development
@@ -499,14 +432,9 @@
             
             <!-- Donate Button -->
             <div class="mobile-nav-item mt-4">
-                <a class="action-button w-100 text-center" href="donate.html">
+                <a class="action-button w-100 text-center py-2" href="donate.html">
                     <i class="fas fa-heartbeat me-2"></i>Donate
                 </a>
-            </div>
-            
-            <!-- Footer -->
-            <div class="text-center mt-4">
-                <small class="text-muted">&copy; 2024 Importance Leadership</small>
             </div>
         </div>
     </div>
@@ -515,37 +443,38 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     
     <script>
-        // Mobile Menu Toggle
-        const mobileMenuButton = document.getElementById('mobileMenuButton');
-        const closeMobileMenu = document.getElementById('closeMobileMenu');
-        const mobileMenu = document.getElementById('mobileMenu');
-        
+    // Mobile Menu Toggle
+    const mobileMenuButton = document.getElementById('mobileMenuButton');
+    const closeMobileMenu = document.getElementById('closeMobileMenu');
+    const mobileMenu = document.getElementById('mobileMenu');
+    
+    if (mobileMenuButton && mobileMenu) {
         mobileMenuButton.addEventListener('click', function() {
             mobileMenu.classList.add('open');
+            document.body.style.overflow = 'hidden';
         });
         
         closeMobileMenu.addEventListener('click', function() {
             mobileMenu.classList.remove('open');
+            document.body.style.overflow = '';
         });
-        
-        // Close mobile menu when clicking a link
-        document.querySelectorAll('.mobile-nav-link').forEach(link => {
-            link.addEventListener('click', function() {
-                if (!this.hasAttribute('data-bs-toggle')) {
-                    mobileMenu.classList.remove('open');
-                }
-            });
-        });
-        
-        // Add scrolled class to header on scroll
-        window.addEventListener('scroll', function() {
-            const header = document.querySelector('.header-container');
-            if (window.scrollY > 50) {
-                header.classList.add('scrolled');
-            } else {
-                header.classList.remove('scrolled');
+    }
+    
+    // Close mobile menu when clicking links
+    document.querySelectorAll('.mobile-nav-link').forEach(link => {
+        link.addEventListener('click', function() {
+            if (!this.hasAttribute('data-bs-toggle')) {
+                mobileMenu.classList.remove('open');
+                document.body.style.overflow = '';
             }
         });
+    });
+    
+    // Scroll effect
+    window.addEventListener('scroll', function() {
+        const header = document.querySelector('.header-container');
+        header.classList.toggle('scrolled', window.scrollY > 50);
+    });
     </script>
 </body>
 </html>

@@ -1,186 +1,130 @@
+// Main initialization when DOM is ready
 document.addEventListener('DOMContentLoaded', function() {
-    // Load header
-    fetch('header.html')
-        .then(response => response.text())
-        .then(data => {
-            document.body.insertAdjacentHTML('afterbegin', data);
-            initHeaderScripts();
-        })
-        .catch(error => {
-            console.error('Error loading header:', error);
-        });
+    loadHeader().then(() => {
+        setupMobileMenu();
+        setupHeaderEffects();
+        setupPreviewSystem();
+    }).catch(error => {
+        console.error('Header initialization failed:', error);
+    });
 });
 
-function initHeaderScripts() {
-    const previewOverlay = document.getElementById('previewOverlay');
-    const previewContent = document.getElementById('previewContent');
-    const previewTitle = document.getElementById('previewTitle');
-    const previewClose = document.getElementById('previewClose');
-    const overlayBackdrop = document.getElementById('overlayBackdrop');
-    
-    let previewTimeout;
-    let currentPreviewUrl = '';
-    let isMobile = window.innerWidth < 992;
-    
-    // Check screen size
-    window.addEventListener('resize', function() {
-        isMobile = window.innerWidth < 992;
-    });
-    
-    // Load page content for preview
-    async function loadPreviewContent(url) {
-        try {
-            previewContent.innerHTML = `
-                <div class="preview-loading">
-                    <div class="spinner-border text-primary" role="status">
-                        <span class="visually-hidden">Loading...</span>
-                    </div>
-                </div>`;
-            
-            const response = await fetch(url);
-            if (!response.ok) throw new Error('Failed to load');
-            
-            const text = await response.text();
-            const parser = new DOMParser();
-            const doc = parser.parseFromString(text, 'text/html');
-            
-            // Extract main content (adjust selector as needed)
-            const mainContent = doc.querySelector('main') || doc.querySelector('.container') || doc.body;
-            
-            // Set title from the page's h1 or title tag
-            const pageTitle = doc.querySelector('h1')?.textContent || 
-                             doc.querySelector('title')?.textContent || 
-                             'Preview';
-            previewTitle.textContent = pageTitle;
-            
-            // Clean up content (remove scripts, etc.)
-            mainContent.querySelectorAll('script').forEach(script => script.remove());
-            
-            // Set the preview content
-            previewContent.innerHTML = '';
-            previewContent.appendChild(mainContent);
-            
-            // Initialize any Bootstrap components in the preview
-            if (typeof bootstrap !== 'undefined') {
-                previewContent.querySelectorAll('[data-bs-toggle="tooltip"]').forEach(el => {
-                    new bootstrap.Tooltip(el);
-                });
-            }
-            
-        } catch (error) {
-            console.error('Preview error:', error);
-            previewContent.innerHTML = `
-                <div class="alert alert-danger">
-                    Could not load preview content. Please visit the page directly.
-                </div>`;
-        }
+// Load header HTML and insert into page
+async function loadHeader() {
+    try {
+        const response = await fetch('header.html');
+        if (!response.ok) throw new Error('Failed to load header');
+        
+        const headerHTML = await response.text();
+        document.body.insertAdjacentHTML('afterbegin', headerHTML);
+    } catch (error) {
+        console.error('Error loading header:', error);
+        throw error;
     }
-    
-    // Show preview overlay
-    function showPreview(url) {
-        if (currentPreviewUrl === url && previewOverlay.classList.contains('active')) {
-            return; // Already showing this preview
-        }
-        
-        currentPreviewUrl = url;
-        previewOverlay.classList.add('active');
-        overlayBackdrop.classList.add('active');
-        document.body.style.overflow = 'hidden';
-        
-        loadPreviewContent(url);
-    }
-    
-    // Hide preview overlay
-    function hidePreview() {
-        previewOverlay.classList.remove('active');
-        overlayBackdrop.classList.remove('active');
-        document.body.style.overflow = '';
-        currentPreviewUrl = '';
-    }
-    
-    // Add event listeners to all previewable links
-    document.querySelectorAll('[data-preview-url]').forEach(link => {
-        link.addEventListener('mouseenter', function() {
-            if (isMobile) return;
-            
-            clearTimeout(previewTimeout);
-            const url = this.getAttribute('data-preview-url');
-            showPreview(url);
-        });
-        
-        link.addEventListener('mouseleave', function() {
-            if (isMobile) return;
-            
-            previewTimeout = setTimeout(() => {
-                if (!previewOverlay.matches(':hover') && !overlayBackdrop.matches(':hover')) {
-                    hidePreview();
-                }
-            }, 300);
-        });
-        
-        // For click on mobile
-        link.addEventListener('click', function(e) {
-            if (!isMobile) return;
-            e.preventDefault();
-            const url = this.getAttribute('href');
-            showPreview(url);
-        });
-    });
-    
-    // Keep preview visible when hovering over it
-    previewOverlay.addEventListener('mouseenter', function() {
-        clearTimeout(previewTimeout);
-    });
-    
-    previewOverlay.addEventListener('mouseleave', function() {
-        previewTimeout = setTimeout(() => {
-            hidePreview();
-        }, 300);
-    });
-    
-    // Close button
-    previewClose.addEventListener('click', hidePreview);
-    overlayBackdrop.addEventListener('click', hidePreview);
-    
-    // Close mobile menu when clicking a link
-    document.querySelectorAll('.offcanvas-body a').forEach(link => {
-        link.addEventListener('click', function() {
-            const offcanvas = bootstrap.Offcanvas.getInstance(document.getElementById('navbarOffcanvas'));
-            if (offcanvas) offcanvas.hide();
-        });
-    });
+}
 
-    // Navbar scroll effect
-    window.addEventListener('scroll', function() {
-        const navbar = document.querySelector('.navbar');
-        if (window.scrollY > 50) {
-            navbar.classList.add('scrolled');
-        } else {
-            navbar.classList.remove('scrolled');
+// Mobile menu functionality using event delegation
+function setupMobileMenu() {
+    // Track mobile menu state
+    let isMobileMenuOpen = false;
+    
+    // Handle all clicks in document
+    document.addEventListener('click', function(event) {
+        // Open menu when toggle button is clicked
+        if (event.target.closest('#mobileMenuButton')) {
+            toggleMobileMenu(true);
+        }
+        
+        // Close menu when close button or backdrop is clicked
+        if (event.target.closest('#closeMobileMenu') || 
+            event.target.closest('.mobile-menu-backdrop')) {
+            toggleMobileMenu(false);
+        }
+        
+        // Close menu when clicking nav links (optional)
+        if (isMobileMenuOpen && event.target.closest('.mobile-nav-link')) {
+            toggleMobileMenu(false);
         }
     });
     
-    // Mega dropdown positioning
-    const megaDropdowns = document.querySelectorAll('.mega-dropdown');
-    megaDropdowns.forEach(dropdown => {
-        dropdown.addEventListener('mouseenter', function() {
-            if (isMobile) return;
+    // Handle window resize
+    window.addEventListener('resize', function() {
+        if (window.innerWidth >= 992 && isMobileMenuOpen) {
+            toggleMobileMenu(false);
+        }
+    });
+    
+    // Toggle menu function
+    function toggleMobileMenu(shouldOpen) {
+        const mobileMenu = document.getElementById('mobileMenu');
+        const backdrop = document.querySelector('.mobile-menu-backdrop');
+        
+        if (!mobileMenu) return;
+        
+        isMobileMenuOpen = shouldOpen;
+        
+        if (shouldOpen) {
+            mobileMenu.classList.add('open');
+            document.body.style.overflow = 'hidden';
             
-            const menu = this.querySelector('.mega-menu');
-            if (menu) {
-                const rect = this.getBoundingClientRect();
-                const windowWidth = window.innerWidth;
-                const menuWidth = menu.offsetWidth;
-                
-                let left = rect.left;
-                
-                // Adjust if menu goes off screen right
-                if (left + menuWidth > windowWidth) {
-                    left = windowWidth - menuWidth - 20;
-                }
-                
-                menu.style.left = `${left}px`;
+            // Create backdrop if it doesn't exist
+            if (!backdrop) {
+                const newBackdrop = document.createElement('div');
+                newBackdrop.className = 'mobile-menu-backdrop';
+                document.body.appendChild(newBackdrop);
+            }
+        } else {
+            mobileMenu.classList.remove('open');
+            document.body.style.overflow = '';
+            
+            // Remove backdrop if it exists
+            if (backdrop) {
+                backdrop.remove();
+            }
+        }
+    }
+}
+
+// Header scroll effects and other UI behaviors
+function setupHeaderEffects() {
+    // Scroll effect for header
+    const header = document.querySelector('.header-container');
+    
+    if (header) {
+        window.addEventListener('scroll', function() {
+            header.classList.toggle('scrolled', window.scrollY > 50);
+        });
+        
+        // Initialize immediately in case page is already scrolled
+        header.classList.toggle('scrolled', window.scrollY > 50);
+    }
+    
+    // Dropdown hover effects for desktop
+    const dropdowns = document.querySelectorAll('.dropdown-container');
+    
+    dropdowns.forEach(dropdown => {
+        dropdown.addEventListener('mouseenter', function() {
+            if (window.innerWidth >= 992) {
+                this.querySelector('.dropdown-menu').classList.add('show');
+            }
+        });
+        
+        dropdown.addEventListener('mouseleave', function() {
+            if (window.innerWidth >= 992) {
+                this.querySelector('.dropdown-menu').classList.remove('show');
             }
         });
     });
+}
+
+
+// Helper function to check if element is in viewport
+function isInViewport(element) {
+    const rect = element.getBoundingClientRect();
+    return (
+        rect.top >= 0 &&
+        rect.left >= 0 &&
+        rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+        rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+    );
 }

@@ -1,8 +1,8 @@
 <?php
-$servername = "82.197.82.19"; // or "srv1388.hstgr.io"
-$username = "nmshema";   // replace with your DB username
-$password = "Nm&&668852";   // replace with your DB password
-$dbname = "u677171043_importancelead";
+$servername = "localhost"; // or "srv1388.hstgr.io"
+$username = "root";   // replace with your DB username
+$password = "secret";   // replace with your DB password
+$dbname = "importanceleadership";
 
 // Create connection
 $conn = new mysqli($servername, $username, $password, $dbname);
