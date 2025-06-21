@@ -1,1512 +1,683 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kenyan Branch | Importance Leadership - Empowering African Leaders</title>
-    <meta name="description" content="Importance Leadership Kenyan branch programs, events and impact. Developing ethical leaders across Kenya through mentorship, training and community engagement.">
-    <meta name="keywords" content="leadership Kenya, Nairobi leadership, Kenyan leaders, leadership training Kenya, mentorship Kenya">
-    
-    <!-- Canonical URL -->
-    <link rel="canonical" href="https://www.importanceleadership.org/kenya">
-    
-    <!-- Favicon -->
-    <link rel="icon" href="../image/logo.jpg" type="image/x-icon">
-    
-    <!-- Open Graph / Social Media Meta Tags -->
-    <meta property="og:title" content="Kenyan Branch | Importance Leadership">
-    <meta property="og:description" content="Importance Leadership Kenyan branch programs, events and impact">
-    <meta property="og:image" content="https://www.importanceleadership.org/image/kenya-leadership.jpg">
-    <meta property="og:url" content="https://www.importanceleadership.org/kenya">
-    <meta property="og:type" content="website">
-    
-    <!-- Twitter Card Meta Tags -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Kenyan Branch | Importance Leadership">
-    <meta name="twitter:description" content="Importance Leadership Kenyan branch programs, events and impact">
-    <meta name="twitter:image" content="https://www.importanceleadership.org/image/kenya-leadership.jpg">
-    
-    <!-- Bootstrap 5 CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    
-    <!-- Animate On Scroll (AOS) -->
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
-    
+    <title>Importance Leadership Kenya - Event Recaps</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
     <style>
         :root {
-            --primary: #0b1f3a;      /* Dark blue */
-            --primary-light: #1a365d;
-            --secondary: #f5a623;    /* Gold accent */
-            --secondary-light: #f8b84a;
-            --accent: #7cade9;      /* Light blue */
-            --light: #f8f9fa;       /* Light background */
-            --dark: #212529;        /* Dark text */
-            --text-light: #ffffff;
-            --text-dark: #343a40;
-            --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+            --primary-blue: #0b1f3a;
+            --secondary-gold: #f5a623;
+            --light-grey: #f8f9fa;
+            --dark-text: #212529;
+            --medium-text: #495057;
         }
         
         body {
-            font-family: 'Poppins', sans-serif;
-            overflow-x: hidden;
-            color: var(--text-dark);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: var(--dark-text);
             line-height: 1.7;
-            scroll-behavior: smooth;
+            background-color: var(--light-grey);
         }
         
         h1, h2, h3, h4, h5, h6 {
-            font-family: 'Playfair Display', serif;
+            font-family: 'Georgia', serif;
             font-weight: 700;
-            color: var(--primary);
-            line-height: 1.3;
+            color: var(--primary-blue);
         }
         
-        /* Header styles */
-        .navbar {
-            transition: var(--transition);
-            padding: 1.5rem 0;
-            background-color: rgba(11, 31, 58, 0.95);
-            backdrop-filter: blur(10px);
-        }
-        
-        .navbar.scrolled {
-            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.15);
-            padding: 0.8rem 0;
-        }
-        
-        .nav-link {
-            font-weight: 500;
-            padding: 0.5rem 1rem;
-            position: relative;
-            color: rgba(255,255,255,0.9);
-        }
-        
-        .nav-link:hover,
-        .nav-link.active {
-            color: white;
-        }
-        
-        /* Hero section */
         .hero-section {
-            min-height: 80vh;
-            display: flex;
-            align-items: center;
+            background: linear-gradient(135deg, var(--primary-blue) 0%, #1a365d 100%);
+            color: white;
+            padding: 5rem 0;
             position: relative;
             overflow: hidden;
-            background: linear-gradient(135deg, rgba(11, 31, 58, 0.95) 0%, rgba(11, 31, 58, 0.85) 100%), url('image/kenya-hero.jpg') no-repeat center center/cover;
-            color: white;
-            padding-top: 120px;
+        }
+        .hero-section {
+            background: linear-gradient(135deg, var(--primary-blue) 0%, #1a365d 100%), 
+                url('https://upload.wikimedia.org/wikipedia/commons/4/49/Flag_of_Kenya.svg');
+            background-size: cover;
+            background-position: center;
+            background-blend-mode: overlay;
+        }
+        .hero-section::before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 150px;
+            background: linear-gradient(to bottom, transparent 0%, var(--light-grey) 100%);
+            z-index: 1;
         }
         
-        .hero-title {
-            font-size: 3.5rem;
-            line-height: 1.2;
-            margin-bottom: 1.5rem;
-            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
-        }
-        
-        .hero-subtitle {
-            font-size: 1.25rem;
-            opacity: 0.9;
-            margin-bottom: 2rem;
-        }
-        
-        /* Section styling */
-        .section {
-            padding: 6rem 0;
+        .program-card {
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            margin-bottom: 3rem;
+            background: white;
             position: relative;
+        }
+        
+        .program-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+        }
+        
+        .program-header {
+            background-color: var(--primary-blue);
+            color: white;
+            padding: 1.5rem;
+            position: relative;
+        }
+        
+        .program-header::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: var(--secondary-gold);
+        }
+        
+        .program-body {
+            padding: 2rem;
+        }
+        
+        .program-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+            margin-bottom: 1.5rem;
+            color: var(--medium-text);
+        }
+        
+        .program-meta i {
+            color: var(--secondary-gold);
+            margin-right: 0.5rem;
+        }
+        
+        .impact-highlights {
+            background-color: rgba(245, 166, 35, 0.1);
+            border-left: 4px solid var(--secondary-gold);
+            padding: 1.5rem;
+            margin: 2rem 0;
+            border-radius: 0 8px 8px 0;
+        }
+        
+        .impact-highlights h5 {
+            color: var(--primary-blue);
+            margin-bottom: 1rem;
+        }
+        
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 1rem;
+            margin: 2rem 0;
+        }
+        
+        .gallery-item {
+            height: 180px;
+            background-size: cover;
+            background-position: center;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .gallery-item:hover {
+            transform: scale(1.03);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+        
+        .gallery-item::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0,0,0,0.3);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        
+        .gallery-item:hover::after {
+            opacity: 1;
+        }
+        
+        .btn-gold {
+            background-color: var(--secondary-gold);
+            color: white;
+            font-weight: 600;
+            padding: 0.75rem 1.5rem;
+            border-radius: 50px;
+            border: none;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+        }
+        
+        .btn-gold:hover {
+            background-color: #e6951a;
+            color: white;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(245, 166, 35, 0.3);
+        }
+        
+        .btn-gold i {
+            margin-left: 0.5rem;
         }
         
         .section-title {
             position: relative;
-            margin-bottom: 3.5rem;
-            text-align: center;
+            padding-bottom: 1rem;
+            margin-bottom: 3rem;
         }
         
         .section-title:after {
             content: '';
-            display: block;
+            position: absolute;
+            left: 0;
+            bottom: 0;
             width: 80px;
             height: 4px;
-            background: var(--secondary);
-            margin: 1.5rem auto 0;
+            background: var(--secondary-gold);
         }
         
-        /* Cards */
-        .event-card {
-            border: none;
-            border-radius: 16px;
-            overflow: hidden;
-            box-shadow: 0 15px 30px rgba(11, 31, 58, 0.1);
-            transition: var(--transition);
-            height: 100%;
-            background-color: white;
-        }
-        
-        .event-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 20px 40px rgba(11, 31, 58, 0.15);
-        }
-        
-        .event-card .card-img-top {
-            height: 220px;
-            object-fit: cover;
-            transition: transform 0.5s ease;
-        }
-        
-        .event-card:hover .card-img-top {
-            transform: scale(1.05);
-        }
-        
-        .event-date {
-            position: absolute;
-            top: 15px;
-            left: 15px;
-            background-color: var(--secondary);
-            color: var(--primary);
-            font-weight: 600;
-            padding: 0.5rem 1rem;
-            border-radius: 8px;
-            font-size: 0.9rem;
-            z-index: 2;
-        }
-        
-        /* Impact numbers */
-        .impact-number {
-            font-size: 3.5rem;
-            font-weight: 700;
-            color: var(--primary);
-            position: relative;
-            display: inline-block;
-            line-height: 1;
-        }
-        
-        .impact-number::after {
-            content: '+';
-            position: absolute;
-            right: -20px;
-            top: 0;
-            color: var(--secondary);
-        }
-        
-        /* Timeline */
-        .timeline {
-            position: relative;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-        
-        .timeline::after {
-            content: '';
-            position: absolute;
-            width: 6px;
-            background-color: var(--secondary);
-            top: 0;
-            bottom: 0;
-            left: 50%;
-            margin-left: -3px;
-        }
-        
-        .timeline-item {
-            padding: 10px 40px;
-            position: relative;
-            width: 50%;
-            box-sizing: border-box;
-        }
-        
-        .timeline-item::after {
-            content: '';
-            position: absolute;
-            width: 25px;
-            height: 25px;
-            right: -12px;
-            background-color: white;
-            border: 4px solid var(--secondary);
-            top: 15px;
-            border-radius: 50%;
-            z-index: 1;
-        }
-        
-        .left {
-            left: 0;
-        }
-        
-        .right {
-            left: 50%;
-        }
-        
-        .left::before {
-            content: " ";
-            height: 0;
-            position: absolute;
-            top: 22px;
-            width: 0;
-            z-index: 1;
-            right: 30px;
-            border: medium solid var(--light);
-            border-width: 10px 0 10px 10px;
-            border-color: transparent transparent transparent white;
-        }
-        
-        .right::before {
-            content: " ";
-            height: 0;
-            position: absolute;
-            top: 22px;
-            width: 0;
-            z-index: 1;
-            left: 30px;
-            border: medium solid var(--light);
-            border-width: 10px 10px 10px 0;
-            border-color: transparent white transparent transparent;
-        }
-        
-        .right::after {
-            left: -12px;
-        }
-        
-        .timeline-content {
-            padding: 20px 30px;
-            background-color: white;
-            position: relative;
-            border-radius: 6px;
-            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
-        }
-        
-        /* Buttons */
-        .btn {
-            font-weight: 600;
-            padding: 0.75rem 1.75rem;
-            border-radius: 50px;
-            transition: var(--transition);
-            border-width: 3px;
-        }
-        
-        .btn-primary {
-            background-color: var(--primary);
-            border-color: var(--primary);
-            color: white;
-        }
-        
-        .btn-primary:hover {
-            background-color: var(--primary-light);
-            border-color: var(--primary-light);
-            color: white;
-            transform: translateY(-3px);
-            box-shadow: 0 10px 20px rgba(11, 31, 58, 0.2);
-        }
-        
-        .btn-outline-primary {
-            color: var(--primary);
-            border-color: var(--primary);
-        }
-        
-        .btn-outline-primary:hover {
-            background-color: var(--primary);
-            border-color: var(--primary);
-            color: white;
-            transform: translateY(-3px);
-            box-shadow: 0 10px 20px rgba(11, 31, 58, 0.2);
-        }
-        
-        .btn-accent {
-            background-color: var(--secondary);
-            border-color: var(--secondary);
-            color: var(--primary);
-            font-weight: 700;
-        }
-        
-        .btn-accent:hover {
-            background-color: var(--secondary-light);
-            border-color: var(--secondary-light);
-            color: var(--primary);
-            transform: translateY(-3px);
-            box-shadow: 0 10px 20px rgba(245, 166, 35, 0.3);
-        }
-        
-        /* Testimonials */
-        .testimonial-card {
-            background: white;
-            border-radius: 16px;
-            padding: 2.5rem;
-            box-shadow: 0 15px 30px rgba(11, 31, 58, 0.1);
-            position: relative;
-            height: 100%;
-        }
-        
-        .testimonial-card:before {
-            content: '\201C';
-            position: absolute;
-            top: 30px;
-            left: 30px;
-            font-size: 5rem;
-            color: rgba(11, 31, 58, 0.05);
-            font-family: Georgia, serif;
-            line-height: 1;
-        }
-        
-        .testimonial-img {
-            width: 90px;
-            height: 90px;
-            border-radius: 50%;
-            object-fit: cover;
-            border: 4px solid var(--secondary);
-            margin: 0 auto 1.5rem;
-            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
-        }
-        
-        .testimonial-rating {
-            color: var(--secondary);
-            font-size: 1.2rem;
-            margin-bottom: 1rem;
-        }
-        
-        /* Footer */
-        .footer {
-            background-color: var(--primary);
-            color: white;
-            padding: 5rem 0 2rem;
-            position: relative;
-        }
-        
-        .footer:before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100px;
-            background: linear-gradient(to bottom, rgba(11, 31, 58, 0) 0%, var(--primary) 100%);
-            transform: translateY(-100%);
-        }
-        
-        .footer-logo {
-            width: 200px;
-            margin-bottom: 1.5rem;
-            filter: brightness(0) invert(1);
-        }
-        
-        .footer-links h5 {
-            color: white;
-            margin-bottom: 1.5rem;
-            position: relative;
-            padding-bottom: 0.75rem;
-        }
-        
-        .footer-links h5:after {
-            content: '';
-            position: absolute;
-            width: 50px;
-            height: 3px;
-            bottom: 0;
-            left: 0;
-            background-color: var(--secondary);
-        }
-        
-        .footer-links ul {
-            list-style: none;
-            padding: 0;
-        }
-        
-        .footer-links li {
-            margin-bottom: 0.75rem;
-        }
-        
-        .footer-links a {
-            color: rgba(255,255,255,0.7);
-            text-decoration: none;
-            transition: color 0.3s ease;
-        }
-        
-        .footer-links a:hover {
-            color: white;
-            padding-left: 5px;
-        }
-        
-        .social-links a {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            width: 42px;
-            height: 42px;
-            background-color: rgba(255,255,255,0.1);
-            border-radius: 50%;
-            color: white;
-            margin-right: 0.75rem;
-            transition: var(--transition);
-        }
-        
-        .social-links a:hover {
-            background-color: var(--secondary);
-            color: var(--primary);
-            transform: translateY(-3px);
-        }
-        
-        /* Back to top button */
-        .back-to-top {
-            position: fixed;
-            bottom: 30px;
-            right: 30px;
-            width: 50px;
-            height: 50px;
-            background-color: var(--primary);
-            color: var(--secondary);
-            border-radius: 50%;
+        .partner-logos {
             display: flex;
+            flex-wrap: wrap;
+            gap: 1.5rem;
             align-items: center;
-            justify-content: center;
-            font-size: 1.25rem;
-            cursor: pointer;
-            opacity: 0;
-            visibility: hidden;
-            transition: var(--transition);
-            z-index: 999;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            margin: 1.5rem 0;
         }
         
-        .back-to-top.active {
+        .partner-logo {
+            height: 50px;
+            filter: grayscale(100%);
+            opacity: 0.7;
+            transition: all 0.3s ease;
+        }
+        
+        .partner-logo:hover {
+            filter: grayscale(0);
             opacity: 1;
-            visibility: visible;
         }
         
-        .back-to-top:hover {
-            transform: translateY(-3px) scale(1.1);
-        }
-        
-        /* Responsive adjustments */
-        @media (max-width: 1199px) {
-            .hero-title {
-                font-size: 3rem;
-            }
-        }
-        
-        @media (max-width: 991px) {
-            .hero-title {
-                font-size: 2.5rem;
-            }
-            
-            .section {
-                padding: 5rem 0;
-            }
-            
-            .timeline::after {
-                left: 31px;
-            }
-            
-            .timeline-item {
-                width: 100%;
-                padding-left: 70px;
-                padding-right: 25px;
-            }
-            
-            .timeline-item::before {
-                left: 60px;
-                border: medium solid white;
-                border-width: 10px 10px 10px 0;
-                border-color: transparent white transparent transparent;
-            }
-            
-            .left::after, .right::after {
-                left: 18px;
-            }
-            
-            .right {
-                left: 0%;
-            }
-        }
-        
-        @media (max-width: 767px) {
-            .hero-title {
-                font-size: 2.2rem;
-            }
-            
-            .hero-subtitle {
-                font-size: 1.1rem;
-            }
-            
-            .section {
-                padding: 4rem 0;
-            }
-            
-            .impact-number {
-                font-size: 2.5rem;
-            }
-            
-            .event-card .card-img-top {
-                height: 180px;
-            }
-        }
-        
-        @media (max-width: 575px) {
-            .hero-title {
-                font-size: 2rem;
-            }
-            
-            .section-title {
-                margin-bottom: 2.5rem;
-            }
-            
-            .btn {
-                padding: 0.6rem 1.5rem;
-            }
-        }
-        
-        /* Kenyan flag colors */
-        .kenya-flag {
+        .testimonial {
+            font-style: italic;
             position: relative;
-            height: 4px;
-            background: linear-gradient(to right, 
-                #000 0%, #000 20%, 
-                #fff 20%, #fff 40%, 
-                #060 40%, #060 60%, 
-                #fff 60%, #fff 80%, 
-                #c00 80%, #c00 100%);
-            margin: 1rem 0;
+            padding-left: 2rem;
+            margin: 1.5rem 0;
         }
         
-        .kenya-flag::before {
-            content: '';
+        .testimonial::before {
+            content: '"';
             position: absolute;
-            top: -8px;
             left: 0;
-            right: 0;
-            height: 4px;
-            background: linear-gradient(to right, 
-                #000 0%, #000 20%, 
-                #fff 20%, #fff 40%, 
-                #060 40%, #060 60%, 
-                #fff 60%, #fff 80%, 
-                #c00 80%, #c00 100%);
+            top: 0;
+            font-size: 3rem;
+            line-height: 1;
+            color: var(--secondary-gold);
+            font-family: Georgia, serif;
         }
         
-        .kenya-flag::after {
-            content: '';
-            position: absolute;
-            bottom: -8px;
-            left: 0;
-            right: 0;
-            height: 4px;
-            background: linear-gradient(to right, 
-                #000 0%, #000 20%, 
-                #fff 20%, #fff 40%, 
-                #060 40%, #060 60%, 
-                #fff 60%, #fff 80%, 
-                #c00 80%, #c00 100%);
+        .testimonial-author {
+            font-weight: 600;
+            margin-top: 1rem;
+            color: var(--primary-blue);
+        }
+        
+        @media (max-width: 768px) {
+            .program-meta {
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+            
+            .hero-section {
+                padding: 3rem 0;
+            }
+            
+            .program-body {
+                padding: 1.5rem;
+            }
         }
     </style>
 </head>
 <body>
-
-
-    <!-- Header -->
-    <header id="header-container"></header>
+    
+     <!-- Load Header -->
+    <div id="header-container"></div>
     <script src="loadHeader.js"></script>
 
     <!-- Hero Section -->
+    
     <section class="hero-section">
-        <div class="container position-relative z-index-1">
+        <div class="container position-relative" style="z-index: 2;">
             <div class="row align-items-center">
-                <div class="col-lg-8" data-aos="fade-right" data-aos-duration="800">
-                    <div class="kenya-flag mb-3"></div>
-                    <h1 class="hero-title fw-bold text-white mb-4">Importance Leadership Kenya</h1>
-                    <p class="hero-subtitle text-white mb-5">Developing ethical, visionary leaders who drive positive change across Kenya through mentorship, education, and community engagement.</p>
-                    <div class="d-flex flex-wrap gap-3">
-                        <a href="#programs" class="btn btn-warning btn-lg">Our Programs</a>
-                        <a href="#events" class="btn btn-warning btn-lg">Past Events</a>
-                    </div>
+                <div class="col-lg-8">
+                    <h1 class="display-4 fw-bold mb-4 text-white">Our Program Recaps</h1>
+                    <p class="lead mb-0 text-white">Reliving the transformative moments from our leadership initiatives across Kenya</p>
                 </div>
             </div>
         </div>
     </section>
 
-<!-- Dynamic Impact Dashboard -->
-<section class="py-7 py-xl-8 bg-dark">
-  <div class="container">
-    <!-- Section Header -->
-    <div class="row justify-content-center mb-6" data-aos="fade-up">
-      <div class="col-lg-9 text-center">
-        <span class="badge bg-primary-soft mb-3">
-          <span class="h6 fw-bold text-uppercase">By The Numbers</span>
-        </span>
-        <h2 class="display-3 fw-bold text-white mb-3">Transforming Lives Through Action</h2>
-        <p class="lead text-light opacity-75">Real impact measured across our key initiatives</p>
-      </div>
-    </div>
-
-    <!-- Interactive Stats Grid -->
-    <div class="impact-dashboard">
-      <!-- Main Impact Visualization -->
-      <div class="dashboard-card featured-stats" data-aos="fade-in">
-        <div class="row g-0 h-100">
-          <!-- Radial Chart Column -->
-          <div class="col-md-5 d-flex align-items-center p-4 p-lg-5 bg-primary-dark">
-            <div class="w-100 text-center">
-              <canvas id="impactRadialChart" width="300" height="300"></canvas>
-              <div class="radial-label mt-3">
-                <span class="h4 text-white">Overall Impact Score</span>
-              </div>
-            </div>
-          </div>
-          
-          <!-- Key Metrics Column -->
-          <div class="col-md-7 p-4 p-lg-5 bg-dark-light">
-            <div class="row g-4">
-              <div class="col-6" data-aos="fade-up" data-aos-delay="100">
-                <div class="metric-card">
-                  <div class="metric-value text-primary">
-                    <span class="counter display-5 fw-bold" data-count="1200">0</span>
-                    <span class="h3">+</span>
-                  </div>
-                  <div class="metric-label text-light">Students Empowered</div>
-                  <div class="progress thin mt-2">
-                    <div class="progress-bar bg-primary" style="width: 92%"></div>
-                  </div>
-                </div>
-              </div>
-              
-              <div class="col-6" data-aos="fade-up" data-aos-delay="150">
-                <div class="metric-card">
-                  <div class="metric-value text-success">
-                    <span class="counter display-5 fw-bold" data-count="350">0</span>
-                    <span class="h3">+</span>
-                  </div>
-                  <div class="metric-label text-light">Leaders Developed</div>
-                  <div class="progress thin mt-2">
-                    <div class="progress-bar bg-success" style="width: 78%"></div>
-                  </div>
-                </div>
-              </div>
-              
-              <div class="col-6" data-aos="fade-up" data-aos-delay="200">
-                <div class="metric-card">
-                  <div class="metric-value text-warning">
-                    <span class="counter display-5 fw-bold" data-count="78">0</span>
-                    <span class="h3">+</span>
-                  </div>
-                  <div class="metric-label text-light">Communities Supported</div>
-                  <div class="progress thin mt-2">
-                    <div class="progress-bar bg-warning" style="width: 65%"></div>
-                  </div>
-                </div>
-              </div>
-              
-              <div class="col-6" data-aos="fade-up" data-aos-delay="250">
-                <div class="metric-card">
-                  <div class="metric-value text-info">
-                    <span class="counter display-5 fw-bold" data-count="500">0</span>
-                    <span class="h3">+</span>
-                  </div>
-                  <div class="metric-label text-light">School Kits Distributed</div>
-                  <div class="progress thin mt-2">
-                    <div class="progress-bar bg-info" style="width: 85%"></div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Program Breakdown -->
-      <div class="row g-4 mt-4">
-        <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
-          <div class="program-card education">
-            <div class="program-header">
-              <div class="program-icon">
-                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                  <path d="M22 10v6M2 10l10-5 10 5-10 5z"></path>
-                  <path d="M6 12v5c3 3 9 3 12 0v-5"></path>
-                </svg>
-              </div>
-              <h3 class="program-title">Education</h3>
-            </div>
-            <div class="program-stats">
-              <div class="stat-item">
-                <span class="number" data-count="42">0</span>
-                <span class="label text-white">Schools Supported</span>
-              </div>
-              <div class="stat-item">
-                <span class="number" data-count="1200">0</span>
-                <span class="label text-white">Scholarships</span>
-              </div>
-            </div>
-            <div class="program-footer">
-              <a href="#" class="program-link">
-                Explore Impact
-                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                  <path d="M5 12h14M12 5l7 7-7 7"></path>
-                </svg>
-              </a>
-            </div>
-          </div>
-        </div>
-        
-        <div class="col-md-4" data-aos="fade-up" data-aos-delay="400">
-          <div class="program-card leadership">
-            <div class="program-header">
-              <div class="program-icon">
-                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                  <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
-                  <circle cx="9" cy="7" r="4"></circle>
-                  <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
-                  <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
-                </svg>
-              </div>
-              <h3 class="program-title">Leadership</h3>
-            </div>
-            <div class="program-stats">
-              <div class="stat-item">
-                <span class="number" data-count="15">0</span>
-                <span class="label text-white">Annual Conferences</span>
-              </div>
-              <div class="stat-item">
-                <span class="number" data-count="350">0</span>
-                <span class="label text-white">Leaders Trained</span>
-              </div>
-            </div>
-            <div class="program-footer">
-              <a href="#" class="program-link">
-                Meet Our Alumni
-                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                  <path d="M5 12h14M12 5l7 7-7 7"></path>
-                </svg>
-              </a>
-            </div>
-          </div>
-        </div>
-        
-        <div class="col-md-4" data-aos="fade-up" data-aos-delay="500">
-          <div class="program-card humanitarian">
-            <div class="program-header">
-              <div class="program-icon">
-                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                  <path d="M20.42 4.58a5.4 5.4 0 0 0-7.65 0l-.77.78-.77-.78a5.4 5.4 0 0 0-7.65 0C1.46 6.7 1.33 10.28 4 13l8 8 8-8c2.67-2.72 2.54-6.3.42-8.42z"></path>
-                </svg>
-              </div>
-              <h3 class="program-title">Humanitarian</h3>
-            </div>
-            <div class="program-stats">
-              <div class="stat-item">
-                <span class="number" data-count="78">0</span>
-                <span class="label text-white">Crisis Responses</span>
-              </div>
-              <div class="stat-item">
-                <span class="number" data-count="500">0</span>
-                <span class="label text-white">School Kits</span>
-              </div>
-            </div>
-            <div class="program-footer">
-              <a href="#" class="program-link">
-                See Our Work
-                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                  <path d="M5 12h14M12 5l7 7-7 7"></path>
-                </svg>
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<style>
-/* Core Styles */
-.bg-dark-light {
-  background-color: #607392;
-}
-.bg-primary-dark {
-  background-color: #1e40af;
-}
-.impact-dashboard {
-  position: relative;
-  z-index: 1;
-}
-
-/* Dashboard Card */
-.dashboard-card {
-  border-radius: 16px;
-  overflow: hidden;
-  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 
-              0 10px 10px -5px rgba(0, 0, 0, 0.04);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-.dashboard-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
-}
-
-/* Metric Cards */
-.metric-card {
-  padding: 1.5rem;
-  background: rgba(255, 255, 255, 0.03);
-  border-radius: 12px;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  transition: all 0.3s ease;
-}
-.metric-card:hover {
-  background: rgba(255, 255, 255, 0.08);
-  border-color: rgba(255, 255, 255, 0.2);
-}
-.metric-value {
-  margin-bottom: 0.5rem;
-}
-.metric-label {
-  font-size: 0.9rem;
-  opacity: 0.8;
-}
-.progress.thin {
-  height: 4px;
-}
-
-/* Program Cards */
-.program-card {
-  padding: 2rem;
-  border-radius: 16px;
-  background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
-  border: 1px solid rgba(255, 255, 255, 0.05);
-  height: 100%;
-  transition: all 0.4s ease;
-  position: relative;
-  overflow: hidden;
-}
-.program-card:before {
-  content: '';
-  position: absolute;
-  top: -50%;
-  left: -50%;
-  width: 200%;
-  height: 200%;
-  background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
-  opacity: 0;
-  transition: opacity 0.6s ease;
-}
-.program-card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.2);
-  border-color: rgba(255, 255, 255, 0.1);
-}
-.program-card:hover:before {
-  opacity: 1;
-}
-.program-header {
-  display: flex;
-  align-items: center;
-  margin-bottom: 2rem;
-}
-.program-icon {
-  width: 56px;
-  height: 56px;
-  border-radius: 12px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-right: 1rem;
-}
-.program-card.education .program-icon {
-  background: rgba(59, 130, 246, 0.15);
-  color: #3b82f6;
-}
-.program-card.leadership .program-icon {
-  background: rgba(16, 185, 129, 0.15);
-  color: #10b981;
-}
-.program-card.humanitarian .program-icon {
-  background: rgba(245, 158, 11, 0.15);
-  color: #f59e0b;
-}
-.program-title {
-  font-size: 1.5rem;
-  font-weight: 700;
-  color: white;
-  margin: 0;
-}
-.program-stats {
-  display: grid;
-  gap: 1.5rem;
-  margin-bottom: 2rem;
-}
-.stat-item {
-  display: flex;
-  flex-direction: column;
-}
-.stat-item .number {
-  font-size: 2rem;
-  font-weight: 800;
-  line-height: 1;
-  margin-bottom: 0.25rem;
-}
-.program-card.education .stat-item .number {
-  color: #3b82f6;
-}
-.program-card.leadership .stat-item .number {
-  color: #10b981;
-}
-.program-card.humanitarian .stat-item .number {
-  color: #f59e0b;
-}
-.stat-item .label {
-  font-size: 0.9rem;
-  opacity: 0.7;
-}
-.program-link {
-  display: inline-flex;
-  align-items: center;
-  font-weight: 600;
-  text-decoration: none !important;
-}
-.program-card.education .program-link {
-  color: #3b82f6;
-}
-.program-card.leadership .program-link {
-  color: #10b981;
-}
-.program-card.humanitarian .program-link {
-  color: #f59e0b;
-}
-.program-link svg {
-  margin-left: 0.5rem;
-  transition: transform 0.3s ease;
-}
-.program-card:hover .program-link svg {
-  transform: translateX(4px);
-}
-
-/* Animations */
-[data-aos="fade-in"] {
-  opacity: 0;
-  transition: opacity 0.6s ease, transform 0.6s ease;
-}
-[data-aos="fade-in"].aos-animate {
-  opacity: 1;
-}
-
-/* Badge */
-.badge {
-  padding: 0.5rem 1rem;
-  border-radius: 50px;
-}
-.bg-primary-soft {
-  background: rgba(59, 130, 246, 0.15);
-}
-</style>
-
-<!-- Chart.js CDN -->
-<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-<script>
-// Counter animation for all .counter and .number elements
-function animateCounters() {
-    const counters = document.querySelectorAll('.counter, .number');
-    counters.forEach(counter => {
-        const updateCount = () => {
-            const target = +counter.getAttribute('data-count');
-            const count = +counter.innerText.replace(/\D/g, '') || 0;
-            const increment = Math.ceil(target / 50);
-            if (count < target) {
-                counter.innerText = count + increment > target ? target : count + increment;
-                setTimeout(updateCount, 20);
-            } else {
-                counter.innerText = target;
-            }
-        };
-        updateCount();
-    });
-}
-document.addEventListener('DOMContentLoaded', animateCounters);
-
-// Chart.js radial chart for impact score
-document.addEventListener('DOMContentLoaded', function() {
-    const ctx = document.getElementById('impactRadialChart');
-    if (ctx && window.Chart) {
-        new Chart(ctx, {
-            type: 'doughnut',
-            data: {
-                labels: ['Impact Achieved', 'Remaining'],
-                datasets: [{
-                    data: [92, 8],
-                    backgroundColor: ['#f5a623', '#e5e7eb'],
-                    borderWidth: 0
-                }]
-            },
-            options: {
-                cutout: '75%',
-                plugins: {
-                    legend: { display: false },
-                    tooltip: { enabled: false },
-                    title: { display: false }
-                }
-            }
-        });
-    }
-});
-</script>
-    <!-- About Kenya Branch -->
-    <section id="about" class="py-5 py-lg-6">
+    <!-- Main Content -->
+    <section class="py-5">
         <div class="container">
-            <div class="row g-5 align-items-center">
-                <div class="col-lg-6" data-aos="fade-right">
-                    <h2 class="section-title">Our Kenyan Journey</h2>
-                    <p class="lead">Since launching our Kenyan operations in 2020, we've been committed to developing leaders who can address the unique challenges and opportunities facing Kenya today.</p>
-                    <p>Our programs are tailored to the Kenyan context, focusing on:</p>
-                    <ul class="list-unstyled mb-4">
-                        <li class="mb-3"><i class="fas fa-check-circle text-secondary me-2"></i> Ethical leadership in public service</li>
-                        <li class="mb-3"><i class="fas fa-check-circle text-secondary me-2"></i> Youth empowerment and employment</li>
-                        <li class="mb-3"><i class="fas fa-check-circle text-secondary me-2"></i> Community-driven development</li>
-                        <li class="mb-3"><i class="fas fa-check-circle text-secondary me-2"></i> Gender equality in leadership</li>
-                        <li class="mb-3"><i class="fas fa-check-circle text-secondary me-2"></i> Sustainable business practices</li>
+            <!-- 1. Education Access Program -->
+            <div class="program-card" id="education-access">
+                <div class="program-header">
+                    <h2 class="text-white fw-bold">Unlocking Potential Through Education</h2>
+                </div>
+                <div class="program-body">
+                    <div class="program-meta">
+                        <span><i class="bi bi-calendar"></i> April 24, 2025</span>
+                        <span><i class="bi bi-globe"></i> Virtual Event</span>
+                        <span><i class="bi bi-people"></i> 50+ attendees</span>
+                    </div>
+                    
+                    <p>Importance Leadership proudly hosted an inspiring virtual workshop focused on Access to Education and Scholarships—bringing together changemakers, young leaders, and aspiring scholars from underserved and refugee communities.</p>
+                    
+                    <div class="impact-highlights">
+                        <h5>Key Outcomes:</h5>
+                        <ul>
+                            <li><strong>32 immediate applications</strong> submitted during the workshop</li>
+                            <li><strong>8 mentorship matches</strong> with scholarship alumni</li>
+                            <li>Curated opportunity database shared with <strong>500+ youth</strong></li>
+                            <li>Participants gained strategies for scholarship applications and personal storytelling</li>
+                        </ul>
+                    </div>
+                    
+                    <h4>Featured Opportunities:</h4>
+                    <p>Mastercard Foundation, DAFI/Windle Trust, Kepler, SNHU/JRS, Science PO, WUSC</p>
+                    
+                    <div class="partner-logos">
+                        <img src="https://via.placeholder.com/150x60?text=Mastercard" alt="Mastercard Foundation" class="partner-logo">
+                        <img src="https://via.placeholder.com/150x60?text=DAFI" alt="DAFI" class="partner-logo">
+                        <img src="https://via.placeholder.com/150x60?text=Kepler" alt="Kepler" class="partner-logo">
+                    </div>
+                    
+                    <div class="gallery-grid">
+                        <div class="gallery-item" style="background-image: url('https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80');"></div>
+                        <div class="gallery-item" style="background-image: url('https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1471&q=80');"></div>
+                        <div class="gallery-item" style="background-image: url('https://images.unsplash.com/photo-1546410531-bb4caa6b424d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1471&q=80');"></div>
+                    </div>
+                    
+                    <div class="testimonial">
+                        "This workshop gave me the confidence to apply for scholarships I never thought I could get. I'm now enrolled at Kepler through the Mastercard Foundation program!"
+                        <div class="testimonial-author">- Wanjiru M., Nairobi</div>
+                    </div>
+                    
+                    <a href="#" class="btn btn-gold">View Full Gallery <i class="bi bi-arrow-right"></i></a>
+                </div>
+            </div>
+
+            <!-- 2. Refugee Integration Conference -->
+            <div class="program-card" id="refugee-integration">
+                <div class="program-header">
+                    <h2 class="text-white fw-bold">Refugee Integration Conference</h2>
+                </div>
+                <div class="program-body">
+                    <div class="program-meta">
+                        <span><i class="bi bi-calendar"></i> March 26-27, 2025</span>
+                        <span><i class="bi bi-geo-alt"></i> Safari Park Hotel, Nairobi</span>
+                        <span><i class="bi bi-people"></i> 200+ participants</span>
+                    </div>
+                    
+                    <p>In partnership with the Government of Kenya, R-Seat, Oxfam, LERRN, ReDSS, and various Refugee-Led Organizations (RLOs) from Nairobi, Uganda, Kakuma, and Dadaab, we hosted a powerful two-day conference on refugee integration.</p>
+                    
+                    <h4>Theme:</h4>
+                    <p><strong>"Utilizing Refugee Participation in Kenya's Refugee Integration"</strong></p>
+                    
+                    <div class="impact-highlights">
+                        <h5>Key Outcomes:</h5>
+                        <ul>
+                            <li><strong>3 pilot projects</strong> initiated in Kasarani, Dadaab, and Nakuru</li>
+                            <li><strong>Commitment from R-Seat</strong> to fund 5 refugee startups</li>
+                            <li>Featured in <strong>Nation Africa</strong> media coverage</li>
+                            <li>Deep dive into Kenya's <strong>Shirika Plan</strong> for refugee self-reliance</li>
+                        </ul>
+                    </div>
+                    
+                    <h4>Discussion Highlights:</h4>
+                    <ul>
+                        <li>Government officials clarified self-reliance pathways</li>
+                        <li>Refugee entrepreneurs shared successful business models</li>
+                        <li>Policy hackathon produced actionable integration blueprints</li>
                     </ul>
-                    <a href="#contact" class="btn btn-primary">Get Involved</a>
-                </div>
-                <div class="col-lg-6" data-aos="fade-left">
-                    <div class="card border-0 shadow-sm h-100">
-                        <img src="image/kenya-team.jpg" alt="Importance Leadership Kenya team" class="card-img-top" loading="lazy">
-                        <div class="card-body">
-                            <h3 class="h5 fw-bold">Our Nairobi Headquarters</h3>
-                            <p>Located in the heart of Nairobi, our Kenyan office serves as the hub for all our East African operations, with satellite programs in Mombasa, Kisumu, and Nakuru.</p>
-                            <div class="d-flex align-items-center mt-3">
-                                <i class="fas fa-map-marker-alt text-secondary me-2"></i>
-                                <span>Pioneer House, 4th Floor, Kimathi Street, Nairobi</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Current Programs -->
-    <section id="programs" class="py-5 py-lg-6 bg-light">
-        <div class="container">
-            <h2 class="section-title">Our Kenyan Programs</h2>
-            <p class="lead text-center mb-5 mx-auto" style="max-width: 800px;">We offer a range of leadership development programs tailored for Kenyan professionals, students, and community leaders.</p>
-            
-            <div class="row g-4">
-                <div class="col-md-6 col-lg-4" data-aos="fade-up">
-                    <div class="event-card">
-                        <div class="position-relative">
-                            <span class="event-date">Ongoing</span>
-                            <img src="image/youth-leadership.jpg" class="card-img-top" alt="Youth Leadership Program" loading="lazy">
-                        </div>
-                        <div class="card-body">
-                            <h3 class="h4 mb-3">Youth Leadership Initiative</h3>
-                            <p class="text-muted mb-4">6-month program for Kenyans aged 18-25 focusing on personal leadership development and community impact.</p>
-                            <a href="#" class="btn btn-outline-primary">Learn More</a>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="100">
-                    <div class="event-card">
-                        <div class="position-relative">
-                            <span class="event-date">Quarterly</span>
-                            <img src="image/women-leadership.jpg" class="card-img-top" alt="Women in Leadership" loading="lazy">
-                        </div>
-                        <div class="card-body">
-                            <h3 class="h4 mb-3">Women in Leadership Forum</h3>
-                            <p class="text-muted mb-4">Empowering Kenyan women leaders through mentorship, skills training, and networking opportunities.</p>
-                            <a href="#" class="btn btn-outline-primary">Learn More</a>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="200">
-                    <div class="event-card">
-                        <div class="position-relative">
-                            <span class="event-date">Annual</span>
-                            <img src="image/civic-leadership.jpg" class="card-img-top" alt="Civic Leadership Program" loading="lazy">
-                        </div>
-                        <div class="card-body">
-                            <h3 class="h4 mb-3">Civic Leadership Program</h3>
-                            <p class="text-muted mb-4">Year-long intensive for emerging leaders in public service and community organizations.</p>
-                            <a href="#" class="btn btn-outline-primary">Learn More</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Past Events Timeline -->
-    <section id="events" class="py-5 py-lg-6">
-        <div class="container">
-            <h2 class="section-title">Our Kenyan Events Timeline</h2>
-            <p class="lead text-center mb-5 mx-auto" style="max-width: 800px;">Highlights of our key events and milestones in Kenya since 2020.</p>
-            
-            <div class="timeline">
-                <div class="timeline-item left" data-aos="fade-right">
-                    <div class="timeline-content">
-                        <h3>2024 Leadership Summit</h3>
-                        <p class="text-muted mb-2">March 15-17, 2024 | Nairobi</p>
-                        <p>Our largest gathering yet with 300+ leaders from across Kenya discussing "Ethical Leadership for Sustainable Development".</p>
-                        <img src="image/summit-2024.jpg" class="img-fluid rounded mt-3" alt="2024 Summit" loading="lazy">
-                    </div>
-                </div>
-                
-                <div class="timeline-item right" data-aos="fade-left" data-aos-delay="100">
-                    <div class="timeline-content">
-                        <h3>Coastal Leadership Forum</h3>
-                        <p class="text-muted mb-2">November 2023 | Mombasa</p>
-                        <p>First regional forum focusing on leadership challenges unique to Kenya's coastal region, with special focus on tourism and blue economy.</p>
-                        <img src="image/mombasa-forum.jpg" class="img-fluid rounded mt-3" alt="Mombasa Forum" loading="lazy">
-                    </div>
-                </div>
-                
-                <div class="timeline-item left" data-aos="fade-right" data-aos-delay="200">
-                    <div class="timeline-content">
-                        <h3>Youth Innovation Challenge</h3>
-                        <p class="text-muted mb-2">August 2023 | Nationwide</p>
-                        <p>Competition for young Kenyan entrepreneurs with 50 finalists receiving mentorship and seed funding.</p>
-                        <img src="image/youth-challenge.jpg" class="img-fluid rounded mt-3" alt="Youth Challenge" loading="lazy">
-                    </div>
-                </div>
-                
-                <div class="timeline-item right" data-aos="fade-left" data-aos-delay="300">
-                    <div class="timeline-content">
-                        <h3>Women Leaders Conference</h3>
-                        <p class="text-muted mb-2">March 2023 | Nairobi</p>
-                        <p>Annual gathering of 150 women leaders from politics, business and civil society to share experiences and strategies.</p>
-                        <img src="image/women-conference.jpg" class="img-fluid rounded mt-3" alt="Women Conference" loading="lazy">
-                    </div>
-                </div>
-                
-                <div class="timeline-item left" data-aos="fade-right" data-aos-delay="400">
-                    <div class="timeline-content">
-                        <h3>County Leadership Program</h3>
-                        <p class="text-muted mb-2">2022-2023 | 5 Counties</p>
-                        <p>Expanded our reach to county governments with specialized training for local administrators and officials.</p>
-                        <img src="image/county-program.jpg" class="img-fluid rounded mt-3" alt="County Program" loading="lazy">
-                    </div>
-                </div>
-                
-                <div class="timeline-item right" data-aos="fade-left" data-aos-delay="500">
-                    <div class="timeline-content">
-                        <h3>Kenya Launch Event</h3>
-                        <p class="text-muted mb-2">June 2020 | Nairobi</p>
-                        <p>Official launch of Importance Leadership Kenya with keynote by prominent Kenyan leaders.</p>
-                        <img src="image/kenya-launch.jpg" class="img-fluid rounded mt-3" alt="Kenya Launch" loading="lazy">
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Success Stories -->
-    <section class="py-5 py-lg-6 bg-primary text-white">
-        <div class="container">
-            <h2 class="section-title text-white">Kenyan Success Stories</h2>
-            <p class="lead text-center mb-5 mx-auto" style="max-width: 800px;">Hear from some of our Kenyan program alumni making an impact.</p>
-            
-            <div class="row g-4">
-                <div class="col-md-6 col-lg-4" data-aos="fade-up">
-                    <div class="testimonial-card">
-                        <img src="image/alumni-1.jpg" class="testimonial-img" alt="Grace Mwangi" loading="lazy">
-                        <div class="testimonial-rating">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                        </div>
-                        <blockquote class="mb-4">
-                            "The Women in Leadership program transformed my confidence and equipped me with skills to grow my business while mentoring other women."
-                        </blockquote>
-                        <h4 class="h5 mb-1">Grace Mwangi</h4>
-                        <p class="text-muted">Founder, Green Farms Kenya</p>
-                    </div>
-                </div>
-                
-                <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="100">
-                    <div class="testimonial-card">
-                        <img src="image/alumni-2.jpg" class="testimonial-img" alt="James Omondi" loading="lazy">
-                        <div class="testimonial-rating">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                        </div>
-                        <blockquote class="mb-4">
-                            "As a county official, the Civic Leadership Program helped me implement more transparent and effective community projects."
-                        </blockquote>
-                        <h4 class="h5 mb-1">James Omondi</h4>
-                        <p class="text-muted">County Executive, Kisumu</p>
-                    </div>
-                </div>
-                
-                <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="200">
-                    <div class="testimonial-card">
-                        <img src="image/alumni-3.jpg" class="testimonial-img" alt="Amina Hassan" loading="lazy">
-                        <div class="testimonial-rating">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star-half-alt"></i>
-                        </div>
-                        <blockquote class="mb-4">
-                            "The Youth Initiative connected me with mentors and gave me courage to start my social enterprise addressing plastic waste."
-                        </blockquote>
-                        <h4 class="h5 mb-1">Amina Hassan</h4>
-                        <p class="text-muted">CEO, Eco-Taka Solutions</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Get Involved -->
-    <section id="contact" class="py-5 py-lg-6">
-        <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-lg-8 text-center" data-aos="zoom-in">
-                    <h2 class="section-title">Get Involved in Kenya</h2>
-                    <p class="lead mb-5">Join our growing network of Kenyan leaders driving positive change.</p>
                     
-                    <div class="row g-4">
-                        <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
-                            <div class="p-4 h-100">
-                                <div class="feature-icon mb-4">
-                                    <i class="fas fa-user-graduate"></i>
-                                </div>
-                                <h3 class="h4 mb-3">Apply for Programs</h3>
-                                <p class="text-muted mb-0">Join one of our leadership development programs</p>
-                                <a href="program_signup.php" class="btn btn-primary mt-3">Apply Now</a>
-                            </div>
-                        </div>
-                        
-                        <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
-                            <div class="p-4 h-100">
-                                <div class="feature-icon mb-4">
-                                    <i class="fas fa-hands-helping"></i>
-                                </div>
-                                <h3 class="h4 mb-3">Become a Mentor</h3>
-                                <p class="text-muted mb-0">Share your experience with emerging leaders</p>
-                                <a href="mentorshipProgram.html" class="btn btn-primary mt-3">Volunteer</a>
-                            </div>
-                        </div>
-                        
-                        <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
-                            <div class="p-4 h-100">
-                                <div class="feature-icon mb-4">
-                                    <i class="fas fa-handshake"></i>
-                                </div>
-                                <h3 class="h4 mb-3">Partner With Us</h3>
-                                <p class="text-muted mb-0">Collaborate on leadership initiatives</p>
-                                <a href="partnerships.html" class="btn btn-primary mt-3">Contact Us</a>
-                            </div>
-                        </div>
+                    <div class="gallery-grid">
+                        <div class="gallery-item" style="background-image: url('https://images.unsplash.com/photo-1521791136064-7986c2920216?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1469&q=80');"></div>
+                        <div class="gallery-item" style="background-image: url('https://images.unsplash.com/photo-1450101499163-c8848c66ca85?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80');"></div>
+                        <div class="gallery-item" style="background-image: url('https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80');"></div>
                     </div>
+                    
+                    <div class="testimonial">
+                        "For the first time, we felt our voices were truly heard in discussions about our future in Kenya. This conference changed the narrative."
+                        <div class="testimonial-author">- Ahmed K., Kakuma RLO Representative</div>
+                    </div>
+                    
+                    <a href="#" class="btn btn-gold">Read Policy Recommendations <i class="bi bi-arrow-right"></i></a>
                 </div>
             </div>
-        </div>
-    </section>
 
-   
-    <!-- Contact Kenya -->
-    <section class="py-5 py-lg-6">
-        <div class="container">
-            <div class="row g-5 align-items-center">
-                <div class="col-lg-6" data-aos="fade-right">
-                    <h2 class="section-title">Contact Our Kenya Office</h2>
-                    <p class="lead">We'd love to hear from you and explore how we can work together to develop Kenya's next generation of leaders.</p>
-                    
-                    <div class="mt-5">
-                        
-                        
-                        <div class="d-flex align-items-start mb-4">
-                            <i class="fas fa-phone-alt text-secondary mt-1 me-3 fs-5"></i>
-                            <div>
-                                <h4 class="h5 mb-1">Call Us</h4>
-                                <p class="mb-0">+254 792 732 177<br>Mon-Fri, 8:00 AM - 5:00 PM</p>
-                            </div>
-                        </div>
-                        
-                        <div class="d-flex align-items-start mb-4">
-                            <i class="fas fa-envelope text-secondary mt-1 me-3 fs-5"></i>
-                            <div>
-                                <h4 class="h5 mb-1">Email Us</h4>
-                                <p class="mb-0">kenya@importanceleadership.com</p>
-                            </div>
-                        </div>
-                    </div>
+            <!-- 3. UN General Assembly Address -->
+            <div class="program-card" id="un-address">
+                <div class="program-header">
+                    <h2 class="text-white fw-bold">UN General Assembly Address</h2>
                 </div>
-                
-                <div class="col-lg-6" data-aos="fade-left">
-                    <div class="card border-0 shadow-sm">
-                        <div class="card-body p-4 p-lg-5">
-                            <h3 class="h4 fw-bold mb-4">Send Us a Message</h3>
-                            <form>
-                                <div class="row g-3">
-                                    <div class="col-md-6">
-                                        <label for="name" class="form-label">Your Name</label>
-                                        <input type="text" class="form-control" id="name" required>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <label for="email" class="form-label">Email Address</label>
-                                        <input type="email" class="form-control" id="email" required>
-                                    </div>
-                                    <div class="col-12">
-                                        <label for="subject" class="form-label">Subject</label>
-                                        <input type="text" class="form-control" id="subject" required>
-                                    </div>
-                                    <div class="col-12">
-                                        <label for="message" class="form-label">Message</label>
-                                        <textarea class="form-control" id="message" rows="4" required></textarea>
-                                    </div>
-                                    <div class="col-12 mt-4">
-                                        <button type="submit" class="btn btn-primary w-100">Send Message</button>
-                                    </div>
-                                </div>
-                            </form>
-                        </div>
+                <div class="program-body">
+                    <div class="program-meta">
+                        <span><i class="bi bi-calendar"></i> June 2025</span>
+                        <span><i class="bi bi-geo-alt"></i> UN Office Nairobi (UNON)</span>
+                        <span><i class="bi bi-people"></i> Global Delegates</span>
                     </div>
+                    
+                    <p>Bonkey Muhumure, delivered a powerful address at the United Nations General Assembly, advocating for education rights from his unique perspective as a refugee-turned-leader.</p>
+                    
+                    <div class="impact-highlights">
+                        <h5>Key Messages:</h5>
+                        <ul>
+                            <li><strong>Education as the greatest equalizer</strong> - Empowering youth to rise above limitations</li>
+                            <li><strong>Access to quality education is a fundamental right</strong> - No child should be denied learning</li>
+                            <li><strong>Investing in education is investing in the future</strong> - Prioritize youth upliftment programs</li>
+                        </ul>
+                    </div>
+                    
+                    <h4>Outcomes:</h4>
+                    <ul>
+                        <li>New partnerships formed with <strong>WUSC</strong> and <strong>Windle Trust</strong></li>
+                        <li>Featured in <strong>UNDP's Global Education Report</strong></li>
+                        <li>Inspired follow-up dialogues with <strong>5 African governments</strong></li>
+                    </ul>
+                    
+                    <div class="gallery-grid">
+                        <div class="gallery-item" style="background-image: url('https://images.unsplash.com/photo-1563986768609-322da13575f3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80');"></div>
+                        <div class="gallery-item" style="background-image: url('https://images.unsplash.com/photo-1541178735493-479c1a27ed24?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1471&q=80');"></div>
+                        <div class="gallery-item" style="background-image: url('https://images.unsplash.com/photo-1529107386315-e1a2ed48a620?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80');"></div>
+                    </div>
+                    
+                    <div class="testimonial">
+                        "Bonkey's journey from walking three days to reach a murum road to standing before global leaders represents millions of young people who deserve access to quality education."
+                        <div class="testimonial-author">- UNDP Representative</div>
+                    </div>
+                    
+                    <a href="#" class="btn btn-gold">Watch Full Speech <i class="bi bi-play-circle"></i></a>
+                </div>
+            </div>
+
+            <!-- 4. ADR Training -->
+            <div class="program-card" id="adr-training">
+                <div class="program-header">
+                    <h2 class="text-white fw-bold">Alternative Dispute Resolution Training</h2>
+                </div>
+                <div class="program-body">
+                    <div class="program-meta">
+                        <span><i class="bi bi-calendar"></i> March 3-5, 2025</span>
+                        <span><i class="bi bi-geo-alt"></i> Clarion Hotel, Nairobi</span>
+                        <span><i class="bi bi-people"></i> 60 participants</span>
+                    </div>
+                    
+                    <p>In partnership with Refugee Consortium of Kenya (RCK), we conducted an intensive workshop on Alternative Dispute Resolution for refugees, host communities, and community counselors.</p>
+                    
+                    <div class="impact-highlights">
+                        <h5>Training Components:</h5>
+                        <ul>
+                            <li><strong>Kenya's Judicial System</strong> - Understanding courts and grassroots mechanisms</li>
+                            <li><strong>Alternative Justice Systems (AJS)</strong> - Human rights-based approaches</li>
+                            <li><strong>Forms of ADR</strong> - Negotiation, mediation, arbitration, traditional systems</li>
+                            <li><strong>Conflict Prevention & Peacebuilding</strong> - Root causes and reconciliation</li>
+                        </ul>
+                    </div>
+                    
+                    <h4>Outcomes:</h4>
+                    <ul>
+                        <li><strong>45 participants</strong> earned ADR Practitioner certification</li>
+                        <li><strong>10 community peace committees</strong> established</li>
+                        <li>Manual distributed to <strong>200+ community leaders</strong></li>
+                    </ul>
+                    
+                    <div class="gallery-grid">
+                        <div class="gallery-item" style="background-image: url('https://images.unsplash.com/photo-1589829545856-d10d557cf95f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80');"></div>
+                        <div class="gallery-item" style="background-image: url('https://images.unsplash.com/photo-1434030216411-0b793f4b4173?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80');"></div>
+                        <div class="gallery-item" style="background-image: url('https://images.unsplash.com/photo-1551818255-e6e10975bc17?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80');"></div>
+                    </div>
+                    
+                    <div class="testimonial">
+                        "The role-playing exercises gave me practical skills I've already used to mediate two land disputes in our community."
+                        <div class="testimonial-author">- Community Peace Monitor, Kakuma</div>
+                    </div>
+                    
+                    <a href="#" class="btn btn-gold">Download Conflict Manual <i class="bi bi-download"></i></a>
+                </div>
+            </div>
+
+            <!-- 5. DRC Crisis Dialogue -->
+            <div class="program-card" id="drc-dialogue">
+                <div class="program-header">
+                    <h2 class="text-white fw-bold">DRC Crisis Global Dialogue</h2>
+                </div>
+                <div class="program-body">
+                    <div class="program-meta">
+                        <span><i class="bi bi-calendar"></i> March 1, 2025</span>
+                        <span><i class="bi bi-globe"></i> Virtual Global Forum</span>
+                        <span><i class="bi bi-people"></i> 300+ youth from 12 countries</span>
+                    </div>
+                    
+                    <p>We hosted a powerful online discussion on the ongoing crisis in eastern DRC, examining root causes and solutions with youth participants from across the world.</p>
+                    
+                    <div class="impact-highlights">
+                        <h5>Key Discussion Points:</h5>
+                        <ul>
+                            <li><strong>Mineral Wars</strong> - How tech demand fuels conflict (cobalt for AI/EV batteries)</li>
+                            <li><strong>Banyamulenge Marginalization</strong> - Historical context since 1885</li>
+                            <li><strong>African Solutions</strong> - Proposed EAC peacekeeping reforms</li>
+                        </ul>
+                    </div>
+                    
+                    <h4>Youth Action Outcomes:</h4>
+                    <ul>
+                        <li><strong>2,000+ signature petition</strong> to the African Union</li>
+                        <li><strong>#ArtForDRC</strong> social media awareness campaign</li>
+                        <li>Featured in <strong>Daily Nation</strong> geopolitical analysis</li>
+                    </ul>
+                    
+                    <div class="gallery-grid">
+                        <div class="gallery-item" style="background-image: url('https://images.unsplash.com/photo-1563986768609-322da13575f3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80');"></div>
+                        <div class="gallery-item" style="background-image: url('https://images.unsplash.com/photo-1541178735493-479c1a27ed24?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1471&q=80');"></div>
+                        <div class="gallery-item" style="background-image: url('https://images.unsplash.com/photo-1529107386315-e1a2ed48a620?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80');"></div>
+                    </div>
+                    
+                    <div class="testimonial">
+                        "This dialogue helped me understand how my smartphone is connected to the suffering in DRC. We must demand ethical sourcing from tech companies."
+                        <div class="testimonial-author">- University Student Participant</div>
+                    </div>
+                    
+                    <a href="#" class="btn btn-gold">View Geopolitical Map <i class="bi bi-map"></i></a>
+                </div>
+            </div>
+
+            <!-- 6. Leadership Conference -->
+            <div class="program-card" id="leadership-conference">
+                <div class="program-header">
+                    <h2 class="text-white fw-bold">Youth Leadership Conference</h2>
+                </div>
+                <div class="program-body">
+                    <div class="program-meta">
+                        <span><i class="bi bi-calendar"></i> 2025</span>
+                        <span><i class="bi bi-geo-alt"></i> Nairobi</span>
+                        <span><i class="bi bi-people"></i> 150 emerging leaders</span>
+                    </div>
+                    
+                    <p>A transformative gathering focused on unleashing the leadership potential within African youth, emphasizing that leadership transcends titles and is about creating value and impact.</p>
+                    
+                    <div class="impact-highlights">
+                        <h5>Key Takeaways:</h5>
+                        <ul>
+                            <li>Leadership begins with <strong>self-discovery</strong> and purpose</li>
+                            <li>True leadership embodies <strong>service</strong> and systems that uplift others</li>
+                            <li>African youth must <strong>unite</strong> to address challenges</li>
+                            <li>Critical discussion on <strong>Democracy vs alternative systems</strong></li>
+                        </ul>
+                    </div>
+                    
+                    <h4>Outcomes:</h4>
+                    <ul>
+                        <li><strong>5 social ventures</strong> secured seed funding</li>
+                        <li><strong>East Africa Youth Leaders Network</strong> formed</li>
+                        <li><strong>12 community projects</strong> initiated post-conference</li>
+                    </ul>
+                    
+                    <div class="gallery-grid">
+                        <div class="gallery-item" style="background-image: url('https://images.unsplash.com/photo-1521791136064-7986c2920216?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1469&q=80');"></div>
+                        <div class="gallery-item" style="background-image: url('https://images.unsplash.com/photo-1450101499163-c8848c66ca85?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80');"></div>
+                        <div class="gallery-item" style="background-image: url('https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80');"></div>
+                    </div>
+                    
+                    <div class="testimonial">
+                        "The energy in the room was electric! For the first time, I saw how my small community project could grow into a movement."
+                        <div class="testimonial-author">- Youth Participant from Kisumu</div>
+                    </div>
+                    
+                    <a href="#" class="btn btn-gold">View Speaker Insights <i class="bi bi-camera-reels"></i></a>
+                </div>
+            </div>
+
+            <!-- 7. Back-to-School Drive -->
+            <div class="program-card" id="back-to-school">
+                <div class="program-header">
+                    <h2 class="text-white fw-bold">Back-to-School Initiative</h2>
+                </div>
+                <div class="program-body">
+                    <div class="program-meta">
+                        <span><i class="bi bi-calendar"></i> December 28, 2024</span>
+                        <span><i class="bi bi-geo-alt"></i> Kasarani, Nairobi</span>
+                        <span><i class="bi bi-people"></i> 63 orphaned learners</span>
+                    </div>
+                    
+                    <p>Our heartwarming initiative provided school supplies and mentorship to refugee orphaned children preparing for the new school term.</p>
+                    
+                    <div class="impact-highlights">
+                        <h5>What We Delivered:</h5>
+                        <ul>
+                            <li>Complete <strong>school kits</strong> (books, uniforms, hygiene items)</li>
+                            <li><strong>Parent workshops</strong> on navigating the education system</li>
+                            <li><strong>1-year mentorship pledges</strong> for 15 students</li>
+                        </ul>
+                    </div>
+                    
+                    <h4>Partners:</h4>
+                    <p>Rock Assembly Church (venue), Ray of Hope (community mobilization)</p>
+                    
+                    <div class="gallery-grid">
+                        <div class="gallery-item" style="background-image: url('https://images.unsplash.com/photo-1588072432836-e10032774350?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1472&q=80');"></div>
+                        <div class="gallery-item" style="background-image: url('https://images.unsplash.com/photo-1523240795612-9a054b0db644?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80');"></div>
+                        <div class="gallery-item" style="background-image: url('https://images.unsplash.com/photo-1549056572-75914d5d5fd1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80');"></div>
+                    </div>
+                    
+                    <div class="testimonial">
+                        "This is my first new pencil case! I'll use it to study hard and become a doctor to help my community."
+                        <div class="testimonial-author">- 9-year-old beneficiary</div>
+                    </div>
+                    
+                    <a href="#" class="btn btn-gold">See More Smiles <i class="bi bi-images"></i></a>
+                </div>
+            </div>
+
+            <!-- 8. World Refugee Day -->
+            <div class="program-card" id="refugee-day">
+                <div class="program-header">
+                    <h2 class="text-white fw-bold">World Refugee Day 2025</h2>
+                </div>
+                <div class="program-body">
+                    <div class="program-meta">
+                        <span><i class="bi bi-calendar"></i> June 20, 2025</span>
+                        <span><i class="bi bi-geo-alt"></i> Nairobi, Kenya</span>
+                        <span><i class="bi bi-people"></i> 500+ attendees</span>
+                    </div>
+                    
+                    <p>Our Regional Manager Bonkey Muhumure delivered a powerful keynote address standing in solidarity with refugees, joined by UNHCR, KNCHR, and refugee entrepreneurs.</p>
+                    
+                    <div class="impact-highlights">
+                        <h5>Event Highlights:</h5>
+                        <ul>
+                            <li><strong>Marketplace</strong> showcasing 30 refugee businesses</li>
+                            <li><strong>#SolidarityPledge</strong> - Corporates committed to hire 100+ refugees</li>
+                            <li>Featured on <strong>NTV Kenya</strong> and launched podcast series</li>
+                        </ul>
+                    </div>
+                    
+                    <h4>Key Message:</h4>
+                    <p>"Refugees are not a burden; they are survivors, leaders, and contributors to our shared future."</p>
+                    
+                    <div class="gallery-grid">
+                        <div class="gallery-item" style="background-image: url('https://images.unsplash.com/photo-1500382017468-9049fed747ef?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80');"></div>
+                        <div class="gallery-item" style="background-image: url('https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80');"></div>
+                        <div class="gallery-item" style="background-image: url('https://images.unsplash.com/photo-1521791055366-0d553872125f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1469&q=80');"></div>
+                    </div>
+                    
+                    <div class="testimonial">
+                        "For the first time, I felt my refugee status wasn't a limitation but a story of resilience that could inspire others."
+                        <div class="testimonial-author">- Refugee Entrepreneur Participant</div>
+                    </div>
+                    
+                    <a href="#" class="btn btn-gold">Listen to Podcast <i class="bi bi-mic"></i></a>
+                </div>
+            </div>
+
+            <!-- Call to Action -->
+            <div class="text-center py-5 my-4">
+                <h2 class="mb-4">Join Our Next Chapter</h2>
+                <p class="lead mb-4">Be part of creating more transformative moments across Kenya</p>
+                <div class="d-flex justify-content-center gap-3">
+                    <a href="partnerships.html" class="btn btn-gold btn-lg">Partner With Us</a>
+                    <a href="donate.html" class="btn btn-gold btn-lg">Donate</a>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="row g-4">
-                <div class="col-lg-4">
-                    <img src="image/website-logo.png" alt="Importance Leadership Logo" class="footer-logo" loading="lazy">
-                    <p class="mb-4">Developing ethical, visionary leaders who drive positive change in Africa and beyond through mentorship, education, and community engagement.</p>
-                    <div class="social-links mb-4">
-                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-                        <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
-                    </div>
-                </div>
-                
-                <div class="col-lg-2 col-md-4">
-                    <div class="footer-links">
-                        <h5>Navigation</h5>
-                        <ul>
-                            <li><a href="index.html">Home</a></li>
-                            <li><a href="about.html">About Us</a></li>
-                            <li><a href="programs.html">Programs</a></li>
-                            <li><a href="impact.html">Impact</a></li>
-                            <li><a href="#">Blog</a></li>
-                            <li><a href="contact-us.html">Contact</a></li>
-                        </ul>
-                    </div>
-                </div>
-                
-                <div class="col-lg-3 col-md-4">
-                    <div class="footer-links">
-                        <h5>Kenya Programs</h5>
-                        <ul>
-                            <li><a href="#">Youth Leadership</a></li>
-                            <li><a href="#">Women in Leadership</a></li>
-                            <li><a href="#">Civic Leadership</a></li>
-                            <li><a href="#">Corporate Training</a></li>
-                            <li><a href="#">Community Projects</a></li>
-                        </ul>
-                    </div>
-                </div>
-                
-                <div class="col-lg-3 col-md-4">
-                    <div class="footer-links">
-                        <h5>Contact Kenya</h5>
-                        <ul>
-                            <li><i class="fas fa-map-marker-alt me-2 text-secondary"></i> Pioneer House, Nairobi</li>
-                            <li><i class="fas fa-phone me-2 text-secondary"></i> +254 792 732 177</li>
-                            <li><i class="fas fa-envelope me-2 text-secondary"></i> kenya@importanceleadership.com</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            
-            <hr class="my-4 bg-secondary opacity-25">
-            
-            <div class="row">
-                <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
-                    <p class="mb-0 small">&copy; 2025 Importance Leadership Kenya. All rights reserved.</p>
-                </div>
-                <div class="col-md-6 text-center text-md-end">
-                    <a href="#" class="text-white text-decoration-none small me-3">Privacy Policy</a>
-                    <a href="#" class="text-white text-decoration-none small me-3">Terms of Service</a>
-                    <a href="#" class="text-white text-decoration-none small">Cookie Policy</a>
-                </div>
-            </div>
-        </div>
-    </footer>
-    
-    <!-- Back to top button -->
-    <button class="back-to-top btn btn-primary rounded-circle p-3" id="backToTop" aria-label="Back to top">
-        <i class="fas fa-arrow-up"></i>
-    </button>
+    <script src="loadFooter.js"></script>
 
-    <!-- Scripts -->
-    <!-- Bootstrap JS -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    
-    <!-- AOS Animation -->
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    
-    <!-- Custom JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     <script>
-        // Initialize AOS animation
-        document.addEventListener('DOMContentLoaded', function() {
-            if (typeof AOS !== 'undefined') {
-                AOS.init({
-                    duration: 800,
-                    easing: 'ease-in-out',
-                    once: true,
-                    mirror: false
-                });
-            }
-            
-            // Back to top button
-            const backToTop = document.getElementById('backToTop');
-            window.addEventListener('scroll', function() {
-                if (window.scrollY > 300) {
-                    backToTop.style.display = 'flex';
-                } else {
-                    backToTop.style.display = 'none';
-                }
-            });
-            backToTop.addEventListener('click', function() {
-                window.scrollTo({ top: 0, behavior: 'smooth' });
-            });
-
-            // Animated stats counter
-            const statNumbers = document.querySelectorAll('.stat-number');
-            let statsAnimated = false;
-            function animateStats() {
-                if (statsAnimated) return;
-                const statsSection = document.querySelector('.stat-number');
-                if (!statsSection) return;
-                const rect = statsSection.getBoundingClientRect();
-                if (rect.top < window.innerHeight) {
-                    statNumbers.forEach(function(stat) {
-                        const target = +stat.getAttribute('data-count');
-                        let count = 0;
-                        const increment = target > 100 ? Math.ceil(target / 50) : 1;
-                        const interval = setInterval(function() {
-                            count += increment;
-                            if (count >= target) {
-                                stat.textContent = target;
-                                clearInterval(interval);
-                            } else {
-                                stat.textContent = count;
-                            }
-                        }, 20);
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 100,
+                        behavior: 'smooth'
                     });
-                    statsAnimated = true;
                 }
-            }
-            window.addEventListener('scroll', animateStats);
-            animateStats();
+            });
+        });
+        
+        // Gallery lightbox functionality would go here
+        // This is just a placeholder for the actual implementation
+        const galleryItems = document.querySelectorAll('.gallery-item');
+        galleryItems.forEach(item => {
+            item.addEventListener('click', function() {
+                // In a real implementation, this would open a lightbox
+                console.log('Opening gallery image:', this.style.backgroundImage);
+            });
         });
     </script>
 </body>
