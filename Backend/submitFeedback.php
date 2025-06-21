@@ -1,4 +1,5 @@
 <?php
+define('ENVIRONMENT', 'production'); // Change to 'development' for debugging
 header('Content-Type: application/json');
 require_once 'db_connection.php';
 

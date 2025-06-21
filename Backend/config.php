@@ -1,17 +1,21 @@
 <?php
-$servername = "localhost"; // or "srv1388.hstgr.io"
-$username = "root";   // replace with your DB username
-$password = "secret";   // replace with your DB password
-$dbname = "importanceleadership";
-
-// Create connection
-$conn = new mysqli($servername, $username, $password, $dbname);
-
-// Check connection
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-}
-
-// Success message (optional)
-echo "Connected successfully to the database!";
-?>
+// config.php
+return [
+    'database' => [
+        'host' => 'localhost',
+        'name' => 'importanceleadership',
+        'user' => 'root',
+        'pass' => 'secret',
+        'charset' => 'utf8mb4'
+    ],
+    'email' => [
+        'to' => 'importanceleadership2020@gmail.com',
+        'from' => 'noreply@importanceleadership.com',
+        'subject_prefix' => '[Contact Form] '
+    ],
+    'security' => [
+        'honeypot_field' => 'website_url',
+        'csrf' => true
+    ]
+    
+];

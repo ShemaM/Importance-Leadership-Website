@@ -3,17 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Get in touch with Importance Leadership. We would love to hear from you.">
-    <meta name="keywords" content="Leadership, Impact, Community, Mentorship, Youth Empowerment">
+    <meta name="description" content="Get in touch with Importance Leadership. Contact us via email, phone, or WhatsApp for inquiries and support.">
+    <meta name="keywords" content="Leadership, Impact, Community, Mentorship, Youth Empowerment, Contact Us">
     <meta name="author" content="Importance Leadership">
     <title>Contact Us | Importance Leadership</title>
-    <link rel="icon" type="image/png" href="image/website-logo.png">
-    <!-- Bootstrap CSS -->
+    <link rel="icon" type="image/png" href="image/logo.jpg">
+    
+    <!-- CSS Links -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Font Awesome -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
-    <!-- AOS Animation -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
     <style>
         :root {
             --primary: #102542;
@@ -98,21 +98,34 @@
             margin: 0 auto 1.5rem;
         }
 
-        /* Contact Form */
-        .contact-form-section {
-            background: url('image/form-bg-pattern.png') no-repeat center center/cover;
-            padding: 5rem 0;
-            position: relative;
+        /* WhatsApp Cards */
+        .whatsapp-card {
+            border-radius: 12px;
+            transition: var(--transition);
+            height: 100%;
+            border: 1px solid rgba(0,0,0,0.05);
         }
 
-        .contact-form-section::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(255,255,255,0.95);
+        .whatsapp-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .whatsapp-icon-wrapper {
+            width: 80px;
+            height: 80px;
+            background: rgba(37, 211, 102, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            margin: 0 auto 1.5rem;
+        }
+
+        /* Contact Form */
+        .contact-form-section {
+            padding: 5rem 0;
+            background-color: rgba(248, 249, 250, 0.7);
         }
 
         .form-container {
@@ -120,8 +133,6 @@
             border-radius: 16px;
             box-shadow: 0 15px 40px rgba(0,0,0,0.08);
             overflow: hidden;
-            position: relative;
-            z-index: 2;
         }
 
         .form-header {
@@ -148,12 +159,6 @@
             box-shadow: 0 0 0 3px rgba(124,173,233,0.3);
         }
 
-        .form-label {
-            font-weight: 600;
-            margin-bottom: 0.5rem;
-            color: var(--primary);
-        }
-
         .submit-btn {
             background: var(--secondary);
             color: var(--primary);
@@ -170,20 +175,11 @@
             transform: translateY(-2px);
         }
 
-        /* Map Section */
-        .map-container {
-            border-radius: 16px;
-            overflow: hidden;
-            box-shadow: 0 15px 40px rgba(0,0,0,0.1);
-            height: 400px;
-        }
-
         /* Responsive Adjustments */
         @media (max-width: 991.98px) {
             .contact-hero h1 {
                 font-size: 2.5rem;
             }
-            
             .contact-hero {
                 padding: 4rem 0 3rem;
             }
@@ -193,7 +189,6 @@
             .contact-hero h1 {
                 font-size: 2rem;
             }
-            
             .form-body {
                 padding: 1.5rem;
             }
@@ -208,29 +203,77 @@
     <!-- Hero Section -->
     <section class="contact-hero text-center">
         <div class="container" data-aos="fade-up">
-            <h1>Connect With Our Team</h1>
+            <h1 class="text-white fw-bold">Connect With Our Team</h1>
             <p>We're here to answer your questions and discuss how we can work together to create positive change in our communities.</p>
             <div class="d-flex justify-content-center gap-3">
-                <a href="#contact-form" class="btn btn-light btn-lg px-4">
+                <a href="#whatsapp" class="btn btn-light btn-lg px-4">
                     <i class="fas fa-paper-plane me-2"></i> Send a Message
                 </a>
-                <a href="#contact-cards" class="btn btn-outline-light btn-lg px-4">
-                    <i class="fas fa-phone-alt me-2"></i> Contact Info
-                </a>
+                
             </div>
         </div>
     </section>
 
-    <!-- Contact Methods -->
-    <section id="contact-cards" class="py-5 bg-light">
+
+    <!-- WhatsApp Section -->
+    <section class="py-5 bg-light" id="whatsapp">
         <div class="container">
             <div class="text-center mb-5" data-aos="fade-up">
-                <h2 class="fw-bold">Our Contact Channels</h2>
-                <p class="text-muted">Choose your preferred way to get in touch</p>
+                <h2 class="fw-bold">WhatsApp Support</h2>
+                <p class="text-muted">Message us directly on WhatsApp for quick assistance</p>
             </div>
             
-            <div class="row g-4">
+            <div class="row g-4 justify-content-center">
+                <!-- Kenya WhatsApp -->
                 <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+                    <div class="card h-100 border-0 shadow-sm whatsapp-card">
+                        <div class="card-body text-center p-4">
+                            <div class="whatsapp-icon-wrapper">
+                                <i class="fab fa-whatsapp fa-2x text-success"></i>
+                            </div>
+                            <h5 class="fw-bold mb-3">Kenya Support</h5>
+                            <p class="text-muted mb-4">Available for our Kenya Branch</p>
+                            <a href="https://wa.me/254791263998" target="_blank" class="btn btn-outline-success px-4">
+                                <i class="fab fa-whatsapp me-2"></i> +254 791 263998
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- USA WhatsApp -->
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+                    <div class="card h-100 border-0 shadow-sm whatsapp-card">
+                        <div class="card-body text-center p-4">
+                            <div class="whatsapp-icon-wrapper">
+                                <i class="fab fa-whatsapp fa-2x text-success"></i>
+                            </div>
+                            <h5 class="fw-bold mb-3">USA Support</h5>
+                            <p class="text-muted mb-4">Dedicated line for our USA Branch</p>
+                            <a href="https://wa.me/16037150801" target="_blank" class="btn btn-outline-success px-4">
+                                <i class="fab fa-whatsapp me-2"></i> +1 (603) 715-0801
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Canada WhatsApp -->
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
+                    <div class="card h-100 border-0 shadow-sm whatsapp-card">
+                        <div class="card-body text-center p-4">
+                            <div class="whatsapp-icon-wrapper">
+                                <i class="fab fa-whatsapp fa-2x text-success"></i>
+                            </div>
+                            <h5 class="fw-bold mb-3">Canada Support</h5>
+                            <p class="text-muted mb-4">Specialized assistance for the Canada Branch</p>
+                            <a href="https://wa.me/14319988892" target="_blank" class="btn btn-outline-success px-4">
+                                <i class="fab fa-whatsapp me-2"></i> +1 (431) 998-8892
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Email Card -->
+                <div class="col-md-4 text-center " data-aos="fade-up" data-aos-delay="100">
                     <div class="contact-card text-center">
                         <div class="contact-icon">
                             <i class="fas fa-envelope"></i>
@@ -238,76 +281,21 @@
                         <h4>Email Us</h4>
                         <p class="text-muted">For general inquiries and partnership opportunities</p>
                         <a href="mailto:info@importanceleadership.com" class="btn btn-outline-primary mt-3">
-                            info@importanceleadership.com
+                            importanceleadership2020@gmail.com
                         </a>
-                    </div>
-                </div>
-                
-                <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
-                    <div class="contact-card text-center">
-                        <div class="contact-icon">
-                            <i class="fas fa-phone-alt"></i>
-                        </div>
-                        <h4>Call Us</h4>
-                        <p class="text-muted">Speak directly with our team during business hours</p>
-                        <a href="tel:+254792732177" class="btn btn-outline-primary mt-3">
-                            +254 792 732 177
-                            +254 791 263 998
-                        
-                        </a>
-                    </div>
-                </div>
-                
-               
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact Form Section -->
-    <section id="contact-form" class="contact-form-section">
-        <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-lg-8" data-aos="fade-up">
-                    <div class="form-container">
-                        <div class="form-header">
-                            <h3 class="mb-0">Send Us a Message</h3>
-                        </div>
-                        <div class="form-body">
-                            <form id="contactForm" name="contactForm" action="contact.php" method="POST">
-                                <div class="row">
-                                    <div class="col-md-6 mb-3">
-                                        <label for="name" class="form-label">Full Name *</label>
-                                        <input type="text" class="form-control" id="name" name="name" required>
-                                    </div>
-                                    <div class="col-md-6 mb-3">
-                                        <label for="email" class="form-label">Email Address *</label>
-                                        <input type="email" class="form-control" id="email" name="email" required>
-                                    </div>
-                                </div>
-                                <div class="mb-3">
-                                    <label for="subject" class="form-label">Subject</label>
-                                    <input type="text" class="form-control" id="subject" name="subject">
-                                </div>
-                                <div class="mb-3">
-                                    <label for="message" class="form-label">Your Message *</label>
-                                    <textarea class="form-control" id="message" name="message" rows="5" required></textarea>
-                                </div>
-                                <button type="submit" class="submit-btn">
-                                    <i class="fas fa-paper-plane me-2"></i> Send Message
-                                </button>
-                                <div id="formMessage" class="mt-3 text-center"></div>
-                            </form>
-                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-  
+    
 
+    <!-- Spacer before footer -->
+    <div style="height: 60px;"></div>
 
     <!-- Dynamic Footer -->
+    <footer id="footer-container"></footer>
     <script src="loadFooter.js"></script>
 
     <!-- JavaScript Libraries -->
@@ -329,34 +317,43 @@
                 e.preventDefault();
                 var form = $(this);
                 var submitBtn = form.find('button[type="submit"]');
-                var formMessage = $('#formMessage');
+                var successMessage = $('#successMessage');
                 
                 // Disable submit button
                 submitBtn.prop('disabled', true).html('<i class="fas fa-spinner fa-spin me-2"></i> Sending...');
                 
-                // Submit form via AJAX
                 $.ajax({
                     type: 'POST',
                     url: form.attr('action'),
                     data: form.serialize(),
+                    dataType: 'json',
                     success: function(response) {
                         if(response.success) {
-                            formMessage.html('<div class="alert alert-success">Thank you! Your message has been sent successfully.</div>');
                             form[0].reset();
+                            successMessage.removeClass('d-none');
+                            $('html, body').animate({
+                                scrollTop: successMessage.offset().top - 100
+                            }, 500);
                         } else {
-                            formMessage.html('<div class="alert alert-danger">Error: ' + response.message + '</div>');
+                            successMessage.removeClass('d-none').removeClass('alert-success').addClass('alert-danger');
+                            successMessage.find('h4').text('Error');
+                            successMessage.find('p').text(response.message || 'There was an error submitting your message.');
                         }
                     },
-                    error: function() {
-                        formMessage.html('<div class="alert alert-danger">Sorry, there was an error submitting your message. Please try again later.</div>');
+                    error: function(xhr) {
+                        var msg = 'Sorry, there was an error submitting your message. Please try again later.';
+                        if (xhr.responseText) {
+                            try {
+                                var json = JSON.parse(xhr.responseText);
+                                if (json.message) msg = json.message;
+                            } catch(e) {}
+                        }
+                        successMessage.removeClass('d-none').removeClass('alert-success').addClass('alert-danger');
+                        successMessage.find('h4').text('Error');
+                        successMessage.find('p').text(msg);
                     },
                     complete: function() {
                         submitBtn.prop('disabled', false).html('<i class="fas fa-paper-plane me-2"></i> Send Message');
-                        
-                        // Scroll to message
-                        $('html, body').animate({
-                            scrollTop: formMessage.offset().top - 100
-                        }, 500);
                     }
                 });
             });
