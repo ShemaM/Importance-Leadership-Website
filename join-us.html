@@ -564,7 +564,7 @@
           <p class="form-subtitle">Start your leadership journey today</p>
         </div>
         
-        <form id="signupForm" action="join-us.php" method="POST">
+        <form id="signupForm" action="join-us.php" method="POST" novalidate>
           <div class="form-group">
             <label for="firstName" class="form-label">First Name</label>
             <i class="fas fa-user form-icon"></i>
@@ -608,12 +608,7 @@
           
           <button type="submit" class="btn btn-primary" id="submitBtn">
             <span>Create Account</span>
-            <i class="fas fa-spinner spinner" id="submitSpinner" style="display:none;"></i>
           </button>
-          
-          <div class="login-link">
-            Already have an account? <a href="login.html">Log in here</a>
-          </div>
         </form>
       </div>
     </div>
@@ -656,16 +651,9 @@ document.addEventListener('DOMContentLoaded', () => {
   const confirmPasswordInput = document.getElementById('confirmPassword');
   const togglePassword = document.getElementById('togglePassword');
   const toggleConfirmPassword = document.getElementById('toggleConfirmPassword');
-  const submitBtn = document.getElementById('submitBtn');
-  const spinner = document.getElementById('submitSpinner');
-  const successModal = document.getElementById('successModal');
-  const errorModal = document.getElementById('errorModal');
-  const confirmedEmail = document.getElementById('confirmedEmail');
-  const errorModalMessage = document.getElementById('errorModalMessage');
-  const successModalBtn = document.getElementById('successModalBtn');
-  const errorModalBtn = document.getElementById('errorModalBtn');
   const passwordStrengthBar = document.getElementById('passwordStrength');
   const passwordStrengthText = document.getElementById('passwordStrengthText');
+  const submitBtn = document.getElementById('submitBtn');
 
   // Toggle password visibility for password and confirm password
   function setupPasswordToggle(toggleElement, inputElement) {
@@ -806,21 +794,8 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // Modal buttons handlers
-  successModalBtn.addEventListener('click', () => {
-    successModal.classList.remove('active');
-    window.location.href = 'signupSuccess.html'; // Redirect to success page
-  });
-
-  errorModalBtn.addEventListener('click', () => {
-    errorModal.classList.remove('active');
-  });
-
-  // Form submission handler
-  form.addEventListener('submit', async (e) => {
-    e.preventDefault();
-
-    // Validate all fields before submit
+  // Form submission handler for client-side validation only
+  form.addEventListener('submit', function(e) {
     let isFormValid = true;
     inputs.forEach(input => {
       if (!validateField(input)) {
@@ -828,58 +803,10 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
 
-    if (!isFormValid) return;
-
-    // Disable submit and show spinner
-    submitBtn.disabled = true;
-    spinner.style.display = 'inline-block';
-    const submitBtnTextSpan = submitBtn.querySelector('span');
-    if (submitBtnTextSpan) submitBtnTextSpan.textContent = 'Creating Account...';
-
-    try {
-      const formData = new FormData(form);
-      const response = await fetch(form.action, {
-        method: 'POST',
-        body: formData,
-      });
-
-      let result;
-      try {
-        result = await response.json();
-      } catch (jsonError) {
-        // If response is not JSON, treat as error
-        throw new Error('Unexpected server response. Please contact support.');
-      }
-
-      if (!response.ok || !result.success) {
-        throw new Error(result.message || 'Registration failed');
-      }
-
-      // Show success modal with confirmed email
-      confirmedEmail.textContent = formData.get('email');
-      successModal.classList.add('active');
-
-      // Reset form and password strength meter
-      form.reset();
-      passwordStrengthBar.className = 'meter-bar';
-      passwordStrengthText.textContent = '';
-      passwordStrengthText.className = 'feedback';
-
-      // Clear all validation messages
-      form.querySelectorAll('.feedback').forEach(el => (el.textContent = ''));
-
-    } catch (error) {
-      errorModalMessage.textContent = error.message || 'An unexpected error occurred. Please try again.';
-      errorModal.classList.add('active');
-    } finally {
-      submitBtn.disabled = false;
-      spinner.style.display = 'none';
-      if (submitBtnTextSpan) submitBtnTextSpan.textContent = 'Create Account';
+    if (!isFormValid) {
+      e.preventDefault();
     }
   });
 });
 </script>
-<script src="loadFooter.js"></script>
-
-</body>
 </html>
