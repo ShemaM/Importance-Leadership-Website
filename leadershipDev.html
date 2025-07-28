@@ -3,891 +3,513 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Leadership Development Program | Importance Leadership - Empowering African Leaders</title>
-    <meta name="description" content="12-week transformative leadership development program for emerging African leaders. Build core competencies through workshops, mentorship, and real-world projects.">
-    <meta name="keywords" content="leadership development, African leaders, leadership training, mentorship program, leadership skills, Africa leadership">
+    <title>Leadership Development | Importance Leadership | Empowering Future Leaders</title>
+    <meta name="description" content="Importance Leadership's Development Program cultivates visionary leaders from underrepresented communities through training, mentorship, and real-world leadership opportunities.">
     
-    <!-- Canonical URL -->
-    <link rel="canonical" href="https://www.importanceleadership.org/leadership-development">
+    <!-- Preload critical resources -->
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" as="style">
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" as="style">
     
-    <!-- Favicon -->
-    <link rel="icon" href="../image/logo.jpg" type="image/x-icon">
+    <!-- Tailwind CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     
-    <!-- Open Graph / Social Media Meta Tags -->
-    <meta property="og:title" content="Leadership Development Program | Importance Leadership">
-    <meta property="og:description" content="12-week transformative leadership development program for emerging African leaders">
-    <meta property="og:image" content="https://www.importanceleadership.org/image/leadership-workshop.jpg">
-    <meta property="og:url" content="https://www.importanceleadership.org/leadership-development">
-    <meta property="og:type" content="website">
-    
-    <!-- Twitter Card Meta Tags -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Leadership Development Program | Importance Leadership">
-    <meta name="twitter:description" content="12-week transformative leadership development program for emerging African leaders">
-    <meta name="twitter:image" content="https://www.importanceleadership.org/image/leadership-workshop.jpg">
-    
-    <!-- Bootstrap 5 CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    
-    <!-- Animate On Scroll (AOS) -->
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
-    
     <style>
-    :root {
-        --primary: #1a2238;
-        --primary-light: #263159;
-        --secondary: #ff6a3d;
-        --secondary-light: #ff914d;
-        --accent: #21e6c1;
-        --light: #f6f8fc;
-        --dark: #22223b;
-        --text-light: #fff;
-        --text-dark: #22223b;
-        --transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
-    }
-
-    body {
-        font-family: 'Poppins', Arial, sans-serif;
-        color: var(--text-dark);
-        background: var(--light);
-        line-height: 1.7;
-        scroll-behavior: smooth;
-        overflow-x: hidden;
-    }
-
-    h1, h2, h3, h4, h5, h6 {
-        font-family: 'Playfair Display', serif;
-        font-weight: 700;
-        color: var(--primary);
-        line-height: 1.2;
-    }
-
-    a {
-        color: var(--secondary);
-        text-decoration: none;
-        transition: color 0.2s;
-    }
-    a:hover {
-        color: var(--accent);
-    }
-
-    .navbar {
-        background: rgba(26,34,56,0.98);
-        padding: 1.2rem 0;
-        box-shadow: 0 2px 16px rgba(26,34,56,0.07);
-        transition: var(--transition);
-    }
-    .nav-link {
-        color: var(--text-light);
-        font-weight: 500;
-        margin: 0 0.5rem;
-        position: relative;
-    }
-    .nav-link:after {
-        content: '';
-        display: block;
-        width: 0;
-        height: 2px;
-        background: var(--secondary);
-        transition: width 0.3s;
-        margin-top: 2px;
-    }
-    .nav-link:hover:after, .nav-link.active:after {
-        width: 100%;
-    }
-    .nav-link:hover, .nav-link.active {
-        color: var(--accent);
-    }
-
-    .hero-section {
-        min-height: 90vh;
-        display: flex;
-        align-items: center;
-        background: linear-gradient(120deg, rgba(26,34,56,0.97) 60%, rgba(33,230,193,0.08)), url('../image/leadershipDevelopemnt.jpg') center/cover no-repeat;
-        color: var(--text-light);
-        padding-top: 100px;
-        position: relative;
-    }
-    .hero-section:before {
-        content: '';
-        position: absolute;
-        inset: 0;
-        background: linear-gradient(90deg, rgba(26,34,56,0.95) 60%, rgba(33,230,193,0.05));
-        z-index: 0;
-    }
-    .hero-section .container, .hero-section .row {
-        position: relative;
-        z-index: 1;
-    }
-    .hero-section h1, .hero-section .display-4 {
-        color: var(--text-light);
-        text-shadow: 0 2px 12px rgba(26,34,56,0.25);
-    }
-    .hero-section .lead {
-        color: #e0e6ed;
-    }
-
-    .badge.bg-secondary {
-        background: var(--secondary);
-        color: var(--primary);
-        font-weight: 600;
-        letter-spacing: 1px;
-    }
-
-    .btn {
-        font-weight: 600;
-        border-radius: 2rem;
-        padding: 0.7rem 2rem;
-        transition: var(--transition);
-        border-width: 2px;
-    }
-    .btn-warning {
-        background: var(--secondary);
-        border: none;
-        color: var(--primary);
-    }
-    .btn-warning:hover {
-        background: var(--secondary-light);
-        color: var(--primary);
-    }
-    .btn-outline-light {
-        border-color: #fff;
-        color: #fff;
-    }
-    .btn-outline-light:hover {
-        background: #fff;
-        color: var(--primary);
-    }
-    .btn-primary-custom {
-        background: var(--primary);
-        color: #fff;
-        border: none;
-    }
-    .btn-primary-custom:hover {
-        background: var(--primary-light);
-        color: #fff;
-    }
-    .btn-secondary-custom {
-        background: var(--secondary);
-        color: var(--primary);
-        border: none;
-    }
-    .btn-secondary-custom:hover {
-        background: var(--secondary-light);
-        color: var(--primary);
-    }
-
-    .section-title, .display-5 {
-        color: var(--primary);
-        font-weight: 700;
-        margin-bottom: 2rem;
-        text-align: center;
-        letter-spacing: 0.5px;
-    }
-    .section-title:after {
-        content: '';
-        display: block;
-        width: 60px;
-        height: 3px;
-        background: var(--secondary);
-        margin: 1.2rem auto 0;
-        border-radius: 2px;
-    }
-
-    .feature-card {
-        background: #fff;
-        border-radius: 1.2rem;
-        box-shadow: 0 4px 24px rgba(26,34,56,0.08);
-        padding: 2.2rem 1.5rem 1.5rem 1.5rem;
-        transition: var(--transition);
-        height: 100%;
-        border: none;
-    }
-    .feature-card:hover {
-        transform: translateY(-8px) scale(1.03);
-        box-shadow: 0 8px 32px rgba(33,230,193,0.10);
-    }
-    .feature-icon {
-        width: 70px;
-        height: 70px;
-        background: var(--accent);
-        color: var(--primary);
-        border-radius: 50%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        margin: 0 auto 1.2rem;
-        font-size: 2rem;
-        box-shadow: 0 2px 8px rgba(33,230,193,0.10);
-        transition: var(--transition);
-    }
-    .feature-card:hover .feature-icon {
-        background: var(--secondary);
-        color: #fff;
-        transform: scale(1.1) rotate(-8deg);
-    }
-
-    .stat-item {
-        background: #fff;
-        border-radius: 1rem;
-        box-shadow: 0 2px 12px rgba(26,34,56,0.06);
-        padding: 2rem 1rem;
-        text-align: center;
-        transition: var(--transition);
-    }
-    .stat-item:hover {
-        box-shadow: 0 6px 24px rgba(33,230,193,0.10);
-        transform: translateY(-4px) scale(1.02);
-    }
-    .stat-number {
-        font-size: 2.7rem;
-        font-weight: 700;
-        color: var(--secondary);
-        margin-bottom: 0.5rem;
-    }
-
-    .card {
-        border-radius: 1.2rem;
-        box-shadow: 0 2px 16px rgba(26,34,56,0.07);
-    }
-    .card-img-top {
-        border-radius: 1.2rem 1.2rem 0 0;
-        object-fit: cover;
-        height: 220px;
-    }
-
-    .form-control-custom {
-        border-radius: 0.7rem;
-        border: 1.5px solid #e0e6ed;
-        padding: 0.7rem 1rem;
-        transition: var(--transition);
-        font-size: 1rem;
-    }
-    .form-control-custom:focus {
-        border-color: var(--secondary);
-        box-shadow: 0 0 0 0.15rem rgba(255,106,61,0.12);
-    }
-
-    .accordion-item {
-        border-radius: 0.7rem !important;
-        overflow: hidden;
-        margin-bottom: 1rem;
-    }
-    .accordion-button {
-        font-weight: 600;
-        color: var(--primary);
-        background: #f6f8fc;
-        border: none;
-        border-radius: 0.7rem !important;
-        transition: var(--transition);
-    }
-    .accordion-button:not(.collapsed) {
-        background: var(--accent);
-        color: var(--primary);
-    }
-    .accordion-body {
-        background: #fff;
-        color: var(--dark);
-    }
-
-    .footer {
-        background: var(--primary);
-        color: #e0e6ed;
-        padding: 4rem 0 2rem;
-        position: relative;
-    }
-    .footer-logo {
-        width: 170px;
-        margin-bottom: 1.2rem;
-        filter: brightness(0) invert(1);
-    }
-    .footer-links h5 {
-        color: #fff;
-        margin-bottom: 1.2rem;
-        font-weight: 600;
-        letter-spacing: 0.5px;
-        position: relative;
-    }
-    .footer-links h5:after {
-        content: '';
-        display: block;
-        width: 38px;
-        height: 3px;
-        background: var(--secondary);
-        margin-top: 0.5rem;
-        border-radius: 2px;
-    }
-    .footer-links ul {
-        list-style: none;
-        padding: 0;
-        margin: 0;
-    }
-    .footer-links li {
-        margin-bottom: 0.7rem;
-        font-size: 1rem;
-    }
-    .footer-links a {
-        color: #e0e6ed;
-        opacity: 0.8;
-        transition: color 0.2s, opacity 0.2s, padding-left 0.2s;
-        padding-left: 0;
-    }
-    .footer-links a:hover {
-        color: var(--accent);
-        opacity: 1;
-        padding-left: 6px;
-    }
-    .social-links a {
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        width: 38px;
-        height: 38px;
-        background: rgba(255,255,255,0.08);
-        border-radius: 50%;
-        color: #fff;
-        margin-right: 0.5rem;
-        font-size: 1.2rem;
-        transition: var(--transition);
-    }
-    .social-links a:hover {
-        background: var(--secondary);
-        color: var(--primary);
-        transform: scale(1.1) translateY(-2px);
-    }
-
-    .back-to-top {
-        position: fixed;
-        bottom: 32px;
-        right: 32px;
-        width: 48px;
-        height: 48px;
-        background: var(--secondary);
-        color: #fff;
-        border-radius: 50%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-size: 1.3rem;
-        cursor: pointer;
-        opacity: 0;
-        visibility: hidden;
-        transition: var(--transition);
-        z-index: 999;
-        box-shadow: 0 4px 16px rgba(255,106,61,0.15);
-        border: none;
-    }
-    .back-to-top.active, .back-to-top[style*="block"] {
-        opacity: 1;
-        visibility: visible;
-    }
-    .back-to-top:hover {
-        background: var(--primary);
-        color: var(--secondary);
-        transform: scale(1.08) translateY(-3px);
-    }
-
-    @media (max-width: 1199px) {
-        .hero-section h1, .hero-section .display-4 {
-            font-size: 2.7rem;
+        /* Custom styles */
+        body {
+            font-family: 'Inter', sans-serif;
+            color: #0f172a;
         }
-        .card-img-top {
-            height: 180px;
+        
+        .hero-gradient {
+            background: linear-gradient(135deg, rgba(11, 31, 58, 0.85) 0%, rgba(11, 31, 58, 0.7) 100%);
         }
-    }
-    @media (max-width: 991px) {
-        .hero-section {
-            min-height: 70vh;
-            padding-top: 80px;
+        
+        .nav-link {
+            position: relative;
         }
-        .section-title, .display-5 {
-            font-size: 2rem;
+        
+        .nav-link:after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -4px;
+            left: 0;
+            background-color: #059669;
+            transition: width 0.3s ease;
         }
-        .footer {
-            padding: 3rem 0 1.5rem;
+        
+        .nav-link:hover:after {
+            width: 100%;
         }
-    }
-    @media (max-width: 767px) {
-        .hero-section {
-            padding-top: 60px;
+        
+        .active-nav:after {
+            width: 100%;
+            background-color: #059669;
         }
-        .hero-section h1, .hero-section .display-4 {
-            font-size: 2rem;
+        
+        .card-hover {
+            transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
         }
-        .feature-card, .stat-item {
-            padding: 1.2rem 0.7rem;
+        
+        .card-hover:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
         }
-        .footer-logo {
-            width: 120px;
+        
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
         }
-    }
-    @media (max-width: 575px) {
-        .hero-section {
-            padding-top: 40px;
+        
+        .animate-fade-in-up {
+            opacity: 0;
+            animation: fadeInUp 0.8s ease-out forwards;
         }
-        .btn, .btn-primary-custom, .btn-secondary-custom {
-            padding: 0.5rem 1.2rem;
-            font-size: 1rem;
+        
+        .stagger-delay-100 { animation-delay: 0.1s; }
+        .stagger-delay-200 { animation-delay: 0.2s; }
+        .stagger-delay-300 { animation-delay: 0.3s; }
+        .stagger-delay-400 { animation-delay: 0.4s; }
+        .stagger-delay-500 { animation-delay: 0.5s; }
+        
+        /* Color variables */
+        :root {
+            --primary: #0b1f3a;
+            --primary-light: #1a365d;
+            --accent: #059669;
+            --accent-light: #10b981;
         }
-        .footer {
-            padding: 2rem 0 1rem;
-        }
-    }
     </style>
 </head>
-<body>
-
-          <!-- Load Header -->
+<body class="antialiased bg-gray-50">
+    <!-- Header -->
+    <!-- Load Header -->
     <div id="header-container"></div>
     <script src="loadHeader.js"></script>
 
+   
     <!-- Hero Section -->
-    <section class="hero-section pt-5">
-        <div class="container position-relative z-index-1">
-            <div class="row align-items-center">
-                <div class="col-lg-7" data-aos="fade-right" data-aos-duration="800">
-                    <span class="badge bg-secondary text-primary mb-3 px-3 py-2 fs-6 fw-bold">12-WEEK PROGRAM</span>
-                    <h1 class="display-4 fw-bold text-white mb-4">Leadership Development Program</h1>
-                    <p class="lead text-white mb-5">Transformative leadership training for emerging African leaders to develop core competencies through workshops, real-world projects, and mentorship.</p>
-                    <div class="d-flex flex-wrap gap-3">
-                        <a href="#apply" class="btn btn-warning btn-lg">Apply Now</a>
-                        <a href="#curriculum" class="btn btn-outline-light btn-lg">Program Details</a>
-                    </div>
+<section class="relative h-screen flex items-center justify-center text-white overflow-hidden pt-16">
+    <div class="absolute inset-0">
+        <!-- Video background fallback image -->
+        <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2071&q=80" 
+             alt="Diverse group of young leaders in discussion" 
+             class="w-full h-full object-cover"
+             loading="eager">
+        <div class="absolute inset-0 hero-gradient"></div>
+    </div>
+    
+    <div class="relative z-10 text-center px-6 max-w-6xl mx-auto">
+        <div class="grid md:grid-cols-2 gap-8 items-center">
+            <!-- Text Content -->
+            <div class="text-left">
+                <span class="inline-block bg-emerald-500/20 px-4 py-2 rounded-full text-sm font-semibold mb-4 animate-fade-in-up" style="color: #6ee7b7; font-size: 1.25rem;">Pillar 4: Leadership Development</span>
+                <h1 class="text-4xl md:text-6xl font-bold mb-6 animate-fade-in-up stagger-delay-100 leading-tight text-white">Cultivating <span class="text-emerald-300">Ethical Leaders</span> for Tomorrow</h1>
+                <p class="text-xl md:text-2xl text-gray-300 mb-8 max-w-3xl animate-fade-in-up stagger-delay-200">Equipping youth with the skills and confidence to lead change in their communities.</p>
+                <div class="flex flex-wrap gap-4 animate-fade-in-up stagger-delay-300">
+                    <a href="#program" class="bg-emerald-600 hover:bg-emerald-700 text-white font-bold px-8 py-3 rounded-full transition-all transform hover:-translate-y-1 shadow-lg">
+                        Discover Our Program
+                    </a>
+                    <a href="#resources" class="bg-white/10 hover:bg-white/20 border border-white text-white font-bold px-8 py-3 rounded-full transition-all transform hover:-translate-y-1 backdrop-blur-sm flex items-center">
+                        <i class="fas fa-book-open mr-2"></i> Leadership Resources
+                    </a>
                 </div>
-                <div class="col-lg-5 d-none d-lg-block" data-aos="fade-left" data-aos-delay="200">
-                    <img src="image/leadershipDevelopemnt.jpg" alt="Leadership workshop participants engaged in discussion" class="img-fluid rounded shadow" loading="lazy">
-                </div>
-            </div>
-
-            <div class="row mt-5">
-                <div class="col-lg-6" data-aos="fade-left" data-aos-delay="300">
-                    <div class="position-relative">
-                        <div class="ratio ratio-16x9">
-                            <iframe src="https://www.youtube.com/embed/_rts2qZ2cK4" title="WHAT IS TRUE LEADERSHIP?" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-                        </div>
-                        <div class="h4 fw-bold text-center mt-4 mb-3 text-white">Click To Watch</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Program Stats -->
-    <section class="py-5 py-lg-6 bg-light">
-        <div class="container">
-            <div class="row g-4">
-                <div class="col-md-4" data-aos="fade-up">
-                    <div class="stat-item h-100">
-                        <div class="stat-number text-primary mb-2" data-count="500">0</div>
-                        <h3 class="h5 mb-1">Graduates</h3>
-                        <p class="text-muted mb-0">Empowered leaders across Africa</p>
-                    </div>
-                </div>
-                <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
-                    <div class="stat-item h-100">
-                        <div class="stat-number text-primary mb-2" data-count="85">0</div>
-                        <h3 class="h5 mb-1">Success Rate</h3>
-                        <p class="text-muted mb-0">Career advancement post-program</p>
-                    </div>
-                </div>
-                <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
-                    <div class="stat-item h-100">
-                        <div class="stat-number text-primary mb-2" data-count="32">0</div>
-                        <h3 class="h5 mb-1">Countries</h3>
-                        <p class="text-muted mb-0">Represented in our alumni network</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Program Features -->
-    <section class="py-5 py-lg-6">
-        <div class="container">
-            <div class="text-center mb-5" data-aos="fade-up">
-                <h2 class="display-5 fw-bold mb-3">Program Highlights</h2>
-                <p class="lead text-muted mx-auto" style="max-width: 700px;">Develop essential leadership skills for Africa's future</p>
             </div>
             
-            <div class="row g-4">
-                <div class="col-md-6 col-lg-3" data-aos="fade-up">
-                    <div class="feature-card p-4 text-center h-100">
-                        <div class="feature-icon mb-4">
-                            <i class="fas fa-chess-king" aria-hidden="true"></i>
-                        </div>
-                        <h3 class="h4 mb-3">Ethical Leadership</h3>
-                        <p class="text-muted">Develop strong moral foundations for decision-making in complex African contexts</p>
+            <!-- Video Embed -->
+            <div class="animate-fade-in-up stagger-delay-400">
+                <div class="relative rounded-xl overflow-hidden shadow-2xl">
+                    <div class="ratio ratio-16x9">
+                        <iframe src="https://www.youtube.com/embed/_rts2qZ2cK4" 
+                                title="WHAT IS TRUE LEADERSHIP?" 
+                                frameborder="0" 
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                                referrerpolicy="strict-origin-when-cross-origin" 
+                                allowfullscreen
+                                class="rounded-lg"></iframe>
                     </div>
-                </div>
-                <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="100">
-                    <div class="feature-card p-4 text-center h-100">
-                        <div class="feature-icon mb-4">
-                            <i class="fas fa-bullseye" aria-hidden="true"></i>
-                        </div>
-                        <h3 class="h4 mb-3">Strategic Vision</h3>
-                        <p class="text-muted">Learn to create and execute impactful plans for community development</p>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="200">
-                    <div class="feature-card p-4 text-center h-100">
-                        <div class="feature-icon mb-4">
-                            <i class="fas fa-project-diagram" aria-hidden="true"></i>
-                        </div>
-                        <h3 class="h4 mb-3">Real Projects</h3>
-                        <p class="text-muted">Apply skills to actual community challenges with measurable impact</p>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="300">
-                    <div class="feature-card p-4 text-center h-100">
-                        <div class="feature-icon mb-4">
-                            <i class="fas fa-user-tie" aria-hidden="true"></i>
-                        </div>
-                        <h3 class="h4 mb-3">Mentorship</h3>
-                        <p class="text-muted">Personal guidance from experienced African leaders and executives</p>
-                    </div>
+                    <div class="h4 font-bold text-center mt-4 mb-3 text-white">Click To Watch</div>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
+    
+    <div class="absolute bottom-10 left-0 right-0 text-center animate-bounce">
+        <a href="#about" class="text-white text-2xl" aria-label="Scroll down">
+            <i class="fas fa-chevron-down"></i>
+        </a>
+    </div>
+</section>
 
-    <!-- Curriculum Section -->
-    <section id="curriculum" class="py-5 py-lg-6 bg-light">
-        <div class="container">
-            <div class="row g-5 align-items-center">
-                <div class="col-lg-6" data-aos="fade-right">
-                    <h2 class="display-5 fw-bold mb-4">Program Structure</h2>
-                    <p class="lead">Our intensive 12-week program combines theory with practical application:</p>
-                    <ul class="list-unstyled mb-4">
-                        <li class="mb-3"><i class="fas fa-check-circle text-secondary me-2" aria-hidden="true"></i> Weekly interactive workshops with African leadership experts</li>
-                        <li class="mb-3"><i class="fas fa-check-circle text-secondary me-2" aria-hidden="true"></i> Monthly community development projects</li>
-                        <li class="mb-3"><i class="fas fa-check-circle text-secondary me-2" aria-hidden="true"></i> Bi-weekly one-on-one mentorship sessions</li>
-                        <li class="mb-3"><i class="fas fa-check-circle text-secondary me-2" aria-hidden="true"></i> Final capstone presentation to industry leaders</li>
-                        <li class="mb-3"><i class="fas fa-check-circle text-secondary me-2" aria-hidden="true"></i> Ongoing alumni network and support</li>
-                    </ul>
-                    <div class="d-flex flex-wrap gap-3">
-                        <a href="#apply" class="btn btn-primary-custom btn-lg">Apply Now</a>
-                    </div>
-                </div>
-                <div class="col-lg-6" data-aos="fade-left">
-                    <div class="card border-0 shadow-sm h-100">
-                        <img src="image/teamCollaboration.jpg" alt="Leadership training session in progress" class="card-img-top" loading="lazy">
-                        <div class="card-body">
-                            <h3 class="h5 fw-bold">2024 Program Schedule</h3>
-                            <ul class="list-unstyled">
-                                <li class="mb-2"><strong>Cohort 1:</strong> January 15 - April 5</li>
-                                <li class="mb-2"><strong>Cohort 2:</strong> May 6 - July 26</li>
-                                <li class="mb-2"><strong>Cohort 3:</strong> September 2 - November 22</li>
-                            </ul>
-                            <p class="small text-muted">Applications accepted on rolling basis. Early applications receive priority consideration.</p>
-                        </div>
-                    </div>
-                </div>
+    <!-- Program Section -->
+    <section id="program" class="py-20 bg-gray-100" style="background-image: url('image/leadershipDevelopemnt.jpg'); background-size: auto; background-position: center;">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-white mb-4 animate-fade-in-up">Leadership Development Program</h2>
+                <div class="w-20 h-1 bg-emerald-600 mx-auto mb-6 animate-fade-in-up stagger-delay-100"></div>
+                <p class="text-lg text-white leading-relaxed max-w-3xl mx-auto animate-fade-in-up stagger-delay-200">
+                    We are committed to cultivating visionary and ethical leaders from underrepresented communities through comprehensive leadership training.
+                </p>
             </div>
-        </div>
-    </section>
-
-    <!-- Apply Section -->
-    <section id="apply" class="py-5 py-lg-6 bg-primary text-white">
-        <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-lg-8" data-aos="zoom-in">
-                    <div class="text-center mb-5">
-                        <h2 class="display-5 fw-bold mb-3">Join Our Next Cohort</h2>
-                        <p class="lead">Applications are now open for emerging African leaders</p>
+            
+            <div class="bg-white rounded-xl shadow-lg p-8 md:p-12 max-w-4xl mx-auto animate-fade-in-up stagger-delay-300">
+                <h3 class="text-2xl font-bold text-gray-900 mb-6">Our Mission</h3>
+                <p class="text-gray-600 mb-6">
+                    We believe that investing in youth leadership today ensures a more just, informed, and empowered tomorrow. Our program provides the tools, experiences, and support systems needed to develop effective, ethical leaders.
+                </p>
+                
+                <div class="grid md:grid-cols-2 gap-8 mt-10">
+                    <div>
+                        <h4 class="text-xl font-semibold text-gray-900 mb-4 flex items-center">
+                            <i class="fas fa-exclamation-circle text-emerald-600 mr-3"></i> The Challenge
+                        </h4>
+                        <p class="text-gray-600">
+                            Many promising young leaders from marginalized backgrounds lack access to leadership training and opportunities to develop their potential.
+                        </p>
                     </div>
-                    
-                    <div class="card shadow-lg border-0">
-                        <div class="card-body p-4 p-lg-5">
-                            <h3 class="h2 fw-bold text-center mb-4 text-primary">Leadership Development Program Application</h3>
-                            <form id="leadershipApplication" autocomplete="off" method="post" action="../submit-application.php" aria-label="Leadership Development Application Form">
-                                <div class="row g-3">
-                                    <div class="col-md-6">
-                                        <label for="firstName" class="form-label">First Name <span class="text-danger">*</span></label>
-                                        <input type="text" class="form-control form-control-custom" id="firstName" name="firstName" required autocomplete="given-name">
-                                    </div>
-                                    <div class="col-md-6">
-                                        <label for="lastName" class="form-label">Last Name <span class="text-danger">*</span></label>
-                                        <input type="text" class="form-control form-control-custom" id="lastName" name="lastName" required autocomplete="family-name">
-                                    </div>
-                                    <div class="col-md-6">
-                                        <label for="email" class="form-label">Email Address <span class="text-danger">*</span></label>
-                                        <input type="email" class="form-control form-control-custom" id="email" name="email" required autocomplete="email">
-                                    </div>
-                                    <div class="col-md-6">
-                                        <label for="phone" class="form-label">Phone Number <span class="text-danger">*</span></label>
-                                        <input type="tel" class="form-control form-control-custom" id="phone" name="phone" required autocomplete="tel">
-                                    </div>
-                                    <div class="col-md-6">
-                                        <label for="country" class="form-label">Country <span class="text-danger">*</span></label>
-                                        <select class="form-select form-control-custom" id="country" name="country" required>
-                                            <option value="" selected disabled>Select Country</option>
-                                            <option value="Nigeria">Nigeria</option>
-                                            <option value="Kenya">Kenya</option>
-                                            <option value="South Africa">South Africa</option>
-                                            <!-- More African countries -->
-                                        </select>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <label for="age" class="form-label">Age <span class="text-danger">*</span></label>
-                                        <input type="number" class="form-control form-control-custom" id="age" name="age" min="18" max="45" required>
-                                    </div>
-                                    <div class="col-12">
-                                        <label for="currentRole" class="form-label">Current Role/Organization</label>
-                                        <input type="text" class="form-control form-control-custom" id="currentRole" name="currentRole" autocomplete="organization-title">
-                                    </div>
-                                    <div class="col-12">
-                                        <label for="leadershipExperience" class="form-label">Briefly describe your leadership experience <span class="text-danger">*</span></label>
-                                        <textarea class="form-control form-control-custom" id="leadershipExperience" name="leadershipExperience" rows="3" required></textarea>
-                                    </div>
-                                    <div class="col-12">
-                                        <label for="motivation" class="form-label">Why do you want to join this program? (300 words max) <span class="text-danger">*</span></label>
-                                        <textarea class="form-control form-control-custom" id="motivation" name="motivation" rows="4" maxlength="2000" required></textarea>
-                                    </div>
-                                    <div class="col-12">
-                                        <label for="goals" class="form-label">What leadership impact do you hope to achieve through this program? (300 words max) <span class="text-danger">*</span></label>
-                                        <textarea class="form-control form-control-custom" id="goals" name="goals" rows="4" maxlength="2000" required></textarea>
-                                    </div>
-                                    <div class="col-12 mt-4">
-                                        <button type="submit" class="btn btn-secondary-custom w-100 py-3 fw-bold" aria-label="Submit Application">Submit Application</button>
-                                    </div>
-                                </div>
-                            </form>
-                        </div>
+                    <div>
+                        <h4 class="text-xl font-semibold text-gray-900 mb-4 flex items-center">
+                            <i class="fas fa-bullseye text-emerald-600 mr-3"></i> Our Approach
+                        </h4>
+                        <p class="text-gray-600">
+                            We combine skill-building workshops, mentorship, and real-world leadership experiences to create transformative growth.
+                        </p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
     
-    <!-- FAQ Section -->
-    <section class="py-5 py-lg-6 bg-light">
-        <div class="container">
-            <div class="text-center mb-5" data-aos="fade-up">
-                <h2 class="display-5 fw-bold mb-3">Frequently Asked Questions</h2>
-                <p class="lead text-muted mx-auto" style="max-width: 700px;">Answers to common questions about our Leadership Development Program</p>
+    <!-- Components Section -->
+    <section id="components" class="py-20 bg-white">
+        <div class="container mx-auto px-6 max-w-7xl">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Our Leadership Framework</h2>
+                <div class="w-20 h-1 bg-emerald-600 mx-auto mb-6"></div>
+                <p class="text-lg text-gray-600 max-w-3xl mx-auto">
+                    Comprehensive development through multiple dimensions of leadership
+                </p>
             </div>
-            
-            <div class="accordion" id="faqAccordion">
-                <div class="accordion-item mb-3 border-0 shadow-sm">
-                    <h3 class="accordion-header" id="headingOne">
-                        <button class="accordion-button collapsed fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
-                            Who is eligible to apply for the program?
-                        </button>
-                    </h3>
-                    <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#faqAccordion">
-                        <div class="accordion-body">
-                            The program is open to emerging African leaders aged 18-45 who demonstrate leadership potential and commitment to community development. We welcome applicants from all professional backgrounds and educational levels.
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Training Sessions -->
+                <div class=" rounded-xl shadow-md overflow-hidden card-hover">
+                    <div class="p-8 bg-gray" style="background-color:var(--primary-light);">
+                        <div class="bg-emerald-100 text-emerald-600 rounded-lg w-14 h-14 flex items-center justify-center mb-6 mx-auto">
+                            <i class="fas fa-graduation-cap text-2xl"></i>
                         </div>
+                        <h3 class="text-xl font-bold text-center text-gray-900 mb-4">Intensive Training</h3>
+                        <p class="text-gray-600 text-center">
+                            Delivering sessions on leadership, communication, decision-making, and public speaking to build core competencies.
+                        </p>
                     </div>
                 </div>
                 
-                <div class="accordion-item mb-3 border-0 shadow-sm">
-                    <h3 class="accordion-header" id="headingTwo">
-                        <button class="accordion-button collapsed fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                            What is the time commitment required?
-                        </button>
-                    </h3>
-                    <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#faqAccordion">
-                        <div class="accordion-body">
-                            The program requires approximately 8-10 hours per week, including:
-                            <ul>
-                                <li>2-hour weekly workshop (virtual)</li>
-                                <li>1-hour bi-weekly mentorship session</li>
-                                <li>3-5 hours for project work and assignments</li>
+                <!-- Conferences -->
+                <div class="bg-white rounded-xl shadow-md overflow-hidden card-hover">
+                    <div class="p-8" style="background-color:var(--primary-light);">
+                        <div class="bg-emerald-100 text-emerald-600 rounded-lg w-14 h-14 flex items-center justify-center mb-6 mx-auto">
+                            <i class="fas fa-users text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-center text-gray-900 mb-4">Leadership Conferences</h3>
+                        <p class="text-gray-600 text-center">
+                            Hosting conferences and workshops led by expert facilitators to inspire and educate.
+                        </p>
+                    </div>
+                </div>
+                
+                <!-- Mentorship -->
+                <div class="bg-white rounded-xl shadow-md overflow-hidden card-hover">
+                    <div class="p-8" style="background-color:var(--primary-light);">
+                        <div class="bg-emerald-100 text-emerald-600 rounded-lg w-14 h-14 flex items-center justify-center mb-6 mx-auto">
+                            <i class="fas fa-hands-helping text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-center text-gray-900 mb-4">Mentorship</h3>
+                        <p class="text-gray-600 text-center">
+                            Providing ongoing mentorship and opportunities to lead real-life initiatives for practical experience.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Impact Section -->
+            <div class="mt-16 bg-emerald-50 rounded-2xl shadow-md overflow-hidden">
+                <div class="p-8 md:p-10">
+                    <h3 class="text-2xl font-bold text-gray-900 mb-6">Program Impact</h3>
+                    
+                    <div class="grid md:grid-cols-2 gap-8">
+                        <div>
+                            <h4 class="text-lg font-bold text-gray-900 mb-4 flex items-center">
+                                <i class="fas fa-chart-line text-emerald-600 mr-3"></i> Measurable Outcomes
+                            </h4>
+                            <ul class="text-gray-600 space-y-3">
+                                <li class="flex items-start">
+                                    <i class="fas fa-check-circle text-emerald-500 mt-1 mr-2"></i>
+                                    <span>300+ youth leaders trained annually</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check-circle text-emerald-500 mt-1 mr-2"></i>
+                                    <span>85% report increased leadership confidence</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check-circle text-emerald-500 mt-1 mr-2"></i>
+                                    <span>60 community initiatives launched by participants</span>
+                                </li>
                             </ul>
-                            We understand participants have other commitments and design the schedule to be manageable.
                         </div>
-                    </div>
-                </div>
-                
-                <div class="accordion-item mb-3 border-0 shadow-sm">
-                    <h3 class="accordion-header" id="headingThree">
-                        <button class="accordion-button collapsed fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                            Is there a cost to participate?
-                        </button>
-                    </h3>
-                    <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#faqAccordion">
-                        <div class="accordion-body">
-                            Thanks to our generous donors, the program is fully funded for selected participants. There is no tuition fee. We only ask for your full commitment to the program and willingness to apply what you learn in your community.
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="accordion-item mb-3 border-0 shadow-sm">
-                    <h3 class="accordion-header" id="headingFour">
-                        <button class="accordion-button collapsed fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
-                            What happens after I complete the program?
-                        </button>
-                    </h3>
-                    <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#faqAccordion">
-                        <div class="accordion-body">
-                            Graduates become part of our active alumni network with ongoing benefits:
-                            <ul>
-                                <li>Access to advanced leadership resources</li>
-                                <li>Opportunities for continued mentorship</li>
-                                <li>Invitations to exclusive events and webinars</li>
-                                <li>Potential funding opportunities for community projects</li>
-                                <li>Networking with other alumni across Africa</li>
+                        
+                        <div>
+                            <h4 class="text-lg font-bold text-gray-900 mb-4 flex items-center">
+                                <i class="fas fa-award text-emerald-600 mr-3"></i> Leadership Competencies
+                            </h4>
+                            <ul class="text-gray-600 space-y-3">
+                                <li class="flex items-start">
+                                    <i class="fas fa-arrow-right text-emerald-500 mt-1 mr-2"></i>
+                                    <span>Strategic thinking and vision development</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-arrow-right text-emerald-500 mt-1 mr-2"></i>
+                                    <span>Effective communication and public speaking</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-arrow-right text-emerald-500 mt-1 mr-2"></i>
+                                    <span>Ethical decision-making and problem-solving</span>
+                                </li>
                             </ul>
                         </div>
                     </div>
+                    
+                    <div class="mt-10 text-center">
+                        <a href="#contact" class="inline-flex items-center bg-emerald-600 hover:bg-emerald-700 text-white font-bold px-8 py-3 rounded-full transition-colors">
+                            <i class="fas fa-user-plus mr-2"></i> Join as a Leader
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Resources Section -->
+    <section id="resources" class="py-20 bg-gray-50">
+        <div class="container mx-auto px-6 max-w-6xl">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-primary mb-4">Leadership Resources</h2>
+                <div class="w-20 h-1 bg-emerald-600 mx-auto mb-6"></div>
+                <p class="text-lg text-gray-600 max-w-3xl mx-auto">
+                    Tools and materials to support your leadership journey
+                </p>
+            </div>
+
+            <!-- Resource Cards -->
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Resource 1 -->
+                <div class="bg-white rounded-xl shadow-md overflow-hidden card-hover">
+                    <div class="p-6">
+                        <div class="bg-emerald-100 text-emerald-600 w-12 h-12 rounded-lg flex items-center justify-center mb-4">
+                            <i class="fas fa-file-pdf text-2xl"></i>
+                        </div>
+                        <h3 class="text-lg font-bold text-gray-900 mb-2">Leadership Playbook</h3>
+                        <p class="text-gray-600 text-sm mb-4">Comprehensive guide to essential leadership skills and strategies.</p>
+                        <a href="#" class="inline-flex items-center text-emerald-600 font-bold hover:text-emerald-700 transition-colors text-sm">
+                            Download Guide <i class="fas fa-arrow-right ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Resource 2 -->
+                <div class="bg-white rounded-xl shadow-md overflow-hidden card-hover">
+                    <div class="p-6">
+                        <div class="bg-emerald-100 text-emerald-600 w-12 h-12 rounded-lg flex items-center justify-center mb-4">
+                            <i class="fas fa-video text-2xl"></i>
+                        </div>
+                        <h3 class="text-lg font-bold text-gray-900 mb-2">Masterclass Series</h3>
+                        <p class="text-gray-600 text-sm mb-4">Recorded sessions with renowned leaders sharing their insights.</p>
+                        <a href="#" class="inline-flex items-center text-emerald-600 font-bold hover:text-emerald-700 transition-colors text-sm">
+                            Watch Now <i class="fas fa-play-circle ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Resource 3 -->
+                <div class="bg-white rounded-xl shadow-md overflow-hidden card-hover">
+                    <div class="p-6">
+                        <div class="bg-emerald-100 text-emerald-600 w-12 h-12 rounded-lg flex items-center justify-center mb-4">
+                            <i class="fas fa-book text-2xl"></i>
+                        </div>
+                        <h3 class="text-lg font-bold text-gray-900 mb-2">Case Studies</h3>
+                        <p class="text-gray-600 text-sm mb-4">Real-world examples of successful youth-led initiatives.</p>
+                        <a href="#" class="inline-flex items-center text-emerald-600 font-bold hover:text-emerald-700 transition-colors text-sm">
+                            View Resources <i class="fas fa-external-link-alt ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Get Involved Section -->
+            <div class="mt-16 bg-white rounded-2xl shadow-lg overflow-hidden">
+                <div class="grid md:grid-cols-2">
+                    <div class="p-8 md:p-10">
+                        <h3 class="text-2xl font-bold text-gray-900 mb-4">Develop Your Leadership</h3>
+                        <p class="text-gray-600 mb-6">
+                            Whether you're an emerging leader or an experienced mentor, we have opportunities for you:
+                        </p>
+                        <ul class="text-gray-600 space-y-3">
+                            <li class="flex items-start">
+                                <i class="fas fa-user-graduate text-emerald-500 mt-1 mr-3"></i>
+                                <span>Join our leadership training program</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-chalkboard-teacher text-emerald-500 mt-1 mr-3"></i>
+                                <span>Become a leadership facilitator</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-lightbulb text-emerald-500 mt-1 mr-3"></i>
+                                <span>Launch your own community initiative</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="bg-emerald-50 p-8 md:p-10 flex items-center">
+                        <div>
+                            <h4 class="text-xl font-bold text-gray-900 mb-4">Upcoming Leadership Events</h4>
+                            <div class="space-y-4">
+                                <div class="flex items-start">
+                                    <div class="bg-emerald-600 text-white rounded-lg w-12 h-12 flex-shrink-0 flex items-center justify-center mr-4">
+                                        <span class="font-bold">08</span>
+                                    </div>
+                                    <div>
+                                        <p class="font-medium text-gray-900">Public Speaking Workshop</p>
+                                        <p class="text-sm text-gray-600">July 8, 2025 | 4:00 PM</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-start">
+                                    <div class="bg-emerald-600 text-white rounded-lg w-12 h-12 flex-shrink-0 flex items-center justify-center mr-4">
+                                        <span class="font-bold">15</span>
+                                    </div>
+                                    <div>
+                                        <p class="font-medium text-gray-900">Youth Leadership Summit</p>
+                                        <p class="text-sm text-gray-600">July 15, 2025 | 9:00 AM</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <a href="#contact" class="inline-flex items-center mt-6 text-emerald-600 font-bold hover:text-emerald-700">
+                                View Full Calendar <i class="fas fa-arrow-right ml-2"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="py-20 bg-emerald-600 text-white">
+        <div class="container mx-auto px-6 max-w-5xl">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Leadership Stories</h2>
+                <div class="w-20 h-1 bg-white mx-auto mb-6"></div>
+                <p class="text-xl text-emerald-100 max-w-3xl mx-auto">
+                    How our program has transformed emerging leaders
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-8">
+                <!-- Testimonial 1 -->
+                <div class="bg-white/10 rounded-xl p-8 backdrop-blur-sm">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 rounded-full bg-emerald-500 flex items-center justify-center text-xl font-bold mr-4">A</div>
+                        <div>
+                            <h4 class="font-bold">Amina K.</h4>
+                            <p class="text-emerald-200 text-sm">Community Organizer</p>
+                        </div>
+                    </div>
+                    <p class="italic">
+                        "The leadership training gave me the confidence to start a youth empowerment initiative in my community. Today, we've impacted over 200 young people."
+                    </p>
+                </div>
+                
+                <!-- Testimonial 2 -->
+                <div class="bg-white/10 rounded-xl p-8 backdrop-blur-sm">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 rounded-full bg-emerald-500 flex items-center justify-center text-xl font-bold mr-4">D</div>
+                        <div>
+                            <h4 class="font-bold">David T.</h4>
+                            <p class="text-emerald-200 text-sm">Nonprofit Founder</p>
+                        </div>
+                    </div>
+                    <p class="italic">
+                        "My mentor through this program helped me refine my vision and build the skills to launch my own organization. The connections I made were invaluable."
+                    </p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="row g-4">
-                <div class="col-lg-4">
-                    <img src="image/website-logo.png" alt="Importance Leadership Logo" class="footer-logo" loading="lazy">
-                    <p class="mb-4">Developing ethical, visionary leaders who drive positive change in Africa and beyond through mentorship, education, and community engagement.</p>
-                    <div class="social-links mb-4">
-                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-                        <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
-                    </div>
-                </div>
-                
-                <div class="col-lg-2 col-md-4">
-                    <div class="footer-links">
-                        <h5>Navigation</h5>
-                        <ul>
-                            <li><a href="index.html">Home</a></li>
-                            <li><a href="about.html">About Us</a></li>
-                            <li><a href="programs.html">Programs</a></li>
-                            <li><a href="impact.html">Impact</a></li>
-                            <li><a href="#">Blog</a></li>
-                            <li><a href="contact-us.html">Contact</a></li>
-                        </ul>
-                    </div>
-                </div>
-                
-                <div class="col-lg-3 col-md-4">
-                    <div class="footer-links">
-                        <h5>Programs</h5>
-                        <ul>
-                            <li><a href="#">Advocacy Initiatives</a></li>
-                            <li><a href="#">Mental Health Programs</a></li>
-                            <li><a href="#">Networking</a></li>
-                            <li><a href="#">Leadership Development</a></li>
-                            <li><a href="#">Climate Change Awareness</a></li>
-                        </ul>
-                    </div>
-                </div>
-                
-                <div class="col-lg-3 col-md-4">
-                    <div class="footer-links">
-                        <h5>Contact Us</h5>
-                        <ul>
-                            <li><i class="fas fa-map-marker-alt me-2 text-secondary"></i> Kenya, USA, Canada</li>
-                            <li><i class="fas fa-phone me-2 text-secondary"></i> +254 792 732 177</li>
-                            <li><i class="fas fa-envelope me-2 text-secondary"></i> info@importanceleadership.com</li>
-                        </ul>
-                        
-                        <h5 class="mt-4">Newsletter</h5>
-                        <p class="small">Subscribe for updates and insights</p>
-                        <form>
-                            <div class="input-group mb-3">
-                                <input type="email" class="form-control form-control-sm" placeholder="Your Email" required>
-                                <button class="btn btn-accent btn-sm" type="submit">Join</button>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-            </div>
-            
-            <hr class="my-4 bg-secondary opacity-25">
-            
-            <div class="row">
-                <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
-                    <p class="mb-0 small">&copy; 2025 Importance Leadership. All rights reserved.</p>
-                </div>
-                <div class="col-md-6 text-center text-md-end">
-                    <a href="#" class="text-white text-decoration-none small me-3">Privacy Policy</a>
-                    <a href="#" class="text-white text-decoration-none small me-3">Terms of Service</a>
-                    <a href="#" class="text-white text-decoration-none small">Cookie Policy</a>
-                </div>
-            </div>
-        </div>
-    </footer>
-    
-    <!-- Back to top button -->
-    <button class="back-to-top btn btn-primary-custom rounded-circle p-3" id="backToTop" aria-label="Back to top" style="display: none;">
+    <div id="footer-container"></div>
+    <script src="loadFooter.js"></script>
+
+    <!-- Back to Top Button -->
+    <button id="backToTop" class="fixed bottom-8 right-8 bg-emerald-600 hover:bg-emerald-700 text-white w-12 h-12 rounded-full flex items-center justify-center shadow-xl opacity-0 invisible transition-all z-50" aria-label="Back to top">
         <i class="fas fa-arrow-up"></i>
     </button>
 
-    <!-- Scripts -->
-    <!-- Bootstrap JS -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    
-    <!-- AOS Animation -->
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    
-    <!-- Custom JS -->
     <script>
-        // Initialize AOS animation
-        document.addEventListener('DOMContentLoaded', function() {
-            if (typeof AOS !== 'undefined') {
-                AOS.init({
-                    duration: 800,
-                    easing: 'ease-in-out',
-                    once: true,
-                    mirror: false
-                });
-            }
-            
-            // Back to top button
-            const backToTop = document.getElementById('backToTop');
-            window.addEventListener('scroll', function() {
-                if (window.scrollY > 300) {
-                    backToTop.style.display = 'block';
-                } else {
-                    backToTop.style.display = 'none';
-                }
-            });
-            backToTop.addEventListener('click', function() {
-                window.scrollTo({ top: 0, behavior: 'smooth' });
-            });
-
-            // Animated stats counter
-            const statNumbers = document.querySelectorAll('.stat-number');
-            let statsAnimated = false;
-            function animateStats() {
-                if (statsAnimated) return;
-                const statsSection = document.querySelector('.stat-number');
-                if (!statsSection) return;
-                const rect = statsSection.getBoundingClientRect();
-                if (rect.top < window.innerHeight) {
-                    statNumbers.forEach(function(stat) {
-                        const target = +stat.getAttribute('data-count');
-                        let count = 0;
-                        const increment = target > 100 ? Math.ceil(target / 50) : 1;
-                        const interval = setInterval(function() {
-                            count += increment;
-                            if (count >= target) {
-                                stat.textContent = target;
-                                clearInterval(interval);
-                            } else {
-                                stat.textContent = count;
-                            }
-                        }, 20);
-                    });
-                    statsAnimated = true;
-                }
-            }
-            window.addEventListener('scroll', animateStats);
-            animateStats();
+        // Mobile Menu Toggle
+        document.getElementById('mobile-menu-button').addEventListener('click', function() {
+            document.getElementById('mobile-menu').classList.toggle('hidden');
         });
+        
+        // Back to Top Button
+        window.addEventListener('scroll', function() {
+            const backToTopButton = document.getElementById('backToTop');
+            if (window.pageYOffset > 300) {
+                backToTopButton.classList.remove('opacity-0', 'invisible');
+                backToTopButton.classList.add('opacity-100', 'visible');
+            } else {
+                backToTopButton.classList.remove('opacity-100', 'visible');
+                backToTopButton.classList.add('opacity-0', 'invisible');
+            }
+        });
+        
+        document.getElementById('backToTop').addEventListener('click', function() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+        
+        // Animate elements when they come into view
+        function animateOnScroll() {
+            const elements = document.querySelectorAll('.animate-fade-in-up');
+            const windowHeight = window.innerHeight;
+            
+            elements.forEach(element => {
+                const elementPosition = element.getBoundingClientRect().top;
+                const elementVisible = 150;
+                
+                if (elementPosition < windowHeight - elementVisible) {
+                    element.style.opacity = "1";
+                    element.style.animation = "fadeInUp 0.8s ease-out forwards";
+                }
+            });
+        }
+        
+        // Initialize animations
+        window.addEventListener('load', function() {
+            // Start with elements hidden
+            document.querySelectorAll('.animate-fade-in-up').forEach(el => {
+                el.style.opacity = "0";
+            });
+            
+            // Run initial animation check
+            animateOnScroll();
+        });
+        
+        window.addEventListener('scroll', animateOnScroll);
     </script>
 </body>
 </html>

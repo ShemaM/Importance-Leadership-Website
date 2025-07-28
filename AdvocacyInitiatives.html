@@ -3,113 +3,35 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Advocacy Initiatives | Importance Leadership - Drive Social Change</title>
-    <meta name="description" content="Empower youth to become effective advocates for social justice, equity, and policy change across Africa">
+    <title>Advocacy Initiatives | Importance Leadership | Empowering Voices</title>
+    <meta name="description" content="Importance Leadership's Advocacy Initiatives amplify marginalized voices through awareness campaigns, policy engagement, and capacity-building for refugees, IDPs, and minority groups.">
     
-    <!-- Same head content as Leadership Development page -->
-        
-    <!-- Canonical URL -->
-    <link rel="canonical" href="https://www.importanceleadership.org/leadership-development">
+    <!-- Preload critical resources -->
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" as="style">
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" as="style">
     
-    <!-- Favicon -->
-    <link rel="icon" href="../image/logo.jpg" type="image/x-icon">
+    <!-- Tailwind CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     
-    <!-- Open Graph / Social Media Meta Tags -->
-    <meta property="og:title" content="Leadership Development Program | Importance Leadership">
-    <meta property="og:description" content="12-week transformative leadership development program for emerging African leaders">
-    <meta property="og:image" content="https://www.importanceleadership.org/image/leadership-workshop.jpg">
-    <meta property="og:url" content="https://www.importanceleadership.org/leadership-development">
-    <meta property="og:type" content="website">
-    
-    <!-- Twitter Card Meta Tags -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Leadership Development Program | Importance Leadership">
-    <meta name="twitter:description" content="12-week transformative leadership development program for emerging African leaders">
-    <meta name="twitter:image" content="https://www.importanceleadership.org/image/leadership-workshop.jpg">
-    
-    <!-- Bootstrap 5 CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    
-    <!-- Animate On Scroll (AOS) -->
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
-    
-     <style>
-        :root {
-            --primary: #0b1f3a;      /* Dark blue */
-            --primary-light: #1a365d;
-            --secondary: #f5a623;    /* Gold accent */
-            --secondary-light: #f8b84a;
-            --accent: #7cade9;      /* Light blue */
-            --light: #f8f9fa;       /* Light background */
-            --dark: #212529;        /* Dark text */
-            --text-light: #ffffff;
-            --text-dark: #343a40;
-            --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
-        }
-        
+    <style>
+        /* Custom styles */
         body {
-            font-family: 'Poppins', sans-serif;
-            overflow-x: hidden;
-            color: var(--text-dark);
-            line-height: 1.7;
-            scroll-behavior: smooth;
+            font-family: 'Inter', sans-serif;
+            color: #0f172a;
         }
         
-            .offcanvas-fullscreen {
-        width: 50vw !important;
-        max-width: 1000vw !important;
-        height: 100vh;
-        top: 0;
-        right: 0;
-        left: 0;
-        bottom: 0;
-        border-radius: 0;
-        background-color: #0b1f3a;
-        padding: 2rem;
-    }
-
-    @media (min-width: 992px) {
-        .offcanvas-fullscreen {
-            border-left: 0;
-        }
-    }
-        h1, h2, h3, h4, h5, h6 {
-            font-family: 'Playfair Display', serif;
-            font-weight: 700;
-            color: var(--primary);
-            line-height: 1.3;
-            color: var(--text-dark);
-        }
-        
-        /* Header styles */
-        .navbar {
-            transition: var(--transition);
-            padding: 1.5rem 0;
-            background-color: rgba(11, 31, 58, 0.95);
-            backdrop-filter: blur(10px);
-        }
-        
-        .navbar.scrolled {
-            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.15);
-            padding: 0.8rem 0;
+        .hero-gradient {
+            background: linear-gradient(135deg, rgba(11, 31, 58, 0.85) 0%, rgba(11, 31, 58, 0.7) 100%);
         }
         
         .nav-link {
-            font-weight: 500;
-            padding: 0.5rem 1rem;
             position: relative;
-            color: rgba(255,255,255,0.9);
-        }
-        
-        .nav-link:hover,
-        .nav-link.active {
-            color: white;
         }
         
         .nav-link:after {
@@ -117,769 +39,415 @@
             position: absolute;
             width: 0;
             height: 2px;
-            bottom: 0;
+            bottom: -4px;
             left: 0;
-            background-color: var(--secondary);
+            background-color: #2563eb;
             transition: width 0.3s ease;
         }
         
-        .nav-link:hover:after,
-        .nav-link.active:after {
+        .nav-link:hover:after {
             width: 100%;
         }
         
-        /* Hero section */
-        .hero-section {
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            position: relative;
-            overflow: hidden;
-            background: linear-gradient(135deg, rgba(11, 31, 58, 0.95) 0%, rgba(11, 31, 58, 0.85) 100%), url('assets/images/hero-bg.webp') no-repeat center center/cover;
-            color: white;
-            padding-top: 120px; /* Increased to prevent header overlap */
-        }
-        
-        .hero-content {
-            position: relative;
-            z-index: 2;
-        }
-        
-        .hero-title {
-            font-size: 3.5rem;
-            line-height: 1.2;
-            margin-bottom: 1.5rem;
-            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
-        }
-        
-        .hero-subtitle {
-            font-size: 1.25rem;
-            opacity: 0.9;
-            margin-bottom: 2rem;
-        }
-        
-        /* Section styling */
-        .section {
-            padding: 7rem 0;
-            position: relative;
-        }
-        
-        .section-title {
-            position: relative;
-            margin-bottom: 3.5rem;
-            text-align: center;
-        }
-        
-        .section-title:after {
-            content: '';
-            display: block;
-            width: 80px;
-            height: 4px;
-            background: var(--secondary);
-            margin: 1.5rem auto 0;
-        }
-        
-        /* Cards */
-        .feature-card {
-            border: none;
-            border-radius: 16px;
-            overflow: hidden;
-            box-shadow: 0 15px 30px rgba(11, 31, 58, 0.1);
-            transition: var(--transition);
-            height: 100%;
-            background-color: white;
-        }
-        
-        .feature-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 20px 40px rgba(11, 31, 58, 0.15);
-        }
-        
-        .feature-card .card-img-top {
-            height: 220px;
-            object-fit: cover;
-            transition: transform 0.5s ease;
-        }
-        
-        .feature-card:hover .card-img-top {
-            transform: scale(1.05);
-        }
-        
-        .card-badge {
-            position: absolute;
-            top: 15px;
-            right: 15px;
-            background-color: var(--secondary);
-            color: var(--primary);
-            font-weight: 600;
-            padding: 0.25rem 0.75rem;
-            border-radius: 50px;
-            font-size: 0.8rem;
-            z-index: 2;
-        }
-        
-        /* Impact numbers */
-        .impact-number {
-            font-size: 3.5rem;
-            font-weight: 700;
-            color: var(--primary);
-            position: relative;
-            display: inline-block;
-            line-height: 1;
-        }
-        
-        .impact-number::after {
-            content: '+';
-            position: absolute;
-            right: -20px;
-            top: 0;
-            color: var(--secondary);
-        }
-        
-        /* Pillars section */
-        .pillars-section {
-            background: linear-gradient(135deg, rgba(11, 31, 58, 0.95) 0%, rgba(11, 31, 58, 0.9) 100%), url('image/website-logo.png') no-repeat center center/cover;
-            color: white;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .pillar-card {
-            background: rgba(255,255,255,0.1);
-            backdrop-filter: blur(10px);
-            border-radius: 16px;
-            padding: 2.5rem 2rem;
-            height: 100%;
-            border: 1px solid rgba(255,255,255,0.15);
-            transition: var(--transition);
-        }
-        
-        .pillar-card:hover {
-            transform: translateY(-10px);
-            background: rgba(255,255,255,0.15);
-            box-shadow: 0 15px 30px rgba(0,0,0,0.2);
-        }
-        
-        .pillar-icon {
-            width: 90px;
-            height: 90px;
-            background-color: var(--secondary);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto 1.5rem;
-            font-size: 2.5rem;
-            color: var(--primary);
-            transition: var(--transition);
-        }
-        
-        .pillar-card:hover .pillar-icon {
-            transform: rotate(15deg) scale(1.1);
-            background-color: white;
-        }
-        
-        /* Buttons */
-        .btn {
-            font-weight: 600;
-            padding: 0.75rem 1.75rem;
-            border-radius: 50px;
-            transition: var(--transition);
-            border-width: 3px;
-        }
-        
-        .btn-primary {
-            background-color: var(--primary);
-            border-color: var(--primary);
-            color: white;
-        }
-        
-        .btn-primary:hover {
-            background-color: var(--primary-light);
-            border-color: var(--primary-light);
-            color: white;
-            transform: translateY(-3px);
-            box-shadow: 0 10px 20px rgba(11, 31, 58, 0.2);
-        }
-        
-        .btn-outline-primary {
-            color: var(--primary);
-            border-color: var(--primary);
-        }
-        
-        .btn-outline-primary:hover {
-            background-color: var(--primary);
-            border-color: var(--primary);
-            color: white;
-            transform: translateY(-3px);
-            box-shadow: 0 10px 20px rgba(11, 31, 58, 0.2);
-        }
-        
-        .btn-accent {
-            background-color: var(--secondary);
-            border-color: var(--secondary);
-            color: var(--primary);
-            font-weight: 700;
-        }
-        
-        .btn-accent:hover {
-            background-color: var(--secondary-light);
-            border-color: var(--secondary-light);
-            color: var(--primary);
-            transform: translateY(-3px);
-            box-shadow: 0 10px 20px rgba(245, 166, 35, 0.3);
-        }
-        
-        .btn-outline-light {
-            border-color: rgba(255,255,255,0.5);
-            color: white;
-        }
-        
-        .btn-outline-light:hover {
-            background-color: white;
-            border-color: white;
-            color: var(--primary);
-            transform: translateY(-3px);
-            box-shadow: 0 10px 20px rgba(255,255,255,0.2);
-        }
-        
-        /* Testimonials */
-        .testimonial-card {
-            background: white;
-            border-radius: 16px;
-            padding: 2.5rem;
-            box-shadow: 0 15px 30px rgba(11, 31, 58, 0.1);
-            position: relative;
-            height: 100%;
-        }
-        
-        .testimonial-card:before {
-            content: '\201C';
-            position: absolute;
-            top: 30px;
-            left: 30px;
-            font-size: 5rem;
-            color: rgba(11, 31, 58, 0.05);
-            font-family: Georgia, serif;
-            line-height: 1;
-        }
-        
-        .testimonial-img {
-            width: 90px;
-            height: 90px;
-            border-radius: 50%;
-            object-fit: cover;
-            border: 4px solid var(--secondary);
-            margin: 0 auto 1.5rem;
-            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
-        }
-        
-        .testimonial-rating {
-            color: var(--secondary);
-            font-size: 1.2rem;
-            margin-bottom: 1rem;
-        }
-        
-        /* CTA section */
-        .cta-section {
-            background: linear-gradient(135deg, rgba(11, 31, 58, 0.95) 0%, rgba(11, 31, 58, 0.9) 100%), url('image/feedback\ \(1\).png') no-repeat center center/cover;
-            color: white;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .cta-content {
-            position: relative;
-            z-index: 2;
-        }
-        
-        .cta-pattern {
-            position: absolute;
-            top: 0;
-            left: 0;
+        .active-nav:after {
             width: 100%;
-            height: 100%;
-            opacity: 0.1;
-            background-image: radial-gradient(var(--secondary) 1px, transparent 1px);
-            background-size: 20px 20px;
+            background-color: #2563eb;
         }
         
-        /* Footer */
-        .footer {
-            background-color: var(--primary);
-            color: white;
-            padding: 5rem 0 2rem;
-            position: relative;
+        .card-hover {
+            transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
         }
         
-        .footer:before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100px;
-            background: linear-gradient(to bottom, rgba(11, 31, 58, 0) 0%, var(--primary) 100%);
-            transform: translateY(-100%);
+        .card-hover:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
         }
         
-        .footer-logo {
-            width: 200px;
-            margin-bottom: 1.5rem;
-            filter: brightness(0) invert(1);
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
         }
         
-        .footer-links h5 {
-            color: white;
-            margin-bottom: 1.5rem;
-            position: relative;
-            padding-bottom: 0.75rem;
-        }
-        
-        .footer-links h5:after {
-            content: '';
-            position: absolute;
-            width: 50px;
-            height: 3px;
-            bottom: 0;
-            left: 0;
-            background-color: var(--secondary);
-        }
-        
-        .footer-links ul {
-            list-style: none;
-            padding: 0;
-        }
-        
-        .footer-links li {
-            margin-bottom: 0.75rem;
-        }
-        
-        .footer-links a {
-            color: rgba(255,255,255,0.7);
-            text-decoration: none;
-            transition: color 0.3s ease;
-        }
-        
-        .footer-links a:hover {
-            color: white;
-            padding-left: 5px;
-        }
-        
-        .social-links a {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            width: 42px;
-            height: 42px;
-            background-color: rgba(255,255,255,0.1);
-            border-radius: 50%;
-            color: white;
-            margin-right: 0.75rem;
-            transition: var(--transition);
-        }
-        
-        .social-links a:hover {
-            background-color: var(--secondary);
-            color: var(--primary);
-            transform: translateY(-3px);
-        }
-        
-        /* Back to top button */
-        .back-to-top {
-            position: fixed;
-            bottom: 30px;
-            right: 30px;
-            width: 50px;
-            height: 50px;
-            background-color: var(--primary);
-            color: var(--secondary);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.25rem;
-            cursor: pointer;
+        .animate-fade-in-up {
             opacity: 0;
-            visibility: hidden;
-            transition: var(--transition);
-            z-index: 999;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            animation: fadeInUp 0.8s ease-out forwards;
         }
         
-        .back-to-top.active {
-            opacity: 1;
-            visibility: visible;
-        }
+        .stagger-delay-100 { animation-delay: 0.1s; }
+        .stagger-delay-200 { animation-delay: 0.2s; }
+        .stagger-delay-300 { animation-delay: 0.3s; }
+        .stagger-delay-400 { animation-delay: 0.4s; }
+        .stagger-delay-500 { animation-delay: 0.5s; }
         
-        .back-to-top:hover {
-            transform: translateY(-3px) scale(1.1);
+        /* Color variables */
+        :root {
+            --primary: #0b1f3a;
+            --primary-light: #1a365d;
+            --accent: #2563eb;
+            --accent-light: #3b82f6;
         }
-        
-        /* Responsive adjustments */
-        @media (max-width: 1199px) {
-            .hero-title {
-                font-size: 3rem;
-            }
-        }
-        
-        @media (max-width: 991px) {
-            .hero-title {
-                font-size: 2.5rem;
-            }
-            
-            .section {
-                padding: 5rem 0;
-            }
-            
-            .navbar {
-                padding: 1rem 0;
-                background-color: var(--primary);
-            }
-        }
-        
-        @media (max-width: 767px) {
-            .hero-title {
-                font-size: 2.2rem;
-            }
-            
-            .hero-subtitle {
-                font-size: 1.1rem;
-            }
-            
-            .section {
-                padding: 4rem 0;
-            }
-            
-            .impact-number {
-                font-size: 2.5rem;
-            }
-            
-            .feature-card .card-img-top {
-                height: 180px;
-            }
-            
-            .pillar-icon {
-                width: 70px;
-                height: 70px;
-                font-size: 2rem;
-            }
-        }
-        
-        @media (max-width: 575px) {
-            .hero-title {
-                font-size: 2rem;
-            }
-            
-            .section-title {
-                margin-bottom: 2.5rem;
-            }
-            
-            .btn {
-                padding: 0.6rem 1.5rem;
-            }
-        }
-     
     </style>
-    
-    <!-- AOS Animation CSS -->
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 </head>
-<body>
+<body class="antialiased bg-gray-50">
     <!-- Header -->
-        <!-- Load Header -->
+    <!-- Load Header -->
     <div id="header-container"></div>
     <script src="loadHeader.js"></script>
 
-
     <!-- Hero Section -->
-    <section class="hero-section" style="background: linear-gradient(rgba(11, 31, 58, 0.9), rgba(11, 31, 58, 0.9)), url('../image/advocacy.jpg') center/cover;">
-        <div class="container position-relative z-index-1">
-            <div class="row align-items-center">
-                <div class="col-lg-7" data-aos="fade-right" data-aos-duration="800">
-                    <span class="badge bg-secondary text-primary mb-3 px-3 py-2 fs-6 fw-bold">CHANGE MAKERS</span>
-                    <h1 class="display-4 fw-bold text-white mb-4">Advocacy Initiatives</h1>
-                    <p class="lead text-white mb-5">Empowering youth to drive policy change and social impact through strategic advocacy and community mobilization.</p>
-                    <div class="d-flex flex-wrap gap-3">
-                        <a href="#get-involved" class="btn btn-warning btn-lg">Get Involved</a>
-                        <a href="#initiatives" class="btn btn-warning btn-lg">Our Initiatives</a>
-                    </div>
-                </div>
+    <section class="relative h-screen flex items-center justify-center text-white overflow-hidden pt-16">
+        <div class="absolute inset-0">
+            <img src="https://images.unsplash.com/photo-1511795409834-ef04bbd61622?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2069&q=80" 
+                 alt="Group of diverse activists at a protest holding signs" 
+                 class="w-full h-full object-cover"
+                 loading="eager">
+            <div class="absolute inset-0 hero-gradient"></div>
+        </div>
+        
+        <div class="relative z-10 text-center px-6 max-w-4xl mx-auto">
+            <span class="inline-block bg-blue-500/20 px-4 py-2 rounded-full text-sm font-semibold mb-4 animate-fade-in-up" style="color: #93c5fd; font-size: 1.25rem;">Pillar 1: Advocacy Initiatives</span>
+            <h1 class="text-4xl md:text-6xl font-bold mb-6 animate-fade-in-up stagger-delay-100 leading-tight text-white">Amplifying <span class="text-blue-300">Marginalized Voices</span> for Change</h1>
+            <p class="text-xl md:text-2xl text-gray-300 mb-8 max-w-3xl mx-auto animate-fade-in-up stagger-delay-200">Championing the rights of refugees, IDPs, and minority groups through strategic advocacy and policy engagement.</p>
+            <div class="flex flex-wrap justify-center gap-4 animate-fade-in-up stagger-delay-300">
+                <a href="#program" class="bg-blue-600 hover:bg-blue-700 text-white font-bold px-8 py-3 rounded-full transition-all transform hover:-translate-y-1 shadow-lg">
+                    Learn About Our Work
+                </a>
+                <a href="#resources" class="bg-white/10 hover:bg-white/20 border border-white text-white font-bold px-8 py-3 rounded-full transition-all transform hover:-translate-y-1 backdrop-blur-sm flex items-center">
+                    <i class="fas fa-gavel mr-2"></i> Policy Resources
+                </a>
             </div>
-
-             <div class="col-lg-6 mt-5" data-aos="fade-left" data-aos-delay="300">
-                        <div class="position-relative">
-                          <div class="ratio ratio-16x9">
-                            <iframe src="https://www.youtube.com/embed/_rts2qZ2cK4" title="WHAT IS TRUE LEADERSHIP?" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-                          </div>
-                          <div class="h4 fw-bold text-center mt-4 mb-3">Click To Watch</div>
-                        </div>
-                    </div>
+        </div>
+        
+        <div class="absolute bottom-10 left-0 right-0 text-center animate-bounce">
+            <a href="#about" class="text-white text-2xl" aria-label="Scroll down">
+                <i class="fas fa-chevron-down"></i>
+            </a>
         </div>
     </section>
 
-    <!-- Advocacy Program Description -->
-    <section class="section bg-light">
-        <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-lg-9" data-aos="fade-up"></div>
-                    <h2 class="section-title mb-4">Our Advocacy Approach</h2>
-                    <p>
-                        We believe that real change begins with strong, informed voices. Through our advocacy program, we identify and address pressing issues affecting refugees, IDPs, and minority groups, such as discriminatory policies, systemic exclusion, abandonment, and injustice. We advocate for their rights and inclusion by:
-                    </p>
-                    <ul class="mb-4">
-                        <li>Raising awareness through public forums, conferences, and workshops</li>
-                        <li>Issuing press releases and engaging in strategic litigation</li>
-                        <li>Organizing capacity-building trainings on rights and civic participation</li>
-                    </ul>
-                    <p>
-                        Our goal is to ensure that marginalized voices are heard, respected, and empowered in decision-making spaces.
-                    </p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Program Stats -->
-    <section class="py-5 py-lg-6 bg-light">
-        <div class="container">
-            <div class="row g-4">
-                <div class="col-md-4" data-aos="fade-up">
-                    <div class="stat-item h-100">
-                        <div class="stat-number text-primary mb-2" data-count="42">0</div>
-                        <h3 class="h5 mb-1">Policy Changes</h3>
-                        <p class="text-muted mb-0">Influenced across Africa</p>
-                    </div>
-                </div>
-                <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
-                    <div class="stat-item h-100">
-                        <div class="stat-number text-primary mb-2" data-count="120">0</div>
-                        <h3 class="h5 mb-1">Community Campaigns</h3>
-                        <p class="text-muted mb-0">Led by our advocates</p>
-                    </div>
-                </div>
-                <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
-                    <div class="stat-item h-100">
-                        <div class="stat-number text-primary mb-2" data-count="35">0</div>
-                        <h3 class="h5 mb-1">Countries</h3>
-                        <p class="text-muted mb-0">With active initiatives</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Program Features -->
-    <section class="py-5 py-lg-6">
-        <div class="container">
-            <div class="text-center mb-5" data-aos="fade-up">
-                <h2 class="display-5 fw-bold mb-3">Program Approach</h2>
-                <p class="lead text-muted mx-auto" style="max-width: 700px;">Comprehensive advocacy training and action</p>
+    <!-- Program Section -->
+    <section id="program" class="py-20 bg-gray-100">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4 animate-fade-in-up">Advocacy for Justice & Inclusion</h2>
+                <div class="w-20 h-1 bg-blue-600 mx-auto mb-6 animate-fade-in-up stagger-delay-100"></div>
+                <p class="text-lg text-gray-600 leading-relaxed max-w-3xl mx-auto animate-fade-in-up stagger-delay-200">
+                    We believe that real change begins with strong, informed voices. Our advocacy identifies and addresses pressing issues affecting marginalized communities.
+                </p>
             </div>
             
-            <div class="row g-4">
-                <div class="col-md-6 col-lg-3" data-aos="fade-up">
-                    <div class="feature-card p-4 text-center h-100">
-                        <div class="feature-icon mb-4">
-                            <i class="fas fa-bullhorn" aria-hidden="true"></i>
-                        </div>
-                        <h3 class="h4 mb-3">Public Speaking</h3>
-                        <p class="text-muted">Develop powerful communication skills for advocacy</p>
+            <div class="bg-white rounded-xl shadow-lg p-8 md:p-12 max-w-4xl mx-auto animate-fade-in-up stagger-delay-300">
+                <h3 class="text-2xl font-bold text-gray-900 mb-6">Our Mission</h3>
+                <p class="text-gray-600 mb-6">
+                    We advocate for the rights and inclusion of refugees, IDPs, and minority groups facing discriminatory policies, systemic exclusion, abandonment, and injustice. Our goal is to ensure these voices are heard, respected, and empowered in decision-making spaces.
+                </p>
+                
+                <div class="grid md:grid-cols-2 gap-8 mt-10">
+                    <div>
+                        <h4 class="text-xl font-semibold text-gray-900 mb-4 flex items-center">
+                            <i class="fas fa-exclamation-triangle text-blue-600 mr-3"></i> The Challenge
+                        </h4>
+                        <p class="text-gray-600">
+                            Marginalized communities often lack representation in policy discussions and face systemic barriers to justice and equal opportunities.
+                        </p>
                     </div>
-                </div>
-                <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="100">
-                    <div class="feature-card p-4 text-center h-100">
-                        <div class="feature-icon mb-4">
-                            <i class="fas fa-flag" aria-hidden="true"></i>
-                        </div>
-                        <h3 class="h4 mb-3">Campaign Development</h3>
-                        <p class="text-muted">Learn to create impactful advocacy campaigns</p>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="200">
-                    <div class="feature-card p-4 text-center h-100">
-                        <div class="feature-icon mb-4">
-                            <i class="fas fa-landmark" aria-hidden="true"></i>
-                        </div>
-                        <h3 class="h4 mb-3">Policy Engagement</h3>
-                        <p class="text-muted">Understand how to influence decision-makers</p>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="300">
-                    <div class="feature-card p-4 text-center h-100">
-                        <div class="feature-icon mb-4">
-                            <i class="fas fa-users" aria-hidden="true"></i>
-                        </div>
-                        <h3 class="h4 mb-3">Community Mobilization</h3>
-                        <p class="text-muted">Learn to organize and mobilize communities</p>
+                    <div>
+                        <h4 class="text-xl font-semibold text-gray-900 mb-4 flex items-center">
+                            <i class="fas fa-bullhorn text-blue-600 mr-3"></i> Our Approach
+                        </h4>
+                        <p class="text-gray-600">
+                            We combine grassroots mobilization with policy advocacy and legal strategies to create systemic change.
+                        </p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-
+    
     <!-- Initiatives Section -->
-    <section id="initiatives" class="py-5 py-lg-6 bg-light">
-        <div class="container">
-            <!-- Initiatives content would go here -->
-        </div>
-    </section>
+    <section id="initiatives" class="py-20 bg-white">
+        <div class="container mx-auto px-6 max-w-7xl">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Our Advocacy Strategies</h2>
+                <div class="w-20 h-1 bg-blue-600 mx-auto mb-6"></div>
+                <p class="text-lg text-gray-600 max-w-3xl mx-auto">
+                    Multi-faceted approaches to drive policy change and public awareness
+                </p>
+            </div>
 
-    <!-- Get Involved Section -->
-    <section id="get-involved" class="py-5 py-lg-6 bg-primary text-white">
-        <div class="container">
-            <!-- Get Involved form would go here -->
-        </div>
-    </section>
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Awareness Campaigns -->
+                <div class="bg-white rounded-xl shadow-md overflow-hidden card-hover">
+                    <div class="p-8">
+                        <div class="bg-blue-100 text-blue-600 rounded-lg w-14 h-14 flex items-center justify-center mb-6 mx-auto">
+                            <i class="fas fa-megaphone text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-center text-gray-900 mb-4">Public Awareness</h3>
+                        <p class="text-gray-600 text-center">
+                            Raising awareness through public forums, conferences, workshops, and media campaigns to highlight critical issues.
+                        </p>
+                    </div>
+                </div>
+                
+                <!-- Policy Engagement -->
+                <div class="bg-white rounded-xl shadow-md overflow-hidden card-hover">
+                    <div class="p-8">
+                        <div class="bg-blue-100 text-blue-600 rounded-lg w-14 h-14 flex items-center justify-center mb-6 mx-auto">
+                            <i class="fas fa-file-contract text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-center text-gray-900 mb-4">Policy Engagement</h3>
+                        <p class="text-gray-600 text-center">
+                            Issuing press releases, policy briefs, and engaging in strategic litigation to influence decision-makers.
+                        </p>
+                    </div>
+                </div>
+                
+                <!-- Capacity Building -->
+                <div class="bg-white rounded-xl shadow-md overflow-hidden card-hover">
+                    <div class="p-8">
+                        <div class="bg-blue-100 text-blue-600 rounded-lg w-14 h-14 flex items-center justify-center mb-6 mx-auto">
+                            <i class="fas fa-hands-helping text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-center text-gray-900 mb-4">Capacity Building</h3>
+                        <p class="text-gray-600 text-center">
+                            Organizing trainings on rights, civic participation, and advocacy skills to empower community leaders.
+                        </p>
+                    </div>
+                </div>
+            </div>
 
-    <!-- Footer (same as Leadership Development page) -->
-     
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="row g-4">
-                <div class="col-lg-4">
-                    <img src="image/website-logo.png" alt="Importance Leadership Logo" class="footer-logo" loading="lazy">
-                    <p class="mb-4">Developing ethical, visionary leaders who drive positive change in Africa and beyond through mentorship, education, and community engagement.</p>
-                    <div class="social-links mb-4">
-                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-                        <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
-                    </div>
-                </div>
-                
-                <div class="col-lg-2 col-md-4">
-                    <div class="footer-links">
-                        <h5>Navigation</h5>
-                        <ul>
-                            <li><a href="index.html">Home</a></li>
-                            <li><a href="about.html">About Us</a></li>
-                            <li><a href="programs.html">Programs</a></li>
-                            <li><a href="impact.html">Impact</a></li>
-                            <li><a href="#">Blog</a></li>
-                            <li><a href="contact-us.html">Contact</a></li>
-                        </ul>
-                    </div>
-                </div>
-                
-                <div class="col-lg-3 col-md-4">
-                    <div class="footer-links">
-                        <h5>Programs</h5>
-                        <ul>
-                            <li><a href="#">Advocacy Initiatives</a></li>
-                            <li><a href="#">Mental Health Programs</a></li>
-                            <li><a href="#">Networking</a></li>
-                            <li><a href="#">Leadership Developement</a></li>
-                            <li><a href="#">Climate Change Awareness</a></li>
-                        </ul>
-                    </div>
-                </div>
-                
-                <div class="col-lg-3 col-md-4">
-                    <div class="footer-links">
-                        <h5>Contact Us</h5>
-                        <ul>
-                            <li><i class="fas fa-map-marker-alt me-2 text-secondary"></i> Kenya, USA, Canada</li>
-                            <li><i class="fas fa-phone me-2 text-secondary"></i> +254 792 732 177</li>
-                            <li><i class="fas fa-envelope me-2 text-secondary"></i> info@importanceleadership.com</li>
-                        </ul>
+            <!-- Impact Section -->
+            <div class="mt-16 bg-blue-50 rounded-2xl shadow-md overflow-hidden">
+                <div class="p-8 md:p-10">
+                    <h3 class="text-2xl font-bold text-gray-900 mb-6">Advocacy Impact</h3>
+                    
+                    <div class="grid md:grid-cols-2 gap-8">
+                        <div>
+                            <h4 class="text-lg font-bold text-gray-900 mb-4 flex items-center">
+                                <i class="fas fa-chart-line text-blue-600 mr-3"></i> Recent Achievements
+                            </h4>
+                            <ul class="text-gray-600 space-y-3">
+                                <li class="flex items-start">
+                                    <i class="fas fa-check-circle text-blue-500 mt-1 mr-2"></i>
+                                    <span>Successfully advocated for policy changes benefiting 5,000+ refugees</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check-circle text-blue-500 mt-1 mr-2"></i>
+                                    <span>Trained 200+ community advocates in rights awareness</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check-circle text-blue-500 mt-1 mr-2"></i>
+                                    <span>Secured media coverage on critical issues in 15+ outlets</span>
+                                </li>
+                            </ul>
+                        </div>
                         
-                        <h5 class="mt-4">Newsletter</h5>
-                        <p class="small">Subscribe for updates and insights</p>
-                        <form>
-                            <div class="input-group mb-3">
-                                <input type="email" class="form-control form-control-sm" placeholder="Your Email" required>
-                                <button class="btn btn-accent btn-sm" type="submit">Join</button>
-                            </div>
-                        </form>
+                        <div>
+                            <h4 class="text-lg font-bold text-gray-900 mb-4 flex items-center">
+                                <i class="fas fa-bullseye text-blue-600 mr-3"></i> Current Campaigns
+                            </h4>
+                            <ul class="text-gray-600 space-y-3">
+                                <li class="flex items-start">
+                                    <i class="fas fa-arrow-right text-blue-500 mt-1 mr-2"></i>
+                                    <span>Equal access to education for displaced children</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-arrow-right text-blue-500 mt-1 mr-2"></i>
+                                    <span>Anti-discrimination protections for minority groups</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-arrow-right text-blue-500 mt-1 mr-2"></i>
+                                    <span>Legal aid services for asylum seekers</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-10 text-center">
+                        <a href="join-us.html" class="inline-flex items-center bg-blue-600 hover:bg-blue-700 text-white font-bold px-8 py-3 rounded-full transition-colors">
+                            <i class="fas fa-hands-helping mr-2"></i> Join Our Advocacy
+                        </a>
                     </div>
                 </div>
             </div>
-            
-            <hr class="my-4 bg-secondary opacity-25">
-            
-            <div class="row">
-                <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
-                    <p class="mb-0 small">&copy; 2025 Importance Leadership. All rights reserved.</p>
+
+        </div>
+    </section>
+
+    <!-- Resources Section -->
+    <section id="resources" class="py-20 bg-gray-50">
+        <div class="container mx-auto px-6 max-w-6xl">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-primary mb-4">Advocacy Resources</h2>
+                <div class="w-20 h-1 bg-blue-600 mx-auto mb-6"></div>
+                <p class="text-lg text-gray-600 max-w-3xl mx-auto">
+                    Tools and materials to support your advocacy efforts
+                </p>
+            </div>
+
+            <!-- Resource Cards -->
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Resource 1 -->
+                <div class="bg-white rounded-xl shadow-md overflow-hidden card-hover">
+                    <div class="p-6">
+                        <div class="bg-blue-100 text-blue-600 w-12 h-12 rounded-lg flex items-center justify-center mb-4">
+                            <i class="fas fa-file-pdf text-2xl"></i>
+                        </div>
+                        <h3 class="text-lg font-bold text-gray-900 mb-2">Advocacy Toolkit</h3>
+                        <p class="text-gray-600 text-sm mb-4">Step-by-step guide to effective community advocacy and policy change.</p>
+                        <a href="#" class="inline-flex items-center text-blue-600 font-bold hover:text-blue-700 transition-colors text-sm">
+                            Download Toolkit <i class="fas fa-arrow-right ml-2"></i>
+                        </a>
+                    </div>
                 </div>
-                <div class="col-md-6 text-center text-md-end">
-                    <a href="#" class="text-white text-decoration-none small me-3">Privacy Policy</a>
-                    <a href="#" class="text-white text-decoration-none small me-3">Terms of Service</a>
-                    <a href="#" class="text-white text-decoration-none small">Cookie Policy</a>
+                
+                <!-- Resource 2 -->
+                <div class="bg-white rounded-xl shadow-md overflow-hidden card-hover">
+                    <div class="p-6">
+                        <div class="bg-blue-100 text-blue-600 w-12 h-12 rounded-lg flex items-center justify-center mb-4">
+                            <i class="fas fa-film text-2xl"></i>
+                        </div>
+                        <h3 class="text-lg font-bold text-gray-900 mb-2">Training Webinars</h3>
+                        <p class="text-gray-600 text-sm mb-4">Recorded sessions on rights awareness and policy engagement strategies.</p>
+                        <a href="#" class="inline-flex items-center text-blue-600 font-bold hover:text-blue-700 transition-colors text-sm">
+                            Watch Now <i class="fas fa-play-circle ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Resource 3 -->
+                <div class="bg-white rounded-xl shadow-md overflow-hidden card-hover">
+                    <div class="p-6">
+                        <div class="bg-blue-100 text-blue-600 w-12 h-12 rounded-lg flex items-center justify-center mb-4">
+                            <i class="fas fa-book text-2xl"></i>
+                        </div>
+                        <h3 class="text-lg font-bold text-gray-900 mb-2">Policy Briefs</h3>
+                        <p class="text-gray-600 text-sm mb-4">Research-based recommendations on key issues affecting marginalized groups.</p>
+                        <a href="#" class="inline-flex items-center text-blue-600 font-bold hover:text-blue-700 transition-colors text-sm">
+                            View Resources <i class="fas fa-external-link-alt ml-2"></i>
+                        </a>
+                    </div>
                 </div>
             </div>
+
+            <!-- Take Action Section 
+            <div class="mt-16 bg-white rounded-2xl shadow-lg overflow-hidden">
+                <div class="grid md:grid-cols-2">
+                    <div class="p-8 md:p-10">
+                        <h3 class="text-2xl font-bold text-gray-900 mb-4">Take Action Today</h3>
+                        <p class="text-gray-600 mb-6">
+                            Join our network of advocates working to create systemic change for marginalized communities:
+                        </p>
+                        <ul class="text-gray-600 space-y-3">
+                            <li class="flex items-start">
+                                <i class="fas fa-envelope-open-text text-blue-500 mt-1 mr-3"></i>
+                                <span>Contact your representatives about key issues</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-microphone text-blue-500 mt-1 mr-3"></i>
+                                <span>Share your story to raise awareness</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-users text-blue-500 mt-1 mr-3"></i>
+                                <span>Join or organize local advocacy groups</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="bg-blue-50 p-8 md:p-10 flex items-center">
+                        <div>
+                            <h4 class="text-xl font-bold text-gray-900 mb-4">Upcoming Advocacy Events</h4>
+                            <div class="space-y-4">
+                                <div class="flex items-start">
+                                    <div class="bg-blue-600 text-white rounded-lg w-12 h-12 flex-shrink-0 flex items-center justify-center mr-4">
+                                        <span class="font-bold">10</span>
+                                    </div>
+                                    <div>
+                                        <p class="font-medium text-gray-900">Policy Advocacy Training</p>
+                                        <p class="text-sm text-gray-600">July 10, 2025 | 3:00 PM</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-start">
+                                    <div class="bg-blue-600 text-white rounded-lg w-12 h-12 flex-shrink-0 flex items-center justify-center mr-4">
+                                        <span class="font-bold">18</span>
+                                    </div>
+                                    <div>
+                                        <p class="font-medium text-gray-900">Community Organizing Workshop</p>
+                                        <p class="text-sm text-gray-600">July 18, 2025 | 5:30 PM</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <a href="contact-us.html" class="inline-flex items-center mt-6 text-blue-600 font-bold hover:text-blue-700">
+                                View Full Calendar <i class="fas fa-arrow-right ml-2"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+-->
         </div>
-    </footer>
-    <!-- Back to top button -->
-    <button class="back-to-top btn btn-primary-custom rounded-circle p-3" id="backToTop" aria-label="Back to top" style="display: none;">
+    </section>
+
+    
+
+    <!-- Footer -->
+    <div id="footer-container"></div>
+    <script src="loadFooter.js"></script>
+
+    <!-- Back to Top Button -->
+    <button id="backToTop" class="fixed bottom-8 right-8 bg-blue-600 hover:bg-blue-700 text-white w-12 h-12 rounded-full flex items-center justify-center shadow-xl opacity-0 invisible transition-all z-50" aria-label="Back to top">
         <i class="fas fa-arrow-up"></i>
     </button>
 
-    <!-- Scripts -->
-    <!-- Bootstrap JS -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    
-    <!-- AOS Animation -->
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    
-    <!-- Custom JS -->
     <script>
-        // Initialize AOS animation
-        document.addEventListener('DOMContentLoaded', function() {
-            if (typeof AOS !== 'undefined') {
-                AOS.init({
-                    duration: 800,
-                    easing: 'ease-in-out',
-                    once: true,
-                    mirror: false
-                });
-            }
-            
-            // Back to top button
-            const backToTop = document.getElementById('backToTop');
-            window.addEventListener('scroll', function() {
-                if (window.scrollY > 300) {
-                    backToTop.style.display = 'block';
-                } else {
-                    backToTop.style.display = 'none';
-                }
-            });
-            backToTop.addEventListener('click', function() {
-                window.scrollTo({ top: 0, behavior: 'smooth' });
-            });
-
-            // Animated stats counter
-            const statNumbers = document.querySelectorAll('.stat-number');
-            let statsAnimated = false;
-            function animateStats() {
-                if (statsAnimated) return;
-                const statsSection = document.querySelector('.stat-number');
-                if (!statsSection) return;
-                const rect = statsSection.getBoundingClientRect();
-                if (rect.top < window.innerHeight) {
-                    statNumbers.forEach(function(stat) {
-                        const target = +stat.getAttribute('data-count');
-                        let count = 0;
-                        const increment = target > 100 ? Math.ceil(target / 50) : 1;
-                        const interval = setInterval(function() {
-                            count += increment;
-                            if (count >= target) {
-                                stat.textContent = target;
-                                clearInterval(interval);
-                            } else {
-                                stat.textContent = count;
-                            }
-                        }, 20);
-                    });
-                    statsAnimated = true;
-                }
-            }
-            window.addEventListener('scroll', animateStats);
-            animateStats();
+        // Mobile Menu Toggle
+        document.getElementById('mobile-menu-button').addEventListener('click', function() {
+            document.getElementById('mobile-menu').classList.toggle('hidden');
         });
+        
+        // Back to Top Button
+        window.addEventListener('scroll', function() {
+            const backToTopButton = document.getElementById('backToTop');
+            if (window.pageYOffset > 300) {
+                backToTopButton.classList.remove('opacity-0', 'invisible');
+                backToTopButton.classList.add('opacity-100', 'visible');
+            } else {
+                backToTopButton.classList.remove('opacity-100', 'visible');
+                backToTopButton.classList.add('opacity-0', 'invisible');
+            }
+        });
+        
+        document.getElementById('backToTop').addEventListener('click', function() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+        
+        // Animate elements when they come into view
+        function animateOnScroll() {
+            const elements = document.querySelectorAll('.animate-fade-in-up');
+            const windowHeight = window.innerHeight;
+            
+            elements.forEach(element => {
+                const elementPosition = element.getBoundingClientRect().top;
+                const elementVisible = 150;
+                
+                if (elementPosition < windowHeight - elementVisible) {
+                    element.style.opacity = "1";
+                    element.style.animation = "fadeInUp 0.8s ease-out forwards";
+                }
+            });
+        }
+        
+        // Initialize animations
+        window.addEventListener('load', function() {
+            // Start with elements hidden
+            document.querySelectorAll('.animate-fade-in-up').forEach(el => {
+                el.style.opacity = "0";
+            });
+            
+            // Run initial animation check
+            animateOnScroll();
+        });
+        
+        window.addEventListener('scroll', animateOnScroll);
     </script>
-    
 </body>
 </html>
