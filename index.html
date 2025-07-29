@@ -52,15 +52,13 @@
     
     <style>
         :root {
-            --primary: #0b1f3a;      /* Dark blue */
-            --primary-light: #1a365d;
-            --secondary: #f5a623;    /* Gold accent */
-            --secondary-light: #f8b84a;
-            --accent: #7cade9;      /* Light blue */
-            --light: #f8f9fa;       /* Light background */
-            --dark: #212529;        /* Dark text */
-            --text-light: #ffffff;
-            --text-dark: #343a40;
+            --primary: #0A192F;      /* Dark blue */
+            --secondary: #FFC107;    /* Gold accent */
+            --accent: #61DAFB;      /* Light blue */
+            --light: #F0F2F5;       /* Light background */
+            --dark: #333333;        /* Dark text */
+            --text-light: #F8F8F8;
+            --text-dark: #333333;
             --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
         }
         
@@ -70,22 +68,21 @@
             color: var(--text-dark);
             line-height: 1.7;
             scroll-behavior: smooth;
+            background-color: var(--light);
         }
         
-    /* Remove custom .offcanvas-fullscreen styles to allow Bootstrap's default responsive behavior */
         h1, h2, h3, h4, h5, h6 {
             font-family: 'Playfair Display', serif;
             font-weight: 700;
             color: var(--primary);
             line-height: 1.3;
-            color: var(--text-dark);
         }
         
         /* Hero section */
         .hero-section {
             position: relative;
             z-index: 1;
-            color: var(--text-primary);
+            color: var(--text-light);
         }
         .hero-section::before {
             content: "";
@@ -634,13 +631,13 @@
  /*PROGRAMS */
  /* Modern Program Section Styles */
     :root {
-        --primary: #0b1f3a;
-        --primary-light: #1e365d;
-        --secondary: #f5a623;
+        --primary: #0A192F;
+        --primary-light: #1a365d;
+        --secondary: #FFC107;
         --secondary-light: #ffd27f;
-        --accent: #7cade9;
-        --light: #f8f9fa;
-        --dark: #212529;
+        --accent: #61DAFB;
+        --light: #F0F2F5;
+        --dark: #333333;
     }
 
     .text-gradient-primary {
@@ -786,9 +783,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
        
    
 <!-- Integrated Leadership Hero with Background Swiper -->
-<section class="leadership-hero position-relative">
+<section class="relative h-screen flex items-center justify-center text-white overflow-hidden pt-16 bg-gradient-to-br from-primary to-primary-light">
   <!-- Background Swiper -->
-  <div class="swiper background-swiper">
+  <div class="swiper background-swiper absolute inset-0 z-0">
     <div class="swiper-wrapper">
       <!-- Leadership Development: diverse group, teamwork -->
       <div class="swiper-slide" style="background-image: url('https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1471&q=80')"></div>
@@ -823,39 +820,39 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   </div>
 
 <!-- Dark Overlay -->
-<div class="hero-overlay"></div>
+<div class="hero-overlay absolute inset-0 bg-black opacity-60 z-10"></div>
   <!-- Text Content -->
-  <div class="container position-relative z-index-2 py-8">
+  <div class="container relative z-20 py-8">
     <div class="row">
       <div class="col-lg-6">
-        <h1 class="display-4 fw-bold text-white mb-4 mt-3"> <span class="text-gradient-primary fw-bold ">Importance Leadership</span>
-         <span class="text-light-primary" style="font-style: italic; "></span>
+        <h1 class="text-4xl md:text-6xl font-bold text-white mb-4 mt-3 leading-tight"> <span class="text-accent font-bold">Importance Leadership</span>
+         <span class="italic"></span>
             Empowering Leaders, 
           Inspiring Excellence
          </span> 
         </h1>
         
-        <p class="lead text-white mb-5" style="opacity:0.9">
+        <p class="lead text-white mb-5 opacity-90">
           We develop young leaders through transformative mentorship and community programs that create sustainable impact.
         </p>
         
-        <div class="d-flex flex-wrap gap-3 mb-5">
-          <a href="who-we-are.html" class="btn btn-warning btn-lg px-4 fw-bold">
+        <div class="flex flex-wrap gap-3 mb-5">
+          <a href="who-we-are.html" class="btn bg-secondary text-primary px-6 py-3 rounded-full font-bold shadow-lg hover:scale-105 transition-all">
             Discover Our Mission
           </a>
-          <a href="impact.html" class="btn btn-outline-light btn-lg px-4">
+          <a href="impact.html" class="btn border border-white text-white px-6 py-3 rounded-full hover:bg-white hover:text-primary transition-all">
             Learn About Our Impact
           </a>
         </div>
         
-        <div class="leader-stats d-flex flex-wrap gap-4 text-white">
+        <div class="flex flex-wrap gap-4 text-white">
           <div class="stat-item">
-            <div class="display-4 fw-bold text-warning mb-1">1,500+</div>
-            <div class="small">Young Leaders Developed</div>
+            <div class="text-4xl font-bold text-secondary mb-1">1,500+</div>
+            <div class="text-sm">Young Leaders Developed</div>
           </div>
           <div class="stat-item">
-            <div class="display-4 fw-bold text-warning mb-1">50+</div>
-            <div class="small">Communities Impacted</div>
+            <div class="text-4xl font-bold text-secondary mb-1">50+</div>
+            <div class="text-sm">Communities Impacted</div>
           </div>
         </div>
       </div>
@@ -1258,89 +1255,43 @@ const swiper = new Swiper('.background-swiper', {
 
 
         <!-- Impact Section -->
-        <section class="section text-white" style="
-            background: linear-gradient(rgba(11, 31, 58, 0.9), rgba(72, 89, 111, 0.9)), 
-                        url('image/impact-bg.jpg') center/cover;">
-            <div class="container">
-                <div class="row g-4 align-items-center">
-                    <div class="col-lg-6" data-aos="fade-right">
-                        <span class="badge bg-primary mb-3">OUR IMPACT</span>
-                        <h2 class="section-title text-start text-white">Transforming Lives, Shaping Futures</h2>
-                        <p class="lead">Since our founding, we've empowered thousands of young leaders to create positive change in their communities.</p>
-                        <p>Our holistic approach combines leadership training with practical experience, ensuring our participants are equipped to tackle real-world challenges.</p>
-                        
-                        <div class="row mt-4 g-4">
-                            <div class="col-6" data-aos="fade-up" data-aos-delay="100">
-                                <div class="p-4 bg-light rounded-3 h-100">
-                                    <div class="impact-number mb-3" data-count="2500">0</div>
-                                    <h3 class="h5 fw-bold text-black">Youth Empowered</h3>
-                                    <p class="mb-0 small text-secondary">Through our leadership programs</p>
-                                </div>
-                            </div>
-                            
-                            <div class="col-6" data-aos="fade-up" data-aos-delay="200">
-                                <div class="p-4 bg-light rounded-3 h-100">
-                                    <div class="impact-number mb-3" data-count="85">0</div>
-                                    <h3 class="h5 fw-bold text-black">Community Projects</h3>
-                                    <p class="mb-0 small text-secondary">Initiated by our participants</p>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div class="mt-4 text-center" data-aos="fade-up" data-aos-delay="300">
-                            <a href="impact.html" class="btn btn-warning btn-lg px-4">Learn More</a>
-                        </div>
-                    </div>
-                    
-                    <div class="col-lg-6" data-aos="fade-left">
-                        <div class="position-relative text-center">
-                            <!-- SVG Illustration: Transforming Lives, Shaping Futures -->
-                            <svg width="100%" height="340" viewBox="0 0 500 340" fill="none" xmlns="http://www.w3.org/2000/svg" class="img-fluid rounded-4 shadow bg-light" style="max-width: 480px;">
-                                <defs>
-                                    <linearGradient id="lifeGradient" x1="0" y1="0" x2="500" y2="340" gradientUnits="userSpaceOnUse">
-                                        <stop stop-color="#7cade9"/>
-                                        <stop offset="1" stop-color="#f5a623"/>
-                                    </linearGradient>
-                                    <radialGradient id="futureGlow2" cx="0.5" cy="0.5" r="0.7">
-                                        <stop offset="0%" stop-color="#f5a623" stop-opacity="0.25"/>
-                                        <stop offset="100%" stop-color="#fff" stop-opacity="0"/>
-                                    </radialGradient>
-                                </defs>
-                                <!-- Ground for stability -->
-                                <ellipse cx="250" cy="300" rx="100" ry="22" fill="#e9ecef"/>
-                                <!-- Three figures: central (future), two sides (lives transformed) -->
-                                <!-- Left figure -->
-                                <circle cx="170" cy="210" r="22" fill="#7cade9" stroke="#0b1f3a" stroke-width="3"/>
-                                <rect x="160" y="232" width="20" height="48" rx="10" fill="#7cade9"/>
-                                <path d="M170 245 Q150 260 135 285" stroke="#f5a623" stroke-width="6" fill="none" stroke-linecap="round"/>
-                                <path d="M170 245 Q190 260 205 285" stroke="#f5a623" stroke-width="6" fill="none" stroke-linecap="round"/>
-                                <!-- Right figure -->
-                                <circle cx="330" cy="210" r="22" fill="#f5a623" stroke="#0b1f3a" stroke-width="3"/>
-                                <rect x="320" y="232" width="20" height="48" rx="10" fill="#f5a623"/>
-                                <path d="M330 245 Q310 260 295 285" stroke="#7cade9" stroke-width="6" fill="none" stroke-linecap="round"/>
-                                <path d="M330 245 Q350 260 365 285" stroke="#7cade9" stroke-width="6" fill="none" stroke-linecap="round"/>
-                                <!-- Central figure (future) -->
-                                <circle cx="250" cy="170" r="32" fill="url(#lifeGradient)" stroke="#0b1f3a" stroke-width="4"/>
-                                <rect x="238" y="202" width="24" height="70" rx="12" fill="#7cade9"/>
-                                <!-- Outstretched arms (central) -->
-                                <path d="M250 215 Q215 230 190 265" stroke="#f5a623" stroke-width="8" fill="none" stroke-linecap="round"/>
-                                <path d="M250 215 Q285 230 310 265" stroke="#f5a623" stroke-width="8" fill="none" stroke-linecap="round"/>
-                                <!-- Radiating lines (future) -->
-                                <g stroke="#f5a623" stroke-width="4">
-                                    <line x1="250" y1="140" x2="250" y2="100"/>
-                                    <line x1="230" y1="150" x2="200" y2="120"/>
-                                    <line x1="270" y1="150" x2="300" y2="120"/>
-                                    <line x1="235" y1="180" x2="200" y2="190"/>
-                                    <line x1="265" y1="180" x2="300" y2="190"/>
-                                </g>
-                                <!-- Glow for future -->
-                                <ellipse cx="250" cy="170" rx="80" ry="34" fill="url(#futureGlow2)" />
-                            </svg>
-                        </div>
-                    </div>
-                </div>
+        <section class="py-16 bg-primary text-white relative overflow-hidden">
+    <div class="container mx-auto px-4">
+        <div class="text-center mb-12" data-aos="fade-up">
+            <h2 class="text-4xl md:text-5xl font-bold mb-4">Our Measurable Impact</h2>
+            <p class="text-lg opacity-80 max-w-3xl mx-auto">Quantifying our commitment to youth development and community transformation.</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 text-center">
+            <div class="p-6 bg-white bg-opacity-10 rounded-xl shadow-lg" data-aos="fade-up" data-aos-delay="100">
+                <div class="text-5xl font-bold text-secondary mb-2">2500+</div>
+                <h3 class="text-xl font-semibold mb-1">Youth Empowered</h3>
+                <p class="text-sm opacity-75">Through our leadership programs and initiatives</p>
             </div>
-        </section>
+            <div class="p-6 bg-white bg-opacity-10 rounded-xl shadow-lg" data-aos="fade-up" data-aos-delay="200">
+                <div class="text-5xl font-bold text-secondary mb-2">20+</div>
+                <h3 class="text-xl font-semibold mb-1">Dedicated Mentors</h3>
+                <p class="text-sm opacity-75">Guiding the next generation of leaders</p>
+            </div>
+            <div class="p-6 bg-white bg-opacity-10 rounded-xl shadow-lg" data-aos="fade-up" data-aos-delay="300">
+                <div class="text-5xl font-bold text-secondary mb-2">13</div>
+                <h3 class="text-xl font-semibold mb-1">Workshops</h3>
+                <p class="text-sm opacity-75">Leadership training and skill development</p>
+            </div>
+            <div class="p-6 bg-white bg-opacity-10 rounded-xl shadow-lg" data-aos="fade-up" data-aos-delay="400">
+                <div class="text-5xl font-bold text-secondary mb-2">14</div>
+                <h3 class="text-xl font-semibold mb-1">Communities</h3>
+                <p class="text-sm opacity-75">Positively impacted across the region</p>
+            </div>
+        </div>
+
+        <div class="text-center mt-12" data-aos="fade-up" data-aos-delay="500">
+            <a href="join-us.html" class="bg-secondary text-primary px-8 py-4 rounded-full font-bold shadow-lg hover:scale-105 transition-all duration-300">
+                <i class="fas fa-hands-helping mr-2"></i> Join Our Mission
+            </a>
+        </div>
+    </div>
+</section>
 
        
         <!-- Testimonials Section
@@ -1414,115 +1365,64 @@ const swiper = new Swiper('.background-swiper', {
 
         <!-- Partners Section -->
     
-<section class="py-7 position-relative overflow-hidden" styles="background: linear-gradient(135deg, #123456, #e9ecef);">
-    <!-- Decorative elements -->
-    <div class="position-absolute top-0 start-0 w-100 h-100 opacity-10">
-        <div class="partnership-pattern"></div>
-    </div>
-    
-    <div class="container position-relative">
-        <div class="text-center mb-6" data-aos="fade-up">
-            <span class="badge bg-primary bg-opacity-10 text-primary px-3 py-2 mb-3 rounded-pill fw-semibold">STRATEGIC COLLABORATIONS</span>
-            <h2 class="display-5 fw-bold mb-3">Our <span class="text-gradient-primary">Valued Partners</span></h2>
-            <p class="lead text-muted mx-auto" style="max-width: 720px;">
-                Together with mission-aligned organizations, we're creating transformative youth leadership opportunities. 
-                Join our network to amplify your impact.
-            </p>
+<section class="py-16 bg-white">
+    <div class="container mx-auto px-4">
+        <div class="text-center mb-12" data-aos="fade-up">
+            <h2 class="text-4xl md:text-5xl font-bold text-primary mb-4">Our Valued Partners</h2>
+            <p class="text-lg text-gray-600 max-w-3xl mx-auto">Together with mission-aligned organizations, we're creating transformative youth leadership opportunities. Join our network to amplify your impact.</p>
         </div>
         
-        <!-- Partners Logos Grid -->
-        <div class="partners-grid mb-6" data-aos="fade-up" data-aos-delay="100">
-            <div class="row row-cols-2 row-cols-md-3 row-cols-lg-6 g-4 justify-content-center">
-                <!-- UNICEF -->
-                <div class="col">
-                    <a href="https://www.unicef.org" target="_blank" rel="noopener noreferrer" class="partner-card">
-                        <div class="partner-logo-container">
-                            <img src="image/UNICEF.png" 
-                                 alt="UNICEF Logo" 
-                                 class="img-fluid"
-                                 title="United Nations Children's Fund"
-                                 loading="lazy">
-                            <div class="partner-hover-bg"></div>
-                        </div>
-                    </a>
-                </div>
-                
-                <!-- Save the Children -->
-                <div class="col">
-                    <a href="https://www.savethechildren.org" target="_blank" rel="noopener noreferrer" class="partner-card">
-                        <div class="partner-logo-container">
-                            <img src="image/Save the children.png" 
-                                 alt="Save the Children Logo" 
-                                 class="img-fluid"
-                                 title="Save the Children International"
-                                 loading="lazy">
-                            <div class="partner-hover-bg"></div>
-                        </div>
-                    </a>
-                </div>
-                
-                <!-- World Youth Alliance -->
-                <div class="col">
-                    <a href="https://www.wya.net" target="_blank" rel="noopener noreferrer" class="partner-card">
-                        <div class="partner-logo-container">
-                            <img src="image/World Youth Alliance.png" 
-                                 alt="World Youth Alliance Logo" 
-                                 class="img-fluid"
-                                 title="World Youth Alliance"
-                                 loading="lazy">
-                            <div class="partner-hover-bg"></div>
-                        </div>
-                    </a>
-                </div>
-                
-                <!-- Plan International -->
-                <div class="col">
-                    <a href="https://plan-international.org" target="_blank" rel="noopener noreferrer" class="partner-card">
-                        <div class="partner-logo-container">
-                            <img src="image/Plan International.png" 
-                                 alt="Plan International Logo" 
-                                 class="img-fluid"
-                                 title="Plan International"
-                                 loading="lazy">
-                            <div class="partner-hover-bg"></div>
-                        </div>
-                    </a>
-                </div>
-                
-                <!-- Global Youth Action Network -->
-                <div class="col">
-                    <a href="https://web.archive.org/web/20180321000000*/http://gyan.tigweb.org" target="_blank" rel="noopener noreferrer" class="partner-card">
-                        <div class="partner-logo-container">
-                            <img src="image/GYAN.jpg" 
-                                 alt="Global Youth Action Network Logo" 
-                                 class="img-fluid"
-                                 title="Global Youth Action Network (Archive)"
-                                 loading="lazy">
-                            <div class="partner-hover-bg"></div>
-                        </div>
-                    </a>
-                </div>
-                
-                <!-- International Youth Foundation -->
-                <div class="col">
-                    <a href="https://www.iyfnet.org" target="_blank" rel="noopener noreferrer" class="partner-card">
-                        <div class="partner-logo-container">
-                            <img src="image/iyf.png" 
-                                 alt="International Youth Foundation Logo" 
-                                 class="img-fluid"
-                                 title="International Youth Foundation"
-                                 loading="lazy">
+        <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8 items-center justify-center">
+            <!-- UNICEF -->
+            <div class="col">
+                <a href="https://www.unicef.org" target="_blank" rel="noopener noreferrer" class="block opacity-75 hover:opacity-100 transition-opacity duration-300">
+                    <img src="image/UNICEF.png" alt="UNICEF Logo" class="mx-auto max-h-16 filter grayscale hover:grayscale-0 transition-all duration-300">
+                </a>
+            </div>
+            
+            <!-- Save the Children -->
+            <div class="col">
+                <a href="https://www.savethechildren.org" target="_blank" rel="noopener noreferrer" class="block opacity-75 hover:opacity-100 transition-opacity duration-300">
+                    <img src="image/Save the children.png" alt="Save the Children Logo" class="mx-auto max-h-16 filter grayscale hover:grayscale-0 transition-all duration-300">
+                </a>
+            </div>
+            
+            <!-- World Youth Alliance -->
+            <div class="col">
+                <a href="https://www.wya.net" target="_blank" rel="noopener noreferrer" class="block opacity-75 hover:opacity-100 transition-opacity duration-300">
+                    <img src="image/World Youth Alliance.png" alt="World Youth Alliance Logo" class="mx-auto max-h-16 filter grayscale hover:grayscale-0 transition-all duration-300">
+                </a>
+            </div>
+            
+            <!-- Plan International -->
+            <div class="col">
+                <a href="https://plan-international.org" target="_blank" rel="noopener noreferrer" class="block opacity-75 hover:opacity-100 transition-opacity duration-300">
+                    <img src="image/Plan International.png" alt="Plan International Logo" class="mx-auto max-h-16 filter grayscale hover:grayscale-0 transition-all duration-300">
+                </a>
+            </div>
+            
+            <!-- Global Youth Action Network -->
+            <div class="col">
+                <a href="https://web.archive.org/web/20180321000000*/http://gyan.tigweb.org" target="_blank" rel="noopener noreferrer" class="block opacity-75 hover:opacity-100 transition-opacity duration-300">
+                    <img src="image/GYAN.jpg" alt="Global Youth Action Network Logo" class="mx-auto max-h-16 filter grayscale hover:grayscale-0 transition-all duration-300">
+                </a>
+            </div>
+            
+            <!-- International Youth Foundation -->
+            <div class="col">
+                <a href="https://www.iyfnet.org" target="_blank" rel="noopener noreferrer" class="block opacity-75 hover:opacity-100 transition-opacity duration-300">
+                    <img src="image/iyf.png" alt="International Youth Foundation Logo" class="mx-auto max-h-16 filter grayscale hover:grayscale-0 transition-all duration-300">
+                </a>
             </div>
         </div>
         
-        <!-- CTA Section -->
-        <div class="text-center" data-aos="fade-up" data-aos-delay="200">
-            <h3 class="h4 fw-semibold mb-4">Ready to join our partner network?</h3>
-            <a href="partnerships.html" class="btn btn-primary btn-lg px-5 py-3 rounded-pill shadow-sm">
-                <i class="fas fa-handshake me-2"></i> Explore Partnership Opportunities
-                <i class="fas fa-arrow-right ms-2"></i>
+        <div class="text-center mt-12" data-aos="fade-up" data-aos-delay="200">
+            <h3 class="text-2xl font-semibold mb-4">Ready to join our partner network?</h3>
+            <a href="partnerships.html" class="bg-primary text-white px-8 py-4 rounded-full font-bold shadow-lg hover:scale-105 transition-all duration-300">
+                <i class="fas fa-handshake mr-2"></i> Explore Partnership Opportunities
+                <i class="fas fa-arrow-right ml-2"></i>
             </a>
-            <p class="small text-muted mt-3">Let's discuss how we can create impact together</p>
+            <p class="text-gray-600 text-sm mt-3">Let's discuss how we can create impact together</p>
         </div>
     </div>
 </section>
