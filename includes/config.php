@@ -76,24 +76,40 @@ ini_set('session.cookie_samesite', 'Strict');
 
 // Database connection
 $pdo = null;
-try {
-    $pdo = new PDO(
-        "mysql:host=" . DB_HOST . ";dbname=" . DB_NAME . ";charset=utf8mb4",
-        DB_USER,
-        DB_PASS,
-        [
+
+// Only attempt database connection if MySQL PDO extension is available
+if (extension_loaded('pdo_mysql')) {
+    try {
+        $pdo_options = [
             PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
             PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
-            PDO::ATTR_EMULATE_PREPARES => false,
-            PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES utf8mb4"
-        ]
-    );
-} catch(PDOException $e) {
+            PDO::ATTR_EMULATE_PREPARES => false
+        ];
+        
+        // Add MySQL-specific option only if available
+        if (defined('PDO::MYSQL_ATTR_INIT_COMMAND')) {
+            $pdo_options[PDO::MYSQL_ATTR_INIT_COMMAND] = "SET NAMES utf8mb4";
+        }
+        
+        $pdo = new PDO(
+            "mysql:host=" . DB_HOST . ";dbname=" . DB_NAME . ";charset=utf8mb4",
+            DB_USER,
+            DB_PASS,
+            $pdo_options
+        );
+    } catch(PDOException $e) {
+        if (ENVIRONMENT === 'development') {
+            error_log("Database connection failed: " . $e->getMessage());
+            // Don't die in development for web viewing
+            $pdo = null;
+        } else {
+            error_log("Database connection failed: " . $e->getMessage());
+            die("Database connection failed. Please contact support.");
+        }
+    }
+} else {
     if (ENVIRONMENT === 'development') {
-        die("Database connection failed: " . $e->getMessage());
-    } else {
-        error_log("Database connection failed: " . $e->getMessage());
-        die("Database connection failed. Please contact support.");
+        error_log("MySQL PDO extension not available - database features disabled");
     }
 }
 
