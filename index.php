@@ -1,0 +1,219 @@
+<?php
+// index.php - Main homepage with component architecture
+require_once 'includes/config.php';
+require_once 'includes/functions.php';
+require_once 'includes/security.php';
+
+// Page configuration
+$page_title = "Importance Leadership | Developing Ethical Leaders for Global Impact";
+$meta_description = "Empowering young leaders in Kenya through mentorship, education, and advocacy for ethical leadership and community impact.";
+$meta_keywords = "youth leadership, leadership development, mentorship programs, community impact, African leadership, social change";
+$canonical_url = "https://www.importanceleadership.com";
+$body_class = "homepage";
+
+// Load dynamic content data
+$impact_stats = [
+    'leaders_trained' => 1500,
+    'communities_impacted' => 50,
+    'countries' => 3
+];
+
+$featured_programs = [
+    [
+        'title' => 'Leadership Development',
+        'description' => 'Comprehensive leadership training program developing essential skills for effective leadership.',
+        'image' => '/assets/images/programs/leadership-development.jpg',
+        'slug' => 'leadership-development',
+        'duration' => '6 months',
+        'participants' => 500
+    ],
+    [
+        'title' => 'Mentorship Program', 
+        'description' => 'Connect with experienced mentors who guide you through personal and professional growth.',
+        'image' => '/assets/images/programs/mentorship.jpg',
+        'slug' => 'mentorship',
+        'duration' => 'Ongoing',
+        'participants' => 300
+    ],
+    [
+        'title' => 'Advocacy Initiatives',
+        'description' => 'Empowers youth to become effective advocates for social justice and policy change.',
+        'image' => '/assets/images/programs/advocacy-program.jpg', 
+        'slug' => 'advocacy',
+        'duration' => '3 months',
+        'participants' => 250
+    ]
+];
+
+// Additional head content for homepage
+$additional_head = '
+<link rel="canonical" href="' . $canonical_url . '">
+<meta property="og:title" content="' . $page_title . '">
+<meta property="og:description" content="' . $meta_description . '">
+<meta property="og:image" content="' . $canonical_url . '/assets/images/og-image.jpg">
+<meta property="og:url" content="' . $canonical_url . '">
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Importance Leadership Organization",
+    "url": "' . $canonical_url . '",
+    "logo": "' . $canonical_url . '/assets/images/icons/logo.png",
+    "description": "' . $meta_description . '",
+    "foundingDate": "2020",
+    "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Concord",
+        "addressRegion": "New Hampshire", 
+        "postalCode": "03301",
+        "addressCountry": "US"
+    },
+    "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+1-603-715-0801",
+        "contactType": "customer service"
+    },
+    "sameAs": [
+        "https://www.facebook.com/share/15LKEyn6fy/?mibextid=wwXIfr",
+        "https://www.instagram.com/importance_leadership_?igsh=bGZ1bHB1dm1vdHY2&utm_source=qr",
+        "https://www.linkedin.com/company/105744530/admin/dashboard/",
+        "https://youtube.com/@importanceleadership?si=mzd00nPXob5XBBBl"
+    ]
+}
+</script>';
+
+// Include header and navigation
+include 'components/header.php';
+include 'components/nav.php';
+?>
+
+<!-- Skip to content link for accessibility -->
+<a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 bg-primary-500 text-white px-4 py-2 rounded-lg z-50">
+    Skip to main content
+</a>
+
+<!-- Main Content -->
+<main id="main-content">
+    <!-- Hero Section -->
+    <?php include 'components/sections/hero.php'; ?>
+    
+    <!-- Programs Section -->
+    <section class="py-20 bg-gray-50" id="programs">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="text-4xl md:text-5xl font-bold font-secondary text-primary-500 mb-6">
+                    Our Leadership Programs
+                </h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+                    Comprehensive programs designed to develop leadership skills, foster community engagement, and create lasting impact across communities.
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <?php foreach ($featured_programs as $index => $program): ?>
+                    <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 group" data-aos="fade-up" data-aos-delay="<?= $index * 100 ?>">
+                        <div class="relative overflow-hidden">
+                            <img src="<?= htmlspecialchars($program['image']) ?>" 
+                                 alt="<?= htmlspecialchars($program['title']) ?>"
+                                 class="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-500">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-all duration-300 flex items-end p-6">
+                                <a href="/programs/<?= htmlspecialchars($program['slug']) ?>" 
+                                   class="bg-white text-primary-500 px-4 py-2 rounded-lg font-semibold hover:bg-primary-500 hover:text-white transition-all duration-300">
+                                    Learn More
+                                </a>
+                            </div>
+                        </div>
+                        
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-primary-500 mb-3 font-secondary">
+                                <?= htmlspecialchars($program['title']) ?>
+                            </h3>
+                            <p class="text-gray-600 mb-4 leading-relaxed">
+                                <?= htmlspecialchars($program['description']) ?>
+                            </p>
+                            
+                            <div class="flex items-center justify-between text-sm text-gray-500">
+                                <span class="flex items-center gap-2">
+                                    <i class="fas fa-clock text-accent-500"></i>
+                                    <?= htmlspecialchars($program['duration']) ?>
+                                </span>
+                                <span class="flex items-center gap-2">
+                                    <i class="fas fa-users text-accent-500"></i>
+                                    <?= number_format($program['participants']) ?> participants
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                <?php endforeach; ?>
+            </div>
+            
+            <div class="text-center mt-12" data-aos="fade-up" data-aos-delay="300">
+                <a href="/programs" class="bg-primary-500 hover:bg-primary-600 text-white px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-300 transform hover:-translate-y-1 hover:shadow-lg">
+                    View All Programs
+                </a>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Impact Section -->
+    <section class="py-20 bg-primary-500 text-white" id="impact">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="text-4xl md:text-5xl font-bold font-secondary mb-6">
+                    Our Global Impact
+                </h2>
+                <p class="text-xl opacity-95 max-w-3xl mx-auto leading-relaxed">
+                    Through dedicated programs and partnerships, we're creating measurable change in communities across three countries.
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8 text-center">
+                <div class="impact-stat" data-aos="fade-up" data-aos-delay="100">
+                    <div class="text-5xl md:text-6xl font-bold text-accent-500 mb-4" data-counter="1500">0</div>
+                    <h3 class="text-xl font-semibold mb-2">Young Leaders</h3>
+                    <p class="opacity-90">Developed through our programs</p>
+                </div>
+                <div class="impact-stat" data-aos="fade-up" data-aos-delay="200">
+                    <div class="text-5xl md:text-6xl font-bold text-accent-500 mb-4" data-counter="50">0</div>
+                    <h3 class="text-xl font-semibold mb-2">Communities</h3>
+                    <p class="opacity-90">Directly impacted by our initiatives</p>
+                </div>
+                <div class="impact-stat" data-aos="fade-up" data-aos-delay="300">
+                    <div class="text-5xl md:text-6xl font-bold text-accent-500 mb-4" data-counter="3">0</div>
+                    <h3 class="text-xl font-semibold mb-2">Countries</h3>
+                    <p class="opacity-90">Where we actively operate</p>
+                </div>
+                <div class="impact-stat" data-aos="fade-up" data-aos-delay="400">
+                    <div class="text-5xl md:text-6xl font-bold text-accent-500 mb-4" data-counter="100">0</div>
+                    <h3 class="text-xl font-semibold mb-2">Partnerships</h3>
+                    <p class="opacity-90">With organizations worldwide</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Call to Action Section -->
+    <section class="py-20 bg-gradient-to-r from-accent-500 to-accent-600 text-white">
+        <div class="container mx-auto px-4 text-center">
+            <div class="max-w-4xl mx-auto" data-aos="fade-up">
+                <h2 class="text-4xl md:text-5xl font-bold font-secondary mb-6">
+                    Ready to Make a Difference?
+                </h2>
+                <p class="text-xl mb-8 opacity-95 leading-relaxed">
+                    Join thousands of young leaders who are creating positive change in their communities. Start your leadership journey today.
+                </p>
+                
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <a href="/join-us" class="bg-white text-accent-500 hover:bg-gray-100 px-8 py-4 rounded-lg font-bold text-lg transition-all duration-300 transform hover:scale-105">
+                        Join Our Programs
+                    </a>
+                    <a href="/donate" class="border-2 border-white text-white hover:bg-white hover:text-accent-500 px-8 py-4 rounded-lg font-bold text-lg transition-all duration-300">
+                        Support Our Mission
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+
+<?php include 'components/footer.php'; ?>
