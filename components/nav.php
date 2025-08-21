@@ -14,9 +14,9 @@
                 </a>
             </div>
             
-            <!-- Desktop Navigation -->
-            <div class="nav-container hidden lg:flex items-center">
-                <nav class="main-nav flex flex-nowrap mr-2">
+            <!-- Desktop Navigation Links -->
+            <nav class="nav-container hidden lg:flex items-center flex-1 justify-center">
+                <div class="main-nav flex flex-nowrap">
                     <!-- Home -->
                     <div class="nav-item mx-0.5">
                         <a href="index.html" class="nav-link flex items-center text-primary-500 font-medium text-sm px-2 py-2 rounded-lg hover:bg-blue-50 hover:text-primary-600 transition-all duration-300 whitespace-nowrap">
@@ -88,9 +88,11 @@
                             <i class="fas fa-calendar-alt mr-1.5 text-xs"></i>Events
                         </a>
                     </div>
-                </nav>
-                
-                <!-- Donate Button -->
+                </div>
+            </nav>
+            
+            <!-- Donate Button (Separate CTA) -->
+            <div class="hidden lg:flex">
                 <a href="donate.html" class="action-button bg-gradient-to-r from-secondary-500 to-secondary-600 text-white px-4 py-2 rounded-full font-medium text-sm transition-all duration-300 hover:transform hover:-translate-y-1 hover:shadow-lg flex items-center">
                     <i class="fas fa-heartbeat mr-1.5 text-xs"></i>Donate
                 </a>
