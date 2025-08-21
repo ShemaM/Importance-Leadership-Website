@@ -145,8 +145,8 @@
                 </div>
             </nav>
             
-            <!-- Stage 3: Only Core Dropdowns (lg screens - remove Home/Donate) -->
-            <nav class="nav-container hidden lg:flex xl:hidden items-center flex-1 justify-center">
+            <!-- Stage 3: Only Core Dropdowns (md screens - remove Home/Donate) -->
+            <nav class="nav-container hidden md:flex xl:hidden items-center flex-1 justify-center">
                 <div class="main-nav flex flex-nowrap">
                     <!-- Who We Are Dropdown -->
                     <div class="nav-item mx-0.5 relative group">
@@ -211,13 +211,13 @@
                 <i class="fas fa-bars text-lg"></i>
             </button>
             
-            <!-- Hamburger Button (Stage 3: lg screens - for Home/Impact/Blog/Events/Donate) -->
-            <button id="stage3-menu-button" class="hidden lg:flex xl:hidden p-2 text-gray-700 hover:text-primary-500 transition-colors duration-300 ml-2">
+            <!-- Hamburger Button (Stage 3: md screens - for Home/Impact/Blog/Events/Donate) -->
+            <button id="stage3-menu-button" class="hidden md:flex xl:hidden p-2 text-gray-700 hover:text-primary-500 transition-colors duration-300 ml-2">
                 <i class="fas fa-bars text-lg"></i>
             </button>
             
             <!-- Mobile Menu Button (Stage 4: small screens) -->
-            <button id="mobile-menu-button" class="mobile-menu-button lg:hidden p-2 text-gray-700 hover:text-primary-500 transition-colors duration-300">
+            <button id="mobile-menu-button" class="mobile-menu-button md:hidden p-2 text-gray-700 hover:text-primary-500 transition-colors duration-300">
                 <i class="fas fa-bars text-xl"></i>
             </button>
         </div>
@@ -225,7 +225,7 @@
 </header>
 
 <!-- Mobile Menu -->
-<div id="mobile-menu" class="mobile-menu-container lg:hidden fixed top-0 right-0 bottom-0 w-80 bg-white shadow-2xl z-50 transform translate-x-full transition-transform duration-300">
+<div id="mobile-menu" class="mobile-menu-container md:hidden fixed top-0 right-0 bottom-0 w-80 bg-white shadow-2xl z-50 transform translate-x-full transition-transform duration-300">
     <div class="mobile-menu-header p-5 border-b border-gray-200 flex justify-between items-center">
         <div class="flex items-center">
             <img src="assets/images/website-logo.png" alt="Logo" class="h-8 mr-3">
@@ -371,7 +371,7 @@
 </div>
 
 <!-- Stage 3 Menu (lg screens - Home/Impact/Blog/Events/Donate) -->
-<div id="stage3-menu" class="stage3-menu-container hidden lg:block xl:hidden fixed top-0 right-0 bottom-0 w-80 bg-white shadow-2xl z-50 transform translate-x-full transition-transform duration-300">
+<div id="stage3-menu" class="stage3-menu-container hidden md:block xl:hidden fixed top-0 right-0 bottom-0 w-80 bg-white shadow-2xl z-50 transform translate-x-full transition-transform duration-300">
     <div class="mobile-menu-header p-5 border-b border-gray-200 flex justify-between items-center">
         <div class="flex items-center">
             <img src="assets/images/website-logo.png" alt="Logo" class="h-8 mr-3">
