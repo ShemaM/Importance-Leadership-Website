@@ -15,18 +15,18 @@
             </div>
             
             <!-- Desktop Navigation -->
-            <div class="nav-container hidden lg:flex items-center">
-                <nav class="main-nav flex mr-3">
+            <div class="nav-container hidden xl:flex items-center">
+                <nav class="main-nav flex flex-nowrap mr-2">
                     <!-- Home -->
-                    <div class="nav-item mx-1">
-                        <a href="index.html" class="nav-link flex items-center text-primary-500 font-medium text-sm px-3 py-2 rounded-lg hover:bg-blue-50 hover:text-primary-600 transition-all duration-300">
+                    <div class="nav-item mx-0.5">
+                        <a href="index.html" class="nav-link flex items-center text-primary-500 font-medium text-sm px-2 py-2 rounded-lg hover:bg-blue-50 hover:text-primary-600 transition-all duration-300 whitespace-nowrap">
                             <i class="fas fa-home mr-1.5 text-xs"></i>Home
                         </a>
                     </div>
                     
                     <!-- Who We Are Dropdown -->
-                    <div class="nav-item mx-1 relative group">
-                        <button class="nav-link flex items-center text-primary-500 font-medium text-sm px-3 py-2 rounded-lg hover:bg-blue-50 hover:text-primary-600 transition-all duration-300">
+                    <div class="nav-item mx-0.5 relative group">
+                        <button class="nav-link flex items-center text-primary-500 font-medium text-sm px-2 py-2 rounded-lg hover:bg-blue-50 hover:text-primary-600 transition-all duration-300 whitespace-nowrap">
                             <i class="fas fa-users mr-1.5 text-xs"></i>Who We Are
                             <i class="fas fa-chevron-down ml-1.5 text-xs group-hover:rotate-180 transition-transform duration-300"></i>
                         </button>
@@ -42,8 +42,8 @@
                     </div>
                     
                     <!-- Where We Work Dropdown -->
-                    <div class="nav-item mx-1 relative group">
-                        <button class="nav-link flex items-center text-primary-500 font-medium text-sm px-3 py-2 rounded-lg hover:bg-blue-50 hover:text-primary-600 transition-all duration-300">
+                    <div class="nav-item mx-0.5 relative group">
+                        <button class="nav-link flex items-center text-primary-500 font-medium text-sm px-2 py-2 rounded-lg hover:bg-blue-50 hover:text-primary-600 transition-all duration-300 whitespace-nowrap">
                             <i class="fas fa-globe-africa mr-1.5 text-xs"></i>Where We Work
                             <i class="fas fa-chevron-down ml-1.5 text-xs group-hover:rotate-180 transition-transform duration-300"></i>
                         </button>
@@ -62,29 +62,29 @@
                     </div>
                     
                     <!-- What We Do -->
-                    <div class="nav-item mx-1">
-                        <a href="What We Do.html" class="nav-link flex items-center text-primary-500 font-medium text-sm px-3 py-2 rounded-lg hover:bg-blue-50 hover:text-primary-600 transition-all duration-300">
+                    <div class="nav-item mx-0.5">
+                        <a href="What We Do.html" class="nav-link flex items-center text-primary-500 font-medium text-sm px-2 py-2 rounded-lg hover:bg-blue-50 hover:text-primary-600 transition-all duration-300 whitespace-nowrap">
                             <i class="fas fa-chart-line mr-1.5 text-xs"></i>What We Do
                         </a>
                     </div>
                     
                     <!-- Impact -->
-                    <div class="nav-item mx-1">
-                        <a href="impact.html" class="nav-link flex items-center text-primary-500 font-medium text-sm px-3 py-2 rounded-lg hover:bg-blue-50 hover:text-primary-600 transition-all duration-300">
+                    <div class="nav-item mx-0.5">
+                        <a href="impact.html" class="nav-link flex items-center text-primary-500 font-medium text-sm px-2 py-2 rounded-lg hover:bg-blue-50 hover:text-primary-600 transition-all duration-300 whitespace-nowrap">
                             <i class="fas fa-chart-line mr-1.5 text-xs"></i>Impact
                         </a>
                     </div>
                     
                     <!-- Blog -->
-                    <div class="nav-item mx-1">
-                        <a href="blog.html" class="nav-link flex items-center text-primary-500 font-medium text-sm px-3 py-2 rounded-lg hover:bg-blue-50 hover:text-primary-600 transition-all duration-300">
+                    <div class="nav-item mx-0.5">
+                        <a href="blog.html" class="nav-link flex items-center text-primary-500 font-medium text-sm px-2 py-2 rounded-lg hover:bg-blue-50 hover:text-primary-600 transition-all duration-300 whitespace-nowrap">
                             <i class="fas fa-blog mr-1.5 text-xs"></i>Blog
                         </a>
                     </div>
                     
                     <!-- Events -->
-                    <div class="nav-item mx-1">
-                        <a href="events.html" class="nav-link flex items-center text-primary-500 font-medium text-sm px-3 py-2 rounded-lg hover:bg-blue-50 hover:text-primary-600 transition-all duration-300">
+                    <div class="nav-item mx-0.5">
+                        <a href="events.html" class="nav-link flex items-center text-primary-500 font-medium text-sm px-2 py-2 rounded-lg hover:bg-blue-50 hover:text-primary-600 transition-all duration-300 whitespace-nowrap">
                             <i class="fas fa-calendar-alt mr-1.5 text-xs"></i>Events
                         </a>
                     </div>
@@ -97,7 +97,7 @@
             </div>
             
             <!-- Mobile Menu Button -->
-            <button id="mobile-menu-button" class="mobile-menu-button lg:hidden p-2 text-gray-700 hover:text-primary-500 transition-colors duration-300">
+            <button id="mobile-menu-button" class="mobile-menu-button xl:hidden p-2 text-gray-700 hover:text-primary-500 transition-colors duration-300">
                 <i class="fas fa-bars text-xl"></i>
             </button>
         </div>
@@ -105,7 +105,7 @@
 </header>
 
 <!-- Mobile Menu -->
-<div id="mobile-menu" class="mobile-menu-container fixed top-0 right-0 bottom-0 w-80 bg-white shadow-2xl z-50 transform translate-x-full transition-transform duration-300">
+<div id="mobile-menu" class="mobile-menu-container xl:hidden fixed top-0 right-0 bottom-0 w-80 bg-white shadow-2xl z-50 transform translate-x-full transition-transform duration-300">
     <div class="mobile-menu-header p-5 border-b border-gray-200 flex justify-between items-center">
         <div class="flex items-center">
             <img src="assets/images/website-logo.png" alt="Logo" class="h-8 mr-3">
