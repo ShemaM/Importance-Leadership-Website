@@ -1,44 +1,39 @@
-# .htaccess for Importance Leadership Website
+# .htaccess - Enhanced with performance optimizations
 
-# Enable URL Rewriting
 RewriteEngine On
 
-# Security: Block access to sensitive files
-<FilesMatch "\.(php|inc|conf|sql|bak|env|log)$">
-    <RequireAll>
-        Require all denied
-        <RequireAny>
-            # Allow access to main PHP files
-            Require expr "%{REQUEST_URI} =~ m#^/index\.php$#"
-            Require expr "%{REQUEST_URI} =~ m#^/pages/.*\.php$#"
-            Require expr "%{REQUEST_URI} =~ m#^/forms/.*\.php$#"
-            Require expr "%{REQUEST_URI} =~ m#^/api/.*\.php$#"
-        </RequireAny>
-    </RequireAll>
+# Security headers
+Header always set X-Content-Type-Options nosniff
+Header always set X-Frame-Options DENY
+Header always set X-XSS-Protection "1; mode=block"
+Header always set Referrer-Policy "strict-origin-when-cross-origin"
+Header always set Permissions-Policy "geolocation=(), microphone=(), camera=()"
+
+# HTTPS redirect (production only)
+<If "%{HTTP_HOST} !~ /localhost/">
+    RewriteCond %{HTTPS} off
+    RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+</If>
+
+# Block access to sensitive files
+<FilesMatch "\.(env|htaccess|htpasswd|ini|log|sql|bak|backup|php~)$">
+    Order Allow,Deny
+    Deny from all
 </FilesMatch>
 
-# Allow access to specific directories
-<Directory "css">
-    Require all granted
-</Directory>
-<Directory "js">
-    Require all granted
-</Directory>
-<Directory "images">
-    Require all granted
-</Directory>
+# Block access to directories
+<IfModule mod_rewrite.c>
+    RewriteRule ^(includes|migrations|templates|logs)/ - [F,L]
+</IfModule>
 
-# Clean URLs - Remove .php extension for pages
+# Clean URLs
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteCond %{REQUEST_FILENAME} !-f
-RewriteRule ^([^\.]+)$ pages/$1.php [L,QSA]
+RewriteRule ^([^\.]+)$ pages/$1.php [L]
 
-# Redirect .php URLs to clean URLs
+# Remove .php extension from URLs
 RewriteCond %{THE_REQUEST} ^[A-Z]{3,}\s/+pages/([^\s]+)\.php [NC]
 RewriteRule ^ /%1? [R=301,L]
-
-# Handle root requests
-RewriteRule ^$ index.php [L]
 
 # Performance optimizations
 <IfModule mod_deflate.c>
@@ -88,40 +83,16 @@ RewriteRule ^$ index.php [L]
     ExpiresByType text/html "access plus 1 hour"
 </IfModule>
 
-# Cache-Control headers
+# ETag removal (optional, for better caching control)
 <IfModule mod_headers.c>
-    # CSS and JavaScript
-    <FilesMatch "\.(css|js)$">
-        Header set Cache-Control "public, max-age=2592000"
-    </FilesMatch>
-    
-    # Images
-    <FilesMatch "\.(jpg|jpeg|png|gif|webp|svg|ico)$">
-        Header set Cache-Control "public, max-age=31536000"
-    </FilesMatch>
-    
-    # Fonts
-    <FilesMatch "\.(woff|woff2|ttf|eot)$">
-        Header set Cache-Control "public, max-age=31536000"
-    </FilesMatch>
-    
-    # Security headers (production only)
-    # Uncomment these for production
-    # Header always set X-Frame-Options "SAMEORIGIN"
-    # Header always set X-Content-Type-Options "nosniff"
-    # Header always set X-XSS-Protection "1; mode=block"
-    # Header always set Referrer-Policy "strict-origin-when-cross-origin"
+    FileETag None
+    Header unset ETag
 </IfModule>
 
-# Prevent access to hidden files
-<FilesMatch "^\.">
-    Require all denied
-</FilesMatch>
-
-# Prevent access to backup files
-<FilesMatch "\.(bak|backup|swp|tmp)$">
-    Require all denied
-</FilesMatch>
+# Vary header for mobile optimization
+<IfModule mod_headers.c>
+    Header append Vary Accept-Encoding
+</IfModule>
 
 # Custom error pages
 ErrorDocument 404 /pages/404.php
