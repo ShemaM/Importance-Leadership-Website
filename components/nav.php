@@ -15,7 +15,7 @@
             </div>
             
             <!-- Desktop Navigation -->
-            <div class="nav-container hidden xl:flex items-center">
+            <div class="nav-container hidden lg:flex items-center">
                 <nav class="main-nav flex flex-nowrap mr-2">
                     <!-- Home -->
                     <div class="nav-item mx-0.5">
@@ -97,7 +97,7 @@
             </div>
             
             <!-- Mobile Menu Button -->
-            <button id="mobile-menu-button" class="mobile-menu-button xl:hidden p-2 text-gray-700 hover:text-primary-500 transition-colors duration-300">
+            <button id="mobile-menu-button" class="mobile-menu-button lg:hidden p-2 text-gray-700 hover:text-primary-500 transition-colors duration-300">
                 <i class="fas fa-bars text-xl"></i>
             </button>
         </div>
@@ -105,7 +105,7 @@
 </header>
 
 <!-- Mobile Menu -->
-<div id="mobile-menu" class="mobile-menu-container xl:hidden fixed top-0 right-0 bottom-0 w-80 bg-white shadow-2xl z-50 transform translate-x-full transition-transform duration-300">
+<div id="mobile-menu" class="mobile-menu-container lg:hidden fixed top-0 right-0 bottom-0 w-80 bg-white shadow-2xl z-50 transform translate-x-full transition-transform duration-300">
     <div class="mobile-menu-header p-5 border-b border-gray-200 flex justify-between items-center">
         <div class="flex items-center">
             <img src="assets/images/website-logo.png" alt="Logo" class="h-8 mr-3">
