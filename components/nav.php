@@ -14,8 +14,8 @@
                 </a>
             </div>
             
-            <!-- Desktop Navigation Links -->
-            <nav class="nav-container hidden lg:flex items-center flex-1 justify-center">
+            <!-- Stage 1: Full Navigation (2xl screens - show all) -->
+            <nav class="nav-container hidden 2xl:flex items-center flex-1 justify-center">
                 <div class="main-nav flex flex-nowrap">
                     <!-- Home -->
                     <div class="nav-item mx-0.5">
@@ -91,14 +91,132 @@
                 </div>
             </nav>
             
-            <!-- Donate Button (Separate CTA) -->
-            <div class="hidden lg:flex">
+            <!-- Stage 2: Home + Core Dropdowns (xl screens - remove Impact/Blog/Events) -->
+            <nav class="nav-container hidden xl:flex 2xl:hidden items-center flex-1 justify-center">
+                <div class="main-nav flex flex-nowrap">
+                    <!-- Home -->
+                    <div class="nav-item mx-0.5">
+                        <a href="index.html" class="nav-link flex items-center text-primary-500 font-medium text-sm px-2 py-2 rounded-lg hover:bg-blue-50 hover:text-primary-600 transition-all duration-300 whitespace-nowrap">
+                            <i class="fas fa-home mr-1.5 text-xs"></i>Home
+                        </a>
+                    </div>
+                    
+                    <!-- Who We Are Dropdown -->
+                    <div class="nav-item mx-0.5 relative group">
+                        <button class="nav-link flex items-center text-primary-500 font-medium text-sm px-2 py-2 rounded-lg hover:bg-blue-50 hover:text-primary-600 transition-all duration-300 whitespace-nowrap">
+                            <i class="fas fa-users mr-1.5 text-xs"></i>Who We Are
+                            <i class="fas fa-chevron-down ml-1.5 text-xs group-hover:rotate-180 transition-transform duration-300"></i>
+                        </button>
+                        <div class="dropdown-menu absolute top-full left-0 mt-2 w-48 bg-white shadow-xl rounded-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50 py-2">
+                            <a href="who-we-are.html" class="dropdown-item flex items-center px-5 py-3 text-gray-700 hover:bg-blue-50 hover:text-primary-500 hover:pl-6 transition-all duration-300">
+                                <i class="fas fa-bullseye mr-3 w-4 text-center"></i>About Us
+                            </a>
+                            <a href="team.html" class="dropdown-item flex items-center px-5 py-3 text-gray-700 hover:bg-blue-50 hover:text-primary-500 hover:pl-6 transition-all duration-300">
+                                <i class="fas fa-user-friends mr-3 w-4 text-center"></i>Our Team
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <!-- Where We Work Dropdown -->
+                    <div class="nav-item mx-0.5 relative group">
+                        <button class="nav-link flex items-center text-primary-500 font-medium text-sm px-2 py-2 rounded-lg hover:bg-blue-50 hover:text-primary-600 transition-all duration-300 whitespace-nowrap">
+                            <i class="fas fa-globe-africa mr-1.5 text-xs"></i>Where We Work
+                            <i class="fas fa-chevron-down ml-1.5 text-xs group-hover:rotate-180 transition-transform duration-300"></i>
+                        </button>
+                        <div class="dropdown-menu absolute top-full left-0 mt-2 w-48 bg-white shadow-xl rounded-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50 py-2">
+                            <a href="USA.html" class="dropdown-item flex items-center px-5 py-3 text-gray-700 hover:bg-blue-50 hover:text-primary-500 hover:pl-6 transition-all duration-300">
+                                <img src="https://cdn.jsdelivr.net/npm/flag-icons/flags/4x3/us.svg" width="18" class="mr-3">USA
+                            </a>
+                            <a href="Canada.html" class="dropdown-item flex items-center px-5 py-3 text-gray-700 hover:bg-blue-50 hover:text-primary-500 hover:pl-6 transition-all duration-300">
+                                <img src="https://cdn.jsdelivr.net/npm/flag-icons/flags/4x3/ca.svg" width="18" class="mr-3">Canada
+                            </a>
+                            <a href="Kenya.html" class="dropdown-item flex items-center px-5 py-3 text-gray-700 hover:bg-blue-50 hover:text-primary-500 hover:pl-6 transition-all duration-300">
+                                <img src="https://cdn.jsdelivr.net/npm/flag-icons/flags/4x3/ke.svg" width="18" class="mr-3">Kenya
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <!-- What We Do -->
+                    <div class="nav-item mx-0.5">
+                        <a href="What We Do.html" class="nav-link flex items-center text-primary-500 font-medium text-sm px-2 py-2 rounded-lg hover:bg-blue-50 hover:text-primary-600 transition-all duration-300 whitespace-nowrap">
+                            <i class="fas fa-chart-line mr-1.5 text-xs"></i>What We Do
+                        </a>
+                    </div>
+                </div>
+            </nav>
+            
+            <!-- Stage 3: Only Core Dropdowns (lg screens - remove Home/Donate) -->
+            <nav class="nav-container hidden lg:flex xl:hidden items-center flex-1 justify-center">
+                <div class="main-nav flex flex-nowrap">
+                    <!-- Who We Are Dropdown -->
+                    <div class="nav-item mx-0.5 relative group">
+                        <button class="nav-link flex items-center text-primary-500 font-medium text-sm px-2 py-2 rounded-lg hover:bg-blue-50 hover:text-primary-600 transition-all duration-300 whitespace-nowrap">
+                            <i class="fas fa-users mr-1.5 text-xs"></i>Who We Are
+                            <i class="fas fa-chevron-down ml-1.5 text-xs group-hover:rotate-180 transition-transform duration-300"></i>
+                        </button>
+                        <div class="dropdown-menu absolute top-full left-0 mt-2 w-48 bg-white shadow-xl rounded-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50 py-2">
+                            <a href="who-we-are.html" class="dropdown-item flex items-center px-5 py-3 text-gray-700 hover:bg-blue-50 hover:text-primary-500 hover:pl-6 transition-all duration-300">
+                                <i class="fas fa-bullseye mr-3 w-4 text-center"></i>About Us
+                            </a>
+                            <a href="team.html" class="dropdown-item flex items-center px-5 py-3 text-gray-700 hover:bg-blue-50 hover:text-primary-500 hover:pl-6 transition-all duration-300">
+                                <i class="fas fa-user-friends mr-3 w-4 text-center"></i>Our Team
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <!-- Where We Work Dropdown -->
+                    <div class="nav-item mx-0.5 relative group">
+                        <button class="nav-link flex items-center text-primary-500 font-medium text-sm px-2 py-2 rounded-lg hover:bg-blue-50 hover:text-primary-600 transition-all duration-300 whitespace-nowrap">
+                            <i class="fas fa-globe-africa mr-1.5 text-xs"></i>Where We Work
+                            <i class="fas fa-chevron-down ml-1.5 text-xs group-hover:rotate-180 transition-transform duration-300"></i>
+                        </button>
+                        <div class="dropdown-menu absolute top-full left-0 mt-2 w-48 bg-white shadow-xl rounded-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50 py-2">
+                            <a href="USA.html" class="dropdown-item flex items-center px-5 py-3 text-gray-700 hover:bg-blue-50 hover:text-primary-500 hover:pl-6 transition-all duration-300">
+                                <img src="https://cdn.jsdelivr.net/npm/flag-icons/flags/4x3/us.svg" width="18" class="mr-3">USA
+                            </a>
+                            <a href="Canada.html" class="dropdown-item flex items-center px-5 py-3 text-gray-700 hover:bg-blue-50 hover:text-primary-500 hover:pl-6 transition-all duration-300">
+                                <img src="https://cdn.jsdelivr.net/npm/flag-icons/flags/4x3/ca.svg" width="18" class="mr-3">Canada
+                            </a>
+                            <a href="Kenya.html" class="dropdown-item flex items-center px-5 py-3 text-gray-700 hover:bg-blue-50 hover:text-primary-500 hover:pl-6 transition-all duration-300">
+                                <img src="https://cdn.jsdelivr.net/npm/flag-icons/flags/4x3/ke.svg" width="18" class="mr-3">Kenya
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <!-- What We Do -->
+                    <div class="nav-item mx-0.5">
+                        <a href="What We Do.html" class="nav-link flex items-center text-primary-500 font-medium text-sm px-2 py-2 rounded-lg hover:bg-blue-50 hover:text-primary-600 transition-all duration-300 whitespace-nowrap">
+                            <i class="fas fa-chart-line mr-1.5 text-xs"></i>What We Do
+                        </a>
+                    </div>
+                </div>
+            </nav>
+            
+            <!-- Donate Button (Stage 1: 2xl screens) -->
+            <div class="hidden 2xl:flex">
                 <a href="donate.html" class="action-button bg-gradient-to-r from-secondary-500 to-secondary-600 text-white px-4 py-2 rounded-full font-medium text-sm transition-all duration-300 hover:transform hover:-translate-y-1 hover:shadow-lg flex items-center">
                     <i class="fas fa-heartbeat mr-1.5 text-xs"></i>Donate
                 </a>
             </div>
             
-            <!-- Mobile Menu Button -->
+            <!-- Donate Button (Stage 2: xl screens) -->
+            <div class="hidden xl:flex 2xl:hidden">
+                <a href="donate.html" class="action-button bg-gradient-to-r from-secondary-500 to-secondary-600 text-white px-4 py-2 rounded-full font-medium text-sm transition-all duration-300 hover:transform hover:-translate-y-1 hover:shadow-lg flex items-center">
+                    <i class="fas fa-heartbeat mr-1.5 text-xs"></i>Donate
+                </a>
+            </div>
+            
+            <!-- Hamburger Button (Stage 2: xl screens - for Impact/Blog/Events) -->
+            <button id="stage2-menu-button" class="hidden xl:flex 2xl:hidden p-2 text-gray-700 hover:text-primary-500 transition-colors duration-300 ml-2">
+                <i class="fas fa-bars text-lg"></i>
+            </button>
+            
+            <!-- Hamburger Button (Stage 3: lg screens - for Home/Impact/Blog/Events/Donate) -->
+            <button id="stage3-menu-button" class="hidden lg:flex xl:hidden p-2 text-gray-700 hover:text-primary-500 transition-colors duration-300 ml-2">
+                <i class="fas fa-bars text-lg"></i>
+            </button>
+            
+            <!-- Mobile Menu Button (Stage 4: small screens) -->
             <button id="mobile-menu-button" class="mobile-menu-button lg:hidden p-2 text-gray-700 hover:text-primary-500 transition-colors duration-300">
                 <i class="fas fa-bars text-xl"></i>
             </button>
@@ -216,6 +334,92 @@
     </div>
 </div>
 
+<!-- Stage 2 Menu (xl screens - Impact/Blog/Events only) -->
+<div id="stage2-menu" class="stage2-menu-container hidden xl:block 2xl:hidden fixed top-0 right-0 bottom-0 w-80 bg-white shadow-2xl z-50 transform translate-x-full transition-transform duration-300">
+    <div class="mobile-menu-header p-5 border-b border-gray-200 flex justify-between items-center">
+        <div class="flex items-center">
+            <img src="assets/images/website-logo.png" alt="Logo" class="h-8 mr-3">
+            <h5 class="text-lg font-semibold mb-0">More Items</h5>
+        </div>
+        <button id="close-stage2-menu" class="p-2 text-gray-500 hover:text-primary-500 transition-colors duration-300">
+            <i class="fas fa-times text-xl"></i>
+        </button>
+    </div>
+    
+    <div class="mobile-menu-body p-5 h-full overflow-y-auto pb-24">
+        <!-- Impact -->
+        <div class="mobile-nav-item mb-3">
+            <a href="impact.html" class="mobile-nav-link flex items-center text-gray-700 hover:text-primary-500 py-3 px-3 rounded-lg hover:bg-blue-50 transition-all duration-300">
+                <i class="fas fa-chart-line mr-3"></i>Impact
+            </a>
+        </div>
+        
+        <!-- Blog -->
+        <div class="mobile-nav-item mb-3">
+            <a href="blog.html" class="mobile-nav-link flex items-center text-gray-700 hover:text-primary-500 py-3 px-3 rounded-lg hover:bg-blue-50 transition-all duration-300">
+                <i class="fas fa-blog mr-3"></i>Blog
+            </a>
+        </div>
+        
+        <!-- Events -->
+        <div class="mobile-nav-item mb-3">
+            <a href="events.html" class="mobile-nav-link flex items-center text-gray-700 hover:text-primary-500 py-3 px-3 rounded-lg hover:bg-blue-50 transition-all duration-300">
+                <i class="fas fa-calendar-alt mr-3"></i>Events
+            </a>
+        </div>
+    </div>
+</div>
+
+<!-- Stage 3 Menu (lg screens - Home/Impact/Blog/Events/Donate) -->
+<div id="stage3-menu" class="stage3-menu-container hidden lg:block xl:hidden fixed top-0 right-0 bottom-0 w-80 bg-white shadow-2xl z-50 transform translate-x-full transition-transform duration-300">
+    <div class="mobile-menu-header p-5 border-b border-gray-200 flex justify-between items-center">
+        <div class="flex items-center">
+            <img src="assets/images/website-logo.png" alt="Logo" class="h-8 mr-3">
+            <h5 class="text-lg font-semibold mb-0">More Items</h5>
+        </div>
+        <button id="close-stage3-menu" class="p-2 text-gray-500 hover:text-primary-500 transition-colors duration-300">
+            <i class="fas fa-times text-xl"></i>
+        </button>
+    </div>
+    
+    <div class="mobile-menu-body p-5 h-full overflow-y-auto pb-24">
+        <!-- Home -->
+        <div class="mobile-nav-item mb-3">
+            <a href="index.html" class="mobile-nav-link flex items-center text-gray-700 hover:text-primary-500 py-3 px-3 rounded-lg hover:bg-blue-50 transition-all duration-300">
+                <i class="fas fa-home mr-3"></i>Home
+            </a>
+        </div>
+        
+        <!-- Impact -->
+        <div class="mobile-nav-item mb-3">
+            <a href="impact.html" class="mobile-nav-link flex items-center text-gray-700 hover:text-primary-500 py-3 px-3 rounded-lg hover:bg-blue-50 transition-all duration-300">
+                <i class="fas fa-chart-line mr-3"></i>Impact
+            </a>
+        </div>
+        
+        <!-- Blog -->
+        <div class="mobile-nav-item mb-3">
+            <a href="blog.html" class="mobile-nav-link flex items-center text-gray-700 hover:text-primary-500 py-3 px-3 rounded-lg hover:bg-blue-50 transition-all duration-300">
+                <i class="fas fa-blog mr-3"></i>Blog
+            </a>
+        </div>
+        
+        <!-- Events -->
+        <div class="mobile-nav-item mb-3">
+            <a href="events.html" class="mobile-nav-link flex items-center text-gray-700 hover:text-primary-500 py-3 px-3 rounded-lg hover:bg-blue-50 transition-all duration-300">
+                <i class="fas fa-calendar-alt mr-3"></i>Events
+            </a>
+        </div>
+        
+        <!-- Donate Button -->
+        <div class="mobile-nav-item mt-6">
+            <a href="donate.html" class="action-button bg-gradient-to-r from-secondary-500 to-secondary-600 text-white px-6 py-3 rounded-full font-semibold transition-all duration-300 hover:shadow-lg flex items-center justify-center w-full">
+                <i class="fas fa-heartbeat mr-2"></i>Donate
+            </a>
+        </div>
+    </div>
+</div>
+
 <script>
 // Mobile Menu Toggle - Exact copy of reference functionality  
 document.addEventListener('DOMContentLoaded', function() {
@@ -223,6 +427,16 @@ document.addEventListener('DOMContentLoaded', function() {
     const closeMobileMenu = document.getElementById('close-mobile-menu');
     const mobileMenu = document.getElementById('mobile-menu');
     const mobileNavToggles = document.querySelectorAll('.mobile-nav-toggle');
+    
+    // Stage 2 menu elements
+    const stage2MenuButton = document.getElementById('stage2-menu-button');
+    const closeStage2Menu = document.getElementById('close-stage2-menu');
+    const stage2Menu = document.getElementById('stage2-menu');
+    
+    // Stage 3 menu elements
+    const stage3MenuButton = document.getElementById('stage3-menu-button');
+    const closeStage3Menu = document.getElementById('close-stage3-menu');
+    const stage3Menu = document.getElementById('stage3-menu');
     
     // Open mobile menu
     if (mobileMenuButton && mobileMenu) {
@@ -237,6 +451,54 @@ document.addEventListener('DOMContentLoaded', function() {
             mobileMenu.classList.add('translate-x-full');
             mobileMenu.classList.remove('translate-x-0');
             document.body.style.overflow = '';
+        });
+    }
+    
+    // Stage 2 menu functionality
+    if (stage2MenuButton && stage2Menu) {
+        stage2MenuButton.addEventListener('click', function() {
+            stage2Menu.classList.remove('translate-x-full');
+            stage2Menu.classList.add('translate-x-0');
+            document.body.style.overflow = 'hidden';
+        });
+        
+        closeStage2Menu.addEventListener('click', function() {
+            stage2Menu.classList.add('translate-x-full');
+            stage2Menu.classList.remove('translate-x-0');
+            document.body.style.overflow = '';
+        });
+        
+        // Close when clicking links
+        stage2Menu.querySelectorAll('.mobile-nav-link').forEach(link => {
+            link.addEventListener('click', function() {
+                stage2Menu.classList.add('translate-x-full');
+                stage2Menu.classList.remove('translate-x-0');
+                document.body.style.overflow = '';
+            });
+        });
+    }
+    
+    // Stage 3 menu functionality
+    if (stage3MenuButton && stage3Menu) {
+        stage3MenuButton.addEventListener('click', function() {
+            stage3Menu.classList.remove('translate-x-full');
+            stage3Menu.classList.add('translate-x-0');
+            document.body.style.overflow = 'hidden';
+        });
+        
+        closeStage3Menu.addEventListener('click', function() {
+            stage3Menu.classList.add('translate-x-full');
+            stage3Menu.classList.remove('translate-x-0');
+            document.body.style.overflow = '';
+        });
+        
+        // Close when clicking links
+        stage3Menu.querySelectorAll('.mobile-nav-link').forEach(link => {
+            link.addEventListener('click', function() {
+                stage3Menu.classList.add('translate-x-full');
+                stage3Menu.classList.remove('translate-x-0');
+                document.body.style.overflow = '';
+            });
         });
     }
     
