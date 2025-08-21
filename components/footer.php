@@ -133,7 +133,7 @@
                     </li>
                     <li class="flex items-center">
                         <i class="fas fa-envelope text-accent-500 mr-3 flex-shrink-0"></i>
-                        <a href="mailto:importanceleadership2020@gmail.com" class="text-gray-300 hover:text-white transition-colors duration-300">
+                        <a href="mailto:importanceleadership2020@gmail.com" class="text-gray-300 hover:text-white transition-colors duration-300 break-all">
                             importanceleadership2020@gmail.com
                         </a>
                     </li>
