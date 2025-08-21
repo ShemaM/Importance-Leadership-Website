@@ -3,32 +3,32 @@
 ?>
 <!-- Navigation - One-to-one copy of reference structure -->
 <header class="fixed top-0 left-0 right-0 z-50 bg-white shadow-lg transition-all duration-300 backdrop-blur-sm" id="main-header">
-    <div class="container mx-auto px-4">
-        <div class="flex items-center justify-between py-4">
+    <div class="container mx-auto px-6">
+        <div class="flex items-center justify-between py-3">
             <!-- Logo -->
             <div class="logo-container">
                 <a href="index.html" class="block">
-                    <img src="image/website-logo.png" 
+                    <img src="assets/images/website-logo.png" 
                          alt="Importance Leadership" 
-                         class="h-12 transition-all duration-300">
+                         class="h-10 transition-all duration-300">
                 </a>
             </div>
             
             <!-- Desktop Navigation -->
             <div class="nav-container hidden lg:flex items-center">
-                <nav class="main-nav flex mr-5">
+                <nav class="main-nav flex mr-3">
                     <!-- Home -->
-                    <div class="nav-item mx-2">
-                        <a href="index.html" class="nav-link flex items-center text-primary-500 font-semibold px-4 py-2 rounded-lg hover:bg-blue-50 hover:text-primary-600 transition-all duration-300">
-                            <i class="fas fa-home mr-2"></i>Home
+                    <div class="nav-item mx-1">
+                        <a href="index.html" class="nav-link flex items-center text-primary-500 font-medium text-sm px-3 py-2 rounded-lg hover:bg-blue-50 hover:text-primary-600 transition-all duration-300">
+                            <i class="fas fa-home mr-1.5 text-xs"></i>Home
                         </a>
                     </div>
                     
                     <!-- Who We Are Dropdown -->
-                    <div class="nav-item mx-2 relative group">
-                        <button class="nav-link flex items-center text-primary-500 font-semibold px-4 py-2 rounded-lg hover:bg-blue-50 hover:text-primary-600 transition-all duration-300">
-                            <i class="fas fa-users mr-2"></i>Who We Are
-                            <i class="fas fa-chevron-down ml-2 text-xs group-hover:rotate-180 transition-transform duration-300"></i>
+                    <div class="nav-item mx-1 relative group">
+                        <button class="nav-link flex items-center text-primary-500 font-medium text-sm px-3 py-2 rounded-lg hover:bg-blue-50 hover:text-primary-600 transition-all duration-300">
+                            <i class="fas fa-users mr-1.5 text-xs"></i>Who We Are
+                            <i class="fas fa-chevron-down ml-1.5 text-xs group-hover:rotate-180 transition-transform duration-300"></i>
                         </button>
                         <!-- Dropdown Menu -->
                         <div class="dropdown-menu absolute top-full left-0 mt-2 w-48 bg-white shadow-xl rounded-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50 py-2">
@@ -42,10 +42,10 @@
                     </div>
                     
                     <!-- Where We Work Dropdown -->
-                    <div class="nav-item mx-2 relative group">
-                        <button class="nav-link flex items-center text-primary-500 font-semibold px-4 py-2 rounded-lg hover:bg-blue-50 hover:text-primary-600 transition-all duration-300">
-                            <i class="fas fa-globe-africa mr-2"></i>Where We Work
-                            <i class="fas fa-chevron-down ml-2 text-xs group-hover:rotate-180 transition-transform duration-300"></i>
+                    <div class="nav-item mx-1 relative group">
+                        <button class="nav-link flex items-center text-primary-500 font-medium text-sm px-3 py-2 rounded-lg hover:bg-blue-50 hover:text-primary-600 transition-all duration-300">
+                            <i class="fas fa-globe-africa mr-1.5 text-xs"></i>Where We Work
+                            <i class="fas fa-chevron-down ml-1.5 text-xs group-hover:rotate-180 transition-transform duration-300"></i>
                         </button>
                         <!-- Dropdown Menu -->
                         <div class="dropdown-menu absolute top-full left-0 mt-2 w-48 bg-white shadow-xl rounded-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50 py-2">
@@ -62,37 +62,37 @@
                     </div>
                     
                     <!-- What We Do -->
-                    <div class="nav-item mx-2">
-                        <a href="What We Do.html" class="nav-link flex items-center text-primary-500 font-semibold px-4 py-2 rounded-lg hover:bg-blue-50 hover:text-primary-600 transition-all duration-300">
-                            <i class="fas fa-chart-line mr-2"></i>What We Do
+                    <div class="nav-item mx-1">
+                        <a href="What We Do.html" class="nav-link flex items-center text-primary-500 font-medium text-sm px-3 py-2 rounded-lg hover:bg-blue-50 hover:text-primary-600 transition-all duration-300">
+                            <i class="fas fa-chart-line mr-1.5 text-xs"></i>What We Do
                         </a>
                     </div>
                     
                     <!-- Impact -->
-                    <div class="nav-item mx-2">
-                        <a href="impact.html" class="nav-link flex items-center text-primary-500 font-semibold px-4 py-2 rounded-lg hover:bg-blue-50 hover:text-primary-600 transition-all duration-300">
-                            <i class="fas fa-chart-line mr-2"></i>Impact
+                    <div class="nav-item mx-1">
+                        <a href="impact.html" class="nav-link flex items-center text-primary-500 font-medium text-sm px-3 py-2 rounded-lg hover:bg-blue-50 hover:text-primary-600 transition-all duration-300">
+                            <i class="fas fa-chart-line mr-1.5 text-xs"></i>Impact
                         </a>
                     </div>
                     
                     <!-- Blog -->
-                    <div class="nav-item mx-2">
-                        <a href="blog.html" class="nav-link flex items-center text-primary-500 font-semibold px-4 py-2 rounded-lg hover:bg-blue-50 hover:text-primary-600 transition-all duration-300">
-                            <i class="fas fa-blog mr-2"></i>Blog
+                    <div class="nav-item mx-1">
+                        <a href="blog.html" class="nav-link flex items-center text-primary-500 font-medium text-sm px-3 py-2 rounded-lg hover:bg-blue-50 hover:text-primary-600 transition-all duration-300">
+                            <i class="fas fa-blog mr-1.5 text-xs"></i>Blog
                         </a>
                     </div>
                     
                     <!-- Events -->
-                    <div class="nav-item mx-2">
-                        <a href="events.html" class="nav-link flex items-center text-primary-500 font-semibold px-4 py-2 rounded-lg hover:bg-blue-50 hover:text-primary-600 transition-all duration-300">
-                            <i class="fas fa-calendar-alt mr-2"></i>Events
+                    <div class="nav-item mx-1">
+                        <a href="events.html" class="nav-link flex items-center text-primary-500 font-medium text-sm px-3 py-2 rounded-lg hover:bg-blue-50 hover:text-primary-600 transition-all duration-300">
+                            <i class="fas fa-calendar-alt mr-1.5 text-xs"></i>Events
                         </a>
                     </div>
                 </nav>
                 
                 <!-- Donate Button -->
-                <a href="donate.html" class="action-button bg-gradient-to-r from-secondary-500 to-secondary-600 text-white px-6 py-2 rounded-full font-semibold transition-all duration-300 hover:transform hover:-translate-y-1 hover:shadow-lg flex items-center">
-                    <i class="fas fa-heartbeat mr-2"></i>Donate
+                <a href="donate.html" class="action-button bg-gradient-to-r from-secondary-500 to-secondary-600 text-white px-4 py-2 rounded-full font-medium text-sm transition-all duration-300 hover:transform hover:-translate-y-1 hover:shadow-lg flex items-center">
+                    <i class="fas fa-heartbeat mr-1.5 text-xs"></i>Donate
                 </a>
             </div>
             
@@ -108,7 +108,7 @@
 <div id="mobile-menu" class="mobile-menu-container fixed top-0 right-0 bottom-0 w-80 bg-white shadow-2xl z-50 transform translate-x-full transition-transform duration-300">
     <div class="mobile-menu-header p-5 border-b border-gray-200 flex justify-between items-center">
         <div class="flex items-center">
-            <img src="image/website-logo.png" alt="Logo" class="h-8 mr-3">
+            <img src="assets/images/website-logo.png" alt="Logo" class="h-8 mr-3">
             <h5 class="text-lg font-semibold mb-0">Importance Leadership</h5>
         </div>
         <button id="close-mobile-menu" class="mobile-close-button p-2 text-gray-500 hover:text-primary-500 transition-colors duration-300">
