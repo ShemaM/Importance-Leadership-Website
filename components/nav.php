@@ -14,8 +14,8 @@
                 </a>
             </div>
             
-            <!-- Stage 1: Full Navigation (2xl screens - show all) -->
-            <nav class="nav-container hidden 2xl:flex items-center flex-1 justify-center">
+            <!-- Stage 1: Full Navigation (xl screens - show all) -->
+            <nav class="nav-container hidden xl:flex items-center flex-1 justify-center">
                 <div class="main-nav flex flex-nowrap">
                     <!-- Home -->
                     <div class="nav-item mx-0.5">
@@ -91,8 +91,8 @@
                 </div>
             </nav>
             
-            <!-- Stage 2: Home + Core Dropdowns (xl screens - remove Impact/Blog/Events) -->
-            <nav class="nav-container hidden xl:flex 2xl:hidden items-center flex-1 justify-center">
+            <!-- Stage 2: Home + Core Dropdowns (lg screens - remove Impact/Blog/Events) -->
+            <nav class="nav-container hidden lg:flex xl:hidden items-center flex-1 justify-center">
                 <div class="main-nav flex flex-nowrap">
                     <!-- Home -->
                     <div class="nav-item mx-0.5">
@@ -146,7 +146,7 @@
             </nav>
             
             <!-- Stage 3: Only Core Dropdowns (md screens - remove Home/Donate) -->
-            <nav class="nav-container hidden md:flex xl:hidden items-center flex-1 justify-center">
+            <nav class="nav-container hidden md:flex lg:hidden items-center flex-1 justify-center">
                 <div class="main-nav flex flex-nowrap">
                     <!-- Who We Are Dropdown -->
                     <div class="nav-item mx-0.5 relative group">
@@ -192,27 +192,27 @@
                 </div>
             </nav>
             
-            <!-- Donate Button (Stage 1: 2xl screens) -->
-            <div class="hidden 2xl:flex">
+            <!-- Donate Button (Stage 1: xl screens) -->
+            <div class="hidden xl:flex">
                 <a href="donate.html" class="action-button bg-gradient-to-r from-secondary-500 to-secondary-600 text-white px-4 py-2 rounded-full font-medium text-sm transition-all duration-300 hover:transform hover:-translate-y-1 hover:shadow-lg flex items-center">
                     <i class="fas fa-heartbeat mr-1.5 text-xs"></i>Donate
                 </a>
             </div>
             
-            <!-- Donate Button (Stage 2: xl screens) -->
-            <div class="hidden xl:flex 2xl:hidden">
+            <!-- Donate Button (Stage 2: lg screens) -->
+            <div class="hidden lg:flex xl:hidden">
                 <a href="donate.html" class="action-button bg-gradient-to-r from-secondary-500 to-secondary-600 text-white px-4 py-2 rounded-full font-medium text-sm transition-all duration-300 hover:transform hover:-translate-y-1 hover:shadow-lg flex items-center">
                     <i class="fas fa-heartbeat mr-1.5 text-xs"></i>Donate
                 </a>
             </div>
             
-            <!-- Hamburger Button (Stage 2: xl screens - for Impact/Blog/Events) -->
-            <button id="stage2-menu-button" class="hidden xl:flex 2xl:hidden p-2 text-gray-700 hover:text-primary-500 transition-colors duration-300 ml-2">
+            <!-- Hamburger Button (Stage 2: lg screens - for Impact/Blog/Events) -->
+            <button id="stage2-menu-button" class="hidden lg:flex xl:hidden p-2 text-gray-700 hover:text-primary-500 transition-colors duration-300 ml-2">
                 <i class="fas fa-bars text-lg"></i>
             </button>
             
             <!-- Hamburger Button (Stage 3: md screens - for Home/Impact/Blog/Events/Donate) -->
-            <button id="stage3-menu-button" class="hidden md:flex xl:hidden p-2 text-gray-700 hover:text-primary-500 transition-colors duration-300 ml-2">
+            <button id="stage3-menu-button" class="hidden md:flex lg:hidden p-2 text-gray-700 hover:text-primary-500 transition-colors duration-300 ml-2">
                 <i class="fas fa-bars text-lg"></i>
             </button>
             
@@ -334,8 +334,8 @@
     </div>
 </div>
 
-<!-- Stage 2 Menu (xl screens - Impact/Blog/Events only) -->
-<div id="stage2-menu" class="stage2-menu-container hidden xl:block 2xl:hidden fixed top-0 right-0 bottom-0 w-80 bg-white shadow-2xl z-50 transform translate-x-full transition-transform duration-300">
+<!-- Stage 2 Menu (lg screens - Impact/Blog/Events only) -->
+<div id="stage2-menu" class="stage2-menu-container hidden lg:block xl:hidden fixed top-0 right-0 bottom-0 w-80 bg-white shadow-2xl z-50 transform translate-x-full transition-transform duration-300">
     <div class="mobile-menu-header p-5 border-b border-gray-200 flex justify-between items-center">
         <div class="flex items-center">
             <img src="assets/images/website-logo.png" alt="Logo" class="h-8 mr-3">
@@ -371,7 +371,7 @@
 </div>
 
 <!-- Stage 3 Menu (lg screens - Home/Impact/Blog/Events/Donate) -->
-<div id="stage3-menu" class="stage3-menu-container hidden md:block xl:hidden fixed top-0 right-0 bottom-0 w-80 bg-white shadow-2xl z-50 transform translate-x-full transition-transform duration-300">
+<div id="stage3-menu" class="stage3-menu-container hidden md:block lg:hidden fixed top-0 right-0 bottom-0 w-80 bg-white shadow-2xl z-50 transform translate-x-full transition-transform duration-300">
     <div class="mobile-menu-header p-5 border-b border-gray-200 flex justify-between items-center">
         <div class="flex items-center">
             <img src="assets/images/website-logo.png" alt="Logo" class="h-8 mr-3">
