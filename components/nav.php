@@ -1,203 +1,266 @@
 <?php
-// components/nav.php - Clean Tailwind navigation component
+// components/nav.php - Exact one-to-one copy of reference navbar with Tailwind styling
 ?>
-<!-- Navigation -->
-<header class="fixed top-0 left-0 right-0 z-50 bg-white shadow-md transition-all duration-300" id="main-header">
+<!-- Navigation - One-to-one copy of reference structure -->
+<header class="fixed top-0 left-0 right-0 z-50 bg-white shadow-lg transition-all duration-300 backdrop-blur-sm" id="main-header">
     <div class="container mx-auto px-4">
         <div class="flex items-center justify-between py-4">
             <!-- Logo -->
             <div class="logo-container">
-                <a href="/" class="block">
-                    <img src="/assets/images/icons/website-logo.png" 
+                <a href="index.html" class="block">
+                    <img src="image/website-logo.png" 
                          alt="Importance Leadership" 
-                         class="h-12 md:h-14 transition-all duration-300">
+                         class="h-12 transition-all duration-300">
                 </a>
             </div>
             
             <!-- Desktop Navigation -->
-            <nav class="hidden lg:flex items-center space-x-8">
-                <!-- Home -->
-                <a href="/" class="flex items-center text-primary-500 font-semibold px-4 py-2 rounded-lg hover:bg-primary-50 transition-all duration-300">
-                    <i class="fas fa-home mr-2"></i>Home
-                </a>
-                
-                <!-- Who We Are Dropdown -->
-                <div class="relative group">
-                    <button class="flex items-center text-primary-500 font-semibold px-4 py-2 rounded-lg hover:bg-primary-50 transition-all duration-300">
-                        <i class="fas fa-users mr-2"></i>Who We Are
-                        <i class="fas fa-chevron-down ml-2 text-xs group-hover:rotate-180 transition-transform duration-300"></i>
-                    </button>
-                    <!-- Dropdown Menu -->
-                    <div class="absolute top-full left-0 mt-2 w-48 bg-white shadow-lg rounded-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50">
-                        <a href="/about" class="flex items-center px-4 py-3 text-gray-700 hover:bg-primary-50 hover:text-primary-500 transition-all duration-300 rounded-t-lg">
-                            <i class="fas fa-bullseye mr-3"></i>About Us
-                        </a>
-                        <a href="/team" class="flex items-center px-4 py-3 text-gray-700 hover:bg-primary-50 hover:text-primary-500 transition-all duration-300 rounded-b-lg">
-                            <i class="fas fa-user-friends mr-3"></i>Our Team
+            <div class="nav-container hidden lg:flex items-center">
+                <nav class="main-nav flex mr-5">
+                    <!-- Home -->
+                    <div class="nav-item mx-2">
+                        <a href="index.html" class="nav-link flex items-center text-primary-500 font-semibold px-4 py-2 rounded-lg hover:bg-blue-50 hover:text-primary-600 transition-all duration-300">
+                            <i class="fas fa-home mr-2"></i>Home
                         </a>
                     </div>
-                </div>
-                
-                <!-- Where We Work Dropdown -->
-                <div class="relative group">
-                    <button class="flex items-center text-primary-500 font-semibold px-4 py-2 rounded-lg hover:bg-primary-50 transition-all duration-300">
-                        <i class="fas fa-globe mr-2"></i>Where We Work
-                        <i class="fas fa-chevron-down ml-2 text-xs group-hover:rotate-180 transition-transform duration-300"></i>
-                    </button>
-                    <!-- Dropdown Menu -->
-                    <div class="absolute top-full left-0 mt-2 w-48 bg-white shadow-lg rounded-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50">
-                        <a href="/kenya" class="flex items-center px-4 py-3 text-gray-700 hover:bg-primary-50 hover:text-primary-500 transition-all duration-300 rounded-t-lg">
-                            <i class="fas fa-map-marker-alt mr-3"></i>Kenya
-                        </a>
-                        <a href="/usa" class="flex items-center px-4 py-3 text-gray-700 hover:bg-primary-50 hover:text-primary-500 transition-all duration-300">
-                            <i class="fas fa-flag-usa mr-3"></i>USA
-                        </a>
-                        <a href="/canada" class="flex items-center px-4 py-3 text-gray-700 hover:bg-primary-50 hover:text-primary-500 transition-all duration-300 rounded-b-lg">
-                            <i class="fas fa-leaf mr-3"></i>Canada
+                    
+                    <!-- Who We Are Dropdown -->
+                    <div class="nav-item mx-2 relative group">
+                        <button class="nav-link flex items-center text-primary-500 font-semibold px-4 py-2 rounded-lg hover:bg-blue-50 hover:text-primary-600 transition-all duration-300">
+                            <i class="fas fa-users mr-2"></i>Who We Are
+                            <i class="fas fa-chevron-down ml-2 text-xs group-hover:rotate-180 transition-transform duration-300"></i>
+                        </button>
+                        <!-- Dropdown Menu -->
+                        <div class="dropdown-menu absolute top-full left-0 mt-2 w-48 bg-white shadow-xl rounded-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50 py-2">
+                            <a href="who-we-are.html" class="dropdown-item flex items-center px-5 py-3 text-gray-700 hover:bg-blue-50 hover:text-primary-500 hover:pl-6 transition-all duration-300">
+                                <i class="fas fa-bullseye mr-3 w-4 text-center"></i>About Us
+                            </a>
+                            <a href="team.html" class="dropdown-item flex items-center px-5 py-3 text-gray-700 hover:bg-blue-50 hover:text-primary-500 hover:pl-6 transition-all duration-300">
+                                <i class="fas fa-user-friends mr-3 w-4 text-center"></i>Our Team
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <!-- Where We Work Dropdown -->
+                    <div class="nav-item mx-2 relative group">
+                        <button class="nav-link flex items-center text-primary-500 font-semibold px-4 py-2 rounded-lg hover:bg-blue-50 hover:text-primary-600 transition-all duration-300">
+                            <i class="fas fa-globe-africa mr-2"></i>Where We Work
+                            <i class="fas fa-chevron-down ml-2 text-xs group-hover:rotate-180 transition-transform duration-300"></i>
+                        </button>
+                        <!-- Dropdown Menu -->
+                        <div class="dropdown-menu absolute top-full left-0 mt-2 w-48 bg-white shadow-xl rounded-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50 py-2">
+                            <a href="USA.html" class="dropdown-item flex items-center px-5 py-3 text-gray-700 hover:bg-blue-50 hover:text-primary-500 hover:pl-6 transition-all duration-300">
+                                <img src="https://cdn.jsdelivr.net/npm/flag-icons/flags/4x3/us.svg" width="18" class="mr-3">USA
+                            </a>
+                            <a href="Canada.html" class="dropdown-item flex items-center px-5 py-3 text-gray-700 hover:bg-blue-50 hover:text-primary-500 hover:pl-6 transition-all duration-300">
+                                <img src="https://cdn.jsdelivr.net/npm/flag-icons/flags/4x3/ca.svg" width="18" class="mr-3">Canada
+                            </a>
+                            <a href="Kenya.html" class="dropdown-item flex items-center px-5 py-3 text-gray-700 hover:bg-blue-50 hover:text-primary-500 hover:pl-6 transition-all duration-300">
+                                <img src="https://cdn.jsdelivr.net/npm/flag-icons/flags/4x3/ke.svg" width="18" class="mr-3">Kenya
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <!-- What We Do -->
+                    <div class="nav-item mx-2">
+                        <a href="What We Do.html" class="nav-link flex items-center text-primary-500 font-semibold px-4 py-2 rounded-lg hover:bg-blue-50 hover:text-primary-600 transition-all duration-300">
+                            <i class="fas fa-chart-line mr-2"></i>What We Do
                         </a>
                     </div>
-                </div>
-                
-                <!-- Programs Dropdown -->
-                <div class="relative group">
-                    <button class="flex items-center text-primary-500 font-semibold px-4 py-2 rounded-lg hover:bg-primary-50 transition-all duration-300">
-                        <i class="fas fa-graduation-cap mr-2"></i>Programs
-                        <i class="fas fa-chevron-down ml-2 text-xs group-hover:rotate-180 transition-transform duration-300"></i>
-                    </button>
-                    <!-- Dropdown Menu -->
-                    <div class="absolute top-full left-0 mt-2 w-56 bg-white shadow-lg rounded-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50">
-                        <a href="/programs/leadership-development" class="flex items-center px-4 py-3 text-gray-700 hover:bg-primary-50 hover:text-primary-500 transition-all duration-300 rounded-t-lg">
-                            <i class="fas fa-crown mr-3"></i>Leadership Development
-                        </a>
-                        <a href="/programs/mentorship" class="flex items-center px-4 py-3 text-gray-700 hover:bg-primary-50 hover:text-primary-500 transition-all duration-300">
-                            <i class="fas fa-hands-helping mr-3"></i>Mentorship Program
-                        </a>
-                        <a href="/programs/advocacy" class="flex items-center px-4 py-3 text-gray-700 hover:bg-primary-50 hover:text-primary-500 transition-all duration-300">
-                            <i class="fas fa-bullhorn mr-3"></i>Advocacy Initiatives
-                        </a>
-                        <a href="/programs/mental-health" class="flex items-center px-4 py-3 text-gray-700 hover:bg-primary-50 hover:text-primary-500 transition-all duration-300">
-                            <i class="fas fa-heart mr-3"></i>Mental Health
-                        </a>
-                        <a href="/programs/networking" class="flex items-center px-4 py-3 text-gray-700 hover:bg-primary-50 hover:text-primary-500 transition-all duration-300 rounded-b-lg">
-                            <i class="fas fa-network-wired mr-3"></i>Professional Networking
+                    
+                    <!-- Impact -->
+                    <div class="nav-item mx-2">
+                        <a href="impact.html" class="nav-link flex items-center text-primary-500 font-semibold px-4 py-2 rounded-lg hover:bg-blue-50 hover:text-primary-600 transition-all duration-300">
+                            <i class="fas fa-chart-line mr-2"></i>Impact
                         </a>
                     </div>
-                </div>
+                    
+                    <!-- Blog -->
+                    <div class="nav-item mx-2">
+                        <a href="blog.html" class="nav-link flex items-center text-primary-500 font-semibold px-4 py-2 rounded-lg hover:bg-blue-50 hover:text-primary-600 transition-all duration-300">
+                            <i class="fas fa-blog mr-2"></i>Blog
+                        </a>
+                    </div>
+                    
+                    <!-- Events -->
+                    <div class="nav-item mx-2">
+                        <a href="events.html" class="nav-link flex items-center text-primary-500 font-semibold px-4 py-2 rounded-lg hover:bg-blue-50 hover:text-primary-600 transition-all duration-300">
+                            <i class="fas fa-calendar-alt mr-2"></i>Events
+                        </a>
+                    </div>
+                </nav>
                 
-                <!-- Impact -->
-                <a href="/impact" class="flex items-center text-primary-500 font-semibold px-4 py-2 rounded-lg hover:bg-primary-50 transition-all duration-300">
-                    <i class="fas fa-chart-line mr-2"></i>Impact
-                </a>
-                
-                <!-- Contact -->
-                <a href="/contact" class="flex items-center text-primary-500 font-semibold px-4 py-2 rounded-lg hover:bg-primary-50 transition-all duration-300">
-                    <i class="fas fa-envelope mr-2"></i>Contact
-                </a>
-            </nav>
-            
-            <!-- CTA Button (Desktop) -->
-            <div class="hidden lg:flex items-center space-x-4">
-                <a href="/join-us" class="bg-accent-500 hover:bg-accent-600 text-white px-6 py-3 rounded-lg font-semibold transition-all duration-300 transform hover:-translate-y-1 hover:shadow-lg">
-                    Join Us
-                </a>
-                <a href="/donate" class="bg-primary-500 hover:bg-primary-600 text-white px-6 py-3 rounded-lg font-semibold transition-all duration-300 transform hover:-translate-y-1 hover:shadow-lg">
-                    Donate
+                <!-- Donate Button -->
+                <a href="donate.html" class="action-button bg-gradient-to-r from-secondary-500 to-secondary-600 text-white px-6 py-2 rounded-full font-semibold transition-all duration-300 hover:transform hover:-translate-y-1 hover:shadow-lg flex items-center">
+                    <i class="fas fa-heartbeat mr-2"></i>Donate
                 </a>
             </div>
             
             <!-- Mobile Menu Button -->
-            <button id="mobile-menu-button" class="lg:hidden p-2 text-primary-500 hover:bg-primary-50 rounded-lg transition-all duration-300">
-                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
-                </svg>
+            <button id="mobile-menu-button" class="mobile-menu-button lg:hidden p-2 text-gray-700 hover:text-primary-500 transition-colors duration-300">
+                <i class="fas fa-bars text-xl"></i>
             </button>
         </div>
     </div>
-    
-    <!-- Mobile Navigation Menu -->
-    <div id="mobile-menu" class="lg:hidden fixed top-0 right-0 h-full w-80 bg-white shadow-2xl transform translate-x-full transition-transform duration-300 z-50">
-        <div class="flex items-center justify-between p-6 border-b">
-            <img src="/assets/images/icons/website-logo.png" alt="Importance Leadership" class="h-10">
-            <button id="close-mobile-menu" class="p-2 text-gray-500 hover:text-primary-500 transition-colors duration-300">
-                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
-                </svg>
-            </button>
-        </div>
-        
-        <nav class="p-6 space-y-4 overflow-y-auto h-full pb-24">
-            <a href="/" class="flex items-center text-primary-500 font-semibold p-3 rounded-lg hover:bg-primary-50 transition-all duration-300">
-                <i class="fas fa-home mr-3"></i>Home
-            </a>
-            
-            <!-- Mobile Dropdown: Who We Are -->
-            <div class="mobile-dropdown">
-                <button class="mobile-dropdown-toggle flex items-center justify-between w-full text-primary-500 font-semibold p-3 rounded-lg hover:bg-primary-50 transition-all duration-300">
-                    <span class="flex items-center"><i class="fas fa-users mr-3"></i>Who We Are</span>
-                    <i class="fas fa-chevron-down transition-transform duration-300"></i>
-                </button>
-                <div class="mobile-dropdown-menu hidden mt-2 ml-6 space-y-2">
-                    <a href="/about" class="flex items-center text-gray-700 p-3 rounded-lg hover:bg-primary-50 transition-all duration-300">
-                        <i class="fas fa-bullseye mr-3"></i>About Us
-                    </a>
-                    <a href="/team" class="flex items-center text-gray-700 p-3 rounded-lg hover:bg-primary-50 transition-all duration-300">
-                        <i class="fas fa-user-friends mr-3"></i>Our Team
-                    </a>
-                </div>
-            </div>
-            
-            <!-- Add more mobile menu items... -->
-            
-            <!-- Mobile CTA Buttons -->
-            <div class="pt-6 space-y-3 border-t">
-                <a href="/join-us" class="block bg-accent-500 hover:bg-accent-600 text-white text-center px-6 py-3 rounded-lg font-semibold transition-all duration-300">
-                    Join Us
-                </a>
-                <a href="/donate" class="block bg-primary-500 hover:bg-primary-600 text-white text-center px-6 py-3 rounded-lg font-semibold transition-all duration-300">
-                    Donate
-                </a>
-            </div>
-        </nav>
-    </div>
-    
-    <!-- Mobile Menu Backdrop -->
-    <div id="mobile-menu-backdrop" class="lg:hidden fixed inset-0 bg-black opacity-0 invisible transition-all duration-300 z-40"></div>
 </header>
 
+<!-- Mobile Menu -->
+<div id="mobile-menu" class="mobile-menu-container fixed top-0 right-0 bottom-0 w-80 bg-white shadow-2xl z-50 transform translate-x-full transition-transform duration-300">
+    <div class="mobile-menu-header p-5 border-b border-gray-200 flex justify-between items-center">
+        <div class="flex items-center">
+            <img src="image/website-logo.png" alt="Logo" class="h-8 mr-3">
+            <h5 class="text-lg font-semibold mb-0">Importance Leadership</h5>
+        </div>
+        <button id="close-mobile-menu" class="mobile-close-button p-2 text-gray-500 hover:text-primary-500 transition-colors duration-300">
+            <i class="fas fa-times text-xl"></i>
+        </button>
+    </div>
+    
+    <div class="mobile-menu-body p-5 h-full overflow-y-auto pb-24">
+        <!-- Home -->
+        <div class="mobile-nav-item mb-3">
+            <a href="index.html" class="mobile-nav-link flex items-center text-gray-700 hover:text-primary-500 py-3 px-3 rounded-lg hover:bg-blue-50 transition-all duration-300">
+                <i class="fas fa-home mr-3"></i>Home
+            </a>
+        </div>
+        
+        <!-- Who We Are -->
+        <div class="mobile-nav-item mb-3">
+            <button class="mobile-nav-toggle w-full flex items-center justify-between text-gray-700 hover:text-primary-500 py-3 px-3 rounded-lg hover:bg-blue-50 transition-all duration-300">
+                <span class="flex items-center"><i class="fas fa-users mr-3"></i>Who We Are</span>
+                <i class="fas fa-angle-down transition-transform duration-300"></i>
+            </button>
+            <div class="mobile-dropdown-menu hidden mt-2 ml-4">
+                <a href="who-we-are.html" class="mobile-nav-link flex items-center text-gray-600 hover:text-primary-500 py-3 px-3 rounded-lg hover:bg-blue-50 transition-all duration-300">
+                    <i class="fas fa-bullseye mr-3"></i>About Us
+                </a>
+                <a href="team.html" class="mobile-nav-link flex items-center text-gray-600 hover:text-primary-500 py-3 px-3 rounded-lg hover:bg-blue-50 transition-all duration-300">
+                    <i class="fas fa-user-friends mr-3"></i>Our Team
+                </a>
+            </div>
+        </div>
+        
+        <!-- Where We Work -->
+        <div class="mobile-nav-item mb-3">
+            <button class="mobile-nav-toggle w-full flex items-center justify-between text-gray-700 hover:text-primary-500 py-3 px-3 rounded-lg hover:bg-blue-50 transition-all duration-300">
+                <span class="flex items-center"><i class="fas fa-globe-africa mr-3"></i>Where We Work</span>
+                <i class="fas fa-angle-down transition-transform duration-300"></i>
+            </button>
+            <div class="mobile-dropdown-menu hidden mt-2 ml-4">
+                <a href="USA.html" class="mobile-nav-link flex items-center text-gray-600 hover:text-primary-500 py-3 px-3 rounded-lg hover:bg-blue-50 transition-all duration-300">
+                    <img src="https://cdn.jsdelivr.net/npm/flag-icons/flags/4x3/us.svg" width="18" class="mr-3">USA
+                </a>
+                <a href="Canada.html" class="mobile-nav-link flex items-center text-gray-600 hover:text-primary-500 py-3 px-3 rounded-lg hover:bg-blue-50 transition-all duration-300">
+                    <img src="https://cdn.jsdelivr.net/npm/flag-icons/flags/4x3/ca.svg" width="18" class="mr-3">Canada
+                </a>
+                <a href="Kenya.html" class="mobile-nav-link flex items-center text-gray-600 hover:text-primary-500 py-3 px-3 rounded-lg hover:bg-blue-50 transition-all duration-300">
+                    <img src="https://cdn.jsdelivr.net/npm/flag-icons/flags/4x3/ke.svg" width="18" class="mr-3">Kenya
+                </a>
+            </div>
+        </div>
+        
+        <!-- What We Do -->
+        <div class="mobile-nav-item mb-3">
+            <button class="mobile-nav-toggle w-full flex items-center justify-between text-gray-700 hover:text-primary-500 py-3 px-3 rounded-lg hover:bg-blue-50 transition-all duration-300">
+                <span class="flex items-center"><i class="fas fa-lightbulb mr-3"></i>What We Do</span>
+                <i class="fas fa-angle-down transition-transform duration-300"></i>
+            </button>
+            <div class="mobile-dropdown-menu hidden mt-2 ml-4">
+                <a href="AdvocacyInitiatives.html" class="mobile-nav-link flex items-center text-gray-600 hover:text-primary-500 py-3 px-3 rounded-lg hover:bg-blue-50 transition-all duration-300">
+                    <i class="fas fa-balance-scale mr-3"></i>Advocacy Initiatives
+                </a>
+                <a href="MentalHealth.html" class="mobile-nav-link flex items-center text-gray-600 hover:text-primary-500 py-3 px-3 rounded-lg hover:bg-blue-50 transition-all duration-300">
+                    <i class="fas fa-heart mr-3"></i>Mental Health Programs
+                </a>
+                <a href="Networking.html" class="mobile-nav-link flex items-center text-gray-600 hover:text-primary-500 py-3 px-3 rounded-lg hover:bg-blue-50 transition-all duration-300">
+                    <i class="fas fa-network-wired mr-3"></i>Professional Networking
+                </a>
+                <a href="leadershipDev.html" class="mobile-nav-link flex items-center text-gray-600 hover:text-primary-500 py-3 px-3 rounded-lg hover:bg-blue-50 transition-all duration-300">
+                    <i class="fas fa-chalkboard-teacher mr-3"></i>Leadership Development
+                </a>
+                <a href="ClimateChange.html" class="mobile-nav-link flex items-center text-gray-600 hover:text-primary-500 py-3 px-3 rounded-lg hover:bg-blue-50 transition-all duration-300">
+                    <i class="fas fa-leaf mr-3"></i>Climate Change Awareness
+                </a>
+            </div>
+        </div>
+        
+        <!-- Impact -->
+        <div class="mobile-nav-item mb-3">
+            <a href="impact.html" class="mobile-nav-link flex items-center text-gray-700 hover:text-primary-500 py-3 px-3 rounded-lg hover:bg-blue-50 transition-all duration-300">
+                <i class="fas fa-chart-line mr-3"></i>Impact
+            </a>
+        </div>
+        
+        <!-- Blog -->
+        <div class="mobile-nav-item mb-3">
+            <a href="blog.html" class="mobile-nav-link flex items-center text-gray-700 hover:text-primary-500 py-3 px-3 rounded-lg hover:bg-blue-50 transition-all duration-300">
+                <i class="fas fa-blog mr-3"></i>Blog
+            </a>
+        </div>
+        
+        <!-- Events -->
+        <div class="mobile-nav-item mb-3">
+            <a href="events.html" class="mobile-nav-link flex items-center text-gray-700 hover:text-primary-500 py-3 px-3 rounded-lg hover:bg-blue-50 transition-all duration-300">
+                <i class="fas fa-calendar-alt mr-3"></i>Events
+            </a>
+        </div>
+        
+        <!-- Donate Button -->
+        <div class="mobile-nav-item mt-6">
+            <a href="donate.html" class="action-button bg-gradient-to-r from-secondary-500 to-secondary-600 text-white px-6 py-3 rounded-full font-semibold transition-all duration-300 hover:shadow-lg flex items-center justify-center w-full">
+                <i class="fas fa-heartbeat mr-2"></i>Donate
+            </a>
+        </div>
+    </div>
+</div>
+
 <script>
-// Mobile menu functionality
+// Mobile Menu Toggle - Exact copy of reference functionality  
 document.addEventListener('DOMContentLoaded', function() {
     const mobileMenuButton = document.getElementById('mobile-menu-button');
-    const mobileMenu = document.getElementById('mobile-menu');
     const closeMobileMenu = document.getElementById('close-mobile-menu');
-    const mobileMenuBackdrop = document.getElementById('mobile-menu-backdrop');
-    const dropdownToggles = document.querySelectorAll('.mobile-dropdown-toggle');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const mobileNavToggles = document.querySelectorAll('.mobile-nav-toggle');
     
     // Open mobile menu
-    mobileMenuButton.addEventListener('click', function() {
-        mobileMenu.classList.remove('translate-x-full');
-        mobileMenuBackdrop.classList.remove('opacity-0', 'invisible');
-        document.body.classList.add('overflow-hidden');
-    });
-    
-    // Close mobile menu
-    function closeMobileMenuFunc() {
-        mobileMenu.classList.add('translate-x-full');
-        mobileMenuBackdrop.classList.add('opacity-0', 'invisible');
-        document.body.classList.remove('overflow-hidden');
+    if (mobileMenuButton && mobileMenu) {
+        mobileMenuButton.addEventListener('click', function() {
+            mobileMenu.classList.remove('translate-x-full');
+            mobileMenu.classList.add('translate-x-0');
+            document.body.style.overflow = 'hidden';
+        });
+        
+        // Close mobile menu
+        closeMobileMenu.addEventListener('click', function() {
+            mobileMenu.classList.add('translate-x-full');
+            mobileMenu.classList.remove('translate-x-0');
+            document.body.style.overflow = '';
+        });
     }
     
-    closeMobileMenu.addEventListener('click', closeMobileMenuFunc);
-    mobileMenuBackdrop.addEventListener('click', closeMobileMenuFunc);
-    
-    // Mobile dropdown functionality
-    dropdownToggles.forEach(toggle => {
+    // Mobile dropdown toggles
+    mobileNavToggles.forEach(toggle => {
         toggle.addEventListener('click', function() {
             const menu = this.nextElementSibling;
-            const icon = this.querySelector('.fa-chevron-down');
+            const icon = this.querySelector('.fa-angle-down');
             
-            menu.classList.toggle('hidden');
-            icon.classList.toggle('rotate-180');
+            if (menu) {
+                menu.classList.toggle('hidden');
+                if (icon) {
+                    icon.classList.toggle('rotate-180');
+                }
+            }
+        });
+    });
+    
+    // Close mobile menu when clicking links (except dropdown toggles)
+    document.querySelectorAll('.mobile-nav-link').forEach(link => {
+        link.addEventListener('click', function() {
+            if (!this.classList.contains('mobile-nav-toggle')) {
+                mobileMenu.classList.add('translate-x-full');
+                mobileMenu.classList.remove('translate-x-0');
+                document.body.style.overflow = '';
+            }
         });
     });
     
@@ -205,13 +268,9 @@ document.addEventListener('DOMContentLoaded', function() {
     window.addEventListener('scroll', function() {
         const header = document.getElementById('main-header');
         if (window.scrollY > 50) {
-            header.classList.add('shadow-lg');
             header.classList.add('bg-white/95');
-            header.classList.add('backdrop-blur-sm');
         } else {
-            header.classList.remove('shadow-lg');
             header.classList.remove('bg-white/95');
-            header.classList.remove('backdrop-blur-sm');
         }
     });
 });
