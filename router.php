@@ -38,6 +38,7 @@ $possible_pages = [
     'programs/mental-health' => 'pages/mental-health.php',
     'programs/networking' => 'pages/networking.php',
     'programs/leadership-development' => 'pages/leadership-development.php',
+    'programs/climate-change' => 'pages/climate-change.php',
 ];
 
 if (isset($possible_pages[$uri]) && file_exists($possible_pages[$uri])) {
