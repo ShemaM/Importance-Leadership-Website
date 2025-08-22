@@ -430,6 +430,134 @@ include __DIR__ . '/../components/nav.php';
                 </div>
             </div>
 
+            <!-- DRC Crisis Global Dialogue -->
+            <div id="drc-dialogue" class="bg-white rounded-2xl shadow-xl overflow-hidden mb-16 hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2">
+                <div class="bg-primary-500 text-white px-8 py-6 relative">
+                    <h2 class="text-3xl font-bold font-secondary">DRC Crisis Global Dialogue</h2>
+                    <div class="absolute bottom-0 left-0 w-full h-1 bg-accent-500"></div>
+                </div>
+                
+                <div class="p-8">
+                    <div class="flex flex-wrap gap-6 mb-6 text-gray-600">
+                        <span class="flex items-center">
+                            <i class="fas fa-calendar mr-2 text-accent-500"></i> March 1, 2025
+                        </span>
+                        <span class="flex items-center">
+                            <i class="fas fa-globe mr-2 text-accent-500"></i> Virtual Global Forum
+                        </span>
+                        <span class="flex items-center">
+                            <i class="fas fa-users mr-2 text-accent-500"></i> 300+ youth from 12 countries
+                        </span>
+                    </div>
+                    
+                    <p class="text-lg mb-8">We hosted a powerful online discussion on the ongoing crisis in eastern DRC, examining root causes and solutions with youth participants from across the world.</p>
+                    
+                    <div class="bg-accent-50 border-l-4 border-accent-500 p-6 mb-8">
+                        <h5 class="font-bold text-primary-500 mb-4">Key Discussion Points:</h5>
+                        <ul class="space-y-2 text-gray-700">
+                            <li class="flex items-start">
+                                <span class="text-accent-500 mr-2">•</span>
+                                <span><strong>Mineral Wars</strong> - How tech demand fuels conflict (cobalt for AI/EV batteries)</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-accent-500 mr-2">•</span>
+                                <span><strong>Banyamulenge Marginalization</strong> - Historical context since 1885</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-accent-500 mr-2">•</span>
+                                <span><strong>African Solutions</strong> - Proposed EAC peacekeeping reforms</span>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <h4 class="text-xl font-bold text-primary-500 mb-4">Youth Action Outcomes:</h4>
+                    <ul class="space-y-2 text-gray-700 mb-8">
+                        <li class="flex items-start">
+                            <span class="text-accent-500 mr-2">•</span>
+                            <span><strong>200+ signature petition</strong> to the African Union</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-accent-500 mr-2">•</span>
+                            <span><strong>#ArtForDRC</strong> social media awareness campaign</span>
+                        </li>
+                    </ul>
+                    
+                    <blockquote class="italic relative pl-8 mb-8">
+                        <div class="absolute left-0 top-0 text-4xl text-accent-500 font-serif">"</div>
+                        <p class="text-gray-600 mb-2">This dialogue helped me understand how my smartphone is connected to the suffering in DRC. We must demand ethical sourcing from tech companies.</p>
+                        <cite class="font-semibold text-primary-500 not-italic">- University Student Participant</cite>
+                    </blockquote>
+                    
+                    <a href="#" class="inline-flex items-center bg-accent-500 hover:bg-accent-600 text-white px-6 py-3 rounded-full font-semibold transition-all duration-300 transform hover:scale-105">
+                        Learn More <i class="fas fa-handshake ml-2"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Back-to-School Initiative -->
+            <div id="back-to-school" class="bg-white rounded-2xl shadow-xl overflow-hidden mb-16 hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2">
+                <div class="bg-primary-500 text-white px-8 py-6 relative">
+                    <h2 class="text-3xl font-bold font-secondary">Back-to-School Initiative</h2>
+                    <div class="absolute bottom-0 left-0 w-full h-1 bg-accent-500"></div>
+                </div>
+                
+                <div class="p-8">
+                    <div class="flex flex-wrap gap-6 mb-6 text-gray-600">
+                        <span class="flex items-center">
+                            <i class="fas fa-calendar mr-2 text-accent-500"></i> December 28, 2024
+                        </span>
+                        <span class="flex items-center">
+                            <i class="fas fa-map-marker-alt mr-2 text-accent-500"></i> Kasarani, Nairobi
+                        </span>
+                        <span class="flex items-center">
+                            <i class="fas fa-users mr-2 text-accent-500"></i> 63 orphaned learners
+                        </span>
+                    </div>
+                    
+                    <p class="text-lg mb-8">Our heartwarming initiative provided school supplies and mentorship to refugee orphaned children preparing for the new school term.</p>
+                    
+                    <div class="bg-accent-50 border-l-4 border-accent-500 p-6 mb-8">
+                        <h5 class="font-bold text-primary-500 mb-4">What We Delivered:</h5>
+                        <ul class="space-y-2 text-gray-700">
+                            <li class="flex items-start">
+                                <span class="text-accent-500 mr-2">•</span>
+                                <span>Complete <strong>school kits</strong> (books, uniforms, hygiene items)</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-accent-500 mr-2">•</span>
+                                <span><strong>Parent workshops</strong> on navigating the education system</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-accent-500 mr-2">•</span>
+                                <span><strong>1-year mentorship pledges</strong> for 15 students</span>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <h4 class="text-xl font-bold text-primary-500 mb-4">Partners:</h4>
+                    <p class="mb-8">Rock Assembly Church (venue), Ray of Hope (community mobilization)</p>
+                    
+                    <div class="grid md:grid-cols-3 gap-4 mb-8">
+                        <div class="h-48 bg-cover bg-center rounded-lg cursor-pointer transition-transform duration-300 hover:scale-105" 
+                             style="background-image: url('https://images.unsplash.com/photo-1588072432836-e10032774350?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1472&q=80')"></div>
+                        <div class="h-48 bg-cover bg-center rounded-lg cursor-pointer transition-transform duration-300 hover:scale-105" 
+                             style="background-image: url('https://images.unsplash.com/photo-1523240795612-9a054b0db644?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80')"></div>
+                        <div class="h-48 bg-cover bg-center rounded-lg cursor-pointer transition-transform duration-300 hover:scale-105" 
+                             style="background-image: url('https://images.unsplash.com/photo-1549056572-75914d5d5fd1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80')"></div>
+                    </div>
+                    
+                    <blockquote class="italic relative pl-8 mb-8">
+                        <div class="absolute left-0 top-0 text-4xl text-accent-500 font-serif">"</div>
+                        <p class="text-gray-600 mb-2">This is my first new pencil case! I'll use it to study hard and become a doctor to help my community.</p>
+                        <cite class="font-semibold text-primary-500 not-italic">- 9-year-old beneficiary</cite>
+                    </blockquote>
+                    
+                    <a href="#" class="inline-flex items-center bg-accent-500 hover:bg-accent-600 text-white px-6 py-3 rounded-full font-semibold transition-all duration-300 transform hover:scale-105">
+                        See More <i class="fas fa-images ml-2"></i>
+                    </a>
+                </div>
+            </div>
+
             <!-- Call to Action -->
             <div class="text-center py-16">
                 <h2 class="text-4xl font-bold font-secondary text-primary-500 mb-6">Join Our Next Chapter</h2>
