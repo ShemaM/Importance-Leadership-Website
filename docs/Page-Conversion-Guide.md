@@ -353,6 +353,8 @@ $possible_pages = [
 - [ ] Responsive design implemented
 - [ ] AOS animations added
 - [ ] Router updated with new route
+- [ ] **Images copied from reference-files to assets directories**
+- [ ] **Image src paths updated to use assets structure**
 
 ### Post-Development Testing
 - [ ] Page loads at correct URL
@@ -362,6 +364,7 @@ $possible_pages = [
 - [ ] Links work correctly
 - [ ] Images display properly
 - [ ] Animations function smoothly
+- [ ] **Image paths updated from reference to assets directories**
 
 ### Code Quality
 - [ ] No vanilla CSS classes used

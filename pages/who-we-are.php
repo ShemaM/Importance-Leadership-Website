@@ -87,7 +87,7 @@ include __DIR__ . '/../components/nav.php';
                 <!-- Founder Card -->
                 <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2" data-aos="fade-up" data-aos-delay="100">
                     <div class="relative overflow-hidden">
-                        <img src="/reference-files/image/fiston.png" 
+                        <img src="/assets/images/team/fiston.png" 
                              alt="Fiston Ndayishimiye"
                              class="w-full h-96 object-cover object-center">
                     </div>
