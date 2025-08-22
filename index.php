@@ -193,6 +193,72 @@ include 'components/nav.php';
         </div>
     </section>
     
+    <!-- Partners Section -->
+    <section class="py-20 bg-white" id="partners">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="text-4xl md:text-5xl font-bold font-secondary text-primary-500 mb-6">
+                    Our Valued Partners
+                </h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+                    Together with mission-aligned organizations, we're creating transformative youth leadership opportunities. Join our network to amplify your impact.
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8 items-center">
+                <div class="partner-logo" data-aos="fade-up" data-aos-delay="100">
+                    <a href="https://www.unicef.org" target="_blank" rel="noopener noreferrer" class="block p-4 rounded-lg hover:shadow-lg transition-all duration-300">
+                        <img src="/assets/images/partners/UNICEF.png" 
+                             alt="UNICEF - United Nations Children's Fund"
+                             class="w-full h-16 object-contain filter grayscale hover:grayscale-0 transition-all duration-300">
+                    </a>
+                </div>
+                <div class="partner-logo" data-aos="fade-up" data-aos-delay="200">
+                    <a href="https://www.savethechildren.org" target="_blank" rel="noopener noreferrer" class="block p-4 rounded-lg hover:shadow-lg transition-all duration-300">
+                        <img src="/assets/images/partners/Save the children.png" 
+                             alt="Save the Children"
+                             class="w-full h-16 object-contain filter grayscale hover:grayscale-0 transition-all duration-300">
+                    </a>
+                </div>
+                <div class="partner-logo" data-aos="fade-up" data-aos-delay="300">
+                    <a href="https://www.wya.net" target="_blank" rel="noopener noreferrer" class="block p-4 rounded-lg hover:shadow-lg transition-all duration-300">
+                        <img src="/assets/images/partners/World Youth Alliance.png" 
+                             alt="World Youth Alliance"
+                             class="w-full h-16 object-contain filter grayscale hover:grayscale-0 transition-all duration-300">
+                    </a>
+                </div>
+                <div class="partner-logo" data-aos="fade-up" data-aos-delay="400">
+                    <a href="https://plan-international.org" target="_blank" rel="noopener noreferrer" class="block p-4 rounded-lg hover:shadow-lg transition-all duration-300">
+                        <img src="/assets/images/partners/Plan International.png" 
+                             alt="Plan International"
+                             class="w-full h-16 object-contain filter grayscale hover:grayscale-0 transition-all duration-300">
+                    </a>
+                </div>
+                <div class="partner-logo" data-aos="fade-up" data-aos-delay="500">
+                    <a href="https://www.iyfnet.org" target="_blank" rel="noopener noreferrer" class="block p-4 rounded-lg hover:shadow-lg transition-all duration-300">
+                        <img src="/assets/images/partners/iyf.png" 
+                             alt="International Youth Foundation"
+                             class="w-full h-16 object-contain filter grayscale hover:grayscale-0 transition-all duration-300">
+                    </a>
+                </div>
+                <div class="partner-logo" data-aos="fade-up" data-aos-delay="600">
+                    <a href="#" class="block p-4 rounded-lg hover:shadow-lg transition-all duration-300">
+                        <img src="/assets/images/partners/GYAN.jpg" 
+                             alt="Global Youth Action Network"
+                             class="w-full h-16 object-contain filter grayscale hover:grayscale-0 transition-all duration-300">
+                    </a>
+                </div>
+            </div>
+            
+            <div class="text-center mt-12" data-aos="fade-up" data-aos-delay="700">
+                <p class="text-lg text-gray-600 mb-6">Ready to join our partner network?</p>
+                <a href="/partnerships" class="bg-primary-500 hover:bg-primary-600 text-white px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-300 transform hover:-translate-y-1 hover:shadow-lg">
+                    Explore Partnership Opportunities
+                </a>
+            </div>
+        </div>
+    </section>
+    
     <!-- Call to Action Section -->
     <section class="py-20 bg-gradient-to-r from-accent-500 to-accent-600 text-white">
         <div class="container mx-auto px-4 text-center">
