@@ -8,7 +8,7 @@
             <!-- Logo -->
             <div class="logo-container">
                 <a href="/" class="block">
-                    <img src="assets/images/website-logo.png" 
+                    <img src="/assets/images/website-logo.png" 
                          alt="Importance Leadership" 
                          class="h-10 transition-all duration-300">
                 </a>
