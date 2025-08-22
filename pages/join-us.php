@@ -289,20 +289,6 @@ include __DIR__ . '/../components/nav.php';
         </div>
     </section>
 
-    <!-- CTA Section -->
-    <section class="py-20 bg-gradient-to-r from-primary-500 to-blue-600 text-white">
-        <div class="container mx-auto px-6 text-center">
-            <h2 class="text-3xl md:text-4xl font-bold font-secondary mb-6">Ready to Lead the Change?</h2>
-            <p class="text-xl mb-8 max-w-3xl mx-auto opacity-95">
-                Join thousands of young leaders who are already making a difference in their communities.
-            </p>
-            <a href="#main-content" 
-               class="inline-flex items-center bg-accent-500 hover:bg-yellow-500 text-white font-bold py-4 px-8 rounded-full text-lg transition-all transform hover:-translate-y-2 shadow-xl animate-pulse-custom">
-                <i class="fas fa-arrow-up mr-3"></i>
-                Join Now
-            </a>
-        </div>
-    </section>
 </main>
 
 <!-- Success Modal -->
