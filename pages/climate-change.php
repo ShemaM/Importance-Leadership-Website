@@ -303,14 +303,12 @@ include __DIR__ . '/../components/nav.php';
                             </a>
                         </div>
                     </div>
-                    <div class="hidden lg:block bg-gradient-to-br from-green-100 to-green-200 relative overflow-hidden">
-                        <div class="absolute inset-0 flex items-center justify-center">
-                            <div class="text-green-600 opacity-20">
-                                <i class="fas fa-leaf text-9xl"></i>
-                            </div>
-                        </div>
+                    <div class="hidden lg:block bg-gray-100 relative overflow-hidden">
+                        <div class="w-full h-full bg-cover bg-center bg-no-repeat" 
+                             style="background-image: url('/reference-files/image/environmentalHealth.jpg')"></div>
+                        <div class="absolute inset-0 bg-gradient-to-l from-white/70 to-white/0"></div>
                         <div class="absolute bottom-4 right-4">
-                            <div class="bg-white/80 backdrop-blur-sm rounded-lg p-4">
+                            <div class="bg-white/90 backdrop-blur-sm rounded-lg p-4 shadow-lg">
                                 <p class="text-sm font-semibold text-green-800">Interactive Presentation</p>
                                 <p class="text-xs text-green-600">50+ slides of comprehensive content</p>
                             </div>
