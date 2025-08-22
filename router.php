@@ -26,6 +26,7 @@ $possible_pages = [
     'team' => 'pages/team.php',
     'usa' => 'pages/usa.php',
     'canada' => 'pages/canada.php',
+    'kenya' => 'pages/kenya.php',
     'contact' => 'pages/contact.php',
     'programs' => 'pages/programs.php',
     'impact' => 'pages/impact.php',
