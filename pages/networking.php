@@ -41,7 +41,7 @@ include __DIR__ . '/../components/nav.php';
         <!-- Background -->
         <div class="absolute inset-0 z-0">
             <div class="w-full h-full bg-cover bg-center bg-no-repeat" 
-                 style="background-image: url('/assets/images/programs/networking.jpg')"></div>
+                 style="background-image: url('/reference-files/image/networking.jpg')"></div>
         </div>
         
         <!-- Dark Overlay -->
