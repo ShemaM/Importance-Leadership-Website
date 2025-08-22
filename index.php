@@ -21,27 +21,38 @@ $impact_stats = [
 $featured_programs = [
     [
         'title' => 'Leadership Development',
-        'description' => 'Comprehensive leadership training program developing essential skills for effective leadership.',
+        'description' => 'A transformative 12-week program focused on building core leadership competencies through workshops, projects, and mentorship.',
         'image' => '/assets/images/programs/leadership-development.jpg',
         'slug' => 'leadership-development',
-        'duration' => '6 months',
-        'participants' => 500
+        'duration' => '12 weeks'
     ],
     [
-        'title' => 'Mentorship Program', 
-        'description' => 'Connect with experienced mentors who guide you through personal and professional growth.',
+        'title' => 'Professional Networking', 
+        'description' => 'Expand your professional and social circles through curated networking events and access to a vibrant community of leaders.',
         'image' => '/assets/images/programs/mentorship.jpg',
-        'slug' => 'mentorship',
-        'duration' => 'Ongoing',
-        'participants' => 300
+        'slug' => 'networking',
+        'duration' => 'Ongoing'
     ],
     [
         'title' => 'Advocacy Initiatives',
-        'description' => 'Empowers youth to become effective advocates for social justice and policy change.',
+        'description' => 'Empowers youth to become effective advocates for social justice, equity, and policy change in their communities.',
         'image' => '/assets/images/programs/advocacy-program.jpg', 
         'slug' => 'advocacy',
-        'duration' => '3 months',
-        'participants' => 250
+        'duration' => 'Quarterly'
+    ],
+    [
+        'title' => 'Mental Health Program',
+        'description' => 'Supporting youth wellbeing through mental health education, peer support, and access to professional resources.',
+        'image' => '/assets/images/programs/mental-health.jpg',
+        'slug' => 'mental-health',
+        'duration' => 'Ongoing'
+    ],
+    [
+        'title' => 'Climate Change Awareness',
+        'description' => 'Empowering youth to understand, address, and advocate for solutions to climate change through education and projects.',
+        'image' => '/assets/images/programs/climate-change.jpg',
+        'slug' => 'climate-change',
+        'duration' => 'Seasonal'
     ]
 ];
 
@@ -132,14 +143,10 @@ include 'components/nav.php';
                                 <?= htmlspecialchars($program['description']) ?>
                             </p>
                             
-                            <div class="flex items-center justify-between text-sm text-gray-500">
+                            <div class="flex items-center text-sm text-gray-500">
                                 <span class="flex items-center gap-2">
                                     <i class="fas fa-clock text-accent-500"></i>
                                     <?= htmlspecialchars($program['duration']) ?>
-                                </span>
-                                <span class="flex items-center gap-2">
-                                    <i class="fas fa-users text-accent-500"></i>
-                                    <?= number_format($program['participants']) ?> participants
                                 </span>
                             </div>
                         </div>
