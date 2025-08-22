@@ -141,7 +141,7 @@ include __DIR__ . '/../components/nav.php';
                 <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2" data-aos="fade-up" data-aos-delay="100">
                     <div class="p-8">
                         <div class="bg-accent-100 text-accent-500 rounded-lg w-16 h-16 flex items-center justify-center mb-6 mx-auto">
-                            <i class="fas fa-megaphone text-2xl"></i>
+                            <i class="fas fa-bullhorn text-2xl"></i>
                         </div>
                         <h3 class="text-2xl font-bold font-secondary text-center text-primary-500 mb-4">Public Awareness</h3>
                         <p class="text-gray-600 text-center text-lg">
