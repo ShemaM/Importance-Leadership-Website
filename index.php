@@ -264,18 +264,18 @@ include 'components/nav.php';
         <div class="container mx-auto px-4 text-center">
             <div class="max-w-4xl mx-auto" data-aos="fade-up">
                 <h2 class="text-4xl md:text-5xl font-bold font-secondary mb-6">
-                    Ready to Make a Difference?
+                    Ready to Be Part of the Change?
                 </h2>
                 <p class="text-xl mb-8 opacity-95 leading-relaxed">
-                    Join thousands of young leaders who are creating positive change in their communities. Start your leadership journey today.
+                    Whether you're a young leader looking to grow, a professional willing to mentor, or an organization wanting to partner, there are many ways to get involved in our mission.
                 </p>
                 
                 <div class="flex flex-col sm:flex-row gap-4 justify-center">
                     <a href="/join-us" class="bg-white text-accent-500 hover:bg-gray-100 px-8 py-4 rounded-lg font-bold text-lg transition-all duration-300 transform hover:scale-105">
-                        Join Our Programs
+                        Sign Up Now
                     </a>
                     <a href="/donate" class="border-2 border-white text-white hover:bg-white hover:text-accent-500 px-8 py-4 rounded-lg font-bold text-lg transition-all duration-300">
-                        Support Our Mission
+                        Donate
                     </a>
                 </div>
             </div>
