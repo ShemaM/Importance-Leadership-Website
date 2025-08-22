@@ -128,19 +128,20 @@ document.addEventListener('DOMContentLoaded', function() {
         
         counters.forEach(counter => {
             const target = parseInt(counter.getAttribute('data-counter'));
-            const duration = 2000;
-            const step = target / (duration / 16);
+            // Dynamic duration based on target value for natural counting speed
+            const baseDuration = Math.min(2000, Math.max(800, target * 0.8));
+            const increment = Math.max(1, Math.ceil(target / (baseDuration / 16)));
             let current = 0;
             
             const timer = setInterval(() => {
-                current += step;
+                current += increment;
                 if (current >= target) {
                     const shouldHavePlus = target === 2500 || target === 20;
                     counter.textContent = target + (shouldHavePlus ? '+' : '');
                     clearInterval(timer);
                 } else {
                     const shouldHavePlus = target === 2500 || target === 20;
-                    counter.textContent = Math.floor(current) + (shouldHavePlus ? '+' : '');
+                    counter.textContent = current + (shouldHavePlus ? '+' : '');
                 }
             }, 16);
         });
