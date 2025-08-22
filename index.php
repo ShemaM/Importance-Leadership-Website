@@ -217,4 +217,48 @@ include 'components/nav.php';
     </section>
 </main>
 
+<script>
+// Impact Section Counter Animation
+document.addEventListener('DOMContentLoaded', function() {
+    function animateImpactCounters() {
+        const counters = document.querySelectorAll('.impact-stat [data-counter]');
+        
+        counters.forEach(counter => {
+            const target = parseInt(counter.getAttribute('data-counter'));
+            const duration = 2000;
+            const step = target / (duration / 16);
+            let current = 0;
+            
+            const timer = setInterval(() => {
+                current += step;
+                if (current >= target) {
+                    // Only add + for 2500 and 20, not for 13 and 14
+                    const shouldHavePlus = target === 2500 || target === 20;
+                    counter.textContent = target + (shouldHavePlus ? '+' : '');
+                    clearInterval(timer);
+                } else {
+                    const shouldHavePlus = target === 2500 || target === 20;
+                    counter.textContent = Math.floor(current) + (shouldHavePlus ? '+' : '');
+                }
+            }, 16);
+        });
+    }
+    
+    // Intersection Observer for impact counter animation
+    const impactObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting && !entry.target.classList.contains('impact-counted')) {
+                entry.target.classList.add('impact-counted');
+                animateImpactCounters();
+            }
+        });
+    }, { threshold: 0.5 });
+    
+    const impactSection = document.querySelector('#impact');
+    if (impactSection) {
+        impactObserver.observe(impactSection);
+    }
+});
+</script>
+
 <?php include 'components/footer.php'; ?>
