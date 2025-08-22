@@ -22,6 +22,7 @@ if (is_file($path)) {
 // Handle specific pages if they exist
 $possible_pages = [
     'about' => 'pages/about.php',
+    'who-we-are' => 'pages/who-we-are.php',
     'contact' => 'pages/contact.php',
     'programs' => 'pages/programs.php',
     'impact' => 'pages/impact.php',

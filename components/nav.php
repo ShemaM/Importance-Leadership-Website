@@ -19,7 +19,7 @@
                 <div class="main-nav flex flex-nowrap">
                     <!-- Home -->
                     <div class="nav-item mx-0.5">
-                        <a href="index.html" class="nav-link flex items-center text-primary-500 font-medium text-sm px-2 py-2 rounded-lg hover:bg-blue-50 hover:text-primary-600 transition-all duration-300 whitespace-nowrap">
+                        <a href="/" class="nav-link flex items-center text-primary-500 font-medium text-sm px-2 py-2 rounded-lg hover:bg-blue-50 hover:text-primary-600 transition-all duration-300 whitespace-nowrap">
                             <i class="fas fa-home mr-1.5 text-xs"></i>Home
                         </a>
                     </div>
@@ -32,7 +32,7 @@
                         </button>
                         <!-- Dropdown Menu -->
                         <div class="dropdown-menu absolute top-full left-0 mt-2 w-48 bg-white shadow-xl rounded-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50 py-2">
-                            <a href="who-we-are.html" class="dropdown-item flex items-center px-5 py-3 text-gray-700 hover:bg-blue-50 hover:text-primary-500 hover:pl-6 transition-all duration-300">
+                            <a href="/who-we-are" class="dropdown-item flex items-center px-5 py-3 text-gray-700 hover:bg-blue-50 hover:text-primary-500 hover:pl-6 transition-all duration-300">
                                 <i class="fas fa-bullseye mr-3 w-4 text-center"></i>About Us
                             </a>
                             <a href="team.html" class="dropdown-item flex items-center px-5 py-3 text-gray-700 hover:bg-blue-50 hover:text-primary-500 hover:pl-6 transition-all duration-300">
@@ -49,13 +49,13 @@
                         </button>
                         <!-- Dropdown Menu -->
                         <div class="dropdown-menu absolute top-full left-0 mt-2 w-48 bg-white shadow-xl rounded-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50 py-2">
-                            <a href="USA.html" class="dropdown-item flex items-center px-5 py-3 text-gray-700 hover:bg-blue-50 hover:text-primary-500 hover:pl-6 transition-all duration-300">
+                            <a href="/usa" class="dropdown-item flex items-center px-5 py-3 text-gray-700 hover:bg-blue-50 hover:text-primary-500 hover:pl-6 transition-all duration-300">
                                 <img src="https://cdn.jsdelivr.net/npm/flag-icons/flags/4x3/us.svg" width="18" class="mr-3">USA
                             </a>
-                            <a href="Canada.html" class="dropdown-item flex items-center px-5 py-3 text-gray-700 hover:bg-blue-50 hover:text-primary-500 hover:pl-6 transition-all duration-300">
+                            <a href="/canada" class="dropdown-item flex items-center px-5 py-3 text-gray-700 hover:bg-blue-50 hover:text-primary-500 hover:pl-6 transition-all duration-300">
                                 <img src="https://cdn.jsdelivr.net/npm/flag-icons/flags/4x3/ca.svg" width="18" class="mr-3">Canada
                             </a>
-                            <a href="Kenya.html" class="dropdown-item flex items-center px-5 py-3 text-gray-700 hover:bg-blue-50 hover:text-primary-500 hover:pl-6 transition-all duration-300">
+                            <a href="/kenya" class="dropdown-item flex items-center px-5 py-3 text-gray-700 hover:bg-blue-50 hover:text-primary-500 hover:pl-6 transition-all duration-300">
                                 <img src="https://cdn.jsdelivr.net/npm/flag-icons/flags/4x3/ke.svg" width="18" class="mr-3">Kenya
                             </a>
                         </div>
@@ -63,28 +63,28 @@
                     
                     <!-- What We Do -->
                     <div class="nav-item mx-0.5">
-                        <a href="What We Do.html" class="nav-link flex items-center text-primary-500 font-medium text-sm px-2 py-2 rounded-lg hover:bg-blue-50 hover:text-primary-600 transition-all duration-300 whitespace-nowrap">
+                        <a href="/programs" class="nav-link flex items-center text-primary-500 font-medium text-sm px-2 py-2 rounded-lg hover:bg-blue-50 hover:text-primary-600 transition-all duration-300 whitespace-nowrap">
                             <i class="fas fa-chart-line mr-1.5 text-xs"></i>What We Do
                         </a>
                     </div>
                     
                     <!-- Impact -->
                     <div class="nav-item mx-0.5">
-                        <a href="impact.html" class="nav-link flex items-center text-primary-500 font-medium text-sm px-2 py-2 rounded-lg hover:bg-blue-50 hover:text-primary-600 transition-all duration-300 whitespace-nowrap">
+                        <a href="/impact" class="nav-link flex items-center text-primary-500 font-medium text-sm px-2 py-2 rounded-lg hover:bg-blue-50 hover:text-primary-600 transition-all duration-300 whitespace-nowrap">
                             <i class="fas fa-chart-line mr-1.5 text-xs"></i>Impact
                         </a>
                     </div>
                     
                     <!-- Blog -->
                     <div class="nav-item mx-0.5">
-                        <a href="blog.html" class="nav-link flex items-center text-primary-500 font-medium text-sm px-2 py-2 rounded-lg hover:bg-blue-50 hover:text-primary-600 transition-all duration-300 whitespace-nowrap">
+                        <a href="/blog" class="nav-link flex items-center text-primary-500 font-medium text-sm px-2 py-2 rounded-lg hover:bg-blue-50 hover:text-primary-600 transition-all duration-300 whitespace-nowrap">
                             <i class="fas fa-blog mr-1.5 text-xs"></i>Blog
                         </a>
                     </div>
                     
                     <!-- Events -->
                     <div class="nav-item mx-0.5">
-                        <a href="events.html" class="nav-link flex items-center text-primary-500 font-medium text-sm px-2 py-2 rounded-lg hover:bg-blue-50 hover:text-primary-600 transition-all duration-300 whitespace-nowrap">
+                        <a href="/events" class="nav-link flex items-center text-primary-500 font-medium text-sm px-2 py-2 rounded-lg hover:bg-blue-50 hover:text-primary-600 transition-all duration-300 whitespace-nowrap">
                             <i class="fas fa-calendar-alt mr-1.5 text-xs"></i>Events
                         </a>
                     </div>
@@ -96,7 +96,7 @@
                 <div class="main-nav flex flex-nowrap">
                     <!-- Home -->
                     <div class="nav-item mx-0.5">
-                        <a href="index.html" class="nav-link flex items-center text-primary-500 font-medium text-sm px-2 py-2 rounded-lg hover:bg-blue-50 hover:text-primary-600 transition-all duration-300 whitespace-nowrap">
+                        <a href="/" class="nav-link flex items-center text-primary-500 font-medium text-sm px-2 py-2 rounded-lg hover:bg-blue-50 hover:text-primary-600 transition-all duration-300 whitespace-nowrap">
                             <i class="fas fa-home mr-1.5 text-xs"></i>Home
                         </a>
                     </div>
@@ -108,7 +108,7 @@
                             <i class="fas fa-chevron-down ml-1.5 text-xs group-hover:rotate-180 transition-transform duration-300"></i>
                         </button>
                         <div class="dropdown-menu absolute top-full left-0 mt-2 w-48 bg-white shadow-xl rounded-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50 py-2">
-                            <a href="who-we-are.html" class="dropdown-item flex items-center px-5 py-3 text-gray-700 hover:bg-blue-50 hover:text-primary-500 hover:pl-6 transition-all duration-300">
+                            <a href="/who-we-are" class="dropdown-item flex items-center px-5 py-3 text-gray-700 hover:bg-blue-50 hover:text-primary-500 hover:pl-6 transition-all duration-300">
                                 <i class="fas fa-bullseye mr-3 w-4 text-center"></i>About Us
                             </a>
                             <a href="team.html" class="dropdown-item flex items-center px-5 py-3 text-gray-700 hover:bg-blue-50 hover:text-primary-500 hover:pl-6 transition-all duration-300">
@@ -124,13 +124,13 @@
                             <i class="fas fa-chevron-down ml-1.5 text-xs group-hover:rotate-180 transition-transform duration-300"></i>
                         </button>
                         <div class="dropdown-menu absolute top-full left-0 mt-2 w-48 bg-white shadow-xl rounded-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50 py-2">
-                            <a href="USA.html" class="dropdown-item flex items-center px-5 py-3 text-gray-700 hover:bg-blue-50 hover:text-primary-500 hover:pl-6 transition-all duration-300">
+                            <a href="/usa" class="dropdown-item flex items-center px-5 py-3 text-gray-700 hover:bg-blue-50 hover:text-primary-500 hover:pl-6 transition-all duration-300">
                                 <img src="https://cdn.jsdelivr.net/npm/flag-icons/flags/4x3/us.svg" width="18" class="mr-3">USA
                             </a>
-                            <a href="Canada.html" class="dropdown-item flex items-center px-5 py-3 text-gray-700 hover:bg-blue-50 hover:text-primary-500 hover:pl-6 transition-all duration-300">
+                            <a href="/canada" class="dropdown-item flex items-center px-5 py-3 text-gray-700 hover:bg-blue-50 hover:text-primary-500 hover:pl-6 transition-all duration-300">
                                 <img src="https://cdn.jsdelivr.net/npm/flag-icons/flags/4x3/ca.svg" width="18" class="mr-3">Canada
                             </a>
-                            <a href="Kenya.html" class="dropdown-item flex items-center px-5 py-3 text-gray-700 hover:bg-blue-50 hover:text-primary-500 hover:pl-6 transition-all duration-300">
+                            <a href="/kenya" class="dropdown-item flex items-center px-5 py-3 text-gray-700 hover:bg-blue-50 hover:text-primary-500 hover:pl-6 transition-all duration-300">
                                 <img src="https://cdn.jsdelivr.net/npm/flag-icons/flags/4x3/ke.svg" width="18" class="mr-3">Kenya
                             </a>
                         </div>
@@ -138,7 +138,7 @@
                     
                     <!-- What We Do -->
                     <div class="nav-item mx-0.5">
-                        <a href="What We Do.html" class="nav-link flex items-center text-primary-500 font-medium text-sm px-2 py-2 rounded-lg hover:bg-blue-50 hover:text-primary-600 transition-all duration-300 whitespace-nowrap">
+                        <a href="/programs" class="nav-link flex items-center text-primary-500 font-medium text-sm px-2 py-2 rounded-lg hover:bg-blue-50 hover:text-primary-600 transition-all duration-300 whitespace-nowrap">
                             <i class="fas fa-chart-line mr-1.5 text-xs"></i>What We Do
                         </a>
                     </div>
@@ -155,7 +155,7 @@
                             <i class="fas fa-chevron-down ml-1.5 text-xs group-hover:rotate-180 transition-transform duration-300"></i>
                         </button>
                         <div class="dropdown-menu absolute top-full left-0 mt-2 w-48 bg-white shadow-xl rounded-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50 py-2">
-                            <a href="who-we-are.html" class="dropdown-item flex items-center px-5 py-3 text-gray-700 hover:bg-blue-50 hover:text-primary-500 hover:pl-6 transition-all duration-300">
+                            <a href="/who-we-are" class="dropdown-item flex items-center px-5 py-3 text-gray-700 hover:bg-blue-50 hover:text-primary-500 hover:pl-6 transition-all duration-300">
                                 <i class="fas fa-bullseye mr-3 w-4 text-center"></i>About Us
                             </a>
                             <a href="team.html" class="dropdown-item flex items-center px-5 py-3 text-gray-700 hover:bg-blue-50 hover:text-primary-500 hover:pl-6 transition-all duration-300">
@@ -171,13 +171,13 @@
                             <i class="fas fa-chevron-down ml-1.5 text-xs group-hover:rotate-180 transition-transform duration-300"></i>
                         </button>
                         <div class="dropdown-menu absolute top-full left-0 mt-2 w-48 bg-white shadow-xl rounded-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50 py-2">
-                            <a href="USA.html" class="dropdown-item flex items-center px-5 py-3 text-gray-700 hover:bg-blue-50 hover:text-primary-500 hover:pl-6 transition-all duration-300">
+                            <a href="/usa" class="dropdown-item flex items-center px-5 py-3 text-gray-700 hover:bg-blue-50 hover:text-primary-500 hover:pl-6 transition-all duration-300">
                                 <img src="https://cdn.jsdelivr.net/npm/flag-icons/flags/4x3/us.svg" width="18" class="mr-3">USA
                             </a>
-                            <a href="Canada.html" class="dropdown-item flex items-center px-5 py-3 text-gray-700 hover:bg-blue-50 hover:text-primary-500 hover:pl-6 transition-all duration-300">
+                            <a href="/canada" class="dropdown-item flex items-center px-5 py-3 text-gray-700 hover:bg-blue-50 hover:text-primary-500 hover:pl-6 transition-all duration-300">
                                 <img src="https://cdn.jsdelivr.net/npm/flag-icons/flags/4x3/ca.svg" width="18" class="mr-3">Canada
                             </a>
-                            <a href="Kenya.html" class="dropdown-item flex items-center px-5 py-3 text-gray-700 hover:bg-blue-50 hover:text-primary-500 hover:pl-6 transition-all duration-300">
+                            <a href="/kenya" class="dropdown-item flex items-center px-5 py-3 text-gray-700 hover:bg-blue-50 hover:text-primary-500 hover:pl-6 transition-all duration-300">
                                 <img src="https://cdn.jsdelivr.net/npm/flag-icons/flags/4x3/ke.svg" width="18" class="mr-3">Kenya
                             </a>
                         </div>
@@ -185,7 +185,7 @@
                     
                     <!-- What We Do -->
                     <div class="nav-item mx-0.5">
-                        <a href="What We Do.html" class="nav-link flex items-center text-primary-500 font-medium text-sm px-2 py-2 rounded-lg hover:bg-blue-50 hover:text-primary-600 transition-all duration-300 whitespace-nowrap">
+                        <a href="/programs" class="nav-link flex items-center text-primary-500 font-medium text-sm px-2 py-2 rounded-lg hover:bg-blue-50 hover:text-primary-600 transition-all duration-300 whitespace-nowrap">
                             <i class="fas fa-chart-line mr-1.5 text-xs"></i>What We Do
                         </a>
                     </div>
@@ -194,14 +194,14 @@
             
             <!-- Donate Button (Stage 1: xl screens) -->
             <div class="hidden xl:flex">
-                <a href="donate.html" class="action-button bg-gradient-to-r from-secondary-500 to-secondary-600 text-white px-4 py-2 rounded-full font-medium text-sm transition-all duration-300 hover:transform hover:-translate-y-1 hover:shadow-lg flex items-center">
+                <a href="/donate" class="action-button bg-gradient-to-r from-secondary-500 to-secondary-600 text-white px-4 py-2 rounded-full font-medium text-sm transition-all duration-300 hover:transform hover:-translate-y-1 hover:shadow-lg flex items-center">
                     <i class="fas fa-heartbeat mr-1.5 text-xs"></i>Donate
                 </a>
             </div>
             
             <!-- Donate Button (Stage 2: lg screens) -->
             <div class="hidden lg:flex xl:hidden">
-                <a href="donate.html" class="action-button bg-gradient-to-r from-secondary-500 to-secondary-600 text-white px-4 py-2 rounded-full font-medium text-sm transition-all duration-300 hover:transform hover:-translate-y-1 hover:shadow-lg flex items-center">
+                <a href="/donate" class="action-button bg-gradient-to-r from-secondary-500 to-secondary-600 text-white px-4 py-2 rounded-full font-medium text-sm transition-all duration-300 hover:transform hover:-translate-y-1 hover:shadow-lg flex items-center">
                     <i class="fas fa-heartbeat mr-1.5 text-xs"></i>Donate
                 </a>
             </div>
@@ -251,7 +251,7 @@
                 <i class="fas fa-angle-down transition-transform duration-300"></i>
             </button>
             <div class="mobile-dropdown-menu hidden mt-2 ml-4">
-                <a href="who-we-are.html" class="mobile-nav-link flex items-center text-gray-600 hover:text-primary-500 py-3 px-3 rounded-lg hover:bg-blue-50 transition-all duration-300">
+                <a href="/who-we-are" class="mobile-nav-link flex items-center text-gray-600 hover:text-primary-500 py-3 px-3 rounded-lg hover:bg-blue-50 transition-all duration-300">
                     <i class="fas fa-bullseye mr-3"></i>About Us
                 </a>
                 <a href="team.html" class="mobile-nav-link flex items-center text-gray-600 hover:text-primary-500 py-3 px-3 rounded-lg hover:bg-blue-50 transition-all duration-300">
@@ -267,13 +267,13 @@
                 <i class="fas fa-angle-down transition-transform duration-300"></i>
             </button>
             <div class="mobile-dropdown-menu hidden mt-2 ml-4">
-                <a href="USA.html" class="mobile-nav-link flex items-center text-gray-600 hover:text-primary-500 py-3 px-3 rounded-lg hover:bg-blue-50 transition-all duration-300">
+                <a href="/usa" class="mobile-nav-link flex items-center text-gray-600 hover:text-primary-500 py-3 px-3 rounded-lg hover:bg-blue-50 transition-all duration-300">
                     <img src="https://cdn.jsdelivr.net/npm/flag-icons/flags/4x3/us.svg" width="18" class="mr-3">USA
                 </a>
-                <a href="Canada.html" class="mobile-nav-link flex items-center text-gray-600 hover:text-primary-500 py-3 px-3 rounded-lg hover:bg-blue-50 transition-all duration-300">
+                <a href="/canada" class="mobile-nav-link flex items-center text-gray-600 hover:text-primary-500 py-3 px-3 rounded-lg hover:bg-blue-50 transition-all duration-300">
                     <img src="https://cdn.jsdelivr.net/npm/flag-icons/flags/4x3/ca.svg" width="18" class="mr-3">Canada
                 </a>
-                <a href="Kenya.html" class="mobile-nav-link flex items-center text-gray-600 hover:text-primary-500 py-3 px-3 rounded-lg hover:bg-blue-50 transition-all duration-300">
+                <a href="/kenya" class="mobile-nav-link flex items-center text-gray-600 hover:text-primary-500 py-3 px-3 rounded-lg hover:bg-blue-50 transition-all duration-300">
                     <img src="https://cdn.jsdelivr.net/npm/flag-icons/flags/4x3/ke.svg" width="18" class="mr-3">Kenya
                 </a>
             </div>
@@ -306,28 +306,28 @@
         
         <!-- Impact -->
         <div class="mobile-nav-item mb-3">
-            <a href="impact.html" class="mobile-nav-link flex items-center text-gray-700 hover:text-primary-500 py-3 px-3 rounded-lg hover:bg-blue-50 transition-all duration-300">
+            <a href="/impact" class="mobile-nav-link flex items-center text-gray-700 hover:text-primary-500 py-3 px-3 rounded-lg hover:bg-blue-50 transition-all duration-300">
                 <i class="fas fa-chart-line mr-3"></i>Impact
             </a>
         </div>
         
         <!-- Blog -->
         <div class="mobile-nav-item mb-3">
-            <a href="blog.html" class="mobile-nav-link flex items-center text-gray-700 hover:text-primary-500 py-3 px-3 rounded-lg hover:bg-blue-50 transition-all duration-300">
+            <a href="/blog" class="mobile-nav-link flex items-center text-gray-700 hover:text-primary-500 py-3 px-3 rounded-lg hover:bg-blue-50 transition-all duration-300">
                 <i class="fas fa-blog mr-3"></i>Blog
             </a>
         </div>
         
         <!-- Events -->
         <div class="mobile-nav-item mb-3">
-            <a href="events.html" class="mobile-nav-link flex items-center text-gray-700 hover:text-primary-500 py-3 px-3 rounded-lg hover:bg-blue-50 transition-all duration-300">
+            <a href="/events" class="mobile-nav-link flex items-center text-gray-700 hover:text-primary-500 py-3 px-3 rounded-lg hover:bg-blue-50 transition-all duration-300">
                 <i class="fas fa-calendar-alt mr-3"></i>Events
             </a>
         </div>
         
         <!-- Donate Button -->
         <div class="mobile-nav-item mt-6">
-            <a href="donate.html" class="action-button bg-gradient-to-r from-secondary-500 to-secondary-600 text-white px-6 py-3 rounded-full font-semibold transition-all duration-300 hover:shadow-lg flex items-center justify-center w-full">
+            <a href="/donate" class="action-button bg-gradient-to-r from-secondary-500 to-secondary-600 text-white px-6 py-3 rounded-full font-semibold transition-all duration-300 hover:shadow-lg flex items-center justify-center w-full">
                 <i class="fas fa-heartbeat mr-2"></i>Donate
             </a>
         </div>
@@ -349,21 +349,21 @@
     <div class="mobile-menu-body p-5 h-full overflow-y-auto pb-24">
         <!-- Impact -->
         <div class="mobile-nav-item mb-3">
-            <a href="impact.html" class="mobile-nav-link flex items-center text-gray-700 hover:text-primary-500 py-3 px-3 rounded-lg hover:bg-blue-50 transition-all duration-300">
+            <a href="/impact" class="mobile-nav-link flex items-center text-gray-700 hover:text-primary-500 py-3 px-3 rounded-lg hover:bg-blue-50 transition-all duration-300">
                 <i class="fas fa-chart-line mr-3"></i>Impact
             </a>
         </div>
         
         <!-- Blog -->
         <div class="mobile-nav-item mb-3">
-            <a href="blog.html" class="mobile-nav-link flex items-center text-gray-700 hover:text-primary-500 py-3 px-3 rounded-lg hover:bg-blue-50 transition-all duration-300">
+            <a href="/blog" class="mobile-nav-link flex items-center text-gray-700 hover:text-primary-500 py-3 px-3 rounded-lg hover:bg-blue-50 transition-all duration-300">
                 <i class="fas fa-blog mr-3"></i>Blog
             </a>
         </div>
         
         <!-- Events -->
         <div class="mobile-nav-item mb-3">
-            <a href="events.html" class="mobile-nav-link flex items-center text-gray-700 hover:text-primary-500 py-3 px-3 rounded-lg hover:bg-blue-50 transition-all duration-300">
+            <a href="/events" class="mobile-nav-link flex items-center text-gray-700 hover:text-primary-500 py-3 px-3 rounded-lg hover:bg-blue-50 transition-all duration-300">
                 <i class="fas fa-calendar-alt mr-3"></i>Events
             </a>
         </div>
@@ -392,28 +392,28 @@
         
         <!-- Impact -->
         <div class="mobile-nav-item mb-3">
-            <a href="impact.html" class="mobile-nav-link flex items-center text-gray-700 hover:text-primary-500 py-3 px-3 rounded-lg hover:bg-blue-50 transition-all duration-300">
+            <a href="/impact" class="mobile-nav-link flex items-center text-gray-700 hover:text-primary-500 py-3 px-3 rounded-lg hover:bg-blue-50 transition-all duration-300">
                 <i class="fas fa-chart-line mr-3"></i>Impact
             </a>
         </div>
         
         <!-- Blog -->
         <div class="mobile-nav-item mb-3">
-            <a href="blog.html" class="mobile-nav-link flex items-center text-gray-700 hover:text-primary-500 py-3 px-3 rounded-lg hover:bg-blue-50 transition-all duration-300">
+            <a href="/blog" class="mobile-nav-link flex items-center text-gray-700 hover:text-primary-500 py-3 px-3 rounded-lg hover:bg-blue-50 transition-all duration-300">
                 <i class="fas fa-blog mr-3"></i>Blog
             </a>
         </div>
         
         <!-- Events -->
         <div class="mobile-nav-item mb-3">
-            <a href="events.html" class="mobile-nav-link flex items-center text-gray-700 hover:text-primary-500 py-3 px-3 rounded-lg hover:bg-blue-50 transition-all duration-300">
+            <a href="/events" class="mobile-nav-link flex items-center text-gray-700 hover:text-primary-500 py-3 px-3 rounded-lg hover:bg-blue-50 transition-all duration-300">
                 <i class="fas fa-calendar-alt mr-3"></i>Events
             </a>
         </div>
         
         <!-- Donate Button -->
         <div class="mobile-nav-item mt-6">
-            <a href="donate.html" class="action-button bg-gradient-to-r from-secondary-500 to-secondary-600 text-white px-6 py-3 rounded-full font-semibold transition-all duration-300 hover:shadow-lg flex items-center justify-center w-full">
+            <a href="/donate" class="action-button bg-gradient-to-r from-secondary-500 to-secondary-600 text-white px-6 py-3 rounded-full font-semibold transition-all duration-300 hover:shadow-lg flex items-center justify-center w-full">
                 <i class="fas fa-heartbeat mr-2"></i>Donate
             </a>
         </div>
