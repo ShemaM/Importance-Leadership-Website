@@ -61,11 +61,33 @@
                         </div>
                     </div>
                     
-                    <!-- What We Do -->
-                    <div class="nav-item mx-0.5">
-                        <a href="/what-we-do" class="nav-link flex items-center text-primary-500 font-medium text-sm px-2 py-2 rounded-lg hover:bg-blue-50 hover:text-primary-600 transition-all duration-300 whitespace-nowrap">
+                    <!-- What We Do Dropdown -->
+                    <div class="nav-item mx-0.5 relative group">
+                        <button class="nav-link flex items-center text-primary-500 font-medium text-sm px-2 py-2 rounded-lg hover:bg-blue-50 hover:text-primary-600 transition-all duration-300 whitespace-nowrap">
                             <i class="fas fa-chart-line mr-1.5 text-xs"></i>What We Do
-                        </a>
+                            <i class="fas fa-chevron-down ml-1.5 text-xs group-hover:rotate-180 transition-transform duration-300"></i>
+                        </button>
+                        <!-- Dropdown Menu -->
+                        <div class="dropdown-menu absolute top-full left-0 mt-2 w-48 bg-white shadow-xl rounded-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50 py-2">
+                            <a href="/what-we-do" class="dropdown-item flex items-center px-5 py-3 text-gray-700 hover:bg-blue-50 hover:text-primary-500 hover:pl-6 transition-all duration-300">
+                                <i class="fas fa-chart-line mr-3 w-4 text-center"></i>What We Do
+                            </a>
+                            <a href="/programs/advocacy-initiatives" class="dropdown-item flex items-center px-5 py-3 text-gray-700 hover:bg-blue-50 hover:text-primary-500 hover:pl-6 transition-all duration-300">
+                                <i class="fas fa-balance-scale mr-3 w-4 text-center"></i>Advocacy Initiatives
+                            </a>
+                            <a href="/programs/mental-health" class="dropdown-item flex items-center px-5 py-3 text-gray-700 hover:bg-blue-50 hover:text-primary-500 hover:pl-6 transition-all duration-300">
+                                <i class="fas fa-heart mr-3 w-4 text-center"></i>Mental Health Programs
+                            </a>
+                            <a href="/programs/networking" class="dropdown-item flex items-center px-5 py-3 text-gray-700 hover:bg-blue-50 hover:text-primary-500 hover:pl-6 transition-all duration-300">
+                                <i class="fas fa-network-wired mr-3 w-4 text-center"></i>Professional Networking
+                            </a>
+                            <a href="/programs/leadership-development" class="dropdown-item flex items-center px-5 py-3 text-gray-700 hover:bg-blue-50 hover:text-primary-500 hover:pl-6 transition-all duration-300">
+                                <i class="fas fa-chalkboard-teacher mr-3 w-4 text-center"></i>Leadership Development
+                            </a>
+                            <a href="/programs/climate-change" class="dropdown-item flex items-center px-5 py-3 text-gray-700 hover:bg-blue-50 hover:text-primary-500 hover:pl-6 transition-all duration-300">
+                                <i class="fas fa-leaf mr-3 w-4 text-center"></i>Climate Change Awareness
+                            </a>
+                        </div>
                     </div>
                     
                     <!-- Impact -->
@@ -136,11 +158,33 @@
                         </div>
                     </div>
                     
-                    <!-- What We Do -->
-                    <div class="nav-item mx-0.5">
-                        <a href="/what-we-do" class="nav-link flex items-center text-primary-500 font-medium text-sm px-2 py-2 rounded-lg hover:bg-blue-50 hover:text-primary-600 transition-all duration-300 whitespace-nowrap">
+                    <!-- What We Do Dropdown -->
+                    <div class="nav-item mx-0.5 relative group">
+                        <button class="nav-link flex items-center text-primary-500 font-medium text-sm px-2 py-2 rounded-lg hover:bg-blue-50 hover:text-primary-600 transition-all duration-300 whitespace-nowrap">
                             <i class="fas fa-chart-line mr-1.5 text-xs"></i>What We Do
-                        </a>
+                            <i class="fas fa-chevron-down ml-1.5 text-xs group-hover:rotate-180 transition-transform duration-300"></i>
+                        </button>
+                        <!-- Dropdown Menu -->
+                        <div class="dropdown-menu absolute top-full left-0 mt-2 w-48 bg-white shadow-xl rounded-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50 py-2">
+                            <a href="/what-we-do" class="dropdown-item flex items-center px-5 py-3 text-gray-700 hover:bg-blue-50 hover:text-primary-500 hover:pl-6 transition-all duration-300">
+                                <i class="fas fa-chart-line mr-3 w-4 text-center"></i>What We Do
+                            </a>
+                            <a href="/programs/advocacy-initiatives" class="dropdown-item flex items-center px-5 py-3 text-gray-700 hover:bg-blue-50 hover:text-primary-500 hover:pl-6 transition-all duration-300">
+                                <i class="fas fa-balance-scale mr-3 w-4 text-center"></i>Advocacy Initiatives
+                            </a>
+                            <a href="/programs/mental-health" class="dropdown-item flex items-center px-5 py-3 text-gray-700 hover:bg-blue-50 hover:text-primary-500 hover:pl-6 transition-all duration-300">
+                                <i class="fas fa-heart mr-3 w-4 text-center"></i>Mental Health Programs
+                            </a>
+                            <a href="/programs/networking" class="dropdown-item flex items-center px-5 py-3 text-gray-700 hover:bg-blue-50 hover:text-primary-500 hover:pl-6 transition-all duration-300">
+                                <i class="fas fa-network-wired mr-3 w-4 text-center"></i>Professional Networking
+                            </a>
+                            <a href="/programs/leadership-development" class="dropdown-item flex items-center px-5 py-3 text-gray-700 hover:bg-blue-50 hover:text-primary-500 hover:pl-6 transition-all duration-300">
+                                <i class="fas fa-chalkboard-teacher mr-3 w-4 text-center"></i>Leadership Development
+                            </a>
+                            <a href="/programs/climate-change" class="dropdown-item flex items-center px-5 py-3 text-gray-700 hover:bg-blue-50 hover:text-primary-500 hover:pl-6 transition-all duration-300">
+                                <i class="fas fa-leaf mr-3 w-4 text-center"></i>Climate Change Awareness
+                            </a>
+                        </div>
                     </div>
                 </div>
             </nav>
@@ -183,11 +227,33 @@
                         </div>
                     </div>
                     
-                    <!-- What We Do -->
-                    <div class="nav-item mx-0.5">
-                        <a href="/what-we-do" class="nav-link flex items-center text-primary-500 font-medium text-sm px-2 py-2 rounded-lg hover:bg-blue-50 hover:text-primary-600 transition-all duration-300 whitespace-nowrap">
+                    <!-- What We Do Dropdown -->
+                    <div class="nav-item mx-0.5 relative group">
+                        <button class="nav-link flex items-center text-primary-500 font-medium text-sm px-2 py-2 rounded-lg hover:bg-blue-50 hover:text-primary-600 transition-all duration-300 whitespace-nowrap">
                             <i class="fas fa-chart-line mr-1.5 text-xs"></i>What We Do
-                        </a>
+                            <i class="fas fa-chevron-down ml-1.5 text-xs group-hover:rotate-180 transition-transform duration-300"></i>
+                        </button>
+                        <!-- Dropdown Menu -->
+                        <div class="dropdown-menu absolute top-full left-0 mt-2 w-48 bg-white shadow-xl rounded-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50 py-2">
+                            <a href="/what-we-do" class="dropdown-item flex items-center px-5 py-3 text-gray-700 hover:bg-blue-50 hover:text-primary-500 hover:pl-6 transition-all duration-300">
+                                <i class="fas fa-chart-line mr-3 w-4 text-center"></i>What We Do
+                            </a>
+                            <a href="/programs/advocacy-initiatives" class="dropdown-item flex items-center px-5 py-3 text-gray-700 hover:bg-blue-50 hover:text-primary-500 hover:pl-6 transition-all duration-300">
+                                <i class="fas fa-balance-scale mr-3 w-4 text-center"></i>Advocacy Initiatives
+                            </a>
+                            <a href="/programs/mental-health" class="dropdown-item flex items-center px-5 py-3 text-gray-700 hover:bg-blue-50 hover:text-primary-500 hover:pl-6 transition-all duration-300">
+                                <i class="fas fa-heart mr-3 w-4 text-center"></i>Mental Health Programs
+                            </a>
+                            <a href="/programs/networking" class="dropdown-item flex items-center px-5 py-3 text-gray-700 hover:bg-blue-50 hover:text-primary-500 hover:pl-6 transition-all duration-300">
+                                <i class="fas fa-network-wired mr-3 w-4 text-center"></i>Professional Networking
+                            </a>
+                            <a href="/programs/leadership-development" class="dropdown-item flex items-center px-5 py-3 text-gray-700 hover:bg-blue-50 hover:text-primary-500 hover:pl-6 transition-all duration-300">
+                                <i class="fas fa-chalkboard-teacher mr-3 w-4 text-center"></i>Leadership Development
+                            </a>
+                            <a href="/programs/climate-change" class="dropdown-item flex items-center px-5 py-3 text-gray-700 hover:bg-blue-50 hover:text-primary-500 hover:pl-6 transition-all duration-300">
+                                <i class="fas fa-leaf mr-3 w-4 text-center"></i>Climate Change Awareness
+                            </a>
+                        </div>
                     </div>
                 </div>
             </nav>
@@ -286,6 +352,9 @@
                 <i class="fas fa-angle-down transition-transform duration-300"></i>
             </button>
             <div class="mobile-dropdown-menu hidden mt-2 ml-4">
+                <a href="/what-we-do" class="mobile-nav-link flex items-center text-gray-600 hover:text-primary-500 py-3 px-3 rounded-lg hover:bg-blue-50 transition-all duration-300">
+                    <i class="fas fa-chart-line mr-3"></i>What We Do
+                </a>
                 <a href="/programs/advocacy-initiatives" class="mobile-nav-link flex items-center text-gray-600 hover:text-primary-500 py-3 px-3 rounded-lg hover:bg-blue-50 transition-all duration-300">
                     <i class="fas fa-balance-scale mr-3"></i>Advocacy Initiatives
                 </a>
