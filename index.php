@@ -146,12 +146,6 @@ include 'components/nav.php';
                     </div>
                 <?php endforeach; ?>
             </div>
-            
-            <div class="text-center mt-12" data-aos="fade-up" data-aos-delay="300">
-                <a href="/programs" class="bg-primary-500 hover:bg-primary-600 text-white px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-300 transform hover:-translate-y-1 hover:shadow-lg">
-                    View All Programs
-                </a>
-            </div>
         </div>
     </section>
     
