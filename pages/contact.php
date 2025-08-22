@@ -301,65 +301,6 @@ include __DIR__ . '/../components/nav.php';
         </div>
     </section>
 
-    <!-- Additional Contact Information -->
-    <section class="py-20 bg-gradient-to-br from-primary-500 via-primary-600 to-blue-600 text-white">
-        <div class="container mx-auto px-6">
-            <div class="text-center mb-16">
-                <h2 class="text-3xl md:text-4xl font-bold font-secondary mb-4">Visit Our Offices</h2>
-                <div class="w-20 h-1 bg-accent-500 mx-auto mb-6"></div>
-                <p class="text-xl max-w-3xl mx-auto opacity-95">
-                    Find us across three continents with dedicated teams ready to serve you
-                </p>
-            </div>
-            
-            <div class="grid md:grid-cols-3 gap-8">
-                <!-- Kenya Office -->
-                <div class="bg-white bg-opacity-10 rounded-2xl p-8 text-center border border-white border-opacity-20 backdrop-filter backdrop-blur-lg">
-                    <div class="w-16 h-16 bg-green-500 rounded-full flex items-center justify-center mx-auto mb-6">
-                        <i class="fas fa-map-marker-alt text-white text-2xl"></i>
-                    </div>
-                    <h3 class="text-xl font-bold font-secondary mb-4">Kenya Office</h3>
-                    <p class="mb-4 opacity-90">
-                        Nairobi, Kenya<br>
-                        East Africa Hub
-                    </p>
-                    <p class="text-sm opacity-75">
-                        Serving our largest community of young leaders
-                    </p>
-                </div>
-                
-                <!-- USA Office -->
-                <div class="bg-white bg-opacity-10 rounded-2xl p-8 text-center border border-white border-opacity-20 backdrop-filter backdrop-blur-lg">
-                    <div class="w-16 h-16 bg-blue-500 rounded-full flex items-center justify-center mx-auto mb-6">
-                        <i class="fas fa-map-marker-alt text-white text-2xl"></i>
-                    </div>
-                    <h3 class="text-xl font-bold font-secondary mb-4">USA Office</h3>
-                    <p class="mb-4 opacity-90">
-                        03301 Concord<br>
-                        New Hampshire, USA
-                    </p>
-                    <p class="text-sm opacity-75">
-                        North American operations headquarters
-                    </p>
-                </div>
-                
-                <!-- Canada Office -->
-                <div class="bg-white bg-opacity-10 rounded-2xl p-8 text-center border border-white border-opacity-20 backdrop-filter backdrop-blur-lg">
-                    <div class="w-16 h-16 bg-red-500 rounded-full flex items-center justify-center mx-auto mb-6">
-                        <i class="fas fa-map-marker-alt text-white text-2xl"></i>
-                    </div>
-                    <h3 class="text-xl font-bold font-secondary mb-4">Canada Office</h3>
-                    <p class="mb-4 opacity-90">
-                        Winnipeg, Manitoba<br>
-                        Canada
-                    </p>
-                    <p class="text-sm opacity-75">
-                        Canadian programs and partnerships
-                    </p>
-                </div>
-            </div>
-        </div>
-    </section>
 </main>
 
 <!-- Back to Top Button -->
