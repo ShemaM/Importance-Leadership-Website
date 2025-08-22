@@ -7,25 +7,35 @@
     <div class="absolute inset-0 z-0">
         <div class="swiper hero-swiper w-full h-full">
             <div class="swiper-wrapper">
-                <!-- Leadership Development -->
+                <!-- Hero Background -->
                 <div class="swiper-slide">
                     <div class="w-full h-full bg-cover bg-center bg-no-repeat" 
-                         style="background-image: url('https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1471&q=80')"></div>
+                         style="background-image: url('assets/images/backgrounds/hero-bg.jpg')"></div>
                 </div>
-                <!-- Young Leaders -->
+                <!-- Homepage Background -->
                 <div class="swiper-slide">
                     <div class="w-full h-full bg-cover bg-center bg-no-repeat" 
-                         style="background-image: url('https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=1470&q=80')"></div>
+                         style="background-image: url('assets/images/backgrounds/homepage-bg.jpg')"></div>
                 </div>
-                <!-- Youth Summit -->
+                <!-- Leadership Training -->
                 <div class="swiper-slide">
                     <div class="w-full h-full bg-cover bg-center bg-no-repeat" 
-                         style="background-image: url('https://images.unsplash.com/photo-1464983953574-0892a716854b?auto=format&fit=crop&w=1470&q=80')"></div>
+                         style="background-image: url('assets/images/backgrounds/leadership-training-session.jpg')"></div>
                 </div>
-                <!-- Workshop Session -->
+                <!-- Community Engagement -->
                 <div class="swiper-slide">
                     <div class="w-full h-full bg-cover bg-center bg-no-repeat" 
-                         style="background-image: url('https://images.unsplash.com/photo-1503676382389-4809596d5290?auto=format&fit=crop&w=1470&q=80')"></div>
+                         style="background-image: url('assets/images/backgrounds/community-engagement.jpg')"></div>
+                </div>
+                <!-- Women Leadership -->
+                <div class="swiper-slide">
+                    <div class="w-full h-full bg-cover bg-center bg-no-repeat" 
+                         style="background-image: url('assets/images/backgrounds/women-leadership-group.jpg')"></div>
+                </div>
+                <!-- Impact Hero -->
+                <div class="swiper-slide">
+                    <div class="w-full h-full bg-cover bg-center bg-no-repeat" 
+                         style="background-image: url('assets/images/backgrounds/impact-hero.jpg')"></div>
                 </div>
             </div>
             <!-- Slider pagination -->
@@ -38,7 +48,7 @@
     
     <!-- Content -->
     <div class="container mx-auto px-4 relative z-20 py-8">
-        <div class="max-w-4xl">
+        <div class="max-w-4xl text-center sm:text-left">
             <h1 class="text-4xl md:text-6xl lg:text-7xl font-bold font-secondary leading-tight mb-6" data-aos="fade-up" data-aos-delay="100">
                 <span class="text-accent-500 font-bold">Importance Leadership</span>
                 <br>
@@ -61,8 +71,8 @@
                 </a>
             </div>
             
-            <!-- Impact Statistics -->
-            <div class="flex flex-col sm:flex-row gap-8" data-aos="fade-up" data-aos-delay="400">
+            <!-- Impact Statistics (Hidden on mobile) -->
+            <div class="hidden sm:flex flex-col sm:flex-row gap-8" data-aos="fade-up" data-aos-delay="400">
                 <div class="text-center sm:text-left">
                     <div class="text-4xl md:text-5xl font-bold text-accent-500 mb-2" data-counter="1500">0</div>
                     <div class="text-sm uppercase tracking-wider opacity-90">Young Leaders Developed</div>
