@@ -110,14 +110,7 @@ include __DIR__ . '/../components/nav.php';
 <!-- Main Content -->
 <main id="main-content">
     <!-- Hero Section -->
-    <section class="relative min-h-[70vh] flex items-center justify-center text-white overflow-hidden">
-        <!-- Background Image with Overlay -->
-        <div class="absolute inset-0">
-            <img src="https://images.unsplash.com/photo-1560472354-b33ff0c44a43?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80" 
-                 alt="Team collaboration and communication" 
-                 class="w-full h-full object-cover">
-            <div class="absolute inset-0 gradient-overlay"></div>
-        </div>
+    <section class="relative min-h-[70vh] flex items-center justify-center text-white overflow-hidden bg-gradient-to-br from-primary-500 to-primary-600">
         
         
         <!-- Content -->
