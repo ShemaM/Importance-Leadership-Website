@@ -215,21 +215,21 @@ include 'components/nav.php';
                 </div>
                 <div class="partner-logo" data-aos="fade-up" data-aos-delay="200">
                     <a href="https://www.savethechildren.org" target="_blank" rel="noopener noreferrer" class="block p-4 rounded-lg hover:shadow-lg transition-all duration-300">
-                        <img src="/assets/images/partners/Save the children.png" 
+                        <img src="/assets/images/partners/save-the-children.png" 
                              alt="Save the Children"
                              class="w-full h-16 object-contain filter grayscale hover:grayscale-0 transition-all duration-300">
                     </a>
                 </div>
                 <div class="partner-logo" data-aos="fade-up" data-aos-delay="300">
                     <a href="https://www.wya.net" target="_blank" rel="noopener noreferrer" class="block p-4 rounded-lg hover:shadow-lg transition-all duration-300">
-                        <img src="/assets/images/partners/World Youth Alliance.png" 
+                        <img src="/assets/images/partners/world-youth-alliance.png" 
                              alt="World Youth Alliance"
                              class="w-full h-16 object-contain filter grayscale hover:grayscale-0 transition-all duration-300">
                     </a>
                 </div>
                 <div class="partner-logo" data-aos="fade-up" data-aos-delay="400">
                     <a href="https://plan-international.org" target="_blank" rel="noopener noreferrer" class="block p-4 rounded-lg hover:shadow-lg transition-all duration-300">
-                        <img src="/assets/images/partners/Plan International.png" 
+                        <img src="/assets/images/partners/plan-international.png" 
                              alt="Plan International"
                              class="w-full h-16 object-contain filter grayscale hover:grayscale-0 transition-all duration-300">
                     </a>

@@ -267,64 +267,47 @@ include __DIR__ . '/../components/nav.php';
                 </p>
             </div>
 
-            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8 items-center" data-aos="fade-up">
-                <!-- UNICEF -->
-                <div class="flex items-center justify-center p-4 grayscale hover:grayscale-0 transition-all duration-300 opacity-70 hover:opacity-100">
-                    <a href="https://www.unicef.org" target="_blank" rel="noopener noreferrer" class="block">
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8 items-center">
+                <div class="partner-logo" data-aos="fade-up" data-aos-delay="100">
+                    <a href="https://www.unicef.org" target="_blank" rel="noopener noreferrer" class="block p-4 rounded-lg hover:shadow-lg transition-all duration-300">
                         <img src="/assets/images/partners/UNICEF.png" 
-                             alt="UNICEF Logo" 
-                             class="h-12 w-auto"
-                             title="United Nations Children's Fund">
+                             alt="UNICEF - United Nations Children's Fund"
+                             class="w-full h-16 object-contain filter grayscale hover:grayscale-0 transition-all duration-300">
                     </a>
                 </div>
-                
-                <!-- Save the Children -->
-                <div class="flex items-center justify-center p-4 grayscale hover:grayscale-0 transition-all duration-300 opacity-70 hover:opacity-100">
-                    <a href="https://www.savethechildren.org" target="_blank" rel="noopener noreferrer" class="block">
-                        <img src="/assets/images/partners/Save the children.png" 
-                             alt="Save the Children Logo" 
-                             class="h-12 w-auto"
-                             title="Save the Children International">
+                <div class="partner-logo" data-aos="fade-up" data-aos-delay="200">
+                    <a href="https://www.savethechildren.org" target="_blank" rel="noopener noreferrer" class="block p-4 rounded-lg hover:shadow-lg transition-all duration-300">
+                        <img src="/assets/images/partners/save-the-children.png" 
+                             alt="Save the Children"
+                             class="w-full h-16 object-contain filter grayscale hover:grayscale-0 transition-all duration-300">
                     </a>
                 </div>
-                
-                <!-- World Youth Alliance -->
-                <div class="flex items-center justify-center p-4 grayscale hover:grayscale-0 transition-all duration-300 opacity-70 hover:opacity-100">
-                    <a href="https://www.wya.net" target="_blank" rel="noopener noreferrer" class="block">
-                        <img src="/assets/images/partners/World Youth Alliance.png" 
-                             alt="World Youth Alliance Logo" 
-                             class="h-12 w-auto"
-                             title="World Youth Alliance">
+                <div class="partner-logo" data-aos="fade-up" data-aos-delay="300">
+                    <a href="https://www.wya.net" target="_blank" rel="noopener noreferrer" class="block p-4 rounded-lg hover:shadow-lg transition-all duration-300">
+                        <img src="/assets/images/partners/world-youth-alliance.png" 
+                             alt="World Youth Alliance"
+                             class="w-full h-16 object-contain filter grayscale hover:grayscale-0 transition-all duration-300">
                     </a>
                 </div>
-                
-                <!-- Plan International -->
-                <div class="flex items-center justify-center p-4 grayscale hover:grayscale-0 transition-all duration-300 opacity-70 hover:opacity-100">
-                    <a href="https://plan-international.org" target="_blank" rel="noopener noreferrer" class="block">
-                        <img src="/assets/images/partners/Plan International.png" 
-                             alt="Plan International Logo" 
-                             class="h-12 w-auto"
-                             title="Plan International">
+                <div class="partner-logo" data-aos="fade-up" data-aos-delay="400">
+                    <a href="https://plan-international.org" target="_blank" rel="noopener noreferrer" class="block p-4 rounded-lg hover:shadow-lg transition-all duration-300">
+                        <img src="/assets/images/partners/plan-international.png" 
+                             alt="Plan International"
+                             class="w-full h-16 object-contain filter grayscale hover:grayscale-0 transition-all duration-300">
                     </a>
                 </div>
-                
-                <!-- International Youth Foundation -->
-                <div class="flex items-center justify-center p-4 grayscale hover:grayscale-0 transition-all duration-300 opacity-70 hover:opacity-100">
-                    <a href="https://www.iyfnet.org" target="_blank" rel="noopener noreferrer" class="block">
+                <div class="partner-logo" data-aos="fade-up" data-aos-delay="500">
+                    <a href="https://www.iyfnet.org" target="_blank" rel="noopener noreferrer" class="block p-4 rounded-lg hover:shadow-lg transition-all duration-300">
                         <img src="/assets/images/partners/iyf.png" 
-                             alt="International Youth Foundation Logo" 
-                             class="h-12 w-auto"
-                             title="International Youth Foundation">
+                             alt="International Youth Foundation"
+                             class="w-full h-16 object-contain filter grayscale hover:grayscale-0 transition-all duration-300">
                     </a>
                 </div>
-                
-                <!-- Global Youth Action Network -->
-                <div class="flex items-center justify-center p-4 grayscale hover:grayscale-0 transition-all duration-300 opacity-70 hover:opacity-100">
-                    <a href="https://web.archive.org/web/20180321000000*/http://gyan.tigweb.org" target="_blank" rel="noopener noreferrer" class="block">
+                <div class="partner-logo" data-aos="fade-up" data-aos-delay="600">
+                    <a href="#" class="block p-4 rounded-lg hover:shadow-lg transition-all duration-300">
                         <img src="/assets/images/partners/GYAN.jpg" 
-                             alt="Global Youth Action Network Logo" 
-                             class="h-12 w-auto"
-                             title="Global Youth Action Network">
+                             alt="Global Youth Action Network"
+                             class="w-full h-16 object-contain filter grayscale hover:grayscale-0 transition-all duration-300">
                     </a>
                 </div>
             </div>
