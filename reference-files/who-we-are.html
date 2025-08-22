@@ -1,0 +1,590 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="canonical" href="https://www.importanceleadership.com/who-we-are.html">
+    <meta name="robots" content="index, follow">
+    <meta property="og:title" content="Who We Are | Importance Leadership">
+    <meta property="og:description" content="Discover our mission, vision, and the team behind Importance Leadership.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.importanceleadership.com/who-we-are.html">
+    <meta property="og:image" content="https://www.importanceleadership.com/image/logo.jpg">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Who We Are | Importance Leadership">
+    <meta name="twitter:description" content="Discover our mission, vision, and the team behind Importance Leadership.">
+    <meta name="twitter:image" content="https://www.importanceleadership.com/image/logo.jpg">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Discover our mission, vision, and the team behind Importance Leadership.">
+    <meta name="keywords" content="Leadership, Impact, Community, Mentorship, Youth Empowerment">
+    <meta name="author" content="Importance Leadership">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Discover our mission, vision, and the team behind Importance Leadership.">
+    <meta name="keywords" content="Leadership, Impact, Community, Mentorship, Youth Empowerment">
+    <meta name="author" content="Importance Leadership">
+    <title>Who We Are</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="image/logo.jpg">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700&family=Montserrat:wght@600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- CSS -->
+    <style>
+        :root {
+            --primary: #0b1f3a;      /* Deep navy */
+            --primary-light: #1a365d;
+            --secondary: #FF9F1C;    /* Vibrant orange */
+            --secondary-light: #FFBF69;
+            --accent: #2EC4B6;      /* Teal */
+            --light: #FDFFFC;       /* Off-white */
+            --dark: #011627;        /* Dark blue-black */
+            --text-light: #ffffff;
+            --text-dark: #333333;
+            --transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+            --shadow-sm: 0 1px 3px rgba(0,0,0,0.12);
+            --shadow-md: 0 4px 6px rgba(0,0,0,0.1);
+            --shadow-lg: 0 10px 25px rgba(0,0,0,0.1);
+            --radius-sm: 8px;
+            --radius-md: 12px;
+            --radius-lg: 16px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Manrope', sans-serif;
+            color: var(--text-dark);
+            line-height: 1.6;
+            background-color: var(--light);
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4, h5 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            color: var(--primary);
+            line-height: 1.2;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        section {
+            padding: 80px 0;
+            position: relative;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 28px;
+            border-radius: 50px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: var(--transition);
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .btn-primary {
+            background-color: var(--secondary);
+            color: var(--primary);
+        }
+
+        .btn-primary:hover {
+            background-color: var(--secondary-light);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .btn-outline {
+            background: transparent;
+            border: 2px solid var(--secondary);
+            color: var(--secondary);
+        }
+
+        .btn-outline:hover {
+            background-color: var(--secondary);
+            color: var(--primary);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .text-center {
+            text-align: center;
+        }
+
+        .mb-1 { margin-bottom: 8px; }
+        .mb-2 { margin-bottom: 16px; }
+        .mb-3 { margin-bottom: 24px; }
+        .mb-4 { margin-bottom: 32px; }
+        .mb-5 { margin-bottom: 40px; }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, rgba(11,31,58,0.95) 0%, rgba(26,54,93,0.95) 100%), url('image/hero-bg.jpg') center/cover no-repeat;
+            color: var(--text-light);
+            padding: 120px 0 100px;
+            position: relative;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 100px;
+            background: linear-gradient(to top, var(--light), transparent);
+            z-index: 1;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .hero-title {
+            font-size: 3.5rem;
+            margin-bottom: 24px;
+            animation: fadeInUp 0.8s ease-out;
+        }
+
+        .hero-title span {
+            color: var(--secondary);
+        }
+
+        .hero-subtitle {
+            font-size: 1.25rem;
+            opacity: 0.9;
+            margin-bottom: 40px;
+            animation: fadeInUp 0.8s ease-out 0.2s both;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 16px;
+            justify-content: center;
+            animation: fadeInUp 0.8s ease-out 0.4s both;
+        }
+
+        /* About Section */
+        .about {
+            position: relative;
+        }
+
+        .section-title {
+            position: relative;
+            margin-bottom: 60px;
+            text-align: center;
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 4px;
+            background: var(--secondary);
+            margin: 16px auto 0;
+            border-radius: 2px;
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: center;
+        }
+
+        .founder-card {
+            background: white;
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            box-shadow: var(--shadow-lg);
+            transition: var(--transition);
+            height: 100%;
+        }
+
+        .founder-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .founder-img {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+        }
+
+        .founder-content {
+            padding: 32px;
+        }
+
+        .founder-name {
+            font-size: 1.75rem;
+            margin-bottom: 8px;
+        }
+
+        .founder-title {
+            color: var(--secondary);
+            font-weight: 600;
+            margin-bottom: 16px;
+            display: block;
+        }
+
+        .about-text p {
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+        }
+
+        .about-text p:last-child {
+            margin-bottom: 0;
+        }
+
+        /* Mission Section */
+        .mission {
+            background-color: var(--primary);
+            color: var(--text-light);
+        }
+
+        .mission .section-title {
+            color: var(--text-light);
+        }
+
+        .mission .section-title::after {
+            background: var(--accent);
+        }
+
+        .mission-cards {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+        }
+
+        .mission-card {
+            background: rgba(255,255,255,0.1);
+            backdrop-filter: blur(10px);
+            border-radius: var(--radius-lg);
+            padding: 40px;
+            transition: var(--transition);
+            border-left: 4px solid var(--accent);
+        }
+
+        .mission-card:hover {
+            transform: translateY(-5px);
+            background: rgba(255,255,255,0.15);
+        }
+
+        .mission-icon {
+            width: 60px;
+            height: 60px;
+            background: var(--accent);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 24px;
+            color: var(--primary);
+            font-size: 1.5rem;
+        }
+
+        .mission-card h3 {
+            color: var(--text-light);
+            margin-bottom: 16px;
+        }
+
+        .mission-card p {
+            opacity: 0.9;
+        }
+
+        .mission-card .lead {
+            font-weight: 600;
+            margin-bottom: 16px;
+            opacity: 1;
+        }
+
+        /* CTA Section */
+        .cta {
+            background: linear-gradient(135deg, var(--secondary) 0%, var(--accent) 100%);
+            color: var(--primary);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('image/pattern.png') center/cover;
+            opacity: 0.1;
+        }
+
+        .cta-content {
+            position: relative;
+            z-index: 2;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .cta-title {
+            font-size: 2.5rem;
+            margin-bottom: 24px;
+            color: var(--primary);
+        }
+
+        .cta-subtitle {
+            font-size: 1.1rem;
+            margin-bottom: 40px;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 16px;
+            justify-content: center;
+        }
+
+        .cta .btn-primary {
+            background-color: var(--primary);
+            color: var(--text-light);
+        }
+
+        .cta .btn-primary:hover {
+            background-color: var(--primary-light);
+        }
+
+        .cta .btn-outline {
+            border-color: var(--primary);
+            color: var(--primary);
+        }
+
+        .cta .btn-outline:hover {
+            background-color: var(--primary);
+            color: var(--text-light);
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 992px) {
+            .hero-title {
+                font-size: 3rem;
+            }
+            
+            .about-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .mission-cards {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            section {
+                padding: 60px 0;
+            }
+            
+            .hero-title {
+                font-size: 2.5rem;
+            }
+            
+            .hero-subtitle {
+                font-size: 1.1rem;
+            }
+            
+            .hero-buttons, .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .founder-img {
+                height: 350px;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .hero {
+                padding: 100px 0 80px;
+            }
+            
+            .hero-title {
+                font-size: 2rem;
+            }
+            
+            .section-title {
+                font-size: 1.8rem;
+                margin-bottom: 40px;
+            }
+            
+            .founder-content {
+                padding: 24px;
+            }
+            
+            .mission-card {
+                padding: 30px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Load Header -->
+    <div id="header-container"></div>
+    <script src="loadHeader.js"></script>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="hero-title text-white">Meet the Heart of Importance Leadership</h1>
+                <p class="hero-subtitle">
+                    We are a dynamic movement of changemakers, mentors, and advocates committed to unlocking the leadership potential in every young person. Our mission is to inspire, empower, and equip youth to create lasting impact in their communities and beyond.
+                </p>
+                <div class="hero-buttons">
+                    <a href="#about" class="btn btn-primary">Background History</a>
+                    <a href="team.html" class="btn btn-primary">Meet the Team</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <h2 class="section-title">Background History</h2>
+            
+            <div class="about-grid">
+                <div class="founder-card">
+                    <img src="image/fiston.png" class="founder-img" alt="Fiston Ndayishimiye" style="object-fit: cover; object-position: center;">
+                    <div class="founder-content">
+                        <h3 class="founder-name">Fiston Ndayishimiye</h3>
+                        <span class="founder-title">Founder & Visionary Leader</span>
+                        <p class="mb-4">"Empowering young people to become ethical, inclusive, and purpose-driven leaders."</p>
+                        <a href="team.html#fisto" class="btn btn-primary">Learn More</a>
+                    </div>
+                </div>
+                
+                <div class="about-text">
+                    <p class="lead">Importance Leadership is a non-profit youth-led organization dedicated to empowering youth through advocacy and education.</p>
+                    <p>We advocate for equality, equity, and justice for youth, particularly refugees, minorities, and the underprivileged. Our programs provide mentorship, mental health training, climate change awareness, and leadership development to help young people actively participate in shaping policies and solutions that impact their lives.</p>
+                    <p>Founded by Fiston Ndayishimiye, whose journey from the Democratic Republic of Congo to becoming a visionary leader exemplifies resilience and determination. His experiences with war, ethnic conflict, and systemic oppression fuel his mission to create change.</p>
+                    <p>Inspired by leaders like Patrice Lumumba, Martin Luther King Jr., and Malcolm X, Fiston believes in the power of youth to transform society. "I don't believe in democracy, but I believe in the young generation," he says. "The future will change; the future must change."</p>
+                    <p>Since its founding, Importance Leadership has impacted thousands of young people, helping them develop the skills and confidence to become leaders in their communities.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mission Section -->
+    <section class="mission">
+        <div class="container">
+            <h2 class="section-title">Our Mission & Vision</h2>
+            
+            <div class="mission-cards">
+                <div class="mission-card">
+                    <div class="mission-icon">
+                        <i class="fas fa-bullseye"></i>
+                    </div>
+                    <h3>Our Mission</h3>
+                    <p class="lead">Mobilize, Inspire, and Empower youth to become transformative leaders.</p>
+                    <p>Through education, advocacy, and mentorship, we foster an inclusive world where every young person can unlock their full potential. Our programs focus on leadership training, life skills development, environmental awareness, and community engagement.</p>
+                </div>
+                
+                <div class="mission-card">
+                    <div class="mission-icon">
+                        <i class="fas fa-eye"></i>
+                    </div>
+                    <h3>Our Vision</h3>
+                    <p class="lead">An inclusive world where every youth is empowered to lead and create impact.</p>
+                    <p>We envision communities transformed by ethical, purpose-driven young leaders who champion equality and justice. Our vision is rooted in the belief that empowered youth can solve the world's greatest challenges when given the right tools and opportunities.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta">
+        <div class="container">
+            <div class="cta-content">
+                <h2 class="cta-title">Ready to Join Our Movement?</h2>
+                <p class="cta-subtitle">
+                    Become part of our mission to empower the next generation of leaders.
+                </p>
+                <div class="cta-buttons">
+                    <a href="join-us.html" class="btn btn-primary">Get Involved</a>
+                    <a href="donate.html" class="btn btn-outline">Donate Now</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Load Footer -->
+    <div id="footer-container">
+        <script src="loadFooter.js"></script>
+    </div>
+
+    <!-- Scripts -->
+    <script>
+        // Simple animation trigger
+        document.addEventListener('DOMContentLoaded', function() {
+            const animateOnScroll = function() {
+                const elements = document.querySelectorAll('.mission-card, .founder-card');
+                
+                elements.forEach(element => {
+                    const elementPosition = element.getBoundingClientRect().top;
+                    const windowHeight = window.innerHeight;
+                    
+                    if (elementPosition < windowHeight - 100) {
+                        element.style.opacity = '1';
+                        element.style.transform = 'translateY(0)';
+                    }
+                });
+            };
+            
+            // Set initial state
+            const cards = document.querySelectorAll('.mission-card, .founder-card');
+            cards.forEach(card => {
+                card.style.opacity = '0';
+                card.style.transform = 'translateY(20px)';
+                card.style.transition = 'opacity 0.6s ease-out, transform 0.6s ease-out';
+            });
+            
+            // Trigger on load and scroll
+            animateOnScroll();
+            window.addEventListener('scroll', animateOnScroll);
+        });
+    </script>
+</body>
+</html>

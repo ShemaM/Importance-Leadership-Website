@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mentorship Program</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Custom CSS -->
+  <style>
+    
+      body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: var(--text-light);
+            background-color: var(--background-light);
+            transition: background-color var(--transition-speed), color var(--transition-speed);
+        }
+      
+    
+    /* Hero Section */
+    .hero-section {
+    position: relative;
+    padding: 100px 0;
+    text-align: center;
+    width: 100%;
+    max-height: fit-content;
+    align-content: center;
+    color: #ffffff;
+    overflow: hidden; /* Prevents blur overflow */
+}
+
+.hero-section::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('image/mentorship.jpg');
+    background-size: cover;
+    background-position: center;
+    filter: blur(4px); /* Blurs the image */
+    z-index: -1; /* Sends it behind the text */
+}
+
+
+        
+        .hero-section p {
+            font-size: 22px;
+            margin-top: 17px;
+            color: white;
+            align-items: center;
+            margin-top:15px;
+            font-weight: bold;
+        }
+
+        .hero-section .btn {
+            margin: 10px;
+            padding: 15px 30px;
+            font-size: 1.2rem;
+            border-radius: 50px;
+            text-shadow: 4px 4px 10px rgba(134, 133, 133, 0.5);
+        }
+     
+    
+    .section {
+      padding: 50px 0;
+      background-color: white;
+    }
+    .section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: white !important;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+        }
+
+        .section p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+        }
+       .section p{
+     font-size: 20px;
+     color: rgb(235, 229, 229) !important; 
+     align-content: center;
+     margin-bottom: 40px;
+     font-weight: bold;
+    text-shadow: 4px 4px 10px rgba(20, 12, 12, 0.5);
+ }
+    
+    
+    .btn-primary {
+      background-color: #218838;
+      border: none;
+      padding: 12px 24px;
+      font-size: 18px;
+      transition: 0.3s;
+    }
+    .btn-primary:hover {
+      background-color: #17692c;
+    }
+    .testimonial-card {
+      color: white;
+      margin: 10px 0;
+      text-align: center;
+      font-style: italic;
+    }
+    
+    @media (max-width: 768px) {
+      .hero-section {
+        padding: 80px 20px;
+      }
+    }
+  
+
+    img {
+  width: 100px; /* Fixed width for passport size */
+  height: 100px; /* Fixed height for passport size */
+  border-radius: 5px; /* Slightly rounded corners for a professional look */
+  object-fit: cover; /* Ensures the image covers the area without distortion */
+  border: 2px solid #000000; /* Adds a white border for a clean, official look */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  display: block; /* Ensures the image is centered */
+  margin: 0 auto 15px; /* Centers the image and adds space below */
+  opacity: 0.7;
+}
+
+/* Make images responsive on smaller screens */
+@media (max-width: 768px) {
+  img.passport-size {
+    width: 80px;
+    height: 80px;
+  }
+}
+
+  .card-description {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.8);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none; /* Prevents blocking clicks */
+  }
+
+  .card:hover .card-description {
+    opacity: 1;
+    pointer-events: auto; /* Allows clicks on the description */
+  }
+
+  .card-description p {
+    margin: 0;
+    font-size: 1rem;
+    text-align: center;
+  }
+
+  .join-us {
+    padding: 100px 0;
+  }
+  .join-us h2 {
+    font-size: 2.5rem;
+  }
+  .join-us .lead {
+    font-size: 1.25rem;
+  }
+  .join-us .card {
+    border-radius: 10px;
+    padding: 20px;
+  }
+  .join-us .btn-primary {
+    background-color: #007bff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1rem;
+  }
+  .join-us .btn-primary:hover {
+    background-color: #0056b3;
+  }
+
+  .testimonial-card {
+
+    border-radius: 10px;
+    padding: 20px;
+    margin: 10px 0;
+  }
+  .carousel-control-prev-icon,
+  .carousel-control-next-icon {
+    background-color: rgb(0, 9, 131);
+    border-radius: 50%;
+    padding: 20px;
+  }
+  .carousel-indicators button {
+    background-color: #007bff;
+  }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header id="header-container"></header>
+  <script src="loadHeader.js"></script>
+
+  <!-- Hero Section -->
+  <section class="hero-section">
+    <div class="container">
+      <h1 class="fw-bold">Empowering Growth, Building Communities</h1>
+      <p class="lead">Join our mentorship program and transform lives.</p>
+      <a href="mentorSignup.html" class="btn btn-primary">Get Started</a>
+    </div>
+  </section>
+
+<!-- How Mentorship Helps Section -->
+<section class="mentorship text-white py-5" style="background-color: #123456">
+  <div class="container">
+    <h2 class="fw-bold text-center mb-5">How Mentorship Strengthens Communities</h2>
+    <div class="row g-4">
+      <!-- Knowledge Sharing -->
+      <div class="col-12 col-sm-6 col-md-6 col-lg-3">
+        <div class="card h-100 bg-dark border-0 text-center position-relative">
+          <img src="image/knowledge-sharing.jpg" alt="Knowledge Sharing" class="card-img-top w-100" style="height: 200px; object-fit: cover;">
+          <div class="card-body">
+            <h4 class="text-white fw-bold">Knowledge Sharing</h4>
+            <p class="card-text">Ensuring skills & wisdom are passed across generations.</p>
+          </div>
+          <!-- Hidden Description -->
+          <div class="card-description">
+            <p>Mentors share their expertise, helping mentees learn and grow.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Empowerment -->
+      <div class="col-12 col-sm-6 col-md-6 col-lg-3">
+        <div class="card h-100 bg-dark border-0 text-center position-relative">
+          <img src="image/success.jpg" alt="Empowerment" class="card-img-top w-100" style="height: 200px; object-fit: cover;">
+          <div class="card-body">
+            <h4 class="text-white fw-bold">Empowerment</h4>
+            <p class="card-text">Boosting confidence & guiding individuals to success.</p>
+          </div>
+          <!-- Hidden Description -->
+          <div class="card-description">
+            <p>Mentors inspire mentees to believe in themselves and achieve their goals.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Networking -->
+      <div class="col-12 col-sm-6 col-md-6 col-lg-3">
+        <div class="card h-100 bg-dark border-0 text-center position-relative">
+          <img src="image/networking.jpg" alt="Networking" class="card-img-top w-100" style="height: 200px; object-fit: cover;">
+          <div class="card-body">
+            <h4 class="text-white fw-bold">Networking</h4>
+            <p class="card-text">Fostering collaboration and innovative solutions.</p>
+          </div>
+          <!-- Hidden Description -->
+          <div class="card-description">
+            <p>Mentors help mentees build valuable connections in their field.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Diversity & Inclusion -->
+      <div class="col-12 col-sm-6 col-md-6 col-lg-3">
+        <div class="card h-100 bg-dark border-0 text-center position-relative">
+          <img src="image/diversity.jpg" alt="Diversity & Inclusion" class="card-img-top w-100" style="height: 200px; object-fit: cover;">
+          <div class="card-body">
+            <h4 class="text-white fw-bold">Diversity & Inclusion</h4>
+            <p class="card-text">Creating equal opportunities for all.</p>
+          </div>
+          <!-- Hidden Description -->
+          <div class="card-description">
+            <p>Mentorship promotes diversity by supporting underrepresented groups.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+  <!-- Join Our Mentorship Program Section -->
+<section id="join" class="join-us text-center text-white py-5 position-relative" style="background-color: grey">
+  <!-- Overlay for better readability -->
+  <div class="position-absolute top-0 start-0 w-100 h-100 bg-dark opacity-50"></div>
+  <div class="container position-relative z-1">
+    <h2 class="fw-bold display-4 mb-4">Join Our Mentorship Program</h2>
+    <p class="lead mb-5">Are you ready to inspire or be inspired? Join us today and make a difference!</p>
+    <div class="row g-4">
+      <!-- For Mentors -->
+      <div class="col-md-6">
+        <div class="card bg-transparent border-0">
+          <div class="card-body bg-light">
+            <h3 class="card-title fw-bold mb-3 ">For Mentors</h3>
+            <p class="card-text mb-4">Share your knowledge and shape future leaders.</p>
+            <button class="btn btn-primary btn-lg" onclick="signUp('mentor')">Sign Up as a Mentor</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- For Mentees -->
+      <div class="col-md-6">
+        <div class="card bg-transparent border-0">
+          <div class="card-body bg-light">
+            <h3 class="card-title fw-bold mb-3 bg-light">For Mentees</h3>
+            <p class="card-text mb-4">Gain insights and accelerate your growth.</p>
+            <button class="btn btn-primary btn-lg" onclick="signUp('mentee')">Sign Up as a Mentee</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+<!-- Testimonials Section -->
+<section class="section bg-light text-center py-5 text-black" style="background-image: url('image/environmentalHealth.jpg'); background-size: auto ; background-position: center;  color: black;">
+  <div class="container">
+    <h2 class="text-primary mb-5">What People Say About This Program</h2>
+    
+    <!-- Bootstrap Carousel -->
+    <div id="testimonialCarousel" class="carousel slide" data-bs-ride="carousel">
+      <!-- Carousel Indicators -->
+      <div class="carousel-indicators">
+        <button type="button" data-bs-target="#testimonialCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#testimonialCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+      </div>
+
+      <!-- Carousel Items -->
+      <div class="carousel-inner">
+        <!-- Testimonial 1 -->
+        <div class="carousel-item active">
+          <div class="testimonial-card bg-dark p-4 rounded mx-auto" style="max-width: 600px;">
+            <p class="fst-italic">"My mentor guided me through a critical career shift!"</p>
+            <strong>– Sarah</strong>
+          </div>
+        </div>
+
+        <!-- Testimonial 2 -->
+        <div class="carousel-item">
+          <div class="testimonial-card  bg-dark p-4 rounded mx-auto" style="max-width: 600px;">
+            <p class="fst-italic">"Being a mentor has been incredibly rewarding."</p>
+            <strong>– John</strong>
+          </div>
+        </div>
+      </div>
+
+
+      <!-- Carousel Controls -->
+      <button class="carousel-control-prev" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+  </div>
+</section>
+
+  <!-- Footer -->
+<script src="loadFooter.js"></script>
+   
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    function signUp(role) {
+      if (role === "mentor") {
+        window.location.href = "mentorSignup.html"; // Redirect to mentor signup page
+      } else if (role === "mentee") {
+        window.location.href = "mentorSignup.html"; // Redirect to mentee signup page
+      } else {
+        alert("Please select a valid role.");
+      }
+    }
+  </script>
+  
+<!-- JavaScript for Click Event -->
+<script>
+  document.querySelectorAll('.card').forEach(card => {
+    card.addEventListener('click', () => {
+      const description = card.querySelector('.card-description');
+      description.style.opacity = description.style.opacity === '1' ? '0' : '1';
+    });
+  });
+</script>
+<!-- Bootstrap JS and Popper.js -->
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
+
+<script src="loadFooter.js"></script>
+</body>
+</html>

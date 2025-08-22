@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Emotional Intelligence Workshop</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Custom CSS -->
+    <style>
+        /* Custom Styles */
+.hero-section {
+    background-color: #b1adab8a; /* Primary color */
+    color: #333;
+    padding: 100px 0;
+    font-weight: bold;
+    
+}
+
+.hero-section img {
+    width: 100%;
+    height: 65lvh;
+    border-radius: 30px;
+    box-shadow: 2px 4px 8px #403e3d8a;
+}
+
+.learning-outcomes {
+    padding: 60px 0;
+    background-color: #f8f9fa; /* Light background */
+}
+
+.learning-outcomes .grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
+
+.learning-outcomes .card {
+    background: white;
+    border: none;
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.learning-outcomes .card:hover {
+    transform: translateY(-10px);
+}
+
+.learning-outcomes .card i {
+    font-size: 2.5rem;
+    color: #0f65bb;
+    margin-bottom: 15px;
+}
+
+.learning-outcomes .card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.learning-outcomes .card p {
+    font-size: 1rem;
+    color: #555;
+}
+
+.testimonials {
+    padding: 60px 0;
+    background-image: url(../image/feedback.png);
+    background-size: cover;
+    background-clip: border-box;
+
+}
+
+.testimonials .testimonial-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
+
+.testimonials blockquote {
+    background: #4f6f8e;
+    border-left: 15px solid orange;
+    padding: 20px;
+    font-style: italic;
+    color: black;
+    
+    
+}
+
+.testimonials blockquote footer {
+    margin-top: 10px;
+    font-weight: bold;
+    color: #0f65bb;
+}
+
+.next-steps {
+    padding: 60px 0;
+    background-color: #a5a6a7;
+    color: #333;
+}
+
+.next-steps ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.next-steps ul li {
+    margin-bottom: 10px;
+    font-size: 1.1rem;
+}
+
+.next-steps ul li i {
+    margin-right: 10px;
+    color: #ffcc00; /* Yellow color for icons */
+}
+.hover-effect {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hover-effect:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+    </style>
+</head>
+<body>  
+
+    <!-- Load Header -->
+    
+    <div id="header-container"></div>
+    <script src="loadHeader.js"></script>
+
+
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-6">
+                   
+                    <figure>
+                        <img src="image/emotional intelligence.png" alt="Emotional Intelligence Workshop" class="img-fluid rounded shadow-lg">
+                        <br>
+                        <figcaption style="font-style: italic;">
+                            Visual Representation of Emotional Intelligence
+                        </figcaption>
+                    </figure>
+                   
+                </div>
+                <div class="col-md-6">
+                    <h1 class="display-4 fw-bold">Emotional Intelligence Workshop Recap</h1>
+                    <p class="lead mt-3">On <strong>January 25, 2025</strong>, Importance Leadership hosted an impactful online workshop on Emotional Intelligence (EI) in Communication. This page is a recap of the session, highlighting key takeaways, participant experiences, and next steps.</p>
+                    <p class="mt-3">Here’s what you’ll find in this recap:</p>
+                    <ul class="list-unstyled lead">
+                        <li><i class="fas fa-check-circle me-2"></i>An overview of Emotional Intelligence and its importance.</li>
+                        <li><i class="fas fa-check-circle me-2"></i>Key learnings from the workshop, including self-awareness, empathy, and effective communication.</li>
+                        <li><i class="fas fa-check-circle me-2"></i>Testimonials from participants who attended the session.</li>
+                        <li><i class="fas fa-check-circle me-2"></i>Next steps to continue your EI journey.</li>
+                    </ul>
+                    
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Learning Outcomes -->
+    <section class="learning-outcomes">
+        <div class="container">
+            <h2 class="text-center display-5 fw-bold mb-5">What Participants Learned</h2>
+            <div class="grid-container">
+                <div class="card">
+                    <i class="fas fa-brain"></i>
+                    <h3>Self-Awareness</h3>
+                    <p>Understanding personal emotions and their impact on decision-making.</p>
+                </div>
+                <div class="card">
+                    <i class="fas fa-comments"></i>
+                    <h3>Effective Communication</h3>
+                    <p>How to express emotions constructively and build stronger relationships.</p>
+                </div>
+                <div class="card">
+                    <i class="fas fa-users"></i>
+                    <h3>Empathy</h3>
+                    <p>Recognizing and understanding the emotions of others to foster teamwork.</p>
+                </div>
+                <div class="card">
+                    <i class="fas fa-balance-scale"></i>
+                    <h3>Managing Stress</h3>
+                    <p>Techniques for emotional regulation and handling challenging situations.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+<!-- Testimonials -->
+<section class="testimonials">
+    <div class="container">
+        <h2 class="text-center display-5 fw-bold mb-5">What Participants Say</h2>
+        <div class="testimonial-container card-body" >
+            <blockquote>
+                "This workshop helped me understand myself better and improve my leadership skills. I now handle conflicts more calmly!" - <strong>Participant 1</strong>
+            </blockquote>
+            <blockquote>
+                "Learning about emotional intelligence has been a game-changer for my career and personal growth."-<strong>Participant 2</strong>
+            </blockquote>
+            <blockquote>
+                "Learning about emotional intelligence has been a game-changer for my career and personal growth."-<strong>Participant 3</strong>
+            </blockquote>
+            <blockquote>
+                "Learning about emotional intelligence has been a game-changer for my career and personal growth."-<strong>Participant 4</strong>
+            </blockquote>
+            <blockquote>
+                "Learning about emotional intelligence has been a game-changer for my career and personal growth."-<strong>Participant 5</strong>
+            </blockquote>
+        </div>
+    </div>
+</section>
+
+
+    <!-- Next Steps -->
+<!-- Next Steps -->
+<section class="next-steps py-5 bg-light-gray">
+    <div class="container">
+        <h2 class="text-center display-5 fw-bold mb-5 text-primary ">What’s Next?</h2>
+        <div class="row g-4">
+            <!-- Step 1 -->
+            <div class="col-md-6 col-lg-3">
+                <div class="card h-100 border-0 shadow-sm hover-effect">
+                    <div class="card-body text-center p-4">
+                        <i class="fas fa-brain fa-3x text-primary mb-4"></i> <!-- Font Awesome icon -->
+                        <h5 class="card-title fw-bold mb-3">Practice Mindfulness</h5>
+                        <p class="card-text text-muted">Dedicate time daily to mindfulness and emotional reflection. This helps you stay grounded and self-aware.</p>
+                    </div>
+                </div>
+            </div>
+            <!-- Step 2 -->
+            <div class="col-md-6 col-lg-3">
+                <div class="card h-100 border-0 shadow-sm hover-effect">
+                    <div class="card-body text-center p-4">
+                        <i class="fas fa-comments fa-3x text-primary mb-4"></i> <!-- Font Awesome icon -->
+                        <h5 class="card-title fw-bold mb-3">Active Listening</h5>
+                        <p class="card-text text-muted">Apply active listening techniques in your conversations to build stronger relationships and foster trust.</p>
+                    </div>
+                </div>
+            </div>
+            <!-- Step 3 -->
+            <div class="col-md-6 col-lg-3">
+                <div class="card h-100 border-0 shadow-sm hover-effect">
+                    <div class="card-body text-center p-4">
+                        <i class="fas fa-users fa-3x text-primary mb-4"></i> <!-- Font Awesome icon -->
+                        <h5 class="card-title fw-bold mb-3">Join Our Next Session</h5>
+                        <p class="card-text text-muted">Enroll in our upcoming session on Emotional Intelligence for Leaders to deepen your skills and knowledge.</p>
+                    </div>
+                </div>
+            </div>
+            <!-- Step 4 -->
+            <div class="col-md-6 col-lg-3">
+                <div class="card h-100 border-0 shadow-sm hover-effect">
+                    <div class="card-body text-center p-4">
+                        <i class="fas fa-handshake fa-3x text-primary mb-4"></i> <!-- Font Awesome icon -->
+                        <h5 class="card-title fw-bold mb-3">Stay Connected</h5>
+                        <p class="card-text text-muted">Engage with our EI community to share experiences, gain insights, and continue your growth journey.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Dark Mode Toggle -->
+    <!-- Bootstrap Bundle with Popper.js -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Load Footer Script -->
+    <script src="loadFooter.js"></script>
+</body>
+</html>
