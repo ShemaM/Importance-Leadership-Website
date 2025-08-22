@@ -141,24 +141,6 @@
             </div>
         </div>
         
-        <!-- Newsletter Signup -->
-        <div class="border-t border-primary-600 mt-12 pt-8">
-            <div class="text-center">
-                <h6 class="text-white font-bold text-lg mb-4">Stay Connected</h6>
-                <p class="text-gray-300 mb-6 max-w-2xl mx-auto">
-                    Subscribe to our newsletter for updates on programs, events, and impact stories from the Importance Leadership community.
-                </p>
-                <form action="/forms/newsletter.php" method="POST" class="flex flex-col sm:flex-row justify-center items-center gap-4 max-w-md mx-auto">
-                    <input type="email" name="email" placeholder="Enter your email" required
-                           class="flex-1 px-4 py-3 bg-white/10 text-white placeholder-gray-300 rounded-lg border border-primary-600 focus:border-accent-500 focus:outline-none focus:ring-2 focus:ring-accent-500/20 transition-all duration-300">
-                    <button type="submit" 
-                            class="bg-accent-500 hover:bg-accent-600 text-white px-6 py-3 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105">
-                        Subscribe
-                    </button>
-                </form>
-            </div>
-        </div>
-        
         <!-- Copyright -->
         <div class="border-t border-primary-600 mt-8 pt-8 text-center">
             <div class="flex flex-col md:flex-row justify-between items-center">
