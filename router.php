@@ -25,6 +25,7 @@ $possible_pages = [
     'who-we-are' => 'pages/who-we-are.php',
     'team' => 'pages/team.php',
     'usa' => 'pages/usa.php',
+    'canada' => 'pages/canada.php',
     'contact' => 'pages/contact.php',
     'programs' => 'pages/programs.php',
     'impact' => 'pages/impact.php',
