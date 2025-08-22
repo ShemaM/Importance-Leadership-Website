@@ -26,14 +26,14 @@ Header always set Permissions-Policy "geolocation=(), microphone=(), camera=()"
     RewriteRule ^(includes|migrations|templates|logs)/ - [F,L]
 </IfModule>
 
-# Clean URLs
-RewriteCond %{REQUEST_FILENAME} !-d
-RewriteCond %{REQUEST_FILENAME} !-f
-RewriteRule ^([^\.]+)$ pages/$1.php [L]
+# Temporary: Comment out clean URLs to test 404 functionality
+# RewriteCond %{REQUEST_FILENAME} !-d
+# RewriteCond %{REQUEST_FILENAME} !-f
+# RewriteRule ^([^\.]+)$ /404.php [L]
 
 # Remove .php extension from URLs
-RewriteCond %{THE_REQUEST} ^[A-Z]{3,}\s/+pages/([^\s]+)\.php [NC]
-RewriteRule ^ /%1? [R=301,L]
+# RewriteCond %{THE_REQUEST} ^[A-Z]{3,}\s/+pages/([^\s]+)\.php [NC]
+# RewriteRule ^ /%1? [R=301,L]
 
 # Performance optimizations
 <IfModule mod_deflate.c>
@@ -95,6 +95,4 @@ RewriteRule ^ /%1? [R=301,L]
 </IfModule>
 
 # Custom error pages
-ErrorDocument 404 /pages/404.php
-ErrorDocument 403 /pages/403.php
-ErrorDocument 500 /pages/500.php
+ErrorDocument 404 /404.php

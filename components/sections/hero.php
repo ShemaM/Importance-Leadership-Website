@@ -74,16 +74,16 @@
             <!-- Impact Statistics (Hidden on mobile) -->
             <div class="hidden sm:flex flex-col sm:flex-row gap-8" data-aos="fade-up" data-aos-delay="400">
                 <div class="text-center sm:text-left">
-                    <div class="text-4xl md:text-5xl font-bold text-accent-500 mb-2" data-counter="1500">0</div>
-                    <div class="text-sm uppercase tracking-wider opacity-90">Young Leaders Developed</div>
+                    <div class="text-4xl md:text-5xl font-bold text-accent-500 mb-2" data-counter="2500">0</div>
+                    <div class="text-sm uppercase tracking-wider opacity-90">Youth Empowered</div>
                 </div>
                 <div class="text-center sm:text-left">
-                    <div class="text-4xl md:text-5xl font-bold text-accent-500 mb-2" data-counter="50">0</div>
-                    <div class="text-sm uppercase tracking-wider opacity-90">Communities Impacted</div>
+                    <div class="text-4xl md:text-5xl font-bold text-accent-500 mb-2" data-counter="20">0</div>
+                    <div class="text-sm uppercase tracking-wider opacity-90">Dedicated Mentors</div>
                 </div>
                 <div class="text-center sm:text-left">
-                    <div class="text-4xl md:text-5xl font-bold text-accent-500 mb-2" data-counter="3">0</div>
-                    <div class="text-sm uppercase tracking-wider opacity-90">Countries</div>
+                    <div class="text-4xl md:text-5xl font-bold text-accent-500 mb-2" data-counter="14">0</div>
+                    <div class="text-sm uppercase tracking-wider opacity-90">Communities</div>
                 </div>
             </div>
         </div>
@@ -128,17 +128,20 @@ document.addEventListener('DOMContentLoaded', function() {
         
         counters.forEach(counter => {
             const target = parseInt(counter.getAttribute('data-counter'));
-            const duration = 2000;
-            const step = target / (duration / 16);
+            // Dynamic duration based on target value for natural counting speed
+            const baseDuration = Math.min(2000, Math.max(800, target * 0.8));
+            const increment = Math.max(1, Math.ceil(target / (baseDuration / 16)));
             let current = 0;
             
             const timer = setInterval(() => {
-                current += step;
+                current += increment;
                 if (current >= target) {
-                    counter.textContent = target + (target === 1500 ? '+' : '+');
+                    const shouldHavePlus = target === 2500 || target === 20;
+                    counter.textContent = target + (shouldHavePlus ? '+' : '');
                     clearInterval(timer);
                 } else {
-                    counter.textContent = Math.floor(current) + (target === 1500 ? '+' : '+');
+                    const shouldHavePlus = target === 2500 || target === 20;
+                    counter.textContent = current + (shouldHavePlus ? '+' : '');
                 }
             }, 16);
         });
