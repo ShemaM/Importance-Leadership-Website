@@ -31,6 +31,7 @@ $possible_pages = [
     'what-we-do' => 'pages/what-we-do.php',
     'impact' => 'pages/impact.php',
     'blog' => 'pages/blog.php',
+    'events' => 'pages/events.php',
     'donate' => 'pages/donate.php',
     'join-us' => 'pages/join-us.php',
 ];
