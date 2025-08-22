@@ -119,7 +119,7 @@ include __DIR__ . '/../components/nav.php';
 <!-- Main Content -->
 <main id="main-content">
     <!-- Hero Section -->
-    <section class="relative min-h-screen flex items-center justify-center text-white overflow-hidden">
+    <section class="relative min-h-screen flex items-center justify-center text-white overflow-hidden pt-24 pb-20">
         <!-- Background Image with Overlay -->
         <div class="absolute inset-0">
             <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80" 
