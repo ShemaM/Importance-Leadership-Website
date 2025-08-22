@@ -323,10 +323,17 @@ include __DIR__ . '/../components/nav.php';
             <div class="max-w-4xl mx-auto">
                 <div class="bg-white rounded-2xl shadow-2xl overflow-hidden">
                     <div class="grid lg:grid-cols-2">
-                        <div class="hidden lg:block relative">
-                            <div class="h-full bg-gradient-to-br from-primary-500 to-primary-700 flex items-center justify-center">
-                                <div class="text-center text-white p-8">
-                                    <i class="fas fa-handshake text-6xl mb-6 text-accent-300"></i>
+                        <div class="hidden lg:block relative overflow-hidden">
+                            <div class="absolute inset-0">
+                                <img src="/assets/images/diversity.jpg" 
+                                     alt="Partnership Discussion" 
+                                     class="w-full h-full object-cover filter blur-sm"
+                                     loading="lazy">
+                                <div class="absolute inset-0 bg-gray-200/45"></div>
+                            </div>
+                            <div class="relative z-10 h-full flex items-center justify-center p-8">
+                                <div class="text-center text-primary-500">
+                                    <i class="fas fa-handshake text-6xl mb-6"></i>
                                     <h3 class="text-2xl font-bold mb-4">Let's Partner Together</h3>
                                     <p class="text-lg opacity-90">Ready to make a meaningful impact? Our partnerships team is here to help.</p>
                                 </div>
