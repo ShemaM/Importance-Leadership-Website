@@ -39,6 +39,7 @@ $possible_pages = [
     'programs/networking' => 'pages/networking.php',
     'programs/leadership-development' => 'pages/leadership-development.php',
     'programs/climate-change' => 'pages/climate-change.php',
+    'partnerships' => 'pages/partnerships.php',
 ];
 
 if (isset($possible_pages[$uri]) && file_exists($possible_pages[$uri])) {
