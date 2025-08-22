@@ -51,7 +51,7 @@ include __DIR__ . '/../components/nav.php';
         <div class="container mx-auto px-4 relative z-20 py-8">
             <div class="max-w-4xl mx-auto text-center">
                 <span class="inline-block bg-accent-500/20 px-6 py-3 rounded-full text-accent-300 font-semibold mb-6 text-xl" data-aos="fade-up" data-aos-delay="100">
-                    12-Week Program
+                    Pillar 4: Leadership Development
                 </span>
                 
                 <h1 class="text-4xl md:text-6xl font-bold font-secondary leading-tight mb-6" data-aos="fade-up" data-aos-delay="200">
