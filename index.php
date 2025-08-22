@@ -161,33 +161,33 @@ include 'components/nav.php';
         <div class="container mx-auto px-4">
             <div class="text-center mb-16" data-aos="fade-up">
                 <h2 class="text-4xl md:text-5xl font-bold font-secondary mb-6">
-                    Our Global Impact
+                    Our Measurable Impact
                 </h2>
                 <p class="text-xl opacity-95 max-w-3xl mx-auto leading-relaxed">
-                    Through dedicated programs and partnerships, we're creating measurable change in communities across three countries.
+                    Quantifying our commitment to youth development and community transformation.
                 </p>
             </div>
             
             <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8 text-center">
                 <div class="impact-stat" data-aos="fade-up" data-aos-delay="100">
-                    <div class="text-5xl md:text-6xl font-bold text-accent-500 mb-4" data-counter="1500">0</div>
-                    <h3 class="text-xl font-semibold mb-2">Young Leaders</h3>
-                    <p class="opacity-90">Developed through our programs</p>
+                    <div class="text-5xl md:text-6xl font-bold text-accent-500 mb-4" data-counter="2500">0</div>
+                    <h3 class="text-xl font-semibold mb-2">Youth Empowered</h3>
+                    <p class="opacity-90">Through our leadership programs and initiatives</p>
                 </div>
                 <div class="impact-stat" data-aos="fade-up" data-aos-delay="200">
-                    <div class="text-5xl md:text-6xl font-bold text-accent-500 mb-4" data-counter="50">0</div>
-                    <h3 class="text-xl font-semibold mb-2">Communities</h3>
-                    <p class="opacity-90">Directly impacted by our initiatives</p>
+                    <div class="text-5xl md:text-6xl font-bold text-accent-500 mb-4" data-counter="20">0</div>
+                    <h3 class="text-xl font-semibold mb-2">Dedicated Mentors</h3>
+                    <p class="opacity-90">Guiding the next generation of leaders</p>
                 </div>
                 <div class="impact-stat" data-aos="fade-up" data-aos-delay="300">
-                    <div class="text-5xl md:text-6xl font-bold text-accent-500 mb-4" data-counter="3">0</div>
-                    <h3 class="text-xl font-semibold mb-2">Countries</h3>
-                    <p class="opacity-90">Where we actively operate</p>
+                    <div class="text-5xl md:text-6xl font-bold text-accent-500 mb-4" data-counter="13">0</div>
+                    <h3 class="text-xl font-semibold mb-2">Workshops</h3>
+                    <p class="opacity-90">Leadership training and skill development</p>
                 </div>
                 <div class="impact-stat" data-aos="fade-up" data-aos-delay="400">
-                    <div class="text-5xl md:text-6xl font-bold text-accent-500 mb-4" data-counter="100">0</div>
-                    <h3 class="text-xl font-semibold mb-2">Partnerships</h3>
-                    <p class="opacity-90">With organizations worldwide</p>
+                    <div class="text-5xl md:text-6xl font-bold text-accent-500 mb-4" data-counter="14">0</div>
+                    <h3 class="text-xl font-semibold mb-2">Communities</h3>
+                    <p class="opacity-90">Positively impacted across the region</p>
                 </div>
             </div>
         </div>
