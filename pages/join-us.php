@@ -91,18 +91,6 @@ $additional_head = '
     transform: translateY(-2px);
     box-shadow: 0 8px 25px rgba(11, 31, 58, 0.15);
 }
-.benefit-card {
-    transition: all 0.3s ease;
-}
-.benefit-card:hover {
-    transform: translateY(-10px) scale(1.02);
-}
-.step-card {
-    transition: all 0.3s ease;
-}
-.step-card:hover {
-    transform: translateY(-8px) scale(1.02);
-}
 .password-strength-weak { width: 33%; background-color: #ef4444; }
 .password-strength-medium { width: 66%; background-color: #f59e0b; }
 .password-strength-strong { width: 100%; background-color: #10b981; }
@@ -296,141 +284,6 @@ include __DIR__ . '/../components/nav.php';
                             </p>
                         </form>
                     </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Benefits Section -->
-    <section class="py-20 bg-white">
-        <div class="container mx-auto px-6">
-            <div class="text-center mb-16">
-                <h2 class="text-3xl md:text-4xl font-bold font-secondary text-primary-500 mb-4">Why Join Importance Leadership?</h2>
-                <div class="w-20 h-1 bg-accent-500 mx-auto mb-6"></div>
-                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
-                    Unlock exclusive opportunities and resources designed to accelerate your leadership journey
-                </p>
-            </div>
-            
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Benefit 1: Training Programs -->
-                <div class="benefit-card bg-gray-50 rounded-2xl p-8 text-center shadow-lg">
-                    <div class="bg-blue-500 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6">
-                        <i class="fas fa-graduation-cap text-white text-2xl"></i>
-                    </div>
-                    <h3 class="text-xl font-bold font-secondary text-primary-500 mb-4">Leadership Training</h3>
-                    <p class="text-gray-600 mb-4">
-                        Access comprehensive training programs designed to develop your leadership skills and capabilities.
-                    </p>
-                    <div class="text-accent-500 font-semibold">Free Access</div>
-                </div>
-                
-                <!-- Benefit 2: Mentorship -->
-                <div class="benefit-card bg-gray-50 rounded-2xl p-8 text-center shadow-lg">
-                    <div class="bg-green-500 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6">
-                        <i class="fas fa-user-tie text-white text-2xl"></i>
-                    </div>
-                    <h3 class="text-xl font-bold font-secondary text-primary-500 mb-4">Expert Mentorship</h3>
-                    <p class="text-gray-600 mb-4">
-                        Connect with experienced leaders who will guide and support your personal and professional growth.
-                    </p>
-                    <div class="text-accent-500 font-semibold">1-on-1 Sessions</div>
-                </div>
-                
-                <!-- Benefit 3: Networking -->
-                <div class="benefit-card bg-gray-50 rounded-2xl p-8 text-center shadow-lg">
-                    <div class="bg-purple-500 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6">
-                        <i class="fas fa-network-wired text-white text-2xl"></i>
-                    </div>
-                    <h3 class="text-xl font-bold font-secondary text-primary-500 mb-4">Global Network</h3>
-                    <p class="text-gray-600 mb-4">
-                        Join a vibrant community of like-minded leaders from diverse backgrounds and industries.
-                    </p>
-                    <div class="text-accent-500 font-semibold">500+ Members</div>
-                </div>
-                
-                <!-- Benefit 4: Events -->
-                <div class="benefit-card bg-gray-50 rounded-2xl p-8 text-center shadow-lg">
-                    <div class="bg-yellow-500 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6">
-                        <i class="fas fa-calendar-alt text-white text-2xl"></i>
-                    </div>
-                    <h3 class="text-xl font-bold font-secondary text-primary-500 mb-4">Exclusive Events</h3>
-                    <p class="text-gray-600 mb-4">
-                        Attend workshops, conferences, and networking events available only to community members.
-                    </p>
-                    <div class="text-accent-500 font-semibold">Members Only</div>
-                </div>
-                
-                <!-- Benefit 5: Resources -->
-                <div class="benefit-card bg-gray-50 rounded-2xl p-8 text-center shadow-lg">
-                    <div class="bg-red-500 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6">
-                        <i class="fas fa-book-open text-white text-2xl"></i>
-                    </div>
-                    <h3 class="text-xl font-bold font-secondary text-primary-500 mb-4">Learning Resources</h3>
-                    <p class="text-gray-600 mb-4">
-                        Access our library of leadership resources, guides, and tools for continuous learning.
-                    </p>
-                    <div class="text-accent-500 font-semibold">100+ Resources</div>
-                </div>
-                
-                <!-- Benefit 6: Impact -->
-                <div class="benefit-card bg-gray-50 rounded-2xl p-8 text-center shadow-lg">
-                    <div class="bg-indigo-500 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6">
-                        <i class="fas fa-hands-helping text-white text-2xl"></i>
-                    </div>
-                    <h3 class="text-xl font-bold font-secondary text-primary-500 mb-4">Make an Impact</h3>
-                    <p class="text-gray-600 mb-4">
-                        Participate in community projects and initiatives that create meaningful change in Africa.
-                    </p>
-                    <div class="text-accent-500 font-semibold">Real Change</div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- How It Works Section -->
-    <section class="py-20 bg-gray-50">
-        <div class="container mx-auto px-6">
-            <div class="text-center mb-16">
-                <h2 class="text-3xl md:text-4xl font-bold font-secondary text-primary-500 mb-4">How It Works</h2>
-                <div class="w-20 h-1 bg-accent-500 mx-auto mb-6"></div>
-                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
-                    Get started on your leadership journey in three simple steps
-                </p>
-            </div>
-            
-            <div class="grid md:grid-cols-3 gap-8">
-                <!-- Step 1 -->
-                <div class="step-card bg-white rounded-2xl p-8 text-center shadow-xl border-t-4 border-blue-500">
-                    <div class="bg-blue-500 text-white w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6 text-2xl font-bold">
-                        1
-                    </div>
-                    <h3 class="text-xl font-bold font-secondary text-primary-500 mb-4">Sign Up</h3>
-                    <p class="text-gray-600">
-                        Create your account by filling out the registration form with your basic information and interests.
-                    </p>
-                </div>
-                
-                <!-- Step 2 -->
-                <div class="step-card bg-white rounded-2xl p-8 text-center shadow-xl border-t-4 border-green-500">
-                    <div class="bg-green-500 text-white w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6 text-2xl font-bold">
-                        2
-                    </div>
-                    <h3 class="text-xl font-bold font-secondary text-primary-500 mb-4">Get Matched</h3>
-                    <p class="text-gray-600">
-                        We'll match you with mentors, programs, and opportunities that align with your goals and interests.
-                    </p>
-                </div>
-                
-                <!-- Step 3 -->
-                <div class="step-card bg-white rounded-2xl p-8 text-center shadow-xl border-t-4 border-purple-500">
-                    <div class="bg-purple-500 text-white w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6 text-2xl font-bold">
-                        3
-                    </div>
-                    <h3 class="text-xl font-bold font-secondary text-primary-500 mb-4">Start Growing</h3>
-                    <p class="text-gray-600">
-                        Begin your leadership journey with access to training, mentorship, and community support.
-                    </p>
                 </div>
             </div>
         </div>
@@ -691,18 +544,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // Add scroll-triggered animations
-    const observeElements = document.querySelectorAll('.benefit-card, .step-card');
-    const scrollObserver = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.style.animationDelay = Math.random() * 0.3 + 's';
-                entry.target.classList.add('animate-fadeInUp');
-            }
-        });
-    }, { threshold: 0.1 });
-
-    observeElements.forEach(el => scrollObserver.observe(el));
 });
 </script>
 
