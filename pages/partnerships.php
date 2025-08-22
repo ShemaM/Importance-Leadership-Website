@@ -68,13 +68,16 @@ include __DIR__ . '/../components/nav.php';
                     
                     <div class="hidden lg:block" data-aos="fade-left">
                         <div class="relative">
-                            <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-8 border border-white/20">
-                                <div class="text-center">
-                                    <i class="fas fa-handshake text-6xl text-accent-300 mb-6"></i>
-                                    <h3 class="text-2xl font-bold mb-4">Ready to Collaborate?</h3>
-                                    <p class="text-lg opacity-90">Let's create meaningful change together through strategic partnerships.</p>
+                            <video class="w-full h-auto rounded-2xl shadow-2xl" autoplay muted loop playsinline>
+                                <source src="/assets/images/partnership-hero.mp4" type="video/mp4">
+                                <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-8 border border-white/20">
+                                    <div class="text-center">
+                                        <i class="fas fa-handshake text-6xl text-accent-300 mb-6"></i>
+                                        <h3 class="text-2xl font-bold mb-4">Ready to Collaborate?</h3>
+                                        <p class="text-lg opacity-90">Let's create meaningful change together through strategic partnerships.</p>
+                                    </div>
                                 </div>
-                            </div>
+                            </video>
                         </div>
                     </div>
                 </div>
