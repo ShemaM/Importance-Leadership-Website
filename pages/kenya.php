@@ -199,6 +199,15 @@ include __DIR__ . '/../components/nav.php';
                         </ul>
                     </div>
                     
+                    <div class="grid md:grid-cols-3 gap-4 mb-8">
+                        <div class="h-48 bg-cover bg-center rounded-lg cursor-pointer transition-transform duration-300 hover:scale-105" 
+                             style="background-image: url('https://images.unsplash.com/photo-1521791136064-7986c2920216?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1469&q=80')"></div>
+                        <div class="h-48 bg-cover bg-center rounded-lg cursor-pointer transition-transform duration-300 hover:scale-105" 
+                             style="background-image: url('https://images.unsplash.com/photo-1450101499163-c8848c66ca85?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80')"></div>
+                        <div class="h-48 bg-cover bg-center rounded-lg cursor-pointer transition-transform duration-300 hover:scale-105" 
+                             style="background-image: url('https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80')"></div>
+                    </div>
+                    
                     <blockquote class="italic relative pl-8 mb-8">
                         <div class="absolute left-0 top-0 text-4xl text-accent-500 font-serif">"</div>
                         <p class="text-gray-600 mb-2">For the first time, we felt our voices were truly heard in discussions about our future in Kenya. This conference changed the narrative.</p>
@@ -250,6 +259,15 @@ include __DIR__ . '/../components/nav.php';
                                 <span><strong>Investing in education is investing in the future</strong> - Prioritize youth upliftment programs</span>
                             </li>
                         </ul>
+                    </div>
+                    
+                    <div class="grid md:grid-cols-3 gap-4 mb-8">
+                        <div class="h-48 bg-cover bg-center rounded-lg cursor-pointer transition-transform duration-300 hover:scale-105" 
+                             style="background-image: url('https://images.unsplash.com/photo-1563986768609-322da13575f3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80')"></div>
+                        <div class="h-48 bg-cover bg-center rounded-lg cursor-pointer transition-transform duration-300 hover:scale-105" 
+                             style="background-image: url('https://images.unsplash.com/photo-1541178735493-479c1a27ed24?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1471&q=80')"></div>
+                        <div class="h-48 bg-cover bg-center rounded-lg cursor-pointer transition-transform duration-300 hover:scale-105" 
+                             style="background-image: url('https://images.unsplash.com/photo-1529107386315-e1a2ed48a620?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80')"></div>
                     </div>
                     
                     <blockquote class="italic relative pl-8 mb-8">
@@ -307,6 +325,15 @@ include __DIR__ . '/../components/nav.php';
                                 <span><strong>Conflict Prevention & Peacebuilding</strong> - Root causes and reconciliation</span>
                             </li>
                         </ul>
+                    </div>
+                    
+                    <div class="grid md:grid-cols-3 gap-4 mb-8">
+                        <div class="h-48 bg-cover bg-center rounded-lg cursor-pointer transition-transform duration-300 hover:scale-105" 
+                             style="background-image: url('https://images.unsplash.com/photo-1589829545856-d10d557cf95f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80')"></div>
+                        <div class="h-48 bg-cover bg-center rounded-lg cursor-pointer transition-transform duration-300 hover:scale-105" 
+                             style="background-image: url('https://images.unsplash.com/photo-1434030216411-0b793f4b4173?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80')"></div>
+                        <div class="h-48 bg-cover bg-center rounded-lg cursor-pointer transition-transform duration-300 hover:scale-105" 
+                             style="background-image: url('https://images.unsplash.com/photo-1551818255-e6e10975bc17?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80')"></div>
                     </div>
                     
                     <blockquote class="italic relative pl-8 mb-8">
@@ -374,6 +401,15 @@ include __DIR__ . '/../components/nav.php';
                         </li>
                     </ul>
                     
+                    <div class="grid md:grid-cols-3 gap-4 mb-8">
+                        <div class="h-48 bg-cover bg-center rounded-lg cursor-pointer transition-transform duration-300 hover:scale-105" 
+                             style="background-image: url('https://images.unsplash.com/photo-1563986768609-322da13575f3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80')"></div>
+                        <div class="h-48 bg-cover bg-center rounded-lg cursor-pointer transition-transform duration-300 hover:scale-105" 
+                             style="background-image: url('https://images.unsplash.com/photo-1541178735493-479c1a27ed24?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1471&q=80')"></div>
+                        <div class="h-48 bg-cover bg-center rounded-lg cursor-pointer transition-transform duration-300 hover:scale-105" 
+                             style="background-image: url('https://images.unsplash.com/photo-1529107386315-e1a2ed48a620?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80')"></div>
+                    </div>
+                    
                     <blockquote class="italic relative pl-8 mb-8">
                         <div class="absolute left-0 top-0 text-4xl text-accent-500 font-serif">"</div>
                         <p class="text-gray-600 mb-2">This dialogue helped me understand how my smartphone is connected to the suffering in DRC. We must demand ethical sourcing from tech companies.</p>
@@ -428,6 +464,15 @@ include __DIR__ . '/../components/nav.php';
                                 <span>Critical discussion on <strong>Democracy vs alternative systems</strong></span>
                             </li>
                         </ul>
+                    </div>
+                    
+                    <div class="grid md:grid-cols-3 gap-4 mb-8">
+                        <div class="h-48 bg-cover bg-center rounded-lg cursor-pointer transition-transform duration-300 hover:scale-105" 
+                             style="background-image: url('https://images.unsplash.com/photo-1521791136064-7986c2920216?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1469&q=80')"></div>
+                        <div class="h-48 bg-cover bg-center rounded-lg cursor-pointer transition-transform duration-300 hover:scale-105" 
+                             style="background-image: url('https://images.unsplash.com/photo-1450101499163-c8848c66ca85?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80')"></div>
+                        <div class="h-48 bg-cover bg-center rounded-lg cursor-pointer transition-transform duration-300 hover:scale-105" 
+                             style="background-image: url('https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80')"></div>
                     </div>
                     
                     <blockquote class="italic relative pl-8 mb-8">
@@ -544,6 +589,15 @@ include __DIR__ . '/../components/nav.php';
                     
                     <h4 class="text-xl font-bold text-primary-500 mb-4">Key Message:</h4>
                     <p class="text-lg font-semibold mb-8">"Refugees are not a burden; they are survivors, leaders, and contributors to our shared future."</p>
+                    
+                    <div class="grid md:grid-cols-3 gap-4 mb-8">
+                        <div class="h-48 bg-cover bg-center rounded-lg cursor-pointer transition-transform duration-300 hover:scale-105" 
+                             style="background-image: url('https://images.unsplash.com/photo-1500382017468-9049fed747ef?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80')"></div>
+                        <div class="h-48 bg-cover bg-center rounded-lg cursor-pointer transition-transform duration-300 hover:scale-105" 
+                             style="background-image: url('https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80')"></div>
+                        <div class="h-48 bg-cover bg-center rounded-lg cursor-pointer transition-transform duration-300 hover:scale-105" 
+                             style="background-image: url('https://images.unsplash.com/photo-1521791055366-0d553872125f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1469&q=80')"></div>
+                    </div>
                     
                     <blockquote class="italic relative pl-8 mb-8">
                         <div class="absolute left-0 top-0 text-4xl text-accent-500 font-serif">"</div>
