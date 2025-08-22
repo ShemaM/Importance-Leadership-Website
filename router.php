@@ -36,6 +36,7 @@ $possible_pages = [
     'join-us' => 'pages/join-us.php',
     'programs/advocacy-initiatives' => 'pages/advocacy-initiatives.php',
     'programs/mental-health' => 'pages/mental-health.php',
+    'programs/networking' => 'pages/networking.php',
 ];
 
 if (isset($possible_pages[$uri]) && file_exists($possible_pages[$uri])) {
