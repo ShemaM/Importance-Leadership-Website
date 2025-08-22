@@ -102,10 +102,10 @@ include 'components/nav.php';
         <div class="container mx-auto px-4">
             <div class="text-center mb-16" data-aos="fade-up">
                 <h2 class="text-4xl md:text-5xl font-bold font-secondary text-primary-500 mb-6">
-                    Our Leadership Programs
+                    Transformative Leadership Initiatives
                 </h2>
                 <p class="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-                    Comprehensive programs designed to develop leadership skills, foster community engagement, and create lasting impact across communities.
+                    Our innovative programs equip young Africans with the skills, mindset, and networks needed to become transformative leaders in their communities and beyond.
                 </p>
             </div>
             
