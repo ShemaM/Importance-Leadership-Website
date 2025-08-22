@@ -75,11 +75,11 @@
                             <a href="/programs/advocacy-initiatives" class="dropdown-item flex items-center px-5 py-3 text-gray-700 hover:bg-blue-50 hover:text-primary-500 hover:pl-6 transition-all duration-300">
                                 <i class="fas fa-balance-scale mr-3 w-4 text-center"></i>Advocacy Initiatives
                             </a>
-                            <a href="/programs/mental-health" class="dropdown-item flex items-center px-5 py-3 text-gray-700 hover:bg-blue-50 hover:text-primary-500 hover:pl-6 transition-all duration-300">
-                                <i class="fas fa-heart mr-3 w-4 text-center"></i>Mental Health Programs
-                            </a>
                             <a href="/programs/networking" class="dropdown-item flex items-center px-5 py-3 text-gray-700 hover:bg-blue-50 hover:text-primary-500 hover:pl-6 transition-all duration-300">
                                 <i class="fas fa-network-wired mr-3 w-4 text-center"></i>Professional Networking
+                            </a>
+                            <a href="/programs/mental-health" class="dropdown-item flex items-center px-5 py-3 text-gray-700 hover:bg-blue-50 hover:text-primary-500 hover:pl-6 transition-all duration-300">
+                                <i class="fas fa-heart mr-3 w-4 text-center"></i>Mental Health Programs
                             </a>
                             <a href="/programs/leadership-development" class="dropdown-item flex items-center px-5 py-3 text-gray-700 hover:bg-blue-50 hover:text-primary-500 hover:pl-6 transition-all duration-300">
                                 <i class="fas fa-chalkboard-teacher mr-3 w-4 text-center"></i>Leadership Development
@@ -172,11 +172,11 @@
                             <a href="/programs/advocacy-initiatives" class="dropdown-item flex items-center px-5 py-3 text-gray-700 hover:bg-blue-50 hover:text-primary-500 hover:pl-6 transition-all duration-300">
                                 <i class="fas fa-balance-scale mr-3 w-4 text-center"></i>Advocacy Initiatives
                             </a>
-                            <a href="/programs/mental-health" class="dropdown-item flex items-center px-5 py-3 text-gray-700 hover:bg-blue-50 hover:text-primary-500 hover:pl-6 transition-all duration-300">
-                                <i class="fas fa-heart mr-3 w-4 text-center"></i>Mental Health Programs
-                            </a>
                             <a href="/programs/networking" class="dropdown-item flex items-center px-5 py-3 text-gray-700 hover:bg-blue-50 hover:text-primary-500 hover:pl-6 transition-all duration-300">
                                 <i class="fas fa-network-wired mr-3 w-4 text-center"></i>Professional Networking
+                            </a>
+                            <a href="/programs/mental-health" class="dropdown-item flex items-center px-5 py-3 text-gray-700 hover:bg-blue-50 hover:text-primary-500 hover:pl-6 transition-all duration-300">
+                                <i class="fas fa-heart mr-3 w-4 text-center"></i>Mental Health Programs
                             </a>
                             <a href="/programs/leadership-development" class="dropdown-item flex items-center px-5 py-3 text-gray-700 hover:bg-blue-50 hover:text-primary-500 hover:pl-6 transition-all duration-300">
                                 <i class="fas fa-chalkboard-teacher mr-3 w-4 text-center"></i>Leadership Development
@@ -241,11 +241,11 @@
                             <a href="/programs/advocacy-initiatives" class="dropdown-item flex items-center px-5 py-3 text-gray-700 hover:bg-blue-50 hover:text-primary-500 hover:pl-6 transition-all duration-300">
                                 <i class="fas fa-balance-scale mr-3 w-4 text-center"></i>Advocacy Initiatives
                             </a>
-                            <a href="/programs/mental-health" class="dropdown-item flex items-center px-5 py-3 text-gray-700 hover:bg-blue-50 hover:text-primary-500 hover:pl-6 transition-all duration-300">
-                                <i class="fas fa-heart mr-3 w-4 text-center"></i>Mental Health Programs
-                            </a>
                             <a href="/programs/networking" class="dropdown-item flex items-center px-5 py-3 text-gray-700 hover:bg-blue-50 hover:text-primary-500 hover:pl-6 transition-all duration-300">
                                 <i class="fas fa-network-wired mr-3 w-4 text-center"></i>Professional Networking
+                            </a>
+                            <a href="/programs/mental-health" class="dropdown-item flex items-center px-5 py-3 text-gray-700 hover:bg-blue-50 hover:text-primary-500 hover:pl-6 transition-all duration-300">
+                                <i class="fas fa-heart mr-3 w-4 text-center"></i>Mental Health Programs
                             </a>
                             <a href="/programs/leadership-development" class="dropdown-item flex items-center px-5 py-3 text-gray-700 hover:bg-blue-50 hover:text-primary-500 hover:pl-6 transition-all duration-300">
                                 <i class="fas fa-chalkboard-teacher mr-3 w-4 text-center"></i>Leadership Development
@@ -358,11 +358,11 @@
                 <a href="/programs/advocacy-initiatives" class="mobile-nav-link flex items-center text-gray-600 hover:text-primary-500 py-3 px-3 rounded-lg hover:bg-blue-50 transition-all duration-300">
                     <i class="fas fa-balance-scale mr-3"></i>Advocacy Initiatives
                 </a>
-                <a href="/programs/mental-health" class="mobile-nav-link flex items-center text-gray-600 hover:text-primary-500 py-3 px-3 rounded-lg hover:bg-blue-50 transition-all duration-300">
-                    <i class="fas fa-heart mr-3"></i>Mental Health Programs
-                </a>
                 <a href="/programs/networking" class="mobile-nav-link flex items-center text-gray-600 hover:text-primary-500 py-3 px-3 rounded-lg hover:bg-blue-50 transition-all duration-300">
                     <i class="fas fa-network-wired mr-3"></i>Professional Networking
+                </a>
+                <a href="/programs/mental-health" class="mobile-nav-link flex items-center text-gray-600 hover:text-primary-500 py-3 px-3 rounded-lg hover:bg-blue-50 transition-all duration-300">
+                    <i class="fas fa-heart mr-3"></i>Mental Health Programs
                 </a>
                 <a href="/programs/leadership-development" class="mobile-nav-link flex items-center text-gray-600 hover:text-primary-500 py-3 px-3 rounded-lg hover:bg-blue-50 transition-all duration-300">
                     <i class="fas fa-chalkboard-teacher mr-3"></i>Leadership Development
