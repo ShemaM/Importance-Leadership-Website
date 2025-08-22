@@ -322,114 +322,6 @@ include __DIR__ . '/../components/nav.php';
                 </div>
             </div>
 
-            <!-- Youth Leadership Conference -->
-            <div id="leadership-conference" class="bg-white rounded-2xl shadow-xl overflow-hidden mb-16 hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2">
-                <div class="bg-primary-500 text-white px-8 py-6 relative">
-                    <h2 class="text-3xl font-bold font-secondary">Youth Leadership Conference</h2>
-                    <div class="absolute bottom-0 left-0 w-full h-1 bg-accent-500"></div>
-                </div>
-                
-                <div class="p-8">
-                    <div class="flex flex-wrap gap-6 mb-6 text-gray-600">
-                        <span class="flex items-center">
-                            <i class="fas fa-calendar mr-2 text-accent-500"></i> 2025
-                        </span>
-                        <span class="flex items-center">
-                            <i class="fas fa-map-marker-alt mr-2 text-accent-500"></i> Nairobi
-                        </span>
-                        <span class="flex items-center">
-                            <i class="fas fa-users mr-2 text-accent-500"></i> 150 emerging leaders
-                        </span>
-                    </div>
-                    
-                    <p class="text-lg mb-8">A transformative gathering focused on unleashing the leadership potential within African youth, emphasizing that leadership transcends titles and is about creating value and impact.</p>
-                    
-                    <div class="bg-accent-50 border-l-4 border-accent-500 p-6 mb-8">
-                        <h5 class="font-bold text-primary-500 mb-4">Key Takeaways:</h5>
-                        <ul class="space-y-2 text-gray-700">
-                            <li class="flex items-start">
-                                <span class="text-accent-500 mr-2">•</span>
-                                <span>Leadership begins with <strong>self-discovery</strong> and purpose</span>
-                            </li>
-                            <li class="flex items-start">
-                                <span class="text-accent-500 mr-2">•</span>
-                                <span>True leadership embodies <strong>service</strong> and systems that uplift others</span>
-                            </li>
-                            <li class="flex items-start">
-                                <span class="text-accent-500 mr-2">•</span>
-                                <span>African youth must <strong>unite</strong> to address challenges</span>
-                            </li>
-                            <li class="flex items-start">
-                                <span class="text-accent-500 mr-2">•</span>
-                                <span>Critical discussion on <strong>Democracy vs alternative systems</strong></span>
-                            </li>
-                        </ul>
-                    </div>
-                    
-                    <blockquote class="italic relative pl-8 mb-8">
-                        <div class="absolute left-0 top-0 text-4xl text-accent-500 font-serif">"</div>
-                        <p class="text-gray-600 mb-2">The energy in the room was electric! For the first time, I saw how my small community project could grow into a movement.</p>
-                        <cite class="font-semibold text-primary-500 not-italic">- Youth Participant from Kisumu</cite>
-                    </blockquote>
-                </div>
-            </div>
-
-            <!-- World Refugee Day -->
-            <div id="refugee-day" class="bg-white rounded-2xl shadow-xl overflow-hidden mb-16 hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2">
-                <div class="bg-primary-500 text-white px-8 py-6 relative">
-                    <h2 class="text-3xl font-bold font-secondary">World Refugee Day 2025</h2>
-                    <div class="absolute bottom-0 left-0 w-full h-1 bg-accent-500"></div>
-                </div>
-                
-                <div class="p-8">
-                    <div class="flex flex-wrap gap-6 mb-6 text-gray-600">
-                        <span class="flex items-center">
-                            <i class="fas fa-calendar mr-2 text-accent-500"></i> June 20, 2025
-                        </span>
-                        <span class="flex items-center">
-                            <i class="fas fa-map-marker-alt mr-2 text-accent-500"></i> Nairobi, Kenya
-                        </span>
-                        <span class="flex items-center">
-                            <i class="fas fa-users mr-2 text-accent-500"></i> 500+ attendees
-                        </span>
-                    </div>
-                    
-                    <p class="text-lg mb-8">Our Regional Manager Bonkey Muhumure delivered a powerful keynote address standing in solidarity with refugees, joined by UNHCR, KNCHR, and refugee entrepreneurs.</p>
-                    
-                    <div class="bg-accent-50 border-l-4 border-accent-500 p-6 mb-8">
-                        <h5 class="font-bold text-primary-500 mb-4">Event Highlights:</h5>
-                        <ul class="space-y-2 text-gray-700">
-                            <li class="flex items-start">
-                                <span class="text-accent-500 mr-2">•</span>
-                                <span><strong>Marketplace</strong> showcasing 30 refugee businesses</span>
-                            </li>
-                            <li class="flex items-start">
-                                <span class="text-accent-500 mr-2">•</span>
-                                <span><strong>#SolidarityPledge</strong> - Corporates committed to hire 100+ refugees</span>
-                            </li>
-                            <li class="flex items-start">
-                                <span class="text-accent-500 mr-2">•</span>
-                                <span>Featured on <strong>NTV Kenya</strong> and launched podcast series</span>
-                            </li>
-                        </ul>
-                    </div>
-                    
-                    <h4 class="text-xl font-bold text-primary-500 mb-4">Key Message:</h4>
-                    <p class="text-lg font-semibold mb-8">"Refugees are not a burden; they are survivors, leaders, and contributors to our shared future."</p>
-                    
-                    <blockquote class="italic relative pl-8 mb-8">
-                        <div class="absolute left-0 top-0 text-4xl text-accent-500 font-serif">"</div>
-                        <p class="text-gray-600 mb-2">For the first time, I felt my refugee status wasn't a limitation but a story of resilience that could inspire others.</p>
-                        <cite class="font-semibold text-primary-500 not-italic">- Refugee Entrepreneur Participant</cite>
-                    </blockquote>
-                    
-                    <a href="https://www.linkedin.com/feed/update/urn:li:activity:7342142820201197568" 
-                       class="inline-flex items-center bg-accent-500 hover:bg-accent-600 text-white px-6 py-3 rounded-full font-semibold transition-all duration-300 transform hover:scale-105">
-                        Read Article <i class="fas fa-microphone ml-2"></i>
-                    </a>
-                </div>
-            </div>
-
             <!-- DRC Crisis Global Dialogue -->
             <div id="drc-dialogue" class="bg-white rounded-2xl shadow-xl overflow-hidden mb-16 hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2">
                 <div class="bg-primary-500 text-white px-8 py-6 relative">
@@ -494,6 +386,58 @@ include __DIR__ . '/../components/nav.php';
                 </div>
             </div>
 
+            <!-- Youth Leadership Conference -->
+            <div id="leadership-conference" class="bg-white rounded-2xl shadow-xl overflow-hidden mb-16 hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2">
+                <div class="bg-primary-500 text-white px-8 py-6 relative">
+                    <h2 class="text-3xl font-bold font-secondary">Youth Leadership Conference</h2>
+                    <div class="absolute bottom-0 left-0 w-full h-1 bg-accent-500"></div>
+                </div>
+                
+                <div class="p-8">
+                    <div class="flex flex-wrap gap-6 mb-6 text-gray-600">
+                        <span class="flex items-center">
+                            <i class="fas fa-calendar mr-2 text-accent-500"></i> 2025
+                        </span>
+                        <span class="flex items-center">
+                            <i class="fas fa-map-marker-alt mr-2 text-accent-500"></i> Nairobi
+                        </span>
+                        <span class="flex items-center">
+                            <i class="fas fa-users mr-2 text-accent-500"></i> 150 emerging leaders
+                        </span>
+                    </div>
+                    
+                    <p class="text-lg mb-8">A transformative gathering focused on unleashing the leadership potential within African youth, emphasizing that leadership transcends titles and is about creating value and impact.</p>
+                    
+                    <div class="bg-accent-50 border-l-4 border-accent-500 p-6 mb-8">
+                        <h5 class="font-bold text-primary-500 mb-4">Key Takeaways:</h5>
+                        <ul class="space-y-2 text-gray-700">
+                            <li class="flex items-start">
+                                <span class="text-accent-500 mr-2">•</span>
+                                <span>Leadership begins with <strong>self-discovery</strong> and purpose</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-accent-500 mr-2">•</span>
+                                <span>True leadership embodies <strong>service</strong> and systems that uplift others</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-accent-500 mr-2">•</span>
+                                <span>African youth must <strong>unite</strong> to address challenges</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-accent-500 mr-2">•</span>
+                                <span>Critical discussion on <strong>Democracy vs alternative systems</strong></span>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <blockquote class="italic relative pl-8 mb-8">
+                        <div class="absolute left-0 top-0 text-4xl text-accent-500 font-serif">"</div>
+                        <p class="text-gray-600 mb-2">The energy in the room was electric! For the first time, I saw how my small community project could grow into a movement.</p>
+                        <cite class="font-semibold text-primary-500 not-italic">- Youth Participant from Kisumu</cite>
+                    </blockquote>
+                </div>
+            </div>
+
             <!-- Back-to-School Initiative -->
             <div id="back-to-school" class="bg-white rounded-2xl shadow-xl overflow-hidden mb-16 hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2">
                 <div class="bg-primary-500 text-white px-8 py-6 relative">
@@ -554,6 +498,62 @@ include __DIR__ . '/../components/nav.php';
                     
                     <a href="#" class="inline-flex items-center bg-accent-500 hover:bg-accent-600 text-white px-6 py-3 rounded-full font-semibold transition-all duration-300 transform hover:scale-105">
                         See More <i class="fas fa-images ml-2"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- World Refugee Day -->
+            <div id="refugee-day" class="bg-white rounded-2xl shadow-xl overflow-hidden mb-16 hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2">
+                <div class="bg-primary-500 text-white px-8 py-6 relative">
+                    <h2 class="text-3xl font-bold font-secondary">World Refugee Day 2025</h2>
+                    <div class="absolute bottom-0 left-0 w-full h-1 bg-accent-500"></div>
+                </div>
+                
+                <div class="p-8">
+                    <div class="flex flex-wrap gap-6 mb-6 text-gray-600">
+                        <span class="flex items-center">
+                            <i class="fas fa-calendar mr-2 text-accent-500"></i> June 20, 2025
+                        </span>
+                        <span class="flex items-center">
+                            <i class="fas fa-map-marker-alt mr-2 text-accent-500"></i> Nairobi, Kenya
+                        </span>
+                        <span class="flex items-center">
+                            <i class="fas fa-users mr-2 text-accent-500"></i> 500+ attendees
+                        </span>
+                    </div>
+                    
+                    <p class="text-lg mb-8">Our Regional Manager Bonkey Muhumure delivered a powerful keynote address standing in solidarity with refugees, joined by UNHCR, KNCHR, and refugee entrepreneurs.</p>
+                    
+                    <div class="bg-accent-50 border-l-4 border-accent-500 p-6 mb-8">
+                        <h5 class="font-bold text-primary-500 mb-4">Event Highlights:</h5>
+                        <ul class="space-y-2 text-gray-700">
+                            <li class="flex items-start">
+                                <span class="text-accent-500 mr-2">•</span>
+                                <span><strong>Marketplace</strong> showcasing 30 refugee businesses</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-accent-500 mr-2">•</span>
+                                <span><strong>#SolidarityPledge</strong> - Corporates committed to hire 100+ refugees</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-accent-500 mr-2">•</span>
+                                <span>Featured on <strong>NTV Kenya</strong> and launched podcast series</span>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <h4 class="text-xl font-bold text-primary-500 mb-4">Key Message:</h4>
+                    <p class="text-lg font-semibold mb-8">"Refugees are not a burden; they are survivors, leaders, and contributors to our shared future."</p>
+                    
+                    <blockquote class="italic relative pl-8 mb-8">
+                        <div class="absolute left-0 top-0 text-4xl text-accent-500 font-serif">"</div>
+                        <p class="text-gray-600 mb-2">For the first time, I felt my refugee status wasn't a limitation but a story of resilience that could inspire others.</p>
+                        <cite class="font-semibold text-primary-500 not-italic">- Refugee Entrepreneur Participant</cite>
+                    </blockquote>
+                    
+                    <a href="https://www.linkedin.com/feed/update/urn:li:activity:7342142820201197568" 
+                       class="inline-flex items-center bg-accent-500 hover:bg-accent-600 text-white px-6 py-3 rounded-full font-semibold transition-all duration-300 transform hover:scale-105">
+                        Read Article <i class="fas fa-microphone ml-2"></i>
                     </a>
                 </div>
             </div>
