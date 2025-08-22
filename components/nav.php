@@ -63,7 +63,7 @@
                     
                     <!-- What We Do -->
                     <div class="nav-item mx-0.5">
-                        <a href="/programs" class="nav-link flex items-center text-primary-500 font-medium text-sm px-2 py-2 rounded-lg hover:bg-blue-50 hover:text-primary-600 transition-all duration-300 whitespace-nowrap">
+                        <a href="/what-we-do" class="nav-link flex items-center text-primary-500 font-medium text-sm px-2 py-2 rounded-lg hover:bg-blue-50 hover:text-primary-600 transition-all duration-300 whitespace-nowrap">
                             <i class="fas fa-chart-line mr-1.5 text-xs"></i>What We Do
                         </a>
                     </div>
@@ -138,7 +138,7 @@
                     
                     <!-- What We Do -->
                     <div class="nav-item mx-0.5">
-                        <a href="/programs" class="nav-link flex items-center text-primary-500 font-medium text-sm px-2 py-2 rounded-lg hover:bg-blue-50 hover:text-primary-600 transition-all duration-300 whitespace-nowrap">
+                        <a href="/what-we-do" class="nav-link flex items-center text-primary-500 font-medium text-sm px-2 py-2 rounded-lg hover:bg-blue-50 hover:text-primary-600 transition-all duration-300 whitespace-nowrap">
                             <i class="fas fa-chart-line mr-1.5 text-xs"></i>What We Do
                         </a>
                     </div>
@@ -185,7 +185,7 @@
                     
                     <!-- What We Do -->
                     <div class="nav-item mx-0.5">
-                        <a href="/programs" class="nav-link flex items-center text-primary-500 font-medium text-sm px-2 py-2 rounded-lg hover:bg-blue-50 hover:text-primary-600 transition-all duration-300 whitespace-nowrap">
+                        <a href="/what-we-do" class="nav-link flex items-center text-primary-500 font-medium text-sm px-2 py-2 rounded-lg hover:bg-blue-50 hover:text-primary-600 transition-all duration-300 whitespace-nowrap">
                             <i class="fas fa-chart-line mr-1.5 text-xs"></i>What We Do
                         </a>
                     </div>
