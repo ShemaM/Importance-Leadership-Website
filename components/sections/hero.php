@@ -38,7 +38,7 @@
     
     <!-- Content -->
     <div class="container mx-auto px-4 relative z-20 py-8">
-        <div class="max-w-4xl">
+        <div class="max-w-4xl text-center sm:text-left">
             <h1 class="text-4xl md:text-6xl lg:text-7xl font-bold font-secondary leading-tight mb-6" data-aos="fade-up" data-aos-delay="100">
                 <span class="text-accent-500 font-bold">Importance Leadership</span>
                 <br>
@@ -61,8 +61,8 @@
                 </a>
             </div>
             
-            <!-- Impact Statistics -->
-            <div class="flex flex-col sm:flex-row gap-8" data-aos="fade-up" data-aos-delay="400">
+            <!-- Impact Statistics (Hidden on mobile) -->
+            <div class="hidden sm:flex flex-col sm:flex-row gap-8" data-aos="fade-up" data-aos-delay="400">
                 <div class="text-center sm:text-left">
                     <div class="text-4xl md:text-5xl font-bold text-accent-500 mb-2" data-counter="1500">0</div>
                     <div class="text-sm uppercase tracking-wider opacity-90">Young Leaders Developed</div>
