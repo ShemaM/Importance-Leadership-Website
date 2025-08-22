@@ -7,7 +7,7 @@
         <div class="flex items-center justify-between py-3">
             <!-- Logo -->
             <div class="logo-container">
-                <a href="index.html" class="block">
+                <a href="/" class="block">
                     <img src="assets/images/website-logo.png" 
                          alt="Importance Leadership" 
                          class="h-10 transition-all duration-300">
@@ -35,7 +35,7 @@
                             <a href="/who-we-are" class="dropdown-item flex items-center px-5 py-3 text-gray-700 hover:bg-blue-50 hover:text-primary-500 hover:pl-6 transition-all duration-300">
                                 <i class="fas fa-bullseye mr-3 w-4 text-center"></i>About Us
                             </a>
-                            <a href="team.html" class="dropdown-item flex items-center px-5 py-3 text-gray-700 hover:bg-blue-50 hover:text-primary-500 hover:pl-6 transition-all duration-300">
+                            <a href="/team" class="dropdown-item flex items-center px-5 py-3 text-gray-700 hover:bg-blue-50 hover:text-primary-500 hover:pl-6 transition-all duration-300">
                                 <i class="fas fa-user-friends mr-3 w-4 text-center"></i>Our Team
                             </a>
                         </div>
@@ -111,7 +111,7 @@
                             <a href="/who-we-are" class="dropdown-item flex items-center px-5 py-3 text-gray-700 hover:bg-blue-50 hover:text-primary-500 hover:pl-6 transition-all duration-300">
                                 <i class="fas fa-bullseye mr-3 w-4 text-center"></i>About Us
                             </a>
-                            <a href="team.html" class="dropdown-item flex items-center px-5 py-3 text-gray-700 hover:bg-blue-50 hover:text-primary-500 hover:pl-6 transition-all duration-300">
+                            <a href="/team" class="dropdown-item flex items-center px-5 py-3 text-gray-700 hover:bg-blue-50 hover:text-primary-500 hover:pl-6 transition-all duration-300">
                                 <i class="fas fa-user-friends mr-3 w-4 text-center"></i>Our Team
                             </a>
                         </div>
@@ -158,7 +158,7 @@
                             <a href="/who-we-are" class="dropdown-item flex items-center px-5 py-3 text-gray-700 hover:bg-blue-50 hover:text-primary-500 hover:pl-6 transition-all duration-300">
                                 <i class="fas fa-bullseye mr-3 w-4 text-center"></i>About Us
                             </a>
-                            <a href="team.html" class="dropdown-item flex items-center px-5 py-3 text-gray-700 hover:bg-blue-50 hover:text-primary-500 hover:pl-6 transition-all duration-300">
+                            <a href="/team" class="dropdown-item flex items-center px-5 py-3 text-gray-700 hover:bg-blue-50 hover:text-primary-500 hover:pl-6 transition-all duration-300">
                                 <i class="fas fa-user-friends mr-3 w-4 text-center"></i>Our Team
                             </a>
                         </div>
@@ -239,7 +239,7 @@
     <div class="mobile-menu-body p-5 h-full overflow-y-auto pb-24">
         <!-- Home -->
         <div class="mobile-nav-item mb-3">
-            <a href="index.html" class="mobile-nav-link flex items-center text-gray-700 hover:text-primary-500 py-3 px-3 rounded-lg hover:bg-blue-50 transition-all duration-300">
+            <a href="/" class="mobile-nav-link flex items-center text-gray-700 hover:text-primary-500 py-3 px-3 rounded-lg hover:bg-blue-50 transition-all duration-300">
                 <i class="fas fa-home mr-3"></i>Home
             </a>
         </div>
@@ -254,7 +254,7 @@
                 <a href="/who-we-are" class="mobile-nav-link flex items-center text-gray-600 hover:text-primary-500 py-3 px-3 rounded-lg hover:bg-blue-50 transition-all duration-300">
                     <i class="fas fa-bullseye mr-3"></i>About Us
                 </a>
-                <a href="team.html" class="mobile-nav-link flex items-center text-gray-600 hover:text-primary-500 py-3 px-3 rounded-lg hover:bg-blue-50 transition-all duration-300">
+                <a href="/team" class="mobile-nav-link flex items-center text-gray-600 hover:text-primary-500 py-3 px-3 rounded-lg hover:bg-blue-50 transition-all duration-300">
                     <i class="fas fa-user-friends mr-3"></i>Our Team
                 </a>
             </div>
@@ -286,19 +286,19 @@
                 <i class="fas fa-angle-down transition-transform duration-300"></i>
             </button>
             <div class="mobile-dropdown-menu hidden mt-2 ml-4">
-                <a href="AdvocacyInitiatives.html" class="mobile-nav-link flex items-center text-gray-600 hover:text-primary-500 py-3 px-3 rounded-lg hover:bg-blue-50 transition-all duration-300">
+                <a href="/programs/advocacy-initiatives" class="mobile-nav-link flex items-center text-gray-600 hover:text-primary-500 py-3 px-3 rounded-lg hover:bg-blue-50 transition-all duration-300">
                     <i class="fas fa-balance-scale mr-3"></i>Advocacy Initiatives
                 </a>
-                <a href="MentalHealth.html" class="mobile-nav-link flex items-center text-gray-600 hover:text-primary-500 py-3 px-3 rounded-lg hover:bg-blue-50 transition-all duration-300">
+                <a href="/programs/mental-health" class="mobile-nav-link flex items-center text-gray-600 hover:text-primary-500 py-3 px-3 rounded-lg hover:bg-blue-50 transition-all duration-300">
                     <i class="fas fa-heart mr-3"></i>Mental Health Programs
                 </a>
-                <a href="Networking.html" class="mobile-nav-link flex items-center text-gray-600 hover:text-primary-500 py-3 px-3 rounded-lg hover:bg-blue-50 transition-all duration-300">
+                <a href="/programs/networking" class="mobile-nav-link flex items-center text-gray-600 hover:text-primary-500 py-3 px-3 rounded-lg hover:bg-blue-50 transition-all duration-300">
                     <i class="fas fa-network-wired mr-3"></i>Professional Networking
                 </a>
-                <a href="leadershipDev.html" class="mobile-nav-link flex items-center text-gray-600 hover:text-primary-500 py-3 px-3 rounded-lg hover:bg-blue-50 transition-all duration-300">
+                <a href="/programs/leadership-development" class="mobile-nav-link flex items-center text-gray-600 hover:text-primary-500 py-3 px-3 rounded-lg hover:bg-blue-50 transition-all duration-300">
                     <i class="fas fa-chalkboard-teacher mr-3"></i>Leadership Development
                 </a>
-                <a href="ClimateChange.html" class="mobile-nav-link flex items-center text-gray-600 hover:text-primary-500 py-3 px-3 rounded-lg hover:bg-blue-50 transition-all duration-300">
+                <a href="/programs/climate-change" class="mobile-nav-link flex items-center text-gray-600 hover:text-primary-500 py-3 px-3 rounded-lg hover:bg-blue-50 transition-all duration-300">
                     <i class="fas fa-leaf mr-3"></i>Climate Change Awareness
                 </a>
             </div>
@@ -385,7 +385,7 @@
     <div class="mobile-menu-body p-5 h-full overflow-y-auto pb-24">
         <!-- Home -->
         <div class="mobile-nav-item mb-3">
-            <a href="index.html" class="mobile-nav-link flex items-center text-gray-700 hover:text-primary-500 py-3 px-3 rounded-lg hover:bg-blue-50 transition-all duration-300">
+            <a href="/" class="mobile-nav-link flex items-center text-gray-700 hover:text-primary-500 py-3 px-3 rounded-lg hover:bg-blue-50 transition-all duration-300">
                 <i class="fas fa-home mr-3"></i>Home
             </a>
         </div>
