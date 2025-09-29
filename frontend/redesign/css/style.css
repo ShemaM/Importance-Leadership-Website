@@ -151,6 +151,60 @@ nav ul li a {
     color: #555;
 }
 
+#impact {
+    text-align: center;
+    padding: 80px 20px;
+    background-color: white;
+}
+
+#impact h2 {
+    font-size: 2.5em;
+    margin-bottom: 40px;
+}
+
+#impact p {
+    font-size: 1.1em;
+    max-width: 800px;
+    margin: 0 auto 30px auto;
+}
+
+.impact-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.impact-item {
+    background-color: var(--neutral);
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.impact-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+.impact-item i {
+    font-size: 3em;
+    color: var(--primary);
+    margin-bottom: 20px;
+}
+
+.impact-item h3 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+.impact-item p {
+    font-size: 1em;
+    color: #555;
+}
+
 footer {
     background-color: var(--primary);
     color: white;
