@@ -1,0 +1,244 @@
+:root {
+    --primary: #1A237E;
+    --secondary: #FFC107;
+    --accent: #00BCD4;
+    --neutral: #F5F5F5;
+    --text-dark: #212121;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    color: var(--text-dark);
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: var(--neutral);
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Montserrat', sans-serif;
+    color: var(--primary);
+}
+
+header {
+    background-color: var(--primary);
+    color: white;
+    padding: 1rem 0;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+#hero {
+    background-color: var(--primary-light);
+    color: white;
+    text-align: center;
+    padding: 100px 20px;
+}
+
+#hero h1 {
+    color: white;
+    font-size: 3em;
+    margin-bottom: 20px;
+}
+
+#hero p {
+    font-size: 1.2em;
+    max-width: 800px;
+    margin: 0 auto 30px auto;
+}
+
+.btn {
+    background-color: var(--secondary);
+    color: var(--text-dark);
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #e0a800; /* A slightly darker shade of secondary */
+}
+
+#who-we-are {
+    text-align: center;
+    padding: 80px 20px;
+    background-color: white;
+}
+
+#who-we-are h2 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+}
+
+#who-we-are p {
+    font-size: 1.1em;
+    max-width: 800px;
+    margin: 0 auto 30px auto;
+}
+
+#who-we-are .btn {
+    background-color: var(--primary);
+    color: white;
+}
+
+#who-we-are .btn:hover {
+    background-color: #121a5c; /* A slightly darker shade of primary */
+}
+
+#what-we-do {
+    text-align: center;
+    padding: 80px 20px;
+    background-color: var(--neutral);
+}
+
+#what-we-do h2 {
+    font-size: 2.5em;
+    margin-bottom: 40px;
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.service-item {
+    background-color: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.service-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.service-item i {
+    font-size: 3em;
+    color: var(--accent);
+    margin-bottom: 20px;
+}
+
+.service-item h3 {
+    font-size: 1.5em;
+    margin-bottom: 15px;
+}
+
+.service-item p {
+    font-size: 1em;
+    color: #555;
+}
+
+#impact {
+    text-align: center;
+    padding: 80px 20px;
+    background-color: white;
+}
+
+#impact h2 {
+    font-size: 2.5em;
+    margin-bottom: 40px;
+}
+
+#impact p {
+    font-size: 1.1em;
+    max-width: 800px;
+    margin: 0 auto 30px auto;
+}
+
+.impact-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.impact-item {
+    background-color: var(--neutral);
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.impact-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+.impact-item i {
+    font-size: 3em;
+    color: var(--primary);
+    margin-bottom: 20px;
+}
+
+.impact-item h3 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+.impact-item p {
+    font-size: 1em;
+    color: #555;
+}
+
+#join-us {
+    text-align: center;
+    padding: 80px 20px;
+    background-color: var(--primary);
+    color: white;
+}
+
+#join-us h2 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    color: white;
+}
+
+#join-us p {
+    font-size: 1.1em;
+    max-width: 800px;
+    margin: 0 auto 30px auto;
+}
+
+#join-us .btn {
+    background-color: var(--secondary);
+    color: var(--text-dark);
+}
+
+#join-us .btn:hover {
+    background-color: #e0a800; /* A slightly darker shade of secondary */
+}
+
+footer {
+    background-color: var(--primary);
+    color: white;
+    text-align: center;
+    padding: 1rem 0;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
