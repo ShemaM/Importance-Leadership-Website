@@ -613,21 +613,40 @@
             <!-- Team Members Grid -->
             <div class="tab-content" id="departmentTabsContent">
                 <div class="tab-pane fade show active" id="all" role="tabpanel" aria-labelledby="all-tab">
-                    <div class="row g-4">
-                        <!-- CEO -->
-                        <div class="col-lg-4 col-md-6" data-department="leadership">
-                            <div class="team-card" data-bs-toggle="modal" data-bs-target="#fistonModal">
-                                <div class="card-img-container">
-                                    <img src="image/fiston.png" alt="Fiston Ndayishimiye" style="width:90%; height: auto;">
+                        <!-- Meet Our Team Section -->
+                        <section id="meet-our-team" class="team-section">
+                            <div class="container">
+                                <div class="section-title">
+                                    <h2>Meet Our Team</h2>
+                                    <p>We are a group of passionate leaders, mentors, and innovators dedicated to empowering the next generation of change-makers. Our diverse backgrounds and shared commitment to fostering leadership skills create a dynamic and supportive environment for all our participants.</p>
                                 </div>
-                                <div class="team-info" id="fisto">
-                                    <h3>Fiston Ndayishimiye</h3>
-                                    <p class="position">CEO & Founder</p>
-                                    <p class="bio text-black">Visionary leader driving strategic direction and organizational growth with a passion for youth empowerment.</p>
-                                </div>
-                            </div>
-                        </div>
-
+                                <div class="row g-4">
+                                    <!-- Cadeau -->
+                                    <div class="col-lg-4 col-md-6" data-department="leadership">
+                                        <div class="team-card" data-bs-toggle="modal" data-bs-target="#cadeauModal">
+                                            <div class="card-img-container">
+                                                <img src="image/Cadeau.png" alt="Cadeau M" style="width:90%; height: auto;">
+                                            </div>
+                                            <div class="team-info">
+                                                <h3>Cadeau M</h3>
+                                                <p class="position">Co-Founder</p>
+                                                <p class="bio text-black">A visionary leader and advocate for youth empowerment, dedicated to creating positive change.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- CEO -->
+                                    <div class="col-lg-4 col-md-6" data-department="leadership">
+                                        <div class="team-card" data-bs-toggle="modal" data-bs-target="#fistonModal">
+                                            <div class="card-img-container">
+                                                <img src="image/fiston.png" alt="Fiston Ndayishimiye" style="width:90%; height: auto;">
+                                            </div>
+                                            <div class="team-info" id="fisto">
+                                                <h3>Fiston Ndayishimiye</h3>
+                                                <p class="position">CEO & Founder</p>
+                                                <p class="bio text-black">Visionary leader driving strategic direction and organizational growth with a passion for youth empowerment.</p>
+                                            </div>
+                                        </div>
+                                    </div>
                         <!-- HR Manager -->
                         <div class="col-lg-4 col-md-6" data-department="operations">
                             <div class="team-card" data-bs-toggle="modal" data-bs-target="#bonkeyModal">
@@ -1115,6 +1134,51 @@
                                     <p>Impact Assessment</p>
                                     <div class="skill-bar">
                                         <div class="skill-progress" style="width: 88%"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal for Cadeau -->
+    <div class="modal fade team-modal" id="cadeauModal" tabindex="-1" aria-labelledby="cadeauModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-5">
+                            <img src="image/Cadeau.png" class="member-img" alt="Cadeau M">
+                        </div>
+                        <div class="col-md-7">
+                            <h3 class="member-name">Cadeau M</h3>
+                            <p class="member-position">Co-Founder</p>
+                            <p class="member-bio text-black">Cadeau is a passionate advocate for youth empowerment and a visionary leader. As a co-founder of Importance Leadership, she has been instrumental in shaping the organization's mission and values. Her dedication to creating positive change has inspired countless young individuals to become leaders in their communities.</p>
+                            
+                            <div class="member-skills">
+                                <h5 class="skill-title">Key Skills</h5>
+                                <div class="skill-item">
+                                    <p>Leadership Development</p>
+                                    <div class="skill-bar">
+                                        <div class="skill-progress" style="width: 95%"></div>
+                                    </div>
+                                </div>
+                                <div class="skill-item">
+                                    <p>Community Outreach</p>
+                                    <div class="skill-bar">
+                                        <div class="skill-progress" style="width: 90%"></div>
+                                    </div>
+                                </div>
+                                <div class="skill-item">
+                                    <p>Public Speaking</p>
+                                    <div class="skill-bar">
+                                        <div class="skill-progress" style="width: 85%"></div>
                                     </div>
                                 </div>
                             </div>
