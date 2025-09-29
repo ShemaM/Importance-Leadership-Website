@@ -77,6 +77,32 @@ nav ul li a {
     background-color: #e0a800; /* A slightly darker shade of secondary */
 }
 
+#who-we-are {
+    text-align: center;
+    padding: 80px 20px;
+    background-color: white;
+}
+
+#who-we-are h2 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+}
+
+#who-we-are p {
+    font-size: 1.1em;
+    max-width: 800px;
+    margin: 0 auto 30px auto;
+}
+
+#who-we-are .btn {
+    background-color: var(--primary);
+    color: white;
+}
+
+#who-we-are .btn:hover {
+    background-color: #121a5c; /* A slightly darker shade of primary */
+}
+
 footer {
     background-color: var(--primary);
     color: white;
